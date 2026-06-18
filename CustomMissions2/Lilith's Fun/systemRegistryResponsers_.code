@@ -1,0 +1,24 @@
+systemRegistryResponsers_:
+	
+	responsers = null #Required
+	systemFacade = null #Required
+
+	init:
+		#Params@arr responsers: List, systemFacade: Object
+		responsers = _args[0]
+		systemFacade = _args[1]
+
+	__addResponser:
+		#Params@arr requestHead: String
+		requestHead = _args[0]
+		nameKey = "responser"+requestHead
+		# Log("add nameKey "+nameKey)
+		label = nameKey+"_"
+		responser = CreateThread(label)
+		responser.init(systemFacade)
+		responsers[nameKey] = responser
+
+	registerAll:
+		__addResponser("Home")
+		__addResponser("Start")
+		__addResponser("Pause")

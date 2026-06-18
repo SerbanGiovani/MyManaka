@@ -1,0 +1,208 @@
+processorCallNpc_:
+	#Note Event: List must have:
+	# common: List see 'event.common'
+	# caughtRadius: Number
+	# speed: Number
+	# spawnDelay: Number
+	# caughtTime: Number
+
+
+	stages = Copy(Stages)
+	lockMarks = CreateThread("StaticDict")
+	tracers = __createTracers()
+	tracerIds = CreateList()
+	
+	timer = 0
+	correctTimer = 0
+	caughtFlag = false
+	lastPosition = null
+	lastAlterness = 0
+
+	start:
+		#Required
+		#Params@arr event: List
+		ps.setDisable(true)
+		Foreach(stages, ps)
+		timer = 0
+		correctTimer = 0
+		caughtFlag = false
+
+
+	end:
+		#Required
+		#Params@arr event: List
+		ps.setDisable(false)
+		Foreach(stages, ps)
+		__resetTracers()
+		Foreach(tracerIds, tir)
+		ClearList(tracerIds)
+
+
+	update:
+		#Required
+		#Params@arr event: List
+		event = _args[0]
+		curStage = _state.Position.stage
+		tracer = tracers.At(curStage)
+		if _stagechanged
+			ClearList(tracerIds)
+		if (!_stagechanged) && (tracer != null)
+			if tracer.npc == null
+				if tracer.start == null
+					tracer.start = LocatePlayer()
+					# Log("tracer.start: "+tracer.start.x+" "+tracer.start.y+" " +tracer.start.z)
+				if tracer.timer >= __adjustSpawnDelay(event)
+					tracer.npc = __createNpc(tracer.start, event)
+				else
+					tracer.timer += _timediff
+			else
+				if tracer.npc.IsAlive()
+					__tryCorrectPosition(tracer.npc, event)
+					__tryCatch(tracer.npc, event)
+				else
+					__respawn(tracer.npc, event)
+		Foreach(stages, pw)
+
+	__createTracers:
+		#Returns tracers: Object
+		tracers = CreateThread("StaticDict")
+		i=0
+		len = stages.Count()
+		while i < len
+			tracers.Insert(stages[i], CreateList(npc = null, timer = 0, start = null))
+			i += 1
+		tracers.Remove("Apart")
+		_result = tracers
+
+	__resetTracers:
+		i=0
+		len = stages.Count()
+		while i < len
+			tracer = tracers.At(stages[i])
+			if tracer != null
+				tracer.npc = null
+				tracer.timer = 0
+				tracer.start = null
+			i += 1
+		tracers.Remove("Apart")
+
+	__createNpc:
+		#Params@arr start: List, event: List
+		start = _args[0]
+		event = _args[1]
+		# Log("npc get: "+start.x+" "+start.y+" " +start.z)
+		npc = CreateNPC("NewMale", position = start)
+		
+		# np = npc.GetPosition()
+		# Log("npc created: "+np.x+" "+np.y+" " +np.z)
+		# v2 = LocatePlayer()
+		# Log("player location: "+v2.x+" "+v2.y+" " +v2.z)
+		npc.TracePlayer(true)
+		npc.Speed(event.speed)
+		npc.Size(1.2)
+		tracerIds.Insert(npc.GetID())
+		Runtime.CustomNpcIds.Insert(npc.GetID())
+		_result = npc
+
+	__respawn:
+		#Params@arr npc: Object, event: List
+		npc = _args[0]
+		event = _args[1]
+		npc.Respawn()
+		npc.TracePlayer(true)
+		npc.Speed(event.speed)
+		npc.Size(1.2)
+		tracerIds.Insert(npc.GetID())
+		Runtime.CustomNpcIds.Insert(npc.GetID())
+
+	__tryCorrectPosition:
+		#Params@arr npc: Object, event: List
+		npc = _args[0]
+		event = _args[1]
+		if lastPosition == null
+			lastPosition = LocateNpc(npc.GetPosition())
+		else
+			curAlertness = npc.Strangeness()
+			if curAlertness < 1
+				if correctTimer > event.caughtTime * 3
+					v1 = LocateNpc(npc.GetPosition())
+					v2 = LocatePlayer()
+					dir = Vector3Sub(v2, v1)
+					delta = Vector3Scale(dir, event.speed/Vector3Length(dir))
+					npc.Warp(position = Vector3Add(v1, delta))
+					correctTimer = 0
+				else
+					curPosition = LocateNpc(npc.GetPosition())
+					if (lastAlterness >= curAlertness) && (Vector3SqrLength(Vector3Sub(lastPosition, curPosition)) < (event.speed * _timediff * 0.5) ** 2)
+						correctTimer += _timediff
+					else
+						correctTimer -= _timediff
+						if correctTimer < 0
+							correctTimer = 0
+			lastPosition = LocateNpc(npc.GetPosition())
+			lastAlterness = curAlertness
+
+	__tryCatch:
+		#Params@arr npc: Object, event: List
+		npc = _args[0]
+		event = _args[1]
+		v1 = LocateNpc(npc.GetPosition())
+		v2 = LocatePlayer()
+		sqrD = SqrDistance(v1, v2)
+		if timer >= event.caughtTime
+			caughtFlag = true
+			npc.TracePlayer(false)
+			npc.Strangeness(1.1)
+		else
+			if npc.SeesPlayer() && (sqrD <= event.caughtRadius ** 2)
+				timer += _timediff
+			else
+				timer -= _timediff * 0.5
+				if timer < 0
+					timer = 0
+		npc.Strangeness(timer/event.caughtTime)
+
+	__adjustSpawnDelay:
+		#Params@arr event: List
+		#Returns newSpawnDelay: Number
+		event = _args[0]
+		if (_state.Position.stage == "Convenience" || _state.Position.stage == "FashionShop")
+			spawnDelay = event.spawnDelay
+			duration = event.common.duration
+			
+			delta = duration - spawnDelay
+			
+			spawnDelay += delta * 0.5
+			_result = spawnDelay
+		else
+			_result = event.spawnDelay
+
+	portalSetter:
+		disable = false
+		do:
+			if disable
+				cRankLimit = GetStageRankLimit(value)
+				if cRankLimit <= 7 
+					lockMarks.Insert(value, cRankLimit)
+					SetStageRankLimit(value, 10) #Note Disable portal
+				else
+					lockMarks.Insert(value, -1)
+			else
+				oRankLimit = lockMarks.At(value)
+				if (oRankLimit != null) && (oRankLimit >= 0)
+					SetStageRankLimit(value, oRankLimit)
+		setDisable:
+			disable = _args[0]
+	ps = CreateThread("portalSetter")
+	portalWatcher:
+		do:
+			cRankLimit = GetStageRankLimit(value)
+			if cRankLimit <= 7
+				# Log("watcher: "+ cRankLimit)
+				lockMarks.Insert(value, cRankLimit)
+				SetStageRankLimit(value, 10)
+	pw = CreateThread("portalWatcher")
+	tracerIdRemover:
+		do:
+			Runtime.CustomNpcIds.Remove(value)
+	tir = CreateThread("tracerIdRemover")

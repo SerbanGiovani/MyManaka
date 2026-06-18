@@ -1,0 +1,138 @@
+Stack:
+
+	list = CreateList()
+	top = 0
+	Pop:
+		#Returns topValue: Any
+		if top > 0
+			top = top - 1
+			data = list[top]
+			list[top] = null
+			_result = data
+
+	Push:
+		#Params value: Any
+		if value == null
+			value = _args[0]
+		if value != null
+			list[top] = value
+			top = top + 1
+
+	PopAll:
+		#Returns values: List
+		data = CreateList()
+		while top > 0
+			data.Insert(Pop())
+		top = 0
+		_result = data
+
+	Clear:
+		list.Remove(index = 0, top)
+		top = 0
+
+	GetCount:
+		#Returns valueCount: Number
+		_result = top
+
+	IsEmpty:
+		#Returns isEmpty: Bool
+		if top > 0
+			_result = false
+		else
+			_result = true
+
+
+
+
+
+
+Queue:
+
+	list = CreateList()
+	front = 0
+	rear = 0
+	count = 0
+	maxCount = 2
+
+	SetMaxCount:
+		#Params newMaxCount: Number
+		#Note newMaxCount Must be Greater than count and 2
+		if newMaxCount == null
+			newMaxCount = _args[0]
+			newMaxCount = Trunc(newMaxCount)
+			if newMaxCount != null && newMaxCount > count && newMaxCount >= 2
+				__Grow(newMaxCount - maxCount)
+
+	GetMaxCount:
+		#Returns maxCount: Number
+		_result = maxCount
+
+	GetCount:
+		#Returns count: Number
+		_result = count
+
+	IsEmpty:
+		#Returns isEmpty: Bool
+		if front == rear
+			_result = true
+		else
+			_result = false
+
+	IsFull:
+		#Returns isFull: Bool
+		if (rear + 1) % maxCount == front
+			_result = true
+		else
+			_result = false
+
+	Clear:
+		i = front
+		while i != rear
+			list[i] = null
+			i = (i + 1) % maxCount
+		front = 0
+		rear = 0
+		count = 0
+
+	Dequeue:
+		#Returns value: Any
+		if !IsEmpty()
+			data = list[front]
+			list[front] = null
+			front = (front + 1) % maxCount
+			count = count - 1
+			_result = data
+
+	Peek:
+		#Returns value: Any
+		if !IsEmpty()
+			_result = list[front]
+
+	Enqueue:
+		#Params value: Any
+		if value == null
+			value = _args[0]
+		if value != null
+			if IsFull()
+				__Grow()
+			list[rear] = value
+			rear = (rear + 1) % maxCount
+			count = count + 1
+
+	__Grow:
+		#Params@arr [deltaCount: Number]
+		deltaCount = _args[0]
+		newList = CreateList()
+		if deltaCount == null
+			maxCount = maxCount * 2
+		else	
+			maxCount = maxCount + deltaCount
+		i = front
+		j = 0
+		while i != rear
+			newList[j] = list[i]
+			j = j + 1
+			i = (i + 1) % maxCount
+		list = newList
+		front = 0
+		rear = j

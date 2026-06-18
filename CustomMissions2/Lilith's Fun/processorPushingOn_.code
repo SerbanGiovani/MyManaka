@@ -1,0 +1,23 @@
+processorPushingOn_:
+	#Abandoned
+	#Note Event: List must have:
+	# vector: List
+	# common： List see 'event.common'
+	timer = 0
+	start:
+		#Required
+		#Params@arr event: List
+		timer = 0
+
+	end:
+		#Required
+		#Params@arr event: List
+
+	update:
+		#Required
+		#Params@arr event: List
+		event = _args[0]
+		vec = event.vector
+		detaVec = Vector3Scale(vec, _timediff)
+		currentPos = _state.Position
+		SetPlayerPosition(x = (detaVec.x + currentPos.x), y = currentPos.y, z = (detaVec.z + currentPos.z))

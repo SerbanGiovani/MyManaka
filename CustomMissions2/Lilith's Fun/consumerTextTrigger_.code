@@ -1,0 +1,204 @@
+consumerTextTrigger_:
+	timer = 0
+	interval = 0.35
+	
+	nameFlags = CreateList()
+	nameBoards = CreateList()
+	nameBoards0 = CreateList()
+	
+	
+	descriptionBoards = CreateList()
+	
+	timerFlags = CreateList()
+	timerBoards = CreateList()
+	timerBoards0 = CreateList()
+	timerColor1 = Color(0.988235, 0.056078, 0.095294)
+	timerColor0 = Color(0.421569, 0.971176, 0.390588)
+	
+	welcomePromptBoard = null
+	welcomeColor = Color(0.910000, 0.200000, 0.850000)
+	
+	startPromptBoard = null
+	startPromptColor = Color(0.35, 0.35, 0.90)
+	
+	annoyPromptBoard = null
+	annoyPromptColor = Color(1.000000, 0, 0)
+	
+	setFlushInterval:
+		#Params@arr newFlushInterval: Number
+		newFlushInterval = _args[0]
+		if newFlushInterval != null && (newFlushInterval >= 0) 
+			flushInterval = newFlushIntervalflushInterval
+
+	trigger:
+		#Required
+		#Params@arr index: Number, event: List
+		index = _args[0]
+		event = _args[1]
+		__triggerName(index, event)
+		__triggerDiscription(index, event)
+
+	flush:
+		#Params@arr index: Number, remainTime: Number
+		if timer > interval
+			index = _args[0]
+			remainTime = _args[1]
+			string = ": " + remainTime
+			string = __decorate(index, string)
+			if timerBoards[index] == null
+				timerBoards[index] = __createTimerBoard()
+			if timerBoards0[index] == null
+				timerBoards0[index] = __createTimerBoard()
+			color = timerColor0
+			if remainTime <= 10
+				color = timerColor1
+			
+			d = (-1)
+			
+			timerFlags[index] = !timerFlags[index]
+			if timerFlags[index]
+				timerBoards0[index].Clear()
+				timerBoards[index].Add(text = string, duration = d, facecolor = color)
+			else
+				timerBoards[index].Clear()
+				timerBoards0[index].Add(text = string, duration = d, facecolor = color)
+			timer = 0
+		timer = timer + _timediff
+
+	promptWelcome:
+		if welcomePromptBoard == null
+			welcomePromptBoard = __createPromptBoard()
+		welcomePromptBoard.Add(text = RandomString("Welcome", StringsPool1), duration = (-1), facecolor = welcomeColor)
+
+	promptStart:
+		if startPromptBoard == null
+			startPromptBoard = __createPromptBoard()
+		startPromptBoard.Add(text = RandomString("StartPrompt", StringsPool1), duration = (-1), facecolor = startPromptColor)
+
+	promptAnnoy:
+		if annoyPromptBoard == null
+			annoyPromptBoard = __createAnnoyPromptBoard()
+			string = RandomString("Annoyed", StringsPool1)
+		annoyPromptBoard.Add(text = string, duration = 15, facecolor = annoyPromptColor)
+
+	clearStartPrompt:
+		if startPromptBoard != null
+			startPromptBoard.Clear()
+
+	clearWelcomePrompt:
+		if welcomePromptBoard != null
+			welcomePromptBoard.Clear()
+
+	clearAnnoyPrompt:
+		if annoyPromptBoard != null
+			annoyPromptBoard.Clear()
+
+	clearEvents:
+		count = nameBoards.Count()
+		i = 0
+		while i < count
+			descriptionBoard = descriptionBoards[i]
+			if descriptionBoard != null
+				descriptionBoard.Clear()
+			nameBoard = nameBoards[i]
+			if nameBoard != null
+				nameBoard.Clear()
+			nameBoard0 = nameBoards0[i]
+			if nameBoard0 != null
+				nameBoard0.Clear()
+			timerBoard = timerBoards[i]
+			if timerBoard != null
+				timerBoard.Clear()
+			timerBoard0 = timerBoards0[i]
+			if timerBoard0 != null
+				timerBoard0.Clear()
+			i += 1
+
+	clearDiscriptions:
+		count = descriptionBoards.Count()
+		i = 0
+		while i < count
+			descriptionBoard = descriptionBoards[i]
+			if descriptionBoard != null
+				descriptionBoard.Clear()
+			i += 1
+
+	__decorate:
+		#Params@arr index: Number, rawTextString: Number
+		#Returns decoratedTextString: String
+		index = _args[0]
+		string = _args[1]
+		i = 0
+		while i < index
+			string = "\n" + string
+			i = i + 1
+		_result = string
+
+	__triggerDiscription:
+		#Params@arr index: Number, event: List
+		index = _args[0]
+		event = _args[1]
+		descriptionBoard = descriptionBoards[index]
+		if descriptionBoard == null
+			descriptionBoard = __createDiscriptionBoard()
+			descriptionBoards[index] = descriptionBoard
+		string = __decorate(index, event.common.description)
+		descriptionBoards[index].Add(text = string, duration = event.common.delay, facecolor = event.common.descriptionFaceColor)
+
+	__triggerName:
+		#Params@arr index: Number, event: List
+		index = _args[0]
+		event = _args[1]
+		string = __decorate(index, event.common.name)
+		# nameBoards[index] = __createNameBoard()
+		if nameBoards[index] == null
+			nameBoards[index] = __createNameBoard()
+		if nameBoards0[index] == null
+			nameBoards0[index] = __createNameBoard()
+		nameFlags[index] = !nameFlags[index]
+		if nameFlags[index]
+			nameBoards0[index].Clear()
+			nameBoards[index].Add(text = string, duration = (-1), facecolor = event.common.nameFaceColor)
+		else
+			nameBoards[index].Clear()
+			nameBoards0[index].Add(text = string, duration = (-1), facecolor = event.common.nameFaceColor)
+
+	__createNameBoard:
+		#Returns textBoard: Object
+		nameBoard = CreateText()
+		nameBoard.SetAnchor(0, 0.23)
+		nameBoard.SetAlignment("TopLeft")
+		nameBoard.SetSize(30)
+		_result = nameBoard
+
+	__createDiscriptionBoard:
+		#Returns descriptionBoard: Object
+		descriptionBoard = CreateText()
+		descriptionBoard.SetAnchor(0.5, 0.85)
+		descriptionBoard.SetAlignment("Top")
+		descriptionBoard.SetSize(27)
+		_result = descriptionBoard
+
+	__createPromptBoard:
+		#Returns promptBoard: Object
+		wboard = CreateText()
+		wboard.SetAnchor(0.5, 0.85)
+		wboard.SetAlignment("Top")
+		wboard.SetSize(35)
+		_result = wboard
+
+	__createAnnoyPromptBoard:
+		#Returns annoyPromptBoard: Object
+		wboard = CreateText()
+		wboard.SetAnchor(0.5, 0.72)
+		wboard.SetAlignment("Top")
+		wboard.SetSize(50)
+		_result = wboard
+
+	__createTimerBoard:
+		#Returns timerBoard: Object
+		timerBoard = CreateText()
+		timerBoard.SetAnchor(0.2, 0.23)
+		timerBoard.SetAlignment("TopLeft")
+		timerBoard.SetSize(30)
+		_result = timerBoard

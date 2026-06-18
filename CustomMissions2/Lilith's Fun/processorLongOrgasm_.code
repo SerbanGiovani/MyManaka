@@ -1,0 +1,38 @@
+processorLongOrgasm_:
+	#Note Event: List must have:
+	# common: List see 'event.common'
+	waitingForOrgasm = false
+	wasOrgasm = false
+
+	start:
+		#Required
+		#Params@arr event: event: List
+		waitingForOrgasm = false
+		wasOrgasm = _state.Orgasm
+
+	end:
+		#Required
+		#Params@arr event: List
+		waitingForOrgasm = false
+		wasOrgasm = false
+
+	update:
+		#Required
+		#Params@arr event: List
+		if waitingForOrgasm == null
+			waitingForOrgasm = false
+		if wasOrgasm == null
+			wasOrgasm = false
+
+		orgasmStarted = _state.Orgasm && !wasOrgasm
+
+		if waitingForOrgasm
+			if orgasmStarted
+				waitingForOrgasm = false
+		else
+			if !_state.Orgasm && GetEcstasy() < 0.98
+				SetEcstasy(1.0)
+				waitingForOrgasm = true
+				Log("[Lilith's Fun] LongOrgasm trigger.")
+
+		wasOrgasm = _state.Orgasm

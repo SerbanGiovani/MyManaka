@@ -1,0 +1,33 @@
+eventDecorator_:
+	#Note Event: List must have:
+	# common： List see 'event.common'
+	name = "[Unamed]"
+	description = "[empty]"
+	duration = 5
+	delay = 5
+	requirdProcesser = "processerRest"
+	nameFaceColor = Color(0.988235, 0.200588, 0.554314)
+	descriptionFaceColor = Color(1.000000, 0.102157, 0.688824)
+	decorate:
+		#Params@arr event: List
+		#Returns decoratedEvent: Lsit
+		event = _args[0]
+		if event == null
+			event = CreateLsit()
+		if event.common == null
+			event.common = CreateLsit()
+		if event.common.name == null || (event.common.name == "")
+			event.common.name = name
+		if event.common.description == null || (event.common.description == "")
+			event.common.description = description
+		if event.common.duration == null
+			event.common.duration = duration
+		if event.common.delay == null
+			event.common.delay = delay
+		if event.common.requiredProcesser == null || (event.common.requiredProcesser == "")
+			event.common.requiredProcesser = requiredProcesser
+		if event.common.nameFaceColor == null
+			event.common.nameFaceColor = nameFaceColor
+		if event.common.descriptionFaceColor == null
+			event.common.descriptionFaceColor = descriptionFaceColor
+		_result = event

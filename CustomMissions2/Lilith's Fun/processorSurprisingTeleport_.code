@@ -1,0 +1,44 @@
+processorSurprisingTeleport_:
+	#Note Event: List must have:
+	# interval: Number
+	# chance: Number
+	# common： List, see 'event.common'
+
+	stages = CreateThread("ArraySet")
+	stages.InsertList(Copy(Stages))
+	stages.Remove("Apart")
+	timer = 0
+	flag = false
+
+	start:
+		#Required
+		#Params@arr event: List
+		timer = 0
+
+	end:
+		#Required
+		#Params@arr event: List
+
+	update:
+		#Required
+		#Params@arr event: List
+		event = _args[0]
+		if timer >= event.interval
+			timer = 0
+			r = Random()
+			if r <= event.chance
+				flag = true
+				curStage = _state.Position.stage
+				stages.Remove(curStage)
+				rStage = stages.Random()
+				stages.Insert(curStage)
+				if _state.Sitting
+					SetAction("StandUp")
+				SetStage(rStage)
+		if _stagechanged & flag
+			flag = false
+			rPos = GetRandomPosition()
+			if rPos != null
+				SetPlayerPosition(x=rPos["x"], y=rPos["y"], z=rPos["z"], rx=0, ry=0, rz=0, rw=1)
+		timer = timer + _timediff
+

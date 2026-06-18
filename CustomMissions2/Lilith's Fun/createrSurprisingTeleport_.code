@@ -1,0 +1,20 @@
+createrSurprisingTeleport_:
+	#Note Event: List must have:
+	# interval: Number
+	# chance: Number
+	# common： List, see 'event.common'
+
+	create:
+		#Required
+		#Returns event: List
+		
+		event = CreateList()
+		event.common = CreateList()
+		event.common.requiredProcessor = "processorSurprisingTeleport"
+		event.common.name = StringsPool2.SurprisingTeleportString
+		event.common.description = RandomString("SurprisingTeleport", StringsPool0)
+		event.common.duration = 60
+		event.interval = Random(6, 9)
+		event.chance = Random(0.1, 0.16)
+		_result = event
+

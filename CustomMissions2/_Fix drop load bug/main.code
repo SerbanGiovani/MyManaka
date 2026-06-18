@@ -1,0 +1,7 @@
+i = 0
+while _state.DroppedItems[i] != null
+	item = _state.DroppedItems[i]
+	if item.Type == "HandcuffKey" || item.Type == "VibeRemocon"
+		if _state.Items[item.Type] > 0
+			DropItem(itemtype = item.Type, position = item.Position)
+	i = i + 1

@@ -1,0 +1,15 @@
+createrDropCoat_:
+	#Note Event: List must have:
+	# common： List see 'event.common'
+
+	create:
+		#Required
+		#Returns event: List
+		event = CreateList()
+		event.common = CreateList()
+		event.common.requiredProcessor = "processorDropCoat"
+		event.common.name = StringsPool2.DropCoatString
+		event.common.description = RandomString("DropCoat", StringsPool0)
+		event.common.duration = 40
+		_result = event
+

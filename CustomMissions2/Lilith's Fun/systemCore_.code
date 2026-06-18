@@ -1,0 +1,169 @@
+systemCore_:
+	generaterLoop = null
+	consumerLoop = null
+	rewarderLoop = null
+	configChatterLoop = null
+	
+	runtimeLoop = null
+	
+	systemFacade = null
+
+	configChatter = null
+	rewarder = null
+	generater = null
+	consumer = null
+	runtime = null
+
+	reset:
+		
+		generaterLoop = null
+		consumerLoop = null
+		rewarderLoop = null
+		configChatterLoop = null
+		runtimeLoop = null
+		
+		configChatter = null
+		rewarder = null
+		generater = null
+		consumer = null
+		runtime = null
+		eventQueue = null
+
+	add:
+		#Params@key name: String, weight: Number, [isWhite: Bool], [hasAdjustor: Bool]
+		if isWhite == null
+			isWhite = false
+		if hasAdjustor == null
+			hasAdjustor = false
+		createrKey = "creater" + name
+		createrLabel = createrKey + "_"
+		processorKey = "processor" + name
+		processerLabel = processorKey + "_"
+		adjustorLabel = "adjustor" + name +"_"
+		
+		creater = CreateThread(createrLabel)
+		generater.addCreater(createrKey, creater, weight)
+		if isWhite
+			generater.addWhiteKey(createrKey)
+			consumer.addWhiteKey(processorKey)
+		if hasAdjustor
+			adjustor = CreateThread(adjustorLabel)
+			generater.addAdjustor(createrKey, adjustor)
+		processer = CreateThread(processerLabel)
+		consumer.addProcessor(processorKey, processer)
+		# Log("add "+processorKey)
+
+	remove:
+		#Params@arr name: String, onlyRemoveWhiteKey: Bool
+		name = _args[0]
+		onlyRemoveWhiteKey = _args[1]
+		if onlyRemoveWhiteKey == null
+			onlyRemoveWhiteKey = false
+		
+		if name != null
+			createrKey = "creater" + name
+			createrLabel = createrKey + "_"
+			processorKey = "processor" + name
+			processerLabel = processorKey + "_"
+			adjustorLabel = "adjustor" + name +"_"
+			
+			if !onlyRemoveWhiteKey
+				generater.removeCreater(createrKey)
+				generater.removeAdjustor(createrKey)
+				consumer.removeProcessor(processorKey)
+			
+			consumer.removeWhiteKey(processorKey)
+			generater.removeWhiteKey(createrKey)
+
+	setGeneraterThreshold:
+		#Params@arr eventsThreshold: Number, memoryThreshold: Number
+		eventsThreshold = _args[0]
+		memoryThreshold = _args[1]
+		if memoryThreshold < eventsThreshold
+			if generater.getMemoryThreshold() < memoryThreshold
+				generater.setEventsThreshold(eventsThreshold)
+				generater.setMemoryThreshold(memoryThreshold)
+			else
+				generater.setMemoryThreshold(memoryThreshold)
+				generater.setEventsThreshold(eventsThreshold)
+
+	start:
+		generaterLoop = generater.startLoop()
+		consumerLoop = consumer.startLoop()
+		rewarderLoop = rewarder.startLoop()
+		configChatterLoop = configChatter.startLoop()
+		runtimeLoop = runtime.startLoop()
+
+	init:
+		#Params@arr requestQueue: Object, eventQueue: Object
+		configChatter = CreateThread("configChatter_")
+		rewarder = CreateThread("rewarder_")
+		generater = CreateThread("generater_")
+		consumer = CreateThread("consumer_")
+		runtime = CreateThread("runtime_")
+		
+		eventQueue = _args[1]
+		requestQueue = _args[0]
+		Log("Lilith: event queue and request queue are injected!!")
+		
+		generater.setEventQueue(eventQueue)
+		consumer.setEventQueue(eventQueue)
+		consumer.setSkipCondition(CreateThread("skipCondition_"))
+		consumer.setAnnoyedCondition(CreateThread("annoyedCondition_"))
+		rewarder.setSkipCondition(CreateThread("rewardSkipCondition_"))
+		rewarder.setFailureCalcCondition(CreateThread("failureCalcCondition_"))
+		rewarder.setPunishCondition(CreateThread("punishCondition_"))
+		configChatter.initPages(requestQueue)
+		Log("Lilith: System has been established!!")
+		
+		systemFacade = CreateThread("systemFacade_")
+		systemFacade.init(configChatter, rewarder, generater, consumer, runtime)
+		Log("Lilith: System facade has been created!!")
+
+	
+	setMaxDisplayCount:
+		#Params@arr maxDisplayCount: Number
+		consumer.setMaxDisplayCount(_args[0])
+
+	getSystemFacade:
+		#Returns systemFacade: Object
+		_result = systemFacade
+
+	forceFailureCalc:
+		systemFacade.forceFailureCalc()
+
+	forcePunishmentCalc:
+		systemFacade.forcePunishmentCalc()
+
+	forceSuccessCalc:
+		systemFacade.forceSuccessCalc()
+
+	continue:
+		systemFacade.continue()
+	
+	pause:
+		systemFacade.pause()
+
+	startEvent:
+		systemFacade.startEvent()
+
+	pauseEvent:
+		systemFacade.pauseEvent()
+
+	startReward:
+		systemFacade.startReward()
+
+	pauseReward:
+		systemFacade.pauseReward()
+
+	stop:
+		systemFacade.stop()
+
+	configChatterOpened:
+		#Returns isConfigChatterOpened: Bool
+		_result = systemFacade.configChatterOpened()
+
+	correctReward:
+		#Params@key [uRpMax: Number], [uRpDeltaCorrect: Number], [baseRpCorrect: Number], [multiplierCorrect: Number]
+		systemFacade.correctReward(uRpMax = uRpMax, uRpDeltaCorrect = uRpDeltaCorrect, baseRpCorrect = baseRpCorrect, multiplierCorrect = multiplierCorrect)
+

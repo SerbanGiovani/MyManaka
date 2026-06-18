@@ -1,0 +1,70 @@
+systemFacade_:
+
+	
+	configChatter = null #Required
+	rewarder = null #Required
+	generater = null #Required
+	consumer = null #Required
+	runtime = null #Required
+	
+	init:
+		#Params@arr configChatter: Object, rewarder: Object, generater: Object, consumer: Object, runtime: Object
+		configChatter = _args[0]
+		rewarder = _args[1]
+		generater = _args[2]
+		consumer = _args[3]
+		runtime = _args[4]
+
+	forceFailureCalc:
+		rewarder.forceFailureCalc()
+
+	forcePunishmentCalc:
+		rewarder.forcePunishmentCalc()
+
+	forceSuccessCalc:
+		rewarder.forceSuccessCalc()
+
+	continue:
+		consumer.setBlockFlag(false)
+		rewarder.setBlockFlag(false)
+		runtime.setBlockFlag(false)
+	
+	pause:
+		consumer.setBlockFlag(true)
+		rewarder.setBlockFlag(true)
+		runtime.setBlockFlag(true)
+
+	startEvent:
+		consumer.setBlockFlag(false)
+		runtime.setBlockFlag(false)
+
+	pauseEvent:
+		consumer.setBlockFlag(true)
+		runtime.setBlockFlag(true)
+
+	startReward:
+		rewarder.setBlockFlag(false)
+
+	pauseReward:
+		rewarder.setBlockFlag(true)
+
+	stop:
+		consumer.stop()
+		rewarder.setBlockFlag(true)
+		runtime.stop()
+		runtime.clear()
+
+	configChatterOpened:
+		#Returns isConfigChatterOpened: Bool
+		_result = configChatter.opened()
+
+	correctReward:
+		#Params@key [uRpMax: Number], [uRpDeltaCorrect: Number], [baseRpCorrect: Number], [multiplierCorrect: Number]
+		if uRpMax != null
+			rewarder.setURpMax(uRpMax)
+		if uRpDeltaCorrect != null
+			rewarder.correctURpDelta(uRpDeltaCorrect)
+		if multiplierCorrect != null
+			rewarder.correctMultiplier(multiplierCorrect)
+		if baseRpCorrect != null
+			rewarder.correctBaseRp(baseRpCorrect)

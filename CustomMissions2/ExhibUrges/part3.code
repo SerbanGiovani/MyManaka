@@ -1,0 +1,1393 @@
+part3 = CreateThread("part3")
+
+part3:
+	thread = _this
+	
+	missionpanel = CreateMissionPanel()
+	mp:
+		if text == null
+			missionpanel.SetVisible(false)
+		else
+			missionpanel.SetVisible(true)
+			missionpanel.SetText(text)
+		if progress == null
+			missionpanel.SetGaugeVisible(false)
+		else
+			missionpanel.SetGaugeVisible(true)
+			missionpanel.GetGaugeProgress(progress)
+		if rp == null
+			rp = ""
+		else
+			missionpanel.SetRPText(rp)
+	
+	cameraClick = CreateAudio("sound\\camera.ogg")
+	clothesFold = CreateAudio("sound\\clothes.ogg")
+	thugEjac = CreateAudio("sound\\ejac.ogg")
+	gaggedOof = CreateAudio("sound\\gag1.ogg")
+	gaggedHmpf = CreateAudio("sound\\gag2.ogg")
+	cumSwallow = CreateAudio("sound\\swallow.ogg")
+	boobGrope = CreateAudio("sound\\squeak.ogg")
+	
+	zMeiMeet = CreateList(x=66.4,y=50.01,z=26.2,r=0.5)
+	zMeiSpawn = CreateList(x=65.8,y=50.05,z=26.8,r=0.5)
+	zGiveMaid = CreateList(x=61.7,y=50.42,z=28.7,r=0.5)
+	zGetMaid = CreateList(x=61.8,y=50.48,z=29.6,r=0.5)
+	zMeiSpeech = CreateList(x=35.3,y=50.07,z=41.8,r=6)
+	zMeiIdle = CreateList(x=33.2,y=50.07,z=44.8,r=0.5)
+	zVending = CreateList(x=35.1,y=50.07,z=43.8,r=2)
+	zWipeFloor = CreateList(x=37.7,y=50.07,z=38.3,r=0.5)
+	zBehind = CreateList(x=34.4,y=50.02,z=45.4,r=0.5)
+	
+	zBlowjob = CreateList(x=24.7,y=50.50,z=36.3,r=0.5)
+	zBlowThug = CreateList(x=24,y=50.44,z=36.3,r=0.5)
+	zMeiCopSpawn = CreateList(x=31.9,y=50.27,z=34.4,r=0.5)
+	zMeiCopArrest = CreateList(x=24.9,y=50.58,z=35.3,r=0.5)
+	zThugReturn = CreateList(x=23.9,y=50.03,z=41.9,r=0.5)
+	zThugRape = CreateList(x=25.1,y=50.30,z=37.2,r=0.5)
+	
+	zSitA = CreateList(x=30.30,y=50.07,z=41.30,r=0.8) #Waypoint 18
+	zSitB = CreateList(x=30.30,y=50.07,z=39.95,r=0.8) #Waypoint 20
+	zSitC = CreateList(x=31.50,y=50.07,z=38.80,r=0.8) #Waypoint 48
+	zSitD = CreateList(x=32.80,y=50.07,z=38.80,r=0.8) #Waypoint 47
+	zSitE = CreateList(x=38.35,y=50.07,z=38.20,r=0.8) #Waypoint 30
+	zSitF = CreateList(x=40.95,y=50.07,z=38.20,r=0.8) #Waypoint 45
+	
+	mei = null
+	meiListener = null
+	patrons = CreateList()
+	
+
+	cp1:
+		CanGameOver(false)
+		UnequipAllCosplay()
+		EquipCosplay("m_cosplay_general_upper_race_pants","m_cosplay_general_leg_stocking","m_cosplay_suit_chic_shirt","m_cosplay_suit_chic_jacket","m_cosplay_suit_chic_skirt","m_cosplay_suit_chic_shoes")
+		DropItem(itemtype="Coat", stage="Apart",x=3.4,y=0,z=2.5)
+		SetStage("Park",daytime=true)
+		
+		listener = CreateListenerLocal("wait_listener",duration=1,nextcp="cp2")
+		#listener = CreateListenerLocal("wait_listener",duration=1,nextcp="test")
+	
+	test:
+		mei = CreateMei(position=Vector(zMeiSpeech.x, zMeiSpeech.y, zMeiSpeech.z), rotation=Quaternion(0, 0.99, 0, 0.08))
+		MoveNPC(npc=mei, coord=Vector(zMeiSpeech.x, zMeiSpeech.y, zMeiSpeech.z))
+		UnequipAllCosplay()
+		#EquipCosplay("m_cosplay_maid_choker","m_cosplay_maid_onepiece","m_cosplay_maid_sleeve","m_cosplay_maid_apron","m_cosplay_maid_ribbon","m_cosplay_maid_stocking","m_cosplay_maid_ankle_belt","m_cosplay_maid_shoes","m_cosplay_general_upper_race_pants")
+		EquipCosplay("m_cosplay_general_upper_race_pants","m_cosplay_maid_choker","m_cosplay_maid_sleeve","","m_cosplay_maid_apron","m_cosplay_maid_ribbon","m_cosplay_maid_stocking","m_cosplay_maid_shoes","m_cosplay_suit_chic_skirt","m_cosplay_suit_luxe_tops")
+		SetPlayerPosition(position=Vector(zMeiSpeech.x-1,zMeiSpeech.y,zMeiSpeech.z), rotation=Quaternion(0.00000, 0.99990, 0.00000, 0.01396))
+		
+		patrons.deliv = CreateNPC("NewMale", position=Vector(zSitA.x, zSitA.y, zSitA.z), body=4, face=2, hair=4)
+		patrons.deliv.Smartphone(false)
+		patrons.deliv.Headset(false)
+		patrons.deliv.SkipStrangeness(true)
+		patrons.deliv.AddWaypoint(18)
+		patrons.deliv.AddWaypoint(18)
+		
+		patrons.girl = CreateNPC("NewFemale", position=Vector(zSitB.x, zSitB.y, zSitB.z), body=4, face=6, hair=6)
+		patrons.girl.Smartphone(false)
+		patrons.girl.Headset(false)
+		patrons.girl.SkipStrangeness(true)
+		patrons.girl.AddWaypoint(20)
+		patrons.girl.AddWaypoint(20)
+		
+		patrons.guy = CreateNPC("PreviousMale", position=Vector(zSitC.x, zSitC.y, zSitC.z), body=6, face=0, hair=1)
+		patrons.guy.Smartphone(false)
+		patrons.guy.Headset(false)
+		patrons.guy.SkipStrangeness(true)
+		patrons.guy.Stopped(true)
+		patrons.guy.AddWaypoint(48)
+		patrons.guy.AddWaypoint(48)
+		
+		patrons.woman = CreateNPC("NewFemale", position=Vector(zSitD.x, zSitD.y, zSitD.z), body=3, face=3, hair=1)
+		patrons.woman.Smartphone(false)
+		patrons.woman.Headset(false)
+		patrons.woman.SkipStrangeness(true)
+		patrons.woman.Stopped(true)
+		patrons.woman.AddWaypoint(47)
+		patrons.woman.AddWaypoint(47)
+		
+		patrons.thug = CreateNPC("PreviousMale", position=Vector(zSitE.x, zSitE.y, zSitE.z), body=10, face=0, hair=3)
+		patrons.thug.Smartphone(false)
+		patrons.thug.Headset(false)
+		patrons.thug.SkipStrangeness(true)
+		patrons.thug.AddWaypoint(30)
+		patrons.thug.AddWaypoint(30)
+		
+		#thread.Goto("cp23")
+		UnequipCosplay("m_cosplay_suit_luxe_tops","m_cosplay_general_upper_race_pants","m_cosplay_suit_chic_skirt")
+		thread.Goto("cp150")
+		#patrons.thug.Respawn()
+		#patrons.thug.Warp(position=Vector(zBlowThug.x,zBlowThug.y,zBlowThug.z))
+		#SetPlayerPosition(position=Vector(zBlowjob.x,zBlowjob.y,zBlowjob.z), rotation=Quaternion(0.00000, 0.99990, 0.00000, 0.01396))
+		#thread.Goto("cp178")
+	
+	cp2:
+		mei = CreateMei(position=Vector(zMeiSpawn.x, zMeiSpawn.y, zMeiSpawn.z), rotation=Quaternion(0, 0.9, 0, 0.44))
+		MoveNPC(npc=mei, coord=Vector(zMeiSpawn.x, zMeiSpawn.y, zMeiSpawn.z))
+		mp(text="Go talk to Mei")
+		area = CreateArea(type="sphere",stage="Park",x=zMeiMeet.x,y=zMeiMeet.y,z=zMeiMeet.z,r=zMeiMeet.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp3")
+	
+	cp3:
+		subtitleMei.Add(text="\"Hi Manaka!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zMeiMeet.x,y=zMeiMeet.y,z=zMeiMeet.z,r=zMeiMeet.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp4")
+	
+	cp4:
+		subtitle.Add(text="\"Hi Mei. So, what's today's plan?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zMeiMeet.x,y=zMeiMeet.y,z=zMeiMeet.z,r=zMeiMeet.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp5")
+	
+	cp5:
+		subtitleMei.Add(text="\"I'll show you! Follow me!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zMeiMeet.x,y=zMeiMeet.y,z=zMeiMeet.z,r=zMeiMeet.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp6")
+	
+	cp6:
+		mp(text="Follow Mei")
+		MoveNPC(npc=mei, coord=Vector(62, 50.2, 35), thread=thread, nextcp="cp7")
+		meiListener = CreateListener("npc_lead_listener",npc=mei,distance=4)
+	
+	cp7:
+		mp(text="Follow Mei")
+		MoveNPC(npc=mei, coord=Vector(zGiveMaid.x, zGiveMaid.y, zGiveMaid.z), rotation=Quaternion(0, 0.02, 0, 0.99), thread=thread, nextcp="cp8")
+	
+	################################################## UNIFORM ##################################################
+	cp8:
+		meiListener = null
+		subtitleMei.Add(text="\"So, I found a place where people go for a drink. I was thinking you could serve them some drinks, dressed as a maid.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp9")
+	
+	cp9:
+		subtitle.Add(text="\"That... doesn't seem too bad.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp10")
+	
+	cp10:
+		subtitleMei.Add(text="\"Then I'll start a rumor that the waitress will show them her boobs if they ask, as part of the service.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp11")
+	
+	cp11:
+		subtitle.Add(text="\"Of course...\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp12")
+	
+	cp12:
+		subtitleMei.Add(text="\"So, what will it be? Are you up for it?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp13")
+	
+	cp13:
+		subtitle.Add(text="(Well... I'm already here... and it does seem... intriguing...)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp14")
+	
+	cp14:
+		subtitle.Add(text="\"I'm going to regret it but... fine...\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp15")
+	
+	cp15:
+		subtitleMei.Add(text="\"Great! Here's your uniform, get changing!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp16")
+	
+	cp16:
+		SetAction("ConbiniTakeGoods")
+		subtitle.Add(text="\"What, right here?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp17")
+	
+	cp17:
+		subtitleMei.Add(text="\"We're away from the road, right? Come on, chop chop!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp18")
+	
+	cp18:
+		subtitle.Add(text="(Sigh.)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　[Change clothes] ")
+		listener = CreateListenerLocal("int_listener",nextcp="cp19")
+	
+	cp19:
+		UnequipAllCosplay()
+		clothesFold.Play()
+		listener = CreateListenerLocal("wait_listener",duration=1,nextcp="cp20")
+	
+	cp20:
+		#EquipCosplay("m_cosplay_maid_choker","m_cosplay_maid_onepiece","m_cosplay_maid_sleeve","m_cosplay_maid_apron","m_cosplay_maid_ribbon","m_cosplay_maid_stocking","m_cosplay_maid_ankle_belt","m_cosplay_maid_shoes","m_cosplay_general_upper_race_pants")
+		EquipCosplay("m_cosplay_general_upper_race_pants","m_cosplay_maid_choker","m_cosplay_maid_sleeve","","m_cosplay_maid_apron","m_cosplay_maid_ribbon","m_cosplay_maid_stocking","m_cosplay_maid_shoes","m_cosplay_suit_chic_skirt","m_cosplay_suit_luxe_tops")
+		clothesFold.Play()
+		subtitle.Add(text="\"There, good to go.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp21")
+	
+	cp21:
+		subtitleMei.Add(text="\"Awesome! Follow me, I'll introduce you.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp22")
+	
+	cp22:
+		patrons.deliv = CreateNPC("NewMale", position=Vector(zSitA.x, zSitA.y, zSitA.z), body=4, face=2, hair=4)
+		patrons.deliv.Smartphone(false)
+		patrons.deliv.Headset(false)
+		patrons.deliv.SkipStrangeness(true)
+		patrons.deliv.AddWaypoint(18)
+		patrons.deliv.AddWaypoint(18)
+		
+		patrons.girl = CreateNPC("NewFemale", position=Vector(zSitB.x, zSitB.y, zSitB.z), body=4, face=6, hair=6)
+		patrons.girl.Smartphone(false)
+		patrons.girl.Headset(false)
+		patrons.girl.SkipStrangeness(true)
+		patrons.girl.AddWaypoint(20)
+		patrons.girl.AddWaypoint(20)
+		
+		patrons.guy = CreateNPC("PreviousMale", position=Vector(zSitC.x, zSitC.y, zSitC.z), body=6, face=0, hair=1)
+		patrons.guy.Smartphone(false)
+		patrons.guy.Headset(false)
+		patrons.guy.SkipStrangeness(true)
+		patrons.guy.AddWaypoint(48)
+		patrons.guy.AddWaypoint(48)
+		
+		patrons.woman = CreateNPC("NewFemale", position=Vector(zSitD.x, zSitD.y, zSitD.z), body=3, face=3, hair=1)
+		patrons.woman.Smartphone(false)
+		patrons.woman.Headset(false)
+		patrons.woman.SkipStrangeness(true)
+		patrons.woman.AddWaypoint(47)
+		patrons.woman.AddWaypoint(47)
+		
+		patrons.thug = CreateNPC("PreviousMale", position=Vector(zSitE.x, zSitE.y, zSitE.z), body=10, face=0, hair=3)
+		patrons.thug.Smartphone(false)
+		patrons.thug.Headset(false)
+		patrons.thug.SkipStrangeness(true)
+		patrons.thug.AddWaypoint(30)
+		patrons.thug.AddWaypoint(30)
+		
+		mp(text="Follow Mei")
+		MoveNPC(npc=mei, coord=Vector(zMeiSpeech.x, zMeiSpeech.y, zMeiSpeech.z), rotation=Quaternion(0, 0.99, 0, 0.08), thread=thread, nextcp="cp23")
+		meiListener = CreateListener("npc_lead_listener",npc=mei,distance=4)
+	
+	################################################## ARRIVAL ##################################################
+	cp23:
+		meiListener = null
+		subtitleMei.Add(text="\"Ladies and gentlemen! Your attention please!\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=1, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp24")
+		intArea2 = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		intArea3 = CreateInteractArea(type="sphere",stage="Park",x=zBlowThug.x,y=zBlowThug.y,z=zBlowThug.z,r=zBlowThug.r, text="　next2 ▼")
+		
+	
+	cp24:
+		subtitle.Add(text="*You see people raising their heads to see what Mei wants.*")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=1, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp25")
+	
+	cp25:
+		subtitleMei.Add(text="\"Since you often get up to get a drink from the machine, we brought this charming waitress to assist you!\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=1, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp26")
+	
+	cp26:
+		subtitleMei.Add(text="\"Feel free to ask her for a drink, and to compensate her accordingly... Maybe with an extra tip if she's nice enough!\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=1, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp27")
+	
+	cp27:
+		subtitleMind.Add(text="(What does that even mean..?)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=1, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp28")
+	
+	cp28:
+		subtitleMei.Add(text="\"You're up!\" *Mei taps your shoulder, than moves out of the way.*")
+		MoveNPC(npc=mei, coord=Vector(zMeiIdle.x, zMeiIdle.y, zMeiIdle.z), rotation=Quaternion(0, 0.99, 0, 0.03))
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=1, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp29")
+	
+	cp29:
+		mp(text="Wait for someone to call you")
+		area = CreateArea(type="sphere",stage="Park",x=zMeiSpeech.x,y=zMeiSpeech.y,z=zMeiSpeech.z,r=zMeiSpeech.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_listener",maxduration=5,nextcp="cp30")
+	
+	################################################## WOMAN ##################################################
+	cp30:
+		subtitleWoman.Add(text="\"Excuse me?\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=1, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp31")
+	
+	cp31:
+		mp(text="Go see what the woman wants")
+		area = CreateArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp32")
+	
+	cp32:
+		subtitle.Add(text="\"Did you call for me?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp33")
+	
+	cp33:
+		subtitleWoman.Add(text="\"Would you get me a soda, please?\"\n*She hands you some money.*")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=1, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp34")
+	
+	cp34:
+		subtitle.Add(text="\"Of course!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp35")
+	
+	cp35:
+		mp(text="Go get it at the machine")
+		area = CreateArea(type="sphere",stage="Park",x=zMeiSpeech.x,y=zMeiSpeech.y,z=zMeiSpeech.z,r=zMeiSpeech.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[Action_UseBuyMachine]")
+		listener = CreateListenerLocal("basic_listener",maxduration=7,nextcp="cp36")
+	
+	cp36:
+		mp(text="Bring the woman her drink")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　[Give the drink] ")
+		listener = CreateListenerLocal("int_listener",nextcp="cp37")
+	
+	cp37:
+		mp()
+		SetAction("ConbiniTakeGoods")
+		subtitle.Add(text="\"Here you are.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp38")
+	
+	cp38:
+		subtitleWoman.Add(text="\"Thank you! I could get used to this kind of service.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp39")
+	
+	################################################## THUG ##################################################
+	cp39:
+		subtitleThug.Add(text="\"Hey, waitress! Over here!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp40")
+	
+	cp40:
+		mp(text="Go see what the man wants")
+		area = CreateArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp41")
+	
+	cp41:
+		subtitle.Add(text="\"Yes?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp42")
+	
+	cp42:
+		subtitleThug.Add(text="\"I'll have a beer, sweetie.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp43")
+	
+	cp43:
+		subtitleMind.Add(text="(I'll take multiple drinks at once this time, so I don't have to go back to the machine every time.)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp44")
+	
+	cp44:
+		mp(text="Go get a beer at the machine")
+		area = CreateArea(type="sphere",stage="Park",x=zVending.x,y=zVending.y,z=zVending.z,r=zVending.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp45")
+	
+	cp45:
+		mp(text="Go get a beer at the machine")
+		MoveNPC(npc=mei, coord=Vector(zMeiSpeech.x, zMeiSpeech.y, zMeiSpeech.z), rotation=Quaternion(0, 0.99, 0, 0.08))
+		area = CreateArea(type="sphere",stage="Park",x=zVending.x,y=zVending.y,z=zVending.z,r=zVending.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[Action_UseBuyMachine]")
+		listener = CreateListenerLocal("basic_listener",maxduration=7,nextcp="cp46")
+	
+	cp46:
+		subtitleMei.Add(text="\"By the way, I forgot a small detail in my last announcement.\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=1.5, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp47")
+	
+	cp47:
+		subtitleMind.Add(text="(Uh oh...)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=1.5, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp48")
+	
+	cp48:
+		subtitleMei.Add(text="\"As part of the service, you may ask the waitress to show you her breasts. She won't say no, so be sure to tip nicely!\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=1.5, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp49")
+	
+	cp49:
+		subtitle.Add(text="*Various reactions welcome Mei's latest statement.*")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=1.5, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp50")
+	
+	cp50:
+		mp(text="Bring the man his drink")
+		MoveNPC(npc=mei, coord=Vector(zMeiIdle.x, zMeiIdle.y, zMeiIdle.z), rotation=Quaternion(0, 0.99, 0, 0.03))
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　[Give the drink] ")
+		listener = CreateListenerLocal("int_listener",nextcp="cp51")
+	
+	cp51:
+		mp()
+		SetAction("ConbiniTakeGoods")
+		subtitle.Add(text="\"Here you are.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp52")
+	
+	cp52:
+		subtitleThug.Add(text="\"Thanks, sweetie. Say, I think I heard something good lately... How about you earn yourself a tip?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp53")
+	
+	cp53:
+		subtitleMind.Add(text="(Here we are... I can't back off, Mei already said that I wouldn't refuse...)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp54")
+	
+	cp54:
+		subtitleMind.Add(text="(Beside, he looks like a thug. I wouldn't want to anger him...)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp55")
+	
+	cp55:
+		subtitleThug.Add(text="\"So..?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp56")
+	
+	cp56:
+		subtitleMind.Add(text="(He's growing restless. I can't back off...)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　[Take off your top] ")
+		listener = CreateListenerLocal("int_listener",nextcp="cp57")
+	
+	cp57:
+		SetAction("TakeOffBra")
+		listener = CreateListenerLocal("wait_listener",duration=2,nextcp="cp58")
+	
+	cp58:
+		UnequipCosplay("m_cosplay_suit_luxe_tops")
+		clothesFold.Play()
+		mp(text="Let the man ogle your boobs")
+		area = CreateArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[Exposed_Upper]")
+		listener = CreateListenerLocal("basic_listener",maxduration=10,nextcp="cp59")
+	
+	cp59:
+		subtitleThug.Add(text="\"Damn fine tits, girl. Here's your tip.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp60")
+	
+	cp60:
+		SetAction("ConbiniTakeGoods")
+		subtitle.Add(text="\"Er... Thank you...\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp61")
+	
+	cp61:
+		subtitleMind.Add(text="(Now that I think about it, I should have put my top back on *before* taking the money.)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　[Put your top back on] ")
+		listener = CreateListenerLocal("int_listener",nextcp="cp62")
+	
+	cp62:
+		SetAction("TakeOnBra")
+		listener = CreateListenerLocal("wait_listener",duration=0.8,nextcp="cp63")
+	
+	cp63:
+		EquipCosplay("m_cosplay_suit_luxe_tops")
+		clothesFold.Play()
+		subtitle.Add(text="\"Is there anything else?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp64")
+	
+	cp64:
+		subtitleThug.Add(text="\"Now for now, sweetie. Have fun.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp65")
+		
+	################################################## GIRL ##################################################
+	cp65:
+		subtitleGirl.Add(text="\"Hmm, miss? If you please?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitB.x,y=zSitB.y,z=zSitB.z,r=zSitB.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp66")
+	
+	cp66:
+		mp(text="Go see what the girl wants")
+		area = CreateArea(type="sphere",stage="Park",x=zSitB.x,y=zSitB.y,z=zSitB.z,r=zSitB.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp67")
+	
+	cp67:
+		subtitle.Add(text="\"Yes?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitB.x,y=zSitB.y,z=zSitB.z,r=zSitB.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp68")
+	
+	cp68:
+		subtitleGirl.Add(text="\"Hum, can I have a soda too, please?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitB.x,y=zSitB.y,z=zSitB.z,r=zSitB.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp69")
+	
+	cp69:
+		subtitle.Add(text="\"I have one one me. Here.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitB.x,y=zSitB.y,z=zSitB.z,r=zSitB.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp70")
+	
+	cp70:
+		SetAction("ConbiniTakeGoods")
+		subtitleGirl.Add(text="\"Thanks, hum... Can I see your breasts too? I'm curious...\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitB.x,y=zSitB.y,z=zSitB.z,r=zSitB.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp71")
+	
+	cp71:
+		subtitle.Add(text="\"Y-Yes...\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitB.x,y=zSitB.y,z=zSitB.z,r=zSitB.r, text="　[Take off your top] ")
+		listener = CreateListenerLocal("int_listener",nextcp="cp72")
+	
+	cp72:
+		SetAction("TakeOffBra")
+		listener = CreateListenerLocal("wait_listener",duration=2,nextcp="cp73")
+	
+	cp73:
+		UnequipCosplay("m_cosplay_suit_luxe_tops")
+		clothesFold.Play()
+		mp(text="Let the girl take a good look")
+		area = CreateArea(type="sphere",stage="Park",x=zSitB.x,y=zSitB.y,z=zSitB.z,r=zSitB.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[Exposed_Upper]")
+		listener = CreateListenerLocal("basic_listener",maxduration=5,nextcp="cp74")
+	
+	cp74:
+		subtitleMind.Add(text="(This is so embarrassing... And now the guys from both sides are looking too...)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitB.x,y=zSitB.y,z=zSitB.z,r=zSitB.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp75")
+	
+	################################################## GUY / TOP OFF ##################################################
+	cp75:
+		subtitleGuy.Add(text="\"Waitress? Since you're here.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitB.x,y=zSitB.y,z=zSitB.z,r=zSitB.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp76")
+	
+	cp76:
+		mp(text="Go see what the man wants")
+		area = CreateArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp77")
+	
+	cp77:
+		subtitle.Add(text="\"Yes, sir?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp78")
+	
+	cp78:
+		subtitleGuy.Add(text="\"I'll have a beer too, please.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp79")
+	
+	cp79:
+		subtitleMind.Add(text="(Damn, I don't have that one on me. Off to the machine I go.)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp80")
+	
+	cp80:
+		subtitle.Add(text="\"Of course. Let me just put my top back on...\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　[Put your top back on] ")
+		listener = CreateListenerLocal("int_listener",nextcp="cp81")
+	
+	cp81:
+		subtitleGuy.Add(text="\"Wait!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp82")
+	
+	cp82:
+		subtitleGuy.Add(text="\"You should just leave it off. Everyone is constantly asking you to remove it, after all.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp83")
+	
+	cp83:
+		subtitleMind.Add(text="(Wait, what?)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp84")
+	
+	cp84:
+		subtitleMind.Add(text="(That... kinda makes sense, actually. But, staying topless like that for the entire time...)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp85")
+	
+	cp85:
+		subtitleWoman.Add(text="\"I think it's a good idea. This will make things more interesting.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp86")
+	
+	cp86:
+		subtitleDeliv.Add(text="\"Yeah! Go for it!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp87")
+	
+	cp87:
+		MoveNPC(npc=mei, coord=Vector(zSitB.x, zSitB.y, zSitB.z+0.5))
+		subtitleMind.Add(text="(Aaah! What should I do?)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp88")
+	
+	cp88:
+		subtitleMei.Add(text="\"That's a good idea! Don't worry, I'll hold on to your top!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp89")
+	
+	cp89:
+		subtitleMei.Add(text="*Mei gives you a grin and a thumb up.*")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp90")
+	
+	cp90:
+		subtitleMind.Add(text="(Well, I guess it's settled then. I didn't even get a vote in the matter...)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp91")
+	
+	cp91:
+		MoveNPC(npc=mei, coord=Vector(zMeiIdle.x, zMeiIdle.y, zMeiIdle.z), rotation=Quaternion(0, 0.99, 0, 0.03))
+		subtitleMind.Add(text="(I suppose it's time to go fetch that guy a beer...)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp92")
+	
+	cp92:
+		mp(text="Go get a beer at the machine")
+		area = CreateArea(type="sphere",stage="Park",x=zMeiSpeech.x,y=zMeiSpeech.y,z=zMeiSpeech.z,r=zMeiSpeech.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[Action_UseBuyMachine]")
+		listener = CreateListenerLocal("basic_listener",maxduration=7,nextcp="cp93")
+	
+	cp93:
+		subtitleMind.Add(text="(I could feel their gaze on my back the entire time...)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=1.5, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp94")
+	
+	cp94:
+		mp(text="Bring the man his drink")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　[Give the drink] ")
+		listener = CreateListenerLocal("int_listener",nextcp="cp95")
+	
+	cp95:
+		mp()
+		SetAction("ConbiniTakeGoods")
+		subtitle.Add(text="\"Here you are.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp96")
+	
+	cp96:
+		subtitleGuy.Add(text="\"Thank you.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp97")
+	
+	cp97:
+		subtitleMind.Add(text="(He's staring right at my breasts...)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　[Give the drink] ")
+		listener = CreateListenerLocal("int_listener",nextcp="cp98")
+	
+	################################################## THUG JOKE ##################################################
+	cp98:
+		subtitleThug.Add(text="\"Hey, sweetie! Over here!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitC.x,y=zSitC.y,z=zSitC.z,r=zSitC.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp99")
+	
+	cp99:
+		mp(text="Go see what the man wants")
+		area = CreateArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp100")
+	
+	cp100:
+		subtitle.Add(text="\"Yes?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp101")
+	
+	cp101:
+		mp(text="...")
+		area = CreateArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[Exposed_Upper]")
+		listener = CreateListenerLocal("basic_listener",maxduration=6,nextcp="cp102")
+	
+	cp102:
+		subtitleMind.Add(text="(He's just staring at my breasts in silence.)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp103")
+	
+	cp103:
+		subtitleMind.Add(text="(Shit, all this attention is starting to get me real wet...)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp104")
+	
+	cp104:
+		subtitle.Add(text="\"Yes? How can I help you?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp105")
+	
+	cp105:
+		mp(text="...")
+		area = CreateArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[Exposed_Upper]")
+		listener = CreateListenerLocal("basic_listener",maxduration=4,nextcp="cp106")
+	
+	cp106:
+		subtitleThug.Add(text="\"Eer... I forgot\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp107")
+	
+	cp107:
+		subtitle.Add(text="\"...\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp108")
+	
+	cp108:
+		mp(text="Leave the grinning idiot behind")
+		area = CreateArea(type="sphere",stage="Park",x=zMeiSpeech.x,y=zMeiSpeech.y,z=zMeiSpeech.z,r=0.5)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp109")
+	
+	################################################## PANTIES OFF ##################################################
+	cp109:
+		subtitleMind.Add(text="(I'm completely soaked down there... I need to do an emergency check...)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zMeiSpeech.x,y=zMeiSpeech.y,z=zMeiSpeech.z,r=0.5, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp110")
+	
+	cp110:
+		mp(text="Hide behind the vending machines")
+		area = CreateArea(type="sphere",stage="Park",x=zBehind.x,y=zBehind.y,z=zBehind.z,r=zBehind.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp111")
+	
+	cp111:
+		subtitleMind.Add(text="(I knew it, my panties are drenched.)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBehind.x,y=zBehind.y,z=zBehind.z,r=zBehind.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp112")
+	
+	cp112:
+		subtitleMind.Add(text="(It feels uncomfortable... I think I'll be better off without them.)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBehind.x,y=zBehind.y,z=zBehind.z,r=zBehind.r, text="　[Take off your panties] ")
+		listener = CreateListenerLocal("int_listener",nextcp="cp113")
+	
+	cp113:
+		SetAction("TakeOffPants")
+		listener = CreateListenerLocal("wait_listener",duration=1.2,nextcp="cp114")
+	
+	cp114:
+		UnequipCosplay("m_cosplay_general_upper_race_pants")
+		subtitleMind.Add(text="(It feels better already... Let's go back.)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBehind.x,y=zBehind.y,z=zBehind.z,r=zBehind.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp115")
+	
+	cp115:
+		mp(text="Go back to \"work\"")
+		area = CreateArea(type="sphere",stage="Park",x=zMeiSpeech.x,y=zMeiSpeech.y,z=zMeiSpeech.z,r=0.5)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp116")
+	
+	################################################## WOMAN SKIRT ##################################################
+	cp116:
+		subtitleWoman.Add(text="\"Excuse me, miss?\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=1, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp117")
+	
+	cp117:
+		mp(text="Go see what the woman wants")
+		area = CreateArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp118")
+	
+	cp118:
+		subtitle.Add(text="\"Yes, ma'am?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp119")
+	
+	cp119:
+		subtitleWoman.Add(text="\"You're awfully red, is everything alright?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp120")
+	
+	cp120:
+		subtitleMind.Add(text="(...She says while staring at my tits.)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp121")
+	
+	cp121:
+		subtitle.Add(text="\"Hem, yes, er... It must be the sun!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp122")
+	
+	cp122:
+		subtitleWoman.Add(text="\"Oh, good. I was warried that you would be embarrassed by serving us topless, but I am glad to see I was mistaken.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp123")
+	
+	cp123:
+		subtitleMind.Add(text="(Sure, bring even more attention to it, why don't you? You're enjoying yourself way too much, old hag.)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp124")
+	
+	cp124:
+		subtitle.Add(text="*You hear Mei making efforts to avoid laughing out loud, behind you.*")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp125")
+	
+	cp125:
+		subtitle.Add(text="\"Yes, it's just the sun, no problem with being topless or anything else, ha ha!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp126")
+	
+	cp126:
+		subtitleMind.Add(text="(Why did I say that? They're going to get the wrong idea!)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp127")
+	
+	cp127:
+		subtitleGuy.Add(text="\"Or anything else..?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp128")
+	
+	cp128:
+		subtitleGirl.Add(text="\"Actually, since we can't ask you to remove your top anymore... Maybe we could ask you to drop the skirt instead?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp129")
+	
+	################################################## SKIRT OFF ##################################################
+	cp129:
+		subtitleDeliv.Add(text="\"Yeah, as part of the service, right?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp130")
+	
+	cp130:
+		subtitleWoman.Add(text="\"Beside, I assume you have panties on, so you wouldn't even be showing much.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp131")
+	
+	cp131:
+		subtitleMind.Add(text="(But... I removed my panties earlier...)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp132")
+	
+	cp132:
+		subtitle.Add(text="\"I, er... am not wearing panties right now...\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp133")
+	
+	cp133:
+		subtitleWoman.Add(text="\"Even better, you'll get a wonderful tan then. Plus, your apron still covers the important part, right?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp134")
+	
+	cp134:
+		subtitleMind.Add(text="(Holy shit did she recover fast! She didn't even skip a beat.)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp135")
+	
+	cp135:
+		subtitleMind.Add(text="(She does have a point, though... What should I do...)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp136")
+	
+	cp136:
+		subtitle.Add(text="\"I... suppose I could...\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp137")
+	
+	cp137:
+		subtitle.Add(text="*The people around you celebrate.*")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp138")
+	
+	cp138:
+		subtitleMind.Add(text="(What have I done...)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　[Take off your skirt] ")
+		listener = CreateListenerLocal("int_listener",nextcp="cp139")
+	
+	cp139:
+		SetAction("TakeOffPants")
+		clothesFold.Play()
+		listener = CreateListenerLocal("wait_listener",duration=1.2,nextcp="cp140")
+	
+	cp140:
+		UnequipCosplay("m_cosplay_suit_chic_skirt")
+		subtitleMind.Add(text="(I did it...)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp141")
+	
+	cp141:
+		UnequipCosplay("m_cosplay_suit_chic_skirt")
+		subtitleMind.Add(text="(Wait, the apron doesn't go as low as I expected! It doesn't cover my pussy at all!)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp142")
+	
+	cp142:
+		subtitleWoman.Add(text="\"Oh dear, I thought that apron would be bigger. It seems that your lady parts are on display.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp143")
+	
+	cp143:
+		subtitle.Add(text="*You turn bright red at her words.*")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp144")
+	
+	cp144:
+		subtitleMind.Add(text="(She's staring straight at my pussy. This is mortifying.)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp145")
+	
+	cp145:
+		subtitle.Add(text="*While you stand there, stunned, the woman takes your skirt, and lobs it at Mei, who catches it and stores it in her bag, grinning.*")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp146")
+	
+	cp146:
+		subtitle.Add(text="\"Hey! Wasn't it supposed to be temporary? Like, I flash you, and get it back on?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp147")
+	
+	cp147:
+		subtitleGuy.Add(text="\"Well, you removed your top permanently earlier to avoid spending your time adjusting it, doesn't the same logic apply here?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp148")
+	
+	cp148:
+		subtitle.Add(text="\"But... I...\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp149")
+	
+	cp149:
+		subtitleMind.Add(text="(This is humiliating... I'm basically naked in front of everyone!)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp150")
+	
+	cp150:
+		subtitleMind.Add(text="(...I am going to pretend that what I feel trickling down my thighs is sweat.)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp151")
+	
+	################################################## THUG ##################################################
+	cp151:
+		subtitleThug.Add(text="\"♪\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp152")
+	
+	cp152:
+		subtitleMind.Add(text="(Oh wow, he doesn't call anymore, he just whistles now.)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitD.x,y=zSitD.y,z=zSitD.z,r=zSitD.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp153")
+	
+	cp153:
+		mp(text="Go see what the man wants")
+		area = CreateArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp154")
+	
+	cp154:
+		subtitle.Add(text="\"Yes?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp155")
+	
+	cp155:
+		subtitleThug.Add(text="\"Say sweetie, I was thinkin- Ah FUCK!\"\n*He makes a wrong move, and spills some beer on his ankles and shoes.*")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp156")
+	
+	cp156:
+		subtitleThug.Add(text="\"Sorry sweetie, do you have a napkin or something?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp157")
+	
+	cp157:
+		subtitle.Add(text="\"I don't thin- oh wait, I do have one! Don't move.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp158")
+	
+	cp158:
+		mp(text="Crouch to wipe his shoes")
+		area = CreateArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[Crouching]")
+		listener = CreateListenerLocal("basic_listener",maxduration=5,nextcp="cp159")
+	
+	cp159:
+		subtitle.Add(text="*You hear cheering behind you. You raise your head to see the man wearing his best \"I am a generous god\" face.*")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp160")
+	
+	cp160:
+		mp(text="Get up")
+		area = CreateArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[!Crouching]")
+		listener = CreateListenerLocal("basic_listener",nextcp="cp161")
+	
+	cp161:
+		subtitle.Add(text="\"You tricked me!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp162")
+	
+	cp162:
+		subtitleThug.Add(text="\"How? I just asked for a towel, I didn't ask you to clean my shoes yourself.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp163")
+	
+	cp163:
+		subtitleMind.Add(text="(What a wonderful shit-eating grin... He's right, though.)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp164")
+	
+	cp164:
+		subtitleThug.Add(text="\"Now now, don't make that face. How about you take a break? I now a nice place not far from here.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp165")
+	
+	cp165:
+		subtitleMind.Add(text="(I do need a break.)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp166")
+	
+	cp166:
+		subtitle.Add(text="\"Fine, it'd better be good.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp167")
+	
+	################################################## BLOWJOB ##################################################
+	cp167:
+		patrons.thug.Respawn()
+		patrons.thug.Headset(false)
+		patrons.deliv.Smartphone(false)
+		subtitleThug.Add(text="*He gets up* \"I'm sure you'll like it. Come with me.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zSitE.x,y=zSitE.y,z=zSitE.z,r=zSitE.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp168")
+	
+	cp168:
+		mp(text="Follow the man")
+		patrons.thug.Speed(1.2)
+		MoveNPC(npc=patrons.thug, coord=Vector(26.1, 50.84, 34.7), thread=thread, nextcp="cp169")
+		meiListener = CreateListener("npc_lead_listener",npc=patrons.thug,distance=3)
+	
+	cp169:
+		mp(text="Follow the man")
+		MoveNPC(npc=patrons.thug, coord=Vector(zBlowThug.x, zBlowThug.y, zBlowThug.z), rotation=Quaternion(0, 0.66, 0, 0.75), thread=thread, nextcp="cp170")
+	
+	cp170:
+		mp(text="")
+		meiListener = null
+		subtitle.Add(text="\"Are we here?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp171")
+	
+	cp171:
+		subtitleThug.Add(text="\"We sure are. Nice and hidden.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp172")
+	
+	cp172:
+		subtitle.Add(text="\"So, what now?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp173")
+	
+	cp173:
+		patrons.thug.Penis(2)
+		subtitleThug.Add(text="\"Take a guess.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp174")
+	
+	cp174:
+		subtitleMind.Add(text="(I'd be lying if I said that I didn't see it coming...)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp175")
+	
+	cp175:
+		subtitleMind.Add(text="(Still, I'm dripping wet... Am I really considering to do it?)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp176")
+	
+	cp176:
+		subtitleMind.Add(text="(Screw it, I *do* need a break.)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp177")
+	
+	cp177:
+		mp(text="Suck the guy off")
+		area = CreateArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[Action_KaikyakuFella]")
+		listener = CreateListenerLocal("basic_listener",maxduration=15,nextcp="cp178")
+	
+	cp178:
+		thugEjac.Play()
+		mei = CreateNPC("NewFemale", position=Vector(zMeiCopSpawn.x, zMeiCopSpawn.y, zMeiCopSpawn.z), rotation=Quaternion(0, -0.72, 0, 0.70), body=10, size=0.9, face=6, hair=3)
+		mei.Smartphone(false)
+		mei.Headset(false)
+		mei.Glasses(true)
+		mei.SkipStrangeness(true)
+		mei.Speed(1.4)
+		
+		subtitleThug.Add(text="\"Oooh yeah.\"")
+		listener = CreateListenerLocal("wait_listener",duration=3,nextcp="cp179")
+	
+	cp179:
+		subtitleThug.Clear()
+		subtitle.Add(text="!!!")
+		listener = CreateListenerLocal("wait_listener",duration=2,nextcp="cp180")
+	
+	cp180:
+		SetAction("None")
+		subtitle.Clear()
+		subtitleMind.Add(text="(Do guys normally cum this much? I got quite the mouthful!)")
+		MoveNPC(npc=mei, coord=Vector(zMeiCopArrest.x, zMeiCopArrest.y, zMeiCopArrest.z), rotation=Quaternion(0, -0.11, 0, 0.99))
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp181")
+	
+	cp181:
+		patrons.thug.Penis(1)
+		subtitleMind.Add(text="(I'm definitely not swallowing that! Let's spit it out.)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp182")
+	
+	################################################## POLICE! ##################################################
+	cp182:
+		subtitleMei.Add(text="\"Stop right there!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp183")
+	
+	cp183:
+		patrons.thug.Penis(0)
+		patrons.thug.Warp(rotation=Quaternion(0, -0.11, 0, 0.99))
+		MoveNPC(npc=patrons.thug, coord=Vector(zThugReturn.x, zThugReturn.y, zThugReturn.z))
+		subtitleThug.Add(text="\"Oh crap, I'm out!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp184")
+	
+	cp184:
+		ShowBlackscreen(fadein=0.3, duration=0.4, fadeout=0.3)
+		listener = CreateListenerLocal("wait_listener",duration=0.5,nextcp="cp185")
+	
+	cp185:
+		patrons.thug.Warp(position=Vector(zBehind.x,zBehind.y,zBehind.z))
+		subtitleMind.Add(text="(I almost spit it on Mei just now... Why is she dressed like that?)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp186")
+	
+	cp186:
+		LockHandcuffs(handcuffstype="KeyHandcuff")
+		DropItem(itemtype="HandcuffKey", stage="Apart",x=3.4,y=0,z=2.5)
+		PlaySoundEffect("AttachHandcuffs")
+		subtitleMei.Add(text="\"You're under arrest for not stripping fast enou- I mean, for indecent exposure!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp187")
+	
+	cp187:
+		patrons.thug.Warp(position=Vector(zBehind.x,zBehind.y,zBehind.z))
+		subtitleMind.Add(text="(Wha..?)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp188")
+	
+	cp188:
+		EquipCosplay("m_cosplay_general_head_kuchikase")
+		subtitleMei.Add(text="\"You have the right to remain silent.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp189")
+	
+	cp189:
+		gaggedOof.Play()
+		subtitle.Add(text="\"Mmmph!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp190")
+	
+	cp190:
+		gaggedHmpf.Play()
+		subtitleMind.Add(text="(Wait, I still have a mouthful of cum to get rid of!)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp191")
+	
+	cp191:
+		subtitleMind.Add(text="(I can't spit it out anymore! I'll have to... no, I refuse to swallow it, no way!)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp192")
+	
+	cp192:
+		subtitle.Add(text="Ding ♪")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp193")
+	
+	cp193:
+		mei.Smartphone(true)
+		subtitleMei.Add(text="\"Ah shit, I have to take that. Be right back.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp194")
+	
+	cp194:
+		mei.Warp(rotation=Quaternion(0, 0.66, 0, 0.75))
+		MoveNPC(npc=mei, coord=Vector(zMeiCopSpawn.x, zMeiCopSpawn.y, zMeiCopSpawn.z), rotation=Quaternion(0, -0.72, 0, 0.70))
+		subtitleMind.Add(text="(Wait, she's leaving me here?)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp195")
+	
+	
+	################################################## THUG FUCK ##################################################
+	cp195:
+		patrons.thug.Warp(position=Vector(zThugReturn.x,zThugReturn.y,zThugReturn.z), rotation=Quaternion(0, 0.99, 0, 0.03))
+		subtitleMind.Add(text="(Ugh, I can feel the cum coating my tongue... I don't want to taste it any longer!)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp196")
+	
+	cp196:
+		MoveNPC(npc=patrons.thug, coord=Vector(zThugRape.x, zThugRape.y, zThugRape.z), rotation=Quaternion(0, 0.99, 0, 0.03), thread=thread, nextcp="cp197")
+		subtitleMind.Add(text="(And this has definitely nothing to do with the fact that I'm getting even more soaked down there.)")
+	
+	cp197:
+		subtitleThug.Add(text="\"Well, well, well, what do we have here?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp198")
+	
+	cp198:
+		MoveNPC(npc=mei, coord=Vector(zMeiCopSpawn.x, zMeiCopSpawn.y, zMeiCopSpawn.z), rotation=Quaternion(0, -0.72, 0, 0.70))
+		subtitleMind.Add(text="(!!!)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp199")
+	
+	cp199:
+		patrons.thug.Penis(2)
+		subtitleThug.Add(text="\"Look at you, you're drenched. Well, if that isn't an invitation...\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp200")
+	
+	cp200:
+		SetSexPosition("StandBack")
+		SetSexMenu(canfinish=false, canposition=false)
+		#SetEcstasy(0.5)
+		patrons.thug.ActivateSex()
+		subtitle.Add(text="\"MMMPH!\"", delay=3, fadein=0.2, duration=2, fadeout=0.3)
+		subtitleMind.Add(text="(Fuck... Aaah... That really hits the spot... Mmmh ♥)", delay=12, fadein=0.2, duration=4, fadeout=0.3)
+		listener = CreateListenerLocal("wait_listener",duration=20,nextcp="cp201")
+		#No idea why detecting the orgasm doesn't work, it reaches cp201 but DeactivateSex() never triggers
+		#area = CreateArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r)
+		#zone = CreateZone(area)
+		#condition = CreateCondition("[Orgasm]")
+		#listener = CreateListenerLocal("basic_listener",maxduration=0.2,nextcp="cp201")
+	
+	cp201:
+		DeactivateSex()
+		subtitleMind.Add(text="(Aaah... He left...)")
+		mei.Smartphone(false)
+		MoveNPC(npc=mei, coord=Vector(zMeiCopArrest.x, zMeiCopArrest.y, zMeiCopArrest.z), rotation=Quaternion(0, -0.11, 0, 0.99), thread=thread, nextcp="cp202")
+	
+	cp202:
+		subtitleMei.Add(text="\"I'm back! Well, let's go!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp203")
+	
+	cp203:
+		gaggedHmpf.Play()
+		subtitleMind.Add(text="(Wait Mei, ungag me! Let me get rid of all this cum! Ugh, the smell is reaching my nose from the inside!)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp204")
+	
+	cp204:
+		subtitleMei.Add(text="\"Yes, yes, I'm sure you can't wait to walk back all naked and restrained!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp205")
+	
+	cp205:
+		subtitleMind.Add(text="(Well, with the post-orgasm clarity... no, not anymore no.)")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp206")
+	
+	cp206:
+		subtitleMei.Add(text="\"Come on, let's go!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zBlowjob.x,y=zBlowjob.y,z=zBlowjob.z,r=zBlowjob.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp207")
+	
+	################################################## WALK BACK ##################################################
+	cp207:
+		mp(text="Follow Mei")
+		mei.Warp(rotation=Quaternion(0, 0.66, 0, 0.75))
+		subtitle.Add(text="*You try to push the cum to the side of your mouth with your tongue, but all you manage to do is making it soak your mouth even more.*", delay=15, fadein=0.2, duration=10, fadeout=0.3)
+		MoveNPC(npc=mei, coord=Vector(zGiveMaid.x, zGiveMaid.y, zGiveMaid.z), rotation=Quaternion(0, 0.02, 0, 0.99), thread=thread, nextcp="cp208")
+		meiListener = CreateListener("npc_lead_listener",npc=mei,distance=4)
+	
+	cp208:
+		meiListener = null
+		subtitleMei.Add(text="\"Well, here we are! I'm sure you enjoyed your day a lot, right?\"\n*Mei gives you a playful slap on the back.*")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp209")
+	
+	cp209:
+		cumSwallow.Play()
+		subtitle.Add(text="\"Ack!\" *gulp* \"Uuuh!\" *koff*koff*")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp210")
+	
+	cp210:
+		UnequipCosplay("m_cosplay_general_head_kuchikase")
+		subtitleMei.Add(text="\"You okay here?\"\n*She ungags you out of concern.*")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp211")
+	
+	cp211:
+		subtitle.Add(text="\"You made me swallow his cum!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp212")
+	
+	cp212:
+		subtitleMei.Add(text="\"You were holding it in your mouth for all that time? I thougth you had swallowed it long ago!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp213")
+	
+	cp213:
+		subtitleMei.Add(text="\"Well, I won't kinkshame you, you little cum lover! I apologize for making you swallow it.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp214")
+	
+	cp214:
+		subtitle.Add(text="\"I didn't want to! You gagged me before I had a chance to spit it out!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp215")
+	
+	cp215:
+		subtitle.Add(text="\"I had to walk all the way back here with a mouthful of cum! I swear, I could slap you right now.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp216")
+	
+	cp216:
+		subtitleMei.Add(text="\"Well, good thing your hands are handcuffed behind your back then.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp217")
+	
+	cp217:
+		mei.PlayAction("HandOver")
+		boobGrope.Play()
+		subtitleMei.Add(text="*She playfully squeezes your boobs to emphasize your helplessness.*")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp218")
+	
+	cp218:
+		subtitle.Add(text="*Sigh* \"Can we go home now?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp219")
+	
+	cp219:
+		subtitleMei.Add(text="\"Yeah, you earned it. Let's head home.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Park",x=zGetMaid.x,y=zGetMaid.y,z=zGetMaid.z,r=zGetMaid.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cpEnd")
+	
+	cpEnd:
+		CollectItem(itemtype="HandcuffKey")
+		UnlockHandcuffs()
+		missionpanel.SetVisible(false)
+		lastzone = null
+		SetStage("Apart")

@@ -1,0 +1,59 @@
+processorSexCharm_:
+	#Note Event: List must have:
+	# common: List see 'event.common'
+	# minStrangeness: Number
+	# extraDelta: Number
+	# alterDistance: Number
+
+	npcs = CreateThread("DynamicDict")
+
+	stages = Copy(Stages)
+
+	alertUp:
+		event = null
+		npc = null
+		do:
+			if npcs.ContainsKey(value.ID)
+				npc = npcs.At(value.ID)
+			elseif !Runtime.CustomNpcIds.Contains(value.ID)
+				npc = CreateNPC(value.ID)
+				if npc.IsAlive()
+					npcs.Insert(value.ID, npc)
+				else
+					npcs.Remove(value.ID)
+					npc = null
+			if npc != null
+				v1 = LocateNpc(value.Position)
+				v2 = LocatePlayer()
+				sqrD = SqrDistance(v1, v2)
+				seeFlag = npc.SeesPlayer()
+				if seeFlag || (sqrD < 25)
+					curStrangeness = npc.Strangeness()
+					if curStrangeness < event.minStrangeness
+						curStrangeness = event.minStrangeness
+					if sqrD < event.alterDistance ** 2
+						curStrangeness += event.extraDelta * _timediff * 0.15
+					curStrangeness += event.extraDelta * _timediff
+					if !seeFlag && (curStrangeness >= 0.98)
+						curStrangeness = 0.98
+					npc.Strangeness(curStrangeness)
+
+		setEvent:
+			event = _args[0]
+	au = CreateThread("alertUp")
+
+	start:
+		#Required
+		#Params@arr event: List
+		au.setEvent(_args[0])
+
+	end:
+		#Required
+		#Params@arr event: List
+		npcs.Clear()
+
+	update:
+		#Required
+		#Params@arr event: List
+		Foreach(_state.NPCs, au)
+

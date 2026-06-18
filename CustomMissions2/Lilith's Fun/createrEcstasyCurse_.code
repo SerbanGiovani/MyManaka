@@ -1,0 +1,29 @@
+createrEcstasyCurse_:
+	#Note Event: List must have:
+	# negWeight: Number
+	# stayWeight: Number
+	# posWeight: Number
+	# maxNegRate: Number
+	# maxPosRate: Number
+	# interval: Number
+	# common： List see 'event.common'
+
+	create:
+		#Required
+		#Returns event: List
+		
+		
+		event = CreateList()
+		event.common = CreateList()
+		event.common.requiredProcessor = "processorEcstasyCurse"
+		event.common.name = StringsPool2.EcstasyCurseString
+		event.common.description = RandomString("EcstasyCurse", StringsPool0)
+		event.common.duration = Random(40, 75)
+		
+		event.maxNegRate = Random(0.1, 0.2)
+		event.maxPosRate = Random(0.15, 0.3)
+		event.interval = Random(4, 7.5)
+		event.negWeight = Random(3, 5)
+		event.posWeight = Random(4, 9)
+		event.stayWeight = Random(1, 4)
+		_result = event

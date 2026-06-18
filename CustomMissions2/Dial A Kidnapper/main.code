@@ -1,0 +1,458 @@
+#################################
+# Settings
+#################################
+enableLog = true
+if _save.strip == null
+	_save.strip = false
+if _save.kidnap == null
+	_save.kidnap = false
+if _save.kidnap_blindfolded == null
+	_save.kidnap_blindfolded = false
+if _save.kidnap_handcuffed == null
+	_save.kidnap_handcuffed = false
+if _save.kidnap_vibe == null
+	_save.kidnap_vibe = false
+if _save.kidnapResidence == null
+	_save.kidnapResidence = true
+if _save.kidnapPark == null
+	_save.kidnapPark = true
+if _save.kidnapStationFront == null
+	_save.kidnapStationFront = true
+if _save.kidnapMansion == null
+	_save.kidnapMansion = true
+if _save.kidnapShoppingMall == null
+	_save.kidnapShoppingMall = true
+if _save.kidnap_vibe_one_by_one == null
+	_save.kidnap_vibe_one_by_one = false
+if _save.stripOne == null
+	_save.stripOne = false
+if _save.stripFromAll == null
+	_save.stripFromAll = false
+if _save.kidnap_me == null
+	_save.kidnap_me = false
+
+#################################
+# Code
+#################################
+missionPanel = CreateMissionPanel()
+missionPanel.SetGaugeVisible(false)
+
+bonus_rp = 0
+bonus_mult = 1
+
+condDaytime = CreateCondition("[IsDayTime]")
+
+assaultConsequences = CreateThread("assaultConsequences")
+app_ui = CreateThread("app_ui")
+
+assaultConsequences:
+	thread = _this
+	thread.Goto("normal")
+
+	getStripClothesList:
+		stripClothesList = CreateList()
+		# Casual Clothes
+		stripClothesList.m_cosplay_maid_onepiece = true
+		stripClothesList.m_cosplay_suit_chic_shirt = true
+		stripClothesList.m_cosplay_suit_chic_jacket = true
+		stripClothesList.m_cosplay_suit_chic_skirt = true
+		stripClothesList.m_cosplay_suit_chic_pants = true
+		stripClothesList.m_cosplay_suit_luxe_jacket = true
+		stripClothesList.m_cosplay_suit_luxe_tops = true
+		stripClothesList.m_cosplay_suit_luxe_pants = true
+		stripClothesList.m_cosplay_sweater_tops = true
+		stripClothesList.m_cosplay_glossy_jacket = true
+		stripClothesList.m_cosplay_glossy_knit = true
+		stripClothesList.m_cosplay_school_hoodie_hoodie = true
+		stripClothesList.m_cosplay_school_hoodie_shirt = true
+		stripClothesList.m_cosplay_school_hoodie_skirt = true
+		stripClothesList.m_cosplay_school_gal_blazer = true
+		stripClothesList.m_cosplay_school_gal_shirt_winter = true
+		stripClothesList.m_cosplay_school_gal_cardigan_winter = true
+		stripClothesList.m_cosplay_school_gal_skirt = true
+		stripClothesList.m_cosplay_school_gal_shirt_summer = true
+		# bura, pants
+		stripClothesList.m_cosplay_general_upper_bra = true
+		stripClothesList.m_cosplay_general_upper_race_pants = true
+		stripClothesList.m_cosplay_general_upper_ultimate_pants = true
+		stripClothesList.m_cosplay_general_upper_chack_bikini_bra = true
+		stripClothesList.m_cosplay_general_upper_chack_bikini_pants = true
+		stripClothesList.m_cosplay_general_upper_micro_bikini_bra = true
+		stripClothesList.m_cosplay_general_upper_micro_bikini_pants = true
+		stripClothesList.m_cosplay_succubus_cosplay_pants = true
+		stripClothesList.m_cosplay_sister_pants = true
+		stripClothesList.m_cosplay_cow_bra = true
+		stripClothesList.m_cosplay_cow_pants = true
+		stripClothesList.m_cosplay_suit_chic_panty = true
+		stripClothesList.m_cosplay_sweater_pants = true
+		_result = stripClothesList
+
+	stripCosplay:
+		stripClothesList = getStripClothesList()
+		if _save.stripFromAll
+			l = _state.Cosplay
+		else
+			l = CreateList()
+			i = 0
+			while i < _state.Cosplay.Count()
+				clothing = _state.Cosplay[i]
+				if stripClothesList[clothing]
+					l.Insert(clothing)
+				i = i + 1
+		if _save.stripOne & l.Count() > 0
+			UnequipCosplay(l[RandomInt(0, l.Count() - 1)])
+		else
+			i = l.Count()
+			while i > 0
+				i = i - 1
+				UnequipCosplay(l[i])
+				bonus_rp = bonus_rp + 10
+
+
+	isWearCoat:
+		_result = true
+		i = _state.DroppedItems.Count()
+		while i > 0
+			i = i - 1
+			item = _state.DroppedItems[i]
+			if item.Type == "Coat"
+				_result = false
+
+	normalListener:
+		if duration == null
+			duration = 0
+		if maxDuration == null
+			maxDuration = 3
+		duration = duration + _timediff
+		if duration >= maxDuration
+			if _save.kidnap_me
+				Log("Kidnapping!")
+				_save.kidnap_me = false
+				thread.Goto("kidnap")
+			else
+			duration = 0
+
+
+	normal:
+		listener = CreateListener("normalListener")
+
+	kidnap:
+		bonus_rp = 0
+		bonus_mult = 1
+		ShowBlackscreen(fadein = 0.2, duration = 1.1, fadeout = 0.2)
+		if _save.strip
+			stripCosplay()
+			if isWearCoat()
+				randomPos = GetRandomPosition()
+				if randomPos == null
+					randomPos = CreateList(stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y, z=_state.Position.z)
+				DropItem(itemtype="Coat", position=randomPos, compass=true)
+				bonus_rp = bonus_rp + 50
+		if _save.kidnap_handcuffed
+			c = CreateCondition("[Item_HandcuffKey]")
+			if c.Check()
+				randomPos = GetRandomPosition()
+				if randomPos == null
+					randomPos = CreateList(stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y, z=_state.Position.z)
+				DropItem(itemtype="HandcuffKey", position=randomPos, compass=true)
+				
+
+			c = CreateCondition("[OwnsAdultToy_KeyHandcuff]")
+			if c.Check()
+				c = CreateCondition("[!KeyedHandcuffs]")
+				if c.Check()
+					LockHandcuffs(handcuffstype="KeyHandcuff")
+					bonus_mult = bonus_mult * 2
+				if _save.kidnap_vibe
+					c = CreateCondition("[Item_VibeRemocon]")
+					if c.Check()
+						randomPos = GetRandomPosition()
+						if randomPos == null
+							randomPos = CreateList(stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y, z=_state.Position.z)
+						DropItem(itemtype="VibeRemocon", position=randomPos, compass=true)
+					
+					SetVibrator("Random")
+					SetPiston("Random")
+
+					a = true
+					c = CreateCondition("[OwnsAdultToy_Vibrator, !AdultToy_Vibrator]")
+					if a & c.Check()
+						EquipAdultToy("Vibrator")
+						bonus_rp = bonus_rp + 30
+						if _save.kidnap_vibe_one_by_one
+							a = false
+					c = CreateCondition("[OwnsAdultToy_KuriRotor, !AdultToy_KuriRotor]")
+					if a & c.Check()
+						EquipAdultToy("KuriRotor")
+						bonus_rp = bonus_rp + 30
+						if _save.kidnap_vibe_one_by_one
+							a = false
+					c = CreateCondition("[OwnsAdultToy_TitRotor, !AdultToy_TitRotor]")
+					if a & c.Check()
+						EquipAdultToy("TitRotor")
+						bonus_rp = bonus_rp + 30
+						if _save.kidnap_vibe_one_by_one
+							a = false
+					c = CreateCondition("[OwnsAdultToy_PistonPussy, !AdultToy_PistonPussy]")
+					if a & c.Check()
+						EquipAdultToy("PistonPussy")
+						bonus_rp = bonus_rp + 30
+						if _save.kidnap_vibe_one_by_one
+							a = false
+					c = CreateCondition("[OwnsAdultToy_PistonAnal, !AdultToy_PistonAnal]")
+					if a & c.Check()
+						EquipAdultToy("PistonAnal")
+						bonus_rp = bonus_rp + 30
+						if _save.kidnap_vibe_one_by_one
+							a = false
+					c = CreateCondition("[OwnsAdultToy_PistonFuta, !AdultToy_PistonFuta]")
+					if a & c.Check()
+						EquipAdultToy("PistonFuta")
+						bonus_rp = bonus_rp + 30
+						if _save.kidnap_vibe_one_by_one
+							a = false
+				if _save.kidnap_blindfolded
+					c = CreateCondition("[OwnsAdultToy_EyeMask, !Blindfolded]")
+					if c.Check()
+						EquipAdultToy("EyeMask")
+						bonus_mult = bonus_mult * 2
+						
+		if _save.kidnap
+			stageList = CreateList()
+			if _save.kidnapResidence
+				stageList.Insert("Residence")
+			if _save.kidnapPark
+				stageList.Insert("Park")
+			if _save.kidnapStationFront
+				stageList.Insert("StationFront")
+			if _save.kidnapMansion
+				stageList.Insert("Mansion")
+			if _save.kidnapShoppingMall
+				stageList.Insert("ShoppingMall")
+			c = stageList.Count()
+			if c > 0
+				playerStage = stageList[RandomInt(0, c)]
+			elseif _state.Position.stage == "Convenience"
+				playerStage = "Residence"
+			elseif _state.Position.stage == "FashionShop"
+				playerStage = "ShoppingMall"
+			else
+				playerStage = _state.Position.stage
+			SetStage(playerStage)
+
+			listener = CreateListener("kidnapping", stage=playerStage)
+		else
+			thread.Goto("give_bonus_rp")
+
+	kidnapping:
+		if _state.Position.stage == stage
+			randomPos = GetRandomPosition()
+			if randomPos == null
+				randomPos = CreateList(stage=_state.Position.stage, x=0, y=0, z=0)
+			SetPlayerPosition(x=randomPos["x"], y=randomPos["y"], z=randomPos["z"], rx=0, ry=0, rz=0, rw=1)
+			SetAction("None")
+			bonus_mult = bonus_mult * 2
+			
+			thread.Goto("give_bonus_rp")
+			
+	give_bonus_rp:
+		total_rp = bonus_rp * bonus_mult
+		Log(bonus_rp)
+		Log(bonus_mult)
+		AddCurrentEarnRP(total_rp)
+		
+		if _state.Position.stage != "Apart"
+			missionPanel.SetText("Bonus RP awarded")
+			missionPanel.SetRPText(total_rp)
+			missionPanel.SetVisible(true)
+			missionPanel.SetGaugeVisible(true)
+			
+		else
+			missionPanel.SetText("No Bonus RP, leave the house!")
+			missionPanel.SetVisible(true)
+		
+		countdown = CreateListener("mission_panel_countdown")
+		
+	mission_panel_countdown:
+		if duration == null
+			duration = 0
+		if maxDuration == null
+			maxDuration = 6
+		duration = duration + _timediff
+		missionPanel.SetGaugeProgress(duration/maxDuration)
+		if duration > maxDuration
+			missionPanel.SetVisible(false)
+			missionPanel.SetGaugeVisible(false)
+			bonus_rp = 0
+			bonus_mult = 1
+			thread.Goto("normal")
+
+app_ui:
+	thread = _this
+
+	mc = CreateMessengerChat("Dial A Kidnapper", iconcolor = Color(0,1,0), icontext = "H", icontextcolor = Color(1,1,1))
+	
+	thread.Goto("ui")
+	
+	ui:
+		mc.Clear()
+		mc.Add("Welcome to Dial a Kidnapper!", "Left", silent=true)
+		mc.SetButtons("Call", "Config")
+		listener = CreateListener("ui_listener")
+		
+	ui_listener:
+		index = mc.Clicked()
+		if index == 0
+			mc.Add("On my way...", "Left", silent=true)
+			_save.kidnap_me = true
+				
+			listener = CreateListener("waitKidnapped")
+		elseif index == 1
+			thread.Goto("config_ui")
+			
+
+	config_ui:
+		mc.Clear()
+	
+		mc.Add("Upon calling me, you will be:", "Left", silent=true)
+		b0 = "[Back]"
+		if _save.strip
+			if _save.stripOne
+				b1 = "Stripped (+10RP) [one of "
+			else
+				b1 = "Stripped (+10RP) [all of "
+			if _save.stripFromAll
+				b1 = b1 + "All]"
+			else
+				b1 = b1 + "Casual]"
+		else
+			b1 = "Stripped [off]"
+		if _save.kidnap
+			if _save.kidnapResidence | _save.kidnapPark | _save.kidnapStationFront | _save.kidnapMansion | _save.kidnapShoppingMall
+				b3 = "Kidnapped to elsewhere (x2RP) [on]"
+			else
+				b3 = "Kidnapped to elsewhere (x2RP) [near]"
+			if _save.kidnapResidence
+				b31 = "... Residence [on]"
+			else
+				b31 = "... Residence [off]"
+			if _save.kidnapPark
+				b32 = "... Park [on]"
+			else
+				b32 = "... Park [off]"
+			if _save.kidnapStationFront
+				b33 = "... Downtown [on]"
+			else
+				b33 = "... Downtown [off]"
+			if _save.kidnapMansion
+				b34 = "... Apartment [on]"
+			else
+				b34 = "... Apartment [off]"
+			if _save.kidnapShoppingMall
+				b35 = "... ShoppingMall [on]"
+			else
+				b35 = "... ShoppingMall [off]"
+		else
+			b3 = "Kidnapped to elsewhere [off]"
+		if _save.kidnap_handcuffed
+			b4 = "Handcuffed (x2RP) [on]"
+			if _save.kidnap_vibe
+				if _save.kidnap_vibe_one_by_one
+					b5 = "... and vibrated (+30RP) [+1]"
+				else
+					b5 = "... and vibrated (+30RP) [all]"
+			else
+				b5 = "... and vibrated [off]"
+			if _save.kidnap_blindfolded
+				b6 = "... and blindfolded (x2RP) [on]"
+			else
+				b6 = "... and blindfolded [off]"
+		else
+			b4 = "Handcuffed [off]"
+		if _save.kidnap
+			if _save.kidnap_handcuffed
+				mc.SetButtons(b0, b1, b3, b31, b32, b33, b34, b35, b4, b5, b6)
+			else
+				mc.SetButtons(b0, b1, b3, b31, b32, b33, b34, b35, b4)
+		else
+			if _save.kidnap_handcuffed
+				mc.SetButtons(b0, b1, b3, b4, b5, b6)
+			else
+				mc.SetButtons(b0, b1, b3, b4)
+
+		listener = CreateListener("waitClick")
+
+	waitClickBack:
+		index = mc.Clicked()
+		if index == 0
+			thread.Goto("redraw")
+
+	waitClick:
+		index = mc.Clicked()
+		if index == 0
+			# i thought a thread.Goto would work here but it didnt
+		elseif index == 1
+			if _save.strip
+				if _save.stripOne
+					if _save.stripFromAll
+						_save.stripFromAll = false
+					else
+						_save.stripOne = false
+				else
+					if _save.stripFromAll
+						_save.stripOne = true
+						_save.strip = false
+					else
+						_save.stripFromAll = true
+			else
+				_save.strip = true
+				
+		elseif index == 2
+			_save.kidnap = !_save.kidnap
+		if _save.kidnap
+			if index == 3
+				_save.kidnapResidence = !_save.kidnapResidence
+			elseif index == 4
+				_save.kidnapPark = !_save.kidnapPark
+			elseif index == 5
+				_save.kidnapStationFront = !_save.kidnapStationFront
+			elseif index == 6
+				_save.kidnapMansion = !_save.kidnapMansion
+			elseif index == 7
+				_save.kidnapShoppingMall = !_save.kidnapShoppingMall
+			elseif index == 8
+				_save.kidnap_handcuffed = !_save.kidnap_handcuffed
+			elseif index == 9
+				_save.kidnap_vibe = !_save.kidnap_vibe
+			elseif index == 10
+				_save.kidnap_blindfolded = !_save.kidnap_blindfolded
+		else
+			if index == 3
+				_save.kidnap_handcuffed = !_save.kidnap_handcuffed
+			elseif index == 4
+				if _save.kidnap_vibe
+					if _save.kidnap_vibe_one_by_one
+						_save.kidnap_vibe = false
+					else
+						_save.kidnap_vibe_one_by_one = true	
+				else
+					_save.kidnap_vibe = true
+					_save.kidnap_vibe_one_by_one = false
+			elseif index == 5
+				_save.kidnap_blindfolded = !_save.kidnap_blindfolded
+
+		if index != null
+			if index != 0
+				thread.Goto("config_ui")
+			else
+				thread.Goto("redraw")
+
+	waitKidnapped:
+		if _save.kidnap_me == false
+			thread.Goto("ui")
+			
+
+	redraw:
+		mc.Clear()
+		Log("Redraw")
+		thread.Goto("ui")		

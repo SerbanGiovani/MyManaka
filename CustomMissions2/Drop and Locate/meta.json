@@ -1,0 +1,103 @@
+{
+	"title": "Drop and Locate",
+	"version": "2026-06-18",
+	"defaultactive": true,
+	"settings": [
+		{
+			"name": "enabled",
+			"title": "Enabled",
+			"type": "Boolean",
+			"default": true
+		},
+		{
+			"name": "show_hud",
+			"title": "Show locate HUD",
+			"type": "Boolean",
+			"default": true
+		},
+		{
+			"name": "debug_drop_log",
+			"title": "Debug dropped item log",
+			"type": "Boolean",
+			"default": false
+		},
+		{
+			"name": "x_position",
+			"title": "X Position",
+			"type": "Float",
+			"default": 0.005,
+			"minvalue": 0.0,
+			"maxvalue": 1.0
+		},
+		{
+			"name": "y_position",
+			"title": "Y Position",
+			"type": "Float",
+			"default": 0.96,
+			"minvalue": 0.0,
+			"maxvalue": 1.0
+		},
+		{
+			"name": "text_size",
+			"title": "Text Size",
+			"type": "Integer",
+			"default": 24,
+			"minvalue": 10,
+			"maxvalue": 36
+		},
+		{
+			"name": "transparency",
+			"title": "Transparency",
+			"type": "Float",
+			"default": 1.0,
+			"minvalue": 0.1,
+			"maxvalue": 1.0
+		},
+		{
+			"name": "place_enabled",
+			"title": "Enable manual drop",
+			"type": "Boolean",
+			"default": true
+		},
+		{
+			"name": "place_modifier_key",
+			"title": "Drop modifier key",
+			"type": "String",
+			"default": "shift"
+		},
+		{
+			"name": "place_key_key",
+			"title": "Drop key hotkey",
+			"type": "String",
+			"default": "K"
+		},
+		{
+			"name": "place_remote_key",
+			"title": "Drop vibe remote hotkey",
+			"type": "String",
+			"default": "V"
+		},
+		{
+			"name": "place_piston_remote_key",
+			"title": "Drop piston remote hotkey",
+			"type": "String",
+			"default": "P"
+		},
+		{
+			"name": "place_forward_offset",
+			"title": "Remote forward offset",
+			"type": "Float",
+			"default": 0.8,
+			"minvalue": 0.0,
+			"maxvalue": 3.0
+		},
+		{
+			"name": "place_key_forward_offset",
+			"title": "Key forward offset",
+			"type": "Float",
+			"default": 1.8,
+			"minvalue": 0.0,
+			"maxvalue": 4.0
+		}
+	]
+}

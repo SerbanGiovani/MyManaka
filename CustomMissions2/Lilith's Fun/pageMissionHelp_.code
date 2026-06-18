@@ -1,0 +1,56 @@
+pageMissionHelp_:
+	chatter = null #Required
+	requestQueue = null #Required
+
+	id2ButtonMap = CreateThread("StaticDict")
+	exitFlag = false
+
+	init:
+		#Required
+		#Params@arr newChatter: Object, newRequestQueue: Object
+		newChatter = _args[0]
+		newRequestQueue = _args[1]
+		if newChatter != null && (newRequestQueue != null)
+			chatter = newChatter
+			requestQueue = newRequestQueue
+		id2ButtonMap.Insert(100, StringsPool2.HomeButtonString,)
+		# id2ButtonMap.Insert(101, StringsPool2.PauseButtonString)
+		# id2ButtonMap.Insert(102, StringsPool2.ContinueButtonString)
+
+	initUI:
+		#Required
+		if _state.Position.stage != "Apart"
+			exitFlag = false
+			chatter.Add(GetLevelDesc(_save.level,StringsPool1),"Left",user = StringsPool2.SystemString, silent = true)
+			chatter.Add(StringsPool1.HelpString,"Left",user = StringsPool2.LilithString, silent = true)
+			
+			id2ButtonMap.Insert(101, StringsPool2.PauseButtonString)
+			id2ButtonMap.Remove(102)
+			chatter.SetButtons(id2ButtonMap.GetValues(), ids = id2ButtonMap.GetKeys())
+			exitFlag = false
+		else
+			exitFlag = true
+
+	updateUI:
+		#Required
+		buttonIndex = chatter.Clicked()
+		button = id2ButtonMap.At(buttonIndex)
+		if button == StringsPool2.HomeButtonString
+			requestQueue.Enqueue("Home Failure")
+			exitFlag = true
+		elseif button == StringsPool2.PauseButtonString
+			requestQueue.Enqueue("Pause Failure")
+			id2ButtonMap.Remove(101)
+			id2ButtonMap.Insert(102, StringsPool2.ContinueButtonString)
+			chatter.SetButtons(id2ButtonMap.GetValues(), ids = id2ButtonMap.GetKeys())
+		elseif button == StringsPool2.ContinueButtonString
+			requestQueue.Enqueue("Start")
+			id2ButtonMap.Insert(101, StringsPool2.PauseButtonString)
+			id2ButtonMap.Remove(102)
+			chatter.SetButtons(id2ButtonMap.GetValues(), ids = id2ButtonMap.GetKeys())
+
+	tryNextPage:
+		#Required
+		#Returns nextPageKey: String
+		if exitFlag
+			_result = "pageReady"

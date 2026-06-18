@@ -1,0 +1,181 @@
+mission_crucible = CreateThread("crucible_init")
+
+crucible_init:
+	Global("crucible_chat", CreateMessengerChat("Unknown Contact", iconcolor = Color(0, 0, 1), icontext = "???", icontextcolor = Color(1, 0, 0)))
+	
+	Global("crucible_menu", CreateMissionMenuItem())
+	crucible_menu.SetText("The Crucible")
+	crucible_menu.SetRPText("2000 RP")
+	crucible_menu.SetBackgroundColor(Color(0.429, 0.644, 1.000, 1.000), Color(0.000, 0.379, 1.000, 1.000))
+	crucible_menu.SetStages("Apart", "Residence", "Park")
+	if _save["crucible_cleared"] == true
+		crucible_menu.SetCleared(true)
+		
+	Global("crucible_panel", CreateMissionPanel())
+	crucible_panel.SetGaugeVisible(false)
+
+	Global("park_fountain", CreateArea(type="sphere", stage="Park", x=75.79, y=52.07, z=83.30, r=6.7))
+	Global("residence_inbound", CreateArea(type="sphere", stage="Residence", x=-41.35, y=-0.11, z=-95.24, r=5.0))
+	Global("mansion_goal", CreateArea(type="sphere", stage="Mansion", x=45.11, y=22.69, z=127.65, r=2.0))
+	
+	_this.Goto("crucible_locked")
+
+crucible_locked:
+	listener = CreateListener("l_crucible_locked")
+
+l_crucible_locked:
+	if _save["dare_cleared"] == true
+		mission_crucible.Goto("crucible_prompt")
+
+crucible_prompt:
+	crucible_chat.Add("Suit up. Welcome to The Crucible.", "Left", user="Unknown Contact", silent=false)
+	crucible_chat.SetButtons("Accept", "Ignore", ids = CreateList("btn_accept", "btn_ignore"))
+	listener = CreateListener("l_crucible_wait_accept")
+
+l_crucible_wait_accept:
+	btn = crucible_chat.Clicked()
+	if btn != null
+		if btn == "btn_accept"
+			crucible_chat.Add("Accept", "Right")
+			crucible_chat.Add("Last one was just warming up. Standard test or pushing limits?", "Left", user="Unknown Contact", silent=false)
+			crucible_chat.SetButtons("Standard", "Hard Mode", ids = CreateList("btn_standard", "btn_hard"))
+			mission_crucible.Goto("crucible_wait_difficulty")
+		elseif btn == "btn_ignore"
+			crucible_chat.Add("Ignore", "Right")
+			crucible_chat.SetButtons()
+			mission_crucible.Goto("crucible_cooldown")
+
+crucible_wait_difficulty:
+	listener = CreateListener("l_crucible_wait_difficulty")
+
+l_crucible_wait_difficulty:
+	btn = crucible_chat.Clicked()
+	if btn != null
+		crucible_chat.SetButtons()
+		hard_mode = false
+		if btn == "btn_standard"
+			crucible_chat.Add("Standard", "Right")
+			active_condition = CreateCondition("[Exposed_All]")
+			mission_crucible.Goto("crucible_setup", active_condition = active_condition, hard_mode = hard_mode)
+		elseif btn == "btn_hard"
+			crucible_chat.Add("Hard Mode", "Right")
+			hard_mode = true
+			active_condition = CreateCondition("[Exposed_All]")
+			mission_crucible.Goto("crucible_setup", active_condition = active_condition, hard_mode = hard_mode)
+
+crucible_setup:
+	UnequipAllCosplay()
+	EquipCosplay("m_cosplay_general_head_sun_glasses", "m_cosplay_general_upper_kubiwa", "m_cosplay_general_genital_ofuda", "m_cosplay_general_genital_tail_plug", "m_cosplay_maid_bag", "m_cosplay_maid_stocking", "m_cosplay_ninja_mask", "m_cosplay_kemono_ear_fox", "m_cosplay_bunny_harness_top", "m_cosplay_bunny_harness_under", "m_cosplay_bunny_nippless", "m_cosplay_bunny_shoes", "m_cosplay_suit_luxe_chorker")
+	EquipAdultToy("KuriRotor")
+	if hard_mode == true
+		EquipAdultToy("TitRotor")
+		SetVibrator("Random")
+
+	else
+		SetVibrator("Low")
+	LockHandcuffs(handcuffstype="Handcuff", attachtoobject=false, duration=0)
+	DropItem(itemtype="Coat", stage="Apart", x=1.39, y=0.00, z=2.05, compass=false)
+	DropItem(itemtype="HandcuffKey", stage="Apart", x=1.39, y=0.00, z=2.05, compass=false)
+	DropItem(itemtype="VibeRemocon", stage="Apart", x=1.39, y=0.00, z=2.05, compass=false)
+	SetStage("Mansion", daytime=false)
+	listener = CreateListener("l_crucible_teleport", active_condition = active_condition)
+
+l_crucible_teleport:
+	if delay_timer == null
+		delay_timer = 0
+	delay_timer = delay_timer + _timediff
+	if delay_timer >= 0.5
+		SetPlayerPosition(x=45.11, y=22.69, z=127.65)
+		crucible_chat.Add("Location services forced on. Make your way to the Park.", "Left", user="Unknown Contact", silent=false)
+		crucible_panel.SetText("Head out to the Residential Area")
+		crucible_panel.SetVisible(true)
+		mission_crucible.Goto("crucible_leg1", active_condition = active_condition)
+
+crucible_leg1:
+	listener = CreateListener("l_crucible_leg1", active_condition = active_condition)
+
+l_crucible_leg1:
+	if active_condition.Check() == false
+		mission_crucible.Goto("crucible_fail")
+	elseif _state.Position.stage == "Residence"
+		crucible_chat.Add("Nice pace. Proceed through the streets to Central Park. We're watching.", "Left", user="Unknown Contact", silent=false)
+		crucible_panel.SetText("Proceed to the Park")
+		mission_crucible.Goto("crucible_leg2", active_condition = active_condition)
+
+crucible_leg2:
+	listener = CreateListener("l_crucible_leg2", active_condition = active_condition)
+
+l_crucible_leg2:
+	if active_condition.Check() == false
+		mission_crucible.Goto("crucible_fail")
+	elseif _state.Position.stage == "Park"
+		crucible_chat.Add("Checkpoint reached. Enter Park.", "Left", user="Unknown Contact", silent=false)
+		crucible_panel.SetText("Reach the Park Fountain")
+		mission_crucible.Goto("crucible_leg3", active_condition = active_condition)
+
+crucible_leg3:
+	listener = CreateListener("l_crucible_leg3", active_condition = active_condition)
+
+l_crucible_leg3:
+	if active_condition.Check() == false
+		mission_crucible.Goto("crucible_fail")
+	elseif park_fountain.Inside()
+		crucible_chat.Add("You're only halfway. Turn around and come back. We'll be waiting.", "Left", user="Unknown Contact", silent=false)
+		crucible_panel.SetText("Head back to the Residential Area")
+		mission_crucible.Goto("crucible_leg4", active_condition = active_condition)
+
+crucible_leg4:
+	listener = CreateListener("l_crucible_leg4", active_condition = active_condition)
+
+l_crucible_leg4:
+	if active_condition.Check() == false
+		mission_crucible.Goto("crucible_fail")
+	elseif residence_inbound.Inside()
+		crucible_chat.Add("We can see you. Proceed to Room 1008.", "Left", user="Unknown Contact", silent=false)
+		crucible_panel.SetText("Return to the Apartment Complex")
+		mission_crucible.Goto("crucible_leg5", active_condition = active_condition)
+
+crucible_leg5:
+	listener = CreateListener("l_crucible_leg5", active_condition = active_condition)
+
+l_crucible_leg5:
+	if active_condition.Check() == false
+		mission_crucible.Goto("crucible_fail")
+	elseif mansion_goal.Inside()
+		crucible_chat.Add("Mission Complete. You survived The Crucible.", "Left", user="Unknown Contact", silent=false)
+		crucible_chat.Add("Reward transferred: 2000 RP.", "Left", user="Unknown Contact", silent=false)
+		PlaySoundEffect("UICompleteMission")
+		UnlockHandcuffs()
+		SetVibrator("Off")
+		UnequipAllCosplay()
+		UnequipAdultToy("KuriRotor", "TitRotor")
+		CollectItem(itemtype="VibeRemocon")
+		AddCurrentRP(2000)
+		_save["crucible_cleared"] = true
+		crucible_menu.SetCleared(true)
+		crucible_panel.SetVisible(false)
+		SetStage("Apart", daytime=true)
+		SetPlayerPosition(x=-1.81, y=0.00, z=-0.20)
+		mission_crucible.Goto("crucible_cooldown")
+
+crucible_cooldown:
+	listener = CreateListener("l_crucible_cooldown")
+
+l_crucible_cooldown:
+	if delay_timer == null
+		delay_timer = 0
+	delay_timer = delay_timer + _timediff
+	if delay_timer >= 60.0
+		mission_crucible.Goto("crucible_locked")
+
+crucible_fail:
+	crucible_chat.Add("You altered state. Start over.", "Left", user="Unknown Contact", silent=false)
+	crucible_panel.SetVisible(false)
+	UnlockHandcuffs()
+	SetVibrator("Off")
+	UnequipAllCosplay()
+	UnequipAdultToy("KuriRotor", "TitRotor")
+	CollectItem(itemtype="VibeRemocon")
+	SetPlayerPosition(x=1.39, y=0.00, z=2.05)
+	SetStage("Apart", daytime=true)
+	mission_crucible.Goto("crucible_cooldown")

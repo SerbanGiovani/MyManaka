@@ -1,0 +1,26 @@
+createrCallNpc_:
+	#Note Event: List must have:
+	# common: List see 'event.common'
+	# caughtRadius: Number
+	# speed: Number
+	# spawnDelay: Number
+	# caughtTime: Number
+
+	create:
+		#Required
+		#Returns event: List
+		
+		event = CreateList()
+		event.common = CreateList()
+		event.common.requiredProcessor = "processorCallNpc"
+		event.common.name = StringsPool2.CallNpcString
+		event.common.description = RandomString("CallNpc", StringsPool0)
+		event.common.duration = 80
+		event.common.delay = 5
+		
+		event.caughtRadius = 1.5
+		event.caughtTime = 3.2
+		event.speed = 1
+		event.spawnDelay = 30
+		
+		_result = event

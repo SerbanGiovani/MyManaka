@@ -1,0 +1,50 @@
+runtime_:
+	blockFlag = true
+	
+	localTracers = CreateThread("DynamicDict")
+	
+	startLoop:
+		#Returns listener: Object
+		_result = CreateListenerLocal("__update")
+	setBlockFlag:
+		#Params@arr blockFlag: Bool
+		blockFlag = _args[0]
+	clear:
+		Runtime.CustomNpcIds.Clear()
+		Runtime.LocalTracerIds.Clear()
+		
+		localTracers.Clear()
+
+	LocalTracerStopper:
+		do:
+			value.TracePlayer(false)
+	lts = CreateThread("LocalTracerStopper")
+	stop:
+		blockFlag = true
+		Foreach(localTracers, lts)
+
+	__update:
+		if !blockFlag
+			__updateLocalTracerIds()
+
+	LocalTracerBehaviour:
+		npc = null
+		do:
+			if localTracers.ContainsKey(value)
+				npc = localTracers.At(value)
+			else
+				npc = CreateNPC(value)
+				if !npc.IsAlive()
+					npc = null
+				else
+					localTracers.Insert(value, npc)
+			if npc != null
+				if npc.Strangeness() >= 1
+					npc.TracePlayer(false)
+	ltb = CreateThread("LocalTracerBehaviour")
+	__updateLocalTracerIds:
+		if _stagechanged
+			Runtime.LocalTracerIds.Clear()
+			localTracers.Clear()
+		else
+			Foreach(Runtime.LocalTracerIds.GetValues(), ltb)

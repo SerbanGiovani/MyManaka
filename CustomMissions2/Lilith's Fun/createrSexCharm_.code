@@ -1,0 +1,23 @@
+createrSexCharm_:
+	#Note Event: List must have:
+	# common: List see 'event.common'
+	# minStrangeness: Number
+	# extraDelta: Number
+	# alterDistance: Number
+
+	create:
+		#Required
+		#Returns event: List
+		
+		event = CreateList()
+		event.common = CreateList()
+		event.common.requiredProcessor = "processorSexCharm"
+		event.common.name = StringsPool2.SexCharmString
+		event.common.description = RandomString("SexCharm", StringsPool0)
+		event.common.duration = Random(35, 60)
+		event.common.delay = 8
+		
+		event.minStrangeness = Random(0.18, 0.33)
+		event.extraDelta = Random(0.045, 0.09)
+		event.alterDistance = 3
+		_result = event

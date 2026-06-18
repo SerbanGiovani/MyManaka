@@ -1,0 +1,56 @@
+{
+    "name": "Bukkake.Mat",
+    "shader": "Standard (Specular setup)",
+  
+  
+    "textures": {
+	  "_MainTex": "Texture - Custom.png",
+	  "_SpecGlossMap": "",
+	  "_BumpMap": "Normal.png",
+	  "_ParallaxMap": "",
+	  "_OcclusionMap": "",
+	  "_EmissionMap": "",
+	  "_DetailMask": "",
+	  "_DetailAlbedoMap": "",
+	  "_DetailNormalMap": "Normal.png"
+    },
+  
+  
+    "colors": {
+		"_Color":									[0.700, 0.700, 0.700, 1.000],
+		"_SpecColor":								[0.400, 0.400, 0.400, 1.000],
+		"_EmissionColor":							[0.200, 0.200, 0.200, 1.000]
+    },
+  
+  
+    "floats": {
+		"_Mode": 2,
+		"_SrcBlend": 5,
+		"_DstBlend": 6,
+		"_ZWrite": 0,
+		
+		"_SpecularHighlights": 1,
+		"_GlossyReflections": 1,
+		
+		"_Cutoff": 0.249,
+		"_Glossiness": 0.9,
+		"_Metallic": 0.834,
+		"_SmoothnessTextureChannel": 0,
+		"_BumpScale": 1.0,
+		"_Parallax": 0.02,
+		"_OcclusionStrength": 1.0,
+		"_DetailNormalMapScale": 0.5,
+		"_UVSec": 0
+    },
+	
+	"vectors": {
+	},
+  
+  
+    "keywords": ["_ALPHABLEND_ON", "_DETAIL_MULX2", "_NORMALMAP"],
+  
+  
+    "doubleSided": true,
+    "transparent": true
+  }
+  

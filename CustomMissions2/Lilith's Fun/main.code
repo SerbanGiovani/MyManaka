@@ -1,0 +1,33 @@
+m = CreateThread("wait")
+wait:
+	startCondition = CreateThread("startCondition_")
+	listener = CreateListener("l")
+	l:
+		if StringsPool0 != null && (StringsPool1 != null) && (StringsPool2 != null) && (Stages != null) && (Casuals != null) && (Runtime != null)
+			Log("Lilith: Global resources have already!!")
+			if startCondition.check()
+				m.Goto("main")
+			else
+				m.Goto("stop")
+stop:
+	board = CreateText()
+	board.SetAnchor(0.5, 0.75)
+	board.SetAlignment("Top")
+	board.SetSize(40)
+	
+	board.Add(text = StringsPool1.stopString, facecolor = Color(1,0,0), duration = 15)
+
+main:
+	# Init config
+	config = CreateThread("config_")
+	config.doConfig()
+	Log("Lilith: Configuration Initialized!!")
+	
+	# Curse :)
+	# curse = CreateThread("curse_")
+	# curse.doCurse()
+	# Log("Lilith: cursed!!")
+	
+	# Establish system
+	system = CreateThread("system_")
+	system.work()

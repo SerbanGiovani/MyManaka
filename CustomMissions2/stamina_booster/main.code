@@ -1,0 +1,17 @@
+stamina_listener = CreateListener("stamina")
+
+last_stamina = _state.StaminaMax
+
+stamina:
+
+	stamina = GetStamina()
+	
+	if stamina < last_stamina
+		difference = last_stamina - stamina
+		difference_scaled = difference * _settings.stamina_scale
+		new_total = last_stamina - difference_scaled
+		SetStamina(new_total)
+		last_stamina = new_total
+	
+	else
+		last_stamina = stamina

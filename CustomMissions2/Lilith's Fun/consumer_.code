@@ -1,0 +1,191 @@
+consumer_:
+
+	workingProcessors = CreateThread("RecordSet")
+	whiteProcessors = CreateThread("RecordSet")
+
+	eventQueue = null #Required
+
+	eventTable = CreateList()
+	eventTimers = CreateList()
+	startFlags = CreateList()
+	textTrigger = CreateThread("consumerTextTrigger_")
+	processors = CreateList()
+	maxDisplayCount = 3
+	skipCondition = CreateThread("defautConditon_")
+	annoyedCondition = CreateThread("defautConditon_")
+
+	blockFlag = true
+	
+	missioning = false
+	welcomePrompt = false
+	startPrompt = false
+	annoyPrompt = false
+
+	shouldAnnoyed = false
+
+	startLoop:
+		#returns listener: Object
+		_result = CreateListenerLocal("__consume")
+
+	__consume:
+		i = 0
+		shouldAnnoyed = annoyedCondition.check()
+		if (!skipCondition.check()) && (!shouldAnnoyed) && (!blockFlag)
+			__clearPrompts()
+			while i < maxDisplayCount
+				__tryFlushEvent(i)
+				__tryProcess(i)
+				__tryFlushUI(i)
+				i = i + 1
+		else
+			__prompt()
+			while i < maxDisplayCount
+				__tryFlushUI(i)
+				i = i + 1
+
+	__tryFlushUI:
+		#Params@arr index: Number
+		index = _args[0]
+		timer = eventTimers[index]
+		event = eventTable[index]
+		if event != null && (timer != null)
+			remainTime = event.common.delay + event.common.duration - timer
+			remainTime = Trunc(remainTime)
+			textTrigger.flush(index, remainTime)
+
+	__tryFlushEvent:
+		#Params@arr index: Number
+		index = _args[0]
+		event = eventTable[index]
+		timer = eventTimers[index]
+		if event == null || (timer >= (event.common.duration + event.common.delay))
+			if event != null
+				processor = processors[event.common.requiredProcessor]
+				if processor != null
+					processor.end()
+				workingProcessors.Remove(event.common.requiredProcessor)
+			newEvent = eventQueue.Dequeue()
+			if newEvent != null && ((!workingProcessors.Contains(newEvent.common.requiredProcessor)) || (whiteProcessors.Contains(newEvent.common.requiredProcessor)))
+				# Log("common.name " + newEvent.common.name)
+				eventTable[index] = newEvent
+				eventTimers[index] = 0
+				textTrigger.trigger(index, newEvent)
+				PlaySoundEffect("Pinpon", volume = 1)
+				processor = processors[newEvent.common.requiredProcessor]
+				if processor != null
+					# Log("processor " + processor)
+					startFlags[index] = false
+					workingProcessors.Insert(newEvent.common.requiredProcessor)
+			else
+				eventTable[index] = null
+				eventTimers[index] = null
+
+	__tryProcess:
+		#Params@arr index: Number
+		index = _args[0]
+		event = eventTable[index]
+		timer = eventTimers[index]
+		if event != null && timer != null
+			if timer > event.common.delay
+				processor = processors[event.common.requiredProcessor]
+				if processor != null
+					if !startFlags[index]
+						startFlags[index] = true
+						processor.start(event)
+					processor.update(event)
+			eventTimers[index] = timer + _timediff
+
+	__clearPrompts:
+		if !missioning
+			missioning = true
+			
+			startPrompt = false
+			welcomePrompt = false
+			annoyPrompt = false
+			
+			textTrigger.clearStartPrompt()
+			textTrigger.clearWelcomePrompt()
+			textTrigger.clearAnnoyPrompt()
+
+	__prompt:
+		missioning = false
+		if _state.Position.stage == "Apart"
+			startPrompt = false
+			annoyPrompt = false
+			if !welcomePrompt
+				welcomePrompt = true
+				textTrigger.clearStartPrompt()
+				textTrigger.clearAnnoyPrompt()
+				textTrigger.promptWelcome()
+		else
+			welcomePrompt = false
+			if shouldAnnoyed
+				startPrompt = false
+				if !annoyPrompt
+					annoyPrompt = true
+					textTrigger.clearDiscriptions()
+					textTrigger.clearStartPrompt()
+					textTrigger.clearWelcomePrompt()
+					textTrigger.promptAnnoy()
+			else
+				annoyPrompt = false
+				if !startPrompt
+					startPrompt = true
+					textTrigger.clearDiscriptions()
+					textTrigger.clearWelcomePrompt()
+					textTrigger.clearAnnoyPrompt()
+					textTrigger.promptStart()
+
+	addWhiteKey:
+		#Params@arr key: String
+		whiteProcessors.Insert(key)
+	removeWhiteKey:
+		#Params@arr key: String
+		whiteProcessors.Remove(key)
+	removeProcessor:
+		#Params@arr key: String
+		processors[_args[0]] = null
+	addProcessor:
+		#Params@arr key: String, processor: Object
+		processors[_args[0]] = _args[1]
+	setEventQueue:
+		#Params@arr newEventQueue: Object
+		newEventQueue = _args[0]
+		if newEventQueue != null
+			eventQueue = newEventQueue
+	setMaxDisplayCount:
+		#Params@arr: newMaxDisplayCount: Number
+		maxDisplayCount = _args[0]
+	getMaxDisplayCount:
+		#Returns maxDisplayCount: Number
+		_result = maxDisplayCount
+	setSkipCondition:
+		#Params@arr newSkipCondition: Object
+		#Stats NewSkipCondition must have function 'check' whith returns isValid: Bool
+		newSkipCondition = _args[0]
+		if newSkipCondition != null
+			skipCondition = newSkipCondition
+	setAnnoyedCondition:
+		#Params@arr newAnnoyedCondition: Object
+		#Stats NewAnnoyedCondition must have function 'check' whith returns isValid: Bool
+		newAnnoyedCondition = _args[0]
+		if newAnnoyedCondition != null
+			annoyedCondition = newAnnoyedCondition
+	setBlockFlag:
+		#Params@arr isBlocked
+		isBlocked = _args[0]
+		if isBlocked != null
+			blockFlag = isBlocked
+	ender:
+		do:
+			if value != null
+				processor = processors[value.common.requiredProcessor]
+				if processor != null
+					processor.end()
+				workingProcessors.Remove(value.requiredProcessor)
+	er = CreateThread("ender")
+	stop:
+		Foreach(eventTable, er)
+		eventTable.Remove(index = 0, count = maxDisplayCount)
+		textTrigger.clearEvents()
+		blockFlag = true

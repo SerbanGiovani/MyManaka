@@ -1,0 +1,16 @@
+createrEyeMask_:
+	#Note Event: List must have:
+	# common: List see 'event.common'
+
+	create:
+		#Required
+		#Returns event
+		r = Random(25, 50)
+		
+		event = CreateList()
+		event.common = CreateList()
+		event.common.requiredProcessor = "processorEyeMask"
+		event.common.name = StringsPool2.EyeMaskString
+		event.common.description = RandomString("EyeMask", StringsPool0)
+		event.common.duration = r
+		_result = event

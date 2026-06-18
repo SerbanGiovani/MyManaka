@@ -1,0 +1,40 @@
+createrForcedVibratorOn_:
+	#Note Event: List must have:
+	# vibratorTypes: List
+	# strength: Number
+	# common： List see 'event.common'
+	
+	vibratorTypes = CreateList("TitRotor", "Vibrator", "KuriRotor")
+
+	create:
+		#Required
+		#Returns event: List
+		event = CreateList()
+		event.common = CreateList()
+		event.common.requiredProcessor = "processorForcedVibratorOn"
+		event.common.name = StringsPool2.ForcedVibratorOnString
+		event.common.description = RandomString("ForcedVibratorOn", StringsPool0)
+		event.common.duration = 50
+		event.vibratorTypes = CreateList()
+		
+		i = 0
+		while i < 3
+			r = RandomInt(0, 2)
+			if r == 1
+				event.vibratorTypes.Insert(vibratorTypes[i])
+			i = i + 1
+		if event.vibratorTypes.Count() == 0
+			event.vibratorTypes.Insert(vibratorTypes[1])
+		
+		r = RandomInt(1, 4)
+		if r == 2
+			r = RandomInt(1, 4)
+		if r == 2
+			r = 3
+			event.common.duration = 12
+		elseif r == 3
+			r = 2
+			event.common.duration = 25
+		event.strength = r
+		_result = event
+

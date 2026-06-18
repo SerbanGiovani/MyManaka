@@ -1,0 +1,223 @@
+#################################
+#KeyedShibari v0.1
+#################################
+# Save
+#################################
+
+if _save.locked == null
+	_save.locked = false
+
+if _save.wait == null
+	_save.wait = CreateList()
+
+if _save.duration == null
+	_save.duration = CreateList()
+
+if _save.toys == null
+	_save.toys = CreateList()
+	_save.toys.Vibrator = false
+	_save.toys.KuriRotor = false
+	_save.toys.TitRotor = false
+	_save.toys.PistonPussy = false
+	_save.toys.PistonAnal = false
+	_save.toys.PistonFuta = false
+
+
+#################################
+# Main
+#################################
+
+Main = CreateThread("main")
+
+main:
+	listen = CreateListener("update")
+
+
+update:
+
+	# ===== ПРОВЕРКА ТРУСОВ =====
+
+	hasPants = false
+
+	i = 0
+	while i < _state.Cosplay.Count()
+		if _state.Cosplay[i] == "m_cosplay_general_upper_kikkou"
+			hasPants = true
+		i += 1
+
+	hasKey = false
+	if _state.Items.HandcuffKey != null
+		if _state.Items.HandcuffKey > 0
+			hasKey = true
+
+
+	# ===== ПЕРВОЕ НАДЕВАНИЕ =====
+
+	if hasPants && !_save.locked
+		
+		_save.locked = true
+
+		c = CreateCondition("[AdultToy_Vibrator]")
+		_save.toys.Vibrator = c.Check()
+
+		c = CreateCondition("[AdultToy_KuriRotor]")
+		_save.toys.KuriRotor = c.Check()
+
+		c = CreateCondition("[AdultToy_TitRotor]")
+		_save.toys.TitRotor = c.Check()
+
+		c = CreateCondition("[AdultToy_PistonPussy]")
+		_save.toys.PistonPussy = c.Check()
+
+		c = CreateCondition("[AdultToy_PistonAnal]")
+		_save.toys.PistonAnal = c.Check()
+
+		c = CreateCondition("[AdultToy_PistonFuta]")
+		_save.toys.PistonFuta = c.Check()
+
+
+	# ===== СНЯТИЕ ТРУСОВ =====
+
+	if _save.locked && !hasPants && hasKey
+		_save.locked = false
+
+
+	# ===== НЕ ДАЁМ СНЯТЬ ТРУСЫ =====
+
+	if _save.locked && !hasPants && !hasKey
+		EquipCosplay("m_cosplay_general_upper_kikkou")
+
+
+	# ===== ОТСЛЕЖИВАНИЕ СНЯТИЯ =====
+
+	if hasPants && _save.locked
+
+		if _save.toys.Vibrator
+			c = CreateCondition("[!AdultToy_Vibrator]")
+			if c.Check()
+				_save.wait.Vibrator = true
+
+		if _save.toys.KuriRotor
+			c = CreateCondition("[!AdultToy_KuriRotor]")
+			if c.Check()
+				_save.wait.KuriRotor = true
+
+		if _save.toys.TitRotor
+			c = CreateCondition("[!AdultToy_TitRotor]")
+			if c.Check()
+				_save.wait.TitRotor = true
+
+		if _save.toys.PistonPussy
+			c = CreateCondition("[!AdultToy_PistonPussy]")
+			if c.Check()
+				_save.wait.PistonPussy = true
+
+		if _save.toys.PistonAnal
+			c = CreateCondition("[!AdultToy_PistonAnal]")
+			if c.Check()
+				_save.wait.PistonAnal = true
+
+		if _save.toys.PistonFuta
+			c = CreateCondition("[!AdultToy_PistonFuta]")
+			if c.Check()
+				_save.wait.PistonFuta = true
+
+
+	# ===== ТАЙМЕРЫ =====
+
+	maxDelay = 0.12
+
+	# --- ВИБРАТОР ---
+	if _save.wait.Vibrator
+		if _save.duration.Vibrator == null
+			_save.duration.Vibrator = 0
+		_save.duration.Vibrator += _timediff
+		if _save.duration.Vibrator >= maxDelay
+			EquipAdultToy("Vibrator")
+			_save.wait.Vibrator = false
+			_save.duration.Vibrator = 0
+
+	# --- KURI ---
+	if _save.wait.KuriRotor
+		if _save.duration.KuriRotor == null
+			_save.duration.KuriRotor = 0
+		_save.duration.KuriRotor += _timediff
+		if _save.duration.KuriRotor >= maxDelay
+			EquipAdultToy("KuriRotor")
+			_save.wait.KuriRotor = false
+			_save.duration.KuriRotor = 0
+
+	# --- TIT ---
+	if _save.wait.TitRotor
+		if _save.duration.TitRotor == null
+			_save.duration.TitRotor = 0
+		_save.duration.TitRotor += _timediff
+		if _save.duration.TitRotor >= maxDelay
+			EquipAdultToy("TitRotor")
+			_save.wait.TitRotor = false
+			_save.duration.TitRotor = 0
+
+	# --- PISTON PUSSY ---
+	if _save.wait.PistonPussy
+		if _save.duration.PistonPussy == null
+			_save.duration.PistonPussy = 0
+		_save.duration.PistonPussy += _timediff
+		if _save.duration.PistonPussy >= maxDelay
+			EquipAdultToy("PistonPussy")
+			_save.wait.PistonPussy = false
+			_save.duration.PistonPussy = 0
+
+	# --- PISTON ANAL ---
+	if _save.wait.PistonAnal
+		if _save.duration.PistonAnal == null
+			_save.duration.PistonAnal = 0
+		_save.duration.PistonAnal += _timediff
+		if _save.duration.PistonAnal >= maxDelay
+			EquipAdultToy("PistonAnal")
+			_save.wait.PistonAnal = false
+			_save.duration.PistonAnal = 0
+
+	# --- PISTON FUTA ---
+	if _save.wait.PistonFuta
+		if _save.duration.PistonFuta == null
+			_save.duration.PistonFuta = 0
+		_save.duration.PistonFuta += _timediff
+		if _save.duration.PistonFuta >= maxDelay
+			EquipAdultToy("PistonFuta")
+			_save.wait.PistonFuta = false
+			_save.duration.PistonFuta = 0
+
+
+	# ===== ЗАПРЕТ НОВЫХ =====
+
+	if hasPants && _save.locked
+
+		if !_save.toys.Vibrator
+			c = CreateCondition("[AdultToy_Vibrator]")
+			if c.Check()
+				UnequipAdultToy("Vibrator")
+
+		if !_save.toys.KuriRotor
+			c = CreateCondition("[AdultToy_KuriRotor]")
+			if c.Check()
+				UnequipAdultToy("KuriRotor")
+
+		if !_save.toys.TitRotor
+			c = CreateCondition("[AdultToy_TitRotor]")
+			if c.Check()
+				UnequipAdultToy("TitRotor")
+
+		if !_save.toys.PistonPussy
+			c = CreateCondition("[AdultToy_PistonPussy]")
+			if c.Check()
+				UnequipAdultToy("PistonPussy")
+
+		if !_save.toys.PistonAnal
+			c = CreateCondition("[AdultToy_PistonAnal]")
+			if c.Check()
+				UnequipAdultToy("PistonAnal")
+
+		if !_save.toys.PistonFuta
+			c = CreateCondition("[AdultToy_PistonFuta]")
+			if c.Check()
+				UnequipAdultToy("PistonFuta")

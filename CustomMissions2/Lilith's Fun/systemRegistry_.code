@@ -1,0 +1,27 @@
+systemRegistry_:
+	
+	systemCore = null #Required
+
+	init:
+		#Params@arr systemCore: Object
+		systemCore = _args[0]
+
+	registerAll:
+		systemCore.add(name = "SurprisingAction", weight = 3)
+		systemCore.add(name = "DropCoat", weight = 4)
+		systemCore.add(name = "ForcedVibratorOn", weight = 2)
+		systemCore.add(name = "TrimCosplays", weight = 2, hasAdjustor = true)
+		systemCore.add(name = "LongOrgasm", weight = 1)
+		systemCore.add(name = "Lockcuffs", weight = 1.5, hasAdjustor = true) 
+		systemCore.add(name = "BoringAction", weight = 1.5)
+		systemCore.add(name = "EyeMask", weight = 1.5)
+		systemCore.add(name = "SurprisingTeleport", weight = 0.5)
+		systemCore.add(name = "EcstasyCurse", weight = 5, isWhite = true)
+		systemCore.add(name = "ForcedPistonOn", weight = 2.5)
+		# systemCore.add(name = "PushingOn", weight = 1) # bug...
+		systemCore.add(name = "Teleport", weight = 0.75)
+		systemCore.add(name = "Rest", weight = 11, isWhite = true)
+		systemCore.add(name = "Pee", weight = 2)
+		systemCore.add(name = "SexCharm", weight = 1.75, hasAdjustor =true)
+		systemCore.add(name = "CallNpc", weight = 2.5, hasAdjustor = true)
+		systemCore.add(name = "NpcNotice", weight = 1.5)

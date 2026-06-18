@@ -1,0 +1,37 @@
+processorTeleport_:
+	#Stats Event: List must have:
+	# common： List see 'event.common'
+	flag = true
+	flag2 = false
+	stages = CreateThread("ArraySet")
+	stages.InsertList(Copy(Stages))
+	stages.Remove("Apart")
+
+	start:
+		#Required
+		#Params@arr event: List
+		flag = true
+		flag2 = false
+
+	end:
+		#Required
+		#Params@arr event: List
+
+	update:
+		#Required
+		#Params@arr event: List
+		if flag
+			flag = false
+			flag2 = true
+			curStage = _state.Position.stage
+			stages.Remove(curStage)
+			rStage = stages.Random()
+			stages.Insert(curStage)
+			if _state.Sitting
+				SetAction("StandUp")
+			SetStage(rStage)
+		if _stagechanged & flag2
+			flag2 = false
+			rPos = GetRandomPosition()
+			if rPos != null
+				SetPlayerPosition(x=rPos["x"], y=rPos["y"], z=rPos["z"], rx=0, ry=0, rz=0, rw=1)

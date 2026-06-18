@@ -1,0 +1,14 @@
+adjustorDefault_:
+	#Note Event: List must have:
+	# common: List see 'event.common'
+
+	adjust:
+		#Required
+		#Params@arr event: List
+		#Returns event: List
+		event = _args[0]
+		if _save.level == 0
+			event.common.delay = event.common.delay * 1.4
+		if _save.level > 1
+			event.common.delay = event.common.delay * 0.6
+		_result = event

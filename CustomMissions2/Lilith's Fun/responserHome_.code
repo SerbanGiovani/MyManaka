@@ -1,0 +1,23 @@
+responserHome_:
+	#Note Response like:
+	# 'Home [Failure|Success|Punishment]'
+	systemFacade = null
+	init:
+		#Required
+		#Params@arr systemFacade: Object
+		systemFacade = _args[0]
+
+	response:
+		#Required
+		#Params@arr requestBody: String
+		requestBody = _args[0]
+		if requestBody == "Failure"
+			SetCurrentEarnRP(0)
+			systemFacade.forceFailureCalc()
+		elseif requestBody == "Punishment"
+			SetCurrentEarnRP(0)
+			systemFacade.forcePunishmentCalc()
+		elseif requestBody == "Success"
+			systemFacade.forceSuccessCalc()
+		systemFacade.stop()
+		SetStage("Apart")

@@ -1,0 +1,379 @@
+# Credit
+# Original mod by tkpj8pn2
+# https://f95zone.to/threads/secret-flasher-manaka-custom-missions-1-2-1-version-2-1-1.263276/post-20019416
+
+# Changes
+# Personal adjustments of keywords + added an excluded_keywords. Excluded extends to contains_any check.
+# Checks for _state.Handcuffs.State == "None" on the interact area (don't let you wear clothes with handcuffs). Added this as an option to the settings menu.
+# Added setting for dropping clothes at home instead.
+# Added a couple events (both listens for and emits). Use in your own mod by SetEvent() / GetEvent(). Example usage below.
+
+# Globals
+top_keywords = CreateList("_bra", "_shirt", "_top", "_jacket", "_blazer", "_onepiece", "_cardigan_w", "_hoodie", "_glossy_knit", "leotard", "_suit_suit", "_sister_cloth", "_sister_curtain", "_sister_collar", "_maid_harness", "_apron", "rain_coat", "_swimsuit", "_sukumizu", "_rubber_suit", "sling_shot", "body_net", "_dress", "_towel", "_sweater")
+bottom_keywords = CreateList("_pant", "_skirt", "_stocking", "_underwear", "_diaper", "_thong", "_shorts", "sport_bottom", "_half_bottom", "_bottom")
+excluded_keywords = CreateList("cover", "bukkake")
+
+animations = CreateList()
+nearest_drop = null
+inp = null
+mod_inp = null
+
+if _save.drops == null
+	_save.drops = CreateList()
+drops = _save.drops
+
+# Entry point
+t_m = CreateThread("main")
+
+main:
+	# Restore from save
+	i_setup = 0
+	while drops[i_setup] != null
+		build_ia(drops[i_setup])
+		i_setup += 1
+
+	l = CreateListener("check_events")
+
+	# Listen for keyboard input
+	inp = CreateInput("<Keyboard>/"+_settings.drop_key)
+	mod_inp = CreateInput("<Keyboard>/"+_settings.drop_mod)
+	inp_l = CreateListener("input_listener")
+	input_listener:
+		if inp.WasPressed()
+			i_cos = 0
+			while _state.Cosplay[i_cos] != null
+				if !(_settings.ignore_accs && get_kind(_state.Cosplay[i_cos]) == "generic")
+					drop_garment(_state.Cosplay[i_cos])
+					i_cos = 100000
+				i_cos += 1
+
+	# For performance, regularly update the nearest pile
+	near_l = CreateListener("nearest_listener", t=0)
+	nearest_listener:
+		if t <= _time
+			t = _time + 0.25
+			update_nearest()
+
+	# Listen for interacting with a pile
+	int_l = CreateListener("interact_listener")
+	interact_listener:
+		if (nearest_drop != null && (drops[nearest_drop].ia != null))
+			check = drops[nearest_drop].ia.Check()
+			if (check != null) && (_state.Handcuffs.State == "None" || !_settings.handcuff_check)
+				pickup_garment(check)
+
+drop_garment: # String
+	if _state.Cosplay[_args[0]] == true && animations[_args[0]] == null
+		p = _state.Position
+		unequip_cosplays(_args[0])
+		make_drop(cosplay=_args[0], position=p)
+		update_nearest()
+
+pickup_garment: # check:Bool|Number
+	if _args.Count() > 0
+		check = _args[0]
+	drop = drops[nearest_drop]
+	if check == 0 || drop.garments.Count() <= 1
+		drop.ia = null
+		drop.area = null
+		drops.Remove(nearest_drop)
+		equip_cosplays(drop.garments)
+		update_nearest()
+	else
+		idx = check - 1
+		equip_cosplays(drop.garments[idx])
+		drop.garments.Remove(idx)
+		build_ia(drop)
+
+make_drop: # cosplay:String, position:Vector
+	garments = CreateList()
+	p = Vector(position.x, position.y, position.z)
+	if _settings.home_drop
+		p.stage = "Apart"
+	else
+		p.stage = position.stage
+	# First, search for a nearby clothes drop to add to
+	i_drops = 0
+	while drops[i_drops] != null
+		if Vector3Distance(drops[i_drops].pos, position) < 0.3
+			# Found an existing drop, so use its garments and position to seed the new one being made
+			garments = drops[i_drops].garments
+			p = drops[i_drops].pos
+			drops[i_drops].ia = null # Old interact area does not get destroyed otherwise
+			drops[i_drops].area = null
+			drops.Remove(i_drops) # Delete the old drop - will be merged into new one
+			i_drops += drops.Count() # Skip the rest of the search
+		i_drops += 1
+	garments.Insert(cosplay, index=0)
+	temp = CreateList(garments = garments, pos = p)
+	build_ia(temp)
+	drops.Insert(temp)
+
+build_ia:
+	d = _args[0]
+	p = d.pos
+	opts = CreateList()
+	opts.Insert("Wear all")
+	i_opts = 0
+	while d.garments[i_opts] != null
+		opts.Insert(d.garments[i_opts])
+		i_opts += 1
+	if (_settings.home_drop)
+		d.ia = CreateInteractArea(stage="Apart", x=0.90, y=0, z=0.62, r=0.3, text="Clothes pile", options=opts)
+		d.area = CreateArea(type="sphere", stage="Apart", x=0.90, y=-100, z=0.62, r=0.1, outline=false, compass="imgs/clothes_icon.png")
+	else
+		d.ia = CreateInteractArea(stage=p.stage, x=p.x, y=p.y, z=p.z, r=0.3, text="Clothes pile", options=opts)
+		d.area = CreateArea(type="sphere", stage=p.stage, x=p.x, y=-100, z=p.z, r=0.1, outline=false, compass="imgs/clothes_icon.png")
+
+
+update_nearest:
+	nearest_drop = null
+	best = 100000
+	i_near = 0
+	while drops[i_near] != null
+		dist = Vector3Distance(drops[i_near].pos, _state.Position)
+		stage_check = (_settings.home_drop) || (drops[i_near].pos.stage == _state.Position.stage)
+		if dist < best && stage_check
+			best = dist
+			nearest_drop = i_near
+		i_near += 1
+
+equip_cosplays: # List[String]|String
+	animations[_args[0]] = CreateListener("animation", cosplays=_args[0], on=true)
+
+unequip_cosplays: # List[String]|String
+	animations[_args[0]] = CreateListener("animation", cosplays=_args[0], on=false)
+
+animation: # cosplays:List[String], on:Bool
+	if GetType(cosplays) == "String"
+		tmp = CreateList()
+		tmp.Insert(cosplays)
+		cosplays = tmp
+	if cosplays.Count() > 0
+		if details == null
+			details = details_of(cosplay=cosplays[0], on=on)
+		if _state.Cosplay[cosplays[0]] != on && _state.Action != details.action
+			t = _time + details.t
+			if details.action != null
+				SetAction(details.action)
+		if t != null && (t <= _time)
+			if on
+				EquipCosplay(cosplays[0])
+				animations[cosplays[0]] = null
+				cosplays.Remove(0)
+				equip_cosplays(cosplays)
+			else
+				UnequipCosplay(cosplays[0])
+				animations[cosplays[0]] = null
+				cosplays.Remove(0)
+				unequip_cosplays(cosplays)
+			SetAction("None")
+
+adat = CreateList()
+adat["top"] = CreateList(on=CreateList(action="TakeOnBra", t=2.2), off=CreateList(action="TakeOffBra", t=2))
+adat["bottom"] = CreateList(on=CreateList(action="TakeOnPants", t=2), off=CreateList(action="TakeOffPants", t=2))
+adat["generic"] = CreateList(on=CreateList(action="PickUpItem", t=0.5), off=CreateList(action="PickUpItem", t=0.5))
+adat["none"] = CreateList(on=CreateList(action=null, t=0), off=CreateList(action=null, t=0))
+
+get_kind: # String
+	_result = "generic"
+	if contains_any(normalize(_args[0]), bottom_keywords)
+		_result = "bottom"
+	if contains_any(normalize(_args[0]), top_keywords)
+		_result = "top"
+	# Because "_bra" matches "_bracelet"...
+	if Find("_bracelet", _args[0]) > -1
+		_result = "generic"
+
+details_of: # cosplay:String, on:Bool
+	direc = "on"
+	if !on
+		direc = "off"
+	kind = get_kind(cosplay)
+	if (!_settings.mod_swap && mod_inp.IsPressed()) || (_settings.mod_swap && !mod_inp.IsPressed())
+		kind = "none"
+	_result = adat[kind][direc]
+
+contains_any: # String, List[String]
+	_result = false
+	i_contains = 0
+	while _args[1][i_contains] != null
+		if Find(_args[1][i_contains], _args[0]) > -1
+			_is_excluded = false
+			i_excluded = 0
+
+			while excluded_keywords[i_excluded] != null
+				if Find(excluded_keywords[i_excluded], _args[0]) > -1
+					_is_excluded = true
+					i_excluded += 100
+				i_excluded += 1
+
+			if !_is_excluded
+				_result = true
+				i_contains += 100
+		i_contains += 1
+
+normalize: #String
+	_result = Lower(_args[0])
+	done = false
+	while !done
+		res = Find(" ", _result)
+		if res > -1
+			_result = SubString(_result, start=0, end=res-1) + "_" + SubString(_result, start=res+1)
+		else
+			done = true
+
+# Events
+# clothingDrop_drop (single cosplay or list, anim)
+# clothingDrop_random (anim) -> emits clothingDrop_noclothes (no more to remove!)
+# clothingDrop_alltop (anim) -> emits clothingDrop_notop (no more tops to remove!)
+# clothingDrop_allbottom (anim) -> emits clothingDrop_nobottom (no more bottoms to remove!)
+# clothingDrop_all (anim) -> emits clothingDrop_noclothes (no more to remove!)
+# anim (boolean), should we play the animation once? Defaults false.
+# So you can use clothes as a "life system", no clothes = game over
+
+# Example Usage
+# SetEvent("clothingDrop_allbottom", CreateList(anim=true))
+# SetEvent("clothingDrop_all") defaults anim = false
+
+check_events:
+	# List or specific item
+	req = GetEvent("clothingDrop_drop")
+	if req != null
+		req_info = req[0]
+		play_once = false
+
+		# Allow single string or list
+		cosplays = req
+
+		if GetType(cosplays) == "String"
+			tmp = CreateList()
+			tmp.Insert(cosplays)
+			cosplays = tmp
+		
+		i_cos = 0
+		while cosplays[i_cos] != null
+			cos = cosplays[i_cos]
+
+			# Only drop if currently equipped
+			if _state.Cosplay[cos] == true
+				if !(_settings.ignore_accs && get_kind(cos) == "generic")
+					p = _state.Position
+					Log("CD: Cosplay to drop " + cos)
+					play_anim = false
+					if (req_info != null)
+						play_anim = req_info.anim
+					if (play_anim && !play_once)
+						drop_garment(cos)
+						play_once = true
+					else
+						UnequipCosplay(cos)
+						make_drop(cosplay=cos, position=p)
+			i_cos += 1
+		update_nearest()
+	
+	# Drop random
+	req = GetEvent("clothingDrop_random")
+	if req != null
+		req_info = req[0]
+
+		valid = CreateList()
+		play_once = false
+
+		i_cos = 0
+		while _state.Cosplay[i_cos] != null
+			cos = _state.Cosplay[i_cos]
+			if !(_settings.ignore_accs && get_kind(cos) == "generic")
+				valid.Insert(cos)
+				Log("CD: Valid cosplay found! " + cos)
+			i_cos += 1
+
+		if valid.Count() > 0
+			idx = RandomInt(valid.Count())
+			cos = valid[idx]
+			p = _state.Position
+			Log("CD: Cosplay to drop " + cos)
+			play_anim = false
+			if (req_info != null)
+				play_anim = req_info.anim
+			if (play_anim && !play_once)
+				drop_garment(cos)
+				play_once = true
+			else
+				UnequipCosplay(cos)
+				make_drop(cosplay=cos, position=p)
+			update_nearest()
+		else
+			SetEvent("clothingDrop_noclothes")
+
+	# Drop all top
+	req = GetEvent("clothingDrop_alltop")
+	if req != null
+		req_info = req[0]
+		play_once = false
+
+		i_cos = _state.Cosplay.Count() - 1
+		while i_cos >= 0
+			cos = _state.Cosplay[i_cos]
+			if get_kind(cos) == "top"
+				p = _state.Position
+				play_anim = false
+				if (req_info != null)
+					play_anim = req_info.anim
+				if (play_anim && !play_once)
+					drop_garment(cos)
+					play_once = true
+				else
+					UnequipCosplay(cos)
+					make_drop(cosplay=cos, position=p)
+			i_cos -= -1
+		SetEvent("clothingDrop_notop")
+		update_nearest()
+
+	# Drop all bottom
+	req = GetEvent("clothingDrop_allbottom")
+	if req != null
+		req_info = req[0]
+		play_once = false
+
+		i_cos = _state.Cosplay.Count() - 1
+		while i_cos >= 0
+			cos = _state.Cosplay[i_cos]
+			if get_kind(cos) == "bottom"
+				p = _state.Position
+				play_anim = false
+				if (req_info != null)
+					play_anim = req_info.anim
+				if (play_anim && !play_once)
+					drop_garment(cos)
+					play_once = true
+				else
+					UnequipCosplay(cos)
+					make_drop(cosplay=cos, position=p)
+			i_cos -= 1
+		SetEvent("clothingDrop_nobottom")
+		update_nearest()
+
+	# Unequip all
+	req = GetEvent("clothingDrop_all")
+	if req != null
+		req_info = req[0]
+		play_once = false
+
+		i_cos = 0
+		while _state.Cosplay[i_cos] != null
+			cos = _state.Cosplay[i_cos]
+			if !(_settings.ignore_accs && get_kind(cos) == "generic")
+				p = _state.Position
+				play_anim = false
+				if (req_info != null)
+					play_anim = req_info.anim
+				if (play_anim && !play_once)
+					drop_garment(cos)
+					play_once = true
+				else
+					UnequipCosplay(cos)
+					make_drop(cosplay=cos, position=p)
+			i_cos += 1
+		SetEvent("clothingDrop_noclothes")
+		update_nearest()

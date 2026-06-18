@@ -1,0 +1,18 @@
+createrPushingOn_:
+	#Abandoned
+	#Note Event: List must have:
+	# common: List see 'event.common'
+
+	create:
+		#Required
+		#Returns event: List
+		
+		event = CreateList()
+		event.common = CreateList()
+		event.common.requiredProcessor = "processorPushingOn"
+		event.common.name = "Pushing On"
+		event.common.description = RandomString("PushingOn", StringsPool0)
+		event.common.duration = Random(10, 20)
+		event.vector = Vector(Random(0, 1.5), Random(0, 1.5), 0)
+		_result = event
+		_result = event

@@ -1,0 +1,24 @@
+adjustorSexCharm_:
+	#Note Event: List must have:
+	# common: List see 'event.common'
+	# minStrangeness: Number
+	# extraDelta: Number
+	# alterDistance: Number
+
+	adjust:
+		#Required
+		#Params@arr event: List
+		#Returns event: List
+		event = _args[0]
+		if _save.level == 0
+			event.minStrangeness * 0.4
+			event.extraDelta * 0.4
+			event.alterDistance * 0.5
+		if _save.level == 2
+			event.minStrangeness * 1.4
+			event.extraDelta * 1.4
+		if _save.level == 3
+			event.minStrangeness * 2
+			event.extraDelta * 2
+			event.alterDistance * 1.35
+		_result = event

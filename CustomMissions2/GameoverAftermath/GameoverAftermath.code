@@ -1,0 +1,215 @@
+#################################
+# GameoverAftermath v0.5
+#################################
+
+if _save.sh == null
+	_save.sh = false
+	
+missionPanel = CreateMissionPanel()
+missionPanel.SetGaugeVisible(false)
+
+enableLog = false
+enabled = true
+
+gameoverCond = CreateCondition("[GameOver]")
+
+
+#################################
+# Stage list
+#################################
+
+createStageList:
+	r1 = CreateCondition("[Rank>=1]")
+	r3 = CreateCondition("[Rank>=3]")
+	r4 = CreateCondition("[Rank>=4]")
+	stageList = CreateList()
+	stageList.Insert("Residence")
+	if r1.Check()
+		stageList.Insert("Park")
+	if r3.Check()
+		stageList.Insert("StationFront")
+		stageList.Insert("Mansion")
+	if r4.Check()
+		stageList.Insert("ShoppingMall")
+	_result = stageList
+
+getRandomStage:
+	stageList = createStageList()
+	count = stageList.Count()
+	index = RandomInt(0, count)
+	_result = stageList[index]
+
+switchStage = null
+keyStage = null
+coatStage = null
+
+dropmod = CreateThread("dropmod")
+
+dropmod:
+	thread = _this
+	thread.Goto("normal")
+
+	normalListener:
+		if duration == null
+			duration = 0
+		maxDuration = _settings.delay_after_gameover
+		if maxDuration == null
+			maxDuration = 2.5
+		enabled = _settings.enabled
+		if enabled == null
+			enabled = true
+		if !enabled
+			duration = 0
+			if maxDuration > 0
+				missionPanel.SetGaugeProgress(0)
+		else
+			if gameoverCond.Check()
+				duration = duration + _timediff
+				if duration >= maxDuration
+					thread.Goto("drop")
+			else
+				duration = 0
+			if maxDuration > 0
+				missionPanel.SetGaugeProgress(duration/maxDuration)
+
+	normal:
+		listener = CreateListener("normalListener")
+
+	drop:
+		if _state.GameOver == true
+			if _state.Position.stage == "Apart"
+				norgCond = CreateCondition("[!Orgasm]")
+				if norgCond.Check()
+					thread.Goto("Unequip")
+				else
+					thread.Goto("normal")
+			else
+				thread.Goto("normal")
+		else
+			duration = 0
+			thread.Goto("normal")
+
+	Unequip:
+		_save.sh = false
+		cosp = CreateCondition("(Cosplay_m_cosplay_general_upper_kikkou)")
+		if cosp.Check()
+			_save.sh = true
+			UnequipCosplay("m_cosplay_general_upper_kikkou")
+			listener = CreateListener("waitUnEquip")
+		else
+			thread.Goto("cpVibrator_0")
+
+	cpVibrator_0:
+		c = CreateCondition("(OwnsAdultToy_Vibrator, OwnsAdultToy_KuriRotor, OwnsAdultToy_TitRotor, OwnsAdultToy_PistonPussy, OwnsAdultToy_PistonAnal, OwnsAdultToy_PistonFuta)")
+		if c.Check()
+			CollectItem(itemtype="VibeRemocon")
+			a = true
+			c = CreateCondition("[OwnsAdultToy_Vibrator, !AdultToy_Vibrator]")
+			if a & c.Check()
+				EquipAdultToy("Vibrator")
+				a = false
+			c = CreateCondition("[OwnsAdultToy_KuriRotor, !AdultToy_KuriRotor]")
+			if a & c.Check()
+				EquipAdultToy("KuriRotor")
+				a = false
+			c = CreateCondition("[OwnsAdultToy_TitRotor, !AdultToy_TitRotor]")
+			if a & c.Check()
+				EquipAdultToy("TitRotor")
+				a = false
+			c = CreateCondition("[OwnsAdultToy_PistonPussy, !AdultToy_PistonPussy]")
+			if a & c.Check()
+				EquipAdultToy("PistonPussy")
+				a = false
+			c = CreateCondition("[OwnsAdultToy_PistonAnal, !AdultToy_PistonAnal]")
+			if a & c.Check()
+				EquipAdultToy("PistonAnal")
+				a = false
+			c = CreateCondition("[OwnsAdultToy_PistonFuta, !AdultToy_PistonFuta]")
+			if a & c.Check()
+				EquipAdultToy("PistonFuta")
+				a = false
+			SetVibrator("Random")
+			UnequipAdultToy("TimerHandcuff")
+			switchStage = getRandomStage()
+			SetStage(switchStage)
+			listener = CreateListener("waitStageChanged", stage=switchStage, nextcp="cpVibrator_1")
+		else
+			thread.Goto("cpHandcuff_0")
+
+
+	cpVibrator_1:
+		switchPos = GetRandomPosition()
+		DropItem(itemtype="VibeRemocon", position=switchPos, compass=true)
+		thread.Goto("cpVibrator_3")
+
+	cpVibrator_3:
+		if _save.sh
+			EquipCosplay("m_cosplay_general_upper_kikkou")
+			listener = CreateListener("waitEquip")
+		else
+			thread.Goto("cpHandcuff_0")
+	# Handcuff
+	cpHandcuff_0:
+		a = true
+		c = CreateCondition("(OwnsAdultToy_KeyHandcuff)")
+		if c.Check()
+			CollectItem(itemtype="HandcuffKey")
+			cosp = CreateCondition("[OwnsCosplay_m_cosplay_general_upper_kikkou, !Cosplay_m_cosplay_general_upper_kikkou]")
+			if a & cosp.Check()
+				EquipCosplay("m_cosplay_general_upper_kikkou")
+				a = false
+			c = CreateCondition("(OwnsAdultToy_KeyHandcuff)")
+			if a & c.Check()
+				LockHandcuffs(handcuffstype="KeyHandcuff")
+				a = false
+			keyStage = getRandomStage()
+			SetStage(keyStage)
+			listener = CreateListener("waitStageChanged", stage=keyStage, nextcp="cpHandcuff_1")
+		else
+			thread.Goto("cpCoat_0")
+
+	cpHandcuff_1:
+		keyPos = GetRandomPosition()
+		DropItem(itemtype="HandcuffKey", position=keyPos, compass=true)
+		thread.Goto("cpCoat_0")
+
+	# Coat
+	cpCoat_0:
+		CollectItem(itemtype="Coat")
+		coatStage = getRandomStage()
+		SetStage(coatStage)
+		listener = CreateListener("waitStageChanged", stage=coatStage, nextcp="cpCoat_1")
+
+	cpCoat_1:
+		coatPos = GetRandomPosition()
+		DropItem(itemtype="Coat", position=coatPos, compass=true)
+		thread.Goto("cpPlayer_0")
+
+	# Player
+	cpPlayer_0:
+		SetStage("Apart")
+		listener = CreateListener("waitStageChanged", stage=playerStage, nextcp="cpPlayer_1")
+
+	cpPlayer_1:
+		SetPlayerPosition(x=0.00, y=00.00, z=00.00, rx=0.00000, ry=0.99808, rz=0.00000, rw=0.06192)
+		SetAction("None")
+		thread.Goto("normal")
+
+	waitStageChanged:
+		if _state.Position.stage == stage
+			thread.Goto(nextcp)
+
+	wait_until_equipped:
+		c = CreateCondition(conditionName)
+		if c.Check()
+			thread.Goto(nextcp)
+
+	waitUnEquip:
+		c = CreateCondition("(!Cosplay_m_cosplay_general_upper_kikkou)")
+		if c.Check()
+			thread.Goto("cpVibrator_0")
+
+	waitEquip:
+		c = CreateCondition("(Cosplay_m_cosplay_general_upper_kikkou)")
+		if c.Check()
+			thread.Goto("cpHandcuff_0")

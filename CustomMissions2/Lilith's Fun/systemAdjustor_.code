@@ -1,0 +1,116 @@
+systemAdjustor_:
+	
+	systemCore = null #Required
+
+	maxDispalyCount = 3
+	threshold0 = 4
+	threshold1 = 15
+	
+	uRpMax = 1.5
+	uRpDeltaCorrect = 1
+	baseRpCorrect = 1
+	multiplierCorrect = 1
+	
+	registerParams = CreateThread("DynamicDict")
+	removedNames = CreateList()
+	
+	
+	nameRemover:
+		do:
+			systemCore.remove(value)
+	nr = CreateThread("nameRemover")
+	nameAdder:
+		do:
+			item = registerParams.At(value)
+			systemCore.add(name = value, weight = item.weight, isWhite = item.isWhite, hasAdjustor = item.hasAdjustor)
+			item.weight = null
+			item.isWhite = null
+			item.hasAdjustor = null
+	na = CreateThread("nameAdder")
+	__singleApply:
+		systemCore.setMaxDisplayCount(maxDispalyCount)
+		systemCore.setGeneraterThreshold(threshold1,threshold0)
+		systemCore.correctReward(uRpMax = uRpMax, uRpDeltaCorrect = uRpDeltaCorrect, multiplierCorrect = uRpDeltaCorrect)
+		
+		Foreach(removedNames, nr)
+		Foreach(registerParams.GetKeys(), na)
+		ClearList(removedNames)
+
+	__recover:
+		systemCore.add(name = "Rest", weight = 11, isWhite = true)
+		systemCore.add(name = "SurprisingTeleport", weight = 0.5)
+		systemCore.add(name = "NpcNotice", weight = 1.5)
+
+	__addRegisterParams:
+		#Params@key name: String, [weight: Number], [isWhite: Bool], [hasAdjustor: Bool]
+		item = null
+		if !registerParams.ContainsKey(name)
+			item = CreateList()
+		else
+			item = registerParams.At(name)
+		item.weight = weight
+		item.isWhite = isWhite
+		item.hasAdjustor = hasAdjustor
+		registerParams.Insert(name, item)
+
+	init:
+		#Params@arr systemCore: Object
+		systemCore = _args[0]
+
+	adjust:
+		__recover()
+		__adjust()
+		__singleApply()
+	
+	__adjust:
+		level = _save.level
+		if level == 0
+			maxDispalyCount = 3
+			threshold0 = 4
+			threshold1 = 15
+			
+			uRpMax = 1.2
+			uRpDeltaCorrect = 0.7
+			baseRpCorrect = 1
+			multiplierCorrect = 0.7
+			
+			removedNames.Insert("Rest")
+			removedNames.Insert("NpcNotice")
+			removedNames.Insert("SurprisingTeleport")
+			__addRegisterParams(name = "Rest", weight = 17, isWhite = true, hasAdjustor = true)
+		elseif level == 1
+			maxDispalyCount = 3
+			threshold0 = 4
+			threshold1 = 15
+			
+			uRpMax = 1.5
+			uRpDeltaCorrect = 1
+			baseRpCorrect = 1
+			multiplierCorrect = 1
+			
+			removedNames.Insert("Rest")
+			__addRegisterParams(name = "Rest", weight = 11, isWhite = true, hasAdjustor = true)
+		elseif level == 2
+			maxDispalyCount = 4
+			threshold0 = 5
+			threshold1 = 20
+			
+			uRpMax = 2.0
+			uRpDeltaCorrect = 2.0
+			baseRpCorrect = 1.1
+			multiplierCorrect = 1.6
+			
+			removedNames.Insert("Rest")
+			__addRegisterParams(name = "Rest", weight = 8.5, isWhite = true, hasAdjustor = true)
+		elseif level == 3
+			maxDispalyCount = 5
+			threshold0 = 6
+			threshold1 = 25
+			
+			uRpMax = 3.0
+			uRpDeltaCorrect = 3.2
+			baseRpCorrect = 1.6
+			multiplierCorrect = 1.6
+			
+			removedNames.Insert("Rest")
+			__addRegisterParams(name = "Rest", weight = 8.5, isWhite = false, hasAdjustor = true)

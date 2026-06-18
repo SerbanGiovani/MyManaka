@@ -1,0 +1,69 @@
+pageMain_:
+	chatter = null #Required
+	requestQueue = null #Required
+	callList = CreateList("__processLevelUp","__processLevelDown","__processShowingRule")
+	buttons = CreateList(StringsPool2.UpLevelButtonString,StringsPool2.DownLevelButtonString,StringsPool2.RuleButtonString)
+
+	exitFlag = false
+
+	init:
+		#Required
+		#Params@arr newChatter: Object, newRequestQueue: Object
+		newChatter = _args[0]
+		newRequestQueue = _args[1]
+		if newChatter != null && (newRequestQueue != null)
+			chatter = newChatter
+			requestQueue = newRequestQueue
+
+	initUI:
+		#Required
+		if _state.Position.stage == "Apart"
+			exitFlag = false
+			chatter.Add(StringsPool1.InitChatterString,"Left",user = StringsPool2.LilithString, silent = true)
+			chatter.Add(GetLevelDesc(_save.level,StringsPool1),"Left",user = StringsPool2.SystemString, silent = true)
+			chatter.SetButtons(buttons)
+		else
+			exitFlag = true
+
+	updateUI:
+		#Required
+		buttonIndex = chatter.Clicked()
+		if buttonIndex != null && (!exitFlag)
+			CallFunction(callList[buttonIndex])
+
+	tryNextPage:
+		#Required
+		#Returns nextPageKey: String
+		if exitFlag
+			if _state.Position.stage == "Apart"
+				_result = "pageRule"
+			else
+				_result = "pageReady"
+
+	__processLevelUp:
+		level = _save.level + 1
+		if level > _save.maxLevel
+			level = _save.maxLevel
+		_save.level = level
+		string = ""
+		if _save.level == _save.maxLevel
+			string = string + StringsPool1.MaxLevelString
+		else
+			string = string + StringsPool1.UpLevelString
+		chatter.Clear()
+		chatter.Add(string,"Left",user = StringsPool2.LilithString, silent = true)
+		chatter.Add(GetLevelDesc(_save.level,StringsPool1),"Left",user = StringsPool2.SystemString, silent = true)
+
+	__processLevelDown:
+		level = _save.level - 1
+		if level < 0
+			level = 0
+		_save.level = level
+		chatter.Clear()
+		chatter.Add(StringsPool1.DownLevelString,"Left",user = StringsPool2.LilithString, silent = true)
+		chatter.Add(GetLevelDesc(_save.level,StringsPool1),"Left",user = StringsPool2.SystemString, silent = true)
+
+	__processShowingRule:
+		exitFlag = true
+		chatter.Clear()
+		chatter.Add(StringsPool1.CoreRuleString,"Left",user = StringsPool2.LilithString, silent = true)

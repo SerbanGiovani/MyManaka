@@ -1,0 +1,663 @@
+travelListeners = CreateList()
+
+getZone:
+	getArea = CreateArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y, z=_state.Position.z, r=0.8)
+	getzone = CreateZone(getArea)
+	getzone.SetVisible(false)
+	_result = getzone
+
+colors = CreateList(red=Color(1,0,0,1), orange=Color(1,0.5,0,1), green=Color(0,0.6,0,1))
+
+subtitle = CreateSubs()
+subtitleMind = CreateSubs(Color(0.7,0.7,0.7,1))
+subtitleMei = CreateSubs(Color(1,0.5,0,1))
+subtitleDeliv = CreateSubs(Color(0,0.6,0,1))
+subtitleClerk = CreateSubs(Color(0.3,1,1,1))
+subtitleGirl = CreateSubs(Color(1,0.4,0.7,1))
+subtitleGuy = CreateSubs(Color(1,1,0.4,1))
+subtitleWoman = CreateSubs(Color(0.7,0.2,1,1))
+subtitleThug = CreateSubs(Color(0.9,0.1,0.1,1))
+subtitleOld = CreateSubs(Color(0.3,0.3,1,1))
+
+subtitleB = CreateText()
+subtitleB.SetSize(36)
+subtitleB.SetAnchor(0.2,0.126)
+subtitleB.SetAlignment("TopLeft")
+subtitleB.SetWidth(830)
+subtitleB.SetFace(dilate=0.3)
+subtitleB.SetOutline(width=0.2)
+subtitleB.SetFrontLayer(true)
+
+CreateSubs:
+	subs = CreateText()
+	subs.SetSize(30)
+	subs.SetAnchor(0.2,0.126)
+	subs.SetAlignment("TopLeft")
+	subs.SetWidth(830)
+	subs.SetOutline(width=0.2)
+	if _args[0]==null
+		subs.SetFace(dilate=0.3)
+	else
+		subs.SetFace(color=_args[0],dilate=0.3)
+	subs.SetOutline(color=Color(0.06,0.06,0.06,1),width=0.3)
+	subs.SetFrontLayer(true)
+	_result = subs
+
+CreateHUD:
+	x = _args[0]
+	y = _args[1]
+	subs = CreateText()
+	subs.SetSize(24)
+	subs.SetAnchor(x,y)
+	subs.SetAlignment("TopLeft")
+	subs.SetWidth(1024)
+	subs.SetOutline(width=0.2)
+	subs.SetFace(color=colors.red,dilate=0.3)
+	subs.SetOutline(color=Color(0.06,0.06,0.06,1),width=0.3)
+	subs.SetFrontLayer(true)
+	subs.Add(text="●")
+	_result = subs
+
+CreateHUDlabel:
+	x = _args[0]
+	y = _args[1]
+	text = _args[2]
+	subs = CreateText()
+	subs.SetSize(24)
+	subs.SetAnchor(x,y)
+	subs.SetAlignment("TopLeft")
+	subs.SetWidth(1024)
+	subs.SetOutline(width=0.2)
+	subs.SetFace(dilate=0.3)
+	subs.SetOutline(color=Color(0.06,0.06,0.06,1),width=0.3)
+	subs.SetFrontLayer(true)
+	subs.Add(text=text)
+	_result = subs
+
+ClearAllSubs:
+	subtitle.Clear()
+	subtitleMind.Clear()
+	subtitleMei.Clear()
+	subtitleDeliv.Clear()
+	subtitleClerk.Clear()
+	subtitleGirl.Clear()
+	subtitleGuy.Clear()
+	subtitleWoman.Clear()
+	subtitleThug.Clear()
+	subtitleOld.Clear()
+
+MoveNPC:
+	if npc.IsAlive()
+		npc.Stopped(false)
+		npc.ClearWaypoints()
+		if rotation != null || nextcp != null
+			travelListeners[npc.GetID()] = CreateListener("travel_listener",npc=npc,position=coord,rotation=rotation,thread=thread,nextcp=nextcp)
+		npc.AddWaypoint(coord)
+
+IsNearArea:
+	entity = _args[0]
+	zone = _args[1]
+	margin = 0.17
+	#if entity.x == zone.x && entity.y == zone.y && entity.z == zone.z
+	#Log("NPC : x="+entity.x+" / y="+entity.y+" / z="+entity.z)
+	#Log("ZON : x="+zone.x+" / y="+zone.y+" / z="+zone.z)
+	if entity.x > zone.x-margin && entity.x < zone.x+margin && entity.y > zone.y-margin && entity.y < zone.y+margin && entity.z > zone.z-margin && entity.z < zone.z+margin
+		#Log("OK")
+		_result = true
+	else
+		_result = false
+
+#Unusable because it SOMEHOW returns an object. Copy/pasting the same code outside a function works fine. WTF
+FacingPlayer:
+	npc = _args[0]
+	pos = _state.Position
+	dirPlayer = Vector(2*pos.rw*pos.ry, 0, 1-2*pos.ry*pos.ry)
+	pos = npc.GetPosition()
+	dirNPC = Vector(2*pos.rw*pos.ry, 0, 1-2*pos.ry*pos.ry)
+	_return = Vector3Dot(dirPlayer, dirNPC)
+
+CreateMei:
+	#temp_npc = CreateNPC("PreviousFemale", position=position, rotation=rotation, body=3, size=0.9, face=1, hair=0)
+	temp_npc = CreateNPC("NewFemale", position=position, rotation=rotation, body=0, size=0.9, face=6, hair=3)
+	temp_npc.Smartphone(false)
+	temp_npc.Headset(false)
+	temp_npc.Glasses(true)
+	temp_npc.SkipStrangeness(true)
+	temp_npc.Speed(1.4)
+	_result = temp_npc
+
+
+npc_follow_listener:
+	if npc.IsAlive()
+		if !npc.Stopped()
+			if Vector3Distance(_state.Position, npc.GetPosition()) < distance-0.1
+				npc.TracePlayer(false)
+				npc.Stopped(true)
+		else
+			if Vector3Distance(_state.Position, npc.GetPosition()) > distance+0.1
+				npc.TracePlayer(true)
+				npc.Stopped(false)
+
+npc_lead_listener:
+	if npc.IsAlive()
+		if !npc.Stopped()
+			if Vector3Distance(_state.Position, npc.GetPosition()) > distance+0.1
+				npc.Stopped(true)
+				
+				dir = Vector3Sub(_state.Position, npc.GetPosition())
+				angle_deg = yaw_from_direction(dir)
+				half = (angle_deg * PI / 180) * 0.5
+				dir = Quaternion(0, Sin(half), 0, Cos(half))
+				npc.Warp(rotation=dir)
+		else
+			if Vector3Distance(_state.Position, npc.GetPosition()) < distance-0.1
+				npc.Stopped(false)
+
+travel_listener:
+	if !npc.IsAlive()
+		if nextcp != null
+			thread.Goto(nextcp)
+		travelListeners[npc.GetID()] = null
+	else
+		#pos = npc.GetPosition()
+		#Log(pos.y)
+		if IsNearArea(npc.GetPosition(), position)
+			npc.Stopped(true)
+			if rotation != null
+				npc.Warp(rotation=rotation)
+			if nextcp != null
+				ClearAllSubs()
+				thread.Goto(nextcp)
+			travelListeners[npc.GetID()] = null
+
+
+PI = 3.14159
+
+atan2: #(y, x) 
+	if y == null
+		y = _args[0]
+		x = _args[1]
+		
+	if x > 0
+		_result = Atan(y / x) 
+		
+	elseif x < 0
+		if y >= 0
+			_result = Atan(y / x) + PI 
+		else 
+			_result = Atan(y / x) - PI 
+	else # x == 0 
+		if y > 0
+			_result = PI / 2 
+		elseif y < 0
+			_result = -PI / 2 
+		else
+			_result = 0 # undefined, but fine
+
+yaw_from_direction: #dir
+	dir = _args[0]
+	
+	# dir.x and dir.z define the horizontal direction
+	
+	yaw_rad = atan2(dir.x, dir.z)
+	_result = yaw_rad * 180 / PI
+
+
+basic_listener:
+	if panelmode == null
+		panelmode = 0
+	if duration == null
+		duration = 0
+	if maxduration == null
+		maxduration = 0
+		missionpanel.SetGaugeVisible(false)
+	else
+		missionpanel.SetGaugeVisible(true)
+	if reset == null
+		reset = true
+	if zone.Inside()
+		if panelmode == 2
+			missionpanel.SetVisible(true)
+		if condition.Check()
+			if panelmode == 1
+				missionpanel.SetVisible(true)
+			duration = duration + _timediff
+			zone.SetColor(0.5,1,0.5)
+			if duration >= maxduration
+				missionpanel.SetVisible(false)
+				if nextcp != null
+					if sclear == null
+						subtitle.Clear()
+					if nextparameters != null
+						thread.Goto(nextcp, lastzone = zone, parameters=nextparameters)
+					else
+						thread.Goto(nextcp, lastzone = zone)
+		else
+			if reset
+				duration = 0
+			zone.SetColor(1,1,0.5)
+		if maxduration>0
+			missionpanel.SetGaugeProgress(duration/maxduration)
+		
+	else
+		zone.SetColor(1,0.75,0.5)
+		if panelmode >= 1
+			missionpanel.SetVisible(false)
+		if reset
+			duration = 0
+	
+	
+add_ecstasy_listener:
+	missionpanel.SetVisible(true)
+	missionpanel.SetGaugeVisible(true)
+	ecstasy = GetEcstasy()
+	ecstasy += ecstasy_add
+	SetEcstasy(ecstasy)
+	progress = ecstasy / ecstasy_goal
+	missionpanel.SetGaugeProgress(progress)
+	if missionpanel.GetGaugeProgress() >= 1
+		if ecstasy >= 0.999
+			SetEcstasy(1.1)
+		if nextcp != null
+			ClearAllSubs()
+			thread.Goto(nextcp)
+
+
+mpProgressST_listenerST_listener:
+	if text0 != null
+		if missionpanel.GetGaugeProgress()>= 0 & missionpanel.GetGaugeProgress()< 0.01
+			subtitle.Clear()
+			subtitleB.Clear()
+		if missionpanel.GetGaugeProgress()>= 0.01 & missionpanel.GetGaugeProgress()< 0.09
+			subtitle.Add(text=text0)
+	if text1 != null
+		if missionpanel.GetGaugeProgress()>= 0.09 & missionpanel.GetGaugeProgress()< 0.1
+			subtitle.Clear()
+			subtitleB.Clear()
+		if missionpanel.GetGaugeProgress()>= 0.1 & missionpanel.GetGaugeProgress()< 0.29
+			subtitle.Add(text=text1)
+	if text2 != null		
+		if missionpanel.GetGaugeProgress()>= 0.29 & missionpanel.GetGaugeProgress()< 0.3
+			subtitle.Clear()
+			subtitleB.Clear()
+		if missionpanel.GetGaugeProgress()>= 0.3 & missionpanel.GetGaugeProgress()< 0.49
+			subtitle.Add(text=text2)
+	if text3 != null	
+		if missionpanel.GetGaugeProgress()>= 0.49 & missionpanel.GetGaugeProgress()< 0.5
+			subtitle.Clear()
+			subtitleB.Clear()
+		if missionpanel.GetGaugeProgress()>= 0.5 & missionpanel.GetGaugeProgress()< 0.69
+			subtitle.Add(text=text3)
+	if text4 != null	
+		if missionpanel.GetGaugeProgress()>= 0.69 & missionpanel.GetGaugeProgress()< 0.7
+			subtitle.Clear()
+			subtitleB.Clear()
+		if missionpanel.GetGaugeProgress()>= 0.7 & missionpanel.GetGaugeProgress()< 0.89
+			subtitle.Add(text=text4)
+	if text5 != null	
+		if missionpanel.GetGaugeProgress()>= 0.89 & missionpanel.GetGaugeProgress()< 0.9
+			subtitle.Clear()
+			subtitleB.Clear()
+		if missionpanel.GetGaugeProgress()>= 0.9 & missionpanel.GetGaugeProgress()< 0.99
+			subtitle.Add(text=text5)	
+	if missionpanel.GetGaugeProgress()>= 0.99 & missionpanel.GetGaugeProgress()< 1.0
+		subtitle.Clear()
+		subtitleB.Clear()
+
+
+basic_travellistener:
+	missionpanel.SetGaugeVisible(true)
+	if violated == null
+		violated = false
+		missionpanel.SetGaugeProgress(0)		
+	if zone.Inside() & !violated
+		missionpanel.SetVisible(false)
+		if sclear == null
+			subtitle.Clear()
+		if nextparameters != null
+			thread.Goto(nextcp, parameters=nextparameters)
+		else
+			thread.Goto(nextcp)
+	elseif lastzone.Inside()
+		if violated
+			violated = false
+			zone.SetColor(1,0.75,0.5)
+			zone.SetVisible(true)
+			lastzone.SetVisible(false)
+			missionpanel.SetText(text)
+			missionpanel.SetGaugeProgress(0)
+	elseif (!condition.Check())
+		if !violated
+			violated = true
+			lastzone.SetColor(1,0.5,0.5)
+			lastzone.SetVisible(true)
+			zone.SetVisible(false)
+			missionpanel.SetText(violatetext)
+			missionpanel.SetGaugeProgress(0)
+	else
+		dlast = lastzone.DistanceToLastPosition()
+		dnext = zone.DistanceToNearest()
+		if (dlast != null)
+			missionpanel.SetGaugeProgress(dlast/(dlast+dnext))
+
+
+scavenger_travellistener:
+	if zone.Inside()
+		thread.Goto(nextcp)
+	else
+		#Can't refresh the text withing the same frame as the Clear()
+		if clothes.color != clothes.queue && clothes.queue != null
+			#Log(clothes.name+" : "+clothes.queue)
+			clothes.hud.SetFace(color=colors[clothes.queue])
+			clothes.hud.Add(text="●")
+			clothes.color = clothes.queue
+			clothes.queue = null
+		
+		dist = zone.DistanceToNearest()
+		if dist < 10
+			if clothes.color != "green"
+				clothes.queue = "green"
+				clothes.hud.Clear()
+		elseif dist > 30
+			if clothes.color != "red"
+				clothes.queue = "red"
+				clothes.hud.Clear()
+		else
+			if clothes.color != "orange"
+				clothes.queue = "orange"
+				clothes.hud.Clear()
+
+
+wait_listener:
+	if time == null
+		time = 0
+	time = time + _timediff
+	if time>duration
+		missionpanel.SetVisible(false)
+		ClearAllSubs()
+		if nextparameters != null
+			thread.Goto(nextcp, lastzone = zone, parameters=nextparameters)
+		else
+			thread.Goto(nextcp, lastzone = zone) 
+			
+timelimit_listener:
+	if zone.Inside()
+		if condition.Check()
+			if time == null
+				time = 0
+			time = time + _timediff
+			if time>duration
+				missionpanel.SetVisible(false)
+				subtitle.Clear()
+				if nextparameters != null
+					thread.Goto(nextcp, lastzone = zone, parameters=nextparameters)
+				else
+					thread.Goto(nextcp, lastzone = zone) 
+			
+			
+int_listener:
+	if intArea.Check()
+		ClearAllSubs()
+		thread.Goto(nextcp)
+	
+combo_listener:
+	index = intArea.Check()
+	if index != null
+		ClearAllSubs()
+		thread.Goto(nextcps[index])
+	
+		
+ecstasy_listener:
+	if min != null
+		if GetEcstasy() < min/100
+			SetEcstasy(min/100)
+	if max != null
+		if GetEcstasy() > max/100
+			SetEcstasy(max/100)
+
+orgasm_listener:
+	if GetEcstasy() > threshold/100
+		subtitle.Clear()
+		thread.Goto(nextcp)
+
+
+orgasmST_listener:
+	if text0 != null
+		if GetEcstasy()>= 0 & GetEcstasy()< 0.01
+			subtitle.Clear()
+			subtitleB.Clear()
+		if GetEcstasy()>= 0.01 & GetEcstasy()< 0.09
+			subtitle.Add(text=text0)
+	if text1 != null
+		if GetEcstasy()>= 0.09 & GetEcstasy()< 0.1
+			subtitle.Clear()
+			subtitleB.Clear()
+		if GetEcstasy()>= 0.1 & GetEcstasy()< 0.29
+			subtitle.Add(text=text1)
+	if text2 != null		
+		if GetEcstasy()>= 0.29 & GetEcstasy()< 0.3
+			subtitle.Clear()
+			subtitleB.Clear()
+		if GetEcstasy()>= 0.3 & GetEcstasy()< 0.49
+			subtitle.Add(text=text2)
+	if text3 != null	
+		if GetEcstasy()>= 0.49 & GetEcstasy()< 0.5
+			subtitle.Clear()
+			subtitleB.Clear()
+		if GetEcstasy()>= 0.5 & GetEcstasy()< 0.69
+			subtitle.Add(text=text3)
+	if text4 != null	
+		if GetEcstasy()>= 0.69 & GetEcstasy()< 0.7
+			subtitle.Clear()
+			subtitleB.Clear()
+		if GetEcstasy()>= 0.7 & GetEcstasy()< 0.89
+			subtitle.Add(text=text4)
+	if text5 != null	
+		if GetEcstasy()>= 0.89 & GetEcstasy()< 0.9
+			subtitle.Clear()
+			subtitleB.Clear()
+		if GetEcstasy()>= 0.9 & GetEcstasy()< 0.99
+			subtitle.Add(text=text5)	
+	if GetEcstasy()>= 0.99 & GetEcstasy()< 1.0
+		subtitle.Clear()
+		subtitleB.Clear()
+		
+conditionOrgasmST_listener:
+	if zone.Inside()
+		if condition.Check()
+			if text0 != null
+				if GetEcstasy()>= 0 & GetEcstasy()< 0.01
+					subtitle.Clear()
+					subtitleB.Clear()
+				if GetEcstasy()>= 0.01 & GetEcstasy()< 0.09
+					subtitle.Add(text=text0)
+			if text1 != null
+				if GetEcstasy()>= 0.09 & GetEcstasy()< 0.1
+					subtitle.Clear()
+					subtitleB.Clear()
+				if GetEcstasy()>= 0.1 & GetEcstasy()< 0.29
+					subtitle.Add(text=text1)
+			if text2 != null		
+				if GetEcstasy()>= 0.29 & GetEcstasy()< 0.3
+					subtitle.Clear()
+					subtitleB.Clear()
+				if GetEcstasy()>= 0.3 & GetEcstasy()< 0.49
+					subtitle.Add(text=text2)
+			if text3 != null	
+				if GetEcstasy()>= 0.49 & GetEcstasy()< 0.5
+					subtitle.Clear()
+					subtitleB.Clear()
+				if GetEcstasy()>= 0.5 & GetEcstasy()< 0.69
+					subtitle.Add(text=text3)
+			if text4 != null	
+				if GetEcstasy()>= 0.69 & GetEcstasy()< 0.7
+					subtitle.Clear()
+					subtitleB.Clear()
+				if GetEcstasy()>= 0.7 & GetEcstasy()< 0.89
+					subtitle.Add(text=text4)
+			if text5 != null	
+				if GetEcstasy()>= 0.89 & GetEcstasy()< 0.9
+					subtitle.Clear()
+					subtitleB.Clear()
+				if GetEcstasy()>= 0.9 & GetEcstasy()< 0.99
+					subtitle.Add(text=text5)	
+			if GetEcstasy()>= 0.99 & GetEcstasy()< 1.0
+				subtitle.Clear()
+				subtitleB.Clear()
+		else
+			subtitle.Clear()
+			subtitleB.Clear()
+
+
+chatClicked_listener:
+	choice = chat.Clicked()
+	if choice != null
+		if choice == 0
+			chat.Add(text1,"Right")
+			chat.SetButtons()
+			subtitle.Clear()
+			thread.Goto(nextcp)
+		elseif choice == 1
+			chat.Add(text2,"Right")
+			chat.SetButtons()
+			subtitle.Clear()
+			thread.Goto(nextcp2)
+		elseif choice == 2
+			chat.Add(text3,"Right")
+			chat.SetButtons()
+			subtitle.Clear()
+			thread.Goto(nextcp3)
+		elseif choice == 3
+			chat.Add(text4,"Right")
+			chat.SetButtons()
+			subtitle.Clear()
+			thread.Goto(nextcp4)
+		elseif choice == 4
+			chat.Add(text5,"Right")
+			chat.SetButtons()
+			subtitle.Clear()
+			thread.Goto(nextcp5)
+			
+chatClicked_listenerForBug:
+	choice = chat.Clicked()
+	if choice != null
+		if choice == 1
+			chat.Add(text,"Right")
+			chat.SetButtons()
+			subtitle.Clear()
+			thread.Goto(nextcp)
+		
+chatOpened_listener:
+	if chat.Opened()
+		subtitle.Clear()
+		thread.Goto(nextcp)
+
+gallery_listener:
+	choice = chat.Clicked()
+	if choice != null
+		if choice == 0
+			gallery.Show()
+		elseif choice == 1
+			gallery1.Show()
+		
+			
+confirmed_listener:
+	if gallery.Confirmed()
+		selection = gallery.GetSelection()
+		if selection.Count() > 0
+			image = selection[0]
+			subtitle.Clear()
+			chat.SetButtons()
+			thread.Goto(nextcp, image=image)
+		else
+			return
+	if gallery1 != null
+		if gallery1.Confirmed()
+			selection = gallery1.GetSelection()
+			if selection.Count() > 0
+				image = selection[0]
+				subtitle.Clear()
+				chat.SetButtons()
+				thread.Goto(nextcp1, image=image)
+			else
+				return
+
+		
+inthandcuff_listener:
+	if duration == null
+		duration = 0
+	duration = duration + _timediff
+	if duration < 1
+		LockHandcuffs(handcuffstype="Handcuff",attachtoobject=true)
+	else
+		return
+
+keephandcuff_listener:
+	LockHandcuffs(handcuffstype="Handcuff",attachtoobject=true)
+	
+distance_listener:
+	if !initialized
+		prevPosition = _state.Position
+		distance = 0
+		progress = 0
+		initialized = true
+		return
+	if zone.Inside()
+		if condition.Check()
+			missionpanel.SetGaugeVisible(true)
+			position = _state.Position 
+			if prevPosition != null
+				d = Vector3Length(Vector3Sub(position, prevPosition))
+				distance = distance + d
+				progress = distance / target
+				if progress > 1
+					progress = 1
+
+				missionpanel.SetGaugeProgress(progress)
+				prevPosition = position
+				if distance >= target
+					missionpanel.SetVisible(false)
+					subtitle.Clear()
+					thread.Goto(nextcp)
+		else
+			if reset
+				distance = 0
+				progress = 0
+				missionpanel.SetGaugeProgress(0)
+			prevPosition = _state.Position
+			
+leavedistance_listener:
+	if !initialized
+		dropPos = _state.Position
+		initialized = true
+		return
+	currentPos = _state.Position
+	d = Vector3Length(Vector3Sub(currentPos, dropPos))
+	progress = d / targetDist
+	if progress > 1
+		progress = 1
+	missionpanel.SetGaugeVisible(true)
+	missionpanel.SetGaugeProgress(progress)
+	if d >= targetDist
+		missionpanel.SetVisible(false)
+		subtitle.Clear()
+		thread.Goto(nextcp)
+		
+DistanceSubtitle_listener:
+	currentPos = _state.Position
+	diff = Vector3Sub(targetPos, currentPos)
+	remain = Vector3Length(diff)
+	if text1 != null
+		if !shown1
+			if remain <= D1+0.5
+				subtitle.Clear()
+			if remain <= D1
+				subtitle.Add(text=text1,duration=keep1)
+				shown1 = true
+	if text2 != null
+		if !shown2
+			if remain <= D2+0.5
+				subtitle.Clear()
+			if remain <= D2
+				subtitle.Add(text=text2,duration=keep2)
+				shown2 = true

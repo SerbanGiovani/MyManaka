@@ -1,0 +1,97 @@
+processorNpcNotice_:
+	#Note Event: List must have:
+	# common： List see 'event.common'
+	# num: Number
+	# speedFactor: Number
+	
+	timer = 0
+	interval = 0.5
+	
+	flag = false
+
+	finished = 0
+
+	targetStage = ""
+	lockMark = -1
+
+	start:
+		#Required
+		#Params@arr event: List
+		timer = 0
+		flag = false
+		finished = 0
+		targetStage = _state.Position.stage
+		lockMark = -1
+
+	__process:
+		#Params@arr npc: Object, event: List
+		npc = _args[0]
+		event = _args[1]
+		npc.TracePlayer(true)
+		if (_state.Position.stage == "Convenience" || _state.Position.stage == "FashionShop")
+			npc.Speed(npc.Speed() * event.speedFactor * 0.5)
+		else
+			npc.Speed(npc.Speed() * event.speedFactor)
+
+	end:
+		#Required
+		#Params@arr event: List
+		if lockMark >= 0
+			SetStageRankLimit(targetStage, lockMark)
+
+	update:
+		#Required
+		#Params@arr event: List
+		event = _args[0]
+		
+		if _stagechanged
+			cStage = _state.Position.stage
+			lastStage = _state.Position.laststage
+			if cStage == targetStage
+				if lockMark >= 0
+					SetStageRankLimit(targetStage, lockMark)
+				lockMark = -1
+				flag = false
+				finished = 0
+			elseif lastStage == targetStage
+				cRank = GetStageRankLimit(targetStage)
+				if cRank <= 7
+					lockMark = cRank
+					SetStageRankLimit(targetStage, 10)
+				else
+					lockMark = -1
+				flag = true
+		else
+			cStage = _state.Position.stage
+			if cStage != targetStage
+				cRank = GetStageRankLimit(targetStage)
+				if cRank <= 7
+					lockMark = cRank
+					SetStageRankLimit(targetStage, 10)
+		
+		if timer >= interval
+			timer = 0
+			if finished >= event.num
+				flag = true
+			if !flag
+				npcInfos = Copy(_state.NPCs)
+				count = npcInfos.Count()
+				i = 0
+				while i < event.num
+					if count == 0
+						i = event.num
+					else
+						r = RandomInt(0, count)
+						npcInfo = npcInfos[r]
+						id = npcInfo.ID
+						# Log("npc state "+npcInfo.State)
+						if !Runtime.LocalTracerIds.Contains(id) && !Runtime.CustomNpcIds.Contains(id) && npcInfo.FixedType == "None" && !npcInfo.Sitting && npcInfo.State != "Interact"
+							npc = CreateNPC(id)
+							Runtime.LocalTracerIds.Insert(id)
+							__process(npc, event)
+							finished += 1
+						npcInfos.Remove(index = r)
+						count -= 1
+					i += 1
+		else
+			timer += _timediff

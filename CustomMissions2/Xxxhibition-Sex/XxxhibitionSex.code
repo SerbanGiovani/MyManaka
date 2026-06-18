@@ -1,0 +1,686 @@
+main = CreateThread("exhibitionsex") #This is creates the main thread and goes to exhibitionsex
+
+exhibitionsex:
+	thread = _this
+
+	DebugLogging = 1
+	AllStagesList = CreateList("Residence", "Park", "StationFront", "Convenience", "Mansion", "ShoppingMall", "FashionShop")
+
+	first_time = CreateList()
+	setup_first_time()
+	max_duration = CreateList()
+	setup_max_duration()
+	duration = CreateList()
+	setup_duration()
+
+	save = CreateList()
+	setup_save()
+
+	#Set variables this doesn't do much right now
+	exhibition_sex_options=CreateList()
+
+	exhibition_sex_options.is_male=true #_settings.is_male
+	exhibition_sex_options.male_body=0 #_settings.male_body #should be 5 choices
+	exhibition_sex_options.male_hair=0 #_settings.male_hair #should be 6 choices
+	exhibition_sex_options.male_face=0 #_settings.male_face #should be 5 choices
+	exhibition_sex_options.futa_body=0 #_settings.futa_body #should be 11 choices
+	exhibition_sex_options.futa_hair=0 #_settings.futa_hair #should be 10 choices
+	exhibition_sex_options.futa_face=0 #_settings.futa_face #should be 11 choices
+
+	thread.Goto("load_settings")
+
+	load_settings:
+		DebugLogging = _settings.DebugLogging
+		exhibition_sex_options.is_male= _settings.is_male
+		exhibition_sex_options.male_body= _settings.male_body #should be 5 choices
+		exhibition_sex_options.male_hair= _settings.male_hair #should be 6 choices
+		exhibition_sex_options.male_face= _settings.male_face #should be 5 choices
+		exhibition_sex_options.futa_body= _settings.futa_body #should be 11 choices
+		exhibition_sex_options.futa_hair= _settings.futa_hair #should be 10 choices
+		exhibition_sex_options.futa_face= _settings.futa_face #should be 11 choices
+
+	if (DebugLogging == 1)
+		Log("Hello world! This is Exhibition Sex")
+		Log("In main thread of Exhibition Sex")
+
+
+	
+	if (DebugLogging == 1)
+		Log("Here are the settings for exhibition_sex_options:")
+		Log("is_male: "+ exhibition_sex_options.is_male)
+		Log("male_body: "+ exhibition_sex_options.male_body)
+		Log("male_hair: "+ exhibition_sex_options.male_hair)
+		Log("male_face: "+ exhibition_sex_options.male_face)
+		Log("futa_body: "+ exhibition_sex_options.futa_body)
+		Log("futa_hair: "+ exhibition_sex_options.futa_hair)
+		Log("futa_face: "+ exhibition_sex_options.futa_face)
+	# NPC Area
+	exposedFrontNPCAreaSexCondition = CreateCondition("[Exposed_Front, NPCArea, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedAssNPCAreaSexCondition = CreateCondition("[Exposed_Hip, NPCArea, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedUpperNPCAreaSexCondition = CreateCondition("[Exposed_Upper, NPCArea, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedAllNPCAreaSexCondition = CreateCondition("[Exposed_All, NPCArea, (Action_SexStandBack, Action_SexKijoui)]")
+	# Lit NPC Area
+	exposedFrontNPCAreaLitSexCondition = CreateCondition("[Exposed_Front, NPCArea, InLight, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedAssNPCAreaLitSexCondition = CreateCondition("[Exposed_Hip, NPCArea, InLight, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedUpperNPCAreaLitSexCondition = CreateCondition("[Exposed_Upper, NPCArea, InLight, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedAllNPCAreaLitSexCondition = CreateCondition("[Exposed_All, NPCArea, InLight, (Action_SexStandBack, Action_SexKijoui)]")
+	# Blindfolded
+	exposedFrontBlindfoldSexCondition = CreateCondition("[Exposed_Front, NPCArea, Blindfolded, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedAssBlindfoldSexCondition = CreateCondition("[Exposed_Hip, NPCArea, Blindfolded, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedUpperBlindfoldSexCondition = CreateCondition("[Exposed_Upper, NPCArea, Blindfolded, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedAllBlindfoldSexCondition = CreateCondition("[Exposed_All, NPCArea, Blindfolded, (Action_SexStandBack, Action_SexKijoui)]")
+	# Handcuffed
+	exposedFrontNPCAreaHandcuffedSexCondition = CreateCondition("[Exposed_Front, NPCArea, HandcuffsBack, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedAssNPCAreaHandcuffedSexCondition = CreateCondition("[Exposed_Hip, NPCArea, HandcuffsBack, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedUpperNPCAreaHandcuffedSexCondition = CreateCondition("[Exposed_Upper, NPCArea, HandcuffsBack, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedAllNPCAreaHandcuffedSexCondition = CreateCondition("[Exposed_All, NPCArea, HandcuffsBack, (Action_SexStandBack, Action_SexKijoui)]")
+	# Near NPC
+	exposedFrontNearNPCSexCondition = CreateCondition("[Exposed_Front, NearNPC, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedAssNearNPCSexCondition = CreateCondition("[Exposed_Hip,  NearNPC, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedUpperNearNPCSexCondition = CreateCondition("[Exposed_Upper,  NearNPC, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedAllNearNPCSexCondition = CreateCondition("[Exposed_All, NearNPC, (Action_SexStandBack, Action_SexKijoui)]")
+	# Watched
+	exposedFrontWatchedSexCondition = CreateCondition("[Exposed_Front, Watched, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedAssWatchedSexCondition = CreateCondition("[Exposed_Hip, Watched, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedUpperWatchedSexCondition = CreateCondition("[Exposed_Upper, Watched, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedAllWatchedSexCondition = CreateCondition("[Exposed_All, Watched, (Action_SexStandBack, Action_SexKijoui)]")
+	# Showing Off
+	exposedFrontShowingOffSexCondition = CreateCondition("[Exposed_Front, ShowingOff, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedAssShowingOffSexCondition = CreateCondition("[Exposed_Hip, ShowingOff, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedUpperShowingOffSexCondition = CreateCondition("[Exposed_Upper, ShowingOff, (Action_SexStandBack, Action_SexKijoui)]")
+	exposedAllShowingOffSexCondition = CreateCondition("[Exposed_All, ShowingOff, (Action_SexStandBack, Action_SexKijoui)]")
+
+	thread.Goto("exhibition_mission")
+
+	messenger:
+		thread = _this
+
+		chat = CreateMessengerChat("Exhibition Sex", iconcolor = Color(245, 40, 145), icontext = "ExS", icontextcolor = Color(0, 0, 0))
+
+		thread.Goto("step1")
+
+		step1:
+			if exhibition_sex_options.is_male
+				chat.Add("Hey did you want me to come over, baby?", "Left", user="Daddy", silent=true)
+			else
+				chat.Add("Hey did you want me to come over, sugar?", "Left", user="Mommy", silent=true)
+
+	exhibition_mission:
+		thread = _this
+		if (DebugLogging == 1)
+			Log("Beginning of missions function")
+
+		MissionPanel = CreateList()
+		setup_MissionPanel()
+		MissionMenuItem = CreateList()
+		setup_MissionMenuItem()
+		load_save()
+		# might need to move setups to here to reset values on restart(first_time, duration, duration2)
+		# NPC Area
+		exposedFrontNPCAreaSexListener = CreateListenerLocal("basic_listener", condition=exposedFrontNPCAreaSexCondition, msg="Have sex while flashing your front in a place where people pass by", RP=30, RPsec=1, mission="exposedFrontNPCAreaSex")
+		exposedAssNPCAreaSexListener = CreateListenerLocal("basic_listener", condition=exposedAssNPCAreaSexCondition, msg="Have sex while flashing your butt in a place where people pass by", RP=30, RPsec=1, mission="exposedAssNPCAreaSex")
+		exposedUpperNPCAreaSexListener = CreateListenerLocal("basic_listener", condition=exposedUpperNPCAreaSexCondition, msg="Have sex while flashing your upper body in a place where people pass by", RP=40, RPsec=1.8, mission="exposedUpperNPCAreaSex")
+		exposedAllNPCAreaSexListener = CreateListenerLocal("basic_listener", condition=exposedAllNPCAreaSexCondition, msg="Have sex while naked in a place where people pass by", RP=60, RPsec=2.2, mission="exposedAllNPCAreaSex")		
+		# Lit NPC Area
+		exposedFrontNPCAreaLitSexListener = CreateListenerLocal("basic_listener", condition=exposedFrontNPCAreaLitSexCondition, msg="Have sex while flashing your front in a lit area", RP=40, RPsec=1.2, mission="exposedFrontNPCAreaLitSex")
+		exposedAssNPCAreaLitSexListener = CreateListenerLocal("basic_listener", condition=exposedAssNPCAreaLitSexCondition, msg="Have sex while flashing your butt in a lit area", RP=40, RPsec=1.2, mission="exposedAssNPCAreaLitSex")
+		exposedUpperNPCAreaLitSexListener = CreateListenerLocal("basic_listener", condition=exposedUpperNPCAreaLitSexCondition, msg="Have sex while flashing your upper body in a lit area", RP=50, RPsec=2, mission="exposedUpperNPCAreaLitSex")
+		exposedAllNPCAreaLitSexListener = CreateListenerLocal("basic_listener", condition=exposedAllNPCAreaLitSexCondition, msg="Have sex while naked in a lit area", RP=60, RPsec=2.4, mission="exposedAllNPCAreaLitSex")
+		# Blindfolded
+		exposedFrontBlindfoldSexListener = CreateListenerLocal("basic_listener", condition=exposedFrontBlindfoldSexCondition, msg="Have sex while flashing your front in a place where people pass by and be blindfolded", RP=50, RPsec=1.4, mission="exposedFrontBlindfoldSex")
+		exposedAssBlindfoldSexListener = CreateListenerLocal("basic_listener", condition=exposedAssBlindfoldSexCondition, msg="Have sex while flashing your butt in a place where people pass by and be blindfolded", RP=50, RPsec=1.4, mission="exposedAssBlindfoldSex")
+		exposedUpperBlindfoldSexListener = CreateListenerLocal("basic_listener", condition=exposedUpperBlindfoldSexCondition, msg="Have sex while flashing your upper body in a place where people pass by and be blindfolded", RP=80, RPsec=2.3, mission="exposedUpperBlindfoldSex")
+		exposedAllBlindfoldSexListener = CreateListenerLocal("basic_listener", condition=exposedAllBlindfoldSexCondition, msg="Have sex while naked in a place where people pass by and be blindfolded", RP=100, RPsec=2.7, mission="exposedAllBlindfoldSex")
+		# Handcuffed
+		exposedFrontNPCAreaHandcuffedSexListener = CreateListenerLocal("basic_listener", condition=exposedFrontNPCAreaHandcuffedSexCondition, msg="Have sex while flashing your front in a place where people pass by and be handcuffed", RP=50, RPsec=1.3, mission="exposedFrontNPCAreaHandcuffedSex")
+		exposedAssNPCAreaHandcuffedSexListener = CreateListenerLocal("basic_listener", condition=exposedAssNPCAreaHandcuffedSexCondition, msg="Have sex while flashing your butt in a place where people pass by and be handcuffed", RP=50, RPsec=1.3, mission="exposedAssNPCAreaHandcuffedSex")
+		exposedUpperNPCAreaHandcuffedSexListener = CreateListenerLocal("basic_listener", condition=exposedUpperNPCAreaHandcuffedSexCondition, msg="Have sex while flashing your upper body in a place where people pass by and be handcuffed", RP=60, RPsec=2.1, mission="exposedUpperNPCAreaHandcuffedSex")
+		exposedAllNPCAreaHandcuffedSexListener = CreateListenerLocal("basic_listener", condition=exposedAllNPCAreaHandcuffedSexCondition, msg="Have sex while naked in a place where people pass by and be handcuffed", RP=80, RPsec=2.5, mission="exposedAllNPCAreaHandcuffedSex")
+		# Near NPC
+		exposedFrontNearNPCSexListener = CreateListenerLocal("basic_listener", condition=exposedFrontNearNPCSexCondition, msg="Have sex while flashing your front near someone", RP=70, RPsec=1.5, mission="exposedFrontNearNPCSex")
+		exposedAssNearNPCSexListener = CreateListenerLocal("basic_listener", condition=exposedAssNearNPCSexCondition, msg="Have sex while flashing your butt near someone", RP=70, RPsec=1.5, mission="exposedAssNearNPCSex")
+		exposedUpperNearNPCSexListener = CreateListenerLocal("basic_listener", condition=exposedUpperNearNPCSexCondition, msg="Have sex while flashing your upper body near someone", RP=90, RPsec=2.3, mission="exposedUpperNearNPCSex")
+		exposedAllNearNPCSexListener = CreateListenerLocal("basic_listener", condition=exposedAllNearNPCSexCondition, msg="Have sex while naked near someone", RP=120, RPsec=2.7, mission="exposedAllNearNPCSex")
+		# Watched
+		exposedFrontWatchedSexListener = CreateListenerLocal("basic_listener", condition=exposedFrontWatchedSexCondition, msg="Have sex while flashing your front while being watched", RP=50, RPsec=1.3, mission="exposedFrontWatchedSex")
+		exposedAssWatchedSexListener = CreateListenerLocal("basic_listener", condition=exposedAssWatchedSexCondition, msg="Have sex while flashing your butt while being watched", RP=50, RPsec=1.3, mission="exposedAssWatchedSex")
+		exposedUpperWatchedSexListener = CreateListenerLocal("basic_listener", condition=exposedUpperWatchedSexCondition, msg="Have sex while flashing your upper body while being watched", RP=70, RPsec=2.2, mission="exposedUpperWatchedSex")
+		exposedAllWatchedSexListener = CreateListenerLocal("basic_listener", condition=exposedAllWatchedSexCondition, msg="Have sex while naked while being watched", RP=90, RPsec=2.6, mission="exposedAllWatchedSex")
+		# Showing Off
+		exposedFrontShowingOffSexListener = CreateListenerLocal("basic_listener", condition=exposedFrontShowingOffSexCondition, msg="Show off while having sex and flashing", RP=50, RPsec=1.3, mission="exposedFrontShowingOffSex")
+		exposedAssShowingOffSexListener = CreateListenerLocal("basic_listener", condition=exposedAssShowingOffSexCondition, msg="Show off while having sex and flashing your butt", RP=50, RPsec=1.3, mission="exposedAssShowingOffSex")
+		exposedUpperShowingOffSexListener = CreateListenerLocal("basic_listener", condition=exposedUpperShowingOffSexCondition, msg="Show off while having sex and flashing your upper body", RP=70, RPsec=2.2, mission="exposedUpperShowingOffSex")
+		exposedAllShowingOffSexListener = CreateListenerLocal("basic_listener", condition=exposedAllShowingOffSexCondition, msg="Show off while having sex and naked", RP=90, RPsec=2.6, mission="exposedAllShowingOffSex")
+		basic_listener: #(condition, msg, RP, RPsec, mission)
+			if (condition.Check() && (first_time[mission] != 1))
+				MissionPanel[mission].SetText(msg)
+				MissionPanel[mission].SetRPText(Format("{0}RP", RP))
+				MissionPanel[mission].SetVisible(true)
+				MissionPanel[mission].SetGaugeVisible(true)
+				AddCurrentEarnRP(RPsec * _timediff)
+				duration[mission] += _timediff # add duration with time
+				MissionPanel[mission].SetGaugeProgress(duration[mission]/max_duration[mission])
+				if (duration[mission] >= max_duration[mission])
+					first_time[mission] = 1
+					PlaySoundEffect("UICompleteMission")
+					AddCurrentEarnRP(RP)
+					MissionMenuItem[mission].SetCleared(true)
+					MissionMenuItem[mission].SetMark(true)
+					MissionPanel[mission].SetVisible(false)
+					MissionPanel[mission].SetGaugeVisible(false)
+				if (_state.RpBonus > save[mission].maxrp) #save_individual(mission, marked, clears, maxrp)
+					save[mission].runrp = _state.RpBonus
+
+			elseif (condition.Check() && (first_time[mission] == 1))
+				MissionPanel[mission].SetVisible(true)
+				MissionPanel[mission].SetText(msg)
+				MissionPanel[mission].SetRPText(Format("{0}RP/sec", RPsec))
+				MissionPanel[mission].SetGaugeVisible(false)
+				AddCurrentEarnRP(RPsec * _timediff)
+				if (_state.RpBonus > save[mission].maxrp) 
+					save[mission].runrp = _state.RpBonus
+
+			else
+				MissionPanel[mission].SetVisible(false)
+				MissionPanel[mission].SetGaugeVisible(false)
+				if (_state.Skills.ContinueMission)
+					duration[mission] = 0
+				else
+					duration[mission] = duration[mission]
+			if (_stagechanged)
+				duration[mission] = 0
+			if (_stagechanged && _state.Position.stage == "Apart")
+				if MissionMenuItem[mission].GetCleared()
+					MissionMenuItem[mission].SetCleared(false)
+					first_time[mission] = 0
+					clears = save[mission].clears + 1
+					save_individual(mission=mission, marked=true, clears=clears, maxrp=save[mission].runrp) #save_individual(mission, marked, clears, maxrp)
+					thread.Goto("exhibition_mission")
+				else
+					thread.Goto("exhibition_mission")
+
+		setup_MissionPanel:
+			# Passing by
+			MissionPanel.exposedFrontNPCAreaSex = CreateMissionPanel()
+			MissionPanel.exposedAssNPCAreaSex = CreateMissionPanel()
+			MissionPanel.exposedUpperNPCAreaSex = CreateMissionPanel()
+			MissionPanel.exposedAllNPCAreaSex = CreateMissionPanel()
+
+			# Lit Area
+			MissionPanel.exposedFrontNPCAreaLitSex = CreateMissionPanel()
+			MissionPanel.exposedAssNPCAreaLitSex = CreateMissionPanel()
+			MissionPanel.exposedUpperNPCAreaLitSex = CreateMissionPanel()
+			MissionPanel.exposedAllNPCAreaLitSex = CreateMissionPanel()
+
+			# Blindfolded
+			MissionPanel.exposedFrontBlindfoldSex = CreateMissionPanel()
+			MissionPanel.exposedAssBlindfoldSex = CreateMissionPanel()
+			MissionPanel.exposedUpperBlindfoldSex = CreateMissionPanel()
+			MissionPanel.exposedAllBlindfoldSex = CreateMissionPanel()
+
+			# Handcuffed
+			MissionPanel.exposedFrontNPCAreaHandcuffedSex = CreateMissionPanel()
+			MissionPanel.exposedAssNPCAreaHandcuffedSex = CreateMissionPanel()
+			MissionPanel.exposedUpperNPCAreaHandcuffedSex = CreateMissionPanel()
+			MissionPanel.exposedAllNPCAreaHandcuffedSex = CreateMissionPanel()
+
+			# Near NPC
+			MissionPanel.exposedFrontNearNPCSex = CreateMissionPanel()
+			MissionPanel.exposedAssNearNPCSex = CreateMissionPanel()
+			MissionPanel.exposedUpperNearNPCSex = CreateMissionPanel()
+			MissionPanel.exposedAllNearNPCSex = CreateMissionPanel()
+
+			# Watched
+			MissionPanel.exposedFrontWatchedSex = CreateMissionPanel()
+			MissionPanel.exposedAssWatchedSex = CreateMissionPanel()
+			MissionPanel.exposedUpperWatchedSex = CreateMissionPanel()
+			MissionPanel.exposedAllWatchedSex = CreateMissionPanel()
+
+			# Showing Off
+			MissionPanel.exposedFrontShowingOffSex = CreateMissionPanel()
+			MissionPanel.exposedAssShowingOffSex = CreateMissionPanel()
+			MissionPanel.exposedUpperShowingOffSex = CreateMissionPanel()
+			MissionPanel.exposedAllShowingOffSex = CreateMissionPanel()
+
+		setup_MissionMenuItem:
+			# Passing by
+			MissionMenuItem.exposedFrontNPCAreaSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedAssNPCAreaSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedUpperNPCAreaSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedAllNPCAreaSex = CreateMissionMenuItem()
+			setup_NPCArea()
+
+			# Lit Area
+			MissionMenuItem.exposedFrontNPCAreaLitSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedAssNPCAreaLitSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedUpperNPCAreaLitSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedAllNPCAreaLitSex = CreateMissionMenuItem()
+			setup_Lit()
+
+			# Blindfolded
+			MissionMenuItem.exposedFrontBlindfoldSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedAssBlindfoldSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedUpperBlindfoldSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedAllBlindfoldSex = CreateMissionMenuItem()
+			setup_Blindfold()
+
+			# Handcuffed
+			MissionMenuItem.exposedFrontNPCAreaHandcuffedSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedAssNPCAreaHandcuffedSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedUpperNPCAreaHandcuffedSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedAllNPCAreaHandcuffedSex = CreateMissionMenuItem()
+			setup_Handcuff()
+
+			# Near NPC
+			MissionMenuItem.exposedFrontNearNPCSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedAssNearNPCSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedUpperNearNPCSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedAllNearNPCSex = CreateMissionMenuItem()
+			setup_NearNPC()
+
+			# Watched
+			MissionMenuItem.exposedFrontWatchedSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedAssWatchedSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedUpperWatchedSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedAllWatchedSex = CreateMissionMenuItem()
+			setup_Watched()
+
+			# Showing Off
+			MissionMenuItem.exposedFrontShowingOffSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedAssShowingOffSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedUpperShowingOffSex = CreateMissionMenuItem()
+			MissionMenuItem.exposedAllShowingOffSex = CreateMissionMenuItem()
+			setup_ShowingOff()
+
+		setup_NPCArea:
+			MissionMenuItem["exposedFrontNPCAreaSex"].SetText("Have sex while flashing your front in a place where people pass by")
+			MissionMenuItem["exposedFrontNPCAreaSex"].SetRPText("30RP")
+			MissionMenuItem["exposedFrontNPCAreaSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedAssNPCAreaSex"].SetText("Have sex while flashing your butt in a place where people pass by")
+			MissionMenuItem["exposedAssNPCAreaSex"].SetRPText("30RP")
+			MissionMenuItem["exposedAssNPCAreaSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedUpperNPCAreaSex"].SetText("Have sex while flashing your upper body in a place where people pass by")
+			MissionMenuItem["exposedUpperNPCAreaSex"].SetRPText("40RP")
+			MissionMenuItem["exposedUpperNPCAreaSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedAllNPCAreaSex"].SetRPText("60RP")
+			MissionMenuItem["exposedAllNPCAreaSex"].SetText("Have sex while naked in a place where people pass by")
+			MissionMenuItem["exposedAllNPCAreaSex"].SetStages(AllStagesList)
+
+		setup_Lit:
+			MissionMenuItem["exposedFrontNPCAreaLitSex"].SetText("Have sex while flashing your front in a lit area")
+			MissionMenuItem["exposedFrontNPCAreaLitSex"].SetRPText("40RP")
+			MissionMenuItem["exposedFrontNPCAreaLitSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedAssNPCAreaLitSex"].SetText("Have sex while flashing your butt in a lit area")
+			MissionMenuItem["exposedAssNPCAreaLitSex"].SetRPText("40RP")
+			MissionMenuItem["exposedAssNPCAreaLitSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedUpperNPCAreaLitSex"].SetText("Have sex while flashing your upper body in a lit area")
+			MissionMenuItem["exposedUpperNPCAreaLitSex"].SetRPText("50RP")
+			MissionMenuItem["exposedUpperNPCAreaLitSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedAllNPCAreaLitSex"].SetText("Have sex while naked in a lit area")
+			MissionMenuItem["exposedAllNPCAreaLitSex"].SetRPText("60RP")
+			MissionMenuItem["exposedAllNPCAreaLitSex"].SetStages(AllStagesList)
+
+		setup_Blindfold:
+			MissionMenuItem["exposedFrontBlindfoldSex"].SetText("Have sex while flashing your front in a place where people pass by and be blindfolded")
+			MissionMenuItem["exposedFrontBlindfoldSex"].SetRPText("50RP")
+			MissionMenuItem["exposedFrontBlindfoldSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedAssBlindfoldSex"].SetText("Have sex while flashing your butt in a place where people pass by and be blindfolded")
+			MissionMenuItem["exposedAssBlindfoldSex"].SetRPText("50RP")
+			MissionMenuItem["exposedAssBlindfoldSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedUpperBlindfoldSex"].SetText("Have sex while flashing your upper body in a place where people pass by and be blindfolded")
+			MissionMenuItem["exposedUpperBlindfoldSex"].SetRPText("80RP")
+			MissionMenuItem["exposedUpperBlindfoldSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedAllBlindfoldSex"].SetText("Have sex while naked in a place where people pass by and be blindfolded")
+			MissionMenuItem["exposedAllBlindfoldSex"].SetRPText("100RP")
+			MissionMenuItem["exposedAllBlindfoldSex"].SetStages(AllStagesList)
+
+		setup_Handcuff:
+			MissionMenuItem["exposedFrontNPCAreaHandcuffedSex"].SetText("Have sex while flashing your front in a place where people pass by and be handcuffed")
+			MissionMenuItem["exposedFrontNPCAreaHandcuffedSex"].SetRPText("50RP")
+			MissionMenuItem["exposedFrontNPCAreaHandcuffedSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedAssNPCAreaHandcuffedSex"].SetText("Have sex while flashing your butt in a place where people pass by and be handcuffed")
+			MissionMenuItem["exposedAssNPCAreaHandcuffedSex"].SetRPText("50RP")
+			MissionMenuItem["exposedAssNPCAreaHandcuffedSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedUpperNPCAreaHandcuffedSex"].SetText("Have sex while flashing your upper body in a place where people pass by and be handcuffed")
+			MissionMenuItem["exposedUpperNPCAreaHandcuffedSex"].SetRPText("60RP")
+			MissionMenuItem["exposedUpperNPCAreaHandcuffedSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedAllNPCAreaHandcuffedSex"].SetText("Have sex while naked in a place where people pass by and be handcuffed")
+			MissionMenuItem["exposedAllNPCAreaHandcuffedSex"].SetRPText("80RP")
+			MissionMenuItem["exposedAllNPCAreaHandcuffedSex"].SetStages(AllStagesList)
+
+		setup_NearNPC:
+			MissionMenuItem["exposedFrontNearNPCSex"].SetText("Have sex while flashing your front near someone")
+			MissionMenuItem["exposedFrontNearNPCSex"].SetRPText("70RP")
+			MissionMenuItem["exposedFrontNearNPCSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedAssNearNPCSex"].SetText("Have sex while flashing your butt near someone")
+			MissionMenuItem["exposedAssNearNPCSex"].SetRPText("70RP")
+			MissionMenuItem["exposedAssNearNPCSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedUpperNearNPCSex"].SetText("Have sex while flashing your upper body near someone")
+			MissionMenuItem["exposedUpperNearNPCSex"].SetRPText("90RP")
+			MissionMenuItem["exposedUpperNearNPCSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedAllNearNPCSex"].SetText("Have sex while naked near someone")
+			MissionMenuItem["exposedAllNearNPCSex"].SetRPText("120RP")
+			MissionMenuItem["exposedAllNearNPCSex"].SetStages(AllStagesList)
+
+		setup_Watched:
+			MissionMenuItem["exposedFrontWatchedSex"].SetText("Have sex while flashing your front while being watched")
+			MissionMenuItem["exposedFrontWatchedSex"].SetRPText("50RP")
+			MissionMenuItem["exposedFrontWatchedSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedAssWatchedSex"].SetText("Have sex while flashing your butt while being watched")
+			MissionMenuItem["exposedAssWatchedSex"].SetRPText("50RP")
+			MissionMenuItem["exposedAssWatchedSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedUpperWatchedSex"].SetText("Have sex while flashing your upper body while being watched")
+			MissionMenuItem["exposedUpperWatchedSex"].SetRPText("70RP")
+			MissionMenuItem["exposedUpperWatchedSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedAllWatchedSex"].SetText("Have sex while naked while being watched")
+			MissionMenuItem["exposedAllWatchedSex"].SetRPText("90RP")
+			MissionMenuItem["exposedAllWatchedSex"].SetStages(AllStagesList)
+
+		setup_ShowingOff:
+			MissionMenuItem["exposedFrontShowingOffSex"].SetText("Show off while having sex and flashing")
+			MissionMenuItem["exposedFrontShowingOffSex"].SetRPText("50RP")
+			MissionMenuItem["exposedFrontShowingOffSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedAssShowingOffSex"].SetText("Show off while having sex and flashing your butt")
+			MissionMenuItem["exposedAssShowingOffSex"].SetRPText("50RP")
+			MissionMenuItem["exposedAssShowingOffSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedUpperShowingOffSex"].SetText("Show off while having sex and flashing your upper body")
+			MissionMenuItem["exposedUpperShowingOffSex"].SetRPText("70RP")
+			MissionMenuItem["exposedUpperShowingOffSex"].SetStages(AllStagesList)
+			MissionMenuItem["exposedAllShowingOffSex"].SetText("Show off while having sex and naked")
+			MissionMenuItem["exposedAllShowingOffSex"].SetRPText("90RP")
+			MissionMenuItem["exposedAllShowingOffSex"].SetStages(AllStagesList)
+
+		load_save:
+			# Pass by
+			load_individual(name="exposedFrontNPCAreaSex")
+			load_individual(name="exposedAssNPCAreaSex")
+			load_individual(name="exposedUpperNPCAreaSex")
+			load_individual(name="exposedAllNPCAreaSex")
+			# Lit
+			load_individual(name="exposedFrontNPCAreaLitSex")
+			load_individual(name="exposedAssNPCAreaLitSex")
+			load_individual(name="exposedUpperNPCAreaLitSex")
+			load_individual(name="exposedAllNPCAreaLitSex")
+			#Blindfolded
+			load_individual(name="exposedFrontBlindfoldSex")
+			load_individual(name="exposedAssBlindfoldSex")
+			load_individual(name="exposedUpperBlindfoldSex")
+			load_individual(name="exposedAllBlindfoldSex")
+			#Handcuffed
+			load_individual(name="exposedFrontNPCAreaHandcuffedSex")
+			load_individual(name="exposedAssNPCAreaHandcuffedSex")
+			load_individual(name="exposedUpperNPCAreaHandcuffedSex")
+			load_individual(name="exposedAllNPCAreaHandcuffedSex")
+			# Near NPC
+			load_individual(name="exposedFrontNearNPCSex")
+			load_individual(name="exposedAssNearNPCSex")
+			load_individual(name="exposedUpperNearNPCSex")
+			load_individual(name="exposedAllNearNPCSex")
+			# Watched
+			load_individual(name="exposedFrontWatchedSex")
+			load_individual(name="exposedAssWatchedSex")
+			load_individual(name="exposedUpperWatchedSex")
+			load_individual(name="exposedAllWatchedSex")
+			# Showing Off
+			load_individual(name="exposedFrontShowingOffSex")
+			load_individual(name="exposedAssShowingOffSex")
+			load_individual(name="exposedUpperShowingOffSex")
+			load_individual(name="exposedAllShowingOffSex")
+
+		load_individual: #(name)
+			MissionMenuItem[name].SetMark(save[name].marked)
+			MissionMenuItem[name].SetClears(save[name].clears)
+			MissionMenuItem[name].SetMaxRP(save[name].maxrp)
+			if (save[name].maxrp > 1.5) # White
+				MissionMenuItem[name].SetBackgroundColor(Color(1.000, 1.000, 1.000, 1.000), Color(0.358, 0.358, 0.358, 1.000))
+			elseif (save[name].maxrp > 2) # Green
+				MissionMenuItem[name].SetBackgroundColor(Color(0.495, 1.000, 0.521, 1.000), Color(0.000, 0.434, 0.024, 1.000))
+			elseif (save[name].maxrp > 2.5) # Blue
+				MissionMenuItem[name].SetBackgroundColor(Color(0.429, 0.644, 1.000, 1.000), Color(0.000, 0.379, 1.000, 1.000))
+			elseif (save[name].maxrp > 3) # Purple
+				MissionMenuItem[name].SetBackgroundColor(Color(0.788, 0.458, 1.000, 1.000), Color(0.607, 0.000, 1.000, 1.000))
+			elseif (save[name].maxrp > 3.5) # Gold
+				MissionMenuItem[name].SetBackgroundColor(Color(1.000, 0.751, 0.325, 1.000), Color(0.604, 0.378, 0.000, 1.000))
+			elseif (save[name].maxrp > 4) # Red
+				MissionMenuItem[name].SetBackgroundColor(Color(1.000, 0.306, 0.306, 1.000), Color(0.651, 0.000, 0.000, 1.000))
+
+		save_individual: #(mission, marked, clears, maxrp)
+			if (marked != null)
+				_save[mission].marked = marked 
+			if (clears != null)
+				_save[mission].clears = clears 
+			if (maxrp != null)
+				_save[mission].maxrp = maxrp
+
+	setup_save:
+		check_save()
+		# Pass by
+		save["exposedFrontNPCAreaSex"] = _save["exposedFrontNPCAreaSex"]
+		save["exposedAssNPCAreaSex"] = _save["exposedAssNPCAreaSex"]
+		save["exposedUpperNPCAreaSex"] = _save["exposedUpperNPCAreaSex"]
+		save["exposedAllNPCAreaSex"] = _save["exposedAllNPCAreaSex"]
+		# Lit
+		save["exposedFrontNPCAreaLitSex"] = _save["exposedFrontNPCAreaLitSex"]
+		save["exposedAssNPCAreaLitSex"] = _save["exposedAssNPCAreaLitSex"]
+		save["exposedUpperNPCAreaLitSex"] = _save["exposedUpperNPCAreaLitSex"]
+		save["exposedAllNPCAreaLitSex"] = _save["exposedAllNPCAreaLitSex"]
+		# Blindfolded
+		save["exposedFrontBlindfoldSex"] = _save["exposedFrontBlindfoldSex"]
+		save["exposedAssBlindfoldSex"] = _save["exposedAssBlindfoldSex"]
+		save["exposedUpperBlindfoldSex"] = _save["exposedUpperBlindfoldSex"]
+		save["exposedAllBlindfoldSex"] = _save["exposedAllBlindfoldSex"]
+		# Handcuffed
+		save["exposedFrontNPCAreaHandcuffedSex"] = _save["exposedFrontNPCAreaHandcuffedSex"]
+		save["exposedAssNPCAreaHandcuffedSex"] = _save["exposedAssNPCAreaHandcuffedSex"]
+		save["exposedUpperNPCAreaHandcuffedSex"] = _save["exposedUpperNPCAreaHandcuffedSex"]
+		save["exposedAllNPCAreaHandcuffedSex"] = _save["exposedAllNPCAreaHandcuffedSex"]
+		# Near NPC
+		save["exposedFrontNearNPCSex"] = _save["exposedFrontNearNPCSex"]
+		save["exposedAssNearNPCSex"] = _save["exposedAssNearNPCSex"]
+		save["exposedUpperNearNPCSex"] = _save["exposedUpperNearNPCSex"]
+		save["exposedAllNearNPCSex"] = _save["exposedAllNearNPCSex"]
+		# Watched
+		save["exposedFrontWatchedSex"] = _save["exposedFrontWatchedSex"]
+		save["exposedAssWatchedSex"] = _save["exposedAssWatchedSex"]
+		save["exposedUpperWatchedSex"] = _save["exposedUpperWatchedSex"]
+		save["exposedAllWatchedSex"] = _save["exposedAllWatchedSex"]
+		# Showing Off
+		save["exposedFrontShowingOffSex"] = _save["exposedFrontShowingOffSex"]
+		save["exposedAssShowingOffSex"] = _save["exposedAssShowingOffSex"]
+		save["exposedUpperShowingOffSex"] = _save["exposedUpperShowingOffSex"]
+		save["exposedAllShowingOffSex"] = _save["exposedAllShowingOffSex"]		
+
+	check_save:
+		# Pass by
+		if _save["exposedFrontNPCAreaSex"] == null
+			_save["exposedFrontNPCAreaSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedAssNPCAreaSex"] == null
+			_save["exposedAssNPCAreaSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedUpperNPCAreaSex"] == null
+			_save["exposedUpperNPCAreaSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedAllNPCAreaSex"] == null
+			_save["exposedAllNPCAreaSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		# Lit
+		if _save["exposedFrontNPCAreaLitSex"] == null
+			_save["exposedFrontNPCAreaLitSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedAssNPCAreaLitSex"] == null
+			_save["exposedAssNPCAreaLitSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedUpperNPCAreaLitSex"] == null
+			_save["exposedUpperNPCAreaLitSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedAllNPCAreaLitSex"] == null
+			_save["exposedAllNPCAreaLitSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		# Blindfolded
+		if _save["exposedFrontBlindfoldSex"] == null
+			_save["exposedFrontBlindfoldSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedAssBlindfoldSex"] == null
+			_save["exposedAssBlindfoldSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedUpperBlindfoldSex"] == null
+			_save["exposedUpperBlindfoldSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedAllBlindfoldSex"] == null
+			_save["exposedAllBlindfoldSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		# Handcuffed
+		if _save["exposedFrontNPCAreaHandcuffedSex"] == null
+			_save["exposedFrontNPCAreaHandcuffedSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedAssNPCAreaHandcuffedSex"] == null
+			_save["exposedAssNPCAreaHandcuffedSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedUpperNPCAreaHandcuffedSex"] == null
+			_save["exposedUpperNPCAreaHandcuffedSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedAllNPCAreaHandcuffedSex"] == null
+			_save["exposedAllNPCAreaHandcuffedSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		# Near NPC
+		if _save["exposedFrontNearNPCSex"] == null
+			_save["exposedFrontNearNPCSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedAssNearNPCSex"] == null
+			_save["exposedAssNearNPCSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedUpperNearNPCSex"] == null
+			_save["exposedUpperNearNPCSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedAllNearNPCSex"] == null
+			_save["exposedAllNearNPCSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		# Watched
+		if _save["exposedFrontWatchedSex"] == null
+			_save["exposedFrontWatchedSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedAssWatchedSex"] == null
+			_save["exposedAssWatchedSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedUpperWatchedSex"] == null
+			_save["exposedUpperWatchedSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedAllWatchedSex"] == null
+			_save["exposedAllWatchedSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		# Showing Off
+		if _save["exposedFrontShowingOffSex"] == null
+			_save["exposedFrontShowingOffSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedAssShowingOffSex"] == null
+			_save["exposedAssShowingOffSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedUpperShowingOffSex"] == null
+			_save["exposedUpperShowingOffSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+		if _save["exposedAllShowingOffSex"] == null
+			_save["exposedAllShowingOffSex"] = CreateList(marked = false, clears = 0, runrp = 0, maxrp = 0)
+
+
+	setup_first_time:
+		# Passing by
+		first_time.exposedFrontNPCAreaSex = 0
+		first_time.exposedAssNPCAreaSex = 0
+		first_time.exposedUpperNPCAreaSex = 0
+		first_time.exposedAllNPCAreaSex = 0
+
+		# Lit Area
+		first_time.exposedFrontNPCAreaLitSex = 0
+		first_time.exposedAssNPCAreaLitSex = 0
+		first_time.exposedUpperNPCAreaLitSex = 0
+		first_time.exposedAllNPCAreaLitSex = 0
+
+		# Blindfolded
+		first_time.exposedFrontBlindfoldSex = 0
+		first_time.exposedAssBlindfoldSex = 0
+		first_time.exposedUpperBlindfoldSex = 0
+		first_time.exposedAllBlindfoldSex = 0
+
+		# Handcuffed
+		first_time.exposedFrontNPCAreaHandcuffedSex = 0
+		first_time.exposedAssNPCAreaHandcuffedSex = 0
+		first_time.exposedUpperNPCAreaHandcuffedSex = 0
+		first_time.exposedAllNPCAreaHandcuffedSex = 0
+
+		# Near NPC
+		first_time.exposedFrontNearNPCSex = 0
+		first_time.exposedAssNearNPCSex = 0
+		first_time.exposedUpperNearNPCSex = 0
+		first_time.exposedAllNearNPCSex = 0
+
+		# Watched
+		first_time.exposedFrontWatchedSex = 0
+		first_time.exposedAssWatchedSex = 0
+		first_time.exposedUpperWatchedSex = 0
+		first_time.exposedAllWatchedSex = 0
+
+		# Showing Off
+		first_time.exposedFrontShowingOffSex = 0
+		first_time.exposedAssShowingOffSex = 0
+		first_time.exposedUpperShowingOffSex = 0
+		first_time.exposedAllShowingOffSex = 0
+
+	setup_max_duration:
+		# Passing by
+		max_duration.exposedFrontNPCAreaSex = 10
+		max_duration.exposedAssNPCAreaSex = 10
+		max_duration.exposedUpperNPCAreaSex = 8
+		max_duration.exposedAllNPCAreaSex = 8
+
+		# Lit Area
+		max_duration.exposedFrontNPCAreaLitSex = 10
+		max_duration.exposedAssNPCAreaLitSex = 10
+		max_duration.exposedUpperNPCAreaLitSex = 8
+		max_duration.exposedAllNPCAreaLitSex = 8
+
+		# Blindfolded
+		max_duration.exposedFrontBlindfoldSex = 10
+		max_duration.exposedAssBlindfoldSex = 10
+		max_duration.exposedUpperBlindfoldSex = 8
+		max_duration.exposedAllBlindfoldSex = 8
+
+		# Handcuffed
+		max_duration.exposedFrontNPCAreaHandcuffedSex = 10
+		max_duration.exposedAssNPCAreaHandcuffedSex = 10
+		max_duration.exposedUpperNPCAreaHandcuffedSex = 8
+		max_duration.exposedAllNPCAreaHandcuffedSex = 8
+
+		# Near NPC 
+		max_duration.exposedFrontNearNPCSex = 10
+		max_duration.exposedAssNearNPCSex = 10
+		max_duration.exposedUpperNearNPCSex = 8
+		max_duration.exposedAllNearNPCSex = 8
+
+		# Watched
+		max_duration.exposedFrontWatchedSex = 10
+		max_duration.exposedAssWatchedSex = 10
+		max_duration.exposedUpperWatchedSex = 8
+		max_duration.exposedAllWatchedSex = 8
+
+		# Showing Off
+		max_duration.exposedFrontShowingOffSex = 10
+		max_duration.exposedAssShowingOffSex = 10
+		max_duration.exposedUpperShowingOffSex = 8
+		max_duration.exposedAllShowingOffSex = 8
+
+	setup_duration:
+		# Passing by
+		duration.exposedFrontNPCAreaSex = 0
+		duration.exposedAssNPCAreaSex = 0
+		duration.exposedUpperNPCAreaSex = 0
+		duration.exposedAllNPCAreaSex = 0
+
+		# Lit Area
+		duration.exposedFrontNPCAreaLitSex = 0
+		duration.exposedAssNPCAreaLitSex = 0
+		duration.exposedUpperNPCAreaLitSex = 0
+		duration.exposedAllNPCAreaLitSex = 0
+
+		# Blindfolded
+		duration.exposedFrontBlindfoldSex = 0
+		duration.exposedAssBlindfoldSex = 0
+		duration.exposedUpperBlindfoldSex = 0
+		duration.exposedAllBlindfoldSex = 0
+
+		# Handcuffed
+		duration.exposedFrontNPCAreaHandcuffedSex = 0
+		duration.exposedAssNPCAreaHandcuffedSex = 0
+		duration.exposedUpperNPCAreaHandcuffedSex = 0
+		duration.exposedAllNPCAreaHandcuffedSex = 0
+
+		# Near NPC
+		duration.exposedFrontNearNPCSex = 0
+		duration.exposedAssNearNPCSex = 0
+		duration.exposedUpperNearNPCSex = 0
+		duration.exposedAllNearNPCSex = 0
+
+		# Watched
+		duration.exposedFrontWatchedSex = 0
+		duration.exposedAssWatchedSex = 0
+		duration.exposedUpperWatchedSex = 0
+		duration.exposedAllWatchedSex = 0
+
+		# Showing Off
+		duration.exposedFrontShowingOffSex = 0
+		duration.exposedAssShowingOffSex = 0
+		duration.exposedUpperShowingOffSex = 0
+		duration.exposedAllShowingOffSex = 0

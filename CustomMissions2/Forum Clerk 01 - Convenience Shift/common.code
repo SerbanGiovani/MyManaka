@@ -1,0 +1,136 @@
+generic_listener:
+	if duration == null
+		duration = 0
+	if maxduration == null
+		maxduration = 0
+	if panelmode == null
+		panelmode = 0
+	if zone.Inside()
+		if panelmode == 2
+			missionpanel.SetVisible(true)
+		if condition.Check()
+			if panelmode == 1
+				missionpanel.SetVisible(true)
+			duration = duration + _timediff
+			zone.SetColor(0.5,1,0.5)
+			if duration >= maxduration
+				if nextparameters != null
+					thread.Goto(nextcheckpoint, lastzone = zone, parameters=nextparameters)
+				else
+					thread.Goto(nextcheckpoint, lastzone = zone)
+		else
+			if reset
+				duration = 0
+			zone.SetColor(1,1,0.5)				
+		if maxduration>0
+			missionpanel.SetGaugeProgress(duration/maxduration)
+	else
+		zone.SetColor(1,0.75,0.5)
+		if panelmode >= 1
+			missionpanel.SetVisible(false)
+		if reset
+			duration = 0
+
+move_to_zone_listener:
+	if started == null
+		started = true
+		startdistance = Max(zone.DistanceToNearest(), 0.1)
+		missionpanel.SetGaugeProgress(0)
+	if condition.Check()
+		dist = zone.DistanceToNearest()
+		progress = 1 - Min(1, dist/startdistance)
+		missionpanel.SetGaugeProgress(Max(0, progress))
+		if zone.Inside()
+			missionpanel.SetGaugeProgress(1)
+			if nextparameters != null
+				thread.Goto(nextcheckpoint, lastzone = zone, parameters=nextparameters)
+			else
+				thread.Goto(nextcheckpoint, lastzone = zone)
+	else
+		missionpanel.SetGaugeProgress(0)
+		zone.SetColor(1,1,0.5)
+			
+generic_zoneless_listener:
+	if duration == null
+		duration = 0
+	if maxduration == null
+		maxduration = 0
+	if panelmode == null
+		panelmode = 0
+	if panelmode == 2
+		missionpanel.SetVisible(true)
+	if condition.Check()
+		if panelmode == 1
+			missionpanel.SetVisible(true)
+		duration = duration + _timediff
+		if duration >= maxduration
+			if nextparameters != null
+				thread.Goto(nextcheckpoint, parameters=nextparameters)
+			else
+				thread.Goto(nextcheckpoint)
+			
+		if maxduration>0
+			missionpanel.SetGaugeProgress(duration/maxduration)			
+
+			
+waitforbutton:
+	if chat.Clicked() != null
+		chat.SetButtons()
+		thread.Goto("start")
+		
+		
+wait_listener:
+	if time == null
+		time = 0
+	time = time + _timediff
+	if time>duration
+		if nextparameters != null
+			thread.Goto(nextcheckpoint, parameters=nextparameters)
+		else
+			thread.Goto(nextcheckpoint)
+			
+chat_closed_listener:
+	if !(chat.Opened())
+		thread.Goto(nextcheckpoint)
+		
+
+	
+stage_watcher:
+	if _state.Position.stage == stage
+		thread.Goto(nextcheckpoint)
+		
+get_pronouns:
+	if (gender == "NewMale") || (gender == "PreviousMale") || (gender == "NewOji")|| (gender == "male")
+		pronouns = CreateList(type="male",subj="he",obj="him",poss_adj="his",poss_pron="his",reflex="himself",noun="guy",group="guys",subj_upper="He",obj_upper="Him",poss_adj_upper="His",poss_pron_upper="His",reflex_upper="Himself",noun_upper="Guy",group_upper="Guys")
+		
+	elseif (gender == "NewFemale") || (gender == "PreviousFemale") || (gender == "NewOba") || (gender == "female")
+		pronouns = CreateList(type="female",subj="she",obj="her",poss_adj="her",poss_pron="hers",reflex="herself",noun="girl",group="girls",subj_upper="She",obj_upper="Her",poss_adj_upper="Her",poss_pron_upper="Hers",reflex_upper="Herself",noun_upper="Girl",group_upper="Gals")
+	
+	else # non-binary
+		pronouns = CreateList(type="nb",subj="they",obj="them",poss_adj="their",poss_pron="theirs",reflex="themselves",noun="person",group="people",subj_upper="They",obj_upper="Them",poss_adj_upper="Their",poss_pron_upper="Theirs",reflex_upper="Themself",noun_upper="Person",group_upper="People")
+	
+	_result = pronouns
+	
+	
+	#Female pronoun cheat sheet
+	#
+    #subj — she  
+    #She looks so intense right now.
+	#
+    #obj — her  
+    #I trust her completely.
+	#
+    #poss_adj — her  
+    #I can hear her breathing change.
+	#
+    #poss_pron — hers  
+    #The choice was hers.
+	#
+    #reflex — herself  
+    #She steadied herself before speaking.
+	#
+    #noun — woman  
+    #You’re a sick woman, Ren.
+	#
+	#group — gals  
+	#Most gals are boring.

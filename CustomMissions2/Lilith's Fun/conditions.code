@@ -1,0 +1,75 @@
+defautConditon_:
+	check:
+		#Returns false: Bool
+		Log("Enter defautConditon ???????????")
+		_result = false
+
+skipCondition_:
+	strings = CreateThread("RecordSet")
+	strings.Insert("SexStandBack")
+	strings.Insert("SexKijoui")
+	strings.Insert("Apart")
+	strings.Insert("Sad")
+	strings.Insert("CrouchCry")
+	strings.Insert("SadHandcuffAtMap")
+	
+	check:
+		#Returns shouldSkip: Bool
+		_result = strings.Contains(_state.Action) || (strings.Contains(_state.Position.stage)) 
+
+annoyedCondition_:
+	behaviour:
+		do:
+			if _state.Skills[value] != null && (_state.Skills[value])
+				_result = false
+	b = CreateThread("behaviour")
+	skillList = CreateList("Sex","TimeStop","Exhibitionism","Perspective","DisableHideCostume")
+	check:
+		#Returns shouldAnnoyed: Bool
+		i = Foreach(skillList, b)
+		_result = (_state.Bodypaint > 0) || (_state.Invisible) || (skillList[i] != null)
+
+rewardSkipCondition_:
+	c1 = CreateThread("annoyedCondition_")
+	c2 = CreateThread("skipCondition_")
+	check:
+		#Returns shouldAnnoyed: Bool
+		_result = (c1.check()) || (c2.check())
+
+failureCalcCondition_:
+	strings = CreateThread("RecordSet")
+	strings.Insert("SexStandBack")
+	strings.Insert("SexKijoui")
+	strings.Insert("Sad")
+	strings.Insert("CrouchCry")
+	strings.Insert("SadHandcuffAtMap")
+	check:
+		#Returns shouldCalcWhenFailed: Bool
+		if (_state.Bodypaint > 0) && (_state.Invisible) && (strings.Contains(_state.Action))
+		_result = (_state.Bodypaint > 0) || (_state.Invisible) || (strings.Contains(_state.Action))
+
+punishCondition_:
+	skillList = CreateList("Sex","TimeStop","Exhibitionism","Perspective","DisableHideCostume")
+	behaviour:
+		do:
+			if _state.Skills[value] != null && (_state.Skills[value])
+				_result = false
+	b = CreateThread("behaviour")
+	
+	check:
+		#Returns shouldPunish: Bool
+		i = Foreach(skillList,b)
+		_result = (skillList[i] != null) || (_state.Bodypaint > 0) || (_state.Invisible)
+
+startCondition_:
+	toys = CreateList("Vibrator","EyeMask","Handcuff","TitRotor","KuriRotor","PistonAnal","PistonPussy")
+	behaviour:
+		do:
+			if _state.AdultToys[value] == null
+				_result = false
+	b = CreateThread("behaviour")
+	check:
+		#Returns canStart: Bool
+		i = Foreach(toys, b)
+		_result = (toys[i] == null) && (_state.Rank >= 7)
+

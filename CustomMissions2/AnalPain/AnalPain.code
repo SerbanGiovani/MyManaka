@@ -1,0 +1,253 @@
+#################################
+# Anal Pain System v0.5 beta
+#################################
+
+if _save.painFactor == null
+	_save.painFactor = 100
+
+if _save.analTraining == null
+	_save.analTraining = 0.0
+
+pain = 0.0
+painLocked = false
+painLockTimer = 0.0
+
+moan1 = load_sounds()
+
+#################################
+# conditions
+#################################
+
+condLow = CreateCondition("PistonLow")
+condMed = CreateCondition("PistonMedium")
+condHigh = CreateCondition("PistonHigh")
+condRnd = CreateCondition("PistonRandom")
+condOff = CreateCondition("PistonOff")
+condAnal = CreateCondition("AdultToy_PistonAnal")
+condDildoAnal = CreateCondition("(Action_UseDildoFloorAnal1,Action_UseDildoFloorAnal2,Action_UseDildoFloorAnal3,Action_UseDildoFloorAnal4,Action_UseDildoFloorAnal5,Action_UseDildoWallAnal1,Action_UseDildoWallAnal2,Action_UseDildoWallAnal3,Action_UseDildoWallAnal4,Action_UseDildoWallAnal5,Action_UseDildoFloorWaitAnal,Action_UseDildoWallWaitAnal,Action_UseDildoFloorAnalEcstasyA,Action_UseDildoWallAnalEcstasyA,Action_SitDildoMoveAnal)")
+condCry = CreateCondition("Action_CrouchCry")
+
+#################################
+# plug cosplay list
+#################################
+
+cosplay = CreateList()
+cosplay.Insert(CreateCondition("Cosplay_m_cosplay_general_genital_anal_plug"))
+cosplay.Insert(CreateCondition("Cosplay_m_cosplay_general_genital_beads"))
+cosplay.Insert(CreateCondition("Cosplay_m_cosplay_general_genital_rubbit_tail"))
+cosplay.Insert(CreateCondition("Cosplay_m_cosplay_general_genital_ninjin"))
+cosplay.Insert(CreateCondition("Cosplay_m_cosplay_general_genital_tail_plug"))
+cosplay.Insert(CreateCondition("Cosplay_m_cosplay_general_genital_plug_light"))
+cosplay.Insert(CreateCondition("Cosplay_m_cosplay_succubus_cosplay_tail"))
+cosplay.Insert(CreateCondition("Cosplay_m_cosplay_kemono_tail"))
+cosplay.Insert(CreateCondition("Cosplay_m_cosplay_latex_pony_tail"))
+cosplay.Insert(CreateCondition("Cosplay_m_cosplay_cow_tail"))
+
+#################################
+# UI
+#################################
+
+mp = CreateMissionPanel()
+mp.SetGaugeVisible(true)
+mp.SetText("Pain")
+mp.SetRPText("0%")
+
+#################################
+# thread
+#################################
+
+PainSystem = CreateThread("main")
+
+main:
+	listener = CreateListener("update")
+
+update:
+
+	addPain = 0
+	training = _save.analTraining
+	isMoving = _state.Moving || _state.Dashing || (_state.Crouching && _state.Moving)
+
+	hasPlug = false
+	plugPower = 0.0
+
+	#################################
+	# detect plug type
+	#################################
+
+	if cosplay[0].Check()
+		hasPlug = true
+		plugPower = 1.00
+
+	elseif cosplay[1].Check()
+		hasPlug = true
+		plugPower = 1.15
+
+	elseif cosplay[2].Check()
+		hasPlug = true
+		plugPower = 0.90
+
+	elseif cosplay[3].Check()
+		hasPlug = true
+		plugPower = 1.35
+
+	elseif cosplay[4].Check()
+		hasPlug = true
+		plugPower = 1.05
+
+	elseif cosplay[5].Check()
+		hasPlug = true
+		plugPower = 1.20
+
+	elseif cosplay[6].Check()
+		hasPlug = true
+		plugPower = 1.30
+
+	elseif cosplay[7].Check()
+		hasPlug = true
+		plugPower = 1.25
+
+	elseif cosplay[8].Check()
+		hasPlug = true
+		plugPower = 1.10
+
+	elseif cosplay[9].Check()
+		hasPlug = true
+		plugPower = 1.18
+
+	#################################
+	# pain gain
+	#################################
+
+	if !painLocked
+
+		if condAnal.Check() && GetEcstasy() < 0.7
+
+			if condLow.Check()
+				addPain = 0.035
+
+			elseif condMed.Check()
+				addPain = 0.065
+
+			elseif condHigh.Check()
+				addPain = 0.11
+
+			elseif condRnd.Check()
+				addPain = 0.08
+
+			if addPain > 0
+
+				addPain = addPain * (1 - training * 0.75)
+				addPain = addPain * (_save.painFactor / 100.0)
+
+				pain = pain + (addPain * _timediff)
+
+				AddEcstasy((-addPain * 0.55) * _timediff)
+
+				training = training + (0.0004 * _timediff)
+
+		elseif condDildoAnal.Check() && GetEcstasy() < 0.7
+
+			addPain = 0.070
+			addPain = addPain * (1 - training * 0.70)
+			addPain = addPain * (_save.painFactor / 100.0)
+
+			pain = pain + (addPain * _timediff)
+
+			AddEcstasy((-addPain * 0.45) * _timediff)
+
+			training = training + (0.0003 * _timediff)
+
+		elseif _state.Moving || _state.Dashing
+			if hasPlug
+
+				plugPain = 0.025 * plugPower
+				plugPain = plugPain * (1 - training * 0.55)
+
+				pain = pain + (plugPain * _timediff)
+
+				if training < 0.30
+					training = training + (0.00012 * plugPower * _timediff)
+		elseif (_state.Crouching && _state.Moving)
+			if hasPlug
+				plugPain = 0.025 * plugPower
+				plugPain = plugPain * (1 - training * 0.55)
+
+				pain = pain + (plugPain * _timediff)
+
+				if training < 0.30
+					training = training + (0.00012 * plugPower * _timediff)
+	#################################
+	# lock state
+	#################################
+
+	if pain >= 1 && !painLocked
+		pain = 1
+		painLocked = true
+		painLockTimer = 0.0
+		AddMoisture(0.3)
+		SetAction("PeeNormal")
+		moansList = moan1
+		selectedMoan = moansList[0]
+		selectedMoan.Play(volume=1)
+
+	if painLocked
+		painLockTimer = painLockTimer + _timediff
+		if painLockTimer >= 1.2 && !condCry.Check()
+			SetAction("CrouchCry")
+		AddEcstasy(-0.06 * _timediff)
+
+		pain = pain - (0.06 * _timediff)
+
+		if pain <= 0.25
+			painLocked = false
+			SetAction("Drop")
+
+	else
+
+		if condOff.Check() && !hasPlug
+			pain = pain - (0.05 * _timediff)
+		else
+			pain = pain - (0.015 * _timediff)
+
+	#################################
+	# training decay
+	#################################
+
+	if !condAnal.Check() && !hasPlug && !condDildoAnal.Check()
+		training = training - (0.00035 * _timediff)
+
+	#################################
+	# clamp
+	#################################
+
+	if pain < 0
+		pain = 0
+
+	if pain > 1
+		pain = 1
+
+	if training < 0
+		training = 0
+
+	if training > 1
+		training = 1
+
+	_save.analTraining = training
+
+	#################################
+	# UI
+	#################################
+
+	if pain > 0.001
+		mp.SetVisible(true)
+	else
+		mp.SetVisible(false)
+
+	mp.SetGaugeProgress(pain)
+	mp.SetText("Pain / Train " + Round(training * 100) + "%")
+	mp.SetRPText("" + Round(pain * 100) + "%")
+
+load_sounds:
+	sounds = CreateList()
+	sounds[0] = CreateAudio("pain/pain.ogg")
+	_result = sounds

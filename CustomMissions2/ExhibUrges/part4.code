@@ -1,0 +1,568 @@
+part4 = CreateThread("part4")
+
+part4:
+	thread = _this
+	
+	missionpanel = CreateMissionPanel()
+	mp:
+		if text == null
+			missionpanel.SetVisible(false)
+		else
+			missionpanel.SetVisible(true)
+			missionpanel.SetText(text)
+		if progress == null
+			missionpanel.SetGaugeVisible(false)
+		else
+			missionpanel.SetGaugeVisible(true)
+			missionpanel.GetGaugeProgress(progress)
+		if rp == null
+			rp = ""
+		else
+			missionpanel.SetRPText(rp)
+	
+	cameraClick = CreateAudio("sound\\camera.ogg")
+	clothesFold = CreateAudio("sound\\clothes.ogg")
+	moanLong = CreateAudio("sound\\moaning.ogg")
+	boobGrope = CreateAudio("sound\\squeak.ogg")
+	
+	listNPC = CreateList()
+	mei = null
+	meiListener = null
+	witnesses = CreateList()
+	
+	easy_mode = false
+	listenNPC = null
+	listenWitness = null
+	listenTimer = null
+	listenStalker = null
+	
+	condition_none = CreateCondition("[]")
+	gloves = CreateList(get=false,name="gloves",color="red")
+	harness = CreateList(get=false,name="harness",color="red")
+	garter = CreateList(get=false,name="garter",color="red")
+	stockings = CreateList(get=false,name="stockings",color="red")
+	shoes = CreateList(get=false,name="shoes",color="red")
+	used_pos = CreateList()
+	
+	zStart = CreateList(x=-29.4,y=-0.09,z=-117.4,r=0.5)
+	zMeiSpawn = CreateList(x=-28.5,y=-0.09,z=-117.4,r=0.5)
+	zStreetLamp = CreateList(x=5.9,y=-0.1,z=-103.25,r=0.5)
+	zMeiTouch = CreateList(x=6.5,y=-0.10,z=-103.1,r=0.5)
+	zGuySpawn = CreateList(x=7.7,y=-0.10,z=-103.1,r=0.5)
+	zWomanSpawn = CreateList(x=7.1,y=-0.10,z=-101.8,r=0.5)
+	zOldSpawn = CreateList(x=5.8,y=-0.10,z=-101.3,r=0.5)
+	
+	
+	DropClothesAtRandom:
+		clothes = _args[0]
+		nb = _args[1]
+		
+		ok = false
+		while !ok
+			ok = true
+			clothes.pos = GetRandomPosition(20)
+			x = Round(clothes.pos.x)
+			z = Round(clothes.pos.z)
+			if used_pos[x] != null
+				if used_pos[x][z] != null
+					ok = false
+					Log(clothes.name+" : Redrawing random position, "+x+"/"+z+" already used by "+used_pos[x][z])
+		if used_pos[x] == null
+			used_pos[x] = CreateList()
+		used_pos[x][z] = clothes.name
+		Log(clothes.name+" : Dropped on position "+x+"/"+z)
+		
+		clothes.hud = CreateHUD(0.005, 0.35-(0.03*nb))
+		clothes.label = CreateHUDlabel(0.02, 0.35-(0.03*nb), "Clothing "+nb)
+		clothes.area = CreateArea(type="sphere",stage="Residence",x=clothes.pos.x,y=clothes.pos.y-0.02,z=clothes.pos.z,r=0.5,compass=easy_mode)
+		clothes.zone = CreateZone(clothes.area)
+		clothes.listener = CreateListener("scavenger_travellistener",zone=clothes.zone,thread=thread,clothes=clothes,nextcp="cp_"+clothes.name)
+	
+	watchNPCs:
+		if _state.Position.stage != "Apart"
+			i = _state.NPCs.Count()
+			while i > 0
+				i -= 1
+				
+				# Each NPC that spawns get flagged with custom variables
+				id = _state.NPCs[i].ID
+				if listNPC[id] == null
+					if debug
+						Log("[ExhibUrges4] NPC " + id + " registered ")
+					npc_temp = CreateNPC(id)
+					listNPC[id] = CreateList(npc=npc_temp, duration=-1, prevStrange=0, stalker=false)
+	
+	npcTimer:
+		i = _state.NPCs.Count()
+		while i > 0
+			i -= 1
+			id = _state.NPCs[i].ID
+			if listNPC[id].duration >= 0
+				listNPC[id].duration += _timediff
+				# NPC stops being shocked
+				if id != havingSex && listNPC[id].duration >= 3
+					if debug
+						Log("[ExhibUrges4] NPC " + id + " is following")
+					listNPC[id].duration = -1
+					listNPC[id].stalker = true
+					listNPC[id].npc.Speed(1.2)
+					listNPC[id].npc.Smartphone(true)
+					listNPC[id].npc.TracePlayer(true)
+	
+	npcWitness:
+		if _state.FoundNPC != -1
+			if debug
+				Log("[ExhibUrges4] NPC " + _state.FoundNPC + " is a witness")
+			# Must do this, if they follow without delay they get locked in the shocked animation and move to you like on rollerskates
+			#listNPC[_state.FoundNPC].npc.TracePlayer(true)
+			listNPC[_state.FoundNPC].duration = 0
+	
+	
+	caughtByNPC:
+		i = _state.NPCs.Count()
+		while i > 0
+			i -= 1
+			id = _state.NPCs[i].ID
+			
+			if listNPC[id].stalker
+			
+				# Lose them by getting away
+				if Vector3Distance(_state.Position, listNPC[id].npc.GetPosition()) > 30
+					if debug
+						Log("[ExhibUrges4] Stalker " + id + " lost you")
+					listNPC[id].stalker = false
+					listNPC[id].npc.Speed(1)
+					listNPC[id].npc.Smartphone(false)
+					listNPC[id].npc.TracePlayer(false)
+				
+				# Not the thrall, or you're in the light
+				if Vector3Distance(_state.Position, listNPC[id].npc.GetPosition()) < 2
+					if debug
+						Log("[ExhibUrges4] Stalker " + id + " reaches you")
+					
+					# Picture!
+					ShowBlackscreen(color=Color(1,1,1,0.8), fadein=0, duration=0.1, fadeout=0.3)
+					cameraClick.Play()
+					
+					#Comment
+					subtitleMind.Clear()
+					if listNPC[id].npc.GetType()=="NewMale" || listNPC[id].npc.GetType()=="PreviousMale" || listNPC[id].npc.GetType()=="NewOji"
+						he = "He"
+						his = "his"
+					else
+						he = "She"
+						her = "her"
+					
+					pos = _state.Position
+					dirPlayer = Vector(2*pos.rw*pos.ry, 0, 1-2*pos.ry*pos.ry)
+					pos = listNPC[id].npc.GetPosition()
+					dirNPC = Vector(2*pos.rw*pos.ry, 0, 1-2*pos.ry*pos.ry)
+					dir = Vector3Dot(dirPlayer, dirNPC)
+					
+					if dir < -0.4
+						rng = RandomInt(2)
+						if rng == 0
+							subtitleMind.Add(text="("+he+" took a close-up of my pussy...)", delay=1, fadein=0.2, duration=3, fadeout=0.3)
+						else
+							subtitleMind.Add(text="(This is so humiliating... Why am I so wet?)", delay=1, fadein=0.2, duration=4, fadeout=0.3)
+					elseif dir > 0.4
+						rng = RandomInt(2)
+						if rng == 0
+							subtitleMind.Add(text="(Another picture of me butt naked on the loose...)", delay=1, fadein=0.2, duration=4, fadeout=0.3)
+						else
+							subtitleMind.Add(text="(Trop taking pictures of my butt, you have one too!)", delay=1, fadein=0.2, duration=4, fadeout=0.3)
+					else
+						rng = RandomInt(2)
+						if rng == 0
+							subtitleMind.Add(text="(I feel my nipples hardening... And now it's in "+his+" camera too!)", delay=1, fadein=0.2, duration=4, fadeout=0.3)
+						else
+							subtitleMind.Add(text="(That one was aimed at my boobs...)", delay=1, fadein=0.2, duration=3, fadeout=0.3)
+					
+					# Make the NPC get lost
+					listNPC[id].stalker = false
+					listNPC[id].npc.Speed(1)
+					rng = RandomInt(2)
+					if rng == 0
+						listNPC[id].npc.Smartphone(false)
+					listNPC[id].npc.TracePlayer(false)
+	
+	
+	cp1:
+		CanGameOver(false)
+		SetStage("Residence",daytime=false)
+		
+		listener = CreateListenerLocal("wait_listener",duration=1,nextcp="cp2")
+		#listener = CreateListenerLocal("wait_listener",duration=1,nextcp="test")
+	
+	test:
+		clothesFold.Play()
+		UnequipAllCosplay()
+		DropItem(itemtype="Coat", stage="Apart",x=3.4,y=0,z=2.5)
+		SetPlayerPosition(position=Vector(zStart.x, zStart.y, zStart.z))
+		mei = CreateMei(position=Vector(zMeiSpawn.x, zMeiSpawn.y, zMeiSpawn.z), rotation=Quaternion(0, -0.71, 0, 0.7))
+		MoveNPC(npc=mei, coord=Vector(zMeiSpawn.x, zMeiSpawn.y, zMeiSpawn.z))
+		thread.Goto("cp18")
+	
+	cp2:
+		clothesFold.Play()
+		UnequipAllCosplay()
+		DropItem(itemtype="Coat", stage="Apart",x=3.4,y=0,z=2.5)
+		SetPlayerPosition(position=Vector(zStart.x, zStart.y, zStart.z))
+		mei = CreateMei(position=Vector(zMeiSpawn.x, zMeiSpawn.y, zMeiSpawn.z), rotation=Quaternion(0, -0.71, 0, 0.7))
+		MoveNPC(npc=mei, coord=Vector(zMeiSpawn.x, zMeiSpawn.y, zMeiSpawn.z))
+		
+		ShowBlackscreen(fadein=0, duration=10, fadeout=0.5)
+		subtitle.Add(text="\"Do I really have to be naked for this?\"", duration=4)
+		subtitleMei.Add(text="\"Of course! The items you're looking for are clothes, after all.\"", delay=4, duration=5)
+		
+		listener = CreateListenerLocal("wait_listener",duration=10,nextcp="cp3")
+	
+	cp3:
+		subtitle.Add(text="\"Right... What was I expecting?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStart.x,y=zStart.y,z=zStart.z,r=zStart.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp4")
+	
+	cp4:
+		difficulty = CreateList()
+		difficulty.Insert("Easy is good.")
+		difficulty.Insert("Make it hard!")
+		nextcps = CreateList()
+		nextcps.Insert("cp5")
+		nextcps.Insert("cp6")
+		
+		subtitleMei.Add(text="\"A good time. And that's what you'll get! By the way, easy mode or hard mode?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStart.x,y=zStart.y,z=zStart.z,r=zStart.r, options=difficulty, text="　[Choose difficulty] ")
+		listener = CreateListenerLocal("combo_listener",nextcps=nextcps)
+	
+	cp5:
+		easy_mode = true
+		thread.Goto("cp6")
+	
+	cp6:
+		subtitleMei.Add(text="\"Fine, here you go. Now go out there, and happy hunting!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStart.x,y=zStart.y,z=zStart.z,r=zStart.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp7")
+	
+	cp7:
+		DropClothesAtRandom(gloves,1)
+		DropClothesAtRandom(harness,2)
+		DropClothesAtRandom(garter,3)
+		DropClothesAtRandom(stockings,4)
+		DropClothesAtRandom(shoes,5)
+		listenNPC = CreateListener("watchNPCs")
+		listenWitness = CreateListener("npcWitness")
+		listenTimer = CreateListener("npcTimer")
+		listenStalker = CreateListener("caughtByNPC")
+		
+	
+	cp_gloves:
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=gloves.pos.x,y=gloves.pos.y-0.02,z=gloves.pos.z,r=0.5, text="　[Take the gloves] ")
+		gloves.listener = CreateListenerLocal("int_listener",nextcp="cp_gloves2")
+		
+	cp_gloves2:
+		SetAction("Pick")
+		gloves.listener = CreateListenerLocal("wait_listener",duration=1,nextcp="cp_gloves3")
+		
+	cp_gloves3:
+		EquipCosplay("m_cosplay_general_upper_full_glove")
+		subtitle.Add(text="\"Why are gloves part of the hunt? I need panties, or a bra!\"", duration=6)
+		gloves.listener = null
+		gloves = CreateList(get=true)
+		
+		if gloves.get && harness.get && garter.get && stockings.get && shoes.get
+			listener = CreateListenerLocal("wait_listener",duration=6,nextcp="cp_done")
+	
+	
+	cp_harness:
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=harness.pos.x,y=harness.pos.y-0.02,z=harness.pos.z,r=0.5, text="　[Take the harness] ")
+		harness.listener = CreateListenerLocal("int_listener",nextcp="cp_harness2")
+		
+	cp_harness2:
+		SetAction("Pick")
+		harness.listener = CreateListenerLocal("wait_listener",duration=1,nextcp="cp_harness3")
+		
+	cp_harness3:
+		EquipCosplay("m_cosplay_bunny_harness_top")
+		subtitle.Add(text="\"Is that... a chest harness? This thing won't cover me at all!\"", duration=7)
+		harness.listener = null
+		harness = CreateList(get=true)
+		
+		if gloves.get && harness.get && garter.get && stockings.get && shoes.get
+			listener = CreateListenerLocal("wait_listener",duration=6,nextcp="cp_done")
+	
+	
+	cp_garter:
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=garter.pos.x,y=garter.pos.y-0.02,z=garter.pos.z,r=0.5, text="　[Take the garter belt] ")
+		garter.listener = CreateListenerLocal("int_listener",nextcp="cp_garter2")
+		
+	cp_garter2:
+		SetAction("Pick")
+		garter.listener = CreateListenerLocal("wait_listener",duration=1,nextcp="cp_garter3")
+		
+	cp_garter3:
+		if stockings.get
+			EquipCosplay("m_cosplay_bunny_harness_under")
+			subtitle.Add(text="\"A garter belt. Well, I'll won't be much clothed, but I'll be sexy.\"", duration=6)
+		else
+			subtitle.Add(text="\"A garter belt... I'll wait until I find stockings to go with it.\"", duration=6)
+		garter.listener = null
+		garter = CreateList(get=true)
+		
+		if gloves.get && harness.get && garter.get && stockings.get && shoes.get
+			listener = CreateListenerLocal("wait_listener",duration=6,nextcp="cp_done")
+	
+	
+	cp_stockings:
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=stockings.pos.x,y=stockings.pos.y-0.02,z=stockings.pos.z,r=0.5, text="　[Take the stockings] ")
+		stockings.listener = CreateListenerLocal("int_listener",nextcp="cp_stockings2")
+		
+	cp_stockings2:
+		SetAction("Pick")
+		stockings.listener = CreateListenerLocal("wait_listener",duration=1,nextcp="cp_stockings3")
+		
+	cp_stockings3:
+		if garter.get
+			EquipCosplay("m_cosplay_bunny_harness_under","m_cosplay_general_leg_stocking_nieso")
+			subtitle.Add(text="\"Ah, here are stockings. Now I can wear the garter belt too.\"", duration=6)
+		else
+			EquipCosplay("m_cosplay_general_leg_stocking_nieso")
+			subtitle.Add(text="\"Some stockings... Guess at least my legs will be covered...\"", duration=6)
+		stockings.listener = null
+		stockings = CreateList(get=true)
+		
+		if gloves.get && harness.get && garter.get && stockings.get && shoes.get
+			listener = CreateListenerLocal("wait_listener",duration=6,nextcp="cp_done")
+	
+	
+	cp_shoes:
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=shoes.pos.x,y=shoes.pos.y-0.02,z=shoes.pos.z,r=0.5, text="　[Take the shoes] ")
+		shoes.listener = CreateListenerLocal("int_listener",nextcp="cp_shoes2")
+		
+	cp_shoes2:
+		SetAction("Pick")
+		shoes.listener = CreateListenerLocal("wait_listener",duration=1,nextcp="cp_shoes3")
+		
+	cp_shoes3:
+		EquipCosplay("m_cosplay_general_leg_stocking_pin_heel")
+		subtitle.Add(text="\"Just a pair of shoes... Well, at least I'm not bare feet anymore.\"", duration=6)
+		shoes.listener = null
+		shoes = CreateList(get=true)
+		
+		if gloves.get && harness.get && garter.get && stockings.get && shoes.get
+			listener = CreateListenerLocal("wait_listener",duration=6,nextcp="cp_done")
+	
+	
+	cp_done:
+		listenNPC = null
+		listenWitness = null
+		listenTimer = null
+		listenStalker = null
+		subtitle.Add(text="\"I have everything... Let's go back to Mei.\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=0.5, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp8")
+	
+	cp8:
+		ShowBlackscreen(fadein=0.3, duration=0.4, fadeout=0.3)
+		listener = CreateListenerLocal("wait_listener",duration=0.5,nextcp="cp9")
+	
+	cp9:
+		SetPlayerPosition(position=Vector(zStart.x,zStart.y,zStart.z), rotation=Quaternion(0, 0.71, 0, 0.71))
+		listener = CreateListenerLocal("wait_listener",duration=0.5,nextcp="cp10")
+	
+	cp10:
+		subtitleMei.Add(text="\"Aaah, you made it! Congratulations!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStart.x,y=zStart.y,z=zStart.z,r=zStart.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp11")
+	
+	cp11:
+		subtitleMei.Add(text="\"Mei! Not a single one of these clothes did anything to cover me at all!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStart.x,y=zStart.y,z=zStart.z,r=zStart.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp12")
+	
+	cp12:
+		subtitleMei.Add(text="\"I know, right? I'm quite proud of myself, if I may say so.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStart.x,y=zStart.y,z=zStart.z,r=zStart.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp13")
+	
+	cp13:
+		subtitleMei.Add(text="\"That being said, I think you missed the last little surprise I had for you!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStart.x,y=zStart.y,z=zStart.z,r=zStart.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp14")
+	
+	cp14:
+		subtitle.Add(text="\"Really? Does it cover anything more than the other clothes?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStart.x,y=zStart.y,z=zStart.z,r=zStart.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp15")
+	
+	cp15:
+		subtitleMei.Add(text="\"...\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStart.x,y=zStart.y,z=zStart.z,r=zStart.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp16")
+	
+	cp16:
+		subtitleMei.Add(text="\"Noooot exactly...\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStart.x,y=zStart.y,z=zStart.z,r=zStart.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp17")
+	
+	cp17:
+		mei.PlayAction("ConbiniTakeGoods")
+		subtitleMei.Add(text="\"Anyway, wear this blindfold, I'll lead you to it!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStart.x,y=zStart.y,z=zStart.z,r=zStart.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp18")
+	
+	cp18:
+		mp(text="Wear the blindfold")
+		area = CreateArea(type="sphere",stage="Residence",x=zStart.x,y=zStart.y,z=zStart.z,r=zStart.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[Blindfolded]")
+		listener = CreateListenerLocal("basic_listener",nextcp="cp19")
+	
+	cp19:
+		ShowBlackscreen(fadein=0.5, duration=10, fadeout=0.5)
+		listener = CreateListenerLocal("wait_listener",duration=0.5,nextcp="cp20")
+	
+	cp20:
+		mei.Warp(position=Vector(zMeiTouch.x,zMeiTouch.y,zMeiTouch.z), rotation=Quaternion(0, -0.78, 0, 0.63))
+		MoveNPC(npc=mei, coord=Vector(zMeiTouch.x, zMeiTouch.y, zMeiTouch.z))
+		
+		witnesses.guy = CreateNPC("PreviousMale", position=Vector(zGuySpawn.x, zGuySpawn.y, zGuySpawn.z), rotation=Quaternion(0, -0.77, 0, 0.63), body=6, face=0, hair=1)
+		MoveNPC(npc=witnesses.guy, coord=Vector(zGuySpawn.x, zGuySpawn.y, zGuySpawn.z))
+		witnesses.guy.Smartphone(true)
+		witnesses.guy.Headset(false)
+		witnesses.guy.SkipStrangeness(true)
+		
+		witnesses.woman = CreateNPC("NewFemale", position=Vector(zWomanSpawn.x, zWomanSpawn.y, zWomanSpawn.z), rotation=Quaternion(0, 0.92, 0, -0.38), body=3, face=3, hair=1)
+		MoveNPC(npc=witnesses.woman, coord=Vector(zWomanSpawn.x, zWomanSpawn.y, zWomanSpawn.z))
+		witnesses.woman.Smartphone(true)
+		witnesses.woman.Headset(false)
+		witnesses.woman.SkipStrangeness(true)
+		
+		witnesses.old = CreateNPC("NewOji", position=Vector(zOldSpawn.x, zOldSpawn.y, zOldSpawn.z), rotation=Quaternion(0, 0.99, 0, 0.08), body=1, face=0, hair=0)
+		MoveNPC(npc=witnesses.old, coord=Vector(zOldSpawn.x, zOldSpawn.y, zOldSpawn.z))
+		witnesses.old.Smartphone(true)
+		witnesses.old.Headset(false)
+		witnesses.old.SkipStrangeness(true)
+		
+		SetPlayerPosition(position=Vector(zStreetLamp.x, zStreetLamp.y, zStreetLamp.z), rotation=Quaternion(0, 0.31, 0, 0.95))
+		LockHandcuffs(handcuffstype="KeyHandcuff", attachtoobject=true)
+		DropItem(itemtype="HandcuffKey", stage="Apart",x=3.4,y=0,z=2.5)
+		listener = CreateListenerLocal("wait_listener",duration=0.5,nextcp="cp21")
+		#listener = CreateListenerLocal("wait_listener",duration=0.5,nextcp="cp22")
+	
+	cp21:
+		subtitleMei.Add(text="\"Over here, that's it. Now, give me your hands.\"", duration=5)
+		subtitle.Add(text="\"What for? Mei, what are you doing?\"", delay=5, duration=4)
+		listener = CreateListenerLocal("wait_listener",duration=10,nextcp="cp22")
+	
+	cp22:
+		UnequipAdultToy("EyeMask")
+		subtitleMei.Add(text="\"Surprise!\"", duration=2)
+		subtitle.Add(text="!!!", delay=2, duration=2)
+		subtitleMei.Add(text="\"I saw how wet you are, so I thought I'd treat you with a little something...\"", delay=2, duration=6)
+		listener = CreateListenerLocal("wait_listener",duration=10,nextcp="cp23")
+	
+	cp23:
+		mei.PlayAction("ConbiniCrouch")
+		mp(text="Struggle helplessly while Mei masturbates you in public")
+		if _mods["Moaning2"] == null
+			moanLong.Play()
+		subtitleMind.Add(text="(Oh god she's masturbating me in front of those people.)", delay=2, duration=4)
+		subtitleMind.Add(text="(I can't even escape or do anything to cover myself... This is so humiliating...)", delay=2, duration=6)
+		subtitleMei.Add(text="\"Oh my, you're shaking. Looks like you love it.\"", delay=16, duration=4)
+		subtitleMind.Add(text="(I won't hold long like this. I'm going to...)", delay=8, duration=4)
+		listener = CreateListenerLocal("add_ecstasy_listener", ecstasy_add=0.00147, ecstasy_goal=1, nextcp="cp24")
+	
+	cp24:
+		mp(text="")
+		ShowBlackscreen(color=Color(1,1,1,0.8), fadein=0, duration=0.1, fadeout=0.3)
+		cameraClick.Play()
+		subtitle.Add(text="\"NNGAAAAAHH!! ♥\"")
+		
+		area = CreateArea(type="sphere",stage="Residence",x=zStreetLamp.x,y=zStreetLamp.y,z=zStreetLamp.z,r=zStreetLamp.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[!Orgasm]")
+		listener = CreateListenerLocal("basic_listener",maxduration=0.2,nextcp="cp25")
+	
+	cp25:
+		mei.PlayAction("ConbiniStand")
+		subtitleMei.Add(text="\"There you go...\"")
+		listener = CreateListenerLocal("wait_listener",duration=3,nextcp="cp26")
+	
+	cp26:
+		CollectItem(itemtype="HandcuffKey")
+		UnlockHandcuffs()
+		mei.PlayAction("HandOver")
+		subtitleMei.Add(text="\"I hope everyone enjoyed the view!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStreetLamp.x,y=zStreetLamp.y,z=zStreetLamp.z,r=zStreetLamp.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp27")
+	
+	cp27:
+		subtitle.Add(text="*The people around start clapping.*")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStreetLamp.x,y=zStreetLamp.y,z=zStreetLamp.z,r=zStreetLamp.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp28")
+	
+	cp28:
+		subtitleGuy.Add(text="\"That was quite the show!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStreetLamp.x,y=zStreetLamp.y,z=zStreetLamp.z,r=zStreetLamp.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp29")
+	
+	cp29:
+		subtitleWoman.Add(text="\"I got a nice video for lonely nights... with some nice close-ups.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStreetLamp.x,y=zStreetLamp.y,z=zStreetLamp.z,r=zStreetLamp.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp30")
+	
+	cp30:
+		witnesses.old.Warp(rotation=Quaternion(0, 0.84, 0, 0.54))
+		subtitleOld.Add(text="\"Those things can take videos?!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStreetLamp.x,y=zStreetLamp.y,z=zStreetLamp.z,r=zStreetLamp.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp31")
+	
+	cp31:
+		subtitleMei.Add(text="\"Anyway, I think it's time to call it a night, she's already red as a tomato.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStreetLamp.x,y=zStreetLamp.y,z=zStreetLamp.z,r=zStreetLamp.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp32")
+	
+	cp32:
+		witnesses.old.Warp(rotation=Quaternion(0, 0.99, 0, 0.08))
+		mei.PlayAction("ConbiniTakeGoods")
+		boobGrope.Play()
+		subtitleMei.Add(text="*Mei gropes your left breast.*\n\"I can feel her heart going crazy from here!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStreetLamp.x,y=zStreetLamp.y,z=zStreetLamp.z,r=zStreetLamp.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp33")
+	
+	cp33:
+		subtitle.Add(text="*You endure for a moment, but can't take it anymore and gently move her hand away from your breast.*")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStreetLamp.x,y=zStreetLamp.y,z=zStreetLamp.z,r=zStreetLamp.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp34")
+	
+	cp34:
+		subtitleMei.Add(text="\"Oh my, what an unruly little thing!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStreetLamp.x,y=zStreetLamp.y,z=zStreetLamp.z,r=zStreetLamp.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp35")
+	
+	cp35:
+		LockHandcuffs(handcuffstype="KeyHandcuff")
+		DropItem(itemtype="HandcuffKey", stage="Apart",x=3.4,y=0,z=2.5)
+		mei.PlayAction("HandOver")
+		subtitleMei.Add(text="*Mei handcuffs you again, and resumes kneading your boobs.*\n\"There, much better!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStreetLamp.x,y=zStreetLamp.y,z=zStreetLamp.z,r=zStreetLamp.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp36")
+	
+	cp36:
+		ShowBlackscreen(color=Color(1,1,1,0.8), fadein=0, duration=0.1, fadeout=0.3)
+		cameraClick.Play()
+		subtitleWoman.Add(text="*The woman giggles softly, while the men take another picture*")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStreetLamp.x,y=zStreetLamp.y,z=zStreetLamp.z,r=zStreetLamp.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp37")
+	
+	cp37:
+		subtitleMei.Add(text="\"Anyway, that's all folks! We're going home!")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zStreetLamp.x,y=zStreetLamp.y,z=zStreetLamp.z,r=zStreetLamp.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cpEnd")
+	
+	cpEnd:
+		CollectItem(itemtype="HandcuffKey")
+		UnlockHandcuffs()
+		missionpanel.SetVisible(false)
+		lastzone = null
+		SetStage("Apart")

@@ -1,0 +1,32 @@
+{
+  "modelName": "Sailor MoonV.Skirt",
+  "displayName": "Sailor MoonV Skirt",
+  "categoryType": "SchoolGal",
+  "glb": "mesh.glb",
+  "materialRef": "Sailor MoonV Skirt.mat",
+
+  "dynamic": {
+    "components": {
+      "Dress_Root": {
+        "includeDescendants": true,
+        "params": {
+          "updateRate": 60,
+          "damping": 0.227,
+          "elasticity": 0.126,
+          "stiffness": 0.324,
+          "inert": 0.674,
+          "radius": 0.01,
+          "gravity": [0, 0, 0],
+          "force": [0, 0, 0],
+          "distanceDisable": 20,
+          "weight": 1.0
+        },
+        "falloff": {
+          "stiffness": { "type": "easeOut", "from": 0.324, "to": 1 },
+          "damping":   { "type": "easeIn",  "from": 0.227, "to": 1 },
+          "elasticity":{ "type": "linear",  "from": 0.126, "to": 0 }
+        }        
+      }
+	}
+  }
+}

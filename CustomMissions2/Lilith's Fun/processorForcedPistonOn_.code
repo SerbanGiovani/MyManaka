@@ -1,0 +1,60 @@
+processorForcedPistonOn_:
+	#Note Event: List must have:
+	# pistonTypes: List
+	# strength: Number
+	# common： List, see 'event.common'
+
+	timer = 0
+	invterval = 0.4
+	
+	event = null
+	
+	start:
+		#Required
+		#Params@arr event: List
+		timer = 0
+
+	end:
+		#Required
+		#Params@arr event: List
+
+	behaviour:
+		do:
+			if value != null
+				if !_state.AdultToys[value]
+					EquipAdultToy(value)
+				else
+					pn = _state.Piston
+					if pn == 3
+						pn = 4
+					elseif pn == 4
+						pn =3
+					if pn < event.strength
+						# Log("pn " + pn)
+						# Log("event.strength " + event.strength)
+						__setPiston(event.strength)
+	b = CreateThread("behaviour")
+
+	update:
+		#Required
+		#Params@arr event: List
+		if timer >= invterval
+			timer = 0
+			event = _args[0]
+			Foreach(event.pistonTypes, b)
+		timer = timer + _timediff
+
+	__setPiston:
+		#Params@arr strength: Number
+		strength = _args[0]
+		if strength == 1
+			SetPiston("Low")
+		elseif strength == 2
+			SetPiston("Medium")
+		elseif strength == 3
+			SetPiston("Random")
+		elseif strength == 4
+			SetPiston("High")
+		else
+			Log("piston off")
+			SetPiston("Off")

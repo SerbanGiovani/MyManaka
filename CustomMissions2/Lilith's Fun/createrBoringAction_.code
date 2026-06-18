@@ -1,0 +1,16 @@
+createrBoringAction_:
+	#Note Event: List must have:
+	# common: List see 'event.common'
+
+	create:
+		#Required
+		#Returns event: List
+		
+		event = CreateList()
+		event.common = CreateList()
+		event.common.requiredProcessor = "processorBoringAction"
+		event.common.name = StringsPool2.BoringActionString
+		event.common.description = RandomString("BoringAction", StringsPool0)
+		event.common.duration = Random(15, 30)
+		
+		_result = event

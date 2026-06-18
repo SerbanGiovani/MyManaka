@@ -1,0 +1,116 @@
+phone = CreateThread("phone")
+MeiChat = null
+
+phone:
+	thread = _this
+	thread.Goto("phone1")
+	missionpanel = CreateMissionPanel()
+	
+	phone1:
+		MeiChat = CreateMessengerChat("Mei",icontext="M",icontextcolor=Color(1,0.8,0.3), iconcolor=Color(1,0,0))
+		b_ids = CreateList()
+		b_ids.Insert(0)
+		if _save.phone
+			b_ids.Insert(1)
+		b_labels = CreateList()
+		b_labels.Insert("[Play prologue]")
+		if _save.phone
+			b_labels.Insert("So... You mentioned fun times...")
+		MeiChat.SetButtons(b_labels, b_ids)
+		listener = CreateListenerLocal("chatClicked_listener",chat=MeiChat,nextcp="intro",nextcp2="phone2",text1="",text2="So... You mentioned fun times...")
+		#listener = CreateListenerLocal("chatClicked_listener",chat=MeiChat,nextcp="intro",nextcp2="phone8",text1="",text2="So... You mentioned fun times...")
+	
+	intro:
+		part0.Goto("cp1")
+	
+	phone2:
+		listener = CreateListenerLocal("wait_listener",duration=1,nextcp="phone3")
+	
+	phone3:
+		MeiChat.Add("Sure! I was thinking of a few things!", "Left", silent=true)
+		listener = CreateListenerLocal("wait_listener",duration=1,nextcp="phone4")
+	
+	phone4:
+		MeiChat.Add("First, we can hang around at my place. I'll order pizza!", "Left", silent=true)
+		listener = CreateListenerLocal("wait_listener",duration=1,nextcp="phone5")
+	
+	phone5:
+		MeiChat.Add("Second, we can go shopping! I found nice clothes for you to try out.", "Left", silent=true)
+		listener = CreateListenerLocal("wait_listener",duration=1,nextcp="phone6")
+	
+	phone6:
+		MeiChat.Add("Third, we can take a walk in the park. I've noticed a place people go for a drink.", "Left", silent=true)
+		listener = CreateListenerLocal("wait_listener",duration=1,nextcp="phone7")
+	
+	phone7:
+		MeiChat.Add("Fourth, I was thinking about a scavenger hunt in the neighborhood.", "Left", silent=true)
+		listener = CreateListenerLocal("wait_listener",duration=1,nextcp="phone8")
+	
+	phone8:
+		MeiChat.Add("Finally, how about some arabian nights magic?", "Left", silent=true)
+		listener = CreateListenerLocal("wait_listener",duration=1,nextcp="phone9")
+	
+	phone9:
+		b_ids = CreateList()
+		b_ids.Insert(0)
+		b_ids.Insert(1)
+		b_ids.Insert(2)
+		b_ids.Insert(3)
+		b_labels = CreateList()
+		b_labels.Insert("(Part 1) Pizza sounds nice.")
+		b_labels.Insert("(Part 2) I could use some new clothes.")
+		b_labels.Insert("(Part 3) I'd enjoy a walk in the park.")
+		b_labels.Insert("(Part 4) Scavenger hunt sounds fun.")
+		b_labels.Insert("(Part 5) Arabian nights it is.")
+		MeiChat.SetButtons(b_labels, b_ids)
+		listener = CreateListenerLocal("chatClicked_listener",chat=MeiChat,nextcp="wait1a",nextcp2="wait2a",nextcp3="wait3a",nextcp4="wait4a",nextcp5="wait5a",text1="Pizza sounds nice.",text2="I could use some new clothes.",text3="I'd enjoy a walk in the park.",text4="Scavenger hunt sounds fun.",text5="Arabian nights it is.")
+	
+	wait1a:
+		listener = CreateListenerLocal("wait_listener",duration=1,nextcp="wait1b")
+	
+	wait2a:
+		listener = CreateListenerLocal("wait_listener",duration=1,nextcp="wait2b")
+	
+	wait3a:
+		listener = CreateListenerLocal("wait_listener",duration=1,nextcp="wait3b")
+	
+	wait4a:
+		listener = CreateListenerLocal("wait_listener",duration=1,nextcp="wait4b")
+	
+	wait5a:
+		listener = CreateListenerLocal("wait_listener",duration=1,nextcp="wait5b")
+		
+	wait1b:
+		MeiChat.Add("Good, see you at my place!", "Left", silent=true)
+		listener = CreateListenerLocal("wait_listener",duration=2,nextcp="part1")
+	
+	wait2b:
+		MeiChat.Add("Good, see you at the clothing store!", "Left", silent=true)
+		listener = CreateListenerLocal("wait_listener",duration=2,nextcp="part2")
+	
+	wait3b:
+		MeiChat.Add("Good, see you in the park!", "Left", silent=true)
+		listener = CreateListenerLocal("wait_listener",duration=2,nextcp="part3")
+	
+	wait4b:
+		MeiChat.Add("Good, see you in your front yard!", "Left", silent=true)
+		listener = CreateListenerLocal("wait_listener",duration=2,nextcp="part4")
+	
+	wait5b:
+		MeiChat.Add("Good, see you in the clothing store's changing room!", "Left", silent=true)
+		listener = CreateListenerLocal("wait_listener",duration=2,nextcp="part5")
+	
+	part1:
+		part1.Goto("cp1")
+	
+	part2:
+		part2.Goto("cp1")
+	
+	part3:
+		part3.Goto("cp1")
+	
+	part4:
+		part4.Goto("cp1")
+	
+	part5:
+		part5.Goto("cp1")

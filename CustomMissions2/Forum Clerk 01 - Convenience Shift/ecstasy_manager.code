@@ -1,0 +1,177 @@
+ecstasy_manager:
+
+	# Initialise persistent state
+	if this == null
+		this = CreateList()
+		this.active = true
+		this.min_value = 0
+		this.max_value = 1
+		this.scaler = 1
+		this.timer = 0
+		this.pinned = -1
+		this.paused = true
+		this.bus = null
+		this.last_value = GetEcstasy()
+		this.decay_rate = 0.05
+		this.target_active == false
+
+	# Create the runner listener
+	runner = CreateListenerLocal("ecstasy_runner")
+	
+	Init: # bus
+		this.bus = bus
+		this.paused = false
+		this.active = true
+		this.min_value = 0
+		this.max_value = 1
+		this.scaler = 1
+		this.timer = 0
+		this.pinned = -1
+		this.paused = false
+		this.last_value = GetEcstasy()
+		this.decay_rate = 0.05
+		this.target_active == false
+		
+	types = CreateList()
+	types.Insert("ecstasy.jump")    # (Number: value)
+	types.Insert("ecstasy.pin")    # (Number: value)
+	types.Insert("ecstasy.unpin")    
+	types.Insert("ecstasy.clamp")  # (List: [min, max])
+	types.Insert("ecstasy.scale")  # (Number: multiplier)
+	types.Insert("ecstasy.orgasm") # (Number: duration)
+	types.Insert("ecstasy.setvibrator") 
+	types.Insert("ecstasy.pause")  # (Boolean)
+	types.Insert("ecstasy.resume") # (Boolean)
+	types.Insert("ecstasy.wander") # (Boolean or Number speed)
+	types_count = types.Count()
+	
+	
+	ecstasy_runner:
+		if (this.bus == null) || (_state.Position.stage == "Apart")
+			this.paused = true
+			if (_state.Position.stage == "Apart")
+				this.active=false
+			
+		else
+			current_game_val = GetEcstasy()
+			game_delta = current_game_val - this.last_value
+		
+			# 1. Process Bus Commands
+			i = 0
+			while i < types_count
+				type = types[i]
+				val = this.bus.flags[type] # Capture value before clearing
+				
+				if val != null
+					this.bus.flags[type] = null # Clear flag immediately
+					
+					if type == "ecstasy.jump"
+						SetEcstasy(val)
+						this.last_value = val
+					
+					elseif type == "ecstasy.pin"
+						this.pinned = val 
+						
+					elseif type == "ecstasy.unpin"
+						this.pinned = -1 
+
+					elseif type == "ecstasy.clamp"
+						# Assuming val is a list/object with min/max
+						if val.min != null
+							this.min_value = val.min
+						if val.max != null
+							this.max_value = val.max
+
+					elseif type == "ecstasy.scale"
+						this.scaler = val
+
+					elseif type == "ecstasy.orgasm"
+						this.timer = val
+						SetEcstasy(this.max_value) # Instant peak
+						
+					elseif type == "ecstasy.setvibrator"
+						#Log("Set Vibrator: " + val)
+						SetVibrator(val)
+
+					elseif type == "ecstasy.pause"
+						this.paused = true
+
+					elseif type == "ecstasy.resume"
+						this.paused = false
+						
+					elseif type == "ecstasy.wander"
+						if val == false
+							this.wander_active = false
+						else
+							this.wander_active = true
+							# If val is a number, use it as speed
+							if val > 0
+								this.wander_speed = val
+					
+				i = i + 1
+
+			# 2. Process Timed Logic (if not paused)
+			if !this.paused
+				next_val = this.last_value
+
+				# Handle Orgasm Lock
+				if this.timer > 0
+					this.timer = this.timer - _timediff
+					next_val = 1.2
+					
+				elseif this.pinned != -1
+					next_val = this.pinned
+				
+				elseif this.target_active # Specific target (like Wander)
+					# --- WANDER / TARGET LOGIC ---
+					this.target_timer = this.target_timer - _timediff
+					
+					# Pick new random target if timer expired
+					if this.target_timer <= 0
+						this.target_value = this.min_value + (Random() * (this.max_value - this.min_value))
+						this.target_timer = 2.0 + (Random() * 3.0)
+				
+					# Move towards target
+					dist = this.target_value - next_val
+					move_step = this.move_speed * _timediff
+					
+					if Abs(dist) < move_step
+						next_val = this.target_value
+					else
+						next_val = next_val + (Sign(dist) * move_step)
+
+				else 
+					# --- NATURAL FLOW MODE ---
+					# Here we use the game's own logic (game_delta) 
+					# but apply our manager's constraints.
+					
+					# We can scale the game's intensity if we want
+					modified_delta = game_delta * this.scaler
+					
+					# Apply a small "manager-side" decay if the game isn't actively increasing it
+					#if modified_delta <= 0
+					#	modified_delta = modified_delta - (this.decay_rate * _timediff)
+						
+					next_val = next_val + modified_delta
+
+				if (this.pinned == -1) && (this.timer <= 0)
+					# 3. Final Clamp and Sync
+					step = this.decay_rate * _timediff
+					if next_val < this.min_value
+						#next_val += Min(step, this.min_value - next_val)
+						next_val = Max(next_val, this.min_value)
+					if next_val > this.max_value
+						#next_val -= Min(step, next_val - this.max_value)
+						next_val = Min(next_val, this.max_value)
+					
+				# Push our calculated value back to the game engine
+				
+				SetEcstasy(next_val)
+				this.last_value = next_val
+
+	# Helper for other managers to query the current state if needed
+	Get_Value:
+		_result = GetEcstasy()
+
+	Is_Paused:
+		_result = this.paused

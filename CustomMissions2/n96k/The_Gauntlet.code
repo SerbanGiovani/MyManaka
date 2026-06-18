@@ -1,0 +1,190 @@
+mission_gauntlet = CreateThread("gauntlet_init")
+
+gauntlet_init:
+	Global("gauntlet_chat", CreateMessengerChat("Unknown Contact", iconcolor = Color(0.5, 0, 0.5), icontext = "???", icontextcolor = Color(1, 0, 0)))
+	
+	Global("gauntlet_menu", CreateMissionMenuItem())
+	gauntlet_menu.SetText("The Gauntlet")
+	gauntlet_menu.SetRPText("3500 RP")
+	gauntlet_menu.SetBackgroundColor(Color(0.788, 0.458, 1.000, 1.000), Color(0.607, 0.000, 1.000, 1.000))
+	gauntlet_menu.SetStages("Apart", "Residence", "StationFront", "ShoppingMall")
+	if _save["gauntlet_cleared"] == true
+		gauntlet_menu.SetCleared(true)
+		
+	Global("gauntlet_panel", CreateMissionPanel())
+	gauntlet_panel.SetGaugeVisible(false)
+
+	Global("mall_turnaround", CreateArea(type="sphere", stage="ShoppingMall", x=19.47, y=-8.53, z=9.57, r=5.0))
+	Global("mansion_goal", CreateArea(type="sphere", stage="Mansion", x=45.11, y=22.69, z=127.65, r=2.0))
+	
+	_this.Goto("gauntlet_locked")
+
+gauntlet_locked:
+	listener = CreateListener("l_gauntlet_locked")
+
+l_gauntlet_locked:
+	if _save["crucible_cleared"] == true
+		mission_gauntlet.Goto("gauntlet_prompt")
+
+gauntlet_prompt:
+	gauntlet_chat.Add("You've nearly proven yourself. The Gauntlet awaits. Suit up once again.", "Left", user="Unknown Contact", silent=false)
+	gauntlet_chat.SetButtons("Accept", "Ignore", ids = CreateList("btn_accept", "btn_ignore"))
+	listener = CreateListener("l_gauntlet_wait_accept")
+
+l_gauntlet_wait_accept:
+	btn = gauntlet_chat.Clicked()
+	if btn != null
+		if btn == "btn_accept"
+			gauntlet_chat.Add("Accept", "Right")
+			gauntlet_chat.Add("Standard test or pushing limits?", "Left", user="Unknown Contact", silent=false)
+			gauntlet_chat.SetButtons("Standard", "Hard Mode", ids = CreateList("btn_standard", "btn_hard"))
+			mission_gauntlet.Goto("gauntlet_wait_difficulty")
+		elseif btn == "btn_ignore"
+			gauntlet_chat.Add("Ignore", "Right")
+			gauntlet_chat.SetButtons()
+			mission_gauntlet.Goto("gauntlet_cooldown")
+
+gauntlet_wait_difficulty:
+	listener = CreateListener("l_gauntlet_wait_difficulty")
+
+l_gauntlet_wait_difficulty:
+	btn = gauntlet_chat.Clicked()
+	if btn != null
+		gauntlet_chat.SetButtons()
+		hard_mode = false
+		if btn == "btn_standard"
+			gauntlet_chat.Add("Standard", "Right")
+			active_condition = CreateCondition("[Exposed_All]")
+			mission_gauntlet.Goto("gauntlet_setup", active_condition = active_condition, hard_mode = hard_mode)
+		elseif btn == "btn_hard"
+			gauntlet_chat.Add("Hard Mode", "Right")
+			hard_mode = true
+			active_condition = CreateCondition("[Exposed_All]")
+			mission_gauntlet.Goto("gauntlet_setup", active_condition = active_condition, hard_mode = hard_mode)
+
+gauntlet_setup:
+	UnequipAllCosplay()
+	EquipCosplay("m_cosplay_general_head_sun_glasses", "m_cosplay_general_upper_kubiwa", "m_cosplay_general_genital_ofuda", "m_cosplay_general_genital_tail_plug", "m_cosplay_maid_bag", "m_cosplay_maid_stocking", "m_cosplay_ninja_mask", "m_cosplay_kemono_ear_fox", "m_cosplay_bunny_harness_top", "m_cosplay_bunny_harness_under", "m_cosplay_bunny_nippless", "m_cosplay_bunny_shoes", "m_cosplay_suit_luxe_chorker")
+	EquipAdultToy("KuriRotor")
+	if hard_mode == true
+		EquipAdultToy("TitRotor")
+		SetVibrator("Random")
+	else
+		SetVibrator("Low")
+	LockHandcuffs(handcuffstype="Handcuff", attachtoobject=false, duration=0)
+	DropItem(itemtype="Coat", stage="Apart", x=-1.81, y=0.00, z=-0.20, compass=false)
+	DropItem(itemtype="HandcuffKey", stage="Apart", x=-1.81, y=0.00, z=-0.20, compass=false)
+	DropItem(itemtype="VibeRemocon", stage="Apart", x=-1.81, y=0.00, z=-0.20, compass=false)
+	SetStage("Mansion", daytime=false)
+	listener = CreateListener("l_gauntlet_teleport", active_condition = active_condition)
+
+l_gauntlet_teleport:
+	if delay_timer == null
+		delay_timer = 0
+	delay_timer = delay_timer + _timediff
+	if delay_timer >= 0.5
+		SetPlayerPosition(x=45.11, y=22.69, z=127.65)
+		gauntlet_chat.Add("Location services forced on. Push to Downtown. Remember, we're always watching.", "Left", user="Unknown Contact", silent=false)
+		gauntlet_panel.SetText("Head out to the Residential Area")
+		gauntlet_panel.SetVisible(true)
+		mission_gauntlet.Goto("gauntlet_leg1", active_condition = active_condition)
+
+gauntlet_leg1:
+	listener = CreateListener("l_gauntlet_leg1", active_condition = active_condition)
+
+l_gauntlet_leg1:
+	if active_condition.Check() == false
+		mission_gauntlet.Goto("gauntlet_fail")
+	elseif _state.Position.stage == "Residence"
+		gauntlet_chat.Add("Good. But not good enough. Keep going.", "Left", user="Unknown Contact", silent=false)
+		gauntlet_panel.SetText("Proceed to Downtown (Station Front)")
+		mission_gauntlet.Goto("gauntlet_leg2", active_condition = active_condition)
+
+gauntlet_leg2:
+	listener = CreateListener("l_gauntlet_leg2", active_condition = active_condition)
+
+l_gauntlet_leg2:
+	if active_condition.Check() == false
+		mission_gauntlet.Goto("gauntlet_fail")
+	elseif _state.Position.stage == "StationFront"
+		gauntlet_chat.Add("Well done. Almost there. Push to Shopping Mall.", "Left", user="Unknown Contact", silent=false)
+		gauntlet_panel.SetText("Enter the Shopping Mall")
+		mission_gauntlet.Goto("gauntlet_leg3", active_condition = active_condition)
+
+gauntlet_leg3:
+	listener = CreateListener("l_gauntlet_leg3", active_condition = active_condition)
+
+l_gauntlet_leg3:
+	if active_condition.Check() == false
+		mission_gauntlet.Goto("gauntlet_fail")
+	elseif mall_turnaround.Inside()
+		gauntlet_chat.Add("Visual confirmed. It's good to see you haven't broken the rules. Now head back to Downtown.", "Left", user="Unknown Contact", silent=false)
+		gauntlet_panel.SetText("Head back to Downtown (Station Front)")
+		mission_gauntlet.Goto("gauntlet_leg4", active_condition = active_condition)
+
+gauntlet_leg4:
+	listener = CreateListener("l_gauntlet_leg4", active_condition = active_condition)
+
+l_gauntlet_leg4:
+	if active_condition.Check() == false
+		mission_gauntlet.Goto("gauntlet_fail")
+	elseif _state.Position.stage == "StationFront"
+		gauntlet_chat.Add("Almost there. Keep strutting to Residential Area.", "Left", user="Unknown Contact", silent=false)
+		gauntlet_panel.SetText("Return to the Residential Area")
+		mission_gauntlet.Goto("gauntlet_leg5", active_condition = active_condition)
+
+gauntlet_leg5:
+	listener = CreateListener("l_gauntlet_leg5", active_condition = active_condition)
+
+l_gauntlet_leg5:
+	if active_condition.Check() == false
+		mission_gauntlet.Goto("gauntlet_fail")
+	elseif _state.Position.stage == "Residence"
+		gauntlet_chat.Add("The gang's watching and waiting. Proceed to Room 1008.", "Left", user="Unknown Contact", silent=false)
+		gauntlet_panel.SetText("Return to the 10th Floor")
+		mission_gauntlet.Goto("gauntlet_leg6", active_condition = active_condition)
+
+gauntlet_leg6:
+	listener = CreateListener("l_gauntlet_leg6", active_condition = active_condition)
+
+l_gauntlet_leg6:
+	if active_condition.Check() == false
+		mission_gauntlet.Goto("gauntlet_fail")
+	elseif mansion_goal.Inside()
+		gauntlet_chat.Add("Mission Complete. You survived the Gauntlet. Need some 'stress relief'? Your reward is inside!", "Left", user="Unknown Contact", silent=false)
+		gauntlet_chat.Add("Reward transferred: 3500 RP.. and a night to remember.", "Left", user="Unknown Contact", silent=false)
+		PlaySoundEffect("UICompleteMission")
+		UnlockHandcuffs()
+		SetVibrator("Off")
+		UnequipAllCosplay()
+		UnequipAdultToy("KuriRotor", "TitRotor")
+		CollectItem(itemtype="VibeRemocon")
+		AddCurrentRP(3500)
+		_save["gauntlet_cleared"] = true
+		gauntlet_menu.SetCleared(true)
+		gauntlet_panel.SetVisible(false)
+		SetStage("Apart", daytime=true)
+		SetPlayerPosition(x=-1.81, y=0.00, z=-0.20)
+		mission_gauntlet.Goto("gauntlet_cooldown")
+
+gauntlet_cooldown:
+	listener = CreateListener("l_gauntlet_cooldown")
+
+l_gauntlet_cooldown:
+	if delay_timer == null
+		delay_timer = 0
+	delay_timer = delay_timer + _timediff
+	if delay_timer >= 60.0
+		mission_gauntlet.Goto("gauntlet_locked")
+
+gauntlet_fail:
+	gauntlet_chat.Add("You altered state. Start over.", "Left", user="Unknown Contact", silent=false)
+	gauntlet_panel.SetVisible(false)
+	UnlockHandcuffs()
+	SetVibrator("Off")
+	UnequipAllCosplay()
+	UnequipAdultToy("KuriRotor", "TitRotor")
+	CollectItem(itemtype="VibeRemocon")
+	SetPlayerPosition(x=2.96, y=0.00, z=3.28)
+	SetStage("Apart", daytime=true)
+	mission_gauntlet.Goto("gauntlet_cooldown")

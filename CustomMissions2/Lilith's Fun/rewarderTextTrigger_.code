@@ -1,0 +1,189 @@
+rewarderTxetTrigger_:
+	timer = 0
+	interval = 1
+
+	uRpMax = 1.5
+	uRpMaxBoard = __createURpMaxBoard()
+	
+	uRpBoard = __createURpBoard()
+	uRpBoard0 = __createURpBoard()
+	
+	baseRpBoard = __createBaseRpBoard()
+	baseRpBoard0 = __createBaseRpBoard()
+	
+	multiplierBoard = __createMultiplierBoard()
+	multiplierBoard0 = __createMultiplierBoard()
+	
+	totalRpBoard = __createTotalRpBoard()
+	totalRpBoard0 = __createTotalRpBoard()
+	
+	flag = false
+	
+	calcBoard = __createCalcBoard()
+	
+	calcColor = Color(0.12,1.000000,0.12)
+	failureColor = Color(1.000000, 0, 0)
+	
+	totalRpColor = Color(0.9804, 0.8235, 0.1255)
+	
+	uRpMaxColor = Color(0.1804, 0.0616, 0.3765)
+	
+	startColor = Color(1, 1, 1)
+	endColor = Color(1, 0, 0)
+
+	setFlushInterval:
+		#Params@arr newFlushInterval: Number
+		newFlushInterval = _args[0]
+		if newFlushInterval != null && (newFlushInterval >= 0) 
+			flushInterval = newFlushIntervalflushInterval
+
+	setURpMax:
+		#Params@arr newURpMax: Number
+		newURpMax = _args[0]
+		if newURpMax > 0
+			uRpMax = newURpMax
+			uRpMaxBoard = null
+			uRpMaxBoard = __createURpMaxBoard()
+			uRpMaxString = Format("/ {0:F4}",newURpMax)
+			uRpMaxBoard.Add(text = uRpMaxString, duration = (-1), facecolor = uRpMaxColor)
+
+	default:
+		uRpString = Format("{0:F4} uRP",0)
+		baseRpString = Format("{0:F4} base RP",0)
+		multiplierString = Format("{0:F4} multi.",0)
+		totalRpString = Format("{0:F4} total RP",0)
+		uRpBoard.Add(text = uRpString, duration = (-1), facecolor = startColor)
+		baseRpBoard.Add(text = baseRpString, duration = (-1), facecolor = startColor)
+		multiplierBoard.Add(text = multiplierString, duration = (-1), facecolor = startColor)
+		totalRpBoard.Add(text = totalRpString, duration = (-1), facecolor = totalRpColor)
+
+	clear:
+		uRpBoard.Clear()
+		baseRpBoard.Clear()
+		multiplierBoard.Clear()
+		totalRpBoard.Clear()
+
+	triggerCalc:
+		#Params@arr rp: Number, [failureCalcRp: Number]
+		#Note If rp <= 0, it triggers failure hint, and can accept parameter failureCalcRp
+		rp = _args[0]
+		if calcBoard == null
+			calcBoard = __createCalcBoard()
+		string = ""
+		if rp <= 0
+			failureCalcRp = _args[1]
+			string = string + Format("{0:F2}RP", (-rp)) + StringsPool1.FailureString
+			if failureCalcRp != null
+				string = string + "\n" + StringsPool1.FailureCalcString + Format("{0:F2}RP", failureCalcRp)
+			calcBoard.Add(text = string, duration = 6, facecolor = failureColor)
+		else
+			string = string + Format("{0:F2}RP",rp) + StringsPool1.CalcString
+			calcBoard.Add(text = string, duration = 6, facecolor = calcColor)
+
+	flush:
+		#Params@arr uRp: Number, baseRp: Number, multiplier: Number, totalRp: Number
+		if timer >= interval
+			uRp = _args[0]
+			baseRp = _args[1]
+			multiplier = _args[2]
+			totalRp = _args[3]
+			
+			uRpString = Format("{0:F4} uRP",uRp)
+			baseRpString = Format("{0:F4} base RP",baseRp)
+			multiplierString = Format("{0:F4} multi.",multiplier)
+			totalRpString = Format("{0:F4} total RP",totalRp)
+			
+			flag = !flag
+			
+			d = (-1)
+			if !flag
+				uRpBoard.Add(text = uRpString, duration = d, facecolor = __colorLerp(startColor, uRpMaxColor, uRp/uRpMax))
+				baseRpBoard.Add(text = baseRpString, duration = d, facecolor = __colorLerp(startColor, endColor, baseRp/15))
+				multiplierBoard.Add(text = multiplierString, duration = d, facecolor = __colorLerp(startColor, endColor, multiplier/15))
+				totalRpBoard.Add(text = totalRpString, duration = d, facecolor = totalRpColor)
+				uRpBoard0.Clear()
+				baseRpBoard0.Clear()
+				multiplierBoard0.Clear()
+				totalRpBoard0.Clear()
+			else
+				uRpBoard0.Add(text = uRpString, duration = d, facecolor = __colorLerp(startColor, uRpMaxColor, uRp/uRpMax))
+				baseRpBoard0.Add(text = baseRpString, duration = d, facecolor = __colorLerp(startColor, endColor, baseRp/15))
+				multiplierBoard0.Add(text = multiplierString, duration = d, facecolor = __colorLerp(startColor, endColor, multiplier/15))
+				totalRpBoard0.Add(text = totalRpString, duration = d, facecolor = totalRpColor)
+				uRpBoard.Clear()
+				baseRpBoard.Clear()
+				multiplierBoard.Clear()
+				totalRpBoard.Clear()
+			timer = 0
+		timer = timer + _timediff
+	
+	__createCalcBoard:
+		#Returns calcBoard: Object
+		#Returns calcBoard: Object
+		board = CreateText()
+		board.SetAnchor(0.5, 0.65)
+		board.SetAlignment("Center")
+		board.SetSize(30)
+		_result = board
+
+	__createURpMaxBoard:
+		#Returns uRpMaxBoard: Object
+		#Returns uRpMaxBoard: Object
+		board = CreateText()
+		board.SetAnchor(0.74, 0.17)
+		board.SetAlignment("TopLeft")
+		board.SetSize(30)
+		_result = board
+
+	__createURpBoard:
+		#Returns uRpBoard: Object
+		board = CreateText()
+		board.SetAnchor(0.64, 0.17)
+		board.SetAlignment("TopLeft")
+		board.SetSize(30)
+		_result = board
+
+	__createBaseRpBoard:
+		#Returns baseRpBoard: Object
+		board = CreateText()
+		board.SetAnchor(0.64, 0.195)
+		board.SetAlignment("TopLeft")
+		board.SetSize(30)
+		_result = board
+
+	__createMultiplierBoard:
+		#Returns multiplierBoard: Object
+		board = CreateText()
+		board.SetAnchor(0.64, 0.22)
+		board.SetAlignment("TopLeft")
+		board.SetSize(30)
+		_result = board
+
+	__createTotalRpBoard:
+		#Returns totalRpBoard: Object
+		board = CreateText()
+		board.SetAnchor(0.64, 0.32)
+		board.SetAlignment("TopLeft")
+		board.SetSize(36)
+		_result = board
+
+	__colorLerp:
+		#Params@arr colorOrigin: List, colorTarget: List, factor: Number
+		#Returns lerpedColor: List
+		colorOrigin = _args[0]
+		colorTarget = _args[1]
+		factor = _args[2]
+		
+		colorOR = colorOrigin.r
+		colorOG = colorOrigin.g
+		colorOB = colorOrigin.b
+		
+		colorTR = colorTarget.r
+		colorTG = colorTarget.g
+		colorTB = colorTarget.b
+		
+		r = colorOR + (colorTR - colorOR) * factor
+		g = colorOG + (colorTG - colorOG) * factor
+		b = colorOB + (colorTB - colorOB) * factor
+		
+		_result = Color(r,g,b)

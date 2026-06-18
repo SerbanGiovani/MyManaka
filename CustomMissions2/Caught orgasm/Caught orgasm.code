@@ -1,0 +1,126 @@
+#################################
+# Caught orgasm 0.3
+#################################
+
+missionPanel = CreateMissionPanel()
+missionPanel.SetGaugeVisible(false)
+
+orgasmCond = CreateCondition("Orgasm")
+wasOrgasm = false
+
+femaleAlert = CreateThread("femaleAlert")
+
+femaleAlert:
+	thread = _this
+	thread.Goto("main")
+
+	npcList = CreateList()
+	checkedList = CreateList()
+	traceIds = CreateList()
+	traceList = CreateList()
+	tracePrev = CreateList()
+	traceLast = CreateList()
+	traceStable = CreateList()
+	traceUnseen = CreateList()
+	traceCleanup = CreateListener("traceCleanupLoop")
+	
+
+	main:
+		listener = CreateListener("mainloop")
+
+	traceNpcUntilStrangenessStops:
+		npc = _args[0]
+		id = npc.GetID()
+		if traceList[id] == null
+			traceIds.Insert(id)
+			traceList[id] = npc
+			tracePrev[id] = npc.TracePlayer()
+			traceLast[id] = npc.Strangeness()
+			traceStable[id] = 0
+			traceUnseen[id] = 0
+		npc.TracePlayer(true)
+
+	traceCleanupLoop:
+		i = 0
+		while i < traceIds.Count()
+			id = traceIds[i]
+			if id != null
+				npc = traceList[id]
+				if npc != null
+					if npc.IsAlive()
+						currentStrange = npc.Strangeness()
+						if npc.SeesPlayer()
+							traceUnseen[id] = 0
+						else
+							traceUnseen[id] = traceUnseen[id] + _timediff
+						if currentStrange > traceLast[id] + 0.001
+							traceLast[id] = currentStrange
+							traceStable[id] = 0
+						else
+							traceStable[id] = traceStable[id] + _timediff
+						if (traceStable[id] >= 0.75) || (traceUnseen[id] >= 1.5)
+							if tracePrev[id] != null
+								npc.TracePlayer(tracePrev[id])
+							else
+								npc.TracePlayer(false)
+							traceIds[i] = null
+							traceList[id] = null
+							tracePrev[id] = null
+							traceLast[id] = null
+							traceStable[id] = null
+							traceUnseen[id] = null
+					else
+						traceIds[i] = null
+						traceList[id] = null
+						tracePrev[id] = null
+						traceLast[id] = null
+						traceStable[id] = null
+						traceUnseen[id] = null
+			i = i + 1
+
+	mainloop:	
+		if _stagechanged
+			npcList = CreateList()
+			checkedList = CreateList()
+
+		if wasOrgasm == null
+			wasOrgasm = false
+		visibleChance = _settings.visible_chance
+		if visibleChance == null
+			visibleChance = 1
+		hiddenChance = _settings.hidden_chance
+		if hiddenChance == null
+			hiddenChance = 0
+
+		isOrgasm = orgasmCond.Check()
+		if !isOrgasm
+			wasOrgasm = false
+			checkedList = CreateList()
+
+		n = _state.NPCs.Count()
+		i = 0
+		if isOrgasm
+			while i < n
+				id = _state.NPCs[i].ID
+				npc = npcList[id]
+				if npc == null
+					npc = CreateNPC(id)
+					npcList[id] = npc
+				if npc.IsAlive() && checkedList[id] == null
+					PlayerPos = _state.Position
+					pos = npc.GetPosition()
+					distance = Vector3Distance(PlayerPos, pos)
+					if distance <= 5
+						checkedList[id] = true
+						if npc.SeesPlayer()
+							if Random() < visibleChance
+								npc.Strangeness(1.0)
+								Log("[Caught orgasm] Caught in visible area.")
+						else
+							if Random() < hiddenChance
+								traceNpcUntilStrangenessStops(npc)
+								Log("[Caught orgasm] Trace outside visible area.")
+
+				i = i + 1
+
+		wasOrgasm = isOrgasm

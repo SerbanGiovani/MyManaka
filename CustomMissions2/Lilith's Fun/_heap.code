@@ -1,0 +1,139 @@
+Heap:
+
+	list = CreateList()
+	count = 0
+	comparator = null #Required
+
+	isInit = false
+	Init:
+		#Params newComparator: Object
+		#Note NewComparator must have function 'compare' with params@key a: Any, b: Any, and returns result: Number
+		if !isInit
+			isInit = true
+			if newComparator == null
+				newComparator = _args[0]
+			comparator = newComparator
+
+	Offer:
+		#Params value: Any
+		if value == null
+			value = _args[0]
+		if value != null
+			list[count] = value
+			count = count + 1
+			__ShiftUp(count - 1)
+
+	Peek:
+		#Returns value: Any
+		_result = list["0"]
+
+	Poll:
+		#Returns value: Any
+		if count > 0
+			top = list["0"]
+			count = count - 1
+			list["0"] = list[count]
+			list[count] = null
+			__ShiftDown(0)
+			_result = top
+
+	PollAll:
+		#Returns values: List
+		data = CreateList()
+		while !IsEmpty()
+			data.Insert(Poll())
+		_result = data
+
+	__ShiftUp:
+		#Params@arr index: Number
+		index = _args[0]
+		while index > 0
+			parentIndex = (index - 1) // 2
+			current = list[index]
+			parent = list[parentIndex]
+			if comparator.compare(a = current, b = parent) < 0
+				__Swap(index, parentIndex)
+				index = parentIndex
+			else
+				index = 0
+
+	__ShiftDown:
+		#Params@arr index: Number
+		index = _args[0]
+		flag = true
+		while flag
+			leftChildIndex = 2 * index + 1
+			rightChildIndex = 2 * index + 2
+			bestChildIndex = index
+			leftChild = list[leftChildIndex]
+			bestChild = list[bestChildIndex]
+			if leftChildIndex < count 
+				if comparator.compare(a = leftChild, b = bestChild) < 0
+					bestChildIndex = leftChildIndex
+			bestChild = list[bestChildIndex]
+			rightChild = list[rightChildIndex]
+			if rightChildIndex < count
+				if comparator.compare(a = rightChild, b = bestChild) < 0
+					bestChildIndex = rightChildIndex
+			if bestChildIndex == index
+				flag = false
+			else
+				__Swap(index, bestChildIndex)
+				index = bestChildIndex
+
+	__Swap:
+		#Params@arr index0: Number, index1: Number
+		index0 = _args[0]
+		index1 = _args[1]
+		temp = list[index0]
+		list[index0] = list[index1]
+		list[index1] = temp
+
+	IsEmpty:
+		#Returns isEmpty: Bool
+		if count == 0
+			_result = true
+		else
+			_result = false
+
+	GetCount:
+		#Returns count: Number
+		_result = count
+
+	Clear:
+		list.Remove(index = 0, count = count)
+
+	IsInit:
+		#Returns isInit: Bool
+		_result = isInit
+
+	BuildFrom:
+		#Params sourceList: List
+		if sourceList == null
+			sourceList = _args[0]
+		Clear()
+		if sourceList != null
+			i = 0
+			srcCount = sourceList.Count()
+			count = srcCount
+			while i < srcCount
+				list[i] = sourceList[i]
+				i = i + 1
+			lastNonLeafIndex = (srcCount - 2)
+			i = lastNonLeafIndex
+			while i >= 0
+				__ShiftDown(i)
+				i = i - 1
+		
+
+AscComparator:
+	compare:
+		#Params@key a: Number, b: Number
+		#Returns result: Number
+		_result = a - b
+
+DescComparator:
+	compare:
+		#Params@key a: Number, b: Number
+		#Returns result: Number
+		_result = b - a

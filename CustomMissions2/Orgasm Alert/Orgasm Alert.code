@@ -1,0 +1,114 @@
+#################################
+# Orgasm Alert 0.3
+#################################
+missionPanel = CreateMissionPanel()
+missionPanel.SetGaugeVisible(false)
+
+orgasmCond = CreateCondition("[Orgasm]")
+triggered = 0
+sameFloorHeight = 2.0
+
+orgasmAlert = CreateThread("orgasmAlert")
+isWearingGag = CreateCondition("(Cosplay_m_cosplay_general_head_kuchikase, Cosplay_m_cosplay_general_head_osyaburi, Cosplay_m_cosplay_latex_pony_head)")
+
+orgasmAlert:
+	thread = _this
+	thread.Goto("main")
+
+	npcList = CreateList()
+	foundList = CreateList()
+	traceIds = CreateList()
+	traceList = CreateList()
+	tracePrev = CreateList()
+	traceLast = CreateList()
+	traceStable = CreateList()
+	traceCleanup = CreateListener("traceCleanupLoop")
+	
+
+	main:
+		listener = CreateListener("mainloop")
+
+	traceNpcUntilStrangenessStops:
+		npc = _args[0]
+		id = npc.GetID()
+		if traceList[id] == null
+			traceIds.Insert(id)
+			traceList[id] = npc
+			tracePrev[id] = npc.TracePlayer()
+			traceLast[id] = npc.Strangeness()
+			traceStable[id] = 0
+		npc.TracePlayer(true)
+
+	traceCleanupLoop:
+		i = 0
+		while i < traceIds.Count()
+			id = traceIds[i]
+			if id != null
+				npc = traceList[id]
+				if npc != null
+					if npc.IsAlive()
+						currentStrange = npc.Strangeness()
+						if currentStrange > traceLast[id] + 0.001
+							traceLast[id] = currentStrange
+							traceStable[id] = 0
+						else
+							traceStable[id] = traceStable[id] + _timediff
+						if traceStable[id] >= 0.75
+							if tracePrev[id] != null
+								npc.TracePlayer(tracePrev[id])
+							else
+								npc.TracePlayer(false)
+							traceIds[i] = null
+							traceList[id] = null
+							tracePrev[id] = null
+							traceLast[id] = null
+							traceStable[id] = null
+					else
+						traceIds[i] = null
+						traceList[id] = null
+						tracePrev[id] = null
+						traceLast[id] = null
+						traceStable[id] = null
+			i = i + 1
+
+	mainloop:	
+		sameFloorHeight = _settings.same_floor_height
+		if sameFloorHeight == null
+			sameFloorHeight = 2.0
+
+		if _stagechanged
+			npcList = CreateList()
+			foundList = CreateList()
+		n = _state.NPCs.Count()
+		i = 0
+		if orgasmCond.Check()
+			while i < n
+				id = _state.NPCs[i].ID
+				npc = npcList[id]
+				if npc == null
+					npc = CreateNPC(id)
+					npcList[id] = npc
+					foundList[id] = 0
+				if npc.IsAlive()
+					fixedType = _state.NPCs[i].FixedType
+					if fixedType != "Pinpon"
+						if !npc.Headset()
+							PlayerPos = _state.Position
+							pos = npc.GetPosition()
+							distance = Vector3Distance(PlayerPos, pos)
+							heightDiff = Abs(PlayerPos.y - pos.y)
+							if heightDiff <= sameFloorHeight
+								if isWearingGag.Check()
+									if distance <= 1
+										if npc.SeesPlayer()
+											npc.Strangeness(1.0)
+										else
+											traceNpcUntilStrangenessStops(npc)
+								else
+									if distance <= 3
+										if npc.SeesPlayer()
+											npc.Strangeness(1.0)
+										else
+											traceNpcUntilStrangenessStops(npc)
+
+				i = i + 1

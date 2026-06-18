@@ -1,0 +1,55 @@
+processorForcedVibratorOn_:
+	#Note Event: List must have:
+	# vibratorTypes: List
+	# strength: Number
+	# common： List, see 'event.common'
+
+	timer = 0
+	invterval = 0.4
+	
+	event = null
+
+	start:
+		#Required
+		#Params@arr event: List
+		timer = 0
+
+	end:
+		#Required
+		#Params@arr event: List
+
+	behaviour:
+		do:
+			if value != null
+				if !_state.AdultToys[value]
+					EquipAdultToy(value)
+				else
+					vn = _state.Vibrator
+					if vn == 3
+						vn = 2
+					elseif vn == 2
+						vn =3
+					if vn < event.strength
+						__setVibrator(event.strength)
+	b = CreateThread("behaviour")
+
+	update:
+		#Required
+		#Params@arr event: List
+		if timer >= invterval
+			timer = 0
+			event = _args[0]
+			Foreach(event.vibratorTypes, b)
+		timer = timer + _timediff
+
+	__setVibrator:
+		#Params@arr strength: Number
+		strength = _args[0]
+		if strength == 1
+			SetVibrator("Low")
+		elseif strength == 2
+			SetVibrator("Random")
+		elseif strength == 3
+			SetVibrator("High")
+		else
+			SetVibrator("Off")

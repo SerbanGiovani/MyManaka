@@ -1,0 +1,50 @@
+processorTrimCosplays_:
+	#Note Event: List must have:
+	# trimCount: Number
+	# common： List see 'event.common'
+
+	# casuals = CreateThread("RecordSet")
+	# casuals.InsertList(Casuals)
+	interval = 1
+	timer = interval
+	tempList = CreateList()
+	trimList = CreateList()
+
+	start:
+		#Required
+		#Params@arr event: List
+		timer = 0
+		tempList.Remove(index = 0, count = tempList.Count())
+		trimList.Remove(index = 0, count = trimList.Count())
+
+	end:
+		#Required
+		#Params@arr event: List
+
+	update:
+		#Required
+		#Params@arr event: List
+		if timer >= interval
+			timer = 0
+			event = _args[0]
+			curCount = _state.Cosplay.Count()
+			keepCount = 30 - event.trimCount
+			if keepCount <= 0
+				curCount = 0
+				keepCount = 0
+				UnequipAllCosplay()
+			else
+				i = 0
+				tempList.Remove(index = 0, count = tempList.Count())
+				trimList.Remove(index = 0, count = trimList.Count())
+				while i < curCount
+					tempList.Insert(_state.Cosplay[i])
+					i = i + 1
+				i = 0
+				while curCount > keepCount
+					r = RandomInt(0, curCount)
+					trimList.Insert(tempList[r])
+					tempList.Remove(r)
+					curCount = curCount - 1
+				UnequipCosplay(trimList)
+		timer = timer + _timediff

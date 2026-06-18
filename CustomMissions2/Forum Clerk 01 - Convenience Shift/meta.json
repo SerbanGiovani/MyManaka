@@ -1,0 +1,21 @@
+{
+	"title": {
+		"En": "Convenience Shift"
+	},
+	"description": {
+		"En": "  A convenience-store night-shift."
+	},
+	"settings": [
+		{
+			"type": "Label",
+			"title": "Text Rate (Slower <-> Faster)"
+		},
+		{
+			"name": "text_rate",
+			"type": "Float",
+			"minvalue": 0.5,
+			"maxvalue": 1.5,
+			"default": 1
+		}
+	]
+}

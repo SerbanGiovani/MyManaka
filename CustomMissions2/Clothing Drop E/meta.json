@@ -1,0 +1,52 @@
+{
+	"title": "Clothing Drop E",
+	"version": "2026-06-05",
+	"defaultactive": false,
+	"settings": [
+		{ "type": "Label", "title": "Key to drop a piece of clothing into a pile" },
+		{
+			"name": "drop_key",
+			"title": "Drop keybind",
+			"type": "String",
+			"default": "P"
+		},
+		{ "type": "Label", "title": "When held, animations will be skipped" },
+		{
+			"name": "drop_mod",
+			"title": "Quick-interact modifier",
+			"type": "String",
+			"default": "shift"
+		},
+		{
+			"type": "Label",
+			"title": "Default to quick-interact, modifier to play animations"
+		},
+		{
+			"name": "mod_swap",
+			"title": "Swap modifier",
+			"type": "Boolean",
+			"default": false
+		},
+		{ "type": "Label", "title": "Don't drop accessories, only clothes" },
+		{
+			"name": "ignore_accs",
+			"title": "Ignore Accessories",
+			"type": "Boolean",
+			"default": true
+		},
+		{ "type": "Label", "title": "Don't let you equip with handcuffs" },
+		{
+			"name": "handcuff_check",
+			"title": "Handcuff check",
+			"type": "Boolean",
+			"default": true
+		},
+		{ "type": "Label", "title": "Drop your clothes at home" },
+		{
+			"name": "home_drop",
+			"title": "Home drop",
+			"type": "Boolean",
+			"default": false
+		}
+	]
+}

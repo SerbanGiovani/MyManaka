@@ -1,0 +1,20 @@
+createrNpcNotice_:
+	#Note Event: List must have:
+	# common： List see 'event.common'
+	# num: Number
+	# speedFactor: Number
+
+	create:
+		#Required
+		#Returns event: List
+		
+		event = CreateList()
+		event.common = CreateList()
+		event.common.requiredProcessor = "processorNpcNotice"
+		event.common.name = StringsPool2.NpcNoticeString
+		event.common.description = RandomString("NpcNotice", StringsPool0)
+		event.common.duration = Random(30, 60)
+		event.common.delay = 5
+		event.num = 2
+		event.speedFactor = 1.25
+		_result = event

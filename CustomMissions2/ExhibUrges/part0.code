@@ -1,0 +1,623 @@
+part0 = CreateThread("part0")
+
+part0:
+	thread = _this
+	
+	missionpanel = CreateMissionPanel()
+	mp:
+		if text == null
+			missionpanel.SetVisible(false)
+		else
+			missionpanel.SetVisible(true)
+			missionpanel.SetText(text)
+		if progress == null
+			missionpanel.SetGaugeVisible(false)
+		else
+			missionpanel.SetGaugeVisible(true)
+			missionpanel.GetGaugeProgress(progress)
+		if rp == null
+			rp = ""
+		else
+			missionpanel.SetRPText(rp)
+	
+	moanShort = CreateAudio("sound\\moan.ogg")
+	
+	mei = null
+	meiListener = null
+	ecstasyListener = null
+	
+	zEntrancePlayer = CreateList(x=2.5,y=0.11,z=-8.6,r=1)
+	zEntranceNPC = CreateList(x=3.5,y=0.11,z=-8.6,r=0.5)
+	zGetDrink = CreateList(x=-2.1,y=0.12,z=-14,r=0.5)
+	zGetSnack = CreateList(x=-1.1,y=0.12,z=-12.3,r=0.5)
+	zCounter = CreateList(x=1.2,y=0.12,z=-8.1,r=0.5)
+	zExitStore = CreateList(x=37.5,y=-0.1,z=-87.9,r=0.5)
+	zMei = CreateList(x=38.2,y=-0.08,z=-84.8,r=0.5)
+	zTalkMei = CreateList(x=37.6,y=-0.09,z=-85.6,r=0.5)
+	lowRadius = 0.5
+	highRadius = 3
+	
+	#Residence (-30.20, 0.25, -117.40) Entry residence
+	#Residence (-43.90, -0.11, -94.11) Entry residence (appart)
+	#Residence (-17.27, -0.11, -68.62) Entry residence (park)
+	#Residence (37.50, -0.10, -87.87) Entry residence (conbini)
+	#Residence (40.86, -0.10, -78.89) Entry residence (downtown)
+	#Mansion (18.03, -0.11, 159.40) Entry appart
+	#Park (68.00, 50.01, 24.14) Entry park
+	#Convenience (3.03, 0.11, -8.60) Entry conbini
+	#StationFront (-223.44, 0.27, -62.24) Entry downtown
+	#StationFront (-287.30, 0.27, 23.97) Entry downtown
+	#ShoppingMall (19.35, -8.53, 14.48) Entry mall
+	#ShoppingMall (31.74, -8.54, -49.87) Entry mall (store)
+	#FashionShop (62.01, 0.07, -152.14) Entry store
+	
+	
+	cp1:
+		CanGameOver(false)
+		_save.phone = true
+		UnequipAllCosplay()
+		EquipCosplay("m_cosplay_general_upper_race_pants","m_cosplay_general_leg_stocking","m_cosplay_school_hoodie_hoodie","m_cosplay_school_hoodie_shirt","m_cosplay_school_hoodie_skirt","m_cosplay_school_gal_shoes")
+		#EquipCosplay("m_cosplay_general_upper_race_pants","m_cosplay_general_leg_stocking","m_cosplay_suit_chic_shirt","m_cosplay_suit_chic_jacket","m_cosplay_suit_chic_skirt","m_cosplay_suit_chic_shoes")
+		DropItem(itemtype="Coat", stage="Apart",x=3.4,y=0,z=2.5)
+		EquipAdultToy("KuriRotor")
+		SetStage("Convenience",daytime=false)
+		
+		listener = CreateListenerLocal("wait_listener",duration=1,nextcp="cp2")
+		#listener = CreateListenerLocal("wait_listener",duration=1,nextcp="test")
+	
+	test:
+		SetPlayerPosition(position=Vector(zShowerMei.x,zShowerMei.y,zShowerMei.z))
+		thread.Goto("cp24")
+	
+	cp2:
+		subtitleMind.Add(text="(Well, I did it. I'm buying a night snack with a rotor.)")
+		intArea = CreateInteractArea(type="sphere",stage="Convenience",x=zEntrancePlayer.x,y=zEntrancePlayer.y,z=zEntrancePlayer.z,r=zEntrancePlayer.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp3")
+	
+	cp3:
+		subtitleMind.Add(text="(I can't wait! Let's turn it on with the low setting for a start.)")
+		intArea = CreateInteractArea(type="sphere",stage="Convenience",x=zEntrancePlayer.x,y=zEntrancePlayer.y,z=zEntrancePlayer.z,r=zEntrancePlayer.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp4")
+	
+	cp4:
+		mp(text="Turn the rotor on low setting")
+		area = CreateArea(type="sphere",stage="Convenience",x=zEntrancePlayer.x,y=zEntrancePlayer.y,z=zEntrancePlayer.z,r=zEntrancePlayer.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[VibrationLow]")
+		listener = CreateListenerLocal("basic_listener",nextcp="cp5")
+	
+	cp5:
+		subtitleMind.Add(text="(Mmmh... That feels good... Ok, time to go shopping.)")
+		intArea = CreateInteractArea(type="sphere",stage="Convenience",x=zEntrancePlayer.x,y=zEntrancePlayer.y,z=zEntrancePlayer.z,r=zEntrancePlayer.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp6")
+		ecstasyListener = CreateListener("ecstasy_listener",max=10)
+	
+	cp6:
+		mp(text="Go grab a drink")
+		area = CreateArea(type="sphere",stage="Convenience",x=zGetDrink.x,y=zGetDrink.y,z=zGetDrink.z,r=zGetDrink.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp7")
+	
+	cp7:
+		mei = CreateMei(position=Vector(zEntranceNPC.x, zEntranceNPC.y, zEntranceNPC.z), rotation=Quaternion(0, -0.71, 0, 0.71))
+		mei.Speed(1.1)
+		#mei.AddWaypoint(53)
+		mei.AddWaypoint(22)
+		#mei.AddWaypoint(0) #Doesn't work, the cashier never shows up and she waits forever to pay
+		mei.AddWaypoint(Vector(zEntranceNPC.x, zEntranceNPC.y, zEntranceNPC.z), last=true)
+		
+		mp(text="Go grab a drink")
+		area = CreateArea(type="sphere",stage="Convenience",x=zGetDrink.x,y=zGetDrink.y,z=zGetDrink.z,r=zGetDrink.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[Action_ConbiniTakeGoods]")
+		listener = CreateListenerLocal("basic_listener",maxduration=0.5,nextcp="cp8")
+	
+	cp8:
+		subtitleMind.Add(text="(It feels so good to do everyday stuff while being stimulated...)")
+		intArea = CreateInteractArea(type="sphere",stage="Convenience",x=zGetDrink.x,y=zGetDrink.y,z=zGetDrink.z,r=zGetDrink.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp9")
+	
+	cp9:
+		subtitleMind.Add(text="(Maybe I should turn it up a notch?)")
+		intArea = CreateInteractArea(type="sphere",stage="Convenience",x=zGetDrink.x,y=zGetDrink.y,z=zGetDrink.z,r=zGetDrink.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp10")
+	
+	cp10:
+		mp(text="Turn the rotor on high setting")
+		area = CreateArea(type="sphere",stage="Convenience",x=zGetDrink.x,y=zGetDrink.y,z=zGetDrink.z,r=zGetDrink.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[VibrationHigh]")
+		listener = CreateListenerLocal("basic_listener",nextcp="cp11")
+	
+	cp11:
+		subtitle.Add(text="\"Ah! ♥\"")
+		intArea = CreateInteractArea(type="sphere",stage="Convenience",x=zGetDrink.x,y=zGetDrink.y,z=zGetDrink.z,r=zGetDrink.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp12")
+		ecstasyListener = CreateListener("ecstasy_listener",min=10,max=30)
+	
+	cp12:
+		subtitleMind.Add(text="(Aaah! I hope no one heard that!)")
+		intArea = CreateInteractArea(type="sphere",stage="Convenience",x=zGetDrink.x,y=zGetDrink.y,z=zGetDrink.z,r=zGetDrink.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp13")
+	
+	cp13:
+		subtitleMind.Add(text="(Looks like I'm in the clear... Let's go get a snack too.)")
+		intArea = CreateInteractArea(type="sphere",stage="Convenience",x=zGetDrink.x,y=zGetDrink.y,z=zGetDrink.z,r=zGetDrink.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp14")
+	
+	cp14:
+		mp(text="Go grab a snack")
+		area = CreateArea(type="sphere",stage="Convenience",x=zGetSnack.x,y=zGetSnack.y,z=zGetSnack.z,r=zGetSnack.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp15")
+	
+	cp15:
+		mp(text="Go grab a snack")
+		area = CreateArea(type="sphere",stage="Convenience",x=zGetSnack.x,y=zGetSnack.y,z=zGetSnack.z,r=zGetSnack.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[Action_ConbiniTakeGoods]")
+		listener = CreateListenerLocal("basic_listener",maxduration=0.5,nextcp="cp16")
+	
+	cp16:
+		subtitleMind.Add(text="(I should lower the power a little bit if I'm going to talk to the cashier...)")
+		intArea = CreateInteractArea(type="sphere",stage="Convenience",x=zGetSnack.x,y=zGetSnack.y,z=zGetSnack.z,r=zGetSnack.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp17")
+	
+	cp17:
+		mp(text="Turn the rotor back on low setting")
+		area = CreateArea(type="sphere",stage="Convenience",x=zGetSnack.x,y=zGetSnack.y,z=zGetSnack.z,r=zGetSnack.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[VibrationLow]")
+		listener = CreateListenerLocal("basic_listener",nextcp="cp18")
+	
+	cp18:
+		subtitleMind.Add(text="(Let's head to the counter.)")
+		intArea = CreateInteractArea(type="sphere",stage="Convenience",x=zGetSnack.x,y=zGetSnack.y,z=zGetSnack.z,r=zGetSnack.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp19")
+		ecstasyListener = CreateListener("ecstasy_listener",min=10,max=20)
+	
+	cp19:
+		mp(text="Go pay up")
+		area = CreateArea(type="sphere",stage="Convenience",x=zCounter.x,y=zCounter.y,z=zCounter.z,r=zCounter.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp20")
+	
+	cp20:
+		mp(text="Go pay up")
+		area = CreateArea(type="sphere",stage="Convenience",x=zCounter.x,y=zCounter.y,z=zCounter.z,r=zCounter.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[Action_HandOver]")
+		listener = CreateListenerLocal("basic_listener",maxduration=1,nextcp="cp21")
+	
+	cp21:
+		subtitleMind.Add(text="(Good, time to leave.)")
+		intArea = CreateInteractArea(type="sphere",stage="Convenience",x=zCounter.x,y=zCounter.y,z=zCounter.z,r=zCounter.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp22")
+	
+	cp22:
+		mp(text="Exit the store")
+		area = CreateArea(type="sphere",stage="Residence",x=zExitStore.x,y=zExitStore.y,z=zExitStore.z,r=zExitStore.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp23")
+	
+	################################################## EXIT STORE ##################################################
+	cp23:
+		mei = CreateMei(position=Vector(zMei.x, zMei.y, zMei.z), rotation=Quaternion(0, 0.94, 0, -0.35))
+		MoveNPC(npc=mei, coord=Vector(zMei.x, zMei.y, zMei.z))
+		
+		mp(text="Head home")
+		area = CreateArea(type="sphere",stage="Residence",x=zTalkMei.x,y=zTalkMei.y,z=zTalkMei.z,r=zTalkMei.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp24")
+	
+	cp24:
+		subtitleMei.Add(text="\"Hello!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zTalkMei.x,y=zTalkMei.y,z=zTalkMei.z,r=zTalkMei.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp25")
+	
+	cp25:
+		subtitle.Add(text="\"Hum... Hello?\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zTalkMei.x,y=zTalkMei.y,z=zTalkMei.z,r=zTalkMei.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp26")
+	
+	cp26:
+		subtitleMind.Add(text="(Who's that girl? I hope she won't take too long, the rotor is still running.)")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zTalkMei.x,y=zTalkMei.y,z=zTalkMei.z,r=zTalkMei.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp27")
+	
+	cp27:
+		subtitleMei.Add(text="\"I saw you in the convenience store, and I thought I'd say hi!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zTalkMei.x,y=zTalkMei.y,z=zTalkMei.z,r=zTalkMei.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp28")
+	
+	cp28:
+		subtitleMind.Add(text="(Is she high? What is she talki-)")
+		listener = CreateListenerLocal("wait_listener",duration=2,nextcp="cp29")
+	
+	cp29:
+		SetVibrator(2)
+		DropItem(itemtype="VibeRemocon", stage="Apart",x=3.4,y=0,z=2.5)
+		subtitle.Add(text="\"Ah! ♥\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zTalkMei.x,y=zTalkMei.y,z=zTalkMei.z,r=zTalkMei.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp30")
+		ecstasyListener = CreateListener("ecstasy_listener",min=15,max=30)
+	
+	cp30:
+		subtitleMind.Add(text="(Oh dear, did she hear me? It doesn't look like it...)")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zTalkMei.x,y=zTalkMei.y,z=zTalkMei.z,r=zTalkMei.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp31")
+	
+	cp31:
+		subtitleMei.Add(text="\"Are you alright? You're a little red.\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zTalkMei.x,y=zTalkMei.y,z=zTalkMei.z,r=zTalkMei.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp32")
+	
+	cp32:
+		subtitle.Add(text="\"Er, it's nothing, don't worry...\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zTalkMei.x,y=zTalkMei.y,z=zTalkMei.z,r=zTalkMei.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp33")
+	
+	cp33:
+		subtitleMind.Add(text="(Is the rotor malfunctioning? I can't take out the remote in front of her, she would see me!)")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zTalkMei.x,y=zTalkMei.y,z=zTalkMei.z,r=zTalkMei.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp34")
+	
+	cp34:
+		subtitleMei.Add(text="\"I'm Mei, by the way!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zTalkMei.x,y=zTalkMei.y,z=zTalkMei.z,r=zTalkMei.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp35")
+	
+	cp35:
+		subtitle.Add(text="\"Hum, hello Mei, I'm Manaka... But look, I'm sorry, but I need to go...\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zTalkMei.x,y=zTalkMei.y,z=zTalkMei.z,r=zTalkMei.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp36")
+	
+	cp36:
+		SetVibrator(1)
+		mei.Speed(1.3)
+		subtitle.Add(text="\"Oh, no problem, we can talk as we walk!\"")
+		intArea = CreateInteractArea(type="sphere",stage="Residence",x=zTalkMei.x,y=zTalkMei.y,z=zTalkMei.z,r=zTalkMei.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp37")
+	
+	################################################## WALK HOME ##################################################
+	cp37:
+		mp(text="Walk home")
+		listener = CreateListenerLocal("wait_listener",duration=15,nextcp="cp38")
+		meiListener = CreateListener("npc_follow_listener",npc=mei,distance=2)
+	
+	cp38:
+		subtitleMind.Add(text="(She really is following me...)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp39")
+	
+	cp39:
+		subtitleMei.Add(text="\"So, as I was saying I noticed you in the convenience store.\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp40")
+	
+	cp40:
+		subtitleMind.Add(text="(Wait... did she see me playing with the rotor in the store?)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp41")
+	
+	cp41:
+		SetVibrator(2)
+		mei.Speed(1)
+		subtitle.Add(text="\"Ah! ♥\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp42")
+		ecstasyListener = CreateListener("ecstasy_listener",min=20,max=40)
+	
+	cp42:
+		subtitleMind.Add(text="(Not again... Why does it keep glitching like this? Thanks goodness she's oblivious to what's happening...)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp43")
+	
+	cp43:
+		subtitleMei.Add(text="\"So, yeah, I thought it would be fun to chat a little! Between late-evening snacks enjoyers, you know?\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp44")
+	
+	cp44:
+		subtitle.Add(text="\"Look, Mei... I'm pretty tired tonight... Maybe we can... aah... talk another day?\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp45")
+	
+	cp45:
+		subtitleMind.Add(text="(Damn, my voice in leaking out...)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp46")
+	
+	cp46:
+		subtitleMind.Add(text="(...and it's not the only thing leaking. Why is it stuck on high setting!?)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp47")
+	
+	cp47:
+		SetVibrator(1)
+		mei.Speed(1.3)
+		subtitleMei.Add(text="\"Yeah, I saw that earlier, you're quite red. I think I should accompany you to your home to make sure you get there safely.\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp48")
+	
+	cp48:
+		subtitleMind.Add(text="(Finally, the rotor is slowing down... Damn, how can I say no to that? It's not fair!)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp49")
+	
+	cp49:
+		subtitle.Add(text="\"Well, if you insist...\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp50")
+		ecstasyListener = CreateListener("ecstasy_listener",min=30,max=60)
+	
+	cp50:
+		subtitleMei.Add(text="\"Don't worry, I'm on the job! Lead the way!\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp51")
+	
+	cp51:
+		listener = CreateListenerLocal("wait_listener",duration=10,nextcp="cp52")
+	
+	cp52:
+		subtitleMind.Add(text="(Ugh... Even on low setting, the rotor is really doing a number on my clit...)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp53")
+	
+	cp53:
+		subtitle.Add(text="\"Mmmh... ♥\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp54")
+	
+	cp54:
+		subtitleMei.Add(text="\"Hmm? You were saying?\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp55")
+	
+	cp55:
+		subtitleMind.Add(text="(Shit! I left myself go.)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp56")
+	
+	cp56:
+		subtitle.Add(text="\"Er, nothing! I was just-\"")
+		listener = CreateListenerLocal("wait_listener",duration=2,nextcp="cp57")
+	
+	cp57:
+		SetVibrator(2)
+		mei.Speed(1)
+		if _mods["Moaning2"] == null
+			moanShort.Play()
+		subtitle.Add(text="\"-nggaaahh! ♥\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp58")
+		ecstasyListener = CreateListener("ecstasy_listener",min=40,max=80)
+	
+	cp58:
+		subtitleMind.Add(text="(Fuck!)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp59")
+	
+	cp59:
+		subtitleMind.Add(text="(There is no way in hell she didn't recognize that as a moan.)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp60")
+	
+	cp60:
+		subtitleMei.Add(text="\"Oh my, that didn't look like a sneeze...\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp61")
+	
+	cp61:
+		subtitle.Add(text="\"Hum, no, I mean, aaah... ♥\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp62")
+	
+	cp62:
+		subtitleMei.Add(text="\"You're still in good enough shape to walk home, right?\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp63")
+	
+	cp63:
+		subtitle.Add(text="\"I, er, nngh ♥... think?\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp64")
+	
+	cp64:
+		subtitleMind.Add(text="(Her poker face is crazy, I can't tell if she truly knows what's going on... She certainly does, right?)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp65")
+	
+	cp65:
+		SetVibrator(1)
+		subtitleMei.Add(text="\"Good! Now... Won't you be honest and tell me what's happening?\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp66")
+	
+	cp66:
+		subtitle.Add(text="\"Well, I-\"")
+		listener = CreateListenerLocal("wait_listener",duration=2,nextcp="cp67")
+		ecstasyListener = CreateListener("ecstasy_listener",min=60,max=95)
+	
+	cp67:
+		SetVibrator(2)
+		subtitle.Add(text="\"-aah! ♥\"")
+		listener = CreateListenerLocal("wait_listener",duration=2,nextcp="cp68")
+	
+	cp68:
+		SetVibrator(1)
+		subtitle.Add(text="\"I'm sorry! I just-\"")
+		listener = CreateListenerLocal("wait_listener",duration=3,nextcp="cp69")
+	
+	cp69:
+		SetVibrator(2)
+		if _mods["Moaning2"] == null
+			moanShort.Play()
+		subtitle.Add(text="\"-nnguaaah! ♥\"")
+		listener = CreateListenerLocal("wait_listener",duration=2,nextcp="cp70")
+	
+	cp70:
+		subtitleMind.Add(text="(What the hell? This stupid thing is edging me... I'm going to lose my mind...)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp71")
+	
+	cp71:
+		subtitleMei.Add(text="\"You sure look like you're having fun!\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp72")
+	
+	cp72:
+		subtitle.Add(text="\"I don't- mmmmaaah... ooooh ♥\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp73")
+	
+	cp73:
+		subtitleMind.Add(text="(Can't even talk... Going to... Going to...)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp74")
+	
+	################################################## ORGASM ##################################################
+	cp74:
+		SetEcstasy(1.1)
+		ecstasyListener = null
+		area = CreateArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius)
+		zone = CreateZone(area)
+		condition = CreateCondition("[Orgasm]")
+		listener = CreateListenerLocal("basic_listener",maxduration=2,nextcp="cp75")
+	
+	cp75:
+		subtitleMind.Add(text="(Oh god I cummed right in front of her...)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp76")
+	
+	cp76:
+		SetVibrator(0)
+		mei.Speed(1.3)
+		subtitleMei.Add(text="*Mei pulls out a remote and turns off your vibrator.*")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp77")
+	
+	cp77:
+		subtitleMind.Add(text="(Wait. What did she..?)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp78")
+	
+	cp78:
+		subtitleMei.Add(text="\"Sorry about the little prank! I saw my remote connect to someone in the convenience store, and I couldn't resist!\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp79")
+	
+	cp79:
+		subtitle.Add(text="\"You mean... You were controling my... this whole time?\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp80")
+	
+	cp80:
+		subtitleMind.Add(text="(I can't believe she did that!)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp81")
+	
+	cp81:
+		subtitleMei.Add(text="\"Well, serves you right for wearing a generic brand rotor.\"\n*She winks at you.*")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp82")
+	
+	cp82:
+		subtitle.Add(text="\"Ugh, now my panties are drenched!\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp83")
+	
+	cp83:
+		subtitleMei.Add(text="*She shrugs.*\n\"Just remove them.\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp84")
+	
+	cp84:
+		subtitle.Add(text="\"Remove... What?\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp85")
+	
+	cp85:
+		subtitleMei.Add(text="\"What? You have a skirt anyway. Though I'd personally recommend removing it too, actually\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp86")
+	
+	cp86:
+		subtitleMind.Add(text="(I mean... Soaked panties are really uncomfortable...)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp87")
+	
+	cp87:
+		subtitle.Add(text="\"I... suppose you have a point...\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　[Take off your panties] ")
+		listener = CreateListenerLocal("int_listener",nextcp="cp88")
+	
+	cp88:
+		SetAction("TakeOffPants")
+		listener = CreateListenerLocal("wait_listener",duration=1.2,nextcp="cp89")
+	
+	cp89:
+		UnequipCosplay("m_cosplay_general_upper_race_pants")
+		subtitle.Add(text="\"There... Ok, let's go.\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=lowRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp90")
+	
+	cp90:
+		mp(text="Walk home")
+		listener = CreateListenerLocal("wait_listener",duration=15,nextcp="cp91")
+	
+	cp91:
+		subtitle.Add(text="\"I have to admit that it's way more comfortable.\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp92")
+	
+	cp92:
+		subtitleMei.Add(text="\"See? Though you'd enjoy the wind even more without the skirt... Your hoodie is pretty long anyway, you know?\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp93")
+	
+	cp93:
+		subtitle.Add(text="\"I'll... think about it...\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp94")
+	
+	cp94:
+		subtitleMind.Add(text="(This is way more tempting than it should... Am I seriously considering it?)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp95")
+	
+	cp95:
+		subtitle.Add(text="\"Maybe... Maybe another time.\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp96")
+	
+	cp96:
+		subtitleMind.Add(text="(Definitely another time...)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp97")
+	
+	cp97:
+		subtitleMei.Add(text="\"Fine, fine... Here's my phone by the way. Call me if you want some fun times!\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp98")
+	
+	cp98:
+		subtitle.Add(text="\"Thanks! I'll... probably call you...\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp99")
+	
+	cp99:
+		subtitleMei.Add(text="\"I'll be waiting! Now, let's finish walking you home.\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=highRadius, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cpEnd")
+	
+	cpEnd:
+		_save.phone = true
+		missionpanel.SetVisible(false)
+		lastzone = null
+		#SetStage("Apart")

@@ -1,0 +1,242 @@
+#################################
+# Code
+#################################
+if _save.runningInProcess == null
+	_save.runningInProcess = false
+if _save.runningBestResult == null
+	_save.runningBestResult = 99999
+if _save.runningClearCount == null
+	_save.runningClearCount = 0
+
+running = CreateThread("running")
+
+running:
+	thread = _this
+	thread.Goto("initialize")
+
+	missionPanel = CreateMissionPanel()
+
+	showMP:
+		if mp == null
+			mp = missionPanel
+		if progress == null
+			mp.SetGaugeVisible(false)
+		else
+			mp.SetGaugeProgress(progress)
+			mp.SetGaugeVisible(true)
+
+		if rp == null
+			rp = ""
+		mp.SetRPText(rp)
+
+		if text == null
+			mp.SetVisible(false)
+		else
+			mp.SetText(text)
+			mp.SetVisible(true)
+
+	showTime:
+		if mp == null
+			mp = CreateMissionPanel()
+			mp.SetGaugeVisible(false)
+			mp.SetVisible(true)
+		if condition == null
+			condition = CreateCondition("[NPCArea]")
+		if !condition.Check()
+			_save.runningTimePenalty = _save.runningTimePenalty + _timediff * 9
+		_save.runningTime = _save.runningTime + _timediff
+		text = Format(running_showTime, _save.runningTime + _save.runningTimePenalty, _save.runningTime, _save.runningTimePenalty)
+		mp.SetText(text)
+
+	timedDisplay:
+		if mp == null
+			mp = CreateMissionPanel()
+			mp.SetText(text)
+			mp.SetGaugeVisible(true)
+			mp.SetVisible(true)
+		if t == null
+			t = 0
+		t = t + _timediff
+		if t < duration
+			mp.SetGaugeProgress(t / duration)
+		else
+			mp.SetVisible(false)
+
+	waitInProcess:
+		if _save.runningInProcess
+			thread.Goto(next)
+
+	waitReset:
+		if condition == null
+			condition = CreateCondition("[Exposed_All]")
+		if !condition.Check()
+			thread.Goto("initialize")
+
+	waitStageChange:
+		if _stagechanged
+			thread.Goto(next)
+
+	waitTime:
+		if t == null
+			t = 0
+		t = t + _timediff
+		if t >= duration
+			thread.Goto(next)
+
+	waitConditionInZone:
+		if duration == null
+			duration = 0
+		if maxDuration == null
+			maxDuration = 0
+		if zone.Inside()
+			if condition.Check()
+				duration = duration + _timediff
+				zone.SetColor(0.5, 1, 0.5)
+				if duration >= maxDuration
+					zone.SetVisible(false)
+					thread.Goto(next)
+			else
+				if reset
+					duration = 0
+				zone.SetColor(1, 1, 0.5)
+			if maxDuration > 0
+				mp.SetGaugeProgress(duration/maxDuration)
+		else
+			zone.SetColor(1, 0.75, 0.5)
+			if reset
+				duration = 0
+
+	startCheck:
+		if mp == null
+			mp = CreateMissionPanel()
+			mp.SetGaugeProgress(0)
+			mp.SetGaugeVisible(false)
+		if duration == null
+			duration = 0
+		if maxDuration == null
+			maxDuration = 0
+		if zone.Inside()
+			if condition.Check()
+				mp.SetText(running_startCheck_0)
+				duration = duration + _timediff
+				zone.SetColor(0.5, 1, 0.5)
+				if duration >= maxDuration
+					zone.SetVisible(false)
+					thread.Goto(next)
+			else
+				mp.SetText(running_startCheck_10)
+				duration = 0
+				zone.SetColor(1, 1, 0.5)
+			mp.SetGaugeVisible(true)
+			mp.SetGaugeProgress(duration / maxDuration)
+			mp.SetVisible(true)
+		else
+			zone.SetColor(1, 0.75, 0.5)
+			duration = 0
+			mp.SetVisible(false)
+
+	initialize:
+		if enableLog
+			Log("running: initialize")
+		showMP()
+		if _save.runningClearCount > 0
+			area = CreateArea(type="sphere", stage="Park", x=34.27, y=50.07, z=41.61, r=1.0, compass=false)
+			area.SetVisible(false)
+			zone = CreateZone(area)
+			zone.SetVisible(true)
+			condition = CreateCondition("[Exposed_All,!Skill_DisableHideCostume,!Skill_TimeStop,!Skill_Exhibitionism,!Skill_Sex]")
+			listener = CreateListener("startCheck", maxDuration=3, condition=condition, zone=zone, next="r10")
+		else
+			listener = CreateListener("waitInProcess", next="r0")
+
+	r0:
+		if enableLog
+			Log("running: r0")
+		showMP(text=running_r0_0)
+		area = CreateArea(type="sphere", stage="Park", x=34.27, y=50.07, z=41.61, r=1.0, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[Exposed_All,!Skill_DisableHideCostume,!Skill_TimeStop,!Skill_Exhibitionism,!Skill_Sex]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, mp=missionPanel, next="r10")
+
+	r10:
+		if enableLog
+			Log("running: r10")
+		_save.runningTime = 0
+		_save.runningTimePenalty = 0
+		showMP(text=running_r10_0)
+		area = CreateArea(type="sphere", stage="Park", x=47.01, y=50.05, z=112.91, r=1.0, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[Exposed_All,!Skill_DisableHideCostume,!Skill_TimeStop,!Skill_Exhibitionism,!Skill_Sex]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, mp=missionPanel, next="r20")
+		listenerStageChange = CreateListener("waitStageChange", next="initialize")
+		listenerReset = CreateListener("waitReset")
+		listenerShowTime = CreateListener("showTime")
+
+	r20:
+		if enableLog
+			Log("running: r20")
+		showMP(text=running_r20_0)
+		area = CreateArea(type="sphere", stage="Park", x=113.31, y=49.06, z=125.82, r=1.0, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[Exposed_All,!Skill_DisableHideCostume,!Skill_TimeStop,!Skill_Exhibitionism,!Skill_Sex]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, mp=missionPanel, next="r30")
+		listenerStageChange = CreateListener("waitStageChange", next="initialize")
+		listenerReset = CreateListener("waitReset")
+		listenerShowTime = CreateListener("showTime")
+
+	r30:
+		if enableLog
+			Log("running: r30")
+		showMP(text=running_r30_0)
+		area = CreateArea(type="sphere", stage="Park", x=118.85, y=49.02, z=53.78, r=1.0, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[Exposed_All,!Skill_DisableHideCostume,!Skill_TimeStop,!Skill_Exhibitionism,!Skill_Sex]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, mp=missionPanel, next="r40")
+		listenerStageChange = CreateListener("waitStageChange", next="initialize")
+		listenerReset = CreateListener("waitReset")
+		listenerShowTime = CreateListener("showTime")
+		
+	r40:
+		if enableLog
+			Log("running: r40")
+		showMP(text=running_r40_0, rp="500RP")
+		area = CreateArea(type="sphere", stage="Park", x=34.27, y=50.07, z=41.61, r=1.0, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[Exposed_All,!Skill_DisableHideCostume,!Skill_TimeStop,!Skill_Exhibitionism,!Skill_Sex]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, mp=missionPanel, next="r50")
+		listenerStageChange = CreateListener("waitStageChange", next="initialize")
+		listenerReset = CreateListener("waitReset")
+		listenerShowTime = CreateListener("showTime")
+
+	r50:
+		if enableLog
+			Log("running: r50")
+		PlaySoundEffect("UICompleteMission")
+		AddCurrentEarnRP(500)
+		_save.runningClearCount = _save.runningClearCount + 1
+		_save.runningResult = _save.runningTime + _save.runningTimePenalty
+		showMP()
+		msg = ""
+		if _save.runningBestResult > _save.runningResult
+			_save.runningBestResult = _save.runningResult
+			msg = running_r50_10
+		text=Format(running_r50_0, _save.runningResult, _save.runningTime, _save.runningTimePenalty, msg)
+		duration = 10
+		listenerShowResult = CreateListener("timedDisplay", text=text, duration=duration)
+		listener = CreateListener("waitTime", duration=duration, next="r60")
+
+	r60:
+		if enableLog
+			Log("running: r60")
+		thread.Goto("initialize")
+

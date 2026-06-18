@@ -1,0 +1,46 @@
+processorBoringAction_:
+	#Note Event: List must have:
+	# common： List see 'event.common'
+
+	
+	vibratorTypes = CreateList("TitRotor", "Vibrator", "KuriRotor")
+	behaviour:
+		do:
+			if _state.AdultToys[value] != null && (_state.AdultToys[value])
+				_result = false
+	b = CreateThread("behaviour")
+	
+	start:
+		#Required
+		#Params@arr event: List
+
+	end:
+		#Required
+		#Params@arr event: List
+
+	update:
+		#Required
+		#Params@arr event: List
+		if (!_state.Orgasm) && (_state.Action == "None" || _state.Sitting)
+			curVib = _state.Vibrator
+			frontEx = _state.Exposed.Front
+			upperEx = _state.Exposed.Upper
+			allEx = _state.Exposed.All
+			if _state.Sitting
+				SetAction("StandUp")
+			i = Foreach(vibratorTypes,b)
+			if (curVib == 2 || curVib == 3) && (vibratorTypes[i] != null)
+				if frontEx | upperEx | allEx
+					SetAction("ChikubiRotate")
+				else
+					SetAction("OnaniArmKuri")
+			else
+				if frontEx | upperEx | allEx
+					r = RandomInt()
+					if r == 1
+						SetAction("ChikubiRotate")
+					else
+						SetAction("OnaniArmKuri")
+				else
+					SetAction("OnaniArmKuri")
+

@@ -1,0 +1,77 @@
+{
+  "modelName": "ChamCham.Dress",
+  "displayName": "ChamCham Dress",
+  "categoryType": "NekoFril",
+  "glb": "mesh.glb",
+  "materialRef": "ChamCham.mat",
+  "isFlattenTit": "true"
+
+  "dynamic": {
+    "components": {
+      "ClothR0": {
+        "includeDescendants": true,
+        "colliders": ["UpperLeg_R","UpperLeg_L", "Butt_L_end", "Butt_R_end"],
+        "params": {
+          "updateRate": 60,
+          "damping": 0.227,
+          "elasticity": 0.126,
+          "stiffness": 0.00,
+          "inert": 0.674,
+          "radius": 0.01,
+          "gravity": [0, -0.2, 0],
+          "force": [0, 0, 0],
+          "distanceDisable": 20,
+          "weight": 1.0
+        }            
+      },
+      "ClothL0": {
+        "includeDescendants": true,
+        "colliders": ["UpperLeg_R","UpperLeg_L", "Butt_L_end", "Butt_R_end"],
+        "params": {
+          "updateRate": 60,
+          "damping": 0.227,
+          "elasticity": 0.126,
+          "stiffness": 0.00,
+          "inert": 0.674,
+          "radius": 0.01,
+          "gravity": [0, -0.2, 0],
+          "force": [0, 0, 0],
+          "distanceDisable": 20,
+          "weight": 1.0
+        }            
+      },
+      "ClothF0": {
+        "includeDescendants": true,
+        "colliders": ["UpperLeg_R","UpperLeg_L", "Butt_L_end", "Butt_R_end"],
+        "params": {
+          "updateRate": 60,
+          "damping": 0.227,
+          "elasticity": 0.126,
+          "stiffness": 0.00,
+          "inert": 0.674,
+          "radius": 0.01,
+          "gravity": [0, -0.2, 0],
+          "force": [0, 0, 0],
+          "distanceDisable": 20,
+          "weight": 1.0
+        }            
+      },
+      "ClothB0": {
+        "includeDescendants": true,
+        "colliders": ["UpperLeg_R","UpperLeg_L", "Butt_L_end", "Butt_R_end"],
+        "params": {
+          "updateRate": 60,
+          "damping": 0.227,
+          "elasticity": 0.126,
+          "stiffness": 0.00,
+          "inert": 0.674,
+          "radius": 0.01,
+          "gravity": [0, -0.2, 0],
+          "force": [0, 0, 0],
+          "distanceDisable": 20,
+          "weight": 1.0
+        }            
+      }
+    }
+  }
+}

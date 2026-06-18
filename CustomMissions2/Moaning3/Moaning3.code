@@ -1,0 +1,598 @@
+####################
+## Moaning v3.1.0 ##
+####################
+
+# ==================
+# Credits & Acknowledgements
+#
+# Moaning3 is a fully rewritten plugin heavily inspired by **Moaning2** and **SecretFlasher VoicePack Plus**.
+# Below is the historical lineage of this plugin.
+#
+# Inspiration & Lineage
+# - hexecho: Created the original prototype **SecretFlasher VoicePack**.
+# - havoc12: Expanded the prototype into plugin **SecretFlasher VoicePack Plus v2.5.4**, which rebuilt the playback logic based on hexecho's work.
+# - ExoFifth & ruefors: Updated **SecretFlasher VoicePack Plus** to v2.6.1 with additional features.
+# - |||Byo|||: Created **Moaning1** & **Moaning2** using plugin **Custom Missions 2**. Inspired by **SecretFlasher VoicePack Plus**.
+#
+# Current Version
+# - CrossDot: Fully rewrote **Morning2** from scratch to **Moaning3**, introducing performance upgrades and structural overhauls.
+# ==================
+
+
+# conditions
+isFlashing = CreateCondition("(Exposed_Front, Exposed_Upper, Exposed_Hip, [Crouching, Exposed_HipCrouch])")
+isNude = CreateCondition("Exposed_All")
+isOrgasming = CreateCondition("Orgasm")
+isPeeing = CreateCondition("Peeing")
+
+isInNPCArea = CreateCondition("NPCArea")
+isVibrationOff = CreateCondition("[VibrationOff, PistonOff]")
+hasAdultToyEquipped = CreateCondition("(AdultToy_Vibrator, AdultToy_TitRotor, AdultToy_KuriRotor, AdultToy_PistonAnal, AdultToy_PistonPussy, AdultToy_PistonFuta)")
+isWearingGag = CreateCondition("(Cosplay_m_cosplay_general_head_kuchikase, Cosplay_m_cosplay_general_head_osyaburi, Cosplay_m_cosplay_latex_pony_head)")
+
+# sound files
+moaningSounds = CreateList()
+moaningSounds.gasping = GetFiles("gasping", subfolders=true)
+moaningSounds.low     = GetFiles("low", subfolders=true)
+moaningSounds.medium  = GetFiles("med", subfolders=true)
+moaningSounds.high    = GetFiles("high", subfolders=true)
+moaningSounds.peak    = GetFiles("peak", subfolders=true)
+moaningSounds.orgasm  = GetFiles("orgasm", subfolders=true)
+
+if moaningSounds.medium.Count() <= 0
+	moaningSounds.medium = moaningSounds.low
+if moaningSounds.peak.Count() <= 0
+	moaningSounds.peak = moaningSounds.high
+
+# state
+State = CreateList()
+State.IDLE = "Idle"
+State.NUDE = "Nude"
+State.FLASHING = "Flashing"
+State.LOW = "Low_Ecstasy"
+State.MEDIUM = "Medium_Ecstasy"
+State.HIGH = "High_Ecstasy"
+State.PEAK = "Peak_Ecstasy"
+State.ORGASMING = "Orgasm"
+
+# cross-project data sharing for other mods to access
+_mod.State = Copy(State)
+_mod.updated = false
+_mod.state = State.IDLE
+_mod.lastTouched = _name
+
+
+define_moaning_state:
+	ecstasy = _args[0]
+
+	if _settings.allow_external_control && _mod.updated && _mod.forceState != null
+		return _mod.forceState
+	# NOTE: `_settings.<state>_threshold` must > 0
+	# Otherwise NUDE/FLASHING will never be reached
+	if isOrgasming.Check()
+		state = State.ORGASMING
+	elseif ecstasy > _settings.high_ecstasy_threshold
+		state = State.PEAK
+	elseif ecstasy > _settings.medium_ecstasy_threshold
+		state = State.HIGH
+	elseif ecstasy > _settings.low_ecstasy_threshold
+		state = State.MEDIUM
+	elseif ecstasy > 0.001
+		state = State.LOW
+	elseif isNude.Check()
+		state = State.NUDE
+	elseif isFlashing.Check()
+		state = State.FLASHING
+	else
+		state = State.IDLE
+	_result = state
+
+
+# get moaning config depending on moaning state
+get_state_configs:
+	state = _args[0]
+	trend = _args[1]
+
+	config = CreateList()
+	if state == State.ORGASMING
+		config.moansList = moaningSounds.orgasm
+		config.volume = _settings.orgasm_volume
+		config.minInterval = 0
+		config.maxInterval = 0
+		config.moanRP = _settings.orgasm_rp
+		config.alertScaler = _settings.orgasm_alert_scaler
+		config.radiusScaler = _settings.orgasm_radius_scaler
+	elseif state == State.IDLE
+		config.moansList = null
+		config.volume = 0
+		config.minInterval = 0
+		config.maxInterval = 0
+		config.moanRP = 0
+		config.alertScaler = 0
+		config.radiusScaler = 0
+	else
+		validState = true
+		if state == State.NUDE || state == State.FLASHING
+			config.moansList = moaningSounds.gasping
+		elseif state == State.PEAK
+			config.moansList = moaningSounds.peak
+		elseif state == State.HIGH
+			config.moansList = moaningSounds.high
+		elseif state == State.MEDIUM
+			config.moansList = moaningSounds.medium
+		elseif state == State.LOW
+			config.moansList = moaningSounds.low
+		else
+			validState = false
+			config.moansList = null
+			config.volume = 0
+			config.minInterval = 0
+			config.maxInterval = 0
+			config.moanRP = 0
+			config.alertScaler = 0
+			config.radiusScaler = 0
+		if validState
+			statePrefix = Lower(state)
+			config.volume = _settings[statePrefix + "_volume"]
+			config.minInterval = _settings[statePrefix + "_min_interval"]
+			config.maxInterval = _settings[statePrefix + "_max_interval"]
+			config.moanRP = _settings.moaning_rp
+			config.alertScaler = _settings[statePrefix + "_alert_scaler"]
+			config.radiusScaler = _settings[statePrefix + "_radius_scaler"]
+			if trend == "Drain" && (!hasAdultToyEquipped.Check() || isVibrationOff.Check()) # `trend` could be `Drain` if only Piston is on.
+				# moansList is always gasping if ecstasy is not rising
+				config.moansList = moaningSounds.gasping
+				# gasping reduce scalers and moanRP by half
+				config.alertScaler /= 2
+				config.radiusScaler /= 2
+				config.moanRP /= 2
+
+	if config.minInterval > config.maxInterval
+		config.minInterval = config.maxInterval
+	if isWearingGag.Check()
+		config.volume *= _settings.gag_multiplier
+		config.alertScaler *= _settings.gag_multiplier
+		config.radiusScaler *= _settings.gag_multiplier
+	_result = config
+
+
+# lazy load moan audio file
+get_moan_audio:
+	moansList = _args[0]
+	index = _args[1]
+
+	selectedMoan = moansList[index] # select a random file
+	# lazy load audio
+	if GetType(selectedMoan) == "String"
+		selectedMoan = CreateAudio(selectedMoan)
+		moansList[index] = selectedMoan
+	_result = selectedMoan
+
+
+# ======
+
+gTrend = "Drain" # add prefix `g` to global variables
+gOrgasmAccidentActive = false
+gTraceIds = CreateList()
+gTraceNPCs = CreateList()
+gTracePrev = CreateList()
+gTraceLast = CreateList()
+gTraceStable = CreateList()
+gTraceCleanup = CreateListener("TraceCleanupLoop")
+
+gMoanScheduler = CreateThread("MoanSchedulerInit")
+MoanSchedulerInit: # <Number prevEcstasy=null>
+	if prevEcstasy == null
+		prevEcstasy = GetEcstasy()
+		_this.Goto("MoanSchedulerInit", prevEcstasy=prevEcstasy) # `Goto` will run the label at next frame
+	else
+		ecstasy = GetEcstasy()
+		if ecstasy > prevEcstasy
+			gTrend = "Rising" # ecstasy is rising
+		else
+			gTrend = "Drain" # ecstasy is not rising
+		_this.Goto("MoanScheduler")
+
+
+MoanScheduler:
+	ecstasy = GetEcstasy()
+	state = define_moaning_state(ecstasy)
+	if gOrgasmAccidentActive
+		state = State.IDLE
+	config = get_state_configs(state, gTrend)
+	shouldPlayMoan = false
+	if config != null
+		if state != State.IDLE
+			if config.moansList != null
+				if config.moansList.Count() > 0
+					shouldPlayMoan = true
+	if !shouldPlayMoan
+		interval = 0.1
+		audioLen = 0
+	else
+		# randomly choose a moaning sound
+		index = RandomInt(0, config.moansList.Count() - 1)
+		audio = get_moan_audio(config.moansList, index)
+		if audio == null
+			interval = 0.1
+			audioLen = 0
+		else
+			audio.Play(volume=config.volume)
+			# reset `_mod.updated` only when the audio starts playing
+			if _settings.allow_external_control
+				_mod.updated = false
+			# define wait time
+			interval = Random(config.minInterval, config.maxInterval)
+			audioLen = audio.Length()
+
+			if _settings.moan_alerts_NPCs_feature_enabled
+				alertNPCs = CreateThread("AlertNearbyNPCs", radiusScaler=config.radiusScaler, alertScaler=config.alertScaler, audioLen=audioLen, moanState=state)
+
+			# earn RP when moaning
+			if _settings.RP_earning_feature_enabled
+				isMoaningInNPCArea = !_settings.only_in_NPC_area || isInNPCArea.Check()
+				isExposedWhenMoaning = !_settings.only_when_exposed || (isFlashing.Check() || isNude.Check())
+				if isMoaningInNPCArea && isExposedWhenMoaning
+					AddCurrentEarnRP(config.moanRP)
+
+	if _settings.show_log
+		Log(_name + ": ====================")
+		Log(_name + ": state = " + state)
+		Log(_name + ": gTrend = " + gTrend)
+		Log(_name + ": config.volume = " + config.volume)
+		Log(_name + ": config.radiusScaler = " + config.radiusScaler)
+		Log(_name + ": interval = " + interval)
+		Log(_name + ": audioLen = " + audioLen)
+
+	# if the settings require extending the orgasm animation to sync with the audio
+	if state == State.ORGASMING && _settings.extend_orgasm_animation
+		listener = CreateListener("WaitForOrgasmAnimation", waitTime=audioLen)
+	else
+		# wait for audio playback to finish
+		listener = CreateListener("WaitForPlayback", audioLen=audioLen, interval=interval, state=state)
+
+WaitForOrgasmAnimation: # <Number waitTime>
+	if duration == null
+		duration = 0
+	if initialized == null
+		initialized = false
+	if waitingForOrgasm == null
+		waitingForOrgasm = false
+	if remaining == null
+		remaining = 0
+	if orgasmChainCount == null
+		orgasmChainCount = 1
+	if accidentTriggered == null
+		accidentTriggered = false
+	if accidentPending == null
+		accidentPending = false
+	if accidentEnabled == null
+		accidentEnabled = _settings.orgasm_accident_enabled
+		if accidentEnabled == null
+			accidentEnabled = true
+	if accidentThreshold == null
+		accidentThreshold = _settings.orgasm_accident_threshold
+		if accidentThreshold == null
+			accidentThreshold = 3
+	if initialized == false
+		initialized = true
+		tier1Chance = _settings.extend_orgasm_tier1_chance
+		if tier1Chance == null
+			tier1Chance = 0.34
+		tier1Count = _settings.extend_orgasm_tier1_count
+		if tier1Count == null
+			tier1Count = 1
+		tier2Chance = _settings.extend_orgasm_tier2_chance
+		if tier2Chance == null
+			tier2Chance = 0.33
+		tier2Count = _settings.extend_orgasm_tier2_count
+		if tier2Count == null
+			tier2Count = 2
+		tier3Chance = _settings.extend_orgasm_tier3_chance
+		if tier3Chance == null
+			tier3Chance = 0.33
+		tier3Count = _settings.extend_orgasm_tier3_count
+		if tier3Count == null
+			tier3Count = 3
+		if tier1Count < 0
+			tier1Count = 0
+		if tier2Count < 0
+			tier2Count = 0
+		if tier3Count < 0
+			tier3Count = 0
+		if tier1Chance < 0
+			tier1Chance = 0
+		if tier2Chance < 0
+			tier2Chance = 0
+		if tier3Chance < 0
+			tier3Chance = 0
+		chanceTotal = tier1Chance + tier2Chance + tier3Chance
+		if chanceTotal > 1
+			tier1Chance = tier1Chance / chanceTotal
+			tier2Chance = tier2Chance / chanceTotal
+			tier3Chance = tier3Chance / chanceTotal
+		roll = Random()
+		tier1Limit = tier1Chance
+		tier2Limit = tier1Limit + tier2Chance
+		tier3Limit = tier2Limit + tier3Chance
+		if roll < tier1Limit
+			if tier1Count > 0
+				remaining = RandomInt(1, tier1Count)
+			else
+				remaining = 0
+			Log(Format("[Moaning3] Orgasm extension tier1. range=0.00-{0:F2}, roll={1:F2}, max={2:0}, remaining={3:0}", tier1Limit, roll, tier1Count, remaining))
+		elseif roll < tier2Limit
+			if tier2Count > 0
+				remaining = RandomInt(1, tier2Count)
+			else
+				remaining = 0
+			Log(Format("[Moaning3] Orgasm extension tier2. range={0:F2}-{1:F2}, roll={2:F2}, max={3:0}, remaining={4:0}", tier1Limit, tier2Limit, roll, tier2Count, remaining))
+		elseif roll < tier3Limit
+			if tier3Count > 0
+				remaining = RandomInt(1, tier3Count)
+			else
+				remaining = 0
+			Log(Format("[Moaning3] Orgasm extension tier3. range={0:F2}-{1:F2}, roll={2:F2}, max={3:0}, remaining={4:0}", tier2Limit, tier3Limit, roll, tier3Count, remaining))
+		else
+			remaining = 0
+			Log(Format("[Moaning3] Orgasm extension skipped. range=0.00-{0:F2}, roll={1:F2}", tier3Limit, roll))
+	duration += _timediff
+	if waitingForOrgasm
+		if isOrgasming.Check()
+			orgasmChainCount = orgasmChainCount + 1
+			if accidentEnabled && !accidentTriggered && !gOrgasmAccidentActive && orgasmChainCount >= accidentThreshold
+				accidentTriggered = true
+				accidentPending = true
+				Log(Format("[Moaning3] Orgasm accident pending. chain={0:0}, threshold={1:0}", orgasmChainCount, accidentThreshold))
+			remaining = remaining - 1
+			waitingForOrgasm = false
+			Log(Format("[Moaning3] Extended orgasm counted. remaining={0:0}", remaining))
+	elseif !isOrgasming.Check() # animation stopped
+		if gOrgasmAccidentActive
+			remaining = 0
+		elseif accidentPending && remaining > 0
+			AddEcstasy(1.1)
+			waitingForOrgasm = true
+			Log(Format("[Moaning3] Accident pending, continue chain. remaining={0:0}, nextChain={1:0}", remaining, orgasmChainCount + 1))
+		elseif duration < waitTime && remaining > 0 # audio is still playing
+			AddEcstasy(1.1) # trigger another orgasm animation to sync with audio
+			waitingForOrgasm = true
+			Log(Format("[Moaning3] Trigger extended orgasm animation. duration={0:F2}, waitTime={1:F2}, remaining={2:0}, nextChain={3:0}", duration, waitTime, remaining, orgasmChainCount + 1))
+		elseif accidentPending
+			accidentPending = false
+			gOrgasmAccidentActive = true
+			Log(Format("[Moaning3] Orgasm accident triggered after chain. chain={0:0}, threshold={1:0}", orgasmChainCount, accidentThreshold))
+			CreateThread("OrgasmAccidentSequence")
+		else
+			gMoanScheduler.Goto("MoanSchedulerInit") # `Goto` will destroy everything created/called inside `MoanScheduler`
+
+OrgasmAccidentSequence:
+	gOrgasmAccidentActive = true
+	AddMoisture(1.0)
+	Log("[Moaning3] Orgasm accident moisture forced to full.")
+	listener = CreateListener("OrgasmAccidentStart")
+
+OrgasmAccidentStart:
+	if duration == null
+		duration = 0
+	if started == null
+		started = false
+	if !started
+		duration = duration + _timediff
+		if !isOrgasming.Check() || duration >= 2.0
+			started = true
+			duration = 0
+			started = false
+			Log("[Moaning3] Orgasm accident start released, waiting to pee.")
+			listener = CreateListener("OrgasmAccidentPee")
+
+OrgasmAccidentPee:
+	if duration == null
+		duration = 0
+	if started == null
+		started = false
+	if !started
+		duration = duration + _timediff
+		if GetMoisture() < 1
+			AddMoisture(1.1)
+		if isPeeing.Check()
+			started = true
+			Log("[Moaning3] Orgasm accident auto pee observed.")
+			duration = 0
+			recovered = false
+			listener = CreateListener("OrgasmAccidentCry")
+		elseif duration >= 4.0
+			started = true
+			Log("[Moaning3] Orgasm accident pee not observed; continue.")
+			duration = 0
+			recovered = false
+			listener = CreateListener("OrgasmAccidentCry")
+
+OrgasmAccidentCry:
+	if duration == null
+		duration = 0
+	if recovered == null
+		recovered = false
+	if peeDuration == null
+		peeDuration = _settings.orgasm_accident_pee_duration
+		if peeDuration == null
+			peeDuration = 1.5
+	if !recovered
+		duration = duration + _timediff
+		if duration >= peeDuration
+			recovered = true
+			duration = 0
+			released = false
+			listener = CreateListener("OrgasmAccidentRelease")
+
+OrgasmAccidentRelease:
+	if duration == null
+		duration = 0
+	if released == null
+		released = false
+	if !released
+		duration = duration + _timediff
+		if duration >= 0.75
+			released = true
+			gOrgasmAccidentActive = false
+
+WaitForPlayback: # <Number audioLen>, <Number interval>, <String state>
+	if duration == null
+		duration = 0
+	duration += _timediff
+	if gOrgasmAccidentActive
+		duration = 0
+	elseif duration >= audioLen + interval # wait time is up
+		gMoanScheduler.Goto("MoanSchedulerInit")
+	else # wait time is not up yet
+		currentState = define_moaning_state(GetEcstasy())
+		if !gOrgasmAccidentActive && state != currentState && (duration >= audioLen || currentState == State.ORGASMING)
+			# If state changed and playback stopped, stop waiting and play audio immediately.
+			# If state changed and orgasm triggered, bypass the wait and play orgasm audio immediately to sync with the animation, allowing audio overlap.
+			gMoanScheduler.Goto("MoanSchedulerInit")
+
+
+__isPlayerBehindNpc:
+	npcInfo = _args[0]
+	playerPos = _args[1]
+	npcPos = npcInfo.Position
+	npcForward = Vector(2*npcPos.rw*npcPos.ry, 0, 1-2*npcPos.ry*npcPos.ry)
+	toPlayer = Vector(playerPos.x - npcPos.x, 0, playerPos.z - npcPos.z)
+	_result = Vector3Dot(npcForward, toPlayer) < -0.05
+
+__suppressHeadsetBehindOrgasmAlert:
+	npcInfo = _args[0]
+	playerPos = _args[1]
+	moanState = _args[2]
+	_result = false
+	if moanState == State.ORGASMING
+		if npcInfo.Headset
+			if __isPlayerBehindNpc(npcInfo, playerPos)
+				_result = true
+
+__traceNpcUntilStrangenessStops:
+	npc = _args[0]
+	id = npc.GetID()
+	if gTraceNPCs[id] == null
+		gTraceIds.Insert(id)
+		gTraceNPCs[id] = npc
+		gTracePrev[id] = npc.TracePlayer()
+		gTraceLast[id] = npc.Strangeness()
+		gTraceStable[id] = 0
+	npc.TracePlayer(true)
+
+TraceCleanupLoop:
+	i = 0
+	while i < gTraceIds.Count()
+		id = gTraceIds[i]
+		if id != null
+			npc = gTraceNPCs[id]
+			if npc != null
+				if npc.IsAlive()
+					currentStrange = npc.Strangeness()
+					if currentStrange > gTraceLast[id] + 0.001
+						gTraceLast[id] = currentStrange
+						gTraceStable[id] = 0
+					else
+						gTraceStable[id] = gTraceStable[id] + _timediff
+					if gTraceStable[id] >= 0.75
+						if gTracePrev[id] != null
+							npc.TracePlayer(gTracePrev[id])
+						else
+							npc.TracePlayer(false)
+						gTraceIds[i] = null
+						gTraceNPCs[id] = null
+						gTracePrev[id] = null
+						gTraceLast[id] = null
+						gTraceStable[id] = null
+				else
+					gTraceIds[i] = null
+					gTraceNPCs[id] = null
+					gTracePrev[id] = null
+					gTraceLast[id] = null
+					gTraceStable[id] = null
+		i += 1
+
+AlertNearbyNPCs: # <Number radiusScaler>, <Number alertScaler>, <Number audioLen>, <String moanState>
+	radius = _settings.base_alert_radius * radiusScaler
+	sqrRadius = radius * radius
+
+	playerPos = Vector(_state.Position.x, _state.Position.y, _state.Position.z)
+
+	# filter NPCs
+	NPCs = CreateList()
+	i = 0
+	n = _state.NPCs.Count()
+	while i < n
+		npc = _state.NPCs[i]
+		npcPos = Vector(npc.Position.x, npc.Position.y, npc.Position.z)
+		sqrDistance = Vector3SqrLength(Vector3Sub(playerPos, npcPos)) # Length^2
+		suppressAlert = __suppressHeadsetBehindOrgasmAlert(npc, playerPos, moanState)
+		if suppressAlert && _settings.show_log
+			Log(Format("[Moaning3] suppress headset-behind orgasm alert npc={0} dist={1:F2}", npc.ID, Vector3Distance(playerPos, npcPos)))
+		if sqrDistance < sqrRadius && !npc.Headset && !suppressAlert # the NPC is in range and not wearing a headset
+			npc = CreateNPC(npc.ID)
+			NPCs.Insert(npc)
+		i += 1
+
+	# add alertness
+	i = 0
+	n = NPCs.Count()
+	alertnessToChange = CreateList()
+	while i < n
+		npc = NPCs[i]
+		npcPos = npc.GetPosition()
+		if npc.SeesPlayer()
+			# calculate alert increment
+			npcPos = Vector(npcPos.x, npcPos.y, npcPos.z)
+			distanceFactor = 1 - (Vector3Distance(playerPos, npcPos) / radius) # linear sound drop within [0, 1]
+			alertIncrement = distanceFactor * alertScaler * _settings.base_alertness_increment
+			if npc.Smartphone() # NPCs with a phone are half as distracted by moans
+				alertIncrement = alertIncrement / 2
+			# final alertness shouldn't be larger than _settings.alertness_cap
+			maxIncrement = _settings.alertness_cap - npc.Strangeness()
+			if alertIncrement > maxIncrement
+				alertIncrement = maxIncrement
+			alertnessToChange.Insert(CreateList(npc=npc, amount=alertIncrement))
+		else
+			__traceNpcUntilStrangenessStops(npc)
+		i += 1
+
+	changeAlertnessGradually = CreateListener("ChangeAlertnessGradually", list=alertnessToChange, duration=audioLen)
+	cleanUpListeners = CreateListener("CleanUp", waitTime=audioLen)
+	CleanUp:
+		if time == null
+			time = 0
+		time += _timediff
+		if time > waitTime
+			changeAlertnessGradually = null
+			cleanUpListeners = null
+
+
+# Increase alertness of `npc` in the `list` by `amount` in `duration` time.
+# Set `amount` to a negative value to decrease alertness.
+# Note that the alertness stops changing if the `CreateListener` caller is destroyed before `duration`.
+# This may happen if an orgasm triggers.
+ChangeAlertnessGradually: # <List list[<Object npc>, <Number amount>]>, <Number duration>
+	if time == null
+		time = 0
+
+	i = list.Count() - 1
+	while i >= 0
+		npc = list[i].npc
+		amount = list[i].amount
+		if time + _timediff <= duration
+			delta = amount * _timediff / duration
+		elseif time < duration # time < duration < time + _timediff => time just exceeds `duration` at this frame
+			delta = amount * (duration - time) / duration
+		else
+			delta = 0
+			Log(_name + ": If you keep seeing this, Memory Leak!")
+
+		if npc.IsAlive()
+			alertness = npc.Strangeness()
+			if delta != 0 && alertness + delta < 1 # Other mods may also affect Alertness. Don't let `npc` find you by moaning.
+				npc.Strangeness(alertness + delta)
+		i -= 1
+
+	time += _timediff

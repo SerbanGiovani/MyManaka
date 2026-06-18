@@ -1,0 +1,42 @@
+RandomString:
+	#Params name: Stirng, stringsPool: List
+	#Returns string: Stirng
+	if name == null
+		name = _args[0]
+	if stringsPool == null
+		stringsPool = _args[1]
+	nameKey = name + "String"
+	countKey = nameKey + "Count"
+	# Log("nameKey "+nameKey)
+	# Log("countKey "+countKey)
+	# Log(stringsPool[countKey])
+	r = RandomInt(0, stringsPool[countKey])
+	nameKey = nameKey + r
+	_result = stringsPool[nameKey]
+WrapString:
+	#Params content: Stirng|Number, wrapper: Stirng|Number
+	#Returns wrappedString: String
+	if content == null
+		content = _args[0]
+	if wrapper == null
+		wrapper = _args[1]
+	if end == null
+		content = _args[2]
+	wrappedString = ""
+	if wrapper != null
+		length = Length[wrapper]
+		midIndex = length // 2
+		leftWrapper = SubString(wrapper, start = 0, length = midIndex)
+		rightWrapper = SubString(wrapper, start = midIndex)
+		wrappedString = wrappedString + leftWrapper + content + rightWrapper
+GetLevelDesc:
+	#Params level: Number, stringsPool: List
+	#Returns levelDescString: String
+	if level == null
+		level = _args[0]
+	if stringsPool == null
+		stringsPool = _args[1]
+	currentLevelString = "["+stringsPool.CurrentLevelString + level + "]"
+	levelKey = "Level" + level + "String"
+	levelString = stringsPool[levelKey]
+	_result = currentLevelString + "\n" + levelString

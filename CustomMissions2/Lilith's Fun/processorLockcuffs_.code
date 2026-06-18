@@ -1,0 +1,31 @@
+processorLockcuffs_:
+	#Note Event: List must have:
+	# common： List, see 'event.common'
+
+	locked = false
+
+	start:
+		#Required
+		#Params@arr event: Object
+		locked = false
+
+	end:
+		#Required
+		#Params@arr event: List
+
+	update:
+		#Required
+		#Params@arr event: List
+		event = _args[0]
+		cuffsType = _state.Handcuffs.Type
+		
+		if cuffsType == "None" 
+			LockHandcuffs(handcuffstype = "Handcuff")
+			if _state.Sitting
+				SetAction("SitDown")
+			locked = true
+		elseif cuffsType != "Normal" && locked #Note Handle mutilple cuffs
+			UnlockHandcuffs()
+			LockHandcuffs(handcuffstype = "Handcuff")
+			if _state.Sitting
+				SetAction("SitDown")

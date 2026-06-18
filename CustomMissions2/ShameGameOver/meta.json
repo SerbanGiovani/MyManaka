@@ -1,0 +1,176 @@
+{
+	"title":"Shame Game Over",
+	"defaultactive":true,
+	"version":"2026-05-20",
+	"settings":[
+		{"type":"Label", "title":"[BASIC SHAME GAIN]"},
+		{"type":"Label", "title":" "},
+		{"type":"Label", "title":"Set how much shame you gain when caught by an NPC"},
+		{
+			"name":"shame_boobs",
+			"title":"Boobs shame",
+			"type":"Integer",
+			"minvalue":1,
+			"maxvalue":5,
+			"default":1
+		},
+		{"type":"Label", "title":"Someone saw your boobs. (Topless, bottom covered)"},
+		{
+			"name":"shame_butt",
+			"title":"Butt shame",
+			"type":"Integer",
+			"minvalue":1,
+			"maxvalue":5,
+			"default":1
+		},
+		{"type":"Label", "title":"Someone saw your butt. (Very niche, only triggers when exposing your ass while wearing the coat)"},
+		{
+			"name":"shame_pussy",
+			"title":"Genitals shame",
+			"type":"Integer",
+			"minvalue":1,
+			"maxvalue":5,
+			"default":2
+		},
+		{"type":"Label", "title":"Someone saw your pussy. (Bottomless, top covered)"},
+		{
+			"name":"shame_naked",
+			"title":"Naked shame",
+			"type":"Integer",
+			"minvalue":1,
+			"maxvalue":5,
+			"default":3
+		},
+		{"type":"Label", "title":"Someone saw you fully naked. (Overrides the previous 3 settings)"},
+		{
+			"name":"underwear",
+			"title":"Underwear shame",
+			"type":"Boolean",
+			"default":true
+		},
+		{"type":"Label", "title":"At least you're somewhat covered... (-1 shame for each exposed part covered by the bra/panties that the games normally ignores)"},
+		
+		{"type":"Label", "title":" "},
+		{"type":"Label", "title":"[SHAME GAIN MODIFIERS]"},
+		{"type":"Label", "title":" "},
+		{
+			"name":"shame_action",
+			"title":"Action shame",
+			"type":"Integer",
+			"minvalue":0,
+			"maxvalue":2,
+			"default":1
+		},
+		{"type":"Label", "title":"They're watching while you masturbate/pee/pose. (additional shame when caught)"},
+		{
+			"name":"shame_toys",
+			"title":"Sex toys shame",
+			"type":"Integer",
+			"minvalue":0,
+			"maxvalue":2,
+			"default":1
+		},
+		{"type":"Label", "title":"There's a big vibrator poking out of your pussy and they're staring right at it. (additional shame when caught)"},
+		{
+			"name":"shame_handcuffs",
+			"title":"Handcuff shame",
+			"type":"Integer",
+			"minvalue":0,
+			"maxvalue":2,
+			"default":1
+		},
+		{"type":"Label", "title":"They're staring at you, and you can't do anything to cover yourself! (additional shame when caught)"},
+		{
+			"name":"shame_orgasm",
+			"title":"Orgasm shame",
+			"type":"Integer",
+			"minvalue":0,
+			"maxvalue":5,
+			"default":1
+		},
+		{"type":"Label", "title":"You orgasmed when someone was looking! Post-orgasm clarity is hitting you hard. (no need to get caught, just cum in the field of vision of an NPC)"},
+		{
+			"name":"orgasm_shame_cooldown",
+			"title":"Orgasm shame cooldown",
+			"type":"Float",
+			"minvalue":0,
+			"maxvalue":30,
+			"default":8
+		},
+		{"type":"Label", "title":"Ignore repeated orgasm shame inside this many seconds. Prevents Moaning3 extended orgasms from stacking shame."},
+		{
+			"name":"shame_blindfold",
+			"title":"Blindfold shame",
+			"type":"Integer",
+			"minvalue":-5,
+			"maxvalue":0,
+			"default":-1
+		},
+		{"type":"Label", "title":"It's a little less embarrassing when you can't see them..."},
+		{
+			"name":"shame_ecstasy",
+			"title":"Ecstasy shame",
+			"type":"Integer",
+			"minvalue":20,
+			"maxvalue":80,
+			"default":80
+		},
+		{"type":"Label", "title":"You're just too horny to care! (-1 shame when caught for every X% ecstasy you have)"},
+		{
+			"name":"ecstasy_toggle",
+			"title":"Ecstasy shame on/off",
+			"type":"Boolean",
+			"default":true
+		},
+		
+		{"type":"Label", "title":" "},
+		{"type":"Label", "title":"[OTHER SETTINGS]"},
+		{"type":"Label", "title":" "},
+		{
+			"name":"max_shame",
+			"title":"Maximum shame",
+			"type":"Integer",
+			"minvalue":2,
+			"maxvalue":20,
+			"default":10
+		},
+		{"type":"Label", "title":"Triggers game over when it reaches the max"},
+		{
+			"name":"del_shame",
+			"title":"Shame fallout",
+			"type":"Integer",
+			"minvalue":0,
+			"maxvalue":30,
+			"default":10
+		},
+		{"type":"Label", "title":"Number of seconds to remove 1 shame when out of sight (0 = no fallout)"},
+		{
+			"name":"del_handcuffed",
+			"title":"Handcuffs modifier",
+			"type":"Boolean",
+			"default":true
+		},
+		{"type":"Label", "title":"It's harder to calm down when in bondage. Shame recovery speed -50% if handcuffed"},
+		{
+			"name":"del_clothed",
+			"title":"Clothes modifier",
+			"type":"Boolean",
+			"default":true
+		},
+		{"type":"Label", "title":"Shame recovery speed +50% if fully clothed"},
+		{
+			"name":"display_arrows",
+			"title":"Recovery arrows",
+			"type":"Boolean",
+			"default":true
+		},
+		{"type":"Label", "title":"Displays the green arrows showing your shame recovery speed"},
+		{
+			"name":"comments",
+			"title":"Comments",
+			"type":"Boolean",
+			"default":true
+		},
+		{"type":"Label", "title":"Displays Manaka's thoughts on screen when seen"}
+	]
+}

@@ -1,0 +1,35 @@
+#################################
+# Code
+#################################
+
+AdaptiveLight = CreateThread("AdaptiveLight")
+
+AdaptiveLight:
+	blindness = 0.0
+	last_blindness = blindness
+
+	listener = CreateListener("BLTimer")
+
+	BLTimer:
+		if _state.InLight
+			if blindness < 1
+				if _state.HandcuffsBack
+					blindness = blindness + _timediff / _settings.fade_light_cuffs
+				else
+					blindness = blindness + _timediff / _settings.fade_light
+			else
+				blindness = 1
+		else
+			if blindness > 0
+				blindness = blindness - _timediff / _settings.fade_dark
+			else
+				blindness = 0
+			
+		if Abs(last_blindness-blindness) > 0.02
+			last_blindness = blindness
+			if blindness < 1
+				if blindness > 0
+					ShowBlackscreen(color=Color(0,0,0,_settings.light_range*blindness), duration=99999)
+				else
+					ShowBlackscreen(color=Color(0,0,0,0), duration=0.1)
+

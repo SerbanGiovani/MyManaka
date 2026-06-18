@@ -1,0 +1,18 @@
+createrTrimCosplays_:
+	#Note Event: List must have:
+	# trimCount: Number
+	# common： List see 'event.common'
+
+	create:
+		#Required
+		#Returns event: List
+		event = CreateList()
+		event.common = CreateList()
+		event.common.requiredProcessor = "processorTrimCosplays"
+		event.common.name = StringsPool2.TrimCosplaysString
+		event.common.description = RandomString("TrimCosplays", StringsPool0)
+		event.common.duration = Random(35, 50)
+		
+		event.trimCount = RandomInt(24, 32)
+		
+		_result = event

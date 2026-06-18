@@ -1,0 +1,78 @@
+system_:
+
+	systemCore = CreateThread("systemCore_")
+	registry = CreateThread("systemRegistry_")
+	registryResponsers = CreateThread("systemRegistryResponsers_")
+	systemAdjustor = CreateThread("systemAdjustor_")
+
+	openedFlag = false
+	resetFlag = false
+
+	systemLoop = null
+	responsers = null
+	
+	requestQueue = null
+	eventQueue = null
+
+	work:
+		__init()
+		__setUp()
+		__start()
+
+	__init:
+		responsers = CreateList()
+		requestQueue = CreateThread("Queue")
+		eventQueue = CreateThread("Queue")
+		systemCore.init(requestQueue, eventQueue)
+		registry.init(systemCore)
+		registryResponsers.init(responsers, systemCore.getSystemFacade())
+		systemAdjustor.init(systemCore)
+
+	__setUp:
+		registry.registerAll()
+		registryResponsers.registerAll()
+		systemAdjustor.adjust()
+
+	__start:
+		systemCore.start()
+		if systemLoop == null
+			systemLoop = CreateListenerLocal("__systemUpdate")
+		Log("Lilith: System is working!!")
+
+	__systemUpdate:
+		__tryPause()
+		__tryResponse()
+		__tryRework()
+
+	__tryResponse:
+		request = requestQueue.Dequeue()
+		if request != null
+			# Log("response requset: "+request)
+			firstBlank = Find(" ", request)
+			if firstBlank < 0
+				requestHead = request
+				requestBody = ""
+			else
+				requestHead = SubString(request, start = 0, length = firstBlank)
+				requestBody = SubString(request, start = firstBlank + 1)
+			responser = responsers["responser"+requestHead]
+			if responser != null
+				responser.response(requestBody)
+
+	__tryRework:
+		if _state.Position.stage == "Apart"
+			openingFlag = systemCore.configChatterOpened()
+			if (!openingFlag) & openedFlag
+				resetFlag = true
+			openedFlag = openingFlag
+			
+			if _stagechanged
+				resetFlag = true
+		if resetFlag
+			resetFlag = false
+			systemCore.reset()
+			work()
+
+	__tryPause:
+		if (_state.Position.stage == "Apart") && (_state.Position.laststage != "Apart")
+			systemCore.pause()

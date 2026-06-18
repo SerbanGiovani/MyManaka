@@ -1,0 +1,136 @@
+mission_dare = CreateThread("dare_init")
+
+dare_init:
+	Global("dare_chat", CreateMessengerChat("Unknown Contact", iconcolor = Color(0, 1, 0), icontext = "???", icontextcolor = Color(1, 0, 0)))
+	
+	Global("dare_menu", CreateMissionMenuItem())
+	dare_menu.SetText("The Dare")
+	dare_menu.SetRPText("1000 RP")
+	dare_menu.SetBackgroundColor(Color(0.495, 1.000, 0.521, 1.000), Color(0.000, 0.434, 0.024, 1.000))
+	dare_menu.SetStages("Apart", "Mansion", "Residence")
+	if _save["dare_cleared"] == true
+		dare_menu.SetCleared(true)
+		
+	Global("dare_panel", CreateMissionPanel())
+	dare_panel.SetGaugeVisible(false)
+
+	Global("home_goal", CreateArea(type="sphere", stage="Residence", x=-30.20, y=0.25, z=-117.40, r=2.5))
+		
+	_this.Goto("dare_prompt")
+
+dare_prompt:
+	dare_chat.Add("We know who you are and what you are capable of. Meet at the Apartments, Room 1008 for an opportunity. ", "Left")
+	dare_chat.SetButtons("Accept", "Ignore", ids = CreateList("btn_accept", "btn_ignore"))
+	listener = CreateListener("l_wait_accept")
+
+l_wait_accept:
+	btn = dare_chat.Clicked()
+	if btn != null
+		if btn == "btn_accept"
+			dare_chat.Add("Accept", "Right")
+			dare_chat.Add("We knew you couldn't say no. Welcome to The Dare. Standard test or pushing limits?", "Left")
+			dare_chat.SetButtons("Standard", "Hard Mode", ids = CreateList("btn_standard", "btn_hard"))
+			mission_dare.Goto("dare_wait_difficulty")
+		elseif btn == "btn_ignore"
+			dare_chat.Add("Ignore", "Right")
+			dare_chat.SetButtons()
+			mission_dare.Goto("dare_cooldown")
+
+dare_wait_difficulty:
+	listener = CreateListener("l_wait_difficulty")
+
+l_wait_difficulty:
+	btn = dare_chat.Clicked()
+	if btn != null
+		dare_chat.SetButtons() 
+		hard_mode = false
+		if btn == "btn_standard"
+			dare_chat.Add("Standard", "Right")
+			active_condition = CreateCondition("[Exposed_All]")
+			mission_dare.Goto("dare_setup", active_condition = active_condition, hard_mode = hard_mode)
+		elseif btn == "btn_hard"
+			dare_chat.Add("Hard Mode", "Right")
+			hard_mode = true
+			active_condition = CreateCondition("[Exposed_All]")
+			mission_dare.Goto("dare_setup", active_condition = active_condition, hard_mode = hard_mode)
+
+dare_setup:
+	UnequipAllCosplay()
+	EquipCosplay("m_cosplay_general_head_sun_glasses", "m_cosplay_general_upper_kubiwa", "m_cosplay_general_genital_ofuda", "m_cosplay_general_genital_tail_plug", "m_cosplay_maid_bag", "m_cosplay_maid_stocking", "m_cosplay_ninja_mask", "m_cosplay_kemono_ear_fox", "m_cosplay_bunny_harness_top", "m_cosplay_bunny_harness_under", "m_cosplay_bunny_nippless", "m_cosplay_bunny_shoes", "m_cosplay_suit_luxe_chorker")
+	EquipAdultToy("KuriRotor")
+	if hard_mode == true
+		EquipAdultToy("TitRotor")
+		SetVibrator("Random")
+	else
+		SetVibrator("Low")
+	LockHandcuffs(handcuffstype="Handcuff", attachtoobject=false, duration=0)
+	DropItem(itemtype="Coat", stage="Apart", x=-1.81, y=0.00, z=-0.20, compass=false)
+	DropItem(itemtype="HandcuffKey", stage="Apart", x=-1.81, y=0.00, z=-0.20, compass=false)
+	DropItem(itemtype="VibeRemocon", stage="Apart", x=-1.81, y=0.00, z=-0.20, compass=false)
+	SetStage("Mansion", daytime=true)
+	listener = CreateListener("l_dare_teleport", active_condition = active_condition)
+
+l_dare_teleport:
+	if delay_timer == null
+		delay_timer = 0
+	delay_timer = delay_timer + _timediff
+	if delay_timer >= 0.5
+		SetPlayerPosition(x=45.55, y=22.69, z=128.70, rx=0.00000, ry=-0.62495, rz=0.00000, rw=0.78066)
+		dare_chat.Add("Location services forced on. Make your way home. No slip-ups - we will be watching.", "Left")
+		dare_panel.SetText("Head to Residential Area to return home")
+		dare_panel.SetVisible(true)
+		mission_dare.Goto("dare_active_outbound", active_condition = active_condition)
+
+dare_active_outbound:
+	listener = CreateListener("l_active_outbound", active_condition = active_condition)
+
+l_active_outbound:
+	if active_condition.Check() == false
+		mission_dare.Goto("dare_fail")
+	elseif _state.Position.stage == "Residence"
+		dare_chat.Add("Pace is good. Don't let them see.", "Left")
+		dare_panel.SetText("Make Your Way Home")
+		mission_dare.Goto("dare_active_inbound", active_condition = active_condition)
+
+dare_active_inbound:
+	listener = CreateListener("l_active_inbound", active_condition = active_condition)
+
+l_active_inbound:
+	if active_condition.Check() == false
+		mission_dare.Goto("dare_fail")
+	elseif home_goal.Inside()
+		dare_chat.Add("The Dare is Complete. You made it home.", "Left")
+		dare_chat.Add("Reward transferred: 1000 RP.", "Left")
+		PlaySoundEffect("UICompleteMission")
+		UnlockHandcuffs()
+		SetVibrator("Off")
+		UnequipAllCosplay()
+		UnequipAdultToy("KuriRotor", "TitRotor")
+		CollectItem(itemtype="VibeRemocon")
+		AddCurrentRP(1000)
+		_save["dare_cleared"] = true
+		dare_menu.SetCleared(true)
+		dare_panel.SetVisible(false)
+		mission_dare.Goto("dare_cooldown")
+
+dare_cooldown:
+	listener = CreateListener("l_dare_cooldown")
+
+l_dare_cooldown:
+	if delay_timer == null
+		delay_timer = 0
+	delay_timer = delay_timer + _timediff
+	if delay_timer >= 60.0
+		mission_dare.Goto("dare_prompt")
+
+dare_fail:
+	dare_chat.Add("You altered state. Start over.", "Left")
+	dare_panel.SetVisible(false)
+	UnlockHandcuffs()
+	SetVibrator("Off")
+	UnequipAllCosplay()
+	UnequipAdultToy("KuriRotor", "TitRotor")
+	CollectItem(itemtype="VibeRemocon")
+	SetPlayerPosition(x=-1.81, y=0.00, z=-0.20)
+	SetStage("Apart", daytime=true)
+	mission_dare.Goto("dare_cooldown")

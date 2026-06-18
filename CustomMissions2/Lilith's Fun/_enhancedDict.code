@@ -1,0 +1,291 @@
+DynamicDict:
+	#Note Enhanced dictionary, suitable for scenarios with frequent data deletion.
+
+	keyGapCount = 0
+	keyGaps = CreateList()
+	length = 0
+	keys = CreateList()
+	keyIndexes = CreateList()
+	list = CreateList()
+
+	At:
+		#Params key: String|Number
+		#Returns value: Any
+		if key == null
+			key = _args[0]
+		if __IsValidKey(key)
+			_result = list[key]
+
+	ContainsKey:
+		#@Params key: String|Number
+		if key == null
+			key = _args[0]
+		if __IsValidKey(key)
+			if keyIndexes[key] != null
+				_result = true
+			else 
+				_result = false
+
+	Insert:
+		#Params key: String|Number, value: Any
+		if key == null
+			key = _args[0]
+		if value == null
+			value = _args[1]
+		if __IsValidKey(key) && __IsValidValue(value)
+			if keyIndexes[key] == null
+				lastKeyGapIndex = keyGapCount - 1
+				if lastKeyGapIndex >= 0
+					keyGap = keyGaps[lastKeyGapIndex]
+					keyGaps[lastKeyGapIndex] = null
+					keyGapCount = lastKeyGapIndex
+					keys[keyGap] = key
+					keyIndexes[key] = keyGap
+				else
+					keys[length] = key
+					keyIndexes[key] = length
+					length = length + 1
+			list[key] = value
+
+	Remove:
+		#Params key: String|Number
+		if key == null
+			key = _args[0]
+		if __IsValidKey(key)
+			keyIndex = keyIndexes[key]
+			if keyIndex != null
+				lastKeyIndex = length - 1
+				if keyIndex != lastKeyIndex
+					keyGaps[keyGapCount] = keyIndex
+					keyGapCount = keyGapCount + 1
+				else
+					length = length - 1
+				keyIndexes[key] = null
+				keys[keyIndex] = null
+				list[key] = null
+
+	Clear:
+		i = 0
+		while i < length
+			key = keys[i]
+			keyIndexes[key] = null
+			list[key] = null
+			i = i + 1
+		keys.Remove(index = 0, count = length)
+		keyGaps.Remove(index = 0, count = keyGapCount)
+		keyGapCount = 0
+		length = 0
+
+	GetKeys:
+		#Returns keys: List
+		data = CreateList()
+		i = 0
+		while i < length
+			key = keys[i]
+			if key != null
+				data.Insert(key)
+			i = i + 1
+		_result = data
+
+	GetList:
+		#Returns KeyValuePairs: List
+		data = Copy(list, true)
+		_result = data
+
+	GetCount:
+		#Returns countOfKeyValuePairs: Number
+		_result = length - keyGapCount
+
+	GetValues:
+		#Returns values: List
+		data = CreateList()
+		# listCopy = GetList()
+		i = 0
+		while i < length
+			# value = listCopy[keys[i]]
+			value = list[keys[i]]
+			if value != null
+				data.Insert(value)
+			i = i + 1
+		_result = data
+
+	__IsValidKey:
+		#Params@arr key: Any
+		#Returns isStringOrNumber: Bool
+		key = _args[0]
+		if key != null
+			type = GetType(key)
+			if type == "String" || type == "Number"
+				_result = true
+			else
+				_result = false
+		else
+			_result = false
+
+	__IsList:
+		#Params@arr list: Any
+		#Returns isList: Bool
+		list = _args[0]
+		if list != null
+			type = GetType(list)
+			if type == "List"
+				_result = true
+			else
+				_result = false
+		else
+			_result = false
+	
+	__IsValidValue:
+		value = _args[0]
+		if value == null
+			_result = false
+		else
+			_result = true
+
+	ClearKeyGaps:
+		#Note Consider calling this method periodically to reduce fragmented space.
+		while keyGapCount > 0
+			reader = length - 1
+			key = keys[reader]
+			if key != null
+				keyGapCount = keyGapCount - 1
+				keyGap = keyGaps[keyGapCount]
+				keyGaps.Remove()
+				if reader > keyGap
+					keys[keyGap] = key
+					keyIndexes[key] = keyGap
+					keys.Remove()
+					length = reader
+			else
+				length = reader
+
+
+
+
+
+StaticDict:
+	#Note Enhanced dictionary, suitable for scenarios where data deletion is infrequent
+
+	list = CreateList()
+	At:
+		#Params key: String|Number
+		#Returns value: Any
+		if key == null
+			key = _args[0]
+		if __IsValidKey(key)
+			_result = list[key]
+
+	Insert:
+		#Params key: String|Number, value: Any
+		if key == null
+			key = _args[0]
+		if value == null
+			value = _args[1]
+		if __IsValidKey(key) && __IsValidValue(value)
+			if list[key] == null
+				list.Insert(key)
+			list[key] = value
+
+	ContainsKey:
+		#@Params key: String|Number
+		if key == null
+			key = _args[0]
+		if __IsValidKey(key)
+			if list[key] != null
+				_result = true
+			else
+				_result = false
+
+	Remove:
+		#Params key: String|Number
+		#Warning Extremely inefficient. Avoid calling it whenever possible
+		if key == null
+			key = _args[0]
+		if __IsValidKey(key)
+			if list[key] != null
+				i = 0
+				count = list.Count()
+				targetIndex = -1
+				while i < count
+					if list[i] == key
+						targetIndex = i
+						i = count
+					i = i + 1
+				if targetIndex >= 0
+					list.Remove(targetIndex)
+					list[key] = null
+
+	Clear:
+		count = list.Count()
+		i = 0
+		while i < count
+			key = list[i]
+			list[key] = null
+			i = i + 1
+		list.Remove(index = 0, count = count)
+
+	GetKeys:
+		#Returns keys: List
+		data = CreateList()
+		i = 0
+		count = list.Count()
+		while i < count
+			key = list[i]
+			data.Insert(key)
+			i = i + 1
+		_result = data
+
+	GetList:
+		#Returns KeyValuePairs: List
+		data = Copy(list, true)
+		_result = data
+
+	GetCount:
+		#Returns countOfKeyValuePairs: Number
+		_result = list.Count()
+
+	GetValues:
+		#Returns values: List
+		data = CreateList()
+		# listCopy = GetList()
+		i = 0
+		count = list.Count()
+		while i < count
+			# value = listCopy[listCopy[i]]
+			value = list[list[i]]
+			data.Insert(value)
+			i = i + 1
+		_result = data
+
+	__IsValidKey:
+		#Params@arr key: Any
+		#Returns isStringOrNumber: Bool
+		key = _args[0]
+		if key != null
+			type = GetType(key)
+			if type == "String" || type == "Number"
+				_result = true
+			else
+				_result = false
+		else
+			_result = false
+
+	__IsList:
+		#Params@arr list: Any
+		#Returns isList: Bool
+		list = _args[0]
+		if list != null
+			type = GetType(list)
+			if type == "List"
+				_result = true
+			else
+				_result = false
+		else
+			_result = false
+	
+	__IsValidValue:
+		value = _args[0]
+		if value == null
+			_result = false
+		else
+			_result = true

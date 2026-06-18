@@ -1,0 +1,13 @@
+responserStart_:
+	#Note Response like:
+	# 'Start'
+	systemFacade = null
+	init:
+		#Required
+		#Params@arr systemFacade: Object
+		systemFacade = _args[0]
+
+	response:
+		#Required
+		#Params@arr requestBody: String
+		systemFacade.continue()

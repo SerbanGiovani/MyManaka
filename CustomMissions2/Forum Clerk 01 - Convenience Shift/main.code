@@ -1,0 +1,937 @@
+﻿CreateForumSubtitleObject:
+	obj = CreateText()
+	obj.SetSize(30)
+	obj.SetAnchor(0.5, 0.4)
+	obj.SetFace(color=Color(0.05,0.28,0.12), dilate=0.4)
+	obj.SetOutline(color=Color(1,1,1), width=0.2)
+	obj.SetFrontLayer(true)
+	_result = obj
+
+CreateManakaSubtitleObject:
+	obj = CreateText()
+	obj.SetSize(30)
+	obj.SetAnchor(0.5, 0.4)
+	obj.SetFace(color=Color(0.8,0.1,0.6), dilate=0.4)
+	obj.SetOutline(color=Color(1,1,1), width=0.2)
+	obj.SetFrontLayer(true)
+	_result = obj
+
+CreateInternalSubtitleObject:
+	obj = CreateText()
+	obj.SetSize(30)
+	obj.SetAnchor(0.5, 0.4)
+	obj.SetFace(color=Color(0.35,0.08,0.25), dilate=0.4)
+	obj.SetOutline(color=Color(1,1,1), width=0.2)
+	obj.SetFrontLayer(true)
+	_result = obj
+
+bus_init:
+	result = CreateList()
+	result.flags = CreateList()
+	_result = result
+
+subtitles_forum = CreateForumSubtitleObject()
+subtitles_forum_interrupt = CreateForumSubtitleObject()
+subtitles_manaka = CreateManakaSubtitleObject()
+subtitles_manaka_internal = CreateInternalSubtitleObject()
+subtitles_generic = CreateInternalSubtitleObject()
+
+subtitle_thread = CreateThread("subtitles_manager")
+ecstasy_thread = CreateThread("ecstasy_manager")
+npc_thinner_thread = CreateThread("npc_thinner")
+bus = bus_init()
+
+chat = CreateMessengerChat("Clerk Forum", iconcolor = Color(0.05,0.7,0.25), icontext = "CF", icontextcolor = Color(1,1,1))
+missionpanel = CreateMissionPanel()
+mp = missionpanel
+
+zipsound = CreateAudio("zip.wav")
+gaspsound = CreateAudio("gasp.wav")
+orgasmsound = CreateAudio("orgasm.wav")
+skirt_off_sound = CreateAudio("skirt_off.mp3")
+stocking_off_sound = CreateAudio("stocking_off.mp3")
+
+mainthread = CreateThread("main")
+
+customer = null
+all_panties = CreateList("m_cosplay_general_upper_race_pants", "m_cosplay_general_upper_ultimate_pants", "m_cosplay_general_upper_chack_bikini_pants", "m_cosplay_general_upper_micro_bikini_pants", "m_cosplay_succubus_cosplay_pants", "m_cosplay_sister_pants", "m_cosplay_cow_pants", "m_cosplay_suit_chic_panty", "m_cosplay_sweater_pants")
+
+clit_tease_condition_text = "[Action_OnaniArmKuri]"
+nipple_tease_condition_text = "[Action_ChikubiRotate]"
+basic_self_condition_text = "[Action_OnaniNormal]"
+supine_self_condition_text = "[Action_OnaniNeGanimata]"
+hip_shake_condition_text = "[Action_HipShake]"
+pee_condition_text = "[(Peeing,Action_PeeStand,Action_PeeKaikyaku)]"
+no_expose_full_work_text = "[Cosplay_m_cosplay_suit_chic_stocking,Cosplay_m_cosplay_suit_chic_shoes,Cosplay_m_cosplay_suit_chic_shirt,Cosplay_m_cosplay_suit_chic_jacket,Cosplay_m_cosplay_suit_chic_card,Cosplay_m_cosplay_suit_chic_skirt,Action_OnaniArmKuri,!Exposed_Front,!Exposed_Hip,!Exposed_All]"
+
+check_starting_conditions:
+	cosplay = CreateList()
+	cosplay.Insert(CreateList("m_cosplay_suit_chic_stocking", "suit_chic 丝袜"))
+	cosplay.Insert(CreateList("m_cosplay_suit_chic_shoes", "suit_chic 鞋子"))
+	cosplay.Insert(CreateList("m_cosplay_suit_chic_shirt", "suit_chic 衬衫"))
+	cosplay.Insert(CreateList("m_cosplay_suit_chic_jacket", "suit_chic 夹克"))
+	cosplay.Insert(CreateList("m_cosplay_suit_chic_card", "suit_chic 卡片"))
+	cosplay.Insert(CreateList("m_cosplay_suit_chic_skirt", "suit_chic 裙子"))
+	
+	missing = CreateList()
+	i = cosplay.Count()
+	while i > 0
+		i = i - 1
+		if _state.Cosplay[cosplay[i][0]] == null
+			missing.Insert(cosplay[i][1])
+	_result = missing
+
+clear_clerk_cosplay:
+	UnequipCosplay("m_cosplay_suit_chic_stocking")
+	UnequipCosplay("m_cosplay_suit_chic_shoes")
+	UnequipCosplay("m_cosplay_suit_chic_shirt")
+	UnequipCosplay("m_cosplay_suit_chic_jacket")
+	UnequipCosplay("m_cosplay_suit_chic_card")
+	UnequipCosplay("m_cosplay_suit_chic_skirt")
+
+equip_full_clerk:
+	clear_clerk_cosplay()
+	EquipCosplay(CreateList("m_cosplay_suit_chic_stocking", "m_cosplay_suit_chic_shoes", "m_cosplay_suit_chic_shirt", "m_cosplay_suit_chic_jacket", "m_cosplay_suit_chic_card", "m_cosplay_suit_chic_skirt"))
+
+equip_no_shirt:
+	clear_clerk_cosplay()
+	EquipCosplay(CreateList("m_cosplay_suit_chic_stocking", "m_cosplay_suit_chic_shoes", "m_cosplay_suit_chic_jacket", "m_cosplay_suit_chic_card", "m_cosplay_suit_chic_skirt"))
+
+equip_no_shirt_skirt:
+	clear_clerk_cosplay()
+	EquipCosplay(CreateList("m_cosplay_suit_chic_stocking", "m_cosplay_suit_chic_shoes", "m_cosplay_suit_chic_jacket", "m_cosplay_suit_chic_card"))
+
+equip_no_shirt_skirt_stocking:
+	clear_clerk_cosplay()
+	EquipCosplay(CreateList("m_cosplay_suit_chic_shoes", "m_cosplay_suit_chic_jacket", "m_cosplay_suit_chic_card"))
+
+equip_bare_clerk:
+	clear_clerk_cosplay()
+	EquipCosplay(CreateList("m_cosplay_suit_chic_jacket", "m_cosplay_suit_chic_card"))
+
+equip_shirt_recovery_clerk:
+	clear_clerk_cosplay()
+	EquipCosplay(CreateList("m_cosplay_suit_chic_shirt", "m_cosplay_suit_chic_jacket", "m_cosplay_suit_chic_card"))
+
+drop_coat_work:
+	CollectItem(itemtype="Coat")
+	DropItem(itemtype="Coat", stage="Apart", x=1.8, y=0, z=0.5, compass=false)
+
+setup_customer:
+	customer = null
+
+save_current_panties:
+	panties = CreateList()
+	i = 0
+	while i < all_panties.Count()
+		if _state.Cosplay[all_panties[i]] == true
+			panties.Insert(all_panties[i])
+		i = i + 1
+	_save.clerk_panties = panties
+
+unequip_saved_panties:
+	if _save.clerk_panties != null
+		i = 0
+		while i < _save.clerk_panties.Count()
+			UnequipCosplay(_save.clerk_panties[i])
+			i = i + 1
+
+equip_saved_panties:
+	if _save.clerk_panties != null
+		OwnCosplay(_save.clerk_panties, owns=true)
+		EquipCosplay(_save.clerk_panties)
+		_save.clerk_panties = null
+
+npc_thinner:
+	if this == null
+		this = CreateList()
+		this.active = false
+		this.max_active = 1
+		this.scan_interval = 2.5
+		this.timer = 0
+		this.npcs = CreateList()
+		this.routed = CreateList()
+	
+	runner = CreateListenerLocal("npc_thinner_runner")
+	
+	Init: # max_active
+		this.active = true
+		this.max_active = 1
+		if max_active != null
+			this.max_active = max_active
+		this.timer = 0
+		this.npcs = CreateList()
+		this.routed = CreateList()
+	
+	Stop:
+		this.active = false
+	
+	npc_thinner_runner:
+		if this.active
+			this.timer = this.timer + _timediff
+			if this.timer >= this.scan_interval
+				this.timer = 0
+				if _state.Position.stage == "Convenience"
+					visible_count = 0
+					index = _state.NPCs.Count() - 1
+					while index >= 0
+						id = _state.NPCs[index].ID
+						if id < 1000000
+							npc = this.npcs[id]
+							if npc == null
+								npc = CreateNPC(id)
+								this.npcs[id] = npc
+							if npc != null && npc.IsAlive()
+								npc.SkipStrangeness(true)
+								npc.CanGameOver(false)
+								if visible_count < this.max_active
+									visible_count = visible_count + 1
+								else
+									if this.routed[id] == null
+										npc.ClearWaypoints()
+										npc.Warp(position=Vector(4.6, 0.12, -18.8))
+										npc.AddWaypoint(Vector(6.0, 0.12, -21.0), last=true)
+										this.routed[id] = true
+						index = index - 1
+
+main:
+	thread = _this
+	thread.Goto("init")
+	
+	init:
+		if (_save.checkpoint == null)
+			_save.checkpoint = 0
+		
+		chat.Add("收藏的帖子：如果夜班太无聊，就给自己定一个不会被任何人发现的小规则。", "Left", user="Forum", silent=true)
+		chat.Add("我盯着这行字看了很久。明明只是普通上班，心里却像被轻轻碰了一下。", "Right", user="Manaka", silent=true)
+		
+		if _save.checkpoint == 0
+			chat.SetButtons("锁屏上班")
+		else
+			chat.SetButtons("锁屏上班", "从上次那里继续")
+		
+		listener = CreateListenerLocal("waitforbuttoncheckpoint")
+	
+	waitforbuttoncheckpoint:
+		if chat.Clicked() == 0
+			missing = check_starting_conditions()
+			if missing.Count() == 0
+				chat.SetButtons()
+				chat.Add("只是无聊而已。我只是想让今晚不那么无聊。", "Right", user="Manaka", silent=true)
+				chat.Add("手机被我按灭了。屏幕黑下去的时候，我忽然有点后悔，又有点期待。", "Right", user="Manaka", silent=true)
+				_save.checkpoint = 0
+				thread.Goto("start_after_phone")
+			else
+				chat.Add("我还缺几样东西。这样会出戏。", "Right", user="Manaka", silent=true)
+				i = missing.Count()
+				while i > 0
+					i = i - 1
+					chat.Add(missing[i], "Right", user="Manaka", silent=true)
+				thread.Goto("init")
+		elseif chat.Clicked() == 1
+			chat.SetButtons()
+			chat.Add("我不想从头再紧张一遍。可想到可以继续，心跳还是自己变快了。", "Right", user="Manaka", silent=true)
+			thread.Goto("start_after_phone")
+	
+	start_after_phone:
+		if _save.checkpoint == 0
+			SetStage("Convenience")
+			SetPlayerPosition(x=1.27, y=0.12, z=-6.75, rx=0.00000, ry=0.99763, rz=0.00000, rw=-0.06886)
+		listener = CreateListenerLocal("wait_listener", duration=2.0, nextcheckpoint="start_wait_phone_close")
+	
+	start_wait_phone_close:
+		listener = CreateListenerLocal("chat_closed_listener", nextcheckpoint="start")
+	
+	start:
+		subtitle_thread.Init(bus=bus)
+		ecstasy_thread.Init(bus=bus)
+		npc_thinner_thread.Init(max_active=1)
+		SetStage("Convenience")
+		
+		if _save.checkpoint == 1
+			thread.Goto("checkpoint_1")
+		elseif _save.checkpoint == 2
+			thread.Goto("checkpoint_2")
+		elseif _save.checkpoint == 3
+			thread.Goto("checkpoint_3")
+		elseif _save.checkpoint == 4
+			thread.Goto("checkpoint_4")
+		elseif _save.checkpoint == 5
+			thread.Goto("checkpoint_5")
+		else
+			thread.Goto("start_fresh")
+	
+	start_fresh:
+		ShowBlackscreen(fadein = 0.2, duration = 1.5, fadeout = 0.2)
+		SetStage("Convenience")
+		SetPlayerPosition(x=1.27, y=0.12, z=-6.75, rx=0.00000, ry=0.99763, rz=0.00000, rw=-0.06886)
+		equip_full_clerk()
+		drop_coat_work()
+		thread.Goto("clock_in_delay")
+	
+	clock_in_delay:
+		listener = CreateListenerLocal("wait_listener", duration=1.4, nextcheckpoint="clock_in")
+	
+	checkpoint_1:
+		SetStage("Convenience")
+		SetPlayerPosition(x=1.27, y=0.12, z=-6.75, rx=0.00000, ry=0.99763, rz=0.00000, rw=-0.06886)
+		equip_full_clerk()
+		drop_coat_work()
+		thread.Goto("checkout_intro")
+	
+	checkpoint_2:
+		SetStage("Convenience")
+		SetPlayerPosition(x=-3.14, y=0.12, z=-8.34, rx=0.00000, ry=0.99808, rz=0.00000, rw=0.06192)
+		equip_no_shirt()
+		drop_coat_work()
+		thread.Goto("shirt_after")
+	
+	checkpoint_3:
+		SetStage("Convenience")
+		SetPlayerPosition(x=-1.11, y=0.12, z=-12.42, rx=0.00000, ry=0.99808, rz=0.00000, rw=0.06192)
+		equip_no_shirt_skirt()
+		drop_coat_work()
+		thread.Goto("skirt_after")
+	
+	checkpoint_4:
+		SetStage("Convenience")
+		SetPlayerPosition(x=-3.18, y=0.12, z=-8.97, rx=0.00000, ry=0.99808, rz=0.00000, rw=0.06192)
+		equip_bare_clerk()
+		drop_coat_work()
+		thread.Goto("bright_light_after_shoes")
+	
+	checkpoint_5:
+		SetStage("Convenience")
+		SetPlayerPosition(x=-3.14, y=0.12, z=-8.34, rx=0.00000, ry=0.99808, rz=0.00000, rw=0.06192)
+		equip_shirt_recovery_clerk()
+		drop_coat_work()
+		thread.Goto("recovery_intro")
+	
+	clock_in:
+		_save.checkpoint = 1
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）收银台后面和平时一样窄。灯管嗡嗡响，冰柜也嗡嗡响，夜班无聊得像一张没有写字的收据。", duration=6.8))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）我已经换好了工作服，夹克、名牌、裙子和丝袜都在。看起来很正常。正常到让我想试试看，能不能在正常里面藏一点不正常。", duration=8.2))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, text="只是找点乐子。", duration=2.2))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="checkout_intro")
+	
+	checkout_intro:
+		_save.checkpoint = 1
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）先从最小的开始。不要脱衣服，不要让任何地方露出来，只是在柜台遮挡下面偷偷碰一下。", duration=6.2))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）如果门铃响了，我就立刻停手，抬头说欢迎光临。想到这里，我的手反而更不听话了。", duration=6.6))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, text="真的只是一小会儿。", duration=2.5))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="checkout_touch")
+	
+	checkout_touch:
+		area = CreateArea(type="sphere", stage="Convenience", x=1.27, y=0.12, z=-6.75, r=1.05)
+		zone = CreateZone(area)
+		condition = CreateCondition(no_expose_full_work_text)
+		missionpanel.SetText("在收银台后玩弄阴蒂，不要打开衣服")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		listener = CreateListenerLocal("generic_listener", nextcheckpoint="checkout_after_touch", maxduration=8, panelmode=2, reset=true)
+	
+	checkout_after_touch:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		SetAction("None")
+		missionpanel.SetVisible(false)
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）手离开的时候，我才发现自己一直屏着呼吸。没有人发现，收银机还安静地亮着。", duration=5.4))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）明明应该松一口气，可我脑子里冒出来的第一个念头却是：这样就结束了吗？", duration=5.4))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, text="去补一下冷饮吧。", duration=2.4))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="go_drinks")
+	
+	go_drinks:
+		area = CreateArea(type="sphere", stage="Convenience", x=-3.14, y=0.12, z=-8.34, r=0.75)
+		zone = CreateZone(area)
+		condition = CreateCondition("Action_None")
+		missionpanel.SetText("前往冷饮柜：从收银台出来，去左侧冷饮柜前")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		listener = CreateListenerLocal("move_to_zone_listener", nextcheckpoint="shirt_prompt")
+	
+	shirt_prompt:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		missionpanel.SetText("把衬衫留在冷饮柜旁")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(false)
+		shirt_prompt_area = CreateInteractArea(stage="Convenience", x=-3.14, y=0.12, z=-8.34, r=0.45, text="解开衬衫")
+		
+		wait_shirt_prompt:
+			if shirt_prompt_area.Check()
+				zipsound.Play()
+				UnequipCosplay("m_cosplay_suit_chic_shirt")
+				missionpanel.SetVisible(false)
+				thread.Goto("shirt_after")
+		listener = CreateListenerLocal("wait_shirt_prompt")
+	
+	shirt_after:
+		_save.checkpoint = 2
+		gaspsound.Play()
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）衬衫从身上滑下去的一瞬间，冷饮柜的白光像水一样贴到胸口。我差点立刻把它捡回来。", duration=6.4))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）可是夹克和名牌还在。远远看过去，我仍然像个普通店员。这个发现让我更害怕，也更兴奋。", duration=7.0))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, text="别看玻璃。", duration=2.2))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="shirt_nipple_touch")
+	
+	shirt_nipple_touch:
+		area = CreateArea(type="sphere", stage="Convenience", x=-3.14, y=0.12, z=-8.34, r=0.75)
+		zone = CreateZone(area)
+		condition = CreateCondition(nipple_tease_condition_text)
+		missionpanel.SetText("脱掉衬衫后，在冷饮柜旁玩弄乳头")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		listener = CreateListenerLocal("generic_listener", nextcheckpoint="shirt_nipple_done", maxduration=5, panelmode=2, reset=true)
+	
+	shirt_nipple_done:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		SetAction("None")
+		missionpanel.SetVisible(false)
+		thread.Goto("go_snacks")
+	
+	go_snacks:
+		area = CreateArea(type="sphere", stage="Convenience", x=-1.11, y=0.12, z=-12.42, r=0.8)
+		zone = CreateZone(area)
+		condition = CreateCondition("[!Cosplay_m_cosplay_suit_chic_shirt,Cosplay_m_cosplay_suit_chic_skirt,Cosplay_m_cosplay_suit_chic_stocking,Cosplay_m_cosplay_suit_chic_shoes]")
+		missionpanel.SetText("前往零食货架：沿着冷饮柜旁的通道往里走")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		listener = CreateListenerLocal("move_to_zone_listener", nextcheckpoint="skirt_prompt")
+	
+	skirt_prompt:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）我假装整理薯片。包装袋被指尖碰得沙沙响，像在替我掩饰呼吸。", duration=5.6))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）柜台那边看不到这里。冷饮柜的玻璃也看不到这里。这个念头像借口一样冒出来。", duration=5.8))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, text="裙子……也可以先放一下。", duration=3.0))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="skirt_interact")
+	
+	skirt_interact:
+		missionpanel.SetText("把裙子留在零食架下")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(false)
+		skirt_prompt_area = CreateInteractArea(stage="Convenience", x=-1.11, y=0.12, z=-12.42, r=0.45, text="脱下裙子")
+		
+		wait_skirt_prompt:
+			if skirt_prompt_area.Check()
+				skirt_off_sound.Play()
+				UnequipCosplay("m_cosplay_suit_chic_skirt")
+				missionpanel.SetVisible(false)
+				thread.Goto("skirt_after")
+		listener = CreateListenerLocal("wait_skirt_prompt")
+	
+	skirt_after:
+		_save.checkpoint = 3
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）裙子也落在货架旁边了。丝袜还包着腿，鞋跟还踩在地上，名牌还晃在胸前。", duration=6.4))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）这不像裸体。更糟。像一个工作到一半忽然偏离轨道的店员。", duration=5.4))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）我本来只是想找点乐子，可现在已经开始期待下一步会有多过分。", duration=5.2))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="snack_hold")
+	
+	snack_hold:
+		area = CreateArea(type="sphere", stage="Convenience", x=-1.11, y=0.12, z=-12.42, r=0.8)
+		zone = CreateZone(area)
+		condition = CreateCondition("[!Cosplay_m_cosplay_suit_chic_shirt,!Cosplay_m_cosplay_suit_chic_skirt,Cosplay_m_cosplay_suit_chic_stocking,Cosplay_m_cosplay_suit_chic_shoes]")
+		missionpanel.SetText("扶着货架，冷静 6 秒")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		listener = CreateListenerLocal("generic_listener", nextcheckpoint="snack_touch", maxduration=6, panelmode=2, reset=true)
+	
+	snack_touch:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		area = CreateArea(type="sphere", stage="Convenience", x=-1.11, y=0.12, z=-12.42, r=0.8)
+		zone = CreateZone(area)
+		condition = CreateCondition(basic_self_condition_text)
+		missionpanel.SetText("在零食架后自慰")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		bus.flags["ecstasy.clamp"] = CreateList(min=0.15, max=0.65)
+		listener = CreateListenerLocal("generic_listener", nextcheckpoint="snack_after_touch", maxduration=7, panelmode=2, reset=true)
+	
+	snack_after_touch:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		SetAction("None")
+		missionpanel.SetVisible(false)
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）我差点忘了自己还在营业中的店里。这个念头一回来，身体反而更热。", duration=5.0))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）去门口看一眼吧。只是确认有没有客人。只是确认而已。", duration=4.6))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="door_risk")
+	
+	door_risk:
+		setup_customer()
+		area = CreateArea(type="sphere", stage="Convenience", x=1.02, y=0.12, z=-11.68, r=0.85)
+		zone = CreateZone(area)
+		condition = CreateCondition("Action_None")
+		missionpanel.SetText("前往店门口：确认有没有顾客靠近")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		listener = CreateListenerLocal("move_to_zone_listener", nextcheckpoint="door_after")
+	
+	door_after:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		missionpanel.SetVisible(false)
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）门口的光晃了一下，我几乎以为有人进来了。喉咙一下子发紧。", duration=5.0))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）我站得很直，像在检查货架。越装作平静，越能感觉到自己现在有多不像平时。", duration=6.6))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）害怕没有让我停下来。它像一根细线，把我往更亮的地方牵。", duration=5.4))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="go_magazines")
+	
+	go_magazines:
+		area = CreateArea(type="sphere", stage="Convenience", x=-2.1, y=0.12, z=-14.15, r=0.8)
+		zone = CreateZone(area)
+		condition = CreateCondition("[!Cosplay_m_cosplay_suit_chic_shirt,!Cosplay_m_cosplay_suit_chic_skirt,Cosplay_m_cosplay_suit_chic_stocking,Cosplay_m_cosplay_suit_chic_shoes]")
+		missionpanel.SetText("前往杂志架：从门口折回侧边货架")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		listener = CreateListenerLocal("move_to_zone_listener", nextcheckpoint="stocking_prompt")
+	
+	stocking_prompt:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）大腿出了汗，丝袜贴着皮肤。空调风钻进夹克下面，凉得我腿根发紧。", duration=6.0))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）如果把丝袜也脱掉，脚步声会不会变轻？还是我的心跳会变得更吵？", duration=5.6))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="stocking_interact")
+	
+	stocking_interact:
+		missionpanel.SetText("把丝袜留在杂志架旁")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(false)
+		stocking_prompt_area = CreateInteractArea(stage="Convenience", x=-2.1, y=0.12, z=-14.15, r=0.45, text="脱下丝袜")
+		
+		wait_stocking_prompt:
+			if stocking_prompt_area.Check()
+				SetAction("TakeOffPants")
+				stocking_off_sound.Play()
+				missionpanel.SetVisible(false)
+				thread.Goto("stocking_takeoff_wait")
+		listener = CreateListenerLocal("wait_stocking_prompt")
+	
+	stocking_takeoff_wait:
+		listener = CreateListenerLocal("wait_listener", duration=2.6, nextcheckpoint="stocking_after")
+	
+	stocking_after:
+		UnequipCosplay("m_cosplay_suit_chic_stocking")
+		SetAction("None")
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）空气直接碰到腿上，凉意细细地爬上来。我突然觉得自己比刚才更没有退路。", duration=6.0))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, text="鞋子还在。至少走路的声音还正常。", duration=3.5))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）可我已经开始讨厌这个“至少”了。", duration=3.6))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="stocking_hip_shake")
+	
+	stocking_hip_shake:
+		area = CreateArea(type="sphere", stage="Convenience", x=-2.0, y=0.12, z=-13.95, r=0.75)
+		zone = CreateZone(area)
+		condition = CreateCondition(hip_shake_condition_text)
+		missionpanel.SetText("脱掉丝袜后，扶着货架扭动屁股")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		listener = CreateListenerLocal("generic_listener", nextcheckpoint="go_light", maxduration=4, panelmode=2, reset=true)
+	
+	go_light:
+		area = CreateArea(type="sphere", stage="Convenience", x=-3.18, y=0.12, z=-8.97, r=0.8)
+		zone = CreateZone(area)
+		condition = CreateCondition("[!Cosplay_m_cosplay_suit_chic_shirt,!Cosplay_m_cosplay_suit_chic_skirt,!Cosplay_m_cosplay_suit_chic_stocking,Cosplay_m_cosplay_suit_chic_shoes]")
+		missionpanel.SetText("前往货架灯下：走到冷白灯最亮的位置")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		listener = CreateListenerLocal("move_to_zone_listener", nextcheckpoint="shoes_prompt")
+	
+	shoes_prompt:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		missionpanel.SetText("把鞋子留在货架灯下")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(false)
+		shoes_prompt_area = CreateInteractArea(stage="Convenience", x=-3.0, y=0.12, z=-8.72, r=0.45, text="脱下鞋子")
+		
+		wait_shoes_prompt:
+			if shoes_prompt_area.Check()
+				UnequipCosplay("m_cosplay_suit_chic_shoes")
+				missionpanel.SetVisible(false)
+				thread.Goto("shoes_done")
+		listener = CreateListenerLocal("wait_shoes_prompt")
+	
+	shoes_done:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		missionpanel.SetVisible(false)
+		thread.Goto("bright_light_after_shoes")
+	
+	bright_light_after_shoes:
+		_save.checkpoint = 4
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）脚底刚碰到瓷砖，凉意就从脚心往上窜。我差点发出声音。", duration=5.2))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）没有丝袜，也没有鞋，只有夹克和名牌还在撑着我的店员身份。", duration=6.5))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）到这里就够了吧。可是身体像已经记住了刚才的节奏，根本不想听我说够了。", duration=6.0))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="light_touch")
+	
+	light_touch:
+		area = CreateArea(type="sphere", stage="Convenience", x=-3.18, y=0.12, z=-8.97, r=0.8)
+		zone = CreateZone(area)
+		condition = CreateCondition(supine_self_condition_text)
+		missionpanel.SetText("在灯下仰卧自慰，直到快要失控")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		bus.flags["ecstasy.clamp"] = CreateList(min=0.35, max=0.9)
+		listener = CreateListenerLocal("generic_listener", nextcheckpoint="pee_urgency", maxduration=8, panelmode=2, reset=true)
+	
+	pee_urgency:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		SetAction("None")
+		missionpanel.SetVisible(false)
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）刚站起来，腹部忽然一紧。不是兴奋过去了，是另一种更现实、更糟糕的急迫追了上来。", duration=6.2))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）如果就这样尿出来，内裤一定会湿。那样太明显了。果然还是先把衬衣穿上比较好……衬衣能挡住吗？", duration=7.4))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）这样不会被发现吧。不会的。只是回去整理一下工作区。只是这样而已。", duration=5.8))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="pre_pee_recover_shirt")
+	
+	pre_pee_recover_shirt:
+		area = CreateArea(type="sphere", stage="Convenience", x=-2.95, y=0.12, z=-8.1, r=0.7)
+		zone = CreateZone(area)
+		condition = CreateCondition("Action_None")
+		missionpanel.SetText("先回冷饮柜旁穿上衬衫")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		listener = CreateListenerLocal("move_to_zone_listener", nextcheckpoint="pre_pee_shirt_prompt")
+	
+	pre_pee_shirt_prompt:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		missionpanel.SetText("穿上衬衫遮住身体")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(false)
+		pre_pee_shirt_area = CreateInteractArea(stage="Convenience", x=-2.95, y=0.12, z=-8.1, r=0.45, text="穿上衬衫")
+		
+		wait_pre_pee_shirt:
+			if pre_pee_shirt_area.Check()
+				EquipCosplay("m_cosplay_suit_chic_shirt")
+				missionpanel.SetVisible(false)
+				thread.Goto("pre_pee_shirt_after")
+		listener = CreateListenerLocal("wait_pre_pee_shirt")
+	
+	pre_pee_shirt_after:
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）白色衬衣重新贴到身上，我终于像一点店员了。可正因为被遮住了，那个念头反而更清楚。", duration=6.6))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）突然想尝试更大胆的事情。只要下面没有内裤，就不会弄湿。现在停下还来得及……可是我不想停。", duration=7.6))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="pre_pee_panties_prompt")
+	
+	pre_pee_panties_prompt:
+		missionpanel.SetText("偷偷脱下内裤，留在冷饮柜旁")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(false)
+		pre_pee_panties_area = CreateInteractArea(stage="Convenience", x=-2.85, y=0.12, z=-8.0, r=0.45, text="脱下内裤")
+		
+		wait_pre_pee_panties:
+			if pre_pee_panties_area.Check()
+				save_current_panties()
+				stocking_off_sound.Play()
+				missionpanel.SetVisible(false)
+				thread.Goto("pre_pee_panties_drop")
+		listener = CreateListenerLocal("wait_pre_pee_panties")
+	
+	pre_pee_panties_drop:
+		listener = CreateListenerLocal("wait_listener", duration=1.4, nextcheckpoint="pre_pee_panties_after")
+	
+	pre_pee_panties_after:
+		unequip_saved_panties()
+		if _save.clerk_panties != null && _save.clerk_panties.Count() > 0
+			OwnCosplay(_save.clerk_panties, owns=false)
+			DropItem(itemtype="Pants", stage="Convenience", x=-2.85, y=0.12, z=-8.0, compass=false)
+		SetAction("None")
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）现在我下面是光溜溜的了。布料从腿边离开的感觉轻得吓人，也刺激得让我差点忘了呼吸。", duration=7.0))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）还要经过门口。希望他们不会发现。没想到，我会做出这样大胆的事。", duration=6.4))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="return_work_pee")
+	
+	return_work_pee:
+		area = CreateArea(type="sphere", stage="Convenience", x=1.27, y=0.12, z=-6.75, r=1.1)
+		zone = CreateZone(area)
+		condition = CreateCondition("Action_None")
+		missionpanel.SetText("穿过门口附近，回到收银台后的工作区")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		listener = CreateListenerLocal("move_to_zone_listener", nextcheckpoint="counter_pee")
+	
+	counter_pee:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		area = CreateArea(type="sphere", stage="Convenience", x=1.08, y=0.12, z=-6.55, r=0.65)
+		zone = CreateZone(area)
+		condition = CreateCondition(pee_condition_text)
+		missionpanel.SetText("在柜台后偷偷小便：排尿、站立小便或开腿小便")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		listener = CreateListenerLocal("generic_listener", nextcheckpoint="return_work_touch", maxduration=5, panelmode=2, reset=true)
+	
+	return_work_touch:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		area = CreateArea(type="sphere", stage="Convenience", x=1.27, y=0.12, z=-6.75, r=1.1)
+		zone = CreateZone(area)
+		condition = CreateCondition(basic_self_condition_text)
+		missionpanel.SetText("在收银台后继续自慰")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		listener = CreateListenerLocal("generic_listener", nextcheckpoint="work_delivery", maxduration=5, panelmode=2, reset=true)
+	
+	work_delivery:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		missionpanel.SetVisible(false)
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）我站在工作位旁，把想象中的商品放到台面上。手还没有停。", duration=5.0))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）这个动作太荒唐了。可正因为像工作的一部分，才让我更不敢相信自己正在享受。", duration=6.6))
+		sd.Insert(SP_Ecstasy(key="jump", value=0.9))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, text="停下……现在必须停下。", duration=2.8))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）可是越想停，越像把自己推到了最后一步。", duration=4.0))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="climax")
+	
+	climax:
+		_save.checkpoint = 5
+		orgasmsound.Play()
+		SetAction("None")
+		sd = CreateList()
+		sd.Insert(SP_Ecstasy(key="orgasm", value=2))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）世界一下子缩成柜台、灯光和自己急促的呼吸。我咬住嘴唇，身体还是忍不住发抖。", duration=6.2))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）我真的在上班的时候做完了。这个事实慢慢落下来，重得让我站不稳。", duration=6.2))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, text="先收拾好。快点。", duration=2.7))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="recovery_intro")
+	
+	recovery_intro:
+		_save.checkpoint = 5
+		missionpanel.SetVisible(false)
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）店里的一切都和平时一样。货架、收银台、冰柜、门铃。只有我知道刚才发生了什么。", duration=6.3))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）兴奋退下去以后，害怕才慢慢追上来。我得把路线倒着走一遍，把自己拼回普通店员的样子。", duration=7.0))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, text="先把内裤找回来。", duration=2.6))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="recover_panties")
+	
+	recover_panties:
+		area = CreateArea(type="sphere", stage="Convenience", x=-2.85, y=0.12, z=-8.0, r=0.7)
+		zone = CreateZone(area)
+		condition = CreateCondition("Action_None")
+		missionpanel.SetText("返回冷饮柜旁找回内裤")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		listener = CreateListenerLocal("move_to_zone_listener", nextcheckpoint="recover_panties_prompt")
+	
+	recover_panties_prompt:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		missionpanel.SetText("穿回内裤")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(false)
+		recover_panties_area = CreateInteractArea(stage="Convenience", x=-2.85, y=0.12, z=-8.0, r=0.45, text="穿回内裤")
+		
+		wait_recover_panties:
+			if recover_panties_area.Check()
+				CollectItem(itemtype="Pants")
+				SetAction("TakeOnPants")
+				missionpanel.SetVisible(false)
+				thread.Goto("recover_panties_wear")
+		listener = CreateListenerLocal("wait_recover_panties")
+	
+	recover_panties_wear:
+		listener = CreateListenerLocal("wait_listener", duration=3.0, nextcheckpoint="recover_panties_done")
+	
+	recover_panties_done:
+		SetAction("None")
+		equip_saved_panties()
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）内裤重新贴回去的时候，我才敢慢慢吐气。刚才那一路竟然真的没有人发现。", duration=6.0))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="recover_stocking")
+	
+	recover_shoes:
+		area = CreateArea(type="sphere", stage="Convenience", x=-3.0, y=0.12, z=-8.72, r=0.75)
+		zone = CreateZone(area)
+		condition = CreateCondition("Action_None")
+		missionpanel.SetText("返回货架灯下找回鞋子")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		listener = CreateListenerLocal("move_to_zone_listener", nextcheckpoint="recover_shoes_prompt")
+	
+	recover_shoes_prompt:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		missionpanel.SetText("穿回鞋子")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(false)
+		recover_shoes_area = CreateInteractArea(stage="Convenience", x=-3.0, y=0.12, z=-8.72, r=0.45, text="穿回鞋子")
+		
+		wait_recover_shoes:
+			if recover_shoes_area.Check()
+				EquipCosplay("m_cosplay_suit_chic_shoes")
+				missionpanel.SetVisible(false)
+				thread.Goto("recover_shoes_done")
+		listener = CreateListenerLocal("wait_recover_shoes")
+	
+	recover_shoes_done:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）脚重新踩进鞋里时，我竟然有一点舍不得那种冰凉的感觉。刚才的大胆还留在脚底。", duration=5.4))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="recover_skirt")
+	
+	recover_stocking:
+		area = CreateArea(type="sphere", stage="Convenience", x=-2.0, y=0.12, z=-13.95, r=0.75)
+		zone = CreateZone(area)
+		condition = CreateCondition("Action_None")
+		missionpanel.SetText("返回杂志架找回丝袜")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		listener = CreateListenerLocal("move_to_zone_listener", nextcheckpoint="recover_stocking_prompt")
+	
+	recover_stocking_prompt:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		missionpanel.SetText("穿回丝袜")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(false)
+		recover_stocking_area = CreateInteractArea(stage="Convenience", x=-2.0, y=0.12, z=-13.95, r=0.45, text="穿回丝袜")
+		
+		wait_recover_stocking:
+			if recover_stocking_area.Check()
+				EquipCosplay("m_cosplay_suit_chic_stocking")
+				missionpanel.SetVisible(false)
+				thread.Goto("recover_stocking_done")
+		listener = CreateListenerLocal("wait_recover_stocking")
+	
+	recover_stocking_done:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）丝袜重新贴回腿上，残留的汗意和布料混在一起。恢复正常的过程，竟然也让我脸红。", duration=5.8))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="recover_shoes")
+	
+	recover_skirt:
+		area = CreateArea(type="sphere", stage="Convenience", x=-0.95, y=0.12, z=-12.2, r=0.75)
+		zone = CreateZone(area)
+		condition = CreateCondition("Action_None")
+		missionpanel.SetText("返回零食货架找回裙子")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		listener = CreateListenerLocal("move_to_zone_listener", nextcheckpoint="recover_skirt_prompt")
+	
+	recover_skirt_prompt:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		missionpanel.SetText("穿回裙子")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(false)
+		recover_skirt_area = CreateInteractArea(stage="Convenience", x=-0.95, y=0.12, z=-12.2, r=0.45, text="穿回裙子")
+		
+		wait_recover_skirt:
+			if recover_skirt_area.Check()
+				EquipCosplay("m_cosplay_suit_chic_skirt")
+				missionpanel.SetVisible(false)
+				thread.Goto("recover_skirt_done")
+		listener = CreateListenerLocal("wait_recover_skirt")
+	
+	recover_skirt_done:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）裙子重新遮住身体的时候，我才意识到自己刚才胆子有多大。不是被谁推着，是我自己一步步走到这里的。", duration=6.8))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）衬衫早就穿回去了。现在看起来终于又完整了，可我已经知道这身制服下面藏过什么。", duration=6.8))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）最后回收银台，把论坛草稿发出去。不是给谁看，只是怕明天醒来以后，我会假装这一切没发生过。", duration=7.0))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="forum_post")
+	
+	recover_shirt:
+		area = CreateArea(type="sphere", stage="Convenience", x=-2.95, y=0.12, z=-8.1, r=0.7)
+		zone = CreateZone(area)
+		condition = CreateCondition("Action_None")
+		missionpanel.SetText("返回冷饮柜找回衬衫")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		listener = CreateListenerLocal("move_to_zone_listener", nextcheckpoint="recover_shirt_prompt")
+	
+	recover_shirt_prompt:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		missionpanel.SetText("穿回衬衫")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(false)
+		recover_shirt_area = CreateInteractArea(stage="Convenience", x=-2.95, y=0.12, z=-8.1, r=0.45, text="穿回衬衫")
+		
+		wait_recover_shirt:
+			if recover_shirt_area.Check()
+				EquipCosplay("m_cosplay_suit_chic_shirt")
+				missionpanel.SetVisible(false)
+				thread.Goto("recover_shirt_done")
+		listener = CreateListenerLocal("wait_recover_shirt")
+	
+	recover_shirt_done:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		missionpanel.SetVisible(false)
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）制服终于恢复完整。镜子里又是那个无聊的便利店员，可我已经知道她无聊起来会做什么。", duration=6.6))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）最后回收银台，把论坛草稿发出去。不是给谁看，只是怕明天醒来以后，我会假装这一切没发生过。", duration=7.0))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="forum_post")
+	
+	forum_post:
+		area = CreateArea(type="sphere", stage="Convenience", x=1.27, y=0.12, z=-6.75, r=1.05)
+		zone = CreateZone(area)
+		condition = CreateCondition("Action_None")
+		missionpanel.SetText("回到收银台，写下今晚的记录")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(true)
+		listener = CreateListenerLocal("move_to_zone_listener", nextcheckpoint="forum_post_done")
+	
+	forum_post_done:
+		if lastzone != null
+			lastzone.SetVisible(false)
+		missionpanel.SetVisible(false)
+		camDir = Vector3Rotate(_state.Camera, Vector(0,0,1))
+		snapshotobject = CreateSnapshot(position = _state.Camera, direction = camDir, width = 512, height = 512, fov = 60)
+		_save.final_selfie_file = snapshotobject.Save(hidden = false)
+		snapshotobject = null
+		chat.Add("草稿：营业中的便利店。我本来只是想让夜班不那么无聊。结果我差一点认不出自己。", "Right", user="Manaka", silent=true)
+		chat.Add("我盯着发送按钮看了很久，最后还是想给这条记录留下一个证据。", "Right", user="Manaka", silent=true)
+		chat.SetButtons("继续发帖")
+		missionpanel.SetText("打开手机论坛，继续发帖")
+		missionpanel.SetVisible(true)
+		missionpanel.SetGaugeVisible(false)
+		listener = CreateListenerLocal("wait_final_forum_button")
+	
+	wait_final_forum_button:
+		if chat.Clicked() == 0
+			chat.SetButtons()
+			missionpanel.SetVisible(false)
+			chat.Add("补一句：我已经把制服穿回去了，店里也恢复得像什么都没发生。可是手还在抖。", "Right", user="Manaka", silent=true)
+			chat.Add("附一张自拍。只露到这里就够了。", "Right", user="Manaka", silent=true)
+			thread.Goto("final_forum_selfie")
+	
+	final_forum_selfie:
+		file = _save.final_selfie_file
+		chat.Add(file, "Right", user="Manaka", silent=true)
+		chat.Add("发送。", "Right", user="Manaka", silent=true)
+		
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）下班路上，夜风一吹，我才真正开始后怕。刚才要是有人走近，要是我慢了一秒……", duration=6.6))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）可是害怕里混着一点甜得发麻的东西。我不想承认，却已经开始回想每一步。", duration=6.4))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, text="（内心）屏幕暗下去以后，我把手机贴在胸口。不是后悔，只是不敢立刻再看自己发出去的东西。", duration=6.2))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="finish")
+	
+	finish:
+		SetAction("None")
+		CollectItem(itemtype="Coat")
+		missionpanel.SetVisible(false)
+		_save.checkpoint = 0
+		npc_thinner_thread.Stop()
+		subtitle_thread = null
+		ecstasy_thread = null
+
+	start_subtitles_and_wait:
+		manager.Start(data=data)
+		_result = CreateListenerLocal("subtitle_listener", manager=manager, nextstep=nextstep)

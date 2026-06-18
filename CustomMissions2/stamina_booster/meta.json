@@ -1,0 +1,21 @@
+{
+	"title": {
+		"En": "Stamina Booster"
+	},
+	"description": {
+		"En": "  Reduces the stamina used"
+	},
+	"settings": [
+		{
+			"type": "Label",
+			"title": "Sprint scaler (smaller means less stamina used, 1 is normal)"
+		},
+		{
+			"name": "stamina_scale",
+			"type": "Float",
+			"minvalue": 0,
+			"maxvalue": 1.5,
+			"default": 0.3
+		}
+	]
+}

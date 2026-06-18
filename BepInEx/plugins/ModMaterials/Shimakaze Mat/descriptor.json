@@ -1,0 +1,105 @@
+{
+    "name": "\Shimakaze.Mat",
+    "shader": "UnityChanToonShader/Toon_ShadingGradeMap",
+  
+  
+    "textures": {
+      "_MainTex": "Base 1.png",
+      "_BaseMap": "",
+      "_BaseColorMap": "",
+      "_BumpMap": "",
+      "_NormalMap": "Normal.png",
+      "_MatCap_Sampler": "Matcap Gold.png",
+      "_ShadingGradeMap": "",
+      "_1st_ShadeMap": "",
+      "_2nd_ShadeMap": "",
+      "_Emissive_Tex": "",
+      "_OutlineTex": ""
+    },
+  
+  
+    "colors": {
+      "_BaseColor":      [1.000, 1.000, 1.000, 1.000],
+      "_Color":          [1.000, 1.000, 1.000, 1.000],
+  
+  
+      "_1st_ShadeColor": [0.783, 0.741, 0.840, 1.000],
+      "_2nd_ShadeColor": [0.843, 0.816, 0.896, 1.000],
+  
+  
+      "_HighColor":      [0.208, 0.193, 0.201, 1.000],
+      "_RimLightColor":  [0.591, 0.602, 0.670, 1.000],
+      "_RimColor":       [0.591, 0.602, 0.670, 1.000],
+      "_Outline_Color":  [0.605, 0.569, 0.698, 1.000]
+    },
+  
+  
+    "floats": {
+      "_Use_BaseAs1st": 1,
+      "_Use_1stAs2nd":  1,
+  
+  
+      "_BaseColor_Step":        0.439,
+      "_BaseShade_Feather":     0.182,
+  
+  
+      "_ShadeColor_Step":       0.395,
+      "_1st_ShadeColor_Step":   0.439,
+      "_1st_ShadeColor_Feather":0.182,
+      "_2nd_ShadeColor_Step":   0.395,
+      "_2nd_ShadeColor_Feather":0.332,
+      "_1st2nd_Shades_Feather": 0.332,
+  
+  
+      "_Set_SystemShadowsToBase": 1,
+      "_Tweak_SystemShadowsLevel": 0,
+  
+  
+      "_BumpScale": 0.626,
+      "_Smoothness": 0.416158438,
+      "_Metallic": 0.0,
+      "_OcclusionStrength": 1.0,
+  
+  
+      "_RimLight": 1,
+      "_RimLight_Power": 0.559,
+      "_RimLight_InsideMask": 0.372,
+      "_RimBlur": 0.628,
+      "_RimBorder": 0.686,
+      "_RimEnableLighting": 1,
+      "_RimFresnelPower": 2.501858,
+  
+  
+      "_MatCap": 0,
+      "_Is_LightColor_MatCap": 1,
+  
+  
+      "_EMISSIVE": 0,
+  
+  
+      "_Outline": 0,
+      "_Outline_Width": 0,
+  
+  
+      "_CullMode": 0,
+      "_Cull": 0,
+  
+  
+      "_Is_LightColor_Base": 1,
+      "_Is_LightColor_1st_Shade": 1,
+      "_Is_LightColor_2nd_Shade": 1,
+      "_Is_BlendBaseColor": 1,
+  
+  
+      "_utsVersion": 2.09,
+      "_utsTechnique": 1
+    },
+  
+  
+    "keywords": ["_EMISSIVE_SIMPLE"],
+  
+  
+    "doubleSided": true,
+    "transparent": false
+  }
+  

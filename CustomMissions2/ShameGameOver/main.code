@@ -1,0 +1,478 @@
+ShameGameOver = CreateThread("main")
+
+main:
+
+	CanGameOver(false)
+	listNPC = CreateList()
+	shame = 0
+	recovery = 0
+	orgasm = false
+	lastOrgasmShameTime = -9999
+	debug = true
+	
+	hud = CreateText()
+	hud.SetSize(24)
+	hud.SetAnchor(0.005, 0.905)
+	hud.SetAlignment("TopLeft")
+	hud.SetWidth(1024)
+	hud.SetOutline(width=0.2)
+	hud.SetFace(dilate=0.3)
+	hud.SetOutline(color=Color(0.06,0.06,0.06,1),width=0.3)
+	hud.SetFrontLayer(true)
+
+	hud_recov = CreateText()
+	hud_recov.SetSize(24)
+	hud_recov.SetAnchor(0.005, 0.87)
+	hud_recov.SetAlignment("TopLeft")
+	hud_recov.SetWidth(128)
+	hud_recov.SetOutline(width=0.2)
+	hud_recov.SetFace(color=(Color(0,0.6,0,1)),dilate=0.3)
+	hud_recov.SetOutline(color=(Color(0,0.2,0,1)),width=0.3)
+	hud_recov.SetFrontLayer(true)
+	
+	subs = CreateText()
+	subs.SetSize(30)
+	subs.SetAnchor(0.2,0.126)
+	subs.SetAlignment("TopLeft")
+	subs.SetWidth(830)
+	subs.SetOutline(width=0.2)
+	subs.SetFace(dilate=0.3)
+	subs.SetOutline(color=Color(0.06,0.06,0.06,1),width=0.3)
+	subs.SetFrontLayer(true)
+	
+	clothedCond = CreateCondition("[!Exposed_Front,!Exposed_Upper,!Exposed_Hip]")
+	boobsCond1 = CreateCondition("[Exposed_Front,!Exposed_HipCrouch,!CoatDropped]")
+	boobsCond2 = CreateCondition("[Exposed_Upper,!Exposed_Hip,CoatDropped]")
+	buttCond = CreateCondition("[Exposed_Hip,!Exposed_Front,!Exposed_Upper]")
+	pussyCond1 = CreateCondition("[!Exposed_Upper,Exposed_Hip,CoatDropped)]")
+	pussyCond2 = CreateCondition("[!Exposed_Upper,Exposed_HipCrouch,Crouching]")
+	nakedCond1 = CreateCondition("[Exposed_Front,Exposed_HipCrouch,!CoatDropped]")
+	nakedCond2 = CreateCondition("[Exposed_Front,Exposed_Upper,Exposed_Hip]")
+	actionCond = CreateCondition("[!Action_None]")
+	toysCond1 = CreateCondition("[(AdultToy_Vibrator,AdultToy_KuriRotor,AdultToy_PistonPussy,AdultToy_PistonFuta,AdultToy_PistonAnal)]")
+	toysCond2 = CreateCondition("[(AdultToy_TitRotor)]")
+	cuffsCond = CreateCondition("[(HandcuffsBack,HandcuffsObject)]")
+	orgasmCond = CreateCondition("[Orgasm]")
+	blindCond = CreateCondition("[Blindfolded]")
+	crouchCond = CreateCondition("[Crouching]")
+	
+	#all_bras = CreateList("m_cosplay_general_upper_bra","m_cosplay_general_upper_chack_bikini_bra","m_cosplay_general_upper_micro_bikini_bra","m_cosplay_succubus_cosplay_tops","m_cosplay_cow_bra")
+	#all_panties = CreateList("m_cosplay_general_upper_race_pants","m_cosplay_general_upper_ultimate_pants","m_cosplay_general_upper_chack_bikini_pants","m_cosplay_general_upper_micro_bikini_pants","m_cosplay_succubus_cosplay_pants","m_cosplay_sister_pants","m_cosplay_cow_pants","m_cosplay_wild_pants","m_cosplay_sweater_pants","m_cosplay_suit_chic_panty","m_cosplay_sister_cloth")
+	all_bras = CreateList("m_cosplay_ninja_tops","m_cosplay_sister_leotard","m_cosplay_bunny_tops","m_cosplay_latex_pony_tops","m_cosplay_jailer_reotard","m_cosplay_general_upper_swimsuit","m_cosplay_general_upper_sukumizu","m_cosplay_general_upper_rubber_suit","m_cosplay_jump_suit_suit","m_cosplay_general_upper_bra","m_cosplay_general_upper_chack_bikini_bra","m_cosplay_general_upper_micro_bikini_bra","m_cosplay_succubus_cosplay_tops","m_cosplay_sister_curtain","m_cosplay_cow_bra")
+	all_panties = CreateList("m_cosplay_ninja_tops","m_cosplay_sister_leotard","m_cosplay_bunny_tops","m_cosplay_latex_pony_tops","m_cosplay_jailer_reotard","m_cosplay_general_upper_swimsuit","m_cosplay_general_upper_sukumizu","m_cosplay_general_upper_rubber_suit","m_cosplay_succubus_cosplay_skirt","m_cosplay_sister_cloth","m_cosplay_jump_suit_suit","m_cosplay_general_upper_race_pants","m_cosplay_general_upper_ultimate_pants","m_cosplay_general_upper_chack_bikini_pants","m_cosplay_general_upper_micro_bikini_pants","m_cosplay_succubus_cosplay_pants","m_cosplay_sister_pants","m_cosplay_cow_pants","m_cosplay_wild_pants","m_cosplay_sweater_pants","m_cosplay_suit_chic_panty")
+
+	listenInit = CreateListener("watchNPCs")
+	listenNPC = CreateListener("viewedByNPC")
+	listenOrgasm = CreateListener("publicOrgasm")
+	listenShame = CreateListener("lowerShame")
+	listenHUD = null
+	listenRecov = null
+	
+	UpdateShame:
+		text = "Shame : "
+		i = 0
+		while i < shame
+			i += 1
+			text += "█"
+		i = shame
+		while i < _settings.max_shame
+			i += 1
+			text += "░"
+		hud.Clear()
+		listenHUD = CreateListener("update_shame_text", text=text)
+	
+	update_shame_text:
+		hud.Add(text=text)
+		listenHUD = null
+	
+	UpdateShame()
+	
+	UpdateRecovery:
+		hud_recov.Clear()
+		listenRecov = CreateListener("update_recovery_text", text=text)
+	
+	update_recovery_text:
+		if recovery > 0
+			hud_recov.Add(text=text)
+		listenRecov = null
+	
+	# Check if NPCs can see you
+	IsHidden:
+		hidden = true
+		i = _state.NPCs.Count()
+		while i > 0 && hidden
+			i -= 1
+			id = _state.NPCs[i].ID
+			if listNPC[id].SeesPlayer()
+				hidden = false
+		_result = hidden
+	
+	
+	# Ambiant texts
+	DisplaySubs:
+		npc = listNPC[npc_id]
+		if npc.GetType()=="NewMale" || npc.GetType()=="PreviousMale" || npc.GetType()=="NewOji"
+			man = "Man"
+			he = "He"
+			his = "his"
+			him = "him"
+		else
+			man = "Woman"
+			he = "She"
+			his = "her"
+			him = "her"
+		
+		add_text = ""
+		add_duration = 0
+		if (cuffs)
+			rng = RandomInt(10)
+			if rng == 0
+				add_duration = 2
+				add_text=" *You struggle against your handcuffs, to no avail.*"
+			elseif rng == 1
+				add_duration = 2
+				add_text=" And there's nothing I can do to cover myself..."
+			elseif rng == 2
+				add_duration = 4
+				add_text=" With my hands restrained, "+Lower(he)+" could do anything "+Lower(he)+" wants to me..."
+			elseif rng == 3
+				add_duration = 2
+				add_text=" Did "+Lower(he)+" see that I'm in bondage?"
+			elseif rng == 4
+				add_duration = 3
+				add_text=" "+he+" even noticed the handcuffs and is staring even harder..."
+			elseif rng == 5
+				add_duration = 3
+				add_text=" And being in bondage makes it so scary... and so arousing..."
+			elseif rng == 6
+				add_duration = 3
+				add_text=" *You instinctively try to cover yourself, but the handcuffs make sure you can't.*"
+		
+		if add_shame == -1
+			if blind
+				rng = RandomInt(3)
+				if rng == 0
+					subs.Add(text=""+man+" : \"Holy shit, you're dripping wet, girl!\"", fadein=0.2, duration=3, fadeout=0.3)
+				elseif rng == 1
+					subs.Add(text=""+man+" : \"You look like you're about to cum...\"", fadein=0.2, duration=3, fadeout=0.3)
+				else
+					subs.Add(text=""+man+" : \"Lady, your pussy juice is trickling down your legs...\"", fadein=0.2, duration=4, fadeout=0.3)
+			else
+				rng = RandomInt(4)
+				if rng == 0
+					subs.Add(text="Aaah, yes, look at me, I'm all exposed for you...", fadein=0.2, duration=3, fadeout=0.3)
+				elseif rng == 1
+					subs.Add(text="Manaka : \"Do you like my body? Please look all you want...\"", fadein=0.2, duration=4, fadeout=0.3)
+				elseif rng == 2
+					subs.Add(text="Ah, don't look at me, I'll cum!", fadein=0.2, duration=3, fadeout=0.3)
+				elseif rng == 3
+					subs.Add(text="I don't care anymore... I want to be seen...", fadein=0.2, duration=3, fadeout=0.3)
+		
+		elseif type == "boobs"
+			if blind
+				rng = RandomInt(4)
+				if rng == 0
+					subs.Add(text=""+man+" : \"Nice tits girlie!\"", fadein=0.2, duration=2, fadeout=0.3)
+				elseif rng == 1
+					subs.Add(text=""+man+" : \"Now that's some nice boobs you have here!\"", fadein=0.2, duration=3, fadeout=0.3)
+				elseif rng == 2
+					subs.Add(text=""+man+" : \"Careful here, you could poke someone's eye with nipples that hard!\"", fadein=0.2, duration=4, fadeout=0.3)
+				else
+					subs.Add(text=""+man+" : \"Excuse me miss, your breasts are showing.\"", fadein=0.2, duration=3, fadeout=0.3)
+			else
+				rng = RandomInt(3)
+				if rng == 0
+					subs.Add(text=""+he+"'s staring at my boobs..."+add_text, fadein=0.2, duration=3+add_duration, fadeout=0.3)
+				elseif rng == 1
+					subs.Add(text=""+he+"'s looking at my nipples as they're hardening..."+add_text, fadein=0.2, duration=3+add_duration, fadeout=0.3)
+				elseif rng == 2
+					subs.Add(text=""+he+"'s bobbing "+his+" head as my breasts sway... It's so embarrassing..."+add_text, fadein=0.2, duration=4+add_duration, fadeout=0.3)
+		
+		elseif type == "butt"
+			if blind
+				rng = RandomInt(4)
+				if rng == 0
+					subs.Add(text=""+man+" : \"Nice ass!\"", fadein=0.2, duration=2, fadeout=0.3)
+				elseif rng == 1
+					subs.Add(text=""+man+" : \"Now that you're just asking to get a finger in there!\"", fadein=0.2, duration=3, fadeout=0.3)
+				else
+					subs.Add(text=""+man+" : \"Oh... I really want to slap that.\"", fadein=0.2, duration=3, fadeout=0.3)
+			else
+				rng = RandomInt(3)
+				if rng == 0
+					subs.Add(text=""+he+"'s staring at my ass..."+add_text, fadein=0.2, duration=2+add_duration, fadeout=0.3)
+				elseif rng == 1
+					subs.Add(text="I can feel "+his+" gaze on my back. Lower back, more specifically..."+add_text, fadein=0.2, duration=3+add_duration, fadeout=0.3)
+				elseif rng == 2
+					subs.Add(text="I shouldn't have decided to go butt naked..."+add_text, fadein=0.2, duration=3+add_duration, fadeout=0.3)
+		
+		elseif type == "pussy"
+			if blind
+				if crouchCond.Check()
+					rng = RandomInt(2)
+					if rng == 0
+						subs.Add(text=""+man+" : \"Nice doggy! All wet and exposed, just how they should be!\"", fadein=0.2, duration=4, fadeout=0.3)
+					else
+						subs.Add(text=""+man+" : \"You look like you're waiting for someone to breed you, girl...\"", fadein=0.2, duration=4, fadeout=0.3)
+				else
+					rng = RandomInt(3)
+					if rng == 0
+						subs.Add(text=""+man+" : \"Nice pussy, girl! Love how it's in display!\"", fadein=0.2, duration=3, fadeout=0.3)
+					elseif rng == 1
+						subs.Add(text=""+man+" : \"You seem to have lost your skirt, lady. I can see your vagina.\"", fadein=0.2, duration=4, fadeout=0.3)
+					else
+						subs.Add(text=""+man+" : \"I'd help you cover up, but with how wet you are, you must enjoy this!\"", fadein=0.2, duration=4, fadeout=0.3)
+			else
+				if crouchCond.Check()
+					rng = RandomInt(3)
+					if rng == 0
+						subs.Add(text="I'm really putting my behind on display for "+him+"..."+add_text, fadein=0.2, duration=2+add_duration, fadeout=0.3)
+					elseif rng == 1
+						subs.Add(text="Showing myself like that is so humiliating... I could cum just from the stares..."+add_text, fadein=0.2, duration=4+add_duration, fadeout=0.3)
+					else
+						subs.Add(text="I must look like such a slut... Ah, this is making me so wet..."+add_text, fadein=0.2, duration=3+add_duration, fadeout=0.3)
+				else
+					rng = RandomInt(3)
+					if rng == 0
+						subs.Add(text=""+he+"'s staring at my pussy..."+add_text, fadein=0.2, duration=2+add_duration, fadeout=0.3)
+					elseif rng == 1
+						subs.Add(text=""+he+" looks like "+Lower(he)+"'s enjoying the view of my feminine parts..."+add_text, fadein=0.2, duration=4+add_duration, fadeout=0.3)
+					else
+						subs.Add(text="Ah, I'm showing "+him+" the ultimate proof that I'm a female..."+add_text, fadein=0.2, duration=3+add_duration, fadeout=0.3)
+		
+		
+		elseif type == "naked"
+			if blind
+				if cuffs
+					rng = RandomInt(3)
+					if rng == 0
+						subs.Add(text=""+man+" : \"Hmm, naked and tied up. I'm tempted to take you home.\"", fadein=0.2, duration=3, fadeout=0.3)
+					elseif rng == 1
+						subs.Add(text=""+man+" : \"Going full bondage gear, girl? That's a nice hobby you got here.\"", fadein=0.2, duration=4, fadeout=0.3)
+					else
+						subs.Add(text=""+man+" : \"Aren't you scared of running into a wall? I can guide you if you want! I promise I won't touch you... much.\"", fadein=0.2, duration=6, fadeout=0.3)
+				else
+					rng = RandomInt(4)
+					if rng == 0
+						subs.Add(text=""+man+" : \"Oooh, naked girl alert!\"", fadein=0.2, duration=2, fadeout=0.3)
+					elseif rng == 1
+						subs.Add(text=""+man+" : \"You know that just because you can't see me doesn't mean I can't see you, right?\"", fadein=0.2, duration=5, fadeout=0.3)
+					elseif rng == 2
+						subs.Add(text=""+man+" : \"An exhibitionist! I should call the police! ...Heh, after I get a picture.\"", fadein=0.2, duration=4, fadeout=0.3)
+					else
+						subs.Add(text=""+man+" : \"Aren't you cold, miss? Ah, probably not, it's suddenly quite hot around here.\"", fadein=0.2, duration=5, fadeout=0.3)
+			else
+				rng = RandomInt(4)
+				if rng == 0
+					subs.Add(text="I'm completely bared for "+him+" to ogle... How embarrassing..."+add_text, fadein=0.2, duration=3+add_duration, fadeout=0.3)
+				elseif rng == 1
+					subs.Add(text=""+he+" looks like "+Lower(he)+" can't choose between staring at my boobs or my pussy..."+add_text, fadein=0.2, duration=4+add_duration, fadeout=0.3)
+				elseif rng == 1
+					subs.Add(text="I got caught again... Every bit of my body is on full display for "+him+"..."+add_text, fadein=0.2, duration=4+add_duration, fadeout=0.3)
+				else
+					subs.Add(text="I hope "+Lower(he)+" won't notice how wet I am... I'm so turned on..."+add_text, fadein=0.2, duration=2+add_duration, fadeout=0.3)
+	
+	
+	watchNPCs:
+		if _state.Position.stage != "Apart"
+			i = _state.NPCs.Count()
+			while i > 0
+				i -= 1
+				# Each NPC that spawns get flagged in the list
+				id = _state.NPCs[i].ID
+				if listNPC[id] == null
+					if debug
+						Log("[Shame] NPC " + id + " registered ")
+					npc_temp = CreateNPC(id)
+					listNPC[id] = npc_temp
+	
+	
+	viewedByNPC:
+		if _state.FoundNPC != -1
+			add_shame = 0
+			type_shame = ""
+			cuffs = false
+			blind = false
+			
+			boobs_covered = false
+			pussy_covered = false
+			if _settings.underwear
+				i = 0
+				while i < all_bras.Count() && !boobs_covered
+					item = all_bras[i]
+					if _state.Cosplay[item]
+						boobs_covered = true
+					i = i + 1
+				i = 0
+				while i < all_panties.Count() && !pussy_covered
+					item = all_panties[i]
+					if _state.Cosplay[item]
+						pussy_covered = true
+					i = i + 1
+			
+			# Add shame when found by an NPC
+			reduced = ""
+			if boobsCond1.Check() || boobsCond2.Check()
+				type_shame = "boobs"
+				add_shame += _settings.shame_boobs
+				if _settings.shame_boobs > 0 && boobs_covered
+					add_shame -= 1
+					reduced = reduced + " (-1 for boobs covered)"
+			
+			elseif buttCond.Check()
+				type_shame = "butt"
+				add_shame += _settings.shame_butt
+			
+			elseif pussyCond1.Check() || pussyCond2.Check()
+				type_shame = "pussy"
+				add_shame += _settings.shame_pussy
+				if _settings.shame_pussy > 0 && pussy_covered
+					add_shame -= 1
+					reduced = reduced + " (-1 for pussy covered)"
+			
+			elseif nakedCond1.Check() || nakedCond2.Check()
+				type_shame = "naked"
+				add_shame += _settings.shame_naked
+				if boobs_covered
+					add_shame -= 1
+					reduced = reduced + " (-1 for boobs covered)"
+				if pussy_covered
+					add_shame -= 1
+					reduced = reduced + " (-1 for pussy covered)"
+				if add_shame < 0
+					add_shame = 0
+			
+			if debug
+				Log("[Shame] Shame +"+add_shame+" ("+type_shame+")" + reduced)
+			
+			
+			# Worse if posing / peeing / having sex / etc
+			if actionCond.Check()
+				if debug
+					Log("[Shame] Shame +" + _settings.shame_action + " (action)")
+				add_shame += _settings.shame_action
+			
+			# Worse if toys visible
+			if (( (pussyCond1.Check() || pussyCond2.Check() || nakedCond1.Check() || nakedCond2.Check()) && toysCond1.Check() )  ||  ( (boobsCond1.Check() || boobsCond2.Check() || nakedCond1.Check() || nakedCond2.Check()) && toysCond2.Check()) )
+				if debug
+					Log("[Shame] Shame +" + _settings.shame_toys + " (toys)")
+				add_shame += _settings.shame_toys
+			
+			# Worse if handcuffed
+			if cuffsCond.Check()
+				if debug
+					Log("[Shame] Shame +" + _settings.shame_handcuffs + " (handcuffs)")
+				cuffs = true
+				add_shame += _settings.shame_handcuffs
+			
+			# Lowered if blindfolded
+			if blindCond.Check()
+				if debug
+					Log("[Shame] Shame " + _settings.shame_blindfold + " (blindfold)")
+				blind = true
+				add_shame += _settings.shame_blindfold
+				if add_shame < 1
+					if debug
+						Log("[Shame] Blindfold : Shame gained = "+add_shame+", setting to 1 instead")
+					add_shame = 1
+			
+			# Lowered if horny
+			ecstasy = GetEcstasy()
+			if _settings.ecstasy_toggle && ecstasy > _settings.shame_ecstasy/100
+				nb = 0
+				while ecstasy > _settings.shame_ecstasy/100
+					nb += 1
+					ecstasy -= _settings.shame_ecstasy/100
+				
+				if debug
+					Log("[Shame] Shame lowered "+nb+" times (ecstasy)")
+				add_shame -= nb
+				if add_shame <= 0
+					if debug
+						Log("[Shame] Ecstasy : Shame gained = "+add_shame+", setting to 0 instead")
+					# Actually setting to -1 to trigger the horny subtitles
+					add_shame = -1
+			
+			# Display subtitles if the situation is compatible
+			if _settings.comments
+				subs_ok = true
+				if (type_shame=="boobs" && boobs_covered) || (type_shame=="pussy" && pussy_covered)
+					subs_ok = false
+				if type_shame=="naked"
+					if boobs_covered && pussy_covered
+						subs_ok = false
+					elseif boobs_covered
+						type_shame = "pussy"
+					elseif pussy_covered
+						type_shame = "boobs"
+				if subs_ok
+					DisplaySubs(npc_id=_state.FoundNPC, type=type_shame, cuffs=cuffs, blind=blind, add_shame=add_shame)
+			
+			if add_shame > 0
+				shame += add_shame
+				UpdateShame()
+				if shame >= _settings.max_shame
+					TriggerGameOver()
+	
+	
+	# Ashamed after cumming
+	publicOrgasm:
+		if orgasmCond.Check() != orgasm
+			orgasm = orgasmCond.Check()
+			if orgasm && !IsHidden()
+				if _time >= lastOrgasmShameTime + _settings.orgasm_shame_cooldown
+					lastOrgasmShameTime = _time
+					if debug
+						Log("[Shame] Shame " + _settings.shame_orgasm + " (orgasm)")
+					shame += _settings.shame_orgasm
+					UpdateShame()
+					if shame >= _settings.max_shame
+						TriggerGameOver()
+				else
+					if debug
+						Log("[Shame] Orgasm shame skipped (cooldown)")
+	
+	
+	lowerShame:
+		if duration == null
+			duration = 0
+		
+		# If there's any shame to lower and the lowering isn't disabled
+		if shame > 0 && _settings.del_shame > 0
+			# If alone, proceed with the timer
+			if IsHidden()
+				# Speed modifiers
+				rec_speed = 2
+				if _settings.del_clothed && clothedCond.Check()
+					rec_speed += 1
+				if _settings.del_handcuffed && cuffsCond.Check()
+					rec_speed -= 1
+				duration = duration + _timediff*rec_speed
+				
+				# Update the arrows if needed
+				if recovery != rec_speed && _settings.display_arrows
+					recovery = rec_speed
+					text = ""
+					i = 0
+					while i < rec_speed
+						i += 1
+						text += "◄"
+					UpdateRecovery(text=text)
+				
+				# Timer finished : remove 1 shame and start over (x2 because default speed is 2)
+				if duration >= _settings.del_shame*2
+					shame -= 1
+					if debug
+						Log("[Shame] Shame -1 ("+shame+")")
+					duration = 0
+					UpdateShame()
+					if shame == 0
+						recovery = 0
+						hud_recov.Clear()
+			
+			# Reset the timer to 0 if NPCs can see you
+			else
+				duration = 0
+				recovery = 0
+				hud_recov.Clear()
+	

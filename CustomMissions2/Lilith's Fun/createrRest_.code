@@ -1,0 +1,17 @@
+createrRest_:
+	#Note Event: List must have:
+	# common: List see 'event.common'
+
+	create:
+		#Required
+		#Returns event: List
+		
+		event = CreateList()
+		event.common = CreateList()
+		event.common.requiredProcessor = "processorRest"
+		event.common.name = StringsPool2.RestString
+		event.common.description = RandomString("Rest", StringsPool0)
+		event.common.duration = 55
+		event.common.nameFaceColor = Color(0.556003, 0.821055, 0.904430)
+		event.common.descriptionFaceColor = Color(0, 1.000000, 1.000000)
+		_result = event

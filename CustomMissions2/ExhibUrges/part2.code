@@ -1,0 +1,761 @@
+part2 = CreateThread("part2")
+
+part2:
+	thread = _this
+	
+	missionpanel = CreateMissionPanel()
+	mp:
+		if text == null
+			missionpanel.SetVisible(false)
+		else
+			missionpanel.SetVisible(true)
+			missionpanel.SetText(text)
+		if progress == null
+			missionpanel.SetGaugeVisible(false)
+		else
+			missionpanel.SetGaugeVisible(true)
+			missionpanel.GetGaugeProgress(progress)
+		if rp == null
+			rp = ""
+		else
+			missionpanel.SetRPText(rp)
+	
+	cameraClick = CreateAudio("sound\\camera.ogg")
+	clothesFold = CreateAudio("sound\\clothes.ogg")
+	
+	zMeiMeet = CreateList(x=57.9,y=0.07,z=-151.5,r=0.5)
+	zMeiSpawn = CreateList(x=57.1,y=0.0818,z=-151.5,r=0.5)
+	zFitRoom = CreateList(x=52.76,y=0.07,z=-141.32,r=0.5)
+	zMeiFitRoom = CreateList(x=52.22,y=0.07,z=-140.82,r=0.5)
+	zClerkSpawn = CreateList(x=56.4,y=0.0818,z=-140.1,r=0.5)
+	zMeiFetchClerk = CreateList(x=54.4,y=0.07,z=-140.1,r=0.5)
+	zClerkWatch = CreateList(x=52.8,y=0.07,z=-140.1,r=0.5)
+	zCounter = CreateList(x=64.2,y=0.07,z=-152.7,r=0.5)
+	zMeiSpawn2 = CreateList(x=33.1,y=-8.55,z=-49.9,r=0.5)
+	zGirlSpawn = CreateList(x=-4.6,y=-8.55,z=-26,r=0.5)
+	zGirlTalk = CreateList(x=0.6,y=-8.55,z=-30,r=0.5)
+	zTalkGirl = CreateList(x=0.8,y=-8.55,z=-30.7,r=0.5)
+	zGirlTalk2 = CreateList(x=20.1,y=-8.53,z=14.6,r=0.5)
+	zTalkGirl2 = CreateList(x=19.1,y=-8.53,z=14.4,r=0.5)
+	zGirlExit = CreateList(x=17.9,y=-8.51,z=10.3,r=0.5)
+	
+	mei = null
+	meiListener = null
+	clerk = null
+	girl = null
+	girlListener = null
+	
+	
+	cp1:
+		CanGameOver(false)
+		UnequipAllCosplay()
+		EquipCosplay("m_cosplay_general_upper_race_pants","m_cosplay_general_leg_stocking","m_cosplay_suit_chic_shirt","m_cosplay_suit_chic_jacket","m_cosplay_suit_chic_skirt","m_cosplay_suit_chic_shoes")
+		DropItem(itemtype="Coat", stage="Apart",x=3.4,y=0,z=2.5)
+		SetStage("FashionShop",daytime=true)
+		
+		listener = CreateListenerLocal("wait_listener",duration=1,nextcp="cp2")
+		#listener = CreateListenerLocal("wait_listener",duration=1,nextcp="test")
+	
+	test:
+		UnequipAllCosplay()
+		EquipCosplay("m_cosplay_general_leg_stocking_nieso","m_cosplay_general_leg_stocking_pin_heel","m_cosplay_succubus_cosplay_skirt","m_cosplay_general_upper_body_net","m_cosplay_suit_chic_jacket")
+		thread.Goto("cp83")
+	
+	cp2:
+		mei = CreateMei(position=Vector(zMeiSpawn.x, zMeiSpawn.y, zMeiSpawn.z), rotation=Quaternion(0, 0.69, 0, 0.72))
+		MoveNPC(npc=mei, coord=Vector(zMeiSpawn.x, zMeiSpawn.y, zMeiSpawn.z))
+		mp(text="Go talk to Mei")
+		area = CreateArea(type="sphere",stage="FashionShop",x=zMeiMeet.x,y=zMeiMeet.y,z=zMeiMeet.z,r=zMeiMeet.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp3")
+	
+	cp3:
+		subtitleMei.Add(text="\"Hi Manaka!\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zMeiMeet.x,y=zMeiMeet.y,z=zMeiMeet.z,r=zMeiMeet.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp4")
+	
+	cp4:
+		subtitle.Add(text="\"Hi Mei... So, what do you have for me?\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zMeiMeet.x,y=zMeiMeet.y,z=zMeiMeet.z,r=zMeiMeet.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp5")
+	
+	cp5:
+		subtitleMei.Add(text="\"I can't tell you in advance, obviously! Just follow me to the fitting room!\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zMeiMeet.x,y=zMeiMeet.y,z=zMeiMeet.z,r=zMeiMeet.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp6")
+	
+	cp6:
+		mp(text="Follow Mei")
+		MoveNPC(npc=mei, coord=Vector(zMeiFitRoom.x, zMeiFitRoom.y, zMeiFitRoom.z), rotation=Quaternion(0, 0.9, 0, 0.44), thread=thread, nextcp="cp7")
+		meiListener = CreateListener("npc_lead_listener",npc=mei,distance=4)
+	
+	################################################## TRYOUT TOPLESS ##################################################
+	cp7:
+		meiListener = null
+		subtitleMei.Add(text="\"Here are your clothes. I can't wait for you to try them out!\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp8")
+	
+	cp8:
+		mei.PlayAction("HandOver")
+		SetAction("ConbiniTakeGoods")
+		subtitle.Add(text="\"Thanks, Mei!\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp9")
+	
+	cp9:
+		subtitle.Add(text="\"...\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp10")
+	
+	cp10:
+		subtitleMei.Add(text="\"...\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp11")
+	
+	cp11:
+		subtitle.Add(text="\"Are you going to get out?\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp12")
+	
+	cp12:
+		mei.Smartphone(true)
+		subtitleMei.Add(text="\"What, and miss the show? No way!\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp13")
+	
+	cp13:
+		subtitle.Add(text="\"...\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp14")
+	
+	cp14:
+		subtitleMind.Add(text="(Am I really going to strip right there in front of her?)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp15")
+	
+	cp15:
+		subtitleMind.Add(text="(She's even planning to take a picture!)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp16")
+	
+	cp16:
+		subtitleMind.Add(text="(...)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp17")
+	
+	cp17:
+		mp(text="Close the curtains and strip naked")
+		area = CreateArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r)
+		zone = CreateZone(area)
+		#condition = CreateCondition("[Exposed_All]")
+		condition = CreateCondition("[!Cosplay_m_cosplay_general_upper_race_pants,!Cosplay_m_cosplay_suit_chic_shirt,!Cosplay_m_cosplay_suit_chic_jacket,!Cosplay_m_cosplay_suit_chic_skirt,!Cosplay_m_cosplay_suit_chic_shoes]")
+		listener = CreateListenerLocal("basic_listener",nextcp="cp18")
+	
+	cp18:
+		subtitleMind.Add(text="(I did it... I'm naked in front of her...)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp19")
+	
+	cp19:
+		ShowBlackscreen(color=Color(1,1,1,0.8), fadein=0, duration=0.1, fadeout=0.3)
+		cameraClick.Play()
+		subtitleMei.Add(text="\"Nice! A good one for my collection!\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp20")
+	
+	cp20:
+		subtitle.Add(text="\"Meiii! Give me some clothes now!\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp21")
+	
+	cp21:
+		mei.Smartphone(false)
+		mei.PlayAction("HandOver")
+		SetAction("ConbiniTakeGoods")
+		subtitleMei.Add(text="\"Oh, yeah. Here, suit up!\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　[Suit up!] ")
+		listener = CreateListenerLocal("int_listener",nextcp="cp22")
+	
+	cp22:
+		UnequipAllCosplay()
+		EquipCosplay("m_cosplay_general_upper_body_net","m_cosplay_suit_chic_jacket","m_cosplay_suit_luxe_pants","m_cosplay_suit_chic_shoes")
+		clothesFold.Play()
+		subtitle.Add(text="\"...\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp23")
+	
+	cp23:
+		subtitle.Add(text="\"You're kidding, right?\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp24")
+	
+	cp24:
+		subtitleMei.Add(text="\"Not at all, look at yourself! That's quite the fashion statement!\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp25")
+	
+	cp25:
+		subtitleMind.Add(text="(I... do look quite good, actually...)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp26")
+	
+	cp26:
+		subtitleMind.Add(text="(I can't believe I'm considering going outside like this...)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp27")
+	
+	cp27:
+		subtitleMind.Add(text="(No, no, no, focus! Maybe she has something else less... Hum...)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp28")
+	
+	cp28:
+		subtitle.Add(text="\"Don't you have something else to wear?\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp29")
+	
+	cp29:
+		subtitleMei.Add(text="\"Well, I did pick something on the way here... Try it with the top you came in with.\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　[Change clothes] ")
+		listener = CreateListenerLocal("int_listener",nextcp="cp30")
+	
+	cp30:
+		UnequipAllCosplay()
+		clothesFold.Play()
+		listener = CreateListenerLocal("wait_listener",duration=1,nextcp="cp31")
+	
+	################################################## TRYOUT BOTTOMLESS ##################################################
+	cp31:
+		EquipCosplay("m_cosplay_general_leg_stocking_nieso","m_cosplay_general_leg_stocking_pin_heel","m_cosplay_succubus_cosplay_skirt","m_cosplay_school_hoodie_ribbon","m_cosplay_school_hoodie_shirt")
+		clothesFold.Play()
+		subtitle.Add(text="\"...\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp32")
+	
+	cp32:
+		subtitleMei.Add(text="\"Looks fine, right?\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp33")
+	
+	cp33:
+		subtitle.Add(text="\"Didn't you forget a little detail? A lot of little details actually but starting with, like... the panties?\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp34")
+	
+	cp34:
+		subtitleMei.Add(text="\"What, you already went commando before, remember?\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp35")
+	
+	cp35:
+		subtitle.Add(text="\"Not with this kind of skirt I didn't!!\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp36")
+	
+	cp36:
+		subtitle.Add(text="\"And when I say skirt... More like a glorified belt! My pussy is too exposed!\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp37")
+	
+	cp37:
+		subtitleMei.Add(text="\"Hmm... You're right. Don't move, I'm going to fetch a saleswoman for some advice!\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp38")
+	
+	cp38:
+		MoveNPC(npc=mei, coord=Vector(zMeiFetchClerk.x, zMeiFetchClerk.y, zMeiFetchClerk.z))
+		subtitle.Add(text="\"What? Mei, wait!\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp39")
+	
+	cp39:
+		subtitleMind.Add(text="(Aaand she's gone... Well, I guess I'll have to open the curtains so she can give Mei her opinion...)")
+		listener = CreateListenerLocal("wait_listener",duration=3,nextcp="cp40")
+	
+	################################################## CLERK ##################################################
+	cp40:
+		mp(text="Open the curtains")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=52.76,y=0.07,z=-141.32,r=0.3, text="　[Validate that curtains are opened] ")
+		listener = CreateListenerLocal("int_listener",nextcp="cp41")
+		
+		clerk = CreateNPC("NewFemale", position=Vector(zClerkSpawn.x, zClerkSpawn.y, zClerkSpawn.z), body=2, face=2, hair=2)
+		clerk.Smartphone(false)
+		clerk.Headset(false)
+		clerk.Glasses(true)
+		clerk.Speed(1.2)
+	
+	cp41:
+		mp(text="Wait for Mei to return")
+		MoveNPC(npc=mei, coord=Vector(zMeiFitRoom.x, zMeiFitRoom.y, zMeiFitRoom.z), rotation=Quaternion(0, 0.9, 0, 0.44))
+		MoveNPC(npc=clerk, coord=Vector(zClerkWatch.x, zClerkWatch.y, zClerkWatch.z), rotation=Quaternion(0, 0.99, 0, -0.0052), thread=thread, nextcp="cp42")
+	
+	cp42:
+		subtitleMind.Add(text="(Ugh, of course she looks shocked... It's so embarrassing...)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp43")
+	
+	cp43:
+		subtitleMei.Add(text="\"So, what do you think? Do you have something in store that would redirect people's gaze to her upper body?\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp44")
+	
+	cp44:
+		subtitleClerk.Add(text="\"I... er...\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp45")
+	
+	cp45:
+		subtitleMind.Add(text="(She's finally looking away from my pussy...)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp46")
+	
+	cp46:
+		clerk.SkipStrangeness(true)
+		subtitleClerk.Add(text="\"I'm going to look for something that could work!\"")
+		MoveNPC(npc=clerk, coord=Vector(zClerkSpawn.x, zClerkSpawn.y, zClerkSpawn.z))
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp47")
+	
+	cp47:
+		subtitleMei.Add(text="\"Wow, she was staring right at your pussy!\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp48")
+	
+	cp48:
+		subtitle.Add(text="\"Yes, Mei. I know. I noticed too...\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp49")
+	
+	cp49:
+		mp(text="Wait for the saleswoman to return")
+		MoveNPC(npc=clerk, coord=Vector(zClerkWatch.x, zClerkWatch.y, zClerkWatch.z), rotation=Quaternion(0, 0.99, 0, -0.0052), thread=thread, nextcp="cp50")
+	
+	cp50:
+		subtitleClerk.Add(text="\"Here! I found something for you.\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp51")
+	
+	cp51:
+		clerk.PlayAction("HandOver")
+		SetAction("ConbiniTakeGoods")
+		subtitle.Add(text="\"Thank you.\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp52")
+	
+	cp52:
+		subtitle.Add(text="\"...\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp53")
+	
+	cp53:
+		subtitleMind.Add(text="(She's just standing there, staring at my pussy...)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp54")
+	
+	cp54:
+		subtitle.Add(text="\"Is there something else?\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp55")
+	
+	cp55:
+		subtitleClerk.Add(text="\"Oh, I'm sorry! I'll let you change, call me if you need me!\"")
+		MoveNPC(npc=clerk, coord=Vector(zClerkSpawn.x, zClerkSpawn.y, zClerkSpawn.z))
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp56")
+	
+	cp56:
+		subtitleMei.Add(text="\"Wait! You should stay here, it won't be long!\"\n*Mei grins at you.*")
+		clerk.Stopped(true)
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp57")
+	
+	cp57:
+		subtitleClerk.Add(text="\"I mean... If that's okay...\"")
+		MoveNPC(npc=clerk, coord=Vector(zClerkWatch.x, zClerkWatch.y, zClerkWatch.z), rotation=Quaternion(0, 0.99, 0, -0.0052))
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp58")
+	
+	cp58:
+		subtitleMind.Add(text="(I guess I get the message... I'll have to show her my breasts too...)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　[Remove your top] ")
+		listener = CreateListenerLocal("int_listener",nextcp="cp59")
+	
+	################################################## TRYOUT TWEAK ##################################################
+	cp59:
+		SetAction("TakeOffBra")
+		UnequipCosplay("m_cosplay_school_hoodie_ribbon","m_cosplay_school_hoodie_shirt")
+		clothesFold.Play()
+		subtitleMind.Add(text="(And now, the clothes she gave me.)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　[Wear the new clothes] ")
+		listener = CreateListenerLocal("int_listener",nextcp="cp60")
+	
+	cp60:
+		SetAction("TakeOnBra")
+		EquipCosplay("m_cosplay_suit_luxe_tops","m_cosplay_suit_luxe_jacket","m_cosplay_suit_luxe_chorker")
+		clothesFold.Play()
+		subtitleMind.Add(text="(It's... not as bad as I expected.)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp61")
+	
+	cp61:
+		subtitleMei.Add(text="\"Nicely thought! The added cleave pulls the attention away from your skirt!*")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp62")
+	
+	cp62:
+		subtitle.Add(text="\"Or lack thereof...\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp63")
+	
+	cp63:
+		subtitleClerk.Add(text="\"I'll... I'll leave you this time. Call me if you need me!\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp64")
+	
+	cp64:
+		subtitleMei.Add(text="\"Thank you!\"")
+		MoveNPC(npc=clerk, coord=Vector(zClerkSpawn.x, zClerkSpawn.y, zClerkSpawn.z))
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp65")
+	
+	cp65:
+		subtitleMei.Add(text="\"So, which one do you prefer for our little trip back home?\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp66")
+	
+	cp66:
+		subtitle.Add(text="\"Wait, I'm wearing one of those outside?\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp67")
+	
+	cp67:
+		subtitleMei.Add(text="\"Of course! What would be the point? So, which one do you prefer?\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp68")
+	
+	################################################## FUSION ##################################################
+	cp68:
+		subtitleMind.Add(text="(It's... surprisingly tempting, but... Hum, let's try to wiggle out of that one.)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp69")
+	
+	cp69:
+		subtitle.Add(text="\"Well, both have great parts in them, but...\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp70")
+	
+	cp70:
+		subtitleMei.Add(text="\"But you just want both, right? Great thinking Manaka! Here, let me just... pick what we need... Here, try this!\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　[Change clothes] ")
+		listener = CreateListenerLocal("int_listener",nextcp="cp71")
+	
+	cp71:
+		SetAction("TakeOffBra")
+		UnequipCosplay("m_cosplay_suit_luxe_tops","m_cosplay_suit_luxe_jacket","m_cosplay_suit_luxe_chorker")
+		clothesFold.Play()
+		listener = CreateListenerLocal("wait_listener",duration=2,nextcp="cp72")
+	
+	cp72:
+		SetAction("TakeOnBra")
+		EquipCosplay("m_cosplay_general_upper_body_net","m_cosplay_suit_chic_jacket")
+		clothesFold.Play()
+		subtitleMind.Add(text="(Oh god, I can't go out in public like this. Everyone will see...)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp73")
+	
+	cp73:
+		subtitleMind.Add(text="(Just having the saleswoman stare at me like that was so embarrassing... The thought of multiple people ogling me like this...)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp74")
+	
+	cp74:
+		subtitleMind.Add(text="(Shit, it's getting me so wet... I have to do it. It's calling for me...)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp75")
+	
+	cp75:
+		clerk = null
+		subtitleMei.Add(text="\"There, the best of both world! I can see it's leaving you speechless.\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp76")
+	
+	cp76:
+		subtitleMind.Add(text="(I can't believe I'm going to do it... I'm shaking just by thinking about it.)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp77")
+	
+	cp77:
+		subtitleMei.Add(text="\"Well, you're good to go! Shall we?\"")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zFitRoom.x,y=zFitRoom.y,z=zFitRoom.z,r=zFitRoom.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp78")
+	
+	cp78:
+		mp(text="Head to the counter to pay")
+		meiListener = CreateListener("npc_follow_listener",npc=mei,distance=1.5)
+		
+		area = CreateArea(type="sphere",stage="FashionShop",x=zCounter.x,y=zCounter.y,z=zCounter.z,r=zCounter.r)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp79")
+	
+	cp79:
+		subtitleMind.Add(text="(Yeah, of course the cashier is surprised... I'd be surprised too...)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zCounter.x,y=zCounter.y,z=zCounter.z,r=zCounter.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp80")
+	
+	cp80:
+		subtitleMind.Add(text="(Stop staring and scan the barcodes already... It's bad enough that they have to find them while the clothes are on my body...)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zCounter.x,y=zCounter.y,z=zCounter.z,r=zCounter.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp81")
+	
+	cp81:
+		subtitleMei.Add(text="*Mei giggles as she sees the cashier steal glances at your exposed skin while scanning the barcodes*")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zCounter.x,y=zCounter.y,z=zCounter.z,r=zCounter.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp82")
+	
+	cp82:
+		subtitleMind.Add(text="(Finally done... Let's get out of here.)")
+		intArea = CreateInteractArea(type="sphere",stage="FashionShop",x=zCounter.x,y=zCounter.y,z=zCounter.z,r=zCounter.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp83")
+	
+	cp83:
+		mp(text="Leave the store")
+		
+		area = CreateArea(type="sphere",stage="ShoppingMall",x=31.74,y=-8.54,z=-49.87,r=10)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp84")
+	
+	################################################## EXIT STORE ##################################################
+	cp84:
+		mei = CreateMei(position=Vector(zMeiSpawn2.x, zMeiSpawn2.y, zMeiSpawn2.z), rotation=Quaternion(0, -0.71, 0, 0.7))
+		MoveNPC(npc=mei, coord=Vector(zMeiSpawn2.x, zMeiSpawn2.y, zMeiSpawn2.z))
+		meiListener = CreateListener("npc_follow_listener",npc=mei,distance=2)
+		subtitleMei.Add(text="\"Time to leave the mall I suppose. Lead the way!\"")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=0.5, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp85")
+	
+	cp85:
+		subtitleMind.Add(text="(I'm really going to walk through the mall dressed like this... I can already feel the stares...)")
+		intArea = CreateInteractArea(type="sphere", stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y-0.02, z=_state.Position.z, r=0.5, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp86")
+	
+	cp86:
+		mp(text="Start your way home")
+		area = CreateArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=2)
+		zone = CreateZone(area)
+		condition = CreateCondition("[]")
+		listener = CreateListenerLocal("basic_travellistener",lastzone=getZone(),nextcp="cp87")
+		listenerFlash = CreateListenerLocal("listener_caught")
+		
+		listener_caught:
+			if _state.FoundNPC != -1
+				subtitleMind.Clear()
+				npc = CreateNPC(_state.FoundNPC)
+				if npc.GetType()=="NewMale" || npc.GetType()=="PreviousMale" || npc.GetType()=="NewOji"
+					he = "He"
+					his = "his"
+				else
+					he = "She"
+					her = "her"
+				
+				pos = _state.Position
+				dirPlayer = Vector(2*pos.rw*pos.ry, 0, 1-2*pos.ry*pos.ry)
+				pos = npc.GetPosition()
+				dirNPC = Vector(2*pos.rw*pos.ry, 0, 1-2*pos.ry*pos.ry)
+				dir = Vector3Dot(dirPlayer, dirNPC)
+				
+				if dir < -0.4
+					subtitleMind.Add(text="("+he+"'s looking straight at my pussy...)", delay=0, fadein=0.2, duration=4, fadeout=0.3)
+				elseif dir > 0.4
+					subtitleMind.Add(text="(I can feel "+his+" gaze on my ass...)", delay=0, fadein=0.2, duration=4, fadeout=0.3)
+				else
+					subtitleMind.Add(text="("+he+"'s staring at my breasts...)", delay=0, fadein=0.2, duration=4, fadeout=0.3)
+	
+	cp87:
+		mp(text="Catch your breath for a moment")
+		subtitleMind.Clear()
+		girl = CreateNPC("NewFemale", position=Vector(zGirlSpawn.x, zGirlSpawn.y, zGirlSpawn.z), body=4, face=6, hair=6)
+		girl.Smartphone(false)
+		girl.Headset(false)
+		girl.Speed(1.2)
+		subtitle.Add(text="\"I need to catch my breath...\"", duration=4)
+		MoveNPC(npc=girl, coord=Vector(zGirlTalk.x, zGirlTalk.y, zGirlTalk.z), thread=thread, nextcp="cp88")
+	
+	cp88:
+		mp(text="")
+		subtitleGirl.Add(text="\"Oh, hi!\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp89")
+	
+	cp89:
+		subtitle.Add(text="\"Hum... Hi?\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp90")
+	
+	cp90:
+		subtitleGirl.Add(text="\"You should be more cautious, everyone can see your pussy.\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp91")
+	
+	cp91:
+		subtitle.Add(text="\"Ah... Er... Yes... I know.\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp92")
+	
+	cp92:
+		subtitleGirl.Add(text="\"You knew?\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp93")
+	
+	cp93:
+		subtitleMind.Add(text="(Aaand she's staring at my pussy. She must think the fact that I'm doing this willingly gives her a free pass to ogle...)")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp94")
+	
+	cp94:
+		subtitleMind.Add(text="(It... kinda does, now that I think about it...)")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp95")
+	
+	cp95:
+		subtitleGirl.Add(text="\"You sure are pretty down there.\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp96")
+	
+	cp96:
+		subtitle.Add(text="*You turn bright red at her words.*")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp97")
+	
+	cp97:
+		subtitle.Add(text="\"Hem... Thank you...\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp98")
+	
+	cp98:
+		subtitleGirl.Add(text="\"Aren't you embarrassed to walk around with your pussy on display for everyone to see?\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp99")
+	
+	cp99:
+		subtitle.Add(text="\"Er... Yes. It's very embarrassing... Everyone is looking at me...\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp100")
+	
+	cp100:
+		subtitleGirl.Add(text="\"Maybe you like being embarrassed? That would explain why you're so wet!\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp101")
+	
+	cp101:
+		subtitle.Add(text="*It takes a non-insignificant amount of willpower to refrain from covering your pussy with your hands.*")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp102")
+	
+	cp102:
+		subtitleMei.Add(text="\"Oh, yes, she acts shy but she loves it! Feel free to look at her as much as you want!\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp103")
+	
+	cp103:
+		girl.PlayAction("ConbiniCrouch")
+		subtitleGirl.Add(text="\"Really? Well, don't mind if I do! You don't mind, to you?\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp104")
+	
+	cp104:
+		subtitleMind.Add(text="(She even crouched to stare at me from up close... Damn, I'm getting so wet.)")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp105")
+	
+	cp105:
+		subtitle.Add(text="\"I do mind, but... Please feel free to look at me however you want.\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp106")
+	
+	cp106:
+		subtitleGirl.Add(text="*The girl stares intensely at your pussy.*\n\"You really are dripping wet.\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp107")
+	
+	cp107:
+		subtitle.Add(text="\"Hum, that being said, I was... We were leaving the mall... So...\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp108")
+	
+	cp108:
+		girl.PlayAction("ConbiniStand")
+		subtitleGirl.Add(text="\"Oh! Don't let me stop you then. I know! I'll accompany you to the exit!\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp109")
+	
+	cp109:
+		girl.SkipStrangeness(true)
+		subtitle.Add(text="\"Oh... Sure.\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl.x,y=zTalkGirl.y,z=zTalkGirl.z,r=zTalkGirl.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp110")
+	
+	################################################## EXIT MALL ##################################################
+	cp110:
+		mp(text="Follow the girl to the exit")
+		MoveNPC(npc=girl, coord=Vector(zGirlTalk2.x, zGirlTalk2.y, zGirlTalk2.z), rotation=Quaternion(0, -0.81, 0, 0.58), thread=thread, nextcp="cp111")
+		subtitleGirl.Add(text="\"People are sure taking notice of your exposed pussy.\"", delay=10, fadein=0.2, duration=5, fadeout=0.3)
+		subtitleMei.Add(text="\"Turns out wearing a sexy top doesn't fully redirect attention... Who knew?\"", delay=20, fadein=0.2, duration=7, fadeout=0.3)
+		subtitleMind.Add(text="(I feel like I'm becoming a local celebrity in the mall...)", delay=32, fadein=0.2, duration=5, fadeout=0.3)
+		girlListener = CreateListener("npc_lead_listener",npc=girl,distance=3)
+	
+	cp111:
+		girlListener = null
+		subtitleGirl.Add(text="\"Here we are! I have stuff to do on the upper floors... unfortunately.\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl2.x,y=zTalkGirl2.y,z=zTalkGirl2.z,r=zTalkGirl2.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp112")
+	
+	cp112:
+		subtitleGirl.Add(text="*The girl resumes staring at your pussy, burning your image in her mind before leaving.*")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl2.x,y=zTalkGirl2.y,z=zTalkGirl2.z,r=zTalkGirl2.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp113")
+	
+	cp113:
+		subtitle.Add(text="*You fidget in place.*\n\"It's embarrassing when you look like that...\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl2.x,y=zTalkGirl2.y,z=zTalkGirl2.z,r=zTalkGirl2.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp114")
+	
+	cp114:
+		subtitleGirl.Add(text="\"Yes, I can see that. Your juices are trickling down your thighs.\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl2.x,y=zTalkGirl2.y,z=zTalkGirl2.z,r=zTalkGirl2.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp115")
+	
+	cp115:
+		subtitle.Add(text="*You turn red again, looking away to avoir eye contact.*")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl2.x,y=zTalkGirl2.y,z=zTalkGirl2.z,r=zTalkGirl2.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp116")
+	
+	cp116:
+		subtitleMei.Add(text="\"What's wrong? Did she embarrass you even more by mentioning your pussy juice?\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl2.x,y=zTalkGirl2.y,z=zTalkGirl2.z,r=zTalkGirl2.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp117")
+	
+	cp117:
+		subtitleGirl.Add(text="*The girl giggles.*\n\"I think we've teased her enough. I have to go now... See you!\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl2.x,y=zTalkGirl2.y,z=zTalkGirl2.z,r=zTalkGirl2.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp118")
+	
+	cp118:
+		girl.ClearWaypoints()
+		girl.AddWaypoint(107) #97?
+		subtitleGirl.Add(text="\"...Don't slip on the puddle...\"\n*She smirks as she leaves.*")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl2.x,y=zTalkGirl2.y,z=zTalkGirl2.z,r=zTalkGirl2.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cp119")
+		
+	cp119:
+		subtitleMei.Add(text="*Mei laughs, and playfully slaps your ass.*\n\"Time to go home, I guess!\"")
+		intArea = CreateInteractArea(type="sphere",stage="ShoppingMall",x=zTalkGirl2.x,y=zTalkGirl2.y,z=zTalkGirl2.z,r=zTalkGirl2.r, text="　next ▼")
+		listener = CreateListenerLocal("int_listener",nextcp="cpEnd")
+	
+	cpEnd:
+		missionpanel.SetVisible(false)
+		lastzone = null
+		SetStage("Apart")

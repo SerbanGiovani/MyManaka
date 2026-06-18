@@ -1,0 +1,365 @@
+rewarder_:
+	timer = 0
+	interval = 1
+	
+	maxCosNum = 30
+	cosKeepNum = 8
+	
+	uRp = 0
+	uRpMax = 1.5
+	multiplier = 1
+	baseRp = 0
+	totalRp = 0
+	
+	
+	uRpDeltaCorrect = 1
+	multiplierCorrect = 1
+	baseRpCorrect = 1
+	
+	
+	failureCalcRate = 0.35
+	
+	skipCondition = CreateThread("defautConditon_")
+	
+	rewardTxetTrigger = CreateThread("rewarderTxetTrigger_")
+	rewardTxetTrigger.setURpMax(uRpMax)
+	
+	failureCalcCondition = CreateThread("defautConditon_")
+	punishCondition = CreateThread("defautConditon_")
+	
+	
+	vn = 0
+	pn = 0
+	cn = 0
+	cnf = 0
+	klf = 0
+	
+	exposed = "None"
+	pistonNum = 0
+	vibratorNum = 0
+	adultToyNum = 0
+	baseExposedFlag = false
+	allExposedFlag = false
+	
+	killerLevel = 0
+
+	clacFlag = false
+
+	blockFlag = true
+	
+	ready = true
+
+
+	startLoop:
+		#Returns listener: Object
+		_result = CreateListenerLocal("__give")
+
+	setBlockFlag:
+		#Params@arr isBlocked
+		isBlocked = _args[0]
+		if isBlocked != null
+			blockFlag = isBlocked
+
+	setSkipCondition:
+		#Params@arr newSkipCondition: Object
+		#Note NewSkipCondition must have function 'check' whith returns isValid: Bool
+		newSkipCondition = _args[0]
+		if newSkipCondition != null
+			skipCondition = newSkipCondition
+
+	setFailureCalcCondition:
+		#Params@arr NewFailureCalcCondition: Object
+		#Note NewFailureCalcCondition must have function 'check' whith returns isValid: Bool
+		newFailureCalcCondition = _args[0]
+		if failureCalcCondition != null
+			failureCalcCondition = newFailureCalcCondition
+
+	setPunishCondition:
+		#Params@arr newPunishCondition: Object
+		#Note NewPunishCondition must have function 'check' whith returns isValid: Bool
+		newPunishCondition = _args[0]
+		if newPunishCondition != null
+			punishCondition = newPunishCondition
+
+	setURpMax:
+		#Params@arr newURpMax
+		newURpMax = _args[0]
+		if newURpMax > 0
+			uRpMax = newURpMax
+		rewardTxetTrigger.setURpMax(uRpMax)
+	getURpMax:
+		#Params@arr uRpMax
+		_result = uRpMax
+
+	correctURpDelta:
+		#Params@arr newURpDeltaCorrect: Number
+		uRpDeltaCorrect = _args[0]
+	correctMultiplier:
+		#Params@arr newMultiplierCorrect: Number
+		multiplierCorrect = _args[0]
+	correctBaseRp:
+		#Params@arr newBaseRpCorrect: Number
+		baseRpCorrect = _args[0]
+
+	forceFailureCalc:
+		AddCurrentRP(failureCalcRate * totalRp)
+		rewardTxetTrigger.triggerCalc((-totalRp) * (1 - failureCalcRate), failureCalcRate * totalRp)
+		__reset()
+		clacFlag = true
+	forcePunishmentCalc:
+		rewardTxetTrigger.triggerCalc((-totalRp))
+		__reset()
+		clacFlag = true
+	forceCalc:
+		AddCurrentRP(totalRp)
+		rewardTxetTrigger.triggerCalc(totalRp)
+		__reset()
+		clacFlag = true
+
+	__give:
+		if !blockFlag
+			if !ready
+				ready = true
+				rewardTxetTrigger.clear()
+			timer = timer + _timediff
+			if timer >= interval
+				timer = 0
+				if !skipCondition.check()
+					clacFlag = false
+					__preUpdate()
+					__killerLevelUpdate()
+					__uRpUpdate()
+					__baseUpdate()
+					__multiplierUpdate()
+					__endUpdate()
+					totalRp = totalRp + baseRp * multiplier
+				else
+					if !clacFlag
+						clacFlag = true
+						__calc()
+						__reset()
+			rewardTxetTrigger.flush(uRp,baseRp,multiplier,totalRp)
+		else
+			if ready
+				ready = false
+				rewardTxetTrigger.default()
+
+
+	__calc:
+		if totalRp > 0
+			if failureCalcCondition.check()
+				AddCurrentRP(failureCalcRate * totalRp)
+				rewardTxetTrigger.triggerCalc((-totalRp) * (1 - failureCalcRate), failureCalcRate * totalRp)
+			elseif punishCondition.check()
+				rewardTxetTrigger.triggerCalc((-totalRp))
+			else
+				AddCurrentRP(totalRp)
+				rewardTxetTrigger.triggerCalc(totalRp)
+
+	__reset:
+		uRp = 0
+		uRpMax = 1.5
+		multiplier = 1
+		baseRp = 0
+		totalRp = 0
+		rewardTxetTrigger.clear()
+
+	__preUpdate:
+		vn = _state.Vibrator
+		if vn == 2
+			vn = 3
+		elseif vn == 3
+			vn = 2
+		pn = _state.Piston
+		if pn == 3
+			pn = 4
+		elseif pn == 4
+			pn = 3
+		cn = _state.Cosplay.Count() - cosKeepNum
+		if cn < 0
+			cn = 0
+		fac = cn / (maxCosNum - cosKeepNum)
+		cnf = 1 - fac * fac
+		exposed = _state.Exposed
+		baseExposedFlag = _state.NPCArea && (exposed.Front || exposed.Upper || exposed.Hip || exposed.All)
+		allExposedFlag = exposed.Upper && exposed.Hip
+		if _state.AdultToys["PistonFuta"]
+			pistonNum = pistonNum + 1
+		if _state.AdultToys["PistonAnal"]
+			pistonNum = pistonNum + 1
+		if _state.AdultToys["PistonPussy"]
+			pistonNum = pistonNum + 1
+		if _state.AdultToys["Vibrator"]
+			vibratorNum = vibratorNum + 1
+		if _state.AdultToys["KuriRotor"]
+			vibratorNum = vibratorNum + 1
+		if _state.AdultToys["TitRotor"]
+			vibratorNum = vibratorNum + 1
+		adultToyNum = adultToyNum + pistonNum + vibratorNum
+		if _state.Blindfolded
+			adultToyNum = adultToyNum + 1
+		if _state.Handcuffs.Type != "None"
+			adultToyNum = adultToyNum + 1
+
+	__killerLevelUpdate:
+		if _state.NearNPC
+			if allExposedFlag
+				killerLevel = killerLevel + 4.5
+			elseif exposed.All
+				killerLevel = killerLevel + 9
+		if _state.Blindfolded
+			if allExposedFlag
+				killerLevel = killerLevel + 1
+			elseif exposed.All
+				killerLevel = killerLevel + 4
+			if _state.NearNPC
+				killerLevel = killerLevel + 5
+				if allExposedFlag
+					killerLevel = killerLevel + 3.5
+				elseif exposed.All
+					killerLevel = killerLevel + 6.5
+		if _state.Handcuffs.Type != "None"
+			if allExposedFlag
+				killerLevel = killerLevel + 0.5
+				if _state.NearNPC
+					killerLevel = killerLevel + 2
+			elseif exposed.All
+				killerLevel = killerLevel + 1.5
+				if _state.NearNPC
+					killerLevel = killerLevel + 6
+			if _state.NearNPC
+				killerLevel = killerLevel + 2
+		if _state.Sitting
+			killerLevel = killerLevel + 4
+			if _state.NearNPC && exposed.All
+				killerLevel = killerLevel + 12
+			if _state.Blindfolded && exposed.All
+				killerLevel = killerLevel + 4
+				if _state.Handcuffs.Type != "None"
+					killerLevel = killerLevel + 12
+		if _state.Crouching || (_state.Action != "None")
+			if _state.NearNPC
+				killerLevel = killerLevel + 1.5
+				if allExposedFlag
+					killerLevel = killerLevel + 4.5
+				elseif exposed.All
+					killerLevel = killerLevel + 9
+				if _state.Handcuffs.Type != "None"
+					killerLevel = killerLevel + 12
+				if _state.Crouching && (_state.Action != "None")
+					killerLevel = killerLevel + 12
+			if _state.Blindfolded
+				killerLevel = killerLevel + 2
+			if allExposedFlag
+				killerLevel = killerLevel + 0.5
+			elseif exposed.All
+				killerLevel = killerLevel + 2
+		if _state.Watched
+			killerLevel = killerLevel + 2
+		if _state.ShowingOff
+			killerLevel = killerLevel + 2.5
+			if _state.NPCArea
+				killerLevel = killerLevel + 2.5
+			if allExposedFlag
+				killerLevel = killerLevel + 2.5
+			elseif exposed.All
+				killerLevel = killerLevel + 7.5
+			if _state.Blindfolded
+				killerLevel = killerLevel + 5
+			if _state.Handcuffs.Type != "None"
+				killerLevel = killerLevel + 5
+			if _state.Crouching || (_state.Action != "None")
+				killerLevel = killerLevel + 6
+		if _state.Orgasm
+			killerLevel = killerLevel + 1.5
+			if _state.NearNPC
+				if allExposedFlag
+					killerLevel = killerLevel + 6
+				elseif _state.All
+					killerLevel = killerLevel + 12
+		if _state.Peeing
+			killerLevel = killerLevel + 1
+			if _state.NearNPC
+				killerLevel = killerLevel + 4
+			if _state.ShowingOff
+				killerLevel = killerLevel + 4
+		klf = killerLevel * killerLevel
+
+	__endUpdate:
+		adultToyNum = 0
+		vibratorNum = 0
+		pistonNum = 0
+		killerLevel = 0
+		cn = 0
+		cnf = 0
+		vn = 0
+		pn = 0
+		klf = 0
+
+	__uRpUpdate:
+		delta = 0
+		if baseExposedFlag
+			delta = delta + adultToyNum * 0.000006 + vn * vibratorNum * 0.00005 + pn * pistonNum * 0.000012
+			delta = delta + cnf * 0.0002
+			delta = delta + _state.Detection * _state.Detection * 0.000021
+			delta = delta + klf * 0.000002
+			if exposed.Front
+				delta = delta + 0.000022
+			if exposed.Upper
+				delta = delta + 0.000088
+			if exposed.Hip
+				delta = delta + 0.000022
+			if exposed.HipCrouch
+				delta = delta + 0.000008
+			if exposed.All
+				delta = delta + 0.00022
+		if !_state.DayTime
+			if !_state.InLight
+				delta = delta * 0.25
+			else
+				delta = delta * 0.75
+			if _state.Position.stage == "Mansion"
+				delta = delta * 0.1
+		elseif _state.Position.stage == "ShoppingMall"
+			delta = delta * 1.35
+		uRp = uRp + delta * uRpDeltaCorrect
+		if uRp > uRpMax
+			uRp = uRpMax
+
+	__baseUpdate:
+		baseRp = 0
+		if baseExposedFlag
+			if exposed.Front
+				baseRp = baseRp + uRp
+			if exposed.Upper
+				baseRp = baseRp + uRp * 2
+			if exposed.Hip
+				baseRp = baseRp + uRp
+			if exposed.All
+				baseRp = baseRp + uRp * 10
+		if _state.ShowingOff
+			baseRp = baseRp + uRp * 3.3
+		if _state.Peeing
+			if _state.Watched
+				baseRp = baseRp + uRp * 1.5
+			elseif _state.NPCArea
+				baseRp = baseRp + uRp * 0.75
+		baseRp = baseRp * baseRpCorrect
+
+	__multiplierUpdate:
+		multiplier = 1
+		multiplier = multiplier + klf * 0.0118
+		multiplier = multiplier + vn * vibratorNum * 0.06 + pn * pistonNum * 0.04
+		multiplier = multiplier * (0.5 + 1.5 * _state.Detection / 3)
+		multiplier = multiplier * 1.75 * (0.65 + 0.35 * cnf)
+		if vn == 3
+			multiplier = multiplier * 1.25
+		if !_state.DayTime
+			multiplier = multiplier * 0.65
+			if !_state.InLight
+				multiplier = multiplier * 0.5
+			if _state.Position.stage == "Mansion"
+				multiplier = multiplier * 0.25
+		if _state.Position.stage == "ShoppingMall"
+			multiplier = multiplier * 1.35
+		multiplier = multiplier * multiplierCorrect

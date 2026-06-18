@@ -1,0 +1,141 @@
+generater_:
+	eventQueue = null #Required
+
+	creaters = CreateThread("DynamicDict")
+	keysMemory = CreateThread("Queue")
+	memory = CreateThread("Queue")
+	memoryThreshold = 4
+	eventsThreshold = 15
+
+	whiteList = CreateThread("RecordSet")
+
+	eventDecorator = CreateThread("eventDecorator_")
+	
+	adjustorDefault = CreateThread("adjustorDefault_")
+	adjustors = CreateThread("DynamicDict")
+
+	startLoop:
+		#Returns listener: Object
+		_result = CreateListenerLocal("__generate")
+
+	__generate:
+		if eventQueue.GetCount() < eventsThreshold
+			__delMemory()
+			event = __roll()
+			eventQueue.Enqueue(event)
+
+	__delMemory:
+		if memory.GetCount() > memoryThreshold
+			item = memory.Dequeue()
+			key = keysMemory.Dequeue()
+			creaters.Insert(key, item)
+
+	calcWeights:
+		totalWeight = 0
+		do:
+			totalWeight = totalWeight + value.weight
+		GetTotalWeight:
+			_result = totalWeight
+		reset:
+			totalWeight = 0
+	cw = CreateThread("calcWeights")
+
+	roller:
+		r = 0
+		progress = 0
+		do:
+			progress = progress + value.weight
+			if progress >= r
+				_result = false
+		reset:
+			#Params@arr total: Number
+			progress = 0
+			total = _args[0]
+			if total < 0
+				total = 0
+			r = Random(0, total)
+	rr = CreateThread("roller")
+
+	__roll:
+		#Returns event: List
+		keys = creaters.GetKeys()
+		items = Copy(creaters.GetValues(), true)
+		cw.reset()
+		Foreach(items, cw)
+		totalWeight = cw.GetTotalWeight()
+		rr.reset(totalWeight)
+		i = Foreach(items, rr)
+		key = keys[i]
+		# Log("Roll key: " + key)
+		item = items[i]
+		# Log("weight: " + item.weight + "\n")
+		creater = item.creater
+		event = eventDecorator.decorate(creater.create())
+		event = adjustorDefault.adjust(event)
+		adjustor = adjustors.At(key)
+		if adjustor != null
+			event = adjustor.adjust(event)
+		if !whiteList.Contains(key)
+			memory.Enqueue(item)
+			keysMemory.Enqueue(key)
+			creaters.Remove(key)
+		_result = event
+
+	setEventQueue:
+		#Params@arr newEventQueue
+		eventQueue = _args[0]
+	addWhiteKey:
+		#Params@arr key: String
+		whiteList.Insert(_args[0])
+	removeWhiteKey:
+		#Params@arr key: String
+		whiteList.Remove(_args[0])
+	clearWhiteList:
+		whiteList.Clear()
+	setMemoryThreshold:
+		#Params@arr newMemoryThreshold: Number
+		#Note If need shrink event queque and memory queque, call this function early than 'setEventsThreshold'
+		newMemoryThreshold = _args[0]
+		if newMemoryThreshold != null && (newMemoryThreshold < eventsThreshold)
+			memoryThreshold = newMemoryThreshold
+	getMemoryThreshold:
+		#Returns memoryThreshold: Number
+		_result = memoryThreshold
+	setEventsThreshold:
+		#Params@arr newEventsThreshold: Number
+		#Note If need expand event queque and memory queque, call this function early than 'setMemoryThreshold'
+		newEventsThreshold = _args[0]
+		if newEventsThreshold != null && (memoryThreshold < newEventsThreshold)
+			eventsThreshold = newEventsThreshold
+	getEventsThreshold:
+		#Returns eventsThreshold: Number
+		_result = eventsThreshold
+
+	addCreater:
+		#Params@arr key: String, creater: Object, weight: Number
+		key = _args[0]
+		creater = _args[1]
+		weight = _args[2]
+		if creater != null && (key != null)
+			if weight == null
+				weight = 1
+			item = CreateList(creater = creater,weight = weight)
+			creaters.Insert(key, item)
+
+	removeCreater:
+		#Params@arr key: String
+		key = _args[0]
+		if key != null
+			creaters.Remove(key)
+
+	addAdjustor:
+		#Params@arr key: createrKey, adjustor: Object
+		createrKey = _args[0]
+		adjustor = _args[1]
+		if createrKey != null && (adjustor != null)
+			adjustors.Insert(createrKey, adjustor)
+	removeAdjustor:
+		#Params@arr key: createrKey
+		createrKey = _args[0]
+		if createrKey != null
+			adjustors.Remove(createrKey)

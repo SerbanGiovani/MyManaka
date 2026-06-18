@@ -1,0 +1,209 @@
+rp = 200
+camera_delay = 0.6
+
+if _save.clears == null
+	_save.clears = 0
+	_save.max_mult = 0
+
+mm = CreateMissionMenuItem()
+update_mission_menu()
+camera_refs = CreateList()
+chat = null
+
+main_thread = CreateThread("outside_conv")
+
+outside_conv:
+	self = _this
+	if _state.Position.stage == "Convenience"
+		self.Goto("inside_conv")
+	sl = CreateListener("stage_listener")
+	stage_listener:
+		check_caught()
+		if _stagechanged
+			check_complete()
+			if _state.Position.stage == "Convenience"
+				self.Goto("inside_conv")
+
+inside_conv:
+	self = _this
+	progress = 0
+	done = mm.GetCleared()
+	camera = null
+	camera_time = 0
+	mp = CreateMissionPanel()
+	mp.SetVisible(false)
+	mp.SetGaugeVisible(true)
+	mp.SetText(Format(text_template, progress))
+	mp.SetRPText("" + rp + "RP")
+	dests = make_dests()
+	dests_len = dests.areas.Count()
+	text_template = "While naked, orgasm for each security camera ({0}/" + dests_len + ")"
+	text_done = "While naked, masturbate for a security camera"
+	cond_mast = CreateCondition("(Action_OnaniArmKuri,Action_OnaniNeGanimata,Action_MituasiOnani,Action_OnaniNormal,Action_OnaniSikoru,Action_OnaniYotuashi,Action_ChikubiRotate,Action_UseDildoFloorPussy1,Action_UseDildoFloorAnal1,Action_SexStandBack,Action_SexKijoui,[(AdultToy_Vibrator,AdultToy_KuriRotor,AdultToy_TitRotor),!VibrationOff],[(AdultToy_PistonPussy,AdultToy_PistonAnal,AdultToy_PistonFuta),!PistonOff])", id="masturbating_any")
+	cond_backwards = CreateCondition("(Action_OnaniYotuashi,Action_GanimataHip,Action_HipShake)")
+	cond = CreateCondition("[Exposed_All,SubCondition_masturbating_any]")
+	ml = CreateListener("main_loop")
+	main_loop:
+		check_caught()
+		if _state.Position.stage != "Convenience"
+			check_complete()
+			if done && camera_refs.Count() > 0
+				chat = CreateMessengerChat("Conbini Cameras", icontext="CCam", iconcolor=Color(0.5, 0.5, 1))
+				chat.Add("Thank you for shopping at our Conbini!", "Left")
+				chat.Add("Here are some complementary photos from your visit", "Left")
+				i = 0
+				while camera_refs[i] != null
+					chat.Add(camera_refs[i], "Left")
+					i = i + 1
+				chat.Add("Look for them on our customer appreciation photo board during your next visit!", "Left")
+			i = 0
+			while camera_refs[i] != null
+				DeleteSnapshot(camera_refs[i])
+				i = i + 1
+			camera_refs = CreateList()
+			if _state.Position.stage == "Apart"
+			self.Goto("outside_conv")
+
+		if camera != null && _time >= camera_time
+			camera_refs.Insert(camera.Save(hidden=false))
+			camera = null
+
+		progressing = false
+		if in_any(dests.areas) && cond.Check()
+			mp.SetVisible(true)
+			sign = 1
+			if cond_backwards.Check()
+				sign = -1
+			i = 0
+			while dests.areas[i] != null
+				if dests.areas[i].Inside()
+					if facing(dests.cams[i]) * sign >= 0.9
+						progressing = true
+						if done
+							mp.SetText(text_done)
+							mp.SetRPText("" + (rp / 400) + "RP\n/sec")
+							AddCurrentEarnRP(rp / 400 * _timediff)
+						else
+							mp.SetText(Format(text_template, progress))
+							mp.SetRPText("" + rp + "RP")
+							if _state.Orgasm
+								do_progress(i)
+								i = 1000
+					else
+						mp.SetText("Go on, face the camera")
+						mp.SetRPText("")
+						mp.SetGaugeVisible(false)
+				i = i + 1
+		else
+			if done
+				mp.SetVisible(false)
+			else
+				mp.SetText(Format(text_template, progress))
+				mp.SetGaugeVisible(true)
+
+		if progressing 
+			partial = _state.Ecstasy
+			if _state.Orgasm
+				partial = 0
+			mp.SetGaugeProgress((progress + partial) / dests_len)
+			mp.SetGaugeVisible(!done)
+		else
+			mp.SetGaugeProgress(progress / dests_len)
+
+	do_progress: # args: i
+		create_camera(dests.cams[_args[0]])
+		progress = progress + 1
+		dests.areas.Remove(_args[0])
+		dests.cams.Remove(_args[0])
+		if dests.areas.Count() > 0
+			mp.SetText(Format(text_template, progress + 1))
+		else
+			done = true
+			dests = make_dests()
+			PlaySoundEffect("UICompleteMission")
+			AddCurrentEarnRP(rp)
+			_save.max_mult = Max(_save.max_mult, _state.RpBonus)
+			mm.SetCleared(true)
+			update_mission_menu()
+
+	create_camera: # args: Vector(x, y, z)
+		_args[0].y = 2.5
+		los = Vector3Sub(_state.CameraTarget.Crotch, _args[0])
+		mag = Vector3Length(los)
+		camera = CreateSnapshot(position=_args[0], direction=los, fov=(120/mag))
+		camera_time = _time + camera_delay + Random(0, 0.4)
+
+
+facing: # args: Vector(x, y, z)
+	target = _args[0]
+	pos = _state.Position
+	forward_vec = Vector(2 * pos.rw * pos.ry, 0.12, 1 - 2 * pos.ry * pos.ry)
+	to_target = Vector3Sub(target, pos)
+	to_target = Vector3Scale(to_target, 1 / Vector3Length(to_target)) # normalize
+	_result = Vector3Dot(forward_vec, to_target)
+
+update_mission_menu:
+	mm.SetText("Orgasm naked for the cameras")
+	mm.SetRPText("" + rp + "RP")
+	mm.SetStages("Convenience")
+	mm.SetMark(_save.clears > 0)
+	if _save.clears > 0
+		mm.SetClears(_save.clears)
+	if _save.max_mult > 0
+		mm.SetMaxRP(_save.max_mult)
+
+in_any:
+	_result = false
+	zones = _args[0]
+	i = 0
+	while zones[i] != null
+		if zones[i].Inside()
+			_result = true
+			i = i + 10000
+		i = i + 1
+
+check_complete:
+	if _state.Position.stage == "Apart" && mm.GetCleared()
+		mm.SetCleared(false)
+		_save.clears = _save.clears + 1
+		update_mission_menu()
+
+check_caught:
+	if _state.FoundNPC >= 0 && !_state.Skills.Exhibitionism
+		if mm.GetCleared()
+			mm.SetCleared(false)
+
+make_dests:
+	_result = CreateList(areas = CreateList(), cams = CreateList())
+	temp = CreateList()
+	temp.Insert(make_area(-3.44, -13.34, 0.5))
+	temp.Insert(make_area(-3.44, -12.7, 0.7))
+	temp.Insert(make_area(-3.44, -12.0, 0.9))
+	temp.Insert(make_area(-3.44, -11.0, 1.1))
+	temp.Insert(make_area(-3.11, -9.8, 0.8))
+	temp.Insert(make_area(-3.11, -9.0, 0.8))
+	_result.areas.Insert(CreateZone(temp))
+	_result.cams.Insert(Vector(-3.5, 0.12, -14.5))
+	#_result.areas.Insert(CreateArea(type="cuboid", stage="Convenience", x1=3.25, y1=0, z1=-13, x2=2.75, y2=0, z2=-9, w=1, h=1, outline=true, compass=false))
+	temp = CreateList()
+	temp.Insert(make_area(3.34, -13.34, 0.5))
+	temp.Insert(make_area(3.54, -12.74, 0.9))
+	temp.Insert(make_area(3.54, -11.84, 1.1))
+	temp.Insert(make_area(2.58, -10.66, 0.8))
+	temp.Insert(make_area(2.78, -9.6, 0.5))
+	_result.areas.Insert(CreateZone(temp))
+	_result.cams.Insert(Vector(3.4, 0.12, -14.25))
+	#_result.areas.Insert(CreateArea(type="cuboid", stage="Convenience", x1=-0.5, y1=0, z1=-6, x2=3, y2=0, z2=-6.5, w=2, h=1, outline=true, compass=false))
+	temp = CreateList()
+	temp.Insert(make_area(-1.37, -6.13, 0.5))
+	temp.Insert(make_area(-0.77, -6.13, 0.6))
+	temp.Insert(make_area(-0.1, -6.13, 0.7))
+	temp.Insert(make_area(0.8, -6.13, 0.9))
+	temp.Insert(make_area(1.6, -6.13, 1.2))
+	temp.Insert(make_area(2.53, -6.5, 0.8))
+	temp.Insert(make_area(3.56, -6.5, 0.5))
+	_result.areas.Insert(CreateZone(temp))
+	_result.cams.Insert(Vector(-2.5, 0.12, -6.1))
+
+	make_area:
+		_result = CreateArea(type="sphere", stage="Convenience", x=_args[0], y=0.12, z=_args[1], r=_args[2], outline=false, compass=false)

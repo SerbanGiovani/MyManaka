@@ -1,0 +1,997 @@
+##########################
+## Traveling Tasks v1.1 ##
+##########################
+
+# Main threads to run
+packOfTasks = CreateThread("main")
+
+main:
+	thread = _this
+
+	##############################
+	# CUSTOMIZE VALUES FROM HERE #
+	##############################
+
+	# Base RP values:
+	orgasmValue = 30
+	peeingValue = 20
+	braValue = 30
+	pantiesValue = 30
+	edgingValue = 40
+	dildoingValue = 50
+	handcuffObjecValue = 40
+	# wait time RP is set dynamically with square law over 3 minutes up to 100 RP
+
+	# Multipliers:
+	multFlash4 = 1.4 # Naked
+	multFlash3 = 1.1 # Exposing all with coat
+	multFlash2 = 0.9 # Exposing two areas with coat
+	multFlash1 = 0.6 # Exposing one area with coat
+	multFlash0 = 0.069 # Coat closed
+	multBlind1 = 1.6 # Blindfolded
+	multBlind0 = 1.0 # Not Blindfolded
+	multHandc1 = 1.4 # Handcuffed
+	multHandc0 = 1.0 # Not Handcuffed
+	multToysL = 0.15 # Toys set to low, (additive, 1.0 + (nrOfToys * value))
+	multToysH = 0.25 # Toys set to medium, high or random
+	multDaytime1 = 2.0 # During the day
+	multDaytime0 = 1.0 # During the night
+	multWatch1 = 1.1 # Watched
+	multWatch0 = 0.7 # Not Watched
+	multShowing1 = 1.4 # Showing off
+	multShowing0 = 0.9 # Not Showing off
+	multNearNPC1 = 1.6 # Be near NPCs
+	multNearNPC0 = 1.0 # Don't be near NPCs
+	# heart rate multiplier is averaged after leaving starting zone and is between aprox. 1.0 and 2.0
+
+	ecstasyThreshold = 0.85 # keep ecstasy above this value to edge
+
+	# Time to get to (in seconds)
+	doingEdgeTime = 60
+	doingPeeTime = 10 
+	doingWatchTime = 60
+	doingShowOffTime = 60
+	doingNearNPCTime = 60
+	doingDildoTime = 30
+	doingHandcuffObjectTime = 40
+
+	##############################
+	# END OF VALUE CUSTOMIZATION #
+	##############################
+
+	# don't touch these
+	areaList = CreateList()
+	zoneList = CreateList()
+	zoneDescript = CreateList()
+	zoneRPValue = CreateList()
+	zoneRPMult = CreateList()
+	zoneUndieMult = CreateList()
+
+
+	############################
+	# DEFINING AREAS AND ZONES #
+	############################
+
+	# Add new areas below
+	res_lamp_post_1 = CreateArea(type="sphere", stage="Residence", x=8.02, y=-0.11, z=-121.88, r=1.5, compass=false)
+
+	res_vending_machine_1 = CreateArea(type="sphere", stage="Residence", x=-9.06, y=-0.11, z=-127.50, r=1.0, compass=false)
+	res_vending_machine_2 = CreateArea(type="sphere", stage="Residence", x=-22.59, y=-0.11, z=-100.79, r=1.0, compass=false)
+	res_vending_machine_3 = CreateArea(type="sphere", stage="Residence", x=5.21, y=-0.11, z=-78.05, r=1.0, compass=false)
+	res_vending_machine_4 = CreateArea(type="sphere", stage="Residence", x=-35.55, y=-0.11, z=-77.05, r=1.0, compass=false)
+
+	res_neighbours_door_1 = CreateArea(type="sphere", stage="Residence", x=-30.58, y=-0.08, z=-104.73, r=1.0, compass=false)
+	res_neighbours_door_2 = CreateArea(type="sphere", stage="Residence", x=-29.41, y=-0.11, z=-76.95, r=1.0, compass=false)
+	res_neighbours_door_3 = CreateArea(type="sphere", stage="Residence", x=-25.09, y=-0.08, z=-76.81, r=1.0, compass=false)
+	res_neighbours_door_4 = CreateArea(type="sphere", stage="Residence", x=-4.06, y=-0.11, z=-74.07, r=1.0, compass=false)
+	res_neighbours_door_5 = CreateArea(type="sphere", stage="Residence", x=-5.71, y=-0.08, z=-85.14, r=1.0, compass=false)
+	res_neighbours_door_6 = CreateArea(type="sphere", stage="Residence", x=6.39, y=-0.10, z=-84.36, r=1.0, compass=false)
+	res_neighbours_door_7 = CreateArea(type="sphere", stage="Residence", x=14.06, y=-0.10, z=-83.25, r=1.0, compass=false)
+	res_neighbours_door_8 = CreateArea(type="sphere", stage="Residence", x=25.78, y=-0.08, z=-85.28, r=1.0, compass=false)
+	res_neighbours_door_9 = CreateArea(type="sphere", stage="Residence", x=25.81, y=-0.09, z=-95.19, r=1.0, compass=false)
+	res_neighbours_door_10 = CreateArea(type="sphere", stage="Residence", x=40.66, y=-0.08, z=-96.27, r=1.0, compass=false)
+	res_neighbours_door_11 = CreateArea(type="sphere", stage="Residence", x=40.45, y=-0.10, z=-127.43, r=1.0, compass=false)
+	res_neighbours_door_12 = CreateArea(type="sphere", stage="Residence", x=13.43, y=-0.08, z=-116.81, r=1.0, compass=false)
+	res_neighbours_door_13 = CreateArea(type="sphere", stage="Residence", x=2.60, y=-0.10, z=-111.52, r=1.0, compass=false)
+	res_neighbours_door_14 = CreateArea(type="sphere", stage="Residence", x=-21.59, y=-0.10, z=-107.07, r=1.0, compass=false)
+	res_neighbours_door_15 = CreateArea(type="sphere", stage="Residence", x=-42.15, y=-0.11, z=-78.79, r=1.0, compass=false)
+
+	conv_store_hidden_from_cameras = CreateArea(type="sphere", stage="Convenience", x=-3.48, y=0.12, z=-14.50, r=1.2, compass=false)
+
+	park_bench_and_vending_south = CreateArea(type="sphere", stage="Park", x=75.63, y=51.00, z=56.63, r=2.6, compass=false)
+	park_shed_fountain = CreateArea(type="sphere", stage="Park", x=64.41, y=52.01, z=92.93, r=2.0, compass=false)
+	park_bench_and_vending_north = CreateArea(type="sphere", stage="Park", x=90.72, y=51.02, z=111.07, r=2.6, compass=false)
+	park_men_restroom = CreateArea(type="sphere", stage="Park", x=123.58, y=49.06, z=124.08, r=2.0, compass=false)
+
+	apart_last_floor_door = CreateArea(type="sphere", stage="Mansion", x=44.62, y=23.69, z=126.96, r=3.2, compass=false)
+	apart_lamp_post_1 = CreateArea(type="sphere", stage="Mansion", x=27.19, y=-0.10, z=160.16, r=1.4, compass=false)
+
+	dt_parking_space = CreateArea(type="sphere", stage="StationFront", x=-217.25, y=0.28, z=-41.51, r=4.0, compass=false)
+	dt_hidden_vending_machine = CreateArea(type="sphere", stage="StationFront", x=-235.23, y=0.22, z=-28.67, r=2.0, compass=false)
+	dt_laundromat = CreateArea(type="sphere", stage="StationFront", x=-217.23, y=0.45, z=-19.37, r=4.6, compass=false)
+	dt_stair_near_cafe = CreateArea(type="sphere", stage="StationFront", x=-241.51, y=0.23, z=-56.74, r=5.0, compass=false)
+
+	mall_entrance_escalator_benches = CreateArea(type="sphere", stage="ShoppingMall", x=2.42, y=-3.15, z=16.29, r=2.4, compass=false)
+	mall_elevator_top_vending_machine = CreateArea(type="sphere", stage="ShoppingMall", x=43.80, y=2.26, z=-21.88, r=3.0, compass=false)
+
+	clothes_shop_changing_room = CreateArea(type="sphere", stage="FashionShop", x=52.80, y=0.07, z=-139.87, r=2.5, compass=false)
+
+	# don't forget to add any new area to areaList below too!!!
+	areaList.Insert(res_lamp_post_1, res_vending_machine_1, res_vending_machine_2, res_vending_machine_3, res_vending_machine_4)
+	areaList.Insert(res_neighbours_door_1, res_neighbours_door_2, res_neighbours_door_3, res_neighbours_door_4, res_neighbours_door_5)
+	areaList.Insert(res_neighbours_door_6, res_neighbours_door_7, res_neighbours_door_8, res_neighbours_door_9, res_neighbours_door_10)
+	areaList.Insert(res_neighbours_door_11, res_neighbours_door_12, res_neighbours_door_13, res_neighbours_door_14, res_neighbours_door_15)
+	areaList.Insert(conv_store_hidden_from_cameras)
+	areaList.Insert(park_bench_and_vending_south, park_shed_fountain, park_bench_and_vending_north, park_men_restroom)
+	areaList.Insert(apart_last_floor_door, apart_lamp_post_1)
+	areaList.Insert(dt_parking_space, dt_hidden_vending_machine, dt_laundromat, dt_stair_near_cafe)
+	areaList.Insert(mall_entrance_escalator_benches, mall_elevator_top_vending_machine)
+	areaList.Insert(clothes_shop_changing_room)
+
+
+	# Create zone(s) for the areas you defined
+	# use the same zoneList[nr] for areas belonging to the same zone
+
+	# Residencial Area
+	zoneList[0] = CreateList() # don't forget to increment the index of zoneList
+	zoneList[0].Insert(CreateZone(res_lamp_post_1)) # area to include
+	zoneDescript.Insert("Lamp post in the alley corner to the east.") # Zone description
+	zoneRPValue.Insert(20) # RP you get when going in each of the zones defined above
+	zoneRPMult.Insert(1.0) # This value multiplies the base RP value of each task performed in this zone
+	zoneUndieMult.Insert(1.0) # This value multiplies the RP value you get from leaving your bra or panties
+
+	zoneList[1] = CreateList()
+	zoneList[1].Insert(CreateZone(res_vending_machine_1)) # area 1 to include
+	zoneList[1].Insert(CreateZone(res_vending_machine_2)) # area 2 to include
+	zoneList[1].Insert(CreateZone(res_vending_machine_3))
+	zoneList[1].Insert(CreateZone(res_vending_machine_4))
+	zoneDescript.Insert("One of the 4 vending machines in your neighbourhood.") # Zone description
+	zoneRPValue.Insert(60) # RP you get when going in each of the zones defined above
+	zoneRPMult.Insert(1.5) # Since there are 4 zones total, the value divides between them, so it's good to multiply it somewhat
+	zoneUndieMult.Insert(0.34) # This value multiplies the RP value you get from leaving your bra or panties
+
+	zoneList[2] = CreateList() # don't forget to increment the index of zoneList
+	zoneList[2].Insert(CreateZone(res_neighbours_door_1))
+	zoneList[2].Insert(CreateZone(res_neighbours_door_2))
+	zoneList[2].Insert(CreateZone(res_neighbours_door_3))
+	zoneList[2].Insert(CreateZone(res_neighbours_door_4))
+	zoneList[2].Insert(CreateZone(res_neighbours_door_5))
+	zoneList[2].Insert(CreateZone(res_neighbours_door_6))
+	zoneList[2].Insert(CreateZone(res_neighbours_door_7))
+	zoneList[2].Insert(CreateZone(res_neighbours_door_8))
+	zoneList[2].Insert(CreateZone(res_neighbours_door_9))
+	zoneList[2].Insert(CreateZone(res_neighbours_door_10))
+	zoneList[2].Insert(CreateZone(res_neighbours_door_11))
+	zoneList[2].Insert(CreateZone(res_neighbours_door_12))
+	zoneList[2].Insert(CreateZone(res_neighbours_door_13))
+	zoneList[2].Insert(CreateZone(res_neighbours_door_14))
+	zoneList[2].Insert(CreateZone(res_neighbours_door_15))
+	zoneDescript.Insert("Neighbour with doorbel.") # Zone description
+	zoneRPValue.Insert(220) # RP you get when going in each of the zones defined above
+	zoneRPMult.Insert(4.0) # If there are more zones, the value divides between them, so it's good to multiply it somewhat
+	zoneUndieMult.Insert(0.1) # This value multiplies the RP value you get from leaving your bra or panties
+
+	# Convenience Store
+	zoneList[3] = CreateList()
+	zoneList[3].Insert(CreateZone(conv_store_hidden_from_cameras))
+	zoneDescript.Insert("Hidden from cameras.")
+	zoneRPValue.Insert(30)
+	zoneRPMult.Insert(2.0)
+	zoneUndieMult.Insert(1.5)
+
+	# Central Park
+	zoneList[4] = CreateList()
+	zoneList[4].Insert(CreateZone(park_bench_and_vending_south))
+	zoneDescript.Insert("Bench and vending machine around the fountain.")
+	zoneRPValue.Insert(30)
+	zoneRPMult.Insert(1.0)
+	zoneUndieMult.Insert(1.5)
+
+	zoneList[5] = CreateList()
+	zoneList[5].Insert(CreateZone(park_shed_fountain))
+	zoneDescript.Insert("Shed near the central fountain.")
+	zoneRPValue.Insert(20)
+	zoneRPMult.Insert(1.0)
+	zoneUndieMult.Insert(1.75)
+
+	zoneList[6] = CreateList()
+	zoneList[6].Insert(CreateZone(park_bench_and_vending_north))
+	zoneDescript.Insert("Bench and vending machine around the fountain.")
+	zoneRPValue.Insert(35)
+	zoneRPMult.Insert(1.1)
+	zoneUndieMult.Insert(2.0)
+
+	zoneList[7] = CreateList()
+	zoneList[7].Insert(CreateZone(park_men_restroom))
+	zoneDescript.Insert("Men public restroom.")
+	zoneRPValue.Insert(40)
+	zoneRPMult.Insert(1.25)
+	zoneUndieMult.Insert(2.5)
+
+	# Apartment Complex
+	zoneList[8] = CreateList()
+	zoneList[8].Insert(CreateZone(apart_last_floor_door))
+	zoneDescript.Insert("Last floor, last door.")
+	zoneRPValue.Insert(50)
+	zoneRPMult.Insert(1.5)
+	zoneUndieMult.Insert(2.0)
+
+	zoneList[9] = CreateList()
+	zoneList[9].Insert(CreateZone(apart_lamp_post_1))
+	zoneDescript.Insert("Intersection lamp post.")
+	zoneRPValue.Insert(30)
+	zoneRPMult.Insert(1.2)
+	zoneUndieMult.Insert(1.25)
+
+	# Downtown
+	zoneList[10] = CreateList()
+	zoneList[10].Insert(CreateZone(dt_parking_space))
+	zoneDescript.Insert("Dark parking space.")
+	zoneRPValue.Insert(40)
+	zoneRPMult.Insert(1.2)
+	zoneUndieMult.Insert(1.5)
+
+	zoneList[11] = CreateList()
+	zoneList[11].Insert(CreateZone(dt_hidden_vending_machine))
+	zoneDescript.Insert("A rarely visited vending machine.")
+	zoneRPValue.Insert(50)
+	zoneRPMult.Insert(1.4)
+	zoneUndieMult.Insert(1.8)
+
+	zoneList[12] = CreateList()
+	zoneList[12].Insert(CreateZone(dt_laundromat))
+	zoneDescript.Insert("The laundromat.")
+	zoneRPValue.Insert(50)
+	zoneRPMult.Insert(1.5)
+	zoneUndieMult.Insert(2.0)
+
+	zoneList[13] = CreateList()
+	zoneList[13].Insert(CreateZone(dt_stair_near_cafe))
+	zoneDescript.Insert("Stairs near the cafe.")
+	zoneRPValue.Insert(40)
+	zoneRPMult.Insert(1.3)
+	zoneUndieMult.Insert(1.6)
+
+	# Shopping Mall
+	zoneList[14] = CreateList()
+	zoneList[14].Insert(CreateZone(mall_entrance_escalator_benches))
+	zoneDescript.Insert("Benches near the top of the entrance escalator.")
+	zoneRPValue.Insert(80)
+	zoneRPMult.Insert(2.00)
+	zoneUndieMult.Insert(4.0)
+
+	zoneList[15] = CreateList()
+	zoneList[15].Insert(CreateZone(mall_elevator_top_vending_machine))
+	zoneDescript.Insert("Vending machine near elevator on the top floor.")
+	zoneRPValue.Insert(120)
+	zoneRPMult.Insert(2.0)
+	zoneUndieMult.Insert(4.0)
+
+	# Clothes Shop
+	zoneList[16] = CreateList()
+	zoneList[16].Insert(CreateZone(clothes_shop_changing_room))
+	zoneDescript.Insert("Changing rooms.")
+	zoneRPValue.Insert(100)
+	zoneRPMult.Insert(2.0)
+	zoneUndieMult.Insert(4.0)
+
+	###################################
+	# END OF DEFINING AREAS AND ZONES #
+	###################################
+
+	# defining conditions to check for
+	closedCoat = CreateCondition("Exposed_None")
+	flashFront = CreateCondition("Exposed_Front")
+	flashBack = CreateCondition("Exposed_Hip")
+	flashTop = CreateCondition("Exposed_Upper")
+	naked = CreateCondition("Exposed_All")
+	blindfolded = CreateCondition("Blindfolded")
+	handcuffs = CreateCondition("(AdultToy_Handcuff, AdultToy_KeyHandcuff, AdultToy_TimerHandcuff)")
+	vibratorPussy = CreateCondition("[AdultToy_Vibrator, VibrationLow]")
+	vibratorPussy2 = CreateCondition("[AdultToy_Vibrator, (VibrationHigh, VibrationRandom)]")
+	vibratorTits = CreateCondition("[AdultToy_TitRotor, VibrationLow]")
+	vibratorTits2 = CreateCondition("[AdultToy_TitRotor, (VibrationHigh, VibrationRandom)]")
+	vibratorClit = CreateCondition("[AdultToy_KuriRotor, VibrationLow]")
+	vibratorClit2 = CreateCondition("[AdultToy_KuriRotor, (VibrationHigh, VibrationRandom)]")
+	pistonPussy = CreateCondition("[AdultToy_PistonPussy, PistonLow]")
+	pistonPussy2 = CreateCondition("[AdultToy_PistonPussy, (PistonMedium, PistonHigh, PistonRandom)]")
+	pistonAss = CreateCondition("[AdultToy_PistonAnal, PistonLow]")
+	pistonAss2 = CreateCondition("[AdultToy_PistonAnal, (PistonMedium, PistonHigh, PistonRandom)]")
+	pistonCock = CreateCondition("[AdultToy_PistonFuta, PistonLow]")
+	pistonCock2 = CreateCondition("[AdultToy_PistonFuta, (PistonMedium, PistonHigh, PistonRandom)]")
+	watched = CreateCondition("Watched")
+	showingOff = CreateCondition("ShowingOff")
+	nearNPC = CreateCondition("NearNPC")
+	daytime = CreateCondition("IsDayTime")
+
+	orgasm = CreateCondition("Orgasm")
+	peeing = CreateCondition("Peeing")
+	dildoing = CreateCondition("(Action_UseDildoFloorPussy1, Action_UseDildoWallPussy1, Action_UseDildoFloorAnal1, Action_UseDildoWallAnal1, Action_UseDildoWallFella1, Action_SitDildo)")
+	handcuffsObject = CreateCondition("HandcuffsObject")
+
+	# defining some global variables
+	flashState = 0
+	blindState = 0
+	handcState = 0
+	pussyState = 0
+	clitState = 0
+	titState = 0
+	assState = 0
+	daytimeState = 0
+
+	watchState = 0
+	showingState = 0
+	nearNPCState = 0
+
+	flashMult = 0.069
+	blindMult = 1.0
+	handcMult = 1.0
+	toysMult = 1.0
+	daytimeMult = 1.0
+	watchedMult = 0.7
+	showingMult = 0.9
+	nearNPCMult = 1.0
+	heartMult = 0
+	totalMult = 0
+
+	watchTime = 0
+	showingTime = 0
+	nearNPCTime = 0
+	heartTime = 0
+	heartTick = 0
+	heartRateSum = 0
+	realHeartRateSum = 0
+	sleep = 0
+	sleep2 = 0
+	peeTime = 0
+	ecstasyTime = 0
+	dildoTime = 0
+	handcTime = 0
+
+	ztext = ""
+	allTasksRP = 0
+	multAllTasksRP = 0
+	zoneTasksRP = CreateList()
+	zoneBonusRP = CreateList()
+	finalZoneRP = CreateList()
+	mp = CreateList()
+	mpPeeing = CreateList()
+	mpEdging = CreateList()
+	mpDildoing = CreateList()
+	mpHandcuffed = CreateList()
+	time = CreateList()
+	wait = CreateList()
+	baseHighScoreRP = CreateList()
+	multHighScoreRP = CreateList()
+	zoneAllVisited = CreateList()
+	zoneAllWait = CreateList()
+	zoneAllEdge = CreateList()
+	zoneAllOrgasm = CreateList()
+	zoneAllPee = CreateList()
+	zoneAllDildo = CreateList()
+	zoneAllHandcuffObject = CreateList()
+	tasksRP = CreateList()
+	taskVisit = CreateList()
+	taskOrgasm = CreateList()
+	taskPee = CreateList()
+	taskWait = CreateList()
+	taskPanties = CreateList()
+	taskBra = CreateList()
+	taskEdge = CreateList()
+	taskDildo = CreateList()
+	taskHandcuffObject = CreateList()
+
+	# Defining main area
+	area_home_tree = CreateArea(type="sphere", stage="Residence", x=-30.0, y=-0.08, z=-112.0, r=1.0, compass=false)
+	area_home_tree.SetColor(0.2,0.7,0.2,0.6)
+	area_home_tree.SetVisible(false)
+	homeZone = CreateZone(area_home_tree)
+	homeZone.SetVisible(true)
+
+	i = 0 # no need to change anything in this while loop
+	while i < areaList.Count() # automatic assignment of color and visibility of areas
+		areaList[i].SetColor(0.2,0.7,1.0,0.4)
+		areaList[i].SetVisible(false)
+		i += 1
+
+	# Setting up conditions and stuff (+ display)
+	if _save.base_high_score == null
+		_save.base_high_score = CreateList()
+	if _save.mult_high_score == null
+		_save.mult_high_score = CreateList()
+	if _save.base_final_high_score == null
+		_save.base_final_high_score = 0
+	if _save.mult_final_high_score == null
+		_save.mult_final_high_score = 0
+	if _save.final_high_score_mult == null
+		_save.final_high_score_mult = 0
+	braConditions = CreateList()
+	pantieConditions = CreateList()
+	zoneCount = CreateList()
+	zoneListCount = zoneList.Count()
+	i = 0
+	while i < zoneListCount
+		zoneTasksRP[i] = 0
+		zoneBonusRP[i] = 0
+		finalZoneRP[i] = 0
+		mp[i] = CreateList()
+		mpPeeing[i] = CreateList()
+		mpEdging[i] = CreateList()
+		mpDildoing[i] = CreateList()
+		mpHandcuffed[i] = CreateList()
+		time[i] = CreateList()
+		wait[i] = CreateList()
+		tasksRP[i] = CreateList()
+		taskVisit[i] = CreateList()
+		taskOrgasm[i] = CreateList()
+		taskPee[i] = CreateList()
+		taskWait[i] = CreateList()
+		taskBra[i] = CreateList()
+		taskPanties[i] = CreateList()
+		taskEdge[i] = CreateList()
+		taskDildo[i] = CreateList()
+		taskHandcuffObject[i] = CreateList()
+		braConditions[i] = CreateList()
+		pantieConditions[i] = CreateList()
+		zoneCount[i] = zoneList[i].Count()
+		if _save.base_high_score[i] == null
+			_save.base_high_score[i] = 0
+		if _save.mult_high_score[i] == null
+			_save.mult_high_score[i] = 0
+		zoneAllVisited[i] = false
+		zoneAllWait[i] = false
+		zoneAllEdge[i] = false
+		zoneAllOrgasm[i] = false
+		zoneAllPee[i] = false
+		zoneAllDildo[i] = false
+		zoneAllHandcuffObject[i] = false
+		j = 0
+		while j < zoneCount[i]
+			zoneList[i][j].SetVisible(true)
+			mp[i][j] = CreateMissionPanel() #initializing mission panels
+			mpPeeing[i][j] = CreateMissionPanel()
+			mpEdging[i][j] = CreateMissionPanel()
+			mpDildoing[i][j] = CreateMissionPanel()
+			mpHandcuffed[i][j] = CreateMissionPanel()
+			mpPeeing[i][j].SetText("Peeing in zone (Traveling Tasks)")
+			mpEdging[i][j].SetText("Edging in zone (Traveling Tasks)")
+			mpDildoing[i][j].SetText("Using dildo in zone (Traveling Tasks)")
+			mpHandcuffed[i][j].SetText("Handcuffed to object in zone (Traveling Tasks)")
+			time[i][j] = 0
+			wait[i][j] = 0
+			tasksRP[i][j] = 0
+			taskVisit[i][j] = false
+			taskOrgasm[i][j] = 0
+			taskPee[i][j] = 0
+			taskWait[i][j] = 0
+			taskBra[i][j] = 0
+			taskPanties[i][j] = 0
+			taskEdge[i][j] = 0
+			taskDildo[i][j] = 0
+			taskHandcuffObject[i][j] = 0
+			braConditions[i][j] = CreateItemCondition(itemtype="Bra", zone=zoneList[i][j])
+			pantieConditions[i][j] = CreateItemCondition(itemtype="Pants", zone=zoneList[i][j])
+			j += 1
+		i += 1
+
+	# Display setup
+	mpWatched = CreateMissionPanel()
+	mpShowingOff = CreateMissionPanel()
+	mpNearNPC = CreateMissionPanel()
+	mpWatched.SetText("Beeing watched (Traveling Tasks)")
+	mpShowingOff.SetText("Showing off (Traveling Tasks)")
+	mpNearNPC.SetText("NearNPC (Traveling Tasks)")
+	multText = CreateList()
+	zoneText = CreateList()
+	i = 0
+	while i < 2 # creating two instances of text field so there's no flickering while updating values
+		multText[i] = CreateText()
+		multText[i].SetAlignment("BottomLeft")
+		zoneText[i] = CreateText()
+		zoneText[i].SetAlignment("BottomLeft")
+		i += 1
+	flip = true
+
+	# Running main function repeatedly
+	checkStatus = CreateListener("listening")
+
+	listening:
+		if homeZone.Inside()
+			# saving starting setup for the tasks
+			if allTasksRP == 0
+				flashState = 0
+				if flashFront.Check()
+					flashState += 1
+				if flashBack.Check()
+					flashState += 1
+				if flashTop.Check()
+					flashState += 1
+				if naked.Check()
+					flashState = 4
+				blindState = 0
+				if blindfolded.Check()
+					blindState = 1
+				handcState = 0
+				if handcuffs.Check()
+					handcState = 1
+				pussyState = 0
+				clitState = 0
+				titState = 0
+				assState = 0
+				if (vibratorPussy.Check() || pistonPussy.Check() || pistonCock.Check())
+					pussyState = 1
+				elseif (vibratorPussy2.Check() || pistonPussy2.Check() || pistonCock2.Check())
+					pussyState = 2
+				if vibratorClit.Check()
+					clitState = 1
+				elseif vibratorClit2.Check()
+					clitState = 2
+				if vibratorTits.Check()
+					titState = 1
+				if vibratorTits2.Check()
+					titState = 2
+				if pistonAss.Check()
+					assState = 1
+				if pistonAss2.Check()
+					assState = 2
+				if daytime.Check()
+					daytimeState = 1
+				# reset states and multipliers that are time related
+				watchState = 0
+				watchTime = 0
+				watchedMult = multWatch0
+				showingState = 0
+				showingTime = 0
+				showingMult = multShowing0
+				nearNPCState = 0
+				nearNPCTime = 0
+				nearNPCMult = multNearNPC0
+				ecstasyTime = 0
+				dildoTime = 0
+				handcTime = 0
+				# reset time, ticks and sum for average heart rate until leaving the starting zone
+				heartTime = 0
+				heartTick = 0
+				heartRateSum = 0
+				realHeartRateSum = 0
+			else # checking for completed tasks
+				AddCurrentEarnRP(multAllTasksRP)
+				PlaySoundEffect("RankUp")
+				i = 0
+				while i < zoneListCount
+					finalZoneRP[i] = zoneTasksRP[i] * totalMult
+					if zoneTasksRP[i] > _save.base_high_score[i]
+						_save.base_high_score[i] = zoneTasksRP[i]
+					if finalZoneRP[i] > _save.mult_high_score[i]
+						_save.mult_high_score[i] = finalZoneRP[i]
+					zoneAllVisited[i] = false
+					zoneAllWait[i] = false
+					zoneAllEdge[i] = false
+					zoneAllOrgasm[i] = false
+					zoneAllPee[i] = false
+					zoneAllDildo[i] = false
+					zoneAllHandcuffObject[i] = false
+					j = 0
+					while j < zoneCount[i]
+						time[i][j] = 0
+						wait[i][j] = 0
+						tasksRP[i][j] = 0
+						taskVisit[i][j] = false
+						taskOrgasm[i][j] = 0
+						taskPee[i][j] = 0
+						taskWait[i][j] = 0
+						taskPanties[i][j] = 0
+						taskBra[i][j] = 0
+						taskEdge[i][j] = 0
+						taskDildo[i][j] = 0
+						taskHandcuffObject[i][j] = 0
+						j += 1
+					i += 1
+				if allTasksRP > _save.base_final_high_score
+					_save.base_final_high_score = allTasksRP
+				if multAllTasksRP > _save.mult_final_high_score
+					_save.mult_final_high_score = multAllTasksRP
+				if totalMult > _save.final_high_score_mult
+					_save.final_high_score_mult = totalMult
+				daytimeState = 0
+				allTasksRP = 0
+				totalMult = 0
+				multAllTasksRP = 0
+			sleep += _timediff
+			if sleep > 1.0
+				ztext = "Starting Zone:"
+				ztext += "\n  - Multipliers get lost if conditions\nare not met outside this zone."
+				ztext += "\n  - Don't forget to return here to\nsecure the RP you got on your journey!"
+				ztext += "\n\nAll Time High Scores:"
+				ztext += Format("\n   {0:0} Base RP",_save.base_final_high_score)
+				ztext += Format("\n   {0:0} Final RP",_save.mult_final_high_score)
+				ztext += Format("\n   x {0:F3} multiplier",_save.final_high_score_mult)
+				sleep = 0
+
+		# Checking if travel conditions (still) apply (demoting them if necessary)
+		if flashState == 4
+			if naked.Check()
+				flashMult = multFlash4
+			else
+				flashMult = multFlash3
+				flashState = 3
+		if flashState == 3
+			if (flashFront.Check() && flashBack.Check() && flashTop.Check())
+				flashMult = multFlash3
+			else
+				flashMult = multFlash2
+				flashState = 2
+		if flashState == 2
+			if ((flashFront.Check() && flashBack.Check()) || flashTop.Check())
+				flashMult = multFlash2
+			else
+				flashMult = multFlash1
+				flashState = 1
+		if flashState == 1
+			if (flashFront.Check() || flashBack.Check())
+				flashMult = multFlash1
+			else
+				flashMult = multFlash0
+				flashState = 0
+		if flashState == 0
+			flashMult = multFlash0
+
+		if blindState == 1
+			if blindfolded.Check()
+				blindMult = multBlind1
+			else
+				blindMult = multBlind0
+				blindState = 0
+		else
+			blindMult = multBlind0
+
+		if handcState == 1
+			inAnyZone = false
+			i = 0
+			while i < zoneListCount
+				j = 0
+				while j < zoneCount[i]
+					if zoneList[i][j].Inside()
+						inAnyZone = true
+					j += 1
+				i += 1
+			if handcuffs.Check()
+				handcMult = multHandc1
+			elseif inAnyZone || homeZone.Inside() 
+				handcMult = multHandc1
+			else
+				handcMult = multHandc0
+				handcState = 0
+		else
+			handcMult = multHandc0
+
+		toysMult = 1.0
+		if pussyState == 2
+			if (vibratorPussy2.Check() || pistonPussy2.Check() || pistonCock2.Check())
+				toysMult = toysMult + multToysH
+			else
+				pussyState = 1
+		if pussyState == 1
+			if (vibratorPussy.Check() || pistonPussy.Check() || pistonCock.Check())
+				toysMult = toysMult + multToysL
+			else
+				pussyState = 0
+		if clitState == 2
+			if vibratorClit2.Check()
+				toysMult = toysMult + multToysH
+			else
+				clitState = 1
+		if clitState == 1
+			if vibratorClit.Check()
+				toysMult = toysMult + multToysL
+			else
+				clitState = 0
+		if titState == 2
+			if vibratorTits2.Check()
+				toysMult = toysMult + multToysH
+			else
+				titState = 1
+		if titState == 1
+			if vibratorTits.Check()
+				toysMult = toysMult + multToysL
+			else
+				titState = 0
+		if assState == 2
+			if pistonAss2.Check()
+				toysMult = toysMult + multToysH
+			else
+				assState = 0
+		if assState == 1
+			if pistonAss.Check()
+				toysMult = toysMult + multToysL
+			else
+				assState = 0
+		if watchState == 0
+			if watched.Check()
+				watchTime += _timediff
+				mpWatched.SetGaugeProgress(watchTime/doingWatchTime)
+				mpWatched.SetVisible(true)
+				if watchTime > doingWatchTime
+					mpWatched.SetVisible(false)
+					watchState = 1
+					watchedMult = multWatch1
+					watchTime = 0
+			else
+				mpWatched.SetVisible(false)
+		if showingState == 0
+			if showingOff.Check()
+				showingTime += _timediff
+				mpShowingOff.SetGaugeProgress(showingTime/doingShowOffTime)
+				mpShowingOff.SetVisible(true)
+				if showingTime > doingShowOffTime
+					mpShowingOff.SetVisible(false)
+					showingState = 1
+					showingMult = multShowing1
+					showingTime = 0
+			else
+				mpShowingOff.SetVisible(false)
+		if nearNPCState == 0
+			if nearNPC.Check()
+				nearNPCTime += _timediff
+				mpNearNPC.SetGaugeProgress(nearNPCTime/doingNearNPCTime)
+				mpNearNPC.SetVisible(true)
+				if nearNPCTime > doingNearNPCTime
+					mpNearNPC.SetVisible(false)
+					nearNPCState = 1
+					nearNPCMult = multNearNPC1
+					nearNPCTime = 0
+			else
+				mpNearNPC.SetVisible(false)
+		if daytimeState == 1
+			if daytime.Check()
+				daytimeMult = multDaytime1
+			else
+				daytimeMult = multDaytime0
+				daytimeState = 0
+
+		# Verifying tasks
+		crtEcstasy = GetEcstasy()
+		i = 0
+		while i < zoneListCount
+			j = 0
+			while j < zoneCount[i]
+				if zoneList[i][j].Inside()
+					time[i][j] += _timediff
+					wait[i][j] += _timediff
+					if wait[i][j] >= 1.0
+						taskVisit[i][j] = true
+						if time[i][j] < 180 # maxed at 3 min
+							taskWait[i][j] = (0.003086419753*(time[i][j]**2))*zoneRPMult[i]/zoneCount[i] #1min=11, 2min=44, 3min=100
+						else
+							taskWait[i][j] = 100*zoneRPMult[i]/zoneCount[i]
+							mp[i][j].SetGaugeVisible(false)
+						ztext = "\nTasks:"
+						if zoneCount[i] > 1
+							if zoneAllVisited[i]
+								ztext += Format("\n{0:0} ({0:0} max)",zoneRPValue[i])+" Making it to every linked zone"
+							else
+								ztext += Format("\n0 ({0:0} max)",zoneRPValue[i])+" Making it to every linked zone"
+						else
+							ztext += Format("\n{0:0} ({0:0} max)",zoneRPValue[i])+" Making it to the zone"
+						ztext += Format("\n{0:0}",taskWait[i][j])+Format(" ({0:0} max) Stay in zone",100*zoneRPMult[i]/zoneCount[i])
+						ztext += Format("\n{0:0}",taskEdge[i][j])+Format(" ({0:0} max) Edging",edgingValue*zoneRPMult[i]/zoneCount[i])
+						ztext += Format("\n{0:0}",taskOrgasm[i][j])+Format(" ({0:0} max) Orgasm",orgasmValue*zoneRPMult[i]/zoneCount[i])
+						ztext += Format("\n{0:0}",taskPee[i][j])+Format(" ({0:0} max) Peeing",peeingValue*zoneRPMult[i]/zoneCount[i])
+						ztext += Format("\n{0:0}",taskDildo[i][j])+Format(" ({0:0} max) Using Dildo",dildoingValue*zoneRPMult[i]/zoneCount[i])
+						ztext += Format("\n{0:0}",taskHandcuffObject[i][j])+Format(" ({0:0} max) Handcuffed to object",handcuffObjecValue*zoneRPMult[i]/zoneCount[i])
+						ztext += Format("\n{0:0}",taskBra[i][j])+Format(" ({0:0} max) Leaving Bra",braValue*zoneUndieMult[i])
+						ztext += Format("\n{0:0}",taskPanties[i][j])+Format(" ({0:0} max) Leaving Panties",pantiesValue*zoneUndieMult[i])
+						ztext += Format("\n\n{0:0}",tasksRP[i][j])+Format(" ({0:0})",tasksRP[i][j]*totalMult)+"   -   Total RP made in this zone"
+						ztext += Format("\n{0:0}",zoneTasksRP[i])+Format(" ({0:0})",zoneTasksRP[i]*totalMult)+"   -   Total RP made in all linked zones"
+						if zoneCount[i] > 1
+							ztext += Format("\n{0:0}",zoneBonusRP[i])+Format(" ({0:0})",zoneBonusRP[i]*totalMult)+"   -   Bonus RP from same tasks done in each linked zone"
+						ztext += Format("\n(Zone value multiplier is x{0:F2})",zoneRPMult[i])
+						if zoneCount[i] > 1
+							if zoneCount[i] > 2
+								#ztext = "Tasks: (linked to "+(zoneCount[i]-1)+" more zones)"
+								ztext += "\n(There are "+(zoneCount[i]-1)+" more zones linked to this one)"
+							else
+								#ztext = "Tasks: (linked to "+(zoneCount[i]-1)+" more zone)"
+								ztext += "\n(There is one more zone linked to this one)"
+						else
+							ztext += "\n(Not linked to any other zone)"
+						ztext += Format("\n\nHigh Score: {0:0}",baseHighScoreRP[i])+Format(" ({0:0})",multHighScoreRP[i])+" RP total from linked zones"
+						wait[i][j] = 0
+					if orgasm.Check()
+						taskOrgasm[i][j] = orgasmValue*zoneRPMult[i]/zoneCount[i]
+					if peeing.Check()
+						peeTime += _timediff
+						mpPeeing[i][j].SetVisible(true)
+						mpPeeing[i][j].SetGaugeProgress(peeTime/doingPeeTime)
+						if peeTime > doingPeeTime
+							mpPeeing[i][j].SetVisible(false)
+							taskPee[i][j] = peeingValue*zoneRPMult[i]/zoneCount[i]
+					else
+						mpPeeing[i][j].SetVisible(false)
+						peeTime = 0
+					if braConditions[i][j].Check()
+						taskBra[i][j] = braValue*zoneUndieMult[i]
+					else
+						taskBra[i][j] = 0
+					if pantieConditions[i][j].Check()
+						taskPanties[i][j] = pantiesValue*zoneUndieMult[i]
+					else
+						taskPanties[i][j] = 0
+					if (crtEcstasy > ecstasyThreshold) && (crtEcstasy < 0.999)
+						ecstasyTime += _timediff
+						mpEdging[i][j].SetVisible(true)
+						mpEdging[i][j].SetGaugeProgress(ecstasyTime/doingEdgeTime)
+						if ecstasyTime > doingEdgeTime
+							mpEdging[i][j].SetVisible(false)
+							taskEdge[i][j] = edgingValue*zoneRPMult[i]/zoneCount[i]
+					else
+						mpEdging[i][j].SetVisible(false)
+						ecstasyTime = 0
+					if dildoing.Check()
+						dildoTime += _timediff
+						mpDildoing[i][j].SetGaugeProgress(dildoTime/doingDildoTime)
+						mpDildoing[i][j].SetVisible(true)
+						if dildoTime > doingDildoTime
+							mpDildoing[i][j].SetVisible(false)
+							taskDildo[i][j] = dildoingValue*zoneRPMult[i]/zoneCount[i]
+					else
+						mpDildoing[i][j].SetVisible(false)
+						dildoTime = 0
+					if handcuffsObject.Check()
+						handcTime += _timediff
+						mpHandcuffed[i][j].SetGaugeProgress(handcTime/doingHandcuffObjectTime)
+						mpHandcuffed[i][j].SetVisible(true)
+						if handcTime > doingHandcuffObjectTime
+							mpHandcuffed[i][j].SetVisible(false)
+							taskHandcuffObject[i][j] = handcuffObjecValue*zoneRPMult[i]/zoneCount[i]
+					else
+						mpHandcuffed[i][j].SetVisible(false)
+						handcTime = 0
+						
+					tasksRP[i][j] = taskWait[i][j] + taskOrgasm[i][j] + taskPee[i][j] + taskPanties[i][j] + taskBra[i][j] + taskEdge[i][j] + taskDildo[i][j] + taskHandcuffObject[i][j]
+					if zoneCount[i] > 1
+						mp[i][j].SetText(zoneDescript[i]+" (zone 1 of "+zoneCount[i]+")")
+					else
+						mp[i][j].SetText(zoneDescript[i])
+					mp[i][j].SetGaugeProgress(time[i][j]/180)
+					mp[i][j].SetVisible(true)
+				else
+					if time[i][j] < 180
+						time[i][j] = 0
+					mp[i][j].SetVisible(false)
+					mpPeeing[i][j].SetVisible(false)
+					mpEdging[i][j].SetVisible(false)
+					mpDildoing[i][j].SetVisible(false)
+					mpHandcuffed[i][j].SetVisible(false)
+					wait[i][j] = 0
+				j += 1
+			i += 1
+
+		# calculating heart rate multiplier (multiplier aprox. between 1.0-2.0)
+		if heartTime == 0
+			heartRate = _state.HeartRate
+			heartTick += 1
+			adjustedRate = 1.85*(heartRate - 95)
+			heartRateSum += adjustedRate + 95
+			avgHeartRate = heartRateSum / heartTick
+			heartMult = avgHeartRate * 0.010
+			realHeartRateSum += heartRate
+			realAvgHeartRate = realHeartRateSum / heartTick
+		heartTime += _timediff
+		if heartTime > 1
+			heartTime = 0
+
+		# waiting a second to update calculations and the UI
+		sleep2 += _timediff
+		if sleep2 > 1.0
+			totalMult = flashMult * blindMult * handcMult * toysMult * daytimeMult * watchedMult * showingMult * nearNPCMult * heartMult
+			allTasksRP = 0
+			i = 0
+			while i < zoneListCount
+				baseHighScoreRP[i] = _save.base_high_score[i]
+				multHighScoreRP[i] = _save.mult_high_score[i]
+				zoneTasksRP[i] = 0
+				zoneBonusRP[i] = 0
+				zoneAllVisited[i] = true
+				zoneAllWait[i] = true
+				zoneAllEdge[i] = true
+				zoneAllOrgasm[i] = true
+				zoneAllPee[i] = true
+				zoneAllDildo[i] = true
+				zoneAllHandcuffObject[i] = true
+				tempWaitRP = 99.999*zoneRPMult[i]/zoneCount[i]
+				j = 0
+				while j < zoneCount[i]
+					if zoneCount[i] > 1
+						if taskVisit[i][j] == false
+							zoneAllVisited[i] = false
+						if taskWait[i][j] < tempWaitRP
+							zoneAllWait[i] = false
+						if taskEdge[i][j] == 0
+							zoneAllEdge[i] = false
+						if taskOrgasm[i][j] == 0
+							zoneAllOrgasm[i] = false
+						if taskPee[i][j] == 0
+							zoneAllPee[i] = false
+						if taskDildo[i][j] == 0
+							zoneAllDildo[i] = false
+						if taskHandcuffObject[i][j] == 0
+							zoneAllHandcuffObject[i] = false
+					else
+						zoneAllVisited[i] = taskVisit[i][0]
+						zoneAllWait[i] = false
+						zoneAllEdge[i] = false
+						zoneAllOrgasm[i] = false
+						zoneAllPee[i] = false
+						zoneAllDildo[i] = false
+						zoneAllHandcuffObject[i] = false
+					zoneTasksRP[i] += tasksRP[i][j]
+					allTasksRP += tasksRP[i][j]
+					j += 1
+				if zoneAllVisited[i]
+					allTasksRP += zoneRPValue[i]
+				if zoneAllWait[i]
+					zoneBonusRP[i] += taskWait[i][0]*zoneCount[i]
+				if zoneAllEdge[i]
+					zoneBonusRP[i] += taskEdge[i][0]*zoneCount[i]
+				if zoneAllOrgasm[i]
+					zoneBonusRP[i] += taskOrgasm[i][0]*zoneCount[i]
+				if zoneAllPee[i]
+					zoneBonusRP[i] += taskPee[i][0]*zoneCount[i]
+				if zoneAllDildo[i]
+					zoneBonusRP[i] += taskDildo[i][0]*zoneCount[i]
+				if zoneAllHandcuffObject[i]
+					zoneBonusRP[i] += taskHandcuffObject[i][0]*zoneCount[i]
+				zoneBonusRP[i] *= zoneRPMult[i]
+				allTasksRP += zoneBonusRP[i]
+				i += 1
+			multAllTasksRP = allTasksRP * totalMult
+			i = 0
+			while i < 2 # Updating text zones
+				multText[i].SetAnchor(_settings.multipliers_xpos,_settings.multipliers_ypos)
+				multText[i].SetSize(_settings.multipliers_text_size)
+				multText[i].SetFace(color=Color(1,1,1,_settings.multipliers_transparency))
+				zoneText[i].SetAnchor(_settings.tasks_xpos,_settings.tasks_ypos)
+				zoneText[i].SetSize(_settings.tasks_text_size)
+				zoneText[i].SetFace(color=Color(0.2,0.8,0.8,_settings.tasks_transparency))
+				i += 1
+			mtext = "Multipliers:"
+			mtext += Format("\n(x {0:F3}",flashMult)+") Exposure"
+			mtext += Format("\n(x {0:F3}",blindMult)+") Blindfold"
+			mtext += Format("\n(x {0:F3}",handcMult)+") Handcuffs"
+			mtext += Format("\n(x {0:F3}",toysMult)+") Toys"
+			mtext += Format("\n(x {0:F3}",daytimeMult)+") Daytime"
+			mtext += Format("\n(x {0:F3}",watchedMult)+") Watched"
+			mtext += Format("\n(x {0:F3}",showingMult)+") Showing Off"
+			mtext += Format("\n(x {0:F3}",nearNPCMult)+") Near NPC"
+			mtext += Format("\n(x {0:F3}",heartMult)+") Heart rate"
+			mtext += Format("\n(x {0:F3}",totalMult)+") Final multiplier"
+			mtext += Format("\n\n{0:0}",allTasksRP)+" Base RP"
+			mtext += Format("\n{0:0}",multAllTasksRP)+" Multiplied RP"
+			mtext += Format("\n({0:0}",realAvgHeartRate)+" average heart rate over "+heartTick+" seconds)"
+			if flip # update one, clear the other on the same frame (to eliminate flickering)
+				if _settings.show_multipliers
+					multText[0].Add(text=mtext)
+					multText[1].Clear()
+				else
+					multText[0].Clear()
+				if _settings.show_tasks
+					zoneText[0].Add(text=ztext)
+					zoneText[1].Clear()
+				else
+					zoneText[0].Clear()
+				flip = false
+			else
+				if _settings.show_multipliers
+					multText[1].Add(text=mtext)
+					multText[0].Clear()
+				else
+					multText[1].Clear()
+				if _settings.show_tasks
+					zoneText[1].Add(text=ztext)
+					zoneText[0].Clear()
+				else
+					zoneText[1].Clear()
+				flip = true
+			sleep2 = 0
+			ztext = ""

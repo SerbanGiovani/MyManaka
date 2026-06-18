@@ -1,0 +1,44 @@
+processorSurprisingAction_:
+	#Note Event: List must have:
+	# action: String
+	# duration: Number
+	# interval: Number
+	# chance: Number
+	# exclusive: Object(RecordSet, record excluded actions)
+	# common： List, see 'event.common'
+
+	durationTimer = 0
+	timer = 0
+
+	start:
+		#Required
+		#Params@arr event: List
+		durationTimer = 0
+		timer = 0
+
+	end:
+		#Required
+		#Params@arr event: List
+
+	update:
+		#Required
+		#Params@arr event: List
+		event = _args[0]
+		if !event.exclusive.Contains(_state.Action) && !event.exclusive.Contains(event.action)
+			if durationTimer <= 0
+				if timer >= event.interval
+					timer = 0
+					r = Random()
+					if r < event.chance
+						durationTimer = event.duration
+				else
+					timer = timer + _timediff
+			else
+				durationTimer = durationTimer - _timediff
+				if _state.Action != event.action
+					if _state.Sitting
+						SetAction("StandUp")
+					if _state.Crouching
+						SetAction("None")
+					SetAction(event.action)
+

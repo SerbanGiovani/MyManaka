@@ -1,0 +1,22 @@
+processorDropCoat_:
+	#Note Event: List must have:
+	# common： List see 'event.common'
+	flag = true
+	
+	start:
+		#Required
+		#Params@arr event: List
+		flag = true
+
+	end:
+		#Required
+		#Params@arr event: List
+
+	update:
+		#Required
+		#Params@arr event: List
+		if !_state.Coat.Dropped
+			DropItem(itemtype="Coat", position = _state.Position, compass = false)
+		elseif flag
+			flag = false
+			DropItem(itemtype="Coat", position = _state.Position, compass = false)

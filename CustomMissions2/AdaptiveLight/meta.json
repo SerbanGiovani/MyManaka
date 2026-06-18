@@ -1,0 +1,43 @@
+{
+	"title": {"En": "Blinding Light"},
+	"defaultactive": true,
+	"version": "2026-04-05",
+	"settings": [
+		{"type": "Label", "title": {"En": "Time required for luminosity to adjust to light (normal)"}},
+		{
+			"name": "fade_light",
+			"title": {"En": "Fade (light/base)"},
+			"type": "Float",
+			"minvalue": 0.1,
+			"maxvalue": 30,
+			"default": 5
+		},
+		{"type": "Label", "title": {"En": "Time required for luminosity to adjust to light (handcuffed)"}},
+		{
+			"name": "fade_light_cuffs",
+			"title": {"En": "Fade (light/cuffs)"},
+			"type": "Float",
+			"minvalue": 0.1,
+			"maxvalue": 30,
+			"default": 1.5
+		},
+		{"type": "Label", "title": {"En": "Time required for luminosity to adjust to darkness"}},
+		{
+			"name": "fade_dark",
+			"title": {"En": "Fade (dark)"},
+			"type": "Float",
+			"minvalue": 0.1,
+			"maxvalue": 30,
+			"default": 10
+		},
+		{"type": "Label", "title": {"En": "Adjustment range between light and darkness"}},
+		{
+			"name": "light_range",
+			"title": {"En": "Range"},
+			"type": "Float",
+			"minvalue": 0,
+			"maxvalue": 1,
+			"default": 0.6
+		}
+	]
+}

@@ -1,0 +1,481 @@
+{
+	"title": "Moaning3",
+	"description": "  settings",
+	"defaultactive": true,
+	"settings": [
+		{"type": "Label", "title": "v3.1.0"},
+		{
+			"name": "show_log",
+			"title": {"En": "Show Log"},
+			"type": "Boolean",
+			"default": false
+		},
+		{
+			"name": "allow_external_control",
+			"title": {"En": "External Control"},
+			"type": "Boolean",
+			"default": true
+		},
+		{
+			"type": "Label",
+			"title": {"En": "Enable to allow other Custom Missions 2 projects to control Moaning3 behaviors"}
+		},
+		{
+			"name": "extend_orgasm_animation",
+			"title": {"En": "Extend Orgasm Anim."},
+			"type": "Boolean",
+			"default": true
+		},
+		{
+			"name": "extend_orgasm_tier1_chance",
+			"title": {"En": "Extend Tier 1 Chance"},
+			"type": "Float",
+			"minvalue": 0,
+			"maxvalue": 1,
+			"default": 0.34
+		},
+		{
+			"name": "extend_orgasm_tier1_count",
+			"title": {"En": "Extend Tier 1 Max Count"},
+			"type": "Integer",
+			"minvalue": 0,
+			"maxvalue": 10,
+			"default": 1
+		},
+		{
+			"name": "extend_orgasm_tier2_chance",
+			"title": {"En": "Extend Tier 2 Chance"},
+			"type": "Float",
+			"minvalue": 0,
+			"maxvalue": 1,
+			"default": 0.33
+		},
+		{
+			"name": "extend_orgasm_tier2_count",
+			"title": {"En": "Extend Tier 2 Max Count"},
+			"type": "Integer",
+			"minvalue": 0,
+			"maxvalue": 10,
+			"default": 2
+		},
+		{
+			"name": "extend_orgasm_tier3_chance",
+			"title": {"En": "Extend Tier 3 Chance"},
+			"type": "Float",
+			"minvalue": 0,
+			"maxvalue": 1,
+			"default": 0.33
+		},
+		{
+			"name": "extend_orgasm_tier3_count",
+			"title": {"En": "Extend Tier 3 Max Count"},
+			"type": "Integer",
+			"minvalue": 0,
+			"maxvalue": 10,
+			"default": 3
+		},
+		{
+			"name": "orgasm_accident_enabled",
+			"title": {"En": "Orgasm Accident"},
+			"type": "Boolean",
+			"default": true
+		},
+		{
+			"name": "orgasm_accident_threshold",
+			"title": {"En": "Accident Threshold"},
+			"type": "Integer",
+			"minvalue": 2,
+			"maxvalue": 10,
+			"default": 3
+		},
+		{
+			"name": "orgasm_accident_pee_duration",
+			"title": {"En": "Pee Duration"},
+			"type": "Float",
+			"minvalue": 0.5,
+			"maxvalue": 5.0,
+			"default": 1.5
+		},
+		{"type": "Label", "title": {"En": "\nThreshold Settings"}},
+		{
+			"name": "low_ecstasy_threshold",
+			"title": {"En": "Low Ecstasy"},
+			"type": "Float",
+			"minvalue": 0.001,
+			"maxvalue": 1.0,
+			"default": 0.25
+		},
+		{
+			"name": "medium_ecstasy_threshold",
+			"title": {"En": "Medium Ecstasy"},
+			"type": "Float",
+			"minvalue": 0.001,
+			"maxvalue": 1.0,
+			"default": 0.5
+		},
+		{
+			"name": "high_ecstasy_threshold",
+			"title": {"En": "High Ecstasy"},
+			"type": "Float",
+			"minvalue": 0.001,
+			"maxvalue": 1.0,
+			"default": 0.75
+		},
+		{"type": "Label", "title": {"En": "\nSound Settings"}},
+		{"type": "Label", "title": {"En": "Flashing"}},
+		{
+			"name": "flashing_volume",
+			"title": {"En": "Volume"},
+			"type": "Float",
+			"minvalue": 0.0,
+			"maxvalue": 1.0,
+			"default": 0.5
+		},
+		{
+			"name": "flashing_min_interval",
+			"title": {"En": "Min. Interval"},
+			"type": "Float",
+			"minvalue": 0,
+			"maxvalue": 30.0,
+			"default": 4.0
+		},
+		{
+			"name": "flashing_max_interval",
+			"title": {"En": "Max. Interval"},
+			"type": "Float",
+			"minvalue": 0,
+			"maxvalue": 30.0,
+			"default": 12.0
+		},
+		{"type": "Label", "title": {"En": "Nude"}},
+		{
+			"name": "nude_volume",
+			"title": {"En": "Volume"},
+			"type": "Float",
+			"minvalue": 0.0,
+			"maxvalue": 1.0,
+			"default": 0.7
+		},
+		{
+			"name": "nude_min_interval",
+			"title": {"En": "Min. Interval"},
+			"type": "Float",
+			"minvalue": 0,
+			"maxvalue": 30.0,
+			"default": 3.0
+		},
+		{
+			"name": "nude_max_interval",
+			"title": {"En": "Max. Interval"},
+			"type": "Float",
+			"minvalue": 0,
+			"maxvalue": 30.0,
+			"default": 10.0
+		},
+		{"type": "Label", "title": {"En": "Low Ecstasy"}},
+		{
+			"name": "low_ecstasy_volume",
+			"title": {"En": "Volume"},
+			"type": "Float",
+			"minvalue": 0.0,
+			"maxvalue": 1.0,
+			"default": 0.4
+		},
+		{
+			"name": "low_ecstasy_min_interval",
+			"title": {"En": "Min. Interval"},
+			"type": "Float",
+			"minvalue": 0,
+			"maxvalue": 10.0,
+			"default": 2.0
+		},
+		{
+			"name": "low_ecstasy_max_interval",
+			"title": {"En": "Max. Interval"},
+			"type": "Float",
+			"minvalue": 0,
+			"maxvalue": 10.0,
+			"default": 5.0
+		},
+		{"type": "Label", "title": {"En": "Medium Ecstasy"}},
+		{
+			"name": "medium_ecstasy_volume",
+			"title": {"En": "Volume"},
+			"type": "Float",
+			"minvalue": 0.0,
+			"maxvalue": 1.0,
+			"default": 0.6
+		},
+		{
+			"name": "medium_ecstasy_min_interval",
+			"title": {"En": "Min. Interval"},
+			"type": "Float",
+			"minvalue": 0,
+			"maxvalue": 10.0,
+			"default": 1.0
+		},
+		{
+			"name": "medium_ecstasy_max_interval",
+			"title": {"En": "Max. Interval"},
+			"type": "Float",
+			"minvalue": 1.0,
+			"maxvalue": 10.0,
+			"default": 5.0
+		},
+		{"type": "Label", "title": {"En": "High Ecstasy"}},
+		{
+			"name": "high_ecstasy_volume",
+			"title": {"En": "Volume"},
+			"type": "Float",
+			"minvalue": 0.0,
+			"maxvalue": 1.0,
+			"default": 0.75
+		},
+		{
+			"name": "high_ecstasy_min_interval",
+			"title": {"En": "Min. Interval"},
+			"type": "Float",
+			"minvalue": 1.0,
+			"maxvalue": 10.0,
+			"default": 1.0
+		},
+		{
+			"name": "high_ecstasy_max_interval",
+			"title": {"En": "Max. Interval"},
+			"type": "Float",
+			"minvalue": 1.0,
+			"maxvalue": 10.0,
+			"default": 3.0
+		},
+		{"type": "Label", "title": {"En": "Peak Ecstasy"}},
+		{
+			"name": "peak_ecstasy_volume",
+			"title": {"En": "Volume"},
+			"type": "Float",
+			"minvalue": 0.0,
+			"maxvalue": 1.0,
+			"default": 1.0
+		},
+		{
+			"name": "peak_ecstasy_min_interval",
+			"title": {"En": "Min. Interval"},
+			"type": "Float",
+			"minvalue": 0,
+			"maxvalue": 10.0,
+			"default": 0.5
+		},
+		{
+			"name": "peak_ecstasy_max_interval",
+			"title": {"En": "Max. Interval"},
+			"type": "Float",
+			"minvalue": 0,
+			"maxvalue": 10.0,
+			"default": 1.5
+		},
+		{"type": "Label", "title": {"En": "Orgasming"}},
+		{
+			"name": "orgasm_volume",
+			"title": {"En": "Volume"},
+			"type": "Float",
+			"minvalue": 0.0,
+			"maxvalue": 1.0,
+			"default": 1.0
+		},
+		{"type": "Label", "title": {"En": "\nEarn RP when moaning"}},
+		{
+			"name": "RP_earning_feature_enabled",
+			"title": {"En": "Enabled"},
+			"type": "Boolean",
+			"default": true
+		},
+		{
+			"name": "moaning_rp",
+			"title": {"En": "RP/moan"},
+			"type": "Float",
+			"minvalue": 0.0,
+			"maxvalue": 2.0,
+			"default": 0.1
+		},
+		{
+			"name": "orgasm_rp",
+			"title": {"En": "RP/orgasm"},
+			"type": "Integer",
+			"minvalue": 0,
+			"maxvalue": 10,
+			"default": 1
+		},
+		{"type": "Label", "title": {"En": "Requirements"}},
+		{
+			"name": "only_in_NPC_area",
+			"title": {"En": "in Where NPCs Pass"},
+			"type": "Boolean",
+			"default": true
+		},
+		{
+			"name": "only_when_exposed",
+			"title": {"En": "When Exposed"},
+			"type": "Boolean",
+			"default": true
+		},
+		{"type": "Label", "title": {"En": "\nMoaning Alerts NPCs"}},
+		{
+			"name": "moan_alerts_NPCs_feature_enabled",
+			"title": {"En": "Enabled"},
+			"type": "Boolean",
+			"default": true
+		},
+		{"type": "Label", "title": {"En": "Alert Radius Settings"}},
+		{
+			"name": "base_alert_radius",
+			"title": {"En": "Base Alert Radius"},
+			"minvalue": 0,
+			"maxvalue": 20,
+			"type": "Integer",
+			"default": 5
+		},
+		{"type": "Label", "title": {"En": "Alert Radius Scalers"}},
+		{
+			"name": "flashing_radius_scaler",
+			"title": {"En": "Flashing"},
+			"minvalue": 0,
+			"maxvalue": 1,
+			"type": "Float",
+			"default": 0.2
+		},
+		{
+			"name": "nude_radius_scaler",
+			"title": {"En": "Nude"},
+			"minvalue": 0,
+			"maxvalue": 1,
+			"type": "Float",
+			"default": 0.2
+		},
+		{
+			"name": "low_ecstasy_radius_scaler",
+			"title": {"En": "Low Ecstasy"},
+			"minvalue": 0,
+			"maxvalue": 1,
+			"type": "Float",
+			"default": 0.3
+		},
+		{
+			"name": "medium_ecstasy_radius_scaler",
+			"title": {"En": "Medium Ecstasy"},
+			"minvalue": 0,
+			"maxvalue": 1,
+			"type": "Float",
+			"default": 0.4
+		},
+		{
+			"name": "high_ecstasy_radius_scaler",
+			"title": {"En": "High Ecstasy"},
+			"minvalue": 0,
+			"maxvalue": 1,
+			"type": "Float",
+			"default": 0.4
+		},
+		{
+			"name": "peak_ecstasy_radius_scaler",
+			"title": {"En": "Peak Ecstasy"},
+			"minvalue": 0,
+			"maxvalue": 1,
+			"type": "Float",
+			"default": 0.6
+		},
+		{
+			"name": "orgasm_radius_scaler",
+			"title": {"En": "Orgasming"},
+			"minvalue": 0,
+			"maxvalue": 1,
+			"type": "Float",
+			"default": 1
+		},
+		{"type": "Label", "title": {"En": "Alertness Settings"}},
+		{
+			"name": "base_alertness_increment",
+			"title": {"En": "Base Increment"},
+			"minvalue": 0,
+			"maxvalue": 0.5,
+			"type": "Float",
+			"default": 0.1
+		},
+		{"type": "Label", "title": {"En": "Increment Scalers"}},
+		{
+			"name": "flashing_alert_scaler",
+			"title": {"En": "Flashing"},
+			"type": "Float",
+			"minvalue": 0.0,
+			"maxvalue": 1.0,
+			"default": 0.06
+		},
+		{
+			"name": "nude_alert_scaler",
+			"title": {"En": "Nude"},
+			"type": "Float",
+			"minvalue": 0.0,
+			"maxvalue": 1.0,
+			"default": 0.1
+		},
+		{
+			"name": "low_ecstasy_alert_scaler",
+			"title": {"En": "Low Ecstasy"},
+			"type": "Float",
+			"minvalue": 0.0,
+			"maxvalue": 1.0,
+			"default": 0.15
+		},
+		{
+			"name": "medium_ecstasy_alert_scaler",
+			"title": {"En": "Medium Ecstasy"},
+			"type": "Float",
+			"minvalue": 0.0,
+			"maxvalue": 1.0,
+			"default": 0.25
+		},
+		{
+			"name": "high_ecstasy_alert_scaler",
+			"title": {"En": "High Ecstasy"},
+			"type": "Float",
+			"minvalue": 0.0,
+			"maxvalue": 1.0,
+			"default": 0.35
+		},
+		{
+			"name": "peak_ecstasy_alert_scaler",
+			"title": {"En": "Peak Ecstasy"},
+			"type": "Float",
+			"minvalue": 0.0,
+			"maxvalue": 1.0,
+			"default": 0.5
+		},
+		{
+			"name": "orgasm_alert_scaler",
+			"title": {"En": "Orgasming"},
+			"type": "Float",
+			"minvalue": 0.0,
+			"maxvalue": 1.0,
+			"default": 1.0
+		},
+		{
+			"name": "alertness_cap",
+			"title": {"En": "Alertness Cap"},
+			"minvalue": 0,
+			"maxvalue": 1.0,
+			"type": "Float",
+			"default": 0.8
+		},
+		{"type": "Label", "title": {"En": "\nEffect of Mouth Gag"}},
+		{
+			"name": "gag_multiplier",
+			"title": {"En": "Gag Multiplier"},
+			"minvalue": 0,
+			"maxvalue": 1.0,
+			"type": "Float",
+			"default": 0.5
+		},
+		{
+			"type": "Label",
+			"title": {"En": "(Wearing gag can reduce the volume, alert radius and alertness.)"}
+		}
+	]
+}

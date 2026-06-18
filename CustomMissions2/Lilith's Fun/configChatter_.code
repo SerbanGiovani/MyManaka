@@ -1,0 +1,66 @@
+configChatter_:
+	pages = CreateThread("StaticDict")
+	currentPageKey = null
+	__setUpPages()
+
+	chatter = CreateMessengerChat(StringsPool2.LilithString,icontext = "Li", iconcolor = Color(0.9, 0.05, 0.3))
+
+	openingFlag = false
+	openedFlag = false
+	openFlag = false
+
+	pageToggleFlag = true
+
+	initializer:
+		iChatter = null
+		requestQueue = null
+		init:
+			#Params@arr newIChatter: Object, newRequestQueue: Object
+			iChatter = _args[0]
+			requestQueue = _args[1]
+		do:
+			value.init(iChatter, requestQueue)
+	ir = CreateThread("initializer")
+
+	opened:
+		#Returns isOpened: Bool
+		_result = chatter.Opened()
+
+	initPages:
+		#Params@arr requestQueue: Object
+		requestQueue = _args[0]
+		if requestQueue != null
+			values = pages.GetValues()
+			ir.init(chatter, requestQueue)
+			Foreach(values, ir)
+
+	startLoop:
+		#Returns listener: Object
+		_result = CreateListenerLocal("__chat")
+
+	__chat:
+		if chatter.Opened()
+			page = pages.At(currentPageKey)
+			if page == null
+				Log("NULL Page")
+			if pageToggleFlag
+				pageToggleFlag = false
+				page.initUI()
+			nextPageKey = page.tryNextPage()
+			if nextPageKey != null
+				# Log("nextPageKey: "+nextPageKey)
+				__clear()
+				currentPageKey = nextPageKey
+				pageToggleFlag = true
+			page.updateUI()
+
+	__clear:
+		chatter.Clear()
+		chatter.SetButtons()
+
+	__setUpPages:
+		pages.Insert("pageMain",CreateThread("pageMain_"))
+		pages.Insert("pageReady",CreateThread("pageReady_"))
+		pages.Insert("pageMissionHelp",CreateThread("pageMissionHelp_"))
+		pages.Insert("pageRule",CreateThread("pageRule_"))
+		currentPageKey = "pageMain"

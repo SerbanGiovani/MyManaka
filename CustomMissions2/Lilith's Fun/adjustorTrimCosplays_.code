@@ -1,0 +1,17 @@
+adjustorTrimCosplays_:
+	#Note Event: List must have:
+	# trimCount: Number
+	# common： List see 'event.common'
+
+	adjust:
+		#Required
+		#Params@arr event: List
+		#Returns event: List
+		event = _args[0]
+		if _save.level == 0
+			event.trimCount = event.trimCount - 4
+			if event.trimCount > 26
+				event.trimCount = 26
+		if _save.level == 3
+			event.trimCount = 30
+		_result = event

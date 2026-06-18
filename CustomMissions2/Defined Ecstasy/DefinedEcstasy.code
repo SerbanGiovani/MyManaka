@@ -1,0 +1,216 @@
+##########################
+## Defined Ecstasy v1.0 ##
+##########################
+
+# Main threads to run
+excitingStuff = CreateThread("defined_ecstasy")
+
+defined_ecstasy:
+	# actions to verify that give ecstasy
+	ecstasyActions1 = CreateCondition("(Action_OnaniNormal, Action_MituasiOnani, Action_OnaniNeGanimata, Action_OnaniYotuashi, Action_ChikubiRotate, Action_OnaniArmKuri, Action_OnaniSikoru, Action_SexStandBack, Action_SexKijoui)")
+	ecstasyActions2 = CreateCondition("[(AdultToy_Vibrator, AdultToy_TitRotor, AdultToy_KuriRotor), (VibrationLow, VibrationHigh, VibrationRandom)]")
+	ecstasyActions3 = CreateCondition("[(AdultToy_PistonPussy, AdultToy_PistonAnal, AdultToy_PistonFuta), (PistonLow, PistonMedium, PistonHigh, PistonRandom)]")
+
+	# actions that should give some ecstasy
+	action01 = CreateCondition("Action_KaikyakuFella") # Spread-Leg Blowjob
+	action02 = CreateCondition("Action_NeKataashiage") # Supine One-Leg Raise
+	action03 = CreateCondition("Action_PeeKaikyaku") # Spread-Leg Urination
+	action04 = CreateCondition("Action_PeeStand") # Standing Pee
+
+	action98 = CreateCondition("Action_InsertAnalPlug")
+	action99 = CreateCondition("Action_ExtractAnalPlug")
+
+	# items that should give ecstasy while moving
+	vibratorPussy = CreateCondition("[VibrationOff, AdultToy_Vibrator]")
+	pistonPussy = CreateCondition("[PistonOff, AdultToy_PistonPussy]")
+	pistonAnal = CreateCondition("[PistonOff, AdultToy_PistonAnal]")
+	pistonFuta = CreateCondition("[PistonOff, AdultToy_PistonFuta]")
+
+	# cosplay that should give ecstasy while moving
+	cosplay = CreateList()
+	cosplay.Insert(CreateCondition("Cosplay_m_cosplay_general_upper_rubber_suit")) # Rubber Suit
+	cosplay.Insert(CreateCondition("Cosplay_m_cosplay_general_upper_kikkou")) # Kikkou Shibari (Rope)
+	cosplay.Insert(CreateCondition("Cosplay_m_cosplay_general_genital_anal_plug")) # Anal Plug
+	cosplay.Insert(CreateCondition("Cosplay_m_cosplay_general_genital_beads")) # Anal Beads
+	cosplay.Insert(CreateCondition("Cosplay_m_cosplay_general_genital_rubbit_tail")) # Bunny Tail Plug
+	cosplay.Insert(CreateCondition("Cosplay_m_cosplay_general_genital_ninjin")) # Carrot
+	cosplay.Insert(CreateCondition("Cosplay_m_cosplay_general_genital_tail_plug")) # Tail Plug
+	cosplay.Insert(CreateCondition("Cosplay_m_cosplay_general_genital_plug_light")) # Light-Up Anal Plug
+	cosplay.Insert(CreateCondition("Cosplay_m_cosplay_succubus_cosplay_tail")) # Succubus Tail
+	cosplay.Insert(CreateCondition("Cosplay_m_cosplay_kemono_tail")) # Furry Tail
+	cosplay.Insert(CreateCondition("Cosplay_m_cosplay_latex_pony_tail")) # Latex Pony Tail
+	cosplay.Insert(CreateCondition("Cosplay_m_cosplay_cow_tail")) # Cow Tail Plug
+
+	# other stuff that can give multipliers to ecstasy gain
+	handcuffs = CreateCondition("(AdultToy_Handcuff, AdultToy_KeyHandcuff, AdultToy_TimerHandcuff)")
+
+
+	prevEcstasy = 0
+	prevDecay = false
+	noDecay = false # used by actions that give ecstasy by default
+	time = 30
+	time2 = 30
+
+	checkStates = CreateListener("checking_stuff")
+
+	checking_stuff:
+		# creating empty parameters
+		ecstasy = CreateList()
+		modifier = CreateList()
+		gnrlMult = CreateList()
+		cospMult = CreateList()
+
+		# Verify if default game ecstasy giving action are active
+		if ecstasyActions1.Check() || ecstasyActions2.Check() || ecstasyActions3.Check()
+			noDecay = true
+
+		# Actions 
+		if action01.Check() && _settings.action_01_active # Spread-Leg Blowjob
+			modifier[0] = _settings.action_01
+		elseif action02.Check() && _settings.action_02_active # Supine One-leg Raise
+			modifier[0] = _settings.action_02
+		elseif action03.Check() && _settings.action_03_active # Spread-Leg Urination 
+			modifier[0] = _settings.action_03
+		elseif action04.Check() && _settings.action_04_active # Standing Pee
+			modifier[0] = _settings.action_04
+
+		elseif action98.Check() && _settings.action_98_active # Insert Anal Plug
+			modifier[0] = _settings.action_98
+		elseif action99.Check() && _settings.action_99_active # Remove Anal Plug
+			modifier[0] = _settings.action_99
+
+		# While Walking or Running
+		if _state.Moving || _state.Dashing
+			if cosplay[0].Check() && _settings.cp_01_active # Rubber Suit
+				modifier[1] = _settings.cp_01
+			if cosplay[1].Check() && _settings.cp_02_active # Kikkou Shibari (Rope)
+				modifier[2] = _settings.cp_02
+			if cosplay[2].Check() && _settings.cp_03_active # Anal Plug
+				modifier[3] = _settings.cp_03
+			if cosplay[3].Check() && _settings.cp_04_active # Anal Beads
+				modifier[4] = _settings.cp_04
+			if cosplay[4].Check() && _settings.cp_05_active # Bunny Tail Plug
+				modifier[5] = _settings.cp_05
+			if cosplay[5].Check() && _settings.cp_06_active # Carrot
+				modifier[6] = _settings.cp_06
+			if cosplay[6].Check() && _settings.cp_07_active # Tail Plug
+				modifier[7] = _settings.cp_07
+			if cosplay[7].Check() && _settings.cp_08_active # Light-Up Anal Plug
+				modifier[8] = _settings.cp_08
+			if cosplay[8].Check() && _settings.cp_09_active # Succubus Tail
+				modifier[9] = _settings.cp_09
+			if cosplay[9].Check() &&  _settings.cp_10_active # Furry Tail
+				modifier[10] = _settings.cp_10
+			if cosplay[10].Check() && _settings.cp_11_active # Latex Pony Tail
+				modifier[11] = _settings.cp_11
+			if cosplay[11].Check() && _settings.cp_12_active # Cow Tail Plug
+				modifier[12] = _settings.cp_12
+
+			# Equipped toys that are off
+			if vibratorPussy.Check() && _settings.toy_1_active
+				modifier[13] = _settings.toy_1
+			if pistonPussy.Check() && _settings.toy_2_active 
+				modifier[14] = _settings.toy_2
+			if pistonAnal.Check() && _settings.toy_3_active 
+				modifier[15] = _settings.toy_3
+			if pistonFuta.Check() && _settings.toy_4_active 
+				modifier[16] = _settings.toy_4
+
+		nrOfModifiers = 17 # need to be set manually so values remain null
+
+		# General multipliers
+		if _state.ShowingOff # Flashing to NPC
+			gnrlMult[0] = _settings.seen_1
+		elseif _state.Watched # Watched by NPC
+			gnrlMult[0] = _settings.seen_2
+		else
+			gnrlMult[0] = 1
+
+		if _state.NearNPC # Near any NPC
+			gnrlMult[1] = _settings.unique_1
+		else
+			gnrlMult[1] = 1
+		if _state.Peeing # Peeing
+			gnrlMult[2] = _settings.unique_2
+		else
+			gnrlMult[2] = 1
+		if _state.Blindfolded # Wearing blindfold
+			gnrlMult[3] = _settings.unique_3
+		else
+			gnrlMult[3] = 1
+		if handcuffs.Check() # Wearing handcuffs
+			gnrlMult[4] = _settings.unique_4
+		else
+			gnrlMult[4] = 1
+
+
+		# Cosplay and equipped item multipliers
+		if _state.Dashing # Running
+			cospMult[0] = _settings.movement_1
+		elseif (_state.Crouching && _state.Moving) # Crawling
+			cospMult[0] = _settings.movement_2
+		else
+			cospMult[0] = 1
+
+
+		# trying to apply corrections since ecstasy doesn't drop instantly if you stop masturbating
+		# it's not perfect but seems that the natural Log get's pretty close to the real drop off mechanic
+		#if !noDecay && prevDecay # if just stopped ecstasy gain from default game mechanics (masturbations)
+		#	time2 = 0
+		#	#Log("Time 2 = 0")
+		#if time2 < 10.5 # don't apply full correction for 10.5 seconds
+		#	val = 2.71828182846 * (time2 / 10.5)
+		#	if val > 1
+		#		correction = LogN(val) / 20
+		#	else
+		#		correction = 0
+		#	#Log("correction = "+correction)
+		#else #(0.05 is the rate of ecstasy drop / delta time of the game by default, so we need to compensate for it)
+		#	correction = 0.05
+
+		multipliers = 1
+		i = 0
+		while i < gnrlMult.Count()
+			multipliers = multipliers * gnrlMult[i]
+			i = i + 1
+
+		finalEcstasy = 0
+		anyModifier = false
+		i = 0
+		while i < nrOfModifiers
+			if modifier[i] != null
+				ecstasy[i] = (modifier[i] * 3 * multipliers) / 100000
+				if i > 0
+					ecstasy[i] = ecstasy[i] * cospMult[0]
+				finalEcstasy = finalEcstasy + ecstasy[i]
+				anyModifier = true
+			i = i + 1
+
+		crtEcstasy = GetEcstasy()
+		if anyModifier	
+			if _state.Orgasm
+				time = 0
+			elseif time > 0.2
+				#if !noDecay
+				#	finalEcstasy = (correction * _timediff) + finalEcstasy
+				if prevEcstasy > crtEcstasy # there is at least one active modifier so don't let ecstasy drop
+					SetEcstasy(prevEcstasy)
+				AddEcstasy(finalEcstasy)
+
+		crtEcstasy = GetEcstasy()
+		if ((crtEcstasy > prevEcstasy) && _settings.multiplier_active)
+			ecstasyGain = (crtEcstasy - prevEcstasy) * _settings.multiplier
+			SetEcstasy(prevEcstasy + ecstasyGain)
+
+
+		time = time + _timediff
+		time2 = time2 + _timediff
+		prevEcstasy = GetEcstasy()
+		prevDecay = noDecay
+		noDecay = false
+
+
+
+
+
+

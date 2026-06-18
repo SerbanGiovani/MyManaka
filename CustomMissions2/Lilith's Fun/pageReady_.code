@@ -1,0 +1,48 @@
+pageReady_:
+	chatter = null #Required
+	requestQueue = null #Required
+
+	backFlag = false
+	nextFlag = false
+	
+	button = StringsPool2.CanStartButtonString
+
+	init:
+		#Required
+		#Params@arr newChatter: Object, newRequestQueue: Object
+		newChatter = _args[0]
+		newRequestQueue = _args[1]
+		if newChatter != null && (newRequestQueue != null)
+			chatter = newChatter
+			requestQueue = newRequestQueue
+
+	initUI:
+		#Required
+		if _state.Position.stage != "Apart"
+			backFlag = false
+			nextFlag = false
+			chatter.Add(StringsPool1.ReadyString,"Left",user = StringsPool2.LilithString, silent = true)
+			chatter.Add(GetLevelDesc(_save.level,StringsPool1),"Left",user = StringsPool2.SystemString, silent = true)
+			chatter.SetButtons(button)
+		else
+			backFlag = true
+			nextFlag = false
+
+	updateUI:
+		#Required
+		buttonIndex = chatter.Clicked()
+		if buttonIndex != null && (!backFlag & !nextFlag)
+			backFlag = false
+			nextFlag = true
+			requestQueue.Enqueue("Start")
+		if _state.Position.stage == "Apart"
+			backFlag = true
+			nextFlag = false
+
+	tryNextPage:
+		#Required
+		#Returns nextPageKey: String
+		if backFlag
+			_result = "pageMain"
+		elseif nextFlag
+			_result = "pageMissionHelp"

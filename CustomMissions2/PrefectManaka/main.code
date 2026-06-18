@@ -1,0 +1,1098 @@
+#################################
+# Settings
+#################################
+enableLog = true
+
+#################################
+# Code
+#################################
+if _save.progress == null
+	_save.progress = 0
+
+prefect = CreateThread("prefect")
+
+prefect:
+	thread = _this
+	thread.Goto("initialize")
+
+	missionPanel = CreateMissionPanel()
+	messengerChat = CreateMessengerChat("PrefectManaka")
+
+	showMP:
+		if mp == null
+			mp = missionPanel
+		if progress == null
+			mp.SetGaugeVisible(false)
+		else
+			mp.SetGaugeProgress(progress)
+			mp.SetGaugeVisible(true)
+
+		if rp == null
+			rp = ""
+		mp.SetRPText(rp)
+
+		if text == null
+			mp.SetVisible(false)
+		else
+			mp.SetText(text)
+			mp.SetVisible(true)
+
+	timedDisplay:
+		if mp == null
+			mp = CreateMissionPanel()
+			mp.SetText(text)
+			mp.SetGaugeVisible(true)
+			mp.SetVisible(true)
+		if t == null
+			t = 0
+		t = t + _timediff
+		if t < duration
+			mp.SetGaugeProgress(t / duration)
+		else
+			mp.SetVisible(false)
+
+	waitCondition:
+		if duration == null
+			duration = 0
+		if maxDuration == null
+			maxDuration = 0
+		if condition.Check()
+			duration = duration + _timediff
+			if duration >= maxDuration
+				thread.Goto(next)
+		else
+			if reset
+				duration = 0
+		if maxDuration > 0
+			mp.SetGaugeProgress(duration/maxDuration)
+
+	waitConditionFail:
+		if !condition.Check()
+			thread.Goto(next)
+		if zone != null
+			if !zone.Inside()
+				thread.Goto(next)
+
+	waitConditionInZone:
+		if duration == null
+			duration = 0
+		if maxDuration == null
+			maxDuration = 0
+		if zone.Inside()
+			if condition.Check()
+				duration = duration + _timediff
+				zone.SetColor(0.5, 1, 0.5)
+				if duration >= maxDuration
+					zone.SetVisible(false)
+					thread.Goto(next)
+			else
+				if reset
+					duration = 0
+				zone.SetColor(1, 1, 0.5)
+			if maxDuration > 0
+				mp.SetGaugeProgress(duration/maxDuration)
+		else
+			zone.SetColor(1, 0.75, 0.5)
+			if reset
+				duration = 0
+
+	waitClick:
+		if index == null
+			index = 0
+		if messengerChat.Clicked() == index
+			thread.Goto(next)
+
+	waitStage:
+		if _state.Position.stage == stage
+			thread.Goto(next)
+
+	waitStageChange:
+		if _stagechanged
+			thread.Goto(next)
+
+	initialize:
+		if enableLog
+			Log("prefect: initialize")
+		cp = "cp" + _save.progress + "pre"
+		thread.Goto(cp)
+
+	cp0pre:
+		if enableLog
+			Log("prefect: cp0pre")
+		condition = CreateCondition("[Rank>=1]")
+		listener = CreateListener("waitCondition", condition=condition, next="cp0")
+
+	cp0:
+		if enableLog
+			Log("prefect: cp0")
+		messengerChat.Add(tcp0_0, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp0_10)
+		showMP(text=tcp0_20)
+		listener = CreateListener("waitClick", index=0, next="cp0b")
+
+	cp0b:
+		if enableLog
+			Log("prefect: cp0b")
+		messengerChat.Add(tcp0b_0, "Right", user="Me", silent=true)
+		messengerChat.Add(tcp0b_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp0b_20)
+		listener = CreateListener("waitClick", index=0, next="cp0c")
+
+	cp0c:
+		if enableLog
+			Log("prefect: cp0c")
+		messengerChat.Add(tcp0c_0, "Right", user="Me", silent=true)
+		messengerChat.Add(tcp0c_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp0c_20)
+		listener = CreateListener("waitClick", index=0, next="cp0d")
+
+	cp0d:
+		if enableLog
+			Log("prefect: cp0d")
+		messengerChat.Add(tcp0d_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		showMP(text=tcp0d_10, rp="100RP", progress=0)
+		area = CreateArea(type="sphere", stage="Residence", x=34.82, y=-0.20, z=-79.84, r=0.5, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[(Exposed_Front,Exposed_Hip),(Action_UseDildoFloorPussy1,Action_UseDildoFloorAnal1),Orgasm]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, maxDuration=3, mp=missionPanel, next="cp0e", reset=true)
+
+	cp0e:
+		if enableLog
+			Log("prefect: cp0e")
+		PlaySoundEffect("UICompleteMission")
+		AddCurrentEarnRP(100)
+		showMP(text=tcp0e_0)
+		messengerChat.Add(tcp0e_10, "Left", user="Unknown")
+		messengerChat.Add(tcp0e_20, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp0e_30)
+		listener = CreateListener("waitClick", index=0, next="cp0f")
+
+	cp0f:
+		if enableLog
+			Log("prefect: cp0f")
+		_save.progress = 1
+		showMP()
+		messengerChat.Add(tcp0f_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		listener = CreateListener("waitStage", stage="Apart", next="cp1pre")
+		
+	cp1pre:
+		if enableLog
+			Log("prefect: cp1pre")
+		condition = CreateCondition("[OwnsAdultToy_Vibrator]")
+		listener = CreateListener("waitCondition", condition=condition, next="cp1")
+
+	cp1:
+		if enableLog
+			Log("prefect: cp1")
+		showMP(text=tcp1_0)
+		messengerChat.Add(tcp1_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp1_20)
+		listener = CreateListener("waitClick", index=0, next="cp1b")
+
+	cp1b:
+		if enableLog
+			Log("prefect: cp1b")
+		messengerChat.Add(tcp1b_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		showMP(text=tcp1b_10, progress=0)
+		area = CreateArea(type="sphere", stage="Park", x=73.33, y=52.04, z=78.82, r=1.0, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[Item_VibeRemocon]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, maxDuration=1, mp=missionPanel, next="cp1c", reset=true)
+
+	cp1c:
+		if enableLog
+			Log("prefect: cp1c")
+		showMP(text=tcp1c_0)
+		messengerChat.Add(tcp1c_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp1c_20)
+		listener = CreateListener("waitClick", index=0, next="cp1d")
+
+	cp1d:
+		if enableLog
+			Log("prefect: cp1d")
+		DropItem(itemtype="VibeRemocon", zone="Park", x=75.69, y=52.08, z=83.44, compass=false)
+		messengerChat.Add(tcp1d_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		showMP(text=tcp1d_10, progress=0)
+		area = CreateArea(type="sphere", stage="Park", x=34.27, y=50.07, z=41.61, r=1.0, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[!Item_VibeRemocon]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, maxDuration=1, mp=missionPanel, next="cp1e", reset=true)
+
+	cp1e:
+		if enableLog
+			Log("prefect: cp1e")
+		DropItem(itemtype="VibeRemocon", zone="Apart", x=0, y=0, z=0, compass=false)
+		SetVibrator("Random")
+		showMP(text=tcp1e_0)
+		messengerChat.Add(tcp1e_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp1e_20)
+		listener = CreateListener("waitClick", index=0, next="cp1f")
+
+	cp1f:
+		if enableLog
+			Log("prefect: cp1g")
+		messengerChat.Add(tcp1f_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		thread.Goto("cp1g")
+
+	cp1fail:
+		if enableLog
+			Log("prefect: cp1fail")
+		showMP(text=tcp1fail_0, progress=0)
+		area = CreateArea(type="sphere", stage="Park", x=34.27, y=50.07, z=41.61, r=1.0, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[AdultToy_Vibrator,(Exposed_Front,Exposed_Hip)]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, maxDuration=1, mp=missionPanel, next="cp1g", reset=true)
+
+	cp1g:
+		if enableLog
+			Log("prefect: cp1f")
+		showMP(text=tcp1g_0, progress=0)
+		area = CreateArea(type="sphere", stage="Park", x=47.01, y=50.05, z=112.91, r=1.0, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[AdultToy_Vibrator,(Exposed_Front,Exposed_Hip)]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, maxDuration=1, mp=missionPanel, next="cp1h", reset=true)
+		listenerFail = CreateListener("waitConditionFail", condition=condition, next="cp1fail")
+
+	cp1h:
+		if enableLog
+			Log("prefect: cp1g")
+		showMP(text=tcp1h_0, progress=0)
+		area = CreateArea(type="sphere", stage="Park", x=113.31, y=49.06, z=125.82, r=1.0, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[AdultToy_Vibrator,(Exposed_Front,Exposed_Hip)]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, maxDuration=1, mp=missionPanel, next="cp1i", reset=true)
+		listenerFail = CreateListener("waitConditionFail", condition=condition, next="cp1fail")
+		
+	cp1i:
+		if enableLog
+			Log("prefect: cp1i")
+		showMP(text=tcp1i_0, progress=0)
+		area = CreateArea(type="sphere", stage="Park", x=118.85, y=49.02, z=53.78, r=1.0, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[AdultToy_Vibrator,(Exposed_Front,Exposed_Hip)]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, maxDuration=1, mp=missionPanel, next="cp1j", reset=true)
+		listenerFail = CreateListener("waitConditionFail", condition=condition, next="cp1fail")
+
+	cp1j:
+		if enableLog
+			Log("prefect: cp1j")
+		showMP(text=tcp1j_0, rp="200RP", progress=0)
+		area = CreateArea(type="sphere", stage="Park", x=34.27, y=50.07, z=41.61, r=1.0, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[AdultToy_Vibrator,(Exposed_Front,Exposed_Hip)]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, maxDuration=1, mp=missionPanel, next="cp1k", reset=true)
+		listenerFail = CreateListener("waitConditionFail", condition=condition, next="cp1fail")
+
+	cp1k:
+		if enableLog
+			Log("prefect: cp1k")
+		PlaySoundEffect("UICompleteMission")
+		AddCurrentEarnRP(200)
+		showMP(text=tcp1k_0)
+		messengerChat.Add(tcp1k_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp1k_20)
+		listener = CreateListener("waitClick", index=0, next="cp1l")
+
+	cp1l:
+		if enableLog
+			Log("prefect: cp1l")
+		_save.progress = 2
+		showMP()
+		messengerChat.Add(tcp1l_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		listener = CreateListener("waitStage", stage="Apart", next="cp2pre")
+		
+	cp2pre:
+		if enableLog
+			Log("prefect: cp2pre")
+		condition = CreateCondition("[Rank>=2]")
+		listener = CreateListener("waitCondition", condition=condition, next="cp2")
+
+	cp2:
+		if enableLog
+			Log("prefect: cp2")
+		showMP(text=tcp2_0)
+		messengerChat.Add(tcp2_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp2_20)
+		listener = CreateListener("waitClick", index=0, next="cp2b")
+
+	cp2b:
+		if enableLog
+			Log("prefect: cp2b")
+		messengerChat.Add(tcp2b_0, "Right", user="Me", silent=true)
+		messengerChat.Add(tcp2b_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp2b_20)
+		listener = CreateListener("waitClick", index=0, next="cp2c")
+
+	cp2c:
+		if enableLog
+			Log("prefect: cp2c")
+		messengerChat.Add(tcp2c_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		showMP(text=tcp2c_10, rp="300RP", progress=0)
+		condition = CreateCondition("[NPCArea,(Exposed_Front,Exposed_Hip),AdultToy_TimerHandcuff,HandcuffsObject]")
+		listener = CreateListener("waitCondition", condition=condition, next="cp2d", maxDuration=300, mp=missionPanel, reset=true)
+
+	cp2d:
+		if enableLog
+			Log("prefect: cp2d")
+		PlaySoundEffect("UICompleteMission")
+		AddCurrentEarnRP(300)
+		showMP(text=tcp2d_0)
+		condition = CreateCondition("[!AdultToy_TimerHandcuff]")
+		listener = CreateListener("waitCondition", condition=condition, next="cp2e", reset=true)
+
+	cp2e:
+		if enableLog
+			Log("prefect: cp2e")
+		showMP(text=tcp2e_0)
+		messengerChat.Add(tcp2e_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp2e_20)
+		listener = CreateListener("waitClick", index=0, next="cp2f")
+
+	cp2f:
+		if enableLog
+			Log("prefect: cp2f")
+		_save.progress = 3
+		showMP()
+		messengerChat.Add(tcp2f_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		listener = CreateListener("waitStage", stage="Apart", next="cp3pre")
+
+	cp3pre:
+		if enableLog
+			Log("prefect: cp3pre")
+		condition = CreateCondition("[Rank>=3]")
+		listener = CreateListener("waitCondition", condition=condition, next="cp3")
+
+	cp3:
+		if enableLog
+			Log("prefect: cp3")
+		showMP(text=tcp3_0)
+		messengerChat.Add(tcp3_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp3_20)
+		listener = CreateListener("waitClick", index=0, next="cp3b")
+
+	cp3b:
+		if enableLog
+			Log("prefect: cp3b")
+		messengerChat.Add(tcp3b_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		showMP(text=tcp3b_10)
+		listener = CreateListener("waitStage", stage="StationFront", next="cp3c")
+
+	cp3c:
+		if enableLog
+			Log("prefect: cp3c")
+		showMP(text=tcp3c_0)
+		messengerChat.Add(tcp3c_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp3c_20)
+		listener = CreateListener("waitClick", index=0, next="cp3d")
+
+	cp3d:
+		if enableLog
+			Log("prefect: cp3d")
+		messengerChat.Add(tcp3d_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		showMP(text=tcp3d_10, progress=0)
+		area = CreateArea(type="sphere", stage="StationFront", x=-261.96, y=7.54, z=-1.28, r=1.0, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[OwnsAdultToy_EyeMask]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, maxDuration=1, mp=missionPanel, next="cp3e", reset=true)
+
+	cp3e:
+		if enableLog
+			Log("prefect: cp3e")
+		showMP(text=tcp3e_0)
+		messengerChat.Add(tcp3e_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp3e_20)
+		listener = CreateListener("waitClick", index=0, next="cp3f")
+
+	cp3f:
+		if enableLog
+			Log("prefect: cp3f")
+		messengerChat.Add(tcp3f_0, "Right", user="Me", silent=true)
+		messengerChat.Add(tcp3f_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp3f_20)
+		listener = CreateListener("waitClick", index=0, next="cp3g")
+
+	cp3g:
+		if enableLog
+			Log("prefect: cp3g")
+		messengerChat.Add(tcp3g_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		thread.Goto("cp3h")
+
+	cp3h:
+		showMP(text=tcp3h_0, rp="400RP", progress=0)
+		area = CreateArea(type="sphere", stage="StationFront", x=-261.96, y=7.54, z=-1.28, r=1.0, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[AdultToy_EyeMask,Exposed_Upper,Orgasm]")
+		conditionFail = CreateCondition("[AdultToy_EyeMask,Exposed_Upper]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, maxDuration=6, mp=missionPanel, next="cp3i")
+		listenerFail = CreateListener("waitConditionFail", zone=zone, condition=conditionFail, next="cp3fail")
+
+	cp3fail:
+		if enableLog
+			Log("prefect: cp3fail")
+		showMP(text=tcp3fail_0, rp="400RP", progress=0)
+		area = CreateArea(type="sphere", stage="StationFront", x=-261.96, y=7.54, z=-1.28, r=1.0, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[AdultToy_EyeMask,Exposed_Upper]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, mp=missionPanel, next="cp3h")
+
+	cp3i:
+		if enableLog
+			Log("prefect: cp3i")
+		PlaySoundEffect("UICompleteMission")
+		AddCurrentEarnRP(400)
+		showMP(text=tcp3i_0)
+		messengerChat.Add(tcp3i_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp3i_20)
+		listener = CreateListener("waitClick", index=0, next="cp3j")
+
+	cp3j:
+		if enableLog
+			Log("prefect: cp3j")
+		_save.progress = 4
+		showMP()
+		messengerChat.Add(tcp3j_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		listener = CreateListener("waitStage", stage="Apart", next="cp4pre")
+
+	cp4pre:
+		if enableLog
+			Log("prefect: cp4pre")
+		condition = CreateCondition("[Rank>=4]")
+		listener = CreateListener("waitCondition", condition=condition, next="cp4")
+
+	cp4:
+		if enableLog
+			Log("prefect: cp4")
+		showMP(text=tcp4_0)
+		messengerChat.Add(tcp4_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp4_20)
+		listener = CreateListener("waitClick", index=0, next="cp4b")
+
+	cp4b:
+		if enableLog
+			Log("prefect: cp4b")
+		messengerChat.Add(tcp4b_0, "Right", user="Me", silent=true)
+		messengerChat.Add(tcp4b_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp4b_20)
+		listener = CreateListener("waitClick", index=0, next="cp4c")
+
+	cp4c:
+		if enableLog
+			Log("prefect: cp4c")
+		messengerChat.Add(tcp4c_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		showMP(text=tcp4c_10, progress=0)
+		listener = CreateListener("cp4check", mp=missionPanel)
+
+	cp4check:
+		target = 2000
+		currentEarnRP = GetCurrentEarnRP()
+		mp.SetGaugeProgress(currentEarnRP / target)
+		if currentEarnRP >= target
+			thread.Goto("cp4d")
+
+	cp4d:
+		if enableLog
+			Log("prefect: cp4d")
+		PlaySoundEffect("UICompleteMission")
+		showMP(text=tcp4d_0)
+		messengerChat.Add(tcp4d_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp4d_20)
+		listener = CreateListener("waitClick", index=0, next="cp4e")
+
+	cp4e:
+		if enableLog
+			Log("prefect: cp4e")
+		_save.progress = 5
+		showMP()
+		messengerChat.Add(tcp4e_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		listener = CreateListener("waitStage", stage="Apart", next="cp5pre")
+
+	cp5pre:
+		if enableLog
+			Log("prefect: cp5pre")
+		condition = CreateCondition("[Rank>=5]")
+		listener = CreateListener("waitCondition", condition=condition, next="cp5")
+
+	cp5:
+		if enableLog
+			Log("prefect: cp5")
+		showMP(text=tcp5_0)
+		messengerChat.Add(tcp5_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp5_20)
+		listener = CreateListener("waitClick", index=0, next="cp5b")
+
+	cp5b:
+		if enableLog
+			Log("prefect: cp5b")
+		messengerChat.Add(tcp5b_0, "Right", user="Me", silent=true)
+		messengerChat.Add(tcp5b_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp5b_20)
+		listener = CreateListener("waitClick", index=0, next="cp5c")
+
+	cp5c:
+		if enableLog
+			Log("prefect: cp5c")
+		messengerChat.Add(tcp5c_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		showMP(text=tcp5c_10, progress=0)
+		area = CreateArea(type="sphere", stage="Park", x=124.93, y=49.06, z=118.88, r=0.4, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[!Exposed_All,!Skill_DisableHideCostume]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, maxDuration=1, mp=missionPanel, next="cp5d", reset=true)
+
+	cp5d:
+		if enableLog
+			Log("prefect: cp5d")
+		showMP(text=tcp5d_0)
+		messengerChat.Add(tcp5d_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp5d_20)
+		listener = CreateListener("waitClick", index=0, next="cp5e")
+
+	cp5e:
+		if enableLog
+			Log("prefect: cp5e")
+		messengerChat.Add(tcp5e_0, "Right", user="Me", silent=true)
+		messengerChat.Add(tcp5e_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp5e_20)
+		listener = CreateListener("waitClick", index=0, next="cp5f")
+
+	cp5f:
+		if enableLog
+			Log("prefect: cp5f")
+		messengerChat.Add(tcp5f_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		thread.Goto("cp5g")
+
+	cp5g:
+		if enableLog
+			Log("prefect: cp5g")
+		showMP(text=tcp5g_0)
+		area = CreateArea(type="sphere", stage="Park", x=124.93, y=49.06, z=118.88, r=0.4, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateItemCondition(itemtype="Coat", zone=zone)
+		listener = CreateListener("waitCondition", condition=condition, mp=missionPanel, next="cp5g2")
+
+	cp5g2:
+		if enableLog
+			Log("prefect: cp5g2")
+		showMP(text=tcp5g2_0)
+		area = CreateArea(type="sphere", stage="Park", x=124.93, y=49.06, z=118.88, r=0.4, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[Exposed_All]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, mp=missionPanel, next="cp5h")
+
+	cp5h:
+		if enableLog
+			Log("prefect: cp5h")
+		showMP(text=tcp5h_0, progress=0)
+		area = CreateArea(type="sphere", stage="Park", x=124.93, y=49.06, z=123.07, r=0.4, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[Exposed_All]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, maxDuration=1, mp=missionPanel, next="cp5i", reset=true)
+		listenerFail = CreateListener("waitConditionFail", condition=condition, next="cp5g")
+
+	cp5i:
+		if enableLog
+			Log("prefect: cp5i")
+		showMP(text=tcp5i_0)
+		messengerChat.SetButtons(tcp5i_10)
+		listener = CreateListener("waitClick", index=0, next="cp5j")
+
+	cp5j:
+		if enableLog
+			Log("prefect: cp5j")
+		messengerChat.Add(tcp5j_0, "Right", user="Me", silent=true)
+		messengerChat.Add(tcp5j_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp5j_20)
+		listener = CreateListener("waitClick", index=0, next="cp5k")
+
+	cp5k:
+		if enableLog
+			Log("prefect: cp5k")
+		messengerChat.Add(tcp5k_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		thread.Goto("cp5l")
+
+	cp5l:
+		if enableLog
+			Log("prefect: cp5l")
+		showMP(text=tcp5l_0, progress=0)
+		area = CreateArea(type="sphere", stage="Park", x=124.93, y=49.06, z=123.07, r=0.4, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[Exposed_All,Orgasm]")
+		conditionNaked = CreateCondition("[Exposed_All]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, maxDuration=3, mp=missionPanel, next="cp5mpre", reset=true)
+		listenerFail = CreateListener("waitConditionFail", condition=conditionNaked, next="cp5fail")
+
+	cp5fail:
+		if enableLog
+			Log("prefect: cp5fail")
+		showMP(text=tcp5fail_0)
+		area = CreateArea(type="sphere", stage="Park", x=124.93, y=49.06, z=118.88, r=0.4, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateItemCondition(itemtype="Coat", zone=zone)
+		listener = CreateListener("waitCondition", condition=condition, mp=missionPanel, next="cp5l")
+
+	cp5mpre:
+		if enableLog
+			Log("prefect: cp5m")
+		CollectItem(itemtype="Coat")
+		thread.Goto("cp5m")
+
+	cp5m:
+		if enableLog
+			Log("prefect: cp5m")
+		DropItem(itemtype="Coat", zone="Apart", x=5.66, y=0.01, z=0.38, compass=false)
+		showMP(text=tcp5m_0)
+		messengerChat.SetButtons(tcp5m_10)
+		listener = CreateListener("waitClick", index=0, next="cp5n")
+
+	cp5n:
+		if enableLog
+			Log("prefect: cp5n")
+		messengerChat.Add(tcp5n_0, "Right", user="Me", silent=true)
+		messengerChat.Add(tcp5n_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp5n_20)
+		listener = CreateListener("waitClick", index=0, next="cp5o")
+
+	cp5o:
+		if enableLog
+			Log("prefect: cp5o")
+		messengerChat.Add(tcp5o_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		showMP(text=tcp5o_10, rp="500RP", progress=0)
+		area = CreateArea(type="sphere", stage="Park", x=124.93, y=49.06, z=118.88, r=0.4, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[Exposed_All]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, maxDuration=1, mp=missionPanel, next="cp5p", reset=true)
+
+	cp5p:
+		if enableLog
+			Log("prefect: cp5p")
+		PlaySoundEffect("UICompleteMission")
+		AddCurrentEarnRP(500)
+		showMP(text=tcp5p_0)
+		messengerChat.SetButtons(tcp5p_10)
+		listener = CreateListener("waitClick", index=0, next="cp5q")
+
+	cp5q:
+		if enableLog
+			Log("prefect: cp5q")
+		messengerChat.Add(tcp5q_0, "Right", user="Me", silent=true)
+		messengerChat.Add(tcp5q_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp5q_20)
+		listener = CreateListener("waitClick", index=0, next="cp5r")
+
+	cp5r:
+		if enableLog
+			Log("prefect: cp5r")
+		messengerChat.Add(tcp5r_0, "Right", user="Me", silent=true)
+		messengerChat.Add(tcp5r_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp5r_20)
+		listener = CreateListener("waitClick", index=0, next="cp5s")
+
+	cp5s:
+		if enableLog
+			Log("prefect: cp5s")
+		messengerChat.Add(tcp5s_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		showMP(text=tcp5s_10)
+		listener = CreateListener("waitStage", stage="Apart", next="cp5t")
+
+	cp5t:
+		if enableLog
+			Log("prefect: cp5t")
+		showMP(text=tcp5t_0)
+		messengerChat.Add(tcp5t_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp5t_20)
+		listener = CreateListener("waitClick", index=0, next="cp5u")
+
+	cp5u:
+		if enableLog
+			Log("prefect: cp5u")
+		messengerChat.Add(tcp5u_0, "Right", user="Me", silent=true)
+		messengerChat.Add(tcp5u_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp5u_20)
+		listener = CreateListener("waitClick", index=0, next="cp5v")
+
+	cp5v:
+		if enableLog
+			Log("prefect: cp5v")
+		_save.progress = 6
+		showMP()
+		messengerChat.Add(tcp5v_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		listener = CreateListener("waitStageChange", next="cp6pre2")
+
+	cp6pre2:
+		if enableLog
+			Log("prefect: cp6pre2")
+		listener = CreateListener("waitStage", stage="Apart", next="cp6pre")
+
+	cp6pre:
+		if enableLog
+			Log("prefect: cp6pre")
+		condition = CreateCondition("[Rank>=5]")
+		listener = CreateListener("waitCondition", condition=condition, next="cp6")
+
+	cp6:
+		if enableLog
+			Log("prefect: cp6")
+		showMP(text=tcp6_0)
+		messengerChat.Add(tcp6_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp6_20)
+		listener = CreateListener("waitClick", index=0, next="cp6b")
+
+	cp6b:
+		if enableLog
+			Log("prefect: cp6b")
+		messengerChat.Add(tcp6b_0, "Right", user="Me", silent=true)
+		messengerChat.Add(tcp6b_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp6b_20)
+		listener = CreateListener("waitClick", index=0, next="cp6c")
+
+	cp6c:
+		if enableLog
+			Log("prefect: cp6c")
+		messengerChat.Add(tcp6c_0, "Right", user="Me", silent=true)
+		messengerChat.Add(tcp6c_10, "Left", user="Unknown")
+		messengerChat.Add(tcp6c_20, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp6c_30)
+		listener = CreateListener("waitClick", index=0, next="cp6d")
+
+	cp6d:
+		if enableLog
+			Log("prefect: cp6d")
+		messengerChat.Add(tcp6d_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		showMP(text=tcp6d_10, progress=0)
+		area = CreateArea(type="sphere", stage="FashionShop", x=52.63, y=0.07, z=-141.26, r=0.4, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[!Exposed_All,!Skill_DisableHideCostume]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, maxDuration=1, mp=missionPanel, next="cp6e", reset=true)
+		AddCurrentRP(2500)
+		PlaySoundEffect("Buy")
+		listenerTimedDisplay = CreateListener("timedDisplay", text=tcp6d_20, duration=30)
+
+	cp6e:
+		if enableLog
+			Log("prefect: cp6e")
+		showMP(text=tcp6e_0)
+		messengerChat.Add(tcp6e_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp6e_20)
+		listener = CreateListener("waitClick", index=0, next="cp6fpre")
+
+	cp6fpre:
+		if enableLog
+			Log("prefect: cp6fpre")
+		messengerChat.Add(tcp6fpre_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		thread.Goto("cp6f")
+
+	cp6f:
+		if enableLog
+			Log("prefect: cp6f")
+		showMP(text=tcp6f_0)
+		area = CreateArea(type="sphere", stage="FashionShop", x=52.63, y=0.07, z=-141.26, r=0.4, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateItemCondition(itemtype="Coat", zone=zone)
+		listener = CreateListener("waitCondition", condition=condition, mp=missionPanel, next="cp6f2")
+
+	cp6f2:
+		if enableLog
+			Log("prefect: cp6f2")
+		showMP(text=tcp6f2_0)
+		area = CreateArea(type="sphere", stage="FashionShop", x=52.63, y=0.07, z=-141.26, r=0.4, compass=true)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(true)
+		condition = CreateCondition("[Exposed_All]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, mp=missionPanel, next="cp6g")
+
+	cp6g:
+		if enableLog
+			Log("prefect: cp6g")
+		showMP(text=tcp6g_0)
+		condition = CreateCondition("[Exposed_All]")
+		listenerFail = CreateListener("waitConditionFail", condition=condition, next="cp6f")
+		listener = CreateListener("waitStage", stage="ShoppingMall", next="cp6hpre")
+
+	cp6hpre:
+		if enableLog
+			Log("prefect: cp6hpre")
+		CollectItem(itemtype="Coat")
+		thread.Goto("cp6h")
+
+	cp6h:
+		if enableLog
+			Log("prefect: cp6h")
+		DropItem(itemtype="Coat", zone="Apart", x=5.66, y=0.01, z=0.38, compass=false)
+		showMP(text=tcp6h_0, rp="600RP")
+		condition = CreateCondition("[MissionCurrCompleted_60008]")
+		listener = CreateListener("waitCondition", condition=condition, next="cp6i")
+
+	cp6i:
+		if enableLog
+			Log("prefect: cp6i")
+		PlaySoundEffect("UICompleteMission")
+		AddCurrentEarnRP(600)
+		showMP(text=tcp6i_0)
+		listener = CreateListener("waitStage", stage="Apart", next="cp6j")
+
+	cp6j:
+		if enableLog
+			Log("prefect: cp6j")
+		showMP(text=tcp6j_0)
+		messengerChat.Add(tcp6j_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp6j_20)
+		listener = CreateListener("waitClick", index=0, next="cp6k")
+
+	cp6k:
+		if enableLog
+			Log("prefect: cp6k")
+		messengerChat.Add(tcp6k_0, "Right", user="Me", silent=true)
+		messengerChat.Add(tcp6k_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp6k_20)
+		listener = CreateListener("waitClick", index=0, next="cp6l")
+
+	cp6l:
+		if enableLog
+			Log("prefect: cp6l")
+		_save.progress = 7
+		showMP()
+		messengerChat.Add(tcp6l_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		listener = CreateListener("waitStageChange", next="cp7pre2")
+
+	cp7pre2:
+		if enableLog
+			Log("prefect: cp7pre2")
+		listener = CreateListener("waitStage", stage="Apart", next="cp7pre")
+
+	cp7pre:
+		if enableLog
+			Log("prefect: cp7pre")
+		condition = CreateCondition("[Rank>=5]")
+		listener = CreateListener("waitCondition", condition=condition, next="cp7")
+
+	cp7:
+		if enableLog
+			Log("prefect: cp7")
+		showMP(text=tcp7_0)
+		messengerChat.Add(tcp7_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp7_20)
+		listener = CreateListener("waitClick", index=0, next="cp7b")
+
+	cp7b:
+		if enableLog
+			Log("prefect: cp7b")
+		messengerChat.Add(tcp7b_0, "Right", user="Me", silent=true)
+		messengerChat.Add(tcp7b_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp7b_20)
+		listener = CreateListener("waitClick", index=0, next="cp7c")
+
+	cp7c:
+		if enableLog
+			Log("prefect: cp7c")
+		messengerChat.Add(tcp7c_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		thread.Goto("cp7d")
+
+	cp7d:
+		if enableLog
+			Log("prefect: cp7d")
+		showMP(text=tcp7d_0)
+		condition = CreateCondition("[Exposed_All,!Bodypaint]")
+		listener = CreateListener("waitCondition", condition=condition, next="cp7e")
+
+	cp7e:
+		if enableLog
+			Log("prefect: cp7e")
+		showMP(text=tcp7e_0, rp="700RP", progress=0)
+		conditionFail = CreateCondition("[Exposed_All,!Bodypaint]")
+		condition = CreateCondition("[Exposed_All,!Bodypaint,ShowingOff,Orgasm]")
+		listener = CreateListener("waitCondition", condition=condition, next="cp7f", maxDuration=9, mp=missionPanel)
+		listenerFail = CreateListener("waitConditionFail", condition=conditionFail, next="cp7d")
+
+	cp7f:
+		if enableLog
+			Log("prefect: cp7f")
+		PlaySoundEffect("UICompleteMission")
+		AddCurrentEarnRP(700)
+		showMP(text=tcp7f_0)
+		messengerChat.Add(tcp7f_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp7f_20)
+		listener = CreateListener("waitClick", index=0, next="cp7g")
+
+	cp7g:
+		if enableLog
+			Log("prefect: cp7g")
+		_save.progress = 8
+		showMP()
+		messengerChat.Add(tcp7g_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		listener = CreateListener("waitStage", stage="Apart", next="cp8pre")
+
+	cp8pre:
+		if enableLog
+			Log("prefect: cp8pre")
+		condition = CreateCondition("[Rank>=5]")
+		listener = CreateListener("waitCondition", condition=condition, next="cp8")
+
+	cp8:
+		if enableLog
+			Log("prefect: cp8")
+		_save.runningInProcess = false
+		showMP(text=tcp8_0)
+		messengerChat.Add(tcp8_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp8_20)
+		listener = CreateListener("waitClick", index=0, next="cp8b")
+
+	cp8b:
+		if enableLog
+			Log("prefect: cp8b")
+		messengerChat.Add(tcp8b_0, "Right", user="Me", silent=true)
+		messengerChat.Add(tcp8b_10, "Left", user="Unknown")
+		messengerChat.Add(tcp8b_20, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp8b_30)
+		listener = CreateListener("waitClick", index=0, next="cp8c")
+
+	cp8c:
+		if enableLog
+			Log("prefect: cp8c")
+		messengerChat.Add(tcp8c_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		thread.Goto("cp8d")
+
+	cp8d:
+		if enableLog
+			Log("prefect: cp8d")
+		showMP(text=tcp8d_0)
+		condition = CreateCondition("[!Skill_DisableHideCostume,!Skill_TimeStop,!Skill_Exhibitionism,!Skill_Sex]")
+		listener = CreateListener("waitCondition", condition=condition, next="cp8e")
+
+	cp8e:
+		if enableLog
+			Log("prefect: cp8e")
+		showMP(text=tcp8e_0)
+		area = CreateArea(type="sphere", stage="Apart", x=0, y=0, z=0, r=10, compass=false)
+		area.SetVisible(false)
+		zone = CreateZone(area)
+		zone.SetVisible(false)
+		condition = CreateCondition("[Exposed_All]")
+		listener = CreateListener("waitConditionInZone", zone=zone, condition=condition, mp=missionPanel, next="cp8f")
+		conditionFail = CreateCondition("[!Skill_DisableHideCostume,!Skill_TimeStop,!Skill_Exhibitionism,!Skill_Sex]")
+		listenerFail = CreateListener("waitConditionFail", condition=conditionFail, next="cp8d")
+
+	cp8f:
+		if enableLog
+			Log("prefect: cp8f")
+		_save.runningResult = null
+		showMP(text=tcp8f_0)
+		listener = CreateListener("waitStage", stage="Park", next="cp8g")
+		conditionFail = CreateCondition("[Exposed_All,!Skill_DisableHideCostume,!Skill_TimeStop,!Skill_Exhibitionism,!Skill_Sex]")
+		listenerFail = CreateListener("waitConditionFail", condition=conditionFail, next="cp8d")
+
+	cp8g:
+		if enableLog
+			Log("prefect: cp8g")
+		showMP(text=tcp8g_0)
+		messengerChat.Add(tcp8g_10, "Left", user="Unknown")
+		messengerChat.SetButtons(tcp8g_20)
+		listener = CreateListener("waitClick", index=0, next="cp8h")
+
+	cp8h:
+		if enableLog
+			Log("prefect: cp8h")
+		showMP()
+		messengerChat.Add(tcp8h_0, "Right", user="Me", silent=true)
+		messengerChat.SetButtons()
+		_save.runningInProcess = true
+		listener = CreateListener("waitRunningFinish")
+
+	waitRunningFinish:
+		if _save.runningClearCount > 0
+			thread.Goto("cp8i")
+
+	cp8i:
+		if enableLog
+			Log("prefect: cp8i")
+		_save.runningInProcess = false
+		showMP(text=tcp8i_0)
+		if _save.runningResult < 144.983
+			tcp8i_10 = tcp8i_10a
+		elseif _save.runningResult < 300
+			tcp8i_10 = tcp8i_10b
+		else
+			tcp8i_10 = tcp8i_10c
+		messengerChat.Add(Format(tcp8i_10, _save.runningResult), "Left", user="Unknown")
+		messengerChat.SetButtons(tcp8i_20)
+		listener = CreateListener("waitClick", index=0, next="cp8j")
+
+	cp8j:
+		if enableLog
+			Log("prefect: cp8j")
+		_save.progress = 9
+		showMP()
+		messengerChat.Add(tcp8j_0, "Right", user="Me", silent=true)
+		messengerChat.Add(tcp8j_10, "Left", user="Unknown")
+		messengerChat.SetButtons()
+		listener = CreateListener("waitStage", stage="Apart", next="cp9pre")
+
+	cp9pre:
+		if enableLog
+			Log("prefect: cp9pre")
+

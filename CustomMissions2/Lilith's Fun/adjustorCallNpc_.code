@@ -1,0 +1,25 @@
+adjustorCallNpc_:
+	#Note Event: List must have:
+	# common: List see 'event.common'
+	# caughtRadius: Number
+	# speed: Number
+	# spawnDelay: Number
+	# caughtTime: Number
+
+
+	adjust:
+		#Required
+		#Params@arr event: List
+		#Returns event: List
+		event = _args[0]
+		if _save.level == 0
+			event.speed *= 0.75
+			event.caughtTime *= 1.25
+		elseif _save.level == 2
+			event.caughtRadius *= 1.5
+			event.speed *= 1.4
+		elseif _save.level == 3
+			event.caughtRadius *= 2
+			event.speed *= 1.8
+			event.caughtTime *= 0.75
+		_result = event

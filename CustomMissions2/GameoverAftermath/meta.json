@@ -1,0 +1,25 @@
+{
+	"title": {
+		"En": "Gameover Aftermath"
+	},
+	"description": {
+		"En": "  Randomizes everything."
+	},
+	"defaultactive": true,
+	"settings": [
+		{
+			"name": "enabled",
+			"title": "Enabled",
+			"type": "Boolean",
+			"default": true
+		},
+		{
+			"name": "delay_after_gameover",
+			"title": "Delay After GameOver",
+			"type": "Float",
+			"minvalue": 0,
+			"maxvalue": 30,
+			"default": 2.5
+		}
+	]
+}

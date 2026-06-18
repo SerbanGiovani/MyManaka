@@ -1,0 +1,15 @@
+createrPee_:
+	#Note Event: List must have:
+	# common: List see 'event.common'
+
+	create:
+		#Required
+		#Returns event: List
+		
+		event = CreateList()
+		event.common = CreateList()
+		event.common.requiredProcessor = "processorPee"
+		event.common.name = StringsPool2.PeeString
+		event.common.description = RandomString("Pee", StringsPool0)
+		event.common.duration = Random(20, 40)
+		_result = event

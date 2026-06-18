@@ -1,0 +1,16 @@
+createrTeleport_:
+	#Note Event: List must have:
+	# common: List see 'event.common'
+
+	create:
+		#Required
+		#Returns event: List
+		
+		event = CreateList()
+		event.common = CreateList()
+		event.common.requiredProcessor = "processorTeleport"
+		event.common.name = StringsPool2.TeleportString
+		event.common.description = RandomString("Teleport", StringsPool0)
+		event.common.duration = 10
+		event.common.descriptionFaceColor = Color(0.988235, 0.823529, 0.137255)
+		_result = event
