@@ -1,0 +1,502 @@
+mainthread = CreateThread("manakaplus_v22_main")
+
+manakaplus_v22_main:
+	thread = _this
+	active_map = ""
+	stage_watch_armed = false
+	reset_requested = false
+	reset_busy = false
+	reset_cancel_anonymous = false
+	residence_menu_state = "root"
+	park_menu_state = "root"
+	downtown_menu_state = "root"
+	residence_crowded_enabled = false
+	residence_crowded_spawn_limit = 50
+	park_teleport_setting = 45
+	park_teleport_round_target = 10
+	park_teleport_endless = false
+	debug_notice = ""
+	debug_animation_fix_active = false
+	debug_animation_fix_timer = 0
+	current_mission_restart_map = ""
+	current_mission_restart_timer = 0
+	cancel_stage_restore_pending = false
+	cancel_stage_restore_timer = 0
+	cancel_stage_restore_stage = ""
+	cancel_stage_restore_position = null
+	gameover_recovery_pending = false
+	gameover_recovery_timer = 0
+
+	residence_module = CreateThread("manakaplus_v22_residence")
+	convenience_module = CreateThread("manakaplus_v22_convenience")
+	park_module = CreateThread("manakaplus_v22_park")
+	downtown_module = CreateThread("manakaplus_v22_downtown")
+	anonymous95 = CreateThread("manakaplus_v22_anonymous95")
+	shop_module = CreateThread("manakaplus_v22_shop")
+
+	global_chat = CreateMessengerChat("ManakaPlus v2", iconcolor=Color(0.2,0.4,1), icontext="MP", icontextcolor=Color(1,1,1))
+	residence_chat = null
+	convenience_chat = null
+	park_chat = null
+	downtown_chat = null
+	controller_listener = CreateListener("controller_listener")
+	anonymous95.Start()
+	shop_module.Start()
+	ShowAllContactRoots()
+	Log("ManakaPlus v2: modular legacy-parity runtime loaded.")
+
+	UpdateHub:
+		ShowGlobalHub()
+
+	IsShopItemEquipped:
+		_result = shop_module.IsEquipped(item=item)
+
+	ArmStageWatch:
+		stage_watch_armed = true
+
+	RequestReset:
+		if active_map != ""
+			if _state.GameOver
+				BeginGameOverRecovery()
+			elseif gameover_recovery_pending == false
+				reset_requested = true
+
+	RequestGlobalCancel:
+		if active_map != "" || anonymous95.IsBusy()
+			reset_cancel_anonymous = true
+			reset_requested = true
+
+	RequestCurrentMissionCancel:
+		if anonymous95.IsBusy()
+			anonymous95.CancelMission()
+		elseif active_map == "Residence"
+			residence_module.CancelCurrentMission()
+		elseif active_map == "Convenience"
+			if convenience_module.IsCurrentMissionActive()
+				convenience_module.Cancel()
+				current_mission_restart_map = "Convenience"
+				current_mission_restart_timer = 0.15
+		elseif active_map == "Park"
+			if park_module.IsCurrentMissionActive()
+				park_module.Cancel()
+				current_mission_restart_map = "Park"
+				current_mission_restart_timer = 0.15
+		elseif active_map == "Downtown"
+			if downtown_module.IsCurrentMissionActive()
+				downtown_module.Cancel()
+				current_mission_restart_map = "Downtown"
+				current_mission_restart_timer = 0.15
+		ShowGlobalHub()
+
+	SyncParkRPBaseline:
+		park_module.SyncRPBaseline()
+
+
+	AnonymousIsBusy:
+		_result = anonymous95.IsBusy()
+
+	ShowGlobalHub:
+		if _save.ManakaPlusV2ManakaPoints == null
+			_save.ManakaPlusV2ManakaPoints = 0
+		manaka_point_balance = Floor(_save.ManakaPlusV2ManakaPoints)
+		anonymous_busy = anonymous95.IsBusy()
+		display_map = active_map
+		if active_map == "Residence"
+			display_map = "住宅区"
+		elseif active_map == "Convenience"
+			display_map = "便利店"
+		elseif active_map == "Park"
+			display_map = "综合公园"
+		elseif active_map == "Downtown"
+			display_map = "繁华街"
+		global_chat.Clear()
+		if active_map != "" || anonymous_busy
+			status_text = "Manaka 点数：" + manaka_point_balance
+			if active_map != ""
+				status_text = status_text + "\n当前地图：" + display_map
+			if anonymous_busy
+				status_text = status_text + "\nAnonymous_95 任务正在进行。"
+			status_text = status_text + "\n“取消当前任务”会保留已选择的地图；“取消地图”会重置全部内容并返回地图选择"
+			global_chat.Add(status_text, "Left", user="ManakaPlus v2", silent=true)
+			global_chat.SetButtons(CreateList("取消当前任务", "取消地图", "调试"), ids=CreateList("global_cancel_current", "global_cancel_stage", "global_debug"))
+		else
+			global_chat.Add("Manaka 点数：" + manaka_point_balance + "\n当前没有进行中的任务。打开地图联系人或 Anonymous_95 联系人即可开始", "Left", user="ManakaPlus v2", silent=true)
+			global_chat.SetButtons(CreateList("调试"), ids=CreateList("global_debug"))
+
+	ShowGlobalDebug:
+		global_chat.Clear()
+		debug_text = "调试工具"
+		if debug_notice != ""
+			debug_text = debug_text + "\n\n" + debug_notice
+		global_chat.Add(debug_text, "Left", user="ManakaPlus v2", silent=true)
+		global_chat.SetButtons(CreateList("回收外套", "修复动作卡死", "返回"), ids=CreateList("global_debug_coat", "global_debug_animation", "global_debug_return"))
+
+	ShowTeleportCoatDebug:
+		global_chat.Clear()
+		coat_debug_text = "回收外套\n\n- 如果外套没有正常返回，请使用此功能"
+		if debug_notice != ""
+			coat_debug_text = coat_debug_text + "\n\n" + debug_notice
+		global_chat.Add(coat_debug_text, "Left", user="ManakaPlus v2", silent=true)
+		global_chat.SetButtons(CreateList("回收外套", "返回"), ids=CreateList("global_debug_get_coat", "global_debug_return_to_tools"))
+
+	GetDebugCoat:
+		CollectItem(itemtype="Coat")
+		debug_coat_position = CreateList(stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y, z=_state.Position.z, rx=0, ry=0, rz=0, rw=0)
+		DropItem(itemtype="Coat", position=debug_coat_position, compass=false)
+		debug_notice = "外套已传送到你的位置"
+		ShowTeleportCoatDebug()
+
+	StartDebugAnimationFix:
+		debug_animation_fix_active = true
+		debug_animation_fix_timer = 0
+		EquipAdultToy("Vibrator")
+		debug_notice = "动作修复已执行"
+		ShowGlobalDebug()
+
+	CreateMapContacts:
+		if residence_chat == null
+			residence_chat = CreateMessengerChat("住宅区", iconfilename="Asset/ResidenceIcon.png", iconcolor=Color(0.20,0.48,0.95), icontext="R", icontextcolor=Color(1,1,1))
+		if convenience_chat == null
+			convenience_chat = CreateMessengerChat("便利店", iconfilename="Asset/ConvenienceIcon.png", iconcolor=Color(0.95,0.58,0.15), icontext="C", icontextcolor=Color(1,1,1))
+		if park_chat == null
+			park_chat = CreateMessengerChat("综合公园", iconfilename="Asset/ParkIcon.png", iconcolor=Color(0.20,0.68,0.30), icontext="P", icontextcolor=Color(1,1,1))
+		if downtown_chat == null
+			downtown_chat = CreateMessengerChat("繁华街", iconfilename="Asset/DowntownIcon.png", iconcolor=Color(0.48,0.30,0.78), icontext="D", icontextcolor=Color(1,1,1))
+
+	HideMapContacts:
+		if residence_chat != null
+			residence_chat.SetButtons()
+			residence_chat.Clear()
+			residence_chat = null
+		if convenience_chat != null
+			convenience_chat.SetButtons()
+			convenience_chat.Clear()
+			convenience_chat = null
+		if park_chat != null
+			park_chat.SetButtons()
+			park_chat.Clear()
+			park_chat = null
+		if downtown_chat != null
+			downtown_chat.SetButtons()
+			downtown_chat.Clear()
+			downtown_chat = null
+
+	ShowResidenceRoot:
+		residence_menu_state = "root"
+		residence_chat.Clear()
+		residence_chat.Add("住宅区", "Left", user="ManakaPlus v2", silent=true)
+		residence_chat.SetButtons(CreateList("开始", "拥挤模式", "返回"), ids=CreateList("res_start", "res_crowded", "res_return"))
+
+	ShowResidenceCrowded:
+		residence_menu_state = "crowded"
+		crowded_status = "OFF"
+		if residence_crowded_enabled
+			crowded_status = "ON"
+		limit_label = "< " + residence_crowded_spawn_limit + " >"
+		residence_chat.Clear()
+		residence_chat.Add("住宅区 - 拥挤模式", "Left", user="ManakaPlus v2", silent=true)
+		residence_chat.SetButtons(CreateList("拥挤模式：" + crowded_status, "NPC生成上限", limit_label, "- 5", "+ 5", "返回"), ids=CreateList("res_toggle_crowded", "res_limit_title", "res_limit_value", "res_limit_minus", "res_limit_plus", "res_crowded_return"))
+
+	ShowConvenienceRoot:
+		convenience_chat.Clear()
+		convenience_chat.Add("便利店", "Left", user="ManakaPlus v2", silent=true)
+		convenience_chat.SetButtons(CreateList("开始", "返回"), ids=CreateList("conv_start", "conv_return"))
+
+	ShowParkRoot:
+		park_menu_state = "root"
+		park_chat.Clear()
+		park_chat.Add("综合公园", "Left", user="ManakaPlus v2", silent=true)
+		park_chat.SetButtons(CreateList("开始", "设置", "返回"), ids=CreateList("park_start", "park_setting", "park_return"))
+
+	ShowParkSetting:
+		park_menu_state = "setting"
+		duration_label = "< " + park_teleport_setting + "秒 >"
+		rounds_label = "< " + park_teleport_round_target + " >"
+		if park_teleport_endless
+			rounds_label = "< 无限 >"
+		park_chat.Clear()
+		park_chat.Add("综合公园 - 随机传送设置", "Left", user="ManakaPlus v2", silent=true)
+		park_chat.SetButtons(CreateList("传送间隔", duration_label, "- 5秒", "+ 5秒", "传送轮数", rounds_label, "- 1", "+ 1", "返回"), ids=CreateList("park_duration_title", "park_duration_value", "park_duration_minus", "park_duration_plus", "park_round_title", "park_round_value", "park_round_minus", "park_round_plus", "park_setting_return"))
+
+	ShowDowntownRoot:
+		downtown_menu_state = "root"
+		downtown_chat.Clear()
+		downtown_chat.Add("繁华街 v1.3", "Left", user="ManakaPlus v2", silent=true)
+		downtown_chat.SetButtons(CreateList("开始", "重置数据", "返回"), ids=CreateList("downtown_start", "downtown_reset", "downtown_return"))
+
+	ShowDowntownResetConfirm:
+		downtown_menu_state = "reset_confirm"
+		downtown_chat.Clear()
+		downtown_chat.Add("警告！警告！警告！重置数据会删除繁华街的全部纪录与存档数据，请谨慎决定", "Left", user="ManakaPlus v2", silent=true)
+		downtown_chat.SetButtons(CreateList("确认重置数据", "返回"), ids=CreateList("downtown_reset_confirm", "downtown_reset_return"))
+
+	ShowAllContactRoots:
+		ShowGlobalHub()
+		CreateMapContacts()
+		ShowResidenceRoot()
+		ShowConvenienceRoot()
+		ShowParkRoot()
+		ShowDowntownRoot()
+
+	StartMap:
+		if active_map != "" || reset_busy
+			_result = false
+		else
+			active_map = map
+			stage_watch_armed = false
+			reset_requested = false
+			HideMapContacts()
+			ShowGlobalHub()
+			if map == "Residence"
+				residence_module.Goto("start_residence", crowded_enabled=residence_crowded_enabled, crowded_limit=residence_crowded_spawn_limit)
+			elseif map == "Convenience"
+				convenience_module.Goto("start_convenience")
+			elseif map == "Park"
+				park_module.Goto("start_park", teleport_duration=park_teleport_setting, teleport_rounds=park_teleport_round_target, teleport_endless=park_teleport_endless)
+			elseif map == "Downtown"
+				downtown_module.Goto("start_downtown")
+			shop_module.ShowForMap(map=map)
+			_result = true
+
+	BeginGameOverRecovery:
+		if gameover_recovery_pending == false && active_map != ""
+			gameover_recovery_pending = true
+			gameover_recovery_timer = 0
+			reset_busy = true
+			reset_requested = false
+			if active_map == "Residence"
+				residence_module.Cancel()
+			elseif active_map == "Convenience"
+				convenience_module.Cancel()
+			elseif active_map == "Park"
+				park_module.Cancel()
+			elseif active_map == "Downtown"
+				downtown_module.Cancel()
+			if anonymous95.IsBusy()
+				anonymous95.CancelMission()
+			active_map = ""
+			current_mission_restart_map = ""
+			current_mission_restart_timer = 0
+			stage_watch_armed = false
+			reset_cancel_anonymous = false
+			cancel_stage_restore_pending = false
+			cancel_stage_restore_timer = 0
+			cancel_stage_restore_stage = ""
+			cancel_stage_restore_position = null
+			shop_module.Hide()
+			reset_busy = false
+
+	ProcessReset:
+		if reset_busy == false && (active_map != "" || reset_cancel_anonymous)
+			reset_busy = true
+			reset_requested = false
+			had_active_map = active_map != ""
+			if had_active_map
+				cancel_stage_restore_stage = _state.Position.stage
+				cancel_stage_restore_position = Vector(_state.Position.x, _state.Position.y, _state.Position.z)
+			if active_map == "Residence"
+				residence_module.Cancel()
+			elseif active_map == "Convenience"
+				convenience_module.Cancel()
+			elseif active_map == "Park"
+				park_module.Cancel()
+			elseif active_map == "Downtown"
+				downtown_module.Cancel()
+			if reset_cancel_anonymous && anonymous95.IsBusy()
+				anonymous95.CancelMission()
+			active_map = ""
+			current_mission_restart_map = ""
+			current_mission_restart_timer = 0
+			stage_watch_armed = false
+			reset_cancel_anonymous = false
+			shop_module.Hide()
+			if had_active_map
+				cancel_stage_restore_pending = true
+				cancel_stage_restore_timer = 0.25
+				ShowAllContactRoots()
+			else
+				ShowGlobalHub()
+			reset_busy = false
+
+	ResetDowntownData:
+		_save.DowntownXP = 0
+		_save.ManakaPlusTotalRP = 0
+		_save.DowntownChallengeNakedMarathonCompleted = 0
+		_save.DowntownChallengeBlindfoldMarathonCompleted = 0
+		_save.DowntownChallengeNakedDowntownCompleted = 0
+		_save.DowntownChallengeInvisibleArchMageCompleted = 0
+		_save.DowntownRookieMarathonBestTotal = 0
+		_save.DowntownRookieMarathonBestMinutes = 0
+		_save.DowntownRookieMarathonBestSeconds = 0
+		_save.DowntownExpertMarathonBestTotal = 0
+		_save.DowntownExpertMarathonBestMinutes = 0
+		_save.DowntownExpertMarathonBestSeconds = 0
+		_save.DowntownBigJIntroDone = 0
+		_save.DowntownBigJExpertIntroDone = 0
+		_save.DowntownBigJUsedPhotos = CreateList()
+		_save.DowntownBigJEligiblePhotos = CreateList()
+		_save.DowntownBigJEligibleTags = CreateList()
+		_save.DowntownBigJHistoryType = CreateList()
+		_save.DowntownBigJHistoryImage = CreateList()
+		_save.DowntownBigJHistoryReply = CreateList()
+		_save.DowntownBigJHistoryTag = CreateList()
+		_save.DowntownBigJRewardNakedMarathon = 0
+		_save.DowntownBigJRewardBlindfoldMarathon = 0
+		_save.DowntownBigJRewardNakedDowntown = 0
+		_save.DowntownBigJRewardInvisibleArchMage = 0
+
+	controller_listener:
+		if gameover_recovery_pending
+			reset_requested = false
+			if _state.GameOver
+				gameover_recovery_timer = 0
+			else
+				gameover_recovery_timer = gameover_recovery_timer + _timediff
+				if gameover_recovery_timer >= 1
+					gameover_recovery_pending = false
+					gameover_recovery_timer = 0
+					ShowAllContactRoots()
+					anonymous95.RefreshContact()
+		else
+			if active_map != "" && stage_watch_armed && _state.GameOver
+				BeginGameOverRecovery()
+			elseif reset_requested
+				ProcessReset()
+
+		if cancel_stage_restore_pending && gameover_recovery_pending == false
+			cancel_stage_restore_timer = cancel_stage_restore_timer - _timediff
+			if cancel_stage_restore_timer <= 0
+				if cancel_stage_restore_position != null && _state.Position.stage == cancel_stage_restore_stage
+					SetPlayerPosition(position=cancel_stage_restore_position)
+				cancel_stage_restore_pending = false
+				cancel_stage_restore_timer = 0
+				cancel_stage_restore_stage = ""
+				cancel_stage_restore_position = null
+		if gameover_recovery_pending == false && active_map != "" && stage_watch_armed
+			if active_map == "Residence" && _state.Position.stage != "Residence"
+				RequestReset()
+			elseif active_map == "Convenience" && _state.Position.stage != "Convenience"
+				RequestReset()
+			elseif active_map == "Park" && _state.Position.stage != "Park"
+				RequestReset()
+			elseif active_map == "Downtown" && _state.Position.stage != "StationFront"
+				RequestReset()
+
+		if debug_animation_fix_active
+			debug_animation_fix_timer = debug_animation_fix_timer + _timediff
+			if debug_animation_fix_timer >= 1
+				UnequipAdultToy("Vibrator")
+				debug_animation_fix_active = false
+				debug_animation_fix_timer = 0
+
+		if current_mission_restart_map != ""
+			current_mission_restart_timer = current_mission_restart_timer - _timediff
+			if current_mission_restart_timer <= 0
+				restart_map = current_mission_restart_map
+				current_mission_restart_map = ""
+				if restart_map == "Convenience"
+					convenience_module.Goto("start_convenience")
+				elseif restart_map == "Park"
+					park_module.Goto("start_park", teleport_duration=park_teleport_setting, teleport_rounds=park_teleport_round_target, teleport_endless=park_teleport_endless)
+				elseif restart_map == "Downtown"
+					downtown_module.Goto("start_downtown")
+
+		global_clicked = global_chat.Clicked()
+		if global_clicked == "global_cancel_stage" && (active_map != "" || anonymous95.IsBusy())
+			RequestGlobalCancel()
+		elseif global_clicked == "global_cancel_current" && (active_map != "" || anonymous95.IsBusy())
+			RequestCurrentMissionCancel()
+		elseif global_clicked == "global_debug"
+			debug_notice = ""
+			ShowGlobalDebug()
+		elseif global_clicked == "global_debug_coat"
+			ShowTeleportCoatDebug()
+		elseif global_clicked == "global_debug_get_coat"
+			GetDebugCoat()
+		elseif global_clicked == "global_debug_animation"
+			StartDebugAnimationFix()
+		elseif global_clicked == "global_debug_return_to_tools"
+			ShowGlobalDebug()
+		elseif global_clicked == "global_debug_return"
+			ShowGlobalHub()
+
+		res_clicked = null
+		if residence_chat != null
+			res_clicked = residence_chat.Clicked()
+		if res_clicked == "res_start"
+			StartMap(map="Residence")
+		elseif res_clicked == "res_crowded"
+			ShowResidenceCrowded()
+		elseif res_clicked == "res_toggle_crowded"
+			residence_crowded_enabled = !residence_crowded_enabled
+			ShowResidenceCrowded()
+		elseif res_clicked == "res_limit_minus"
+			residence_crowded_spawn_limit = residence_crowded_spawn_limit - 5
+			if residence_crowded_spawn_limit < 30
+				residence_crowded_spawn_limit = 30
+			ShowResidenceCrowded()
+		elseif res_clicked == "res_limit_plus"
+			residence_crowded_spawn_limit = residence_crowded_spawn_limit + 5
+			if residence_crowded_spawn_limit > 60
+				residence_crowded_spawn_limit = 60
+			ShowResidenceCrowded()
+		elseif res_clicked == "res_crowded_return" || res_clicked == "res_return"
+			ShowResidenceRoot()
+
+		conv_clicked = null
+		if convenience_chat != null
+			conv_clicked = convenience_chat.Clicked()
+		if conv_clicked == "conv_start"
+			StartMap(map="Convenience")
+		elseif conv_clicked == "conv_return"
+			ShowConvenienceRoot()
+
+		park_clicked = null
+		if park_chat != null
+			park_clicked = park_chat.Clicked()
+		if park_clicked == "park_start"
+			StartMap(map="Park")
+		elseif park_clicked == "park_setting"
+			ShowParkSetting()
+		elseif park_clicked == "park_duration_minus"
+			park_teleport_setting = park_teleport_setting - 5
+			if park_teleport_setting < 5
+				park_teleport_setting = 5
+			ShowParkSetting()
+		elseif park_clicked == "park_duration_plus"
+			park_teleport_setting = park_teleport_setting + 5
+			if park_teleport_setting > 90
+				park_teleport_setting = 90
+			ShowParkSetting()
+		elseif park_clicked == "park_round_minus"
+			if park_teleport_endless
+				park_teleport_endless = false
+				park_teleport_round_target = 30
+			else
+				park_teleport_round_target = park_teleport_round_target - 1
+				if park_teleport_round_target < 5
+					park_teleport_round_target = 5
+			ShowParkSetting()
+		elseif park_clicked == "park_round_plus"
+			if park_teleport_endless == false
+				if park_teleport_round_target >= 30
+					park_teleport_round_target = 30
+					park_teleport_endless = true
+				else
+					park_teleport_round_target = park_teleport_round_target + 1
+			ShowParkSetting()
+		elseif park_clicked == "park_setting_return" || park_clicked == "park_return"
+			ShowParkRoot()
+
+		downtown_clicked = null
+		if downtown_chat != null
+			downtown_clicked = downtown_chat.Clicked()
+		if downtown_clicked == "downtown_start"
+			StartMap(map="Downtown")
+		elseif downtown_clicked == "downtown_reset"
+			ShowDowntownResetConfirm()
+		elseif downtown_clicked == "downtown_reset_confirm"
+			ResetDowntownData()
+			ShowDowntownRoot()
+		elseif downtown_clicked == "downtown_reset_return" || downtown_clicked == "downtown_return"
+			ShowDowntownRoot()

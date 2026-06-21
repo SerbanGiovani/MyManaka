@@ -16,6 +16,7 @@ dalLastY = 0.96
 dalLastSize = 24
 dalLastTransparency = 1
 dalRefreshTimer = 0
+dalHudPrintInterval = 0.25
 dalLastHudText = ""
 dalLastStage = ""
 dalLastItemSignature = ""
@@ -27,7 +28,6 @@ dalLastVibeDroppedCount = -1
 dalLastDroppedSummary = ""
 dalPlaceKeyInput = null
 dalPlaceRemoteInput = null
-dalPlacePistonRemoteInput = null
 dalPlaceModifierInput = null
 
 if _save.pendingDrop == null
@@ -44,24 +44,6 @@ if _save.pendingZ == null
 	_save.pendingZ = 0
 if _save.pendingTime == null
 	_save.pendingTime = 0
-if _save.pistonRemoteOwned == null
-	_save.pistonRemoteOwned = true
-if _save.pistonRemoteDropped == null
-	_save.pistonRemoteDropped = false
-if _save.pistonRemoteStage == null
-	_save.pistonRemoteStage = "Apart"
-if _save.pistonRemoteX == null
-	_save.pistonRemoteX = 3.4
-if _save.pistonRemoteY == null
-	_save.pistonRemoteY = 0
-if _save.pistonRemoteZ == null
-	_save.pistonRemoteZ = 2.5
-if _save.pistonRemotePendingDrop == null
-	_save.pistonRemotePendingDrop = false
-if _save.pistonRemotePendingTime == null
-	_save.pistonRemotePendingTime = 0
-if _save.pistonRemoteDropTime == null
-	_save.pistonRemoteDropTime = 0
 
 DropAndLocateThread = CreateThread("main")
 
@@ -73,45 +55,46 @@ update:
 	if _settings.enabled && _state != null && _state.Position != null
 		__dalHandleManualDrop()
 		__dalProcessPendingDrop()
-		__dalProcessPistonRemote()
 		__dalRefreshItemCacheIfNeeded()
 		__dalDebugDroppedItems()
 		__dalApplyHudSettings()
 		if _settings.show_hud
-			hudText = __dalHudText()
-			dalHud.Clear()
-			dalHud.Add(text=hudText)
-			dalLastHudText = hudText
+			if FunctionExists("DALPluginHudActive")
+				if dalLastHudText != ""
+					dalHud.Clear()
+					dalLastHudText = ""
+			elseif _time >= dalRefreshTimer
+				dalRefreshTimer = _time + dalHudPrintInterval
+				hudText = __dalHudText()
+				dalHud.Clear()
+				dalHud.Add(text=hudText)
+				dalLastHudText = hudText
 		else
-			dalHud.Clear()
-			dalLastHudText = ""
+			if dalLastHudText != ""
+				dalHud.Clear()
+				dalLastHudText = ""
 	else
 		if dalHud != null
-			dalHud.Clear()
-			dalLastHudText = ""
+			if dalLastHudText != ""
+				dalHud.Clear()
+				dalLastHudText = ""
 
 __dalSetupInputs:
 	keyKey = "K"
 	remoteKey = "V"
-	pistonRemoteKey = "P"
 	modifierKey = "shift"
 	if _settings.place_key_key != null
 		keyKey = _settings.place_key_key
 	if _settings.place_remote_key != null
 		remoteKey = _settings.place_remote_key
-	if _settings.place_piston_remote_key != null
-		pistonRemoteKey = _settings.place_piston_remote_key
 	if _settings.place_modifier_key != null
 		modifierKey = _settings.place_modifier_key
 	if keyKey == "k"
 		keyKey = "K"
 	if remoteKey == "v"
 		remoteKey = "V"
-	if pistonRemoteKey == "p"
-		pistonRemoteKey = "P"
 	dalPlaceKeyInput = CreateInput("<Keyboard>/"+keyKey)
 	dalPlaceRemoteInput = CreateInput("<Keyboard>/"+remoteKey)
-	dalPlacePistonRemoteInput = CreateInput("<Keyboard>/"+pistonRemoteKey)
 	if modifierKey != ""
 		dalPlaceModifierInput = CreateInput("<Keyboard>/"+modifierKey)
 
@@ -124,8 +107,6 @@ __dalHandleManualDrop:
 			__dalDropKey()
 		if dalPlaceRemoteInput != null && dalPlaceRemoteInput.WasPressed()
 			__dalDropRemote()
-		if dalPlacePistonRemoteInput != null && dalPlacePistonRemoteInput.WasPressed()
-			__dalDropPistonRemote()
 
 __dalModifierHeld:
 	if dalPlaceModifierInput == null
@@ -145,14 +126,6 @@ __dalDropRemote:
 	if __dalIsHeld("VibeRemocon")
 		pos = __dalDropPosition()
 		__dalQueueDrop("VibeRemocon", pos)
-		_result = true
-	else
-		_result = false
-
-__dalDropPistonRemote:
-	if _save.pistonRemoteOwned
-		pos = __dalDropPosition()
-		__dalQueuePistonRemoteDrop(pos)
 		_result = true
 	else
 		_result = false
@@ -179,35 +152,8 @@ __dalProcessPendingDrop:
 			if dropResult != null
 				_save.pendingDrop = false
 
-__dalQueuePistonRemoteDrop:
-	pos = _args[0]
-	SetAction("PickUpItem")
-	_save.pistonRemoteOwned = false
-	_save.pistonRemoteDropped = false
-	_save.pistonRemoteStage = pos.stage
-	_save.pistonRemoteX = pos.x
-	_save.pistonRemoteY = pos.y
-	_save.pistonRemoteZ = pos.z
-	_save.pistonRemotePendingDrop = true
-	_save.pistonRemotePendingTime = _time
-	_save.pistonRemoteDropTime = _time
-
-__dalProcessPistonRemote:
-	if _save.pistonRemotePendingDrop && _time > _save.pistonRemotePendingTime + 0.25
-		dropResult = DropItem(itemtype="VibeRemocon", stage=_save.pistonRemoteStage, x=_save.pistonRemoteX, y=_save.pistonRemoteY, z=_save.pistonRemoteZ, compass=false)
-		if dropResult != null
-			_save.pistonRemotePendingDrop = false
-			_save.pistonRemoteDropped = true
-			_save.pistonRemoteDropTime = _time
-	if !_save.pistonRemoteOwned && _save.pistonRemoteDropped
-		pos = __dalPistonRemotePosition()
-		if _time > _save.pistonRemoteDropTime + 1 && __dalPlayerNear(pos, 4.0) && !__dalVibeRemoconAt(pos)
-			SetAction("PickUpItem")
-			_save.pistonRemoteOwned = true
-			_save.pistonRemoteDropped = false
-
 __dalDropPosition:
-	p = _state.Position
+	p = __dalPlayerPosition()
 	offset = 0.8
 	if _settings.place_forward_offset != null
 		offset = _settings.place_forward_offset
@@ -219,7 +165,7 @@ __dalDropPosition:
 	_result = CreateList(stage=p.stage, x=p.x + fx * offset, y=p.y, z=p.z + fz * offset)
 
 __dalDropPositionKey:
-	p = _state.Position
+	p = __dalPlayerPosition()
 	offset = 1.8
 	if _settings.place_key_forward_offset != null
 		offset = _settings.place_key_forward_offset
@@ -242,17 +188,17 @@ __dalApplyHudSettings:
 		dalLastY = _settings.y_position
 		dalLastSize = _settings.text_size
 		dalLastTransparency = _settings.transparency
+		dalRefreshTimer = 0
 	dalHud.SetAnchor(dalLastX, dalLastY)
 	dalHud.SetSize(dalLastSize)
 	dalHud.SetFace(color=Color(0.0, 0.9, 0.9, dalLastTransparency), dilate=0.3)
 
 __dalHudText:
-	p = _state.Position
+	p = __dalPlayerPosition()
 	text = "Player: " + __dalStageName(p.stage) + __dalFormatPos(p)
 	text = text + "\n" + __dalTrackedItemText("Coat", "Coat", "worn")
 	text = text + "\n" + __dalTrackedItemText("Key", "HandcuffKey", "held")
 	text = text + "\n" + __dalTrackedItemText("Remote", "VibeRemocon", "held")
-	text = text + "\n" + __dalPistonRemoteText()
 	_result = text
 
 __dalTrackedItemText:
@@ -260,14 +206,14 @@ __dalTrackedItemText:
 	itemtype = _args[1]
 	heldText = _args[2]
 	if itemtype != "Coat" && __dalIsHeld(itemtype)
-		p = _state.Position
+		p = __dalPlayerPosition()
 		_result = label + ": " + __dalStageName(p.stage) + __dalFormatPos(p) + " d=0.00 " + heldText
 	else
 		groundText = __dalNearestItemText(label, itemtype)
 		if groundText != null
 			_result = groundText
 		elseif itemtype == "Coat" && dalCoatHeldCondition.Check()
-			p = _state.Position
+			p = __dalPlayerPosition()
 			_result = label + ": " + __dalStageName(p.stage) + __dalFormatPos(p) + " d=0.00 " + heldText
 		else
 			_result = label + ": none"
@@ -288,7 +234,7 @@ __dalNearestItemText:
 		_result = null
 
 __dalRefreshItemCacheIfNeeded:
-	stage = _state.Position.stage
+	stage = __dalPlayerPosition().stage
 	signature = __dalDroppedItemSignature()
 	if stage != dalLastStage || signature != dalLastItemSignature
 		dalLastStage = stage
@@ -312,7 +258,7 @@ __dalDroppedItemSignature:
 
 __dalFindDroppedPosition:
 	itemtype = _args[0]
-	player = _state.Position
+	player = __dalPlayerPosition()
 	best = null
 	bestDist = 999999
 	fallback = null
@@ -324,64 +270,19 @@ __dalFindDroppedPosition:
 			if item != null && item.Type == itemtype
 				pos = item.Position
 				if pos != null
-					if itemtype != "VibeRemocon" || !__dalIsPistonRemotePos(pos)
-						if fallback == null
-							fallback = pos
-						if pos.stage == player.stage
-							dist = Vector3Distance(player, pos)
-							if best == null || dist < bestDist
-								best = pos
-								bestDist = dist
+					if fallback == null
+						fallback = pos
+					if pos.stage == player.stage
+						dist = Vector3Distance(player, pos)
+						if best == null || dist < bestDist
+							best = pos
+							bestDist = dist
 	if best != null
 		_result = CreateList(stage=best.stage, x=best.x, y=best.y, z=best.z)
 	elseif fallback != null
 		_result = CreateList(stage=fallback.stage, x=fallback.x, y=fallback.y, z=fallback.z)
 	else
 		_result = null
-
-__dalPistonRemoteText:
-	if _save.pistonRemoteOwned
-		p = _state.Position
-		_result = "Piston Remote: " + __dalStageName(p.stage) + __dalFormatPos(p) + " d=0.00 held"
-	elseif _save.pistonRemoteDropped || _save.pistonRemotePendingDrop
-		pos = __dalPistonRemotePosition()
-		_result = "Piston Remote: " + __dalStageName(pos.stage) + __dalFormatPos(pos) + __dalDistanceSuffix(pos)
-	else
-		_result = "Piston Remote: none"
-
-__dalPistonRemotePosition:
-	_result = CreateList(stage=_save.pistonRemoteStage, x=_save.pistonRemoteX, y=_save.pistonRemoteY, z=_save.pistonRemoteZ)
-
-__dalIsPistonRemotePos:
-	pos = _args[0]
-	target = __dalPistonRemotePosition()
-	if pos != null && target != null && pos.stage == target.stage
-		_result = Vector3Distance(pos, target) < 0.75
-	else
-		_result = false
-
-__dalVibeRemoconAt:
-	target = _args[0]
-	_result = false
-	if _state.DroppedItems != null
-		i = _state.DroppedItems.Count()
-		while i > 0 && !_result
-			i -= 1
-			item = _state.DroppedItems[i]
-			if item.Type == "VibeRemocon"
-				pos = item.Position
-				if pos.stage == target.stage
-					if Vector3Distance(pos, target) < 0.75
-						_result = true
-
-__dalPlayerNear:
-	pos = _args[0]
-	radius = _args[1]
-	player = _state.Position
-	if pos != null && player != null && pos.stage == player.stage
-		_result = Vector3Distance(player, pos) < radius
-	else
-		_result = false
 
 __dalDebugDroppedItems:
 	enabled = true
@@ -400,14 +301,9 @@ __dalDebugDroppedItems:
 				if item != null
 					pos = item.Position
 					if pos != null
-						isPiston = false
 						if item.Type == "VibeRemocon"
 							vibeCount += 1
-							isPiston = __dalIsPistonRemotePos(pos)
-						if isPiston
-							summary = summary + Format(" PistonRemote[VibeRemocon]@{0}({1:F2},{2:F2},{3:F2})", pos.stage, pos.x, pos.y, pos.z)
-						else
-							summary = summary + Format(" {0}@{1}({2:F2},{3:F2},{4:F2})", item.Type, pos.stage, pos.x, pos.y, pos.z)
+						summary = summary + Format(" {0}@{1}({2:F2},{3:F2},{4:F2})", item.Type, pos.stage, pos.x, pos.y, pos.z)
 		if count != dalLastDroppedCount || vibeCount != dalLastVibeDroppedCount || summary != dalLastDroppedSummary
 			Log(Format("[Drop and Locate] DroppedItems count={0:0} vibe={1:0}", count, vibeCount) + summary)
 			dalLastDroppedCount = count
@@ -416,7 +312,7 @@ __dalDebugDroppedItems:
 
 __dalDistanceSuffix:
 	pos = _args[0]
-	player = _state.Position
+	player = __dalPlayerPosition()
 	if pos != null && player != null
 		dist = Vector3Distance(player, pos)
 		_result = Format(" d={0:F2}", dist)
@@ -440,6 +336,14 @@ __dalItemCount:
 		_result = _state.Items[itemtype]
 	else
 		_result = 0
+
+__dalPlayerPosition:
+	if FunctionExists("DALRealtimePlayerPosition")
+		pos = DALRealtimePlayerPosition()
+		if pos != null
+			_result = pos
+			return
+	_result = _state.Position
 
 __dalFormatPos:
 	pos = _args[0]

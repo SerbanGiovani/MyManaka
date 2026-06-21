@@ -1,0 +1,45 @@
+{
+	"title":"EdgingPatch",
+	"description": {
+		"Sc": "settings"
+	},
+	"version":"2026-06-11",
+	"settings":[
+		{
+			"name":"stamina_cost",
+			"title":"体力消耗量",
+			"type":"Float",
+			"minvalue":0,
+			"maxvalue":10,
+			"default":2
+		},
+		{
+			"name":"ecstasy_reduction",
+			"title":"快感值减少量",
+			"type":"Float",
+			"minvalue":0,
+			"maxvalue":10,
+			"default":2
+		},
+		{
+			"name":"hold_delay",
+			"title":"长按",
+			"type":"Float",
+			"minvalue":0,
+			"maxvalue":2,
+			"default":0.7
+		},
+		{
+			"name":"key",
+			"title":"快捷键",
+			"type":"String",
+			"default":"H"
+		},
+		{
+			"name":"burst_multiplier",
+			"title":"厚积薄发倍率",
+			"type":"String",
+			"default":"0.5"
+		}
+	]
+}

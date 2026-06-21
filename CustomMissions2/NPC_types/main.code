@@ -1,0 +1,128 @@
+mainthread = CreateThread("main")
+walkthread = CreateThread("walk")
+#disable strangeness for all NPCs
+blindthread = CreateThread("blind")
+
+main:
+	thread = _this
+	
+	npcs = CreateList()		
+	
+	npctypes = CreateList()
+	npctypes.Insert(CreateList(type="NewFemale", count=11, haircount=10, facecount=11))
+	npctypes.Insert(CreateList(type="NewMale", count=5, haircount=6, facecount=5))
+	npctypes.Insert(CreateList(type="PreviousFemale", count=15, haircount=7, facecount=1))
+	npctypes.Insert(CreateList(type="PreviousMale", count=12, haircount=5, facecount=1))
+	npctypes.Insert(CreateList(type="NewOba", count=2, haircount=1, facecount=1))
+	npctypes.Insert(CreateList(type="NewOji", count=3, haircount=1, facecount=1))
+	
+	npctypelist = CreateList()
+	i=0
+	while i<6
+		npctypelist.Insert(npctypes[i].type)
+		i = i + 1
+	
+	npcspawninteract = CreateInteractArea(stage="Residence", x=-25.27, y=-0.09, z=-116.5, r=0.5, text="Spawn NPCs", options=npctypelist)	
+	
+	listener = CreateListener("select")
+	listener_smartphone = CreateListener("toggle_smartphone", interact=CreateInteractArea(stage="Residence", x=-27.27, y=-0.09, z=-115.5, r=0.5, text="Toggle Smartphone"))
+	listener_headset = CreateListener("toggle_headset", interact=CreateInteractArea(stage="Residence", x=-27.27, y=-0.09, z=-114.5, r=0.5, text="Toggle Headset"))
+	listener_glasses = CreateListener("toggle_glasses", interact=CreateInteractArea(stage="Residence", x=-27.27, y=-0.09, z=-113.5, r=0.5, text="Toggle Glasses"))
+	listener_penis = CreateListener("toggle_penis", interact=CreateInteractArea(stage="Residence", x=-27.27, y=-0.09, z=-112.5, r=0.5, text="Toggle Penis", options=CreateList("None","Flaccid","Erect")))
+	
+	select:
+		index = npcspawninteract.Check()
+		if index != null
+			npcs = CreateList()
+			j=0
+			while j<npctypes[index].count
+				newnpc = CreateNPC(npctypes[index].type, position=Vector(-25.67, -0.08, -115.5+0.6*j), rotation=Quaternion(0,-0.707,0,0.707) , body=j, size=1, face=j%npctypes[index].facecount, hair=j%npctypes[index].haircount)
+				newnpc.SkipStrangeness(true)
+				npcs.Insert(newnpc)					
+				j = j + 1			
+
+	toggle_smartphone:
+		if interact.Check()
+			i = npcs.Count()-1
+			while i>=0
+				npcs[i].Smartphone(!npcs[i].Smartphone())
+				i = i - 1
+	toggle_headset:
+		if interact.Check()
+			i = npcs.Count()-1
+			while i>=0
+				npcs[i].Headset(!npcs[i].Headset())
+				i = i - 1
+	toggle_glasses:
+		if interact.Check()
+			i = npcs.Count()-1
+			while i>=0
+				npcs[i].Glasses(!npcs[i].Glasses())
+				i = i - 1
+	toggle_penis:
+		if interact.Check() != null
+			i = npcs.Count()-1
+			while i>=0
+				npcs[i].Penis(interact.Check())
+				i = i - 1	
+		
+
+walk:
+	thread = _this
+	
+	npc = null
+	
+	interact = CreateInteractArea(stage="Residence", x=-25.75, y=-0.09, z=-123.48, r=0.5, text="Spawn Walking NPC")	
+	listener = CreateListener("start")
+	#listener2 = CreateListener("waitforplayer")
+	#listener3 = CreateListener("autorespawn")
+	
+	start:
+		if interact.Check()
+			npc = CreateNPC("NewMale", position=Vector(-24.61, -0.08, -124.13), rotation=Quaternion(0,0.707,0,0.707))			
+			# you can get a list of all the stage's waypoints with GetAllWaypoints()
+			# as those shouldn't change, using a static index should be fine, after you've figured out which one you want to use
+			npc.AddWaypoint(2)
+			npc.AddWaypoint(Vector(-26.77, -0.08, -101.5), last=true)
+	waitforplayer:
+		if (npc != null) && (npc.IsAlive())
+			newstop = Vector3Distance(_state.Position, npc.GetPosition())>2.5
+			if npc.Stopped() != newstop
+				npc.Stopped(newstop)
+	autorespawn:
+		if (npc != null) && (!npc.IsAlive())
+			npc.Respawn()
+			npc.AddWaypoint(2)
+			npc.AddWaypoint(Vector(-26.77, -0.08, -101.5), last=true)
+	
+blind:
+	npcs = CreateList()
+	npcslist = CreateList()
+	
+	listener = CreateListener("add_new_npcs")
+	listener2 = CreateListener("clean_list")
+	listener_settings = CreateListener("watchsettings", value=_settings.blind)
+	
+	add_new_npcs:
+		if _settings.blind
+			index = _state.NPCs.Count()-1
+			while index>=0
+				id =_state.NPCs[index].ID
+				if (id<1000000) && (npcs[id] == null)
+					npcs[id] = CreateNPC(id)
+					npcs[id].SkipStrangeness(true)
+					npcslist.Insert(npcs[id])
+				index = index - 1
+	clean_list:
+		if _stagechanged
+			npcs = CreateList()
+			npcslist = CreateList()
+	
+	watchsettings:	
+		if value != _settings.blind
+			value = _settings.blind
+			index = npcslist.Count()-1
+			while index>=0
+				if npcslist[index].IsAlive()
+					npcslist[index].SkipStrangeness(value)
+				index = index - 1 

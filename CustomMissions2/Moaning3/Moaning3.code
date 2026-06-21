@@ -266,6 +266,8 @@ WaitForOrgasmAnimation: # <Number waitTime>
 		accidentTriggered = false
 	if accidentPending == null
 		accidentPending = false
+	if edgingBurstActive == null
+		edgingBurstActive = false
 	if accidentEnabled == null
 		accidentEnabled = _settings.orgasm_accident_enabled
 		if accidentEnabled == null
@@ -311,31 +313,42 @@ WaitForOrgasmAnimation: # <Number waitTime>
 			tier1Chance = tier1Chance / chanceTotal
 			tier2Chance = tier2Chance / chanceTotal
 			tier3Chance = tier3Chance / chanceTotal
-		roll = Random()
-		tier1Limit = tier1Chance
-		tier2Limit = tier1Limit + tier2Chance
-		tier3Limit = tier2Limit + tier3Chance
-		if roll < tier1Limit
-			if tier1Count > 0
-				remaining = RandomInt(1, tier1Count)
-			else
-				remaining = 0
-			Log(Format("[Moaning3] Orgasm extension tier1. range=0.00-{0:F2}, roll={1:F2}, max={2:0}, remaining={3:0}", tier1Limit, roll, tier1Count, remaining))
-		elseif roll < tier2Limit
-			if tier2Count > 0
-				remaining = RandomInt(1, tier2Count)
-			else
-				remaining = 0
-			Log(Format("[Moaning3] Orgasm extension tier2. range={0:F2}-{1:F2}, roll={2:F2}, max={3:0}, remaining={4:0}", tier1Limit, tier2Limit, roll, tier2Count, remaining))
-		elseif roll < tier3Limit
-			if tier3Count > 0
-				remaining = RandomInt(1, tier3Count)
-			else
-				remaining = 0
-			Log(Format("[Moaning3] Orgasm extension tier3. range={0:F2}-{1:F2}, roll={2:F2}, max={3:0}, remaining={4:0}", tier2Limit, tier3Limit, roll, tier3Count, remaining))
+		edgingBurst = 0
+		if _mods["EdgingPatch"] != null
+			if GetType(_mods["EdgingPatch"].burst_pending) == "Number"
+				edgingBurst = _mods["EdgingPatch"].burst_pending
+		if edgingBurst > 0
+			remaining = edgingBurst
+			edgingBurstActive = true
+			_mods["EdgingPatch"].burst_pending = 0
+			_mods["EdgingPatch"].updated = false
+			Log(Format("[Moaning3] EdgingPatch burst extension. remaining={0:0}", remaining))
 		else
-			remaining = 0
-			Log(Format("[Moaning3] Orgasm extension skipped. range=0.00-{0:F2}, roll={1:F2}", tier3Limit, roll))
+			roll = Random()
+			tier1Limit = tier1Chance
+			tier2Limit = tier1Limit + tier2Chance
+			tier3Limit = tier2Limit + tier3Chance
+			if roll < tier1Limit
+				if tier1Count > 0
+					remaining = RandomInt(1, tier1Count)
+				else
+					remaining = 0
+				Log(Format("[Moaning3] Orgasm extension tier1. range=0.00-{0:F2}, roll={1:F2}, max={2:0}, remaining={3:0}", tier1Limit, roll, tier1Count, remaining))
+			elseif roll < tier2Limit
+				if tier2Count > 0
+					remaining = RandomInt(1, tier2Count)
+				else
+					remaining = 0
+				Log(Format("[Moaning3] Orgasm extension tier2. range={0:F2}-{1:F2}, roll={2:F2}, max={3:0}, remaining={4:0}", tier1Limit, tier2Limit, roll, tier2Count, remaining))
+			elseif roll < tier3Limit
+				if tier3Count > 0
+					remaining = RandomInt(1, tier3Count)
+				else
+					remaining = 0
+				Log(Format("[Moaning3] Orgasm extension tier3. range={0:F2}-{1:F2}, roll={2:F2}, max={3:0}, remaining={4:0}", tier2Limit, tier3Limit, roll, tier3Count, remaining))
+			else
+				remaining = 0
+				Log(Format("[Moaning3] Orgasm extension skipped. range=0.00-{0:F2}, roll={1:F2}", tier3Limit, roll))
 	duration += _timediff
 	if waitingForOrgasm
 		if isOrgasming.Check()
@@ -348,22 +361,30 @@ WaitForOrgasmAnimation: # <Number waitTime>
 			waitingForOrgasm = false
 			Log(Format("[Moaning3] Extended orgasm counted. remaining={0:0}", remaining))
 	elseif !isOrgasming.Check() # animation stopped
+		canContinueExtension = false
+		if edgingBurstActive
+			canContinueExtension = true
+		elseif duration < waitTime
+			canContinueExtension = true
 		if gOrgasmAccidentActive
 			remaining = 0
+			edgingBurstActive = false
 		elseif accidentPending && remaining > 0
 			AddEcstasy(1.1)
 			waitingForOrgasm = true
 			Log(Format("[Moaning3] Accident pending, continue chain. remaining={0:0}, nextChain={1:0}", remaining, orgasmChainCount + 1))
-		elseif duration < waitTime && remaining > 0 # audio is still playing
+		elseif remaining > 0 && canContinueExtension # burst ignores audio window; normal extension syncs with audio
 			AddEcstasy(1.1) # trigger another orgasm animation to sync with audio
 			waitingForOrgasm = true
 			Log(Format("[Moaning3] Trigger extended orgasm animation. duration={0:F2}, waitTime={1:F2}, remaining={2:0}, nextChain={3:0}", duration, waitTime, remaining, orgasmChainCount + 1))
 		elseif accidentPending
 			accidentPending = false
+			edgingBurstActive = false
 			gOrgasmAccidentActive = true
 			Log(Format("[Moaning3] Orgasm accident triggered after chain. chain={0:0}, threshold={1:0}", orgasmChainCount, accidentThreshold))
 			CreateThread("OrgasmAccidentSequence")
 		else
+			edgingBurstActive = false
 			gMoanScheduler.Goto("MoanSchedulerInit") # `Goto` will destroy everything created/called inside `MoanScheduler`
 
 OrgasmAccidentSequence:

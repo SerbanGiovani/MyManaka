@@ -1,0 +1,137 @@
+thread = CreateThread("main")
+
+main:
+	all_bras = CreateList("m_cosplay_general_upper_bra","m_cosplay_general_upper_chack_bikini_bra","m_cosplay_general_upper_micro_bikini_bra","m_cosplay_cow_bra")
+	all_panties = CreateList("m_cosplay_general_upper_race_pants","m_cosplay_general_upper_ultimate_pants","m_cosplay_general_upper_chack_bikini_pants","m_cosplay_general_upper_micro_bikini_pants","m_cosplay_succubus_cosplay_pants","m_cosplay_sister_pants","m_cosplay_cow_pants","m_cosplay_suit_chic_panty","m_cosplay_sweater_pants")
+	
+	putonbra_condition = CreateCondition("Action_TakeOnBra")
+	putonpanties_condition = CreateCondition("Action_TakeOnPants")
+	dropped_bra_condition = CreateItemCondition(itemtype = "Bra")
+	dropped_panties_condition = CreateItemCondition(itemtype = "Pants")
+
+	listener_bra = null
+	listener_panties = null
+	listener_start = CreateListener("init")
+		
+	data = CreateList()
+	data.Bra = CreateList()
+	data.Bra.actionOn = "TakeOnBra"
+	data.Bra.actionOff = "TakeOffBra"
+	data.Bra.animTimeOff = 2.8
+	data.Bra.animTimeOn = CreateList(2.52,3.0,4.0)
+	data.Pants = CreateList()
+	data.Pants.actionOn = "TakeOnPants"
+	data.Pants.actionOff = "TakeOffPants"
+	data.Pants.animTimeOff = 3.0	
+	data.Pants.animTimeOn = CreateList(2.52,4.7,5.0)
+	
+	init:
+		if _state.Position.stage != "Apart"
+			if _state.Position.laststage == "Apart"
+				if _save.Bra == null
+					data.Bra.worn = CreateList()
+					i = 0
+					while i<all_bras.Count()
+						if _state.Cosplay[all_bras[i]] == true
+							data.Bra.worn.Insert(all_bras[i])
+						i = i + 1
+					
+					data.Bra.worn_condition = create_cosplay_condition(items = data.Bra.worn, type = "all")
+					data.Bra.any_worn_condition = create_cosplay_condition(items = data.Bra.worn, type = "any")
+					listener_bra = CreateListener("droppickup", itemtype = "Bra", worn_items = data.Bra.worn, worn_condition = data.Bra.worn_condition, any_worn_condition = data.Bra.any_worn_condition, puton_condition = putonbra_condition)
+				else 
+					data.Bra.worn = _save.Bra
+					data.Bra.worn_condition = create_cosplay_condition(items = data.Bra.worn, type = "all")
+					data.Bra.any_worn_condition = create_cosplay_condition(items = data.Bra.worn, type = "any")
+					listener_bra = CreateListener("droppickup", itemtype = "Bra", worn_items = data.Bra.worn, worn_condition = null, any_worn_condition = data.Bra.any_worn_condition, puton_condition = putonbra_condition)
+						
+				if _save.Pants == null					
+					data.Pants.worn = CreateList()
+					i = 0
+					while i<all_panties.Count()
+						if _state.Cosplay[all_panties[i]] == true
+							data.Pants.worn.Insert(all_panties[i])
+						i = i + 1
+
+					data.Pants.worn_condition = create_cosplay_condition(items = data.Pants.worn, type = "all")
+					data.Pants.any_worn_condition = create_cosplay_condition(items = data.Pants.worn, type = "any")
+					listener_panties = CreateListener("droppickup", itemtype = "Pants", worn_items = data.Pants.worn, worn_condition = data.Pants.worn_condition, any_worn_condition = data.Pants.any_worn_condition, puton_condition = putonpanties_condition)
+				else 
+					data.Pants.worn = _save.Pants
+					data.Pants.worn_condition = create_cosplay_condition(items = data.Pants.worn, type = "all")
+					data.Pants.any_worn_condition = create_cosplay_condition(items = data.Pants.worn, type = "any")
+					listener_panties = CreateListener("droppickup", itemtype = "Pants", worn_items = data.Pants.worn, worn_condition = null, any_worn_condition = data.Pants.any_worn_condition, puton_condition = putonpanties_condition)
+
+					
+		else #Home
+			#remove listeners so you can put on clothes normally
+			listener_bra = null
+			listener_panties = null
+			
+			#check if there should be dropped underwear
+			if (_save.Bra != null) | (_save.Pants != null)
+				if !dropped_bra_condition.Check() & !dropped_panties_condition.Check() #dropped items do not exists anymore
+					if _save.Bra != null
+						OwnCosplay(_save.Bra, owns = true)
+						 _save.Bra = null
+					if _save.Pants != null
+						OwnCosplay(_save.Pants, owns = true)
+						_save.Pants = null
+				
+			
+				
+	droppickup:
+		if drop == null
+			drop = -1
+		if equip == null
+			equip = -1
+		if (worn_condition != null) & (drop<0) #wait for unequip
+			if !worn_condition.Check()
+				drop = 0
+				SetAction(data[itemtype].actionOff)
+				worn_condition = null
+		elseif drop >= 0 #unequip started
+			drop = drop + _timediff
+			if drop >= data[itemtype].animTimeOff #finish unequip
+				OwnCosplay(worn_items, owns = false)				
+				DropItem(itemtype = itemtype, position = _state.Position)
+				_save[itemtype] = worn_items
+				worn_condition = null
+				drop = -1
+		elseif equip >= 0 #put on started
+			if equip == 0
+				SetAction("PickUpItem")
+				CollectItem(itemtype = itemtype)
+			equip = equip + _timediff
+			if (equip >= data[itemtype].animTimeOn[0]) & (!did_pickup)
+				did_pickup = true
+				SetAction(data[itemtype].actionOn)
+			if (equip >= data[itemtype].animTimeOn[1]) & (!did_equip)
+				OwnCosplay(_save[itemtype], owns = true)
+				EquipCosplay(_save[itemtype])
+				_save[itemtype] = null
+				did_equip = true
+			if equip >= data[itemtype].animTimeOn[2] #finish put on
+				equip = -1
+				worn_condition = create_cosplay_condition(items = worn_items, type = "all")					
+		elseif puton_condition.Check() #wait for put on animation
+			equip = 0
+			did_equip = false
+			did_pickup = false
+		elseif any_worn_condition.Check()
+			#force off items if you tried to cheat
+			#(if you don't close the inventory, it doesn't refresh and you could equip them again)
+			OwnCosplay(_save[itemtype], owns = false)
+				
+	create_cosplay_condition:
+		i = 0
+		s = ""
+		while i<items.Count()
+			if s != ""
+				s = s + ","
+			s = s + "Cosplay_" + items[i]
+			i = i + 1
+		if type == "all"
+			_result = CreateCondition("["+s+"]")
+		else
+			_result = CreateCondition("("+s+")")

@@ -1,0 +1,690 @@
+manakaplus_v22_shop:
+	thread = _this
+	contact = null
+	contact_was_open = false
+	selected_map = ""
+	menu_state = "root"
+	current_item = ""
+	item_return_state = "root"
+	shop_notice = ""
+	stats_available = false
+	stats_ready_last = false
+	stats_refresh_timer = 0
+	last_speed_equipped = null
+	last_accelerate_equipped = null
+	last_silver_medal_equipped = null
+	last_gold_medal_equipped = null
+	last_champion_medal_equipped = null
+	last_balance = -1
+	manaka_points = CreateThread("manakaplus_v22_manaka_points")
+
+	# Permanent listener: Stats stay active globally; the Shop Contact exists only while a map is selected.
+	shop_listener_handle = CreateListener("shop_listener")
+
+	idle:
+		menu_state = "root"
+
+	Start:
+		InitializeSave()
+		stats_available = FunctionExists("Stats_SetDashSpeed") && FunctionExists("Stats_ClearDashSpeed") && FunctionExists("Stats_SetMaxStamina") && FunctionExists("Stats_ClearMaxStamina") && FunctionExists("Stats_SetRpBonus") && FunctionExists("Stats_ClearRpBonus") && FunctionExists("Stats_SetDetectionRisk") && FunctionExists("Stats_ClearDetectionRisk") && FunctionExists("Stats_IsReady")
+		if stats_available == false
+			Error("ManakaPlus v2 requires Stats v0.3.3 or a later compatible Stats.dll.")
+		ApplyEquippedStats()
+		Log("ManakaPlus v2: Stage-based Contact Shop initialized with Stats integration.")
+
+	ShowForMap:
+		selected_map = map
+		contact_was_open = false
+		menu_state = "root"
+		current_item = ""
+		if contact == null
+			contact = CreateMessengerChat("Manaka商店", iconfilename="Asset/ShopIcon.png", iconcolor=Color(0.95,0.74,0.20))
+		ShowRoot()
+
+	Hide:
+		selected_map = ""
+		contact_was_open = false
+		menu_state = "root"
+		current_item = ""
+		shop_notice = ""
+		if contact != null
+			contact.SetButtons()
+			contact.Clear()
+			contact = null
+
+	InitializeSave:
+		if _save.ManakaPlusV2ShopBootsSpeedOwned == null
+			_save.ManakaPlusV2ShopBootsSpeedOwned = false
+		if _save.ManakaPlusV2ShopBootsSpeedEquipped == null
+			_save.ManakaPlusV2ShopBootsSpeedEquipped = false
+		if _save.ManakaPlusV2ShopBootsAccelerateOwned == null
+			_save.ManakaPlusV2ShopBootsAccelerateOwned = false
+		if _save.ManakaPlusV2ShopBootsAccelerateEquipped == null
+			_save.ManakaPlusV2ShopBootsAccelerateEquipped = false
+		if _save.ManakaPlusV2ShopTeleportSafetyChipOwned == null
+			_save.ManakaPlusV2ShopTeleportSafetyChipOwned = false
+		if _save.ManakaPlusV2ShopTeleportSafetyChipEquipped == null
+			_save.ManakaPlusV2ShopTeleportSafetyChipEquipped = false
+		if _save.ManakaPlusV2ShopEnergyOrgasmConverterOwned == null
+			_save.ManakaPlusV2ShopEnergyOrgasmConverterOwned = false
+		if _save.ManakaPlusV2ShopEnergyOrgasmConverterEquipped == null
+			_save.ManakaPlusV2ShopEnergyOrgasmConverterEquipped = false
+		if _save.ManakaPlusV2ShopSMTollTicketOwned == null
+			_save.ManakaPlusV2ShopSMTollTicketOwned = false
+		if _save.ManakaPlusV2ShopSMTollTicketEquipped == null
+			_save.ManakaPlusV2ShopSMTollTicketEquipped = false
+		if _save.ManakaPlusV2DaringSilverMedalOwned == null
+			_save.ManakaPlusV2DaringSilverMedalOwned = false
+		if _save.ManakaPlusV2DaringSilverMedalEquipped == null
+			_save.ManakaPlusV2DaringSilverMedalEquipped = false
+		if _save.ManakaPlusV2DaringGoldMedalOwned == null
+			_save.ManakaPlusV2DaringGoldMedalOwned = false
+		if _save.ManakaPlusV2DaringGoldMedalEquipped == null
+			_save.ManakaPlusV2DaringGoldMedalEquipped = false
+		if _save.ManakaPlusV2DaringChampionMedalOwned == null
+			_save.ManakaPlusV2DaringChampionMedalOwned = false
+		if _save.ManakaPlusV2DaringChampionMedalEquipped == null
+			_save.ManakaPlusV2DaringChampionMedalEquipped = false
+
+		# Equipped state is never valid without ownership.
+		if _save.ManakaPlusV2ShopBootsSpeedOwned == false
+			_save.ManakaPlusV2ShopBootsSpeedEquipped = false
+		if _save.ManakaPlusV2ShopBootsAccelerateOwned == false
+			_save.ManakaPlusV2ShopBootsAccelerateEquipped = false
+		if _save.ManakaPlusV2ShopTeleportSafetyChipOwned == false
+			_save.ManakaPlusV2ShopTeleportSafetyChipEquipped = false
+		if _save.ManakaPlusV2ShopEnergyOrgasmConverterOwned == false
+			_save.ManakaPlusV2ShopEnergyOrgasmConverterEquipped = false
+		if _save.ManakaPlusV2ShopSMTollTicketOwned == false
+			_save.ManakaPlusV2ShopSMTollTicketEquipped = false
+		if _save.ManakaPlusV2DaringSilverMedalOwned == false
+			_save.ManakaPlusV2DaringSilverMedalEquipped = false
+		if _save.ManakaPlusV2DaringGoldMedalOwned == false
+			_save.ManakaPlusV2DaringGoldMedalEquipped = false
+		if _save.ManakaPlusV2DaringChampionMedalOwned == false
+			_save.ManakaPlusV2DaringChampionMedalEquipped = false
+
+		# Boots use a single equipment slot. Old saves that had both equipped keep Boots of Speed.
+		if _save.ManakaPlusV2ShopBootsSpeedEquipped && _save.ManakaPlusV2ShopBootsAccelerateEquipped
+			_save.ManakaPlusV2ShopBootsAccelerateEquipped = false
+
+		# Special Accessories use one Medal slot. Keep the highest owned equipped Medal on invalid old saves.
+		if _save.ManakaPlusV2DaringChampionMedalEquipped
+			_save.ManakaPlusV2DaringGoldMedalEquipped = false
+			_save.ManakaPlusV2DaringSilverMedalEquipped = false
+		elseif _save.ManakaPlusV2DaringGoldMedalEquipped
+			_save.ManakaPlusV2DaringSilverMedalEquipped = false
+
+	IsMissionItemAvailable:
+		_result = false
+		if selected_map == "Residence"
+			if item == "teleport_safety_chip" || item == "energy_orgasm_converter" || item == "sm_toll_ticket"
+				_result = true
+
+	HasMissionItemsForCurrentMap:
+		_result = selected_map == "Residence"
+
+	GetSelectedMapDisplayName:
+		_result = selected_map
+		if selected_map == "Residence"
+			_result = "住宅区"
+		elseif selected_map == "Convenience"
+			_result = "便利店"
+		elseif selected_map == "Park"
+			_result = "公园"
+		elseif selected_map == "Downtown"
+			_result = "市中心"
+
+	IsEquipped:
+		_result = false
+		if item == "boots_of_speed"
+			_result = _save.ManakaPlusV2ShopBootsSpeedOwned && _save.ManakaPlusV2ShopBootsSpeedEquipped
+		elseif item == "boots_of_accelerate"
+			_result = _save.ManakaPlusV2ShopBootsAccelerateOwned && _save.ManakaPlusV2ShopBootsAccelerateEquipped
+		elseif item == "teleport_safety_chip"
+			_result = _save.ManakaPlusV2ShopTeleportSafetyChipOwned && _save.ManakaPlusV2ShopTeleportSafetyChipEquipped
+		elseif item == "energy_orgasm_converter"
+			_result = _save.ManakaPlusV2ShopEnergyOrgasmConverterOwned && _save.ManakaPlusV2ShopEnergyOrgasmConverterEquipped
+		elseif item == "sm_toll_ticket"
+			_result = _save.ManakaPlusV2ShopSMTollTicketOwned && _save.ManakaPlusV2ShopSMTollTicketEquipped
+		elseif item == "daring_silver_medal"
+			_result = _save.ManakaPlusV2DaringSilverMedalOwned && _save.ManakaPlusV2DaringSilverMedalEquipped
+		elseif item == "daring_gold_medal"
+			_result = _save.ManakaPlusV2DaringGoldMedalOwned && _save.ManakaPlusV2DaringGoldMedalEquipped
+		elseif item == "daring_champion_medal"
+			_result = _save.ManakaPlusV2DaringChampionMedalOwned && _save.ManakaPlusV2DaringChampionMedalEquipped
+
+	IsOwned:
+		_result = false
+		if item == "boots_of_speed"
+			_result = _save.ManakaPlusV2ShopBootsSpeedOwned
+		elseif item == "boots_of_accelerate"
+			_result = _save.ManakaPlusV2ShopBootsAccelerateOwned
+		elseif item == "teleport_safety_chip"
+			_result = _save.ManakaPlusV2ShopTeleportSafetyChipOwned
+		elseif item == "energy_orgasm_converter"
+			_result = _save.ManakaPlusV2ShopEnergyOrgasmConverterOwned
+		elseif item == "sm_toll_ticket"
+			_result = _save.ManakaPlusV2ShopSMTollTicketOwned
+		elseif item == "daring_silver_medal"
+			_result = _save.ManakaPlusV2DaringSilverMedalOwned
+		elseif item == "daring_gold_medal"
+			_result = _save.ManakaPlusV2DaringGoldMedalOwned
+		elseif item == "daring_champion_medal"
+			_result = _save.ManakaPlusV2DaringChampionMedalOwned
+
+	SetOwned:
+		if item == "boots_of_speed"
+			_save.ManakaPlusV2ShopBootsSpeedOwned = value
+		elseif item == "boots_of_accelerate"
+			_save.ManakaPlusV2ShopBootsAccelerateOwned = value
+		elseif item == "teleport_safety_chip"
+			_save.ManakaPlusV2ShopTeleportSafetyChipOwned = value
+		elseif item == "energy_orgasm_converter"
+			_save.ManakaPlusV2ShopEnergyOrgasmConverterOwned = value
+		elseif item == "sm_toll_ticket"
+			_save.ManakaPlusV2ShopSMTollTicketOwned = value
+		elseif item == "daring_silver_medal"
+			_save.ManakaPlusV2DaringSilverMedalOwned = value
+		elseif item == "daring_gold_medal"
+			_save.ManakaPlusV2DaringGoldMedalOwned = value
+		elseif item == "daring_champion_medal"
+			_save.ManakaPlusV2DaringChampionMedalOwned = value
+
+	SetEquipped:
+		if item == "boots_of_speed"
+			_save.ManakaPlusV2ShopBootsSpeedEquipped = value
+		elseif item == "boots_of_accelerate"
+			_save.ManakaPlusV2ShopBootsAccelerateEquipped = value
+		elseif item == "teleport_safety_chip"
+			_save.ManakaPlusV2ShopTeleportSafetyChipEquipped = value
+		elseif item == "energy_orgasm_converter"
+			_save.ManakaPlusV2ShopEnergyOrgasmConverterEquipped = value
+		elseif item == "sm_toll_ticket"
+			_save.ManakaPlusV2ShopSMTollTicketEquipped = value
+		elseif item == "daring_silver_medal"
+			_save.ManakaPlusV2DaringSilverMedalEquipped = value
+		elseif item == "daring_gold_medal"
+			_save.ManakaPlusV2DaringGoldMedalEquipped = value
+		elseif item == "daring_champion_medal"
+			_save.ManakaPlusV2DaringChampionMedalEquipped = value
+
+	GetItemName:
+		_result = "未知物品"
+		if item == "boots_of_speed"
+			_result = "迅捷之靴"
+		elseif item == "boots_of_accelerate"
+			_result = "加速之靴"
+		elseif item == "teleport_safety_chip"
+			_result = "传送安全芯片"
+		elseif item == "energy_orgasm_converter"
+			_result = "高潮能量转换器"
+		elseif item == "sm_toll_ticket"
+			_result = "SM 通行证"
+		elseif item == "daring_silver_medal"
+			_result = "大胆者银牌"
+		elseif item == "daring_gold_medal"
+			_result = "大胆者金牌"
+		elseif item == "daring_champion_medal"
+			_result = "大胆者冠军奖牌"
+
+	GetItemPrice:
+		_result = 0
+		if item == "boots_of_speed"
+			_result = 1200
+		elseif item == "boots_of_accelerate"
+			_result = 1200
+		elseif item == "teleport_safety_chip"
+			_result = 800
+		elseif item == "energy_orgasm_converter"
+			_result = 1500
+		elseif item == "sm_toll_ticket"
+			_result = 800
+
+	GetItemEffect:
+		_result = ""
+		if item == "boots_of_speed"
+			_result = "+10% 冲刺速度"
+		elseif item == "boots_of_accelerate"
+			_result = "+30% 冲刺速度，-60% 最大耐力"
+		elseif item == "teleport_safety_chip"
+			_result = "被传送至高风险区域的概率降低 10%。"
+		elseif item == "energy_orgasm_converter"
+			_result = "覆盖高潮惩罚。每次高潮改为恢复 2 点 TE。"
+		elseif item == "sm_toll_ticket"
+			_result = "走捷径时，过路条件会额外要求自行上铐，但强制震动与活塞速度会从“随机”改为“低速”。"
+		elseif item == "daring_silver_medal"
+			_result = "+6% RP 加成"
+		elseif item == "daring_gold_medal"
+			_result = "+8% RP 加成"
+		elseif item == "daring_champion_medal"
+			_result = "+10% RP 加成，被发现风险 -6%"
+
+	GetItemFlavor:
+		_result = ""
+		if item == "boots_of_speed"
+			_result = "必须跑快点！"
+		elseif item == "boots_of_accelerate"
+			_result = "速度很快，但你能撑多久？"
+		elseif item == "teleport_safety_chip"
+			_result = "安全第一！"
+		elseif item == "energy_orgasm_converter"
+			_result = "升级吧，各位，升级……"
+		elseif item == "sm_toll_ticket"
+			_result = "真会玩……"
+		elseif item == "daring_silver_medal" || item == "daring_gold_medal" || item == "daring_champion_medal"
+			_result = "住宅区挑战的特殊奖励。"
+
+	GetItemNote:
+		_result = ""
+		if item == "teleport_safety_chip" || item == "energy_orgasm_converter"
+			_result = "仅在“传送狂乱”任务中生效。"
+		elseif item == "sm_toll_ticket"
+			_result = "仅在“甜蜜的家”任务中生效。"
+		elseif item == "daring_silver_medal" || item == "daring_gold_medal" || item == "daring_champion_medal"
+			_result = "特殊饰品：一次只能装备一枚奖牌。"
+
+	ShowRoot:
+		menu_state = "root"
+		current_item = ""
+		shop_notice = ""
+		balance = manaka_points.Get()
+		last_balance = balance
+		contact.Clear()
+		root_text = "欢迎来到 Manaka 商店！\n当前地图：" + GetSelectedMapDisplayName() + "\n当前 Manaka 点数余额：\n= " + balance + " ="
+		if stats_available == false
+			root_text = root_text + "\n\n使用 Manaka 商店需要 Stats v0.3.3 或更高兼容版本。"
+		contact.Add(root_text, "Left", user="Manaka 商店", silent=true)
+		if stats_available
+			root_names = CreateList("饰品")
+			root_ids = CreateList("accessories")
+			if HasMissionItemsForCurrentMap()
+				root_names.Insert("任务物品")
+				root_ids.Insert("mission_items")
+			root_names.Insert("库存")
+			root_ids.Insert("inventory")
+			contact.SetButtons(root_names, ids=root_ids)
+		else
+			contact.SetButtons()
+
+	ShowAccessories:
+		menu_state = "accessories"
+		current_item = ""
+		shop_notice = ""
+		balance = manaka_points.Get()
+		last_balance = balance
+		contact.Clear()
+		contact.Add("饰品\n当前 Manaka 点数余额：" + balance, "Left", user="Manaka 商店", silent=true)
+		# Category pages support up to seven items plus Return.
+		contact.SetButtons(CreateList("迅捷之靴", "加速之靴", "返回"), ids=CreateList("boots_of_speed", "boots_of_accelerate", "return"))
+
+	ShowMissionItems:
+		menu_state = "mission_items"
+		current_item = ""
+		shop_notice = ""
+		balance = manaka_points.Get()
+		last_balance = balance
+		contact.Clear()
+		contact.Add("任务物品 - " + GetSelectedMapDisplayName() + "\n当前 Manaka 点数余额：" + balance, "Left", user="Manaka 商店", silent=true)
+		item_names = CreateList()
+		item_ids = CreateList()
+		if IsMissionItemAvailable(item="teleport_safety_chip")
+			item_names.Insert("传送安全芯片")
+			item_ids.Insert("teleport_safety_chip")
+		if IsMissionItemAvailable(item="energy_orgasm_converter")
+			item_names.Insert("高潮能量转换器")
+			item_ids.Insert("energy_orgasm_converter")
+		if IsMissionItemAvailable(item="sm_toll_ticket")
+			item_names.Insert("SM 通行证")
+			item_ids.Insert("sm_toll_ticket")
+		item_names.Insert("返回")
+		item_ids.Insert("return")
+		contact.SetButtons(item_names, ids=item_ids)
+
+	ShowInventory:
+		menu_state = "inventory"
+		current_item = ""
+		item_return_state = "inventory"
+		shop_notice = ""
+		balance = manaka_points.Get()
+		last_balance = balance
+
+		boots_name = "无"
+		if IsEquipped(item="boots_of_speed")
+			boots_name = "迅捷之靴"
+		elseif IsEquipped(item="boots_of_accelerate")
+			boots_name = "加速之靴"
+
+		outfit_name = "无"
+
+		mission_names = ""
+		if IsMissionItemAvailable(item="teleport_safety_chip") && IsEquipped(item="teleport_safety_chip")
+			mission_names = "传送安全芯片"
+		if IsMissionItemAvailable(item="energy_orgasm_converter") && IsEquipped(item="energy_orgasm_converter")
+			if mission_names != ""
+				mission_names = mission_names + ", "
+			mission_names = mission_names + "高潮能量转换器"
+		if IsMissionItemAvailable(item="sm_toll_ticket") && IsEquipped(item="sm_toll_ticket")
+			if mission_names != ""
+				mission_names = mission_names + ", "
+			mission_names = mission_names + "SM 通行证"
+		if mission_names == ""
+			mission_names = "无"
+
+		special_accessory_name = "无"
+		if IsEquipped(item="daring_silver_medal")
+			special_accessory_name = "大胆者银牌"
+		elseif IsEquipped(item="daring_gold_medal")
+			special_accessory_name = "大胆者金牌"
+		elseif IsEquipped(item="daring_champion_medal")
+			special_accessory_name = "大胆者冠军奖牌"
+
+		contact.Clear()
+		contact.Add("库存 - " + GetSelectedMapDisplayName() + "\n当前 Manaka 点数余额：" + balance + "\n\n靴子：" + boots_name + "\n服装：" + outfit_name + "\n特殊饰品：" + special_accessory_name + "\n任务物品：" + mission_names, "Left", user="Manaka 商店", silent=true)
+		inv_names = CreateList("饰品", "特殊饰品")
+		inv_ids = CreateList("inventory_accessories", "inventory_special_accessories")
+		if HasMissionItemsForCurrentMap()
+			inv_names.Insert("任务物品")
+			inv_ids.Insert("inventory_mission_items")
+		inv_names.Insert("返回")
+		inv_ids.Insert("return")
+		contact.SetButtons(inv_names, ids=inv_ids)
+
+	ShowInventoryAccessories:
+		menu_state = "inventory_accessories"
+		current_item = ""
+		shop_notice = ""
+		contact.Clear()
+		owned_speed = IsOwned(item="boots_of_speed")
+		owned_accelerate = IsOwned(item="boots_of_accelerate")
+		if owned_speed == false && owned_accelerate == false
+			contact.Add("库存 - 饰品\n\n尚未拥有任何饰品。", "Left", user="Manaka 商店", silent=true)
+			contact.SetButtons(CreateList("返回"), ids=CreateList("return"))
+		elseif owned_speed && owned_accelerate
+			contact.Add("库存 - 饰品\n仅显示已拥有的物品。", "Left", user="Manaka 商店", silent=true)
+			contact.SetButtons(CreateList("迅捷之靴", "加速之靴", "返回"), ids=CreateList("boots_of_speed", "boots_of_accelerate", "return"))
+		elseif owned_speed
+			contact.Add("库存 - 饰品\n仅显示已拥有的物品。", "Left", user="Manaka 商店", silent=true)
+			contact.SetButtons(CreateList("迅捷之靴", "返回"), ids=CreateList("boots_of_speed", "return"))
+		else
+			contact.Add("库存 - 饰品\n仅显示已拥有的物品。", "Left", user="Manaka 商店", silent=true)
+			contact.SetButtons(CreateList("加速之靴", "返回"), ids=CreateList("boots_of_accelerate", "return"))
+
+	ShowInventorySpecialAccessories:
+		menu_state = "inventory_special_accessories"
+		current_item = ""
+		shop_notice = ""
+		contact.Clear()
+		owned_silver = IsOwned(item="daring_silver_medal")
+		owned_gold = IsOwned(item="daring_gold_medal")
+		owned_champion = IsOwned(item="daring_champion_medal")
+		special_names = CreateList()
+		special_ids = CreateList()
+		if owned_silver
+			special_names.Insert("大胆者银牌")
+			special_ids.Insert("daring_silver_medal")
+		if owned_gold
+			special_names.Insert("大胆者金牌")
+			special_ids.Insert("daring_gold_medal")
+		if owned_champion
+			special_names.Insert("大胆者冠军奖牌")
+			special_ids.Insert("daring_champion_medal")
+		if owned_silver == false && owned_gold == false && owned_champion == false
+			contact.Add("库存 - 特殊饰品\n\n尚未拥有任何特殊饰品。", "Left", user="Manaka 商店", silent=true)
+		else
+			contact.Add("库存 - 特殊饰品\n仅显示已获得的奖励。一次只能装备一枚奖牌。", "Left", user="Manaka 商店", silent=true)
+		special_names.Insert("返回")
+		special_ids.Insert("return")
+		contact.SetButtons(special_names, ids=special_ids)
+
+	ShowInventoryMissionItems:
+		menu_state = "inventory_mission_items"
+		current_item = ""
+		shop_notice = ""
+		contact.Clear()
+		mission_names = CreateList()
+		mission_ids = CreateList()
+		if IsMissionItemAvailable(item="teleport_safety_chip") && IsOwned(item="teleport_safety_chip")
+			mission_names.Insert("传送安全芯片")
+			mission_ids.Insert("teleport_safety_chip")
+		if IsMissionItemAvailable(item="energy_orgasm_converter") && IsOwned(item="energy_orgasm_converter")
+			mission_names.Insert("高潮能量转换器")
+			mission_ids.Insert("energy_orgasm_converter")
+		if IsMissionItemAvailable(item="sm_toll_ticket") && IsOwned(item="sm_toll_ticket")
+			mission_names.Insert("SM 通行证")
+			mission_ids.Insert("sm_toll_ticket")
+		if mission_names.Count() == 0
+			contact.Add("库存 - 任务物品 - " + GetSelectedMapDisplayName() + "\n\n没有已拥有且可在此地图使用的任务物品。", "Left", user="Manaka 商店", silent=true)
+		else
+			contact.Add("库存 - 任务物品 - " + GetSelectedMapDisplayName() + "\n仅显示已拥有且可在此地图使用的物品。", "Left", user="Manaka 商店", silent=true)
+		mission_names.Insert("返回")
+		mission_ids.Insert("return")
+		contact.SetButtons(mission_names, ids=mission_ids)
+
+	ShowItem:
+		menu_state = "item"
+		current_item = item
+		balance = manaka_points.Get()
+		last_balance = balance
+		name = GetItemName(item=item)
+		price = GetItemPrice(item=item)
+		effect = GetItemEffect(item=item)
+		flavor = GetItemFlavor(item=item)
+		note = GetItemNote(item=item)
+		owned = IsOwned(item=item)
+		equipped = IsEquipped(item=item)
+		body = name + "\n当前 Manaka 点数：" + balance
+		if owned == false
+			body = body + "\n价格：" + price + " Manaka 点数"
+		else
+			if equipped
+				body = body + "\n状态：已装备"
+			else
+				body = body + "\n状态：未装备"
+		body = body + "\n效果：" + effect + "\n\n" + flavor
+		if note != ""
+			body = body + "\n" + note
+		if shop_notice != ""
+			body = body + "\n\n" + shop_notice
+		contact.Clear()
+		contact.Add(body, "Left", user="Manaka 商店", silent=true)
+		if owned == false
+			contact.SetButtons(CreateList("购买", "返回"), ids=CreateList("purchase", "return"))
+		elseif equipped
+			contact.SetButtons(CreateList("卸下", "返回"), ids=CreateList("unequip", "return"))
+		else
+			contact.SetButtons(CreateList("装备", "返回"), ids=CreateList("equip", "return"))
+
+	RefreshCurrentPage:
+		if menu_state == "root"
+			ShowRoot()
+		elseif menu_state == "accessories"
+			ShowAccessories()
+		elseif menu_state == "mission_items"
+			ShowMissionItems()
+		elseif menu_state == "inventory"
+			ShowInventory()
+		elseif menu_state == "inventory_accessories"
+			ShowInventoryAccessories()
+		elseif menu_state == "inventory_special_accessories"
+			ShowInventorySpecialAccessories()
+		elseif menu_state == "inventory_mission_items"
+			ShowInventoryMissionItems()
+		elseif menu_state == "item"
+			item_to_refresh = current_item
+			ShowItem(item=item_to_refresh)
+
+	PurchaseCurrentItem:
+		price = GetItemPrice(item=current_item)
+		if IsOwned(item=current_item)
+			shop_notice = "你已经拥有此物品。"
+		elseif manaka_points.Spend(amount=price)
+			SetOwned(item=current_item, value=true)
+			shop_notice = "购买完成。"
+			mainthread.UpdateHub()
+		else
+			shop_notice = "Manaka 点数不足。"
+		ShowItem(item=current_item)
+
+	EquipCurrentItem:
+		if IsOwned(item=current_item)
+			# Boots are a single equipment slot. Equipping one automatically unequips the other.
+			if current_item == "boots_of_speed"
+				SetEquipped(item="boots_of_accelerate", value=false)
+			elseif current_item == "boots_of_accelerate"
+				SetEquipped(item="boots_of_speed", value=false)
+			if current_item == "daring_silver_medal" || current_item == "daring_gold_medal" || current_item == "daring_champion_medal"
+				SetEquipped(item="daring_silver_medal", value=false)
+				SetEquipped(item="daring_gold_medal", value=false)
+				SetEquipped(item="daring_champion_medal", value=false)
+			SetEquipped(item=current_item, value=true)
+			ApplyEquippedStats()
+			shop_notice = "物品已装备。"
+		else
+			shop_notice = "请先购买此物品。"
+		ShowItem(item=current_item)
+
+	UnequipCurrentItem:
+		SetEquipped(item=current_item, value=false)
+		ApplyEquippedStats()
+		shop_notice = "物品已卸下。"
+		ShowItem(item=current_item)
+
+	ApplyEquippedStats:
+		if stats_available && Stats_IsReady()
+			speed_equipped = IsEquipped(item="boots_of_speed")
+			accelerate_equipped = IsEquipped(item="boots_of_accelerate")
+			dash_multiplier = 1.0
+			if speed_equipped
+				dash_multiplier = 1.10
+			elseif accelerate_equipped
+				dash_multiplier = 1.30
+			if speed_equipped || accelerate_equipped
+				Stats_SetDashSpeed(multiplier=dash_multiplier)
+			else
+				Stats_ClearDashSpeed()
+			if accelerate_equipped
+				Stats_SetMaxStamina(multiplier=0.40)
+			else
+				Stats_ClearMaxStamina()
+			silver_medal_equipped = IsEquipped(item="daring_silver_medal")
+			gold_medal_equipped = IsEquipped(item="daring_gold_medal")
+			champion_medal_equipped = IsEquipped(item="daring_champion_medal")
+			if champion_medal_equipped
+				Stats_SetRpBonus(multiplier=1.10)
+				Stats_SetDetectionRisk(multiplier=0.94)
+			elseif gold_medal_equipped
+				Stats_SetRpBonus(multiplier=1.08)
+				Stats_ClearDetectionRisk()
+			elseif silver_medal_equipped
+				Stats_SetRpBonus(multiplier=1.06)
+				Stats_ClearDetectionRisk()
+			else
+				Stats_ClearRpBonus()
+				Stats_ClearDetectionRisk()
+			last_speed_equipped = speed_equipped
+			last_accelerate_equipped = accelerate_equipped
+			last_silver_medal_equipped = silver_medal_equipped
+			last_gold_medal_equipped = gold_medal_equipped
+			last_champion_medal_equipped = champion_medal_equipped
+			stats_ready_last = true
+
+	shop_listener:
+		if contact != null
+			opened = contact.Opened()
+			if opened && contact_was_open == false
+				ShowRoot()
+			contact_was_open = opened
+
+			if opened
+				balance_now = manaka_points.Get()
+				if balance_now != last_balance
+					RefreshCurrentPage()
+
+			clicked = contact.Clicked()
+			if clicked != null
+				if menu_state == "root"
+					if clicked == "accessories"
+						ShowAccessories()
+					elseif clicked == "mission_items"
+						ShowMissionItems()
+					elseif clicked == "inventory"
+						ShowInventory()
+				elseif menu_state == "accessories"
+					if clicked == "return"
+						ShowRoot()
+					else
+						shop_notice = ""
+						item_return_state = "accessories"
+						ShowItem(item=clicked)
+				elseif menu_state == "mission_items"
+					if clicked == "return"
+						ShowRoot()
+					else
+						shop_notice = ""
+						item_return_state = "mission_items"
+						ShowItem(item=clicked)
+				elseif menu_state == "inventory"
+					if clicked == "inventory_accessories"
+						ShowInventoryAccessories()
+					elseif clicked == "inventory_special_accessories"
+						ShowInventorySpecialAccessories()
+					elseif clicked == "inventory_mission_items"
+						ShowInventoryMissionItems()
+					elseif clicked == "return"
+						ShowRoot()
+				elseif menu_state == "inventory_accessories"
+					if clicked == "return"
+						ShowInventory()
+					else
+						shop_notice = ""
+						item_return_state = "inventory_accessories"
+						ShowItem(item=clicked)
+				elseif menu_state == "inventory_special_accessories"
+					if clicked == "return"
+						ShowInventory()
+					else
+						shop_notice = ""
+						item_return_state = "inventory_special_accessories"
+						ShowItem(item=clicked)
+				elseif menu_state == "inventory_mission_items"
+					if clicked == "return"
+						ShowInventory()
+					else
+						shop_notice = ""
+						item_return_state = "inventory_mission_items"
+						ShowItem(item=clicked)
+				elseif menu_state == "item"
+					if clicked == "purchase"
+						PurchaseCurrentItem()
+					elseif clicked == "equip"
+						EquipCurrentItem()
+					elseif clicked == "unequip"
+						UnequipCurrentItem()
+					elseif clicked == "return"
+						if item_return_state == "inventory_accessories"
+							ShowInventoryAccessories()
+						elseif item_return_state == "inventory_special_accessories"
+							ShowInventorySpecialAccessories()
+						elseif item_return_state == "inventory_mission_items"
+							ShowInventoryMissionItems()
+						elseif item_return_state == "accessories"
+							ShowAccessories()
+						else
+							ShowMissionItems()
+
+		stats_refresh_timer = stats_refresh_timer + _timediff
+		if stats_refresh_timer >= 1
+			stats_refresh_timer = 0
+			if stats_available
+				stats_ready_now = Stats_IsReady()
+				if stats_ready_now
+					speed_now = IsEquipped(item="boots_of_speed")
+					accelerate_now = IsEquipped(item="boots_of_accelerate")
+					silver_medal_now = IsEquipped(item="daring_silver_medal")
+					gold_medal_now = IsEquipped(item="daring_gold_medal")
+					champion_medal_now = IsEquipped(item="daring_champion_medal")
+					if stats_ready_last == false || speed_now != last_speed_equipped || accelerate_now != last_accelerate_equipped || silver_medal_now != last_silver_medal_equipped || gold_medal_now != last_gold_medal_equipped || champion_medal_now != last_champion_medal_equipped
+						ApplyEquippedStats()
+				else
+					stats_ready_last = false

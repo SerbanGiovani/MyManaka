@@ -4,10 +4,12 @@ main:
 
 	CanGameOver(false)
 	listNPC = CreateList()
-	shame = 0
+	shame = _settings.max_shame
 	recovery = 0
 	orgasm = false
 	lastOrgasmShameTime = -9999
+	lastEarnRP = GetCurrentEarnRP()
+	rpRecoveryProgress = 0
 	debug = true
 	
 	hud = CreateText()
@@ -65,19 +67,22 @@ main:
 	listenNPC = CreateListener("viewedByNPC")
 	listenOrgasm = CreateListener("publicOrgasm")
 	listenShame = CreateListener("lowerShame")
+	listenRPShame = CreateListener("rpShameRecovery")
 	listenHUD = null
 	listenRecov = null
 	
 	UpdateShame:
-		text = "Shame : "
+		text = "Shame : <color=#ff3355>"
 		i = 0
 		while i < shame
 			i += 1
-			text += "█"
+			text += "♥"
+		text += "</color><color=#555555>"
 		i = shame
 		while i < _settings.max_shame
 			i += 1
-			text += "░"
+			text += "♡"
+		text += "</color>"
 		hud.Clear()
 		listenHUD = CreateListener("update_shame_text", text=text)
 	
@@ -290,6 +295,7 @@ main:
 	viewedByNPC:
 		if _state.FoundNPC != -1
 			add_shame = 0
+			display_shame = 0
 			type_shame = ""
 			cuffs = false
 			blind = false
@@ -310,7 +316,7 @@ main:
 						pussy_covered = true
 					i = i + 1
 			
-			# Add shame when found by an NPC
+			# Lose shame when found by an NPC
 			reduced = ""
 			if boobsCond1.Check() || boobsCond2.Check()
 				type_shame = "boobs"
@@ -339,42 +345,36 @@ main:
 				if pussy_covered
 					add_shame -= 1
 					reduced = reduced + " (-1 for pussy covered)"
-				if add_shame < 0
-					add_shame = 0
 			
 			if debug
-				Log("[Shame] Shame +"+add_shame+" ("+type_shame+")" + reduced)
+				Log("[Shame] Shame impact "+add_shame+" ("+type_shame+")" + reduced)
 			
 			
 			# Worse if posing / peeing / having sex / etc
 			if actionCond.Check()
 				if debug
-					Log("[Shame] Shame +" + _settings.shame_action + " (action)")
+					Log("[Shame] Shame impact +" + _settings.shame_action + " (action)")
 				add_shame += _settings.shame_action
 			
 			# Worse if toys visible
 			if (( (pussyCond1.Check() || pussyCond2.Check() || nakedCond1.Check() || nakedCond2.Check()) && toysCond1.Check() )  ||  ( (boobsCond1.Check() || boobsCond2.Check() || nakedCond1.Check() || nakedCond2.Check()) && toysCond2.Check()) )
 				if debug
-					Log("[Shame] Shame +" + _settings.shame_toys + " (toys)")
+					Log("[Shame] Shame impact +" + _settings.shame_toys + " (toys)")
 				add_shame += _settings.shame_toys
 			
 			# Worse if handcuffed
 			if cuffsCond.Check()
 				if debug
-					Log("[Shame] Shame +" + _settings.shame_handcuffs + " (handcuffs)")
+					Log("[Shame] Shame impact +" + _settings.shame_handcuffs + " (handcuffs)")
 				cuffs = true
 				add_shame += _settings.shame_handcuffs
 			
 			# Lowered if blindfolded
 			if blindCond.Check()
 				if debug
-					Log("[Shame] Shame " + _settings.shame_blindfold + " (blindfold)")
+					Log("[Shame] Shame impact " + _settings.shame_blindfold + " (blindfold)")
 				blind = true
 				add_shame += _settings.shame_blindfold
-				if add_shame < 1
-					if debug
-						Log("[Shame] Blindfold : Shame gained = "+add_shame+", setting to 1 instead")
-					add_shame = 1
 			
 			# Lowered if horny
 			ecstasy = GetEcstasy()
@@ -387,11 +387,9 @@ main:
 				if debug
 					Log("[Shame] Shame lowered "+nb+" times (ecstasy)")
 				add_shame -= nb
-				if add_shame <= 0
-					if debug
-						Log("[Shame] Ecstasy : Shame gained = "+add_shame+", setting to 0 instead")
-					# Actually setting to -1 to trigger the horny subtitles
-					add_shame = -1
+			display_shame = add_shame
+			if display_shame <= 0
+				display_shame = -1
 			
 			# Display subtitles if the situation is compatible
 			if _settings.comments
@@ -406,12 +404,18 @@ main:
 					elseif pussy_covered
 						type_shame = "boobs"
 				if subs_ok
-					DisplaySubs(npc_id=_state.FoundNPC, type=type_shame, cuffs=cuffs, blind=blind, add_shame=add_shame)
+					DisplaySubs(npc_id=_state.FoundNPC, type=type_shame, cuffs=cuffs, blind=blind, add_shame=display_shame)
 			
-			if add_shame > 0
-				shame += add_shame
+			if add_shame != 0
+				shame -= add_shame
+				if shame > _settings.max_shame
+					shame = _settings.max_shame
+				if shame < 0
+					shame = 0
+				if debug
+					Log("[Shame] Shame now "+shame+" after inverted impact "+add_shame)
 				UpdateShame()
-				if shame >= _settings.max_shame
+				if shame <= 0
 					TriggerGameOver()
 	
 	
@@ -423,22 +427,55 @@ main:
 				if _time >= lastOrgasmShameTime + _settings.orgasm_shame_cooldown
 					lastOrgasmShameTime = _time
 					if debug
-						Log("[Shame] Shame " + _settings.shame_orgasm + " (orgasm)")
-					shame += _settings.shame_orgasm
+						Log("[Shame] Shame -" + _settings.shame_orgasm + " (orgasm)")
+					shame -= _settings.shame_orgasm
+					if shame < 0
+						shame = 0
 					UpdateShame()
-					if shame >= _settings.max_shame
+					if shame <= 0
 						TriggerGameOver()
 				else
 					if debug
 						Log("[Shame] Orgasm shame skipped (cooldown)")
 	
 	
+	rpShameRecovery:
+		currentEarnRP = GetCurrentEarnRP()
+		if lastEarnRP == null
+			lastEarnRP = currentEarnRP
+		if currentEarnRP < lastEarnRP
+			rpRecoveryProgress = 0
+		rpRecoveryStep = 100
+		if _settings.rp_shame_recovery != null
+			rpRecoveryInput = _settings.rp_shame_recovery
+			if GetType(rpRecoveryInput) == "String"
+				rpRecoveryParsed = ToNumber(rpRecoveryInput)
+				if rpRecoveryParsed != null
+					rpRecoveryStep = rpRecoveryParsed
+			else
+				rpRecoveryStep = rpRecoveryInput
+		if currentEarnRP >= lastEarnRP && rpRecoveryStep > 0
+			rpGain = currentEarnRP - lastEarnRP
+			if rpGain > 0
+				rpRecoveryProgress += rpGain
+				while rpRecoveryProgress >= rpRecoveryStep
+					rpRecoveryProgress -= rpRecoveryStep
+					if shame < _settings.max_shame
+						shame += 1
+						if shame > _settings.max_shame
+							shame = _settings.max_shame
+						if debug
+							Log("[Shame] Shame +1 from RP recovery ("+shame+")")
+						UpdateShame()
+		lastEarnRP = currentEarnRP
+	
+	
 	lowerShame:
 		if duration == null
 			duration = 0
 		
-		# If there's any shame to lower and the lowering isn't disabled
-		if shame > 0 && _settings.del_shame > 0
+		# If there's any shame to restore and the restoring isn't disabled
+		if shame < _settings.max_shame && _settings.del_shame > 0
 			# If alone, proceed with the timer
 			if IsHidden()
 				# Speed modifiers
@@ -456,17 +493,19 @@ main:
 					i = 0
 					while i < rec_speed
 						i += 1
-						text += "◄"
+						text += "►"
 					UpdateRecovery(text=text)
 				
-				# Timer finished : remove 1 shame and start over (x2 because default speed is 2)
+				# Timer finished : restore 1 shame and start over (x2 because default speed is 2)
 				if duration >= _settings.del_shame*2
-					shame -= 1
+					shame += 1
+					if shame > _settings.max_shame
+						shame = _settings.max_shame
 					if debug
-						Log("[Shame] Shame -1 ("+shame+")")
+						Log("[Shame] Shame +1 ("+shame+")")
 					duration = 0
 					UpdateShame()
-					if shame == 0
+					if shame >= _settings.max_shame
 						recovery = 0
 						hud_recov.Clear()
 			

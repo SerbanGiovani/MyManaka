@@ -1,0 +1,378 @@
+##BOILERPLATE needed for every translation
+
+#CHANGE THIS
+LANG_CODE = "poo"
+
+#DONT CHANGE THIS
+translation = CreateList()
+
+register_translation(LANG_CODE, translation)
+
+
+#Translated strings start now
+
+
+translation["name_chat"] = CreateList(text="Wet Park Stroll") 
+translation["name_boss"] = CreateList(text="Vice President (Dick Head)") 
+translation["name_manaka"] = CreateList(text="Manaka the Stress Queen") 
+translation["name_ren"] = CreateList(text="Ren the Smooth Operator") 
+
+#-- Boss Lines (More punchy/consistent)
+translation["main_chat_boss_001"] = CreateList(text="Get this shit done before the sun cracks the sky, bitch.") 
+translation["main_chat_boss_002"] = CreateList(text="'Start of business'? What the fuck does that even mean? Is it 5 AM?") 
+translation["main_chat_boss_003"] = CreateList(text="Make damn sure those numbers don't look like a goddamn cumstain!") 
+
+#-- Player Button Lines (More active verbs)
+translation["main_chat_button_001"] = CreateList(text="Gonna finish this when my legs stop shaking from this nightmare job.") 
+translation["main_chat_button_002"] = CreateList(text="Let's skip the small talk and get some dick in your face.") 
+
+#-- Scene 4: Manaka (Stress Build-up)
+translation["start_4_manaka_internal_001"] = CreateList(text="Manaka (Mental): Fuck, why does this prick demand everything before breakfast!", duration=6.0)
+translation["start_4_manaka_002"] = CreateList(text="Manaka (Aloud): I swear on my clit, if he moves the goalposts again...", duration=5.38)
+translation["start_4_ren_003"] = CreateList(text="Ren: Your face screams 'murderer,' not 'accountant.'", duration=4.0)
+translation["start_4_manaka_internal_004.male"] = CreateList(text="Holy tits! When the fuck did that bastard sneak up on me?", duration=4.38)
+translation["start_4_manaka_internal_004.female"] = CreateList(text="Holy tits! When the fuck did that bitch sneak up on me?", duration=4.23)
+translation["start_4_manaka_internal_004.nonbinary"] = CreateList(text="Holy tits! When the fuck did that thing sneak up on me?", duration=4.23)
+
+translation["start_4_manaka_005"] = CreateList(text="Yeah, yeah. Fuck, you actually have a point.", duration=3.38)
+translation["start_4_manaka_006"] = CreateList(text="Now the report's due at dawn like some cockfight. Gonna need a miracle to finish this shit in time.", duration=7.62)
+translation["start_4_ren_007"] = CreateList(text="(Giggles) Nah, just toss it. Your brain's already fried from staring at spreadsheets like a horny monkey.", duration=8.08)
+translation["start_4_manaka_008"] = CreateList(text="Saying 'don't' costs nothing, but my boss's dick is literally pressed against my ear.", duration=6.54)
+translation["start_4_manaka_009"] = CreateList(text="My heart's pounding like a drum solo. If I don't start now, these tits are gonna burst from stress.", duration=7.62)
+
+#-- Scene 5: Ren (Initiating Physicality)
+translation["start_5_ren_001"] = CreateList(text="Come walk your pussy out with me.", duration=2.54)
+translation["start_5_ren_002"] = CreateList(text="You're holding stress like a cum-filled condom about to blow.", duration=4.69)
+translation["start_5_ren_003"] = CreateList(text="Shoulders up like you're wearing a lead vest. You look like you got a sack of dicks strapped to your back.", duration=8.15)
+
+translation["start_5_manaka_internal_004.male"] = CreateList(text="That bastard sees it all. Jaw locked like a vice grip, phone squeezed till my knuckles turn pale as a ghost's ass.", duration=8.77)
+translation["start_5_manaka_internal_004.female"] = CreateList(text="That bitch sees it all. Jaw locked like a vice grip, phone squeezed till my knuckles turn pale as a ghost's ass.", duration=8.62)
+translation["start_5_manaka_internal_004.nonbinary"] = CreateList(text="That thing sees it all. Jaw locked like a vice grip, phone squeezed till my knuckles turn pale as a ghost's ass.", duration=8.62)
+
+translation["start_5_manaka_005"] = CreateList(text="Yeah, my brain won't shut up like a horny dog in heat.", duration=4.15)
+translation["start_5_ren_006"] = CreateList(text="Time to boot that shit out with a wrench and some oil.", duration=4.15)
+translation["start_5_manaka_007"] = CreateList(text="How the fuck am I supposed to kill it? Do I need a vibrator?", duration=4.62)
+translation["start_5_ren_008"] = CreateList(text="Close your peepers, relax those tits, feel the vibe.", duration=4.0)
+translation["start_5_manaka_internal_009"] = CreateList(text="'Relax.' Yeah, like my brain is a lightbulb I can just snap on and off.", duration=5.46)
+
+#-- Scene 6: Manaka (Resistance/Acceptance)
+translation["start_6_manaka_internal_001"] = CreateList(text="Try to close my eyes, but the numbers are flashing like strobe lights in a strip club.", duration=6.62)
+translation["start_6_manaka_002"] = CreateList(text="Can't kill this mind like a switch. It has its own damn pulse.", duration=4.77)
+translation["start_6_ren_003"] = CreateList(text="Time for a different kind of toggle. Something... hands-on.", duration=4.54)
+translation["start_6_manaka_004"] = CreateList(text="Cuffs? You wanna tie my wrists like some kinky sex toy for a spreadsheet?", duration=5.62)
+translation["start_6_ren_005"] = CreateList(text="Gonna keep your hands busy so you don't tap away at the screen like a manic monkey. Step closer, baby.", duration=7.85)
+translation["start_6_manaka_006"] = CreateList(text="Okay. Just don't let me lose my job over this bondage session. You buy my beer money then.", duration=6.92)
+
+
+#-- Undressing Sequence 1: Coat Removal (Behind Tree)
+translation["undress_1_settext_001"] = CreateList(text="Shed that coat like a filthy slut (behind the tree)") 
+translation["undress_1_ren_001"] = CreateList(text="You inhaled every single goddamn bite of my lunch! Now rip that jacket off so I can finally touch those soft arms.", duration=8.77)
+translation["undress_1_interact_area_001"] = CreateList(text="Rip off your coat") 
+
+#-- Undressing Sequence 2: Manaka's Concern
+translation["undress_2_manaka_001"] = CreateList(text="Don't make that thing filthy; I ain't got another clean one for tomorrow's bullshit meeting.", duration=7.08)
+
+#-- Undressing Sequence 3: Binding Setup
+translation["undress_3_settext_002"] = CreateList(text="Let Ren Shackles Your Pretty Hands") 
+translation["undress_3_interact_area_002"] = CreateList(text="Allow Ren To Bind You") 
+
+#-- Undressing Sequence 5: Tree Binding Setup
+translation["undress_5_settext_003"] = CreateList(text="Let Ren Tie Your Wrist to the Wood") 
+translation["undress_5_interact_area_003"] = CreateList(text="Allow Ren To Bind You To The Wood") 
+translation["undress_5_ren_001"] = CreateList(text="Come here. Let's tie you up like a goddamn sacrifice.", duration=4.08)
+
+#-- Undressing Sequence 6: Initial Binding/Focus
+translation["undress_6_ren_001"] = CreateList(text="There we go. Now, shut your eyes tight.", duration=3.0)
+translation["undress_6_manaka_002"] = CreateList(text="Fine. Shut 'em tight. What's the next move, freak?", duration=3.85)
+
+#-- Undressing Sequence 6: Ren's Philosophy
+translation["undress_6_ren_003"] = CreateList(text="Time to remember what's hiding under all that corporate bullshit. You're just a meat-bag.", duration=6.85)
+
+#-- Undressing Sequence 6: Manaka's Internal Reaction
+translation["undress_6_manaka_internal_004"] = CreateList(text="\"Beneath this fabric...\"", duration=2.0)
+translation["undress_6_manaka_internal_005"] = CreateList(text="Hold on—", duration=2.0)
+
+#-- Undressing Sequence 8: Skin Contact & Realization
+translation["undress_8_ren_001"] = CreateList(text="That corporate mask is finally cracking off.", duration=3.38)
+translation["undress_8_manaka_internal_002"] = CreateList(text="My hips feel like they've been unclamped from a meat press for hours.", duration=5.31)
+translation["undress_8_manaka_003"] = CreateList(text="Damn, it's freezing my bare ass!", duration=2.46)
+
+#-- Undressing Sequence 8: Ren's Observation
+translation["undress_8_ren_004"] = CreateList(text="Your thighs are rough as sandpaper, probably from all that running around in those heels.", duration=6.85)
+
+#-- Undressing Sequence 8: Gendered Internal Reactions
+translation["undress_8_manaka_internal_005.male"] = CreateList(text="He sees everything. He knows I'm reacting to him, not just the cold.", duration=5.23)
+translation["undress_8_manaka_internal_005.female"] = CreateList(text="She sees everything. She knows I'm reacting to her, not just the cold.", duration=5.38)
+translation["undress_8_manaka_internal_005.nonbinary"] = CreateList(text="They see everything. They know I'm reacting to them, not just the cold.", duration=5.46)
+
+#-- Undressing Sequence 9: The Dirty Play
+translation["undress_9_manaka_001.male"] = CreateList(text="You know, usually when a dickhead strips me down, they want my pussy. You're playing dirty.", duration=7.0)
+translation["undress_9_manaka_001.female"] = CreateList(text="You know, usually when a bitch strips me down, she wants my clit. You're playing dirty.", duration=6.69)
+translation["undress_9_manaka_001.nonbinary"] = CreateList(text="You know, usually when a person strips me down, they want my hole. You're playing dirty.", duration=6.77)
+
+#-- Undressing Sequence 9: Ren's Response
+translation["undress_9_ren_002"] = CreateList(text="Right now, you're thinking too much about the goddamn spreadsheet instead of feeling this.", duration=6.92)
+translation["undress_9_ren_003"] = CreateList(text="Fucking's messy. Touching's simple. Let's keep it raw.", duration=4.15)
+
+#-- Undressing Sequence 9: Manaka's Internal Reaction
+translation["undress_9_manaka_internal_004.male"] = CreateList(text="He's getting to the silk on my legs. It feels like a ghost touch.", duration=5.0)
+translation["undress_9_manaka_internal_004.female"] = CreateList(text="She's getting to the silk on my legs. It feels like a ghost touch.", duration=5.08)
+translation["undress_9_manaka_internal_004.nonbinary"] = CreateList(text="They're getting to the silk on my legs. It feels like a ghost touch.", duration=5.23)
+
+#-- Undressing Sequence 10: Assessment
+translation["undress_10_ren_001"] = CreateList(text="So, how does that feel? Good enough for work?", duration=3.46)
+translation["undress_10_manaka_internal_002"] = CreateList(text="My tits are poking through the bra like angry little berries.", duration=4.69)
+translation["undress_10_manaka_003"] = CreateList(text="Fine. So far, it's just freezing my ass off.", duration=3.38)
+
+#-- Undressing Sequence 10: Ren's Encouragement
+translation["undress_10_ren_004"] = CreateList(text="You'll get hot soon once we start moving your meat-bag around.", duration=4.77)
+translation["undress_10_ren_005"] = CreateList(text="Bare-assed slut I found running naked last year, not some high-strung corporate prick.", duration=6.62)
+
+#-- Undressing Sequence 10: Manaka's Nostalgia
+translation["undress_10_manaka_006"] = CreateList(text="That was ages ago! When are you gonna let me forget that shit!", duration=4.77)
+
+#-- Undressing Sequence 10: Ren's Memory
+translation["undress_10_ren_007"] = CreateList(text="Yeah, I remember every single goddamn detail of it.", duration=3.92)
+
+#-- Undressing Sequence 11: Re-Engagement/Movement
+translation["undress_11_manaka_001"] = CreateList(text="Damn, you let go? Thought we were locked down tight.", duration=4.0)
+translation["undress_11_ren_002"] = CreateList(text="Sure. But don't get cocky; the main event ain't done yet.", duration=4.38)
+translation["undress_11_manaka_003"] = CreateList(text="Okay, Sensei. What's the next move? Are we gonna get caught naked?", duration=5.08)
+
+#-- Undressing Sequence 11: Final Instruction
+translation["undress_11_ren_004"] = CreateList(text="Keep walking. You don't get your clothes back till we hit the other side of this park.", duration=6.62)
+translation["undress_11_manaka_005"] = CreateList(text="You're crazy! If some dickhead sees us naked...", duration=3.62)
+
+#-- Undressing Sequence 11: Ren's Reassurance
+translation["undress_11_ren_006"] = CreateList(text="Nobody's looking. Just keep your mind on the ground, not the sky.", duration=5.0)
+
+#-- Undressing Sequence 11: Manaka's Acceptance
+translation["undress_11_manaka_007"] = CreateList(text="Fine. Let's play your dirty little game. But if I get arrested, you're paying my bail.", duration=6.62)
+
+#-- Undressing Sequence 11: Final Command
+translation["undress_11_ren_008"] = CreateList(text="Deal. Now, let's move.", duration=2.0)
+
+
+#-- Undressing Sequence 14: Strolling Naked (Skirt Lost)
+translation["undress_14_settext_005"] = CreateList(text="Stroll Naked with Ren") 
+translation["undress_14_manaka_internal_001"] = CreateList(text="I can't believe I'm letting a dickhead touch me like this when I have so many goddamn deadlines.", duration=7.38)
+translation["undress_14_manaka_internal_002"] = CreateList(text="I'm clearly losing my damn mind.", duration=2.46)
+translation["undress_14_manaka_internal_003"] = CreateList(text="Fuck, I've been missing the feel of grass rubbing against my bare soles like a filthy dog though.", duration=7.46)
+translation["undress_14_manaka_internal_004"] = CreateList(text="Every crack in the pavement tastes like a fucking kiss. The cold air wraps around me like a lover's cum-stained towel.", duration=9.08)
+translation["undress_14_manaka_internal_005"] = CreateList(text="Feels fucking good. But that corporate bitch in my head is still screaming orders.", duration=6.31)
+translation["undress_14_manaka_internal_006"] = CreateList(text="That damn shirt's stuck to my nipples, making me pant like a dog in heat.", duration=5.62)
+translation["undress_14_ren_007"] = CreateList(text="Don't lag behind. I want you feeling every single fucking inch of this.", duration=5.46)
+translation["undress_14_manaka_008"] = CreateList(text="The way the breeze is slapping against my bare pussy lips, I'm already feeling this pretty good.", duration=7.38)
+translation["undress_14_ren_009"] = CreateList(text="Believe me, this is just the appetizer before the main course.", duration=4.77)
+translation["undress_14_manaka_internal_010"] = CreateList(text="Chill the fuck out, you've got plenty of experience with this shit.", duration=5.15)
+translation["undress_14_manaka_internal_011"] = CreateList(text="Feeling that wet heat creeping up my spine again. That fucking fire inside me waking up.", duration=6.77)
+translation["undress_14_manaka_internal_012"] = CreateList(text="Fuck, it's been months since I got this kind of attention.", duration=4.46)
+translation["undress_14_manaka_013"] = CreateList(text="Are we finishing up? My clit was just starting to hum.", duration=4.15)
+
+#-- Sequence 1: Shirt Removal (Initial State - Skirt still on/just lost)
+translation["strip_1_ren_001"] = CreateList(text="Let's rewrite these rules in blood and cum, baby.", duration=3.77)
+translation["strip_1_manaka_002"] = CreateList(text="Then I'm shedding that stiff-ass shirt like it's a dirty diaper.", duration=4.92)
+translation["strip_1_ren_003"] = CreateList(text="Never gonna say no to something this juicy. Fuck, you know it.", duration=4.77)
+
+#-- Sequence 2: Flannel Handover
+translation["strip_2_settext_006"] = CreateList(text="Hand over that stained corporate flannel.") 
+translation["strip_2_interact_area_005"] = CreateList(text="Rip That Shirt Off") 
+
+#-- Sequence 3: Binding Setup (Pre-Shackles)
+translation["strip_3_ren_001"] = CreateList(text="Here's the trade. Take my toys for a second instead of typing keys.", duration=5.15)
+translation["strip_3_manaka_002"] = CreateList(text="Cuffs? You wanna play with me like some cheap sex doll?", duration=4.23)
+translation["strip_3_ren_003"] = CreateList(text="Don't get cocky. Spin around and show me your ass.", duration=3.85)
+
+#-- Sequence 4: Shackling to Tree
+translation["strip_4_settext_007"] = CreateList(text="Lock Your Wrists Like a Chained Bitch") 
+translation["strip_4_interact_area_006"] = CreateList(text="Let Ren Shackles You To The Tree") 
+
+#-- Sequence 5: Grinding/Binding Focus (Skirt likely gone here)
+translation["strip_5_manaka_internal_001.male"] = CreateList(text="He's grinding the fucker hard, thinks I'm gonna melt into a puddle.", duration=5.15)
+translation["strip_5_manaka_internal_001.female"] = CreateList(text="She's grinding the fucker hard, thinks I'm gonna melt into a puddle.", duration=5.23)
+translation["strip_5_manaka_internal_001.nonbinary"] = CreateList(text="They're grinding the fucker hard, thinks I'm gonna melt into a puddle.", duration=5.38)
+translation["strip_5_manaka_002"] = CreateList(text="Why? Afraid I'll run off to find another hole?", duration=3.54)
+translation["strip_5_ren_003"] = CreateList(text="Of course not. I'm afraid you're handling this too easily.", duration=4.46)
+translation["strip_5_ren_004"] = CreateList(text="If you can't use your hands to block the view, every fucking step is a risk.", duration=5.85)
+translation["strip_5_manaka_internal_005"] = CreateList(text="Ren's got his cock in my head, but I'm ready to take it.", duration=4.31)
+translation["strip_5_manaka_internal_006"] = CreateList(text="These metal rings are freezing my wrists. No more hiding under fabric.", duration=5.38)
+translation["strip_5_manaka_007"] = CreateList(text="If some dickhead comes near, you'd better hold my pussy down.", duration=4.69)
+translation["strip_5_manaka_008"] = CreateList(text="Even that includes your dirty little hands.", duration=3.31)
+translation["strip_5_ren_009"] = CreateList(text="Admit it, my balls are itching to grab that ass right now.", duration=4.46)
+translation["strip_5_ren_010"] = CreateList(text="Shut your peepers and let the dirty thoughts flow.", duration=3.85)
+translation["strip_5_manaka_internal_011"] = CreateList(text="This air tastes like a fucking kiss, sweet as honey.", duration=4.0)
+translation["strip_5_manaka_internal_012.male"] = CreateList(text="He's close enough I can smell his cheap cologne and sweat on his balls.", duration=5.46)
+translation["strip_5_manaka_internal_012.female"] = CreateList(text="She's close enough I can smell her perfume and ass on my nose.", duration=4.77)
+translation["strip_5_manaka_internal_012.nonbinary"] = CreateList(text="They're close enough I can smell the leather on their thighs and the electric buzz in the room.", duration=7.31)
+translation["strip_5_manaka_015"] = CreateList(text="Your zen is fucked up, baby.", duration=2.15)
+translation["strip_5_ren_016"] = CreateList(text="Our dirty game is messed up. How's your brain feeling after all this?", duration=5.31)
+translation["strip_5_manaka_017"] = CreateList(text="Don't bring it up! My clit was already humming like a motor.", duration=4.62)
+translation["strip_5_ren_018"] = CreateList(text="Let me drag your mind out of the cloud and into this mud.", duration=4.38)
+translation["strip_5_manaka_internal_019.male"] = CreateList(text="His fingers are sliding right under my panties, feeling that wet heat.", duration=5.38)
+translation["strip_5_manaka_internal_019.female"] = CreateList(text="Her fingers are sliding right under my panties, feeling that wet heat.", duration=5.38)
+translation["strip_5_manaka_internal_019.nonbinary"] = CreateList(text="Their fingers are sliding right under my panties, feeling that wet heat.", duration=5.54)
+
+#-- Sequence 6: Wind/Sensory Overload (Skirt definitely gone now)
+translation["strip_6_manaka_internal_001"] = CreateList(text="Oh fuck, the wind is biting like a thousand teeth...", duration=4.0)
+translation["strip_6_ren_002"] = CreateList(text="Watching you shake like a leaf in a storm...", duration=3.38)
+translation["strip_6_manaka_internal_003"] = CreateList(text="The wind is licking spots my fingers forgot to cover.", duration=4.08)
+translation["strip_6_manaka_004"] = CreateList(text="Did you ever learn manners before deciding my panties were for public fucking inspection?", duration=6.85)
+translation["strip_6_ren_005"] = CreateList(text="Fairness is for accountants, not lovers.", duration=3.08)
+
+
+#-- Walk Sequence 1: Initial Movement & Tension Build-up (Skirt Lost, Panties Present)
+translation["walk_1_1_ren_001"] = CreateList(text="Keep hobbling along, bitch. Don't stop until your legs give out.", duration=4.92)
+translation["walk_1_1_manaka_002"] = CreateList(text="Loose the fucking cuffs! My wrists are burning like hellfire!", duration=4.69)
+translation["walk_1_1_ren_003"] = CreateList(text="Legs for walking, ass for shaking. Don't ask for mercy yet.", duration=4.54)
+translation["walk_1_1_manaka_internal_004"] = CreateList(text="Keep your balance or fall on your bare tits.", duration=3.38)
+translation["walk_1_1_manaka_internal_005"] = CreateList(text="Every fucking bush has a creep watching my ass.", duration=3.62)
+translation["walk_1_1_manaka_006"] = CreateList(text="You've got me out in the open like a damn deer.", duration=3.62)
+translation["walk_1_1_ren_007"] = CreateList(text="Wake up from the numbers, get off your ass and into the dirt.", duration=4.69)
+translation["walk_1_1_manaka_internal_008.male"] = CreateList(text="Numbers don't matter, his cock wants love.", duration=3.23)
+translation["walk_1_1_manaka_internal_008.female"] = CreateList(text="Numbers don't matter, my pussy screams for attention.", duration=4.08)
+translation["walk_1_1_manaka_internal_008.nonbinary"] = CreateList(text="Numbers don't matter, their skin wants a fuck.", duration=3.54)
+translation["walk_1_1_ren_009"] = CreateList(text="Check out the slutty CEO. ID badge dangling like a leash.", duration=4.38)
+translation["walk_1_1_manaka_internal_010"] = CreateList(text="That damn strap! Forgot about the office leash.", duration=3.62)
+translation["walk_1_1_ren_011"] = CreateList(text="That ID tag is the only thing keeping you from being a real slut.", duration=5.0)
+translation["walk_1_1_manaka_internal_012"] = CreateList(text="Want to tear the damn thing, but wrists are tied tight.", duration=4.23)
+translation["walk_1_1_ren_013"] = CreateList(text="Who's in charge now? The boss or the naked slut?", duration=3.69)
+translation["walk_1_1_manaka_014"] = CreateList(text="Naked CEO needs a real fix-up. Don't hold back.", duration=3.62)
+
+#-- Vibe Sequence 1: Transition/Heat Increase
+translation["vibe_1_ren_001"] = CreateList(text="Dead zone ahead. Time to crank the heat on your pussy.", duration=4.15)
+
+#-- Vibe Sequence 2: Falling into Arousal (Hands/Nipples Focus)
+translation["vibe_2_manaka_001"] = CreateList(text="Like someone unplugged my brain and plugged it straight into your dick.", duration=5.46)
+translation["vibe_2_ren_002"] = CreateList(text="Now take off the safety belt, baby. See how far you fall before you scream.", duration=5.77)
+translation["vibe_2_manaka_internal_003.male"] = CreateList(text="His fingers are digging into my tits like he wants to squeeze them dry. My nipples are screaming for a bite.", duration=8.31)
+translation["vibe_2_manaka_internal_003.female"] = CreateList(text="Her fingers are digging into my tits like she wants to squeeze them dry. My nipples are screaming for a bite.", duration=8.38)
+translation["vibe_2_manaka_internal_003.nonbinary"] = CreateList(text="Their fingers are digging into my tits like they want to squeeze them dry. My nipples are screaming for a bite.", duration=8.54)
+
+#-- Vibe Sequence 3: Sensory Overload (Wind/Skin Focus)
+translation["vibe_3_manaka_internal_001"] = CreateList(text="The cold air is fucking licking my bare skin, but it's the heat between my legs that keeps me moving.", duration=7.77)
+
+#-- Vibe Sequence 4: The Walk Continues (Pussy/Ass Focus)
+translation["vibe_4_ren_001"] = CreateList(text="Tell me how your pussy feels when you're being walked like a stray dog.", duration=5.46)
+translation["vibe_4_manaka_002"] = CreateList(text="Like I finally exhaled the fucking soul out of my lungs after staring at spreadsheets all day.", duration=7.23)
+translation["vibe_4_ren_003"] = CreateList(text="You look like a neon sign flashing 'Fuck Me' under that damn streetlamp.", duration=5.54)
+translation["vibe_4_ren_004"] = CreateList(text="Like a fucking mannequin with tits hanging out for everyone to see.", duration=5.15)
+translation["vibe_4_manaka_internal_005.male"] = CreateList(text="He speaks like a dumbass, but I don't care 'cause my ass is burning through the pavement.", duration=6.85)
+translation["vibe_4_manaka_internal_005.female"] = CreateList(text="She speaks like a dumbass, but I don't care 'cause my ass is burning through the pavement.", duration=6.92)
+translation["vibe_4_manaka_internal_005.nonbinary"] = CreateList(text="They speak like a dumbass, but I don't care 'cause my ass is burning through the pavement.", duration=6.92)
+translation["vibe_4_manaka_internal_006.male"] = CreateList(text="His hands are sliding over my wet skin like he's mapping out where to fuck me next.", duration=6.38)
+translation["vibe_4_manaka_internal_006.female"] = CreateList(text="Her hands are sliding over my wet skin like she's mapping out where to fuck me next.", duration=6.46)
+translation["vibe_4_manaka_internal_006.nonbinary"] = CreateList(text="Their hands are sliding over my wet skin like they're mapping out where to fuck me next.", duration=6.77)
+translation["vibe_4_manaka_007"] = CreateList(text="Ren, my legs feel like jelly and my pussy feels like it's melting inside my panties.", duration=6.46)
+translation["vibe_4_ren_008"] = CreateList(text="Why the fuck not? You're dripping on the sidewalk anyway.", duration=4.38)
+translation["vibe_4_manaka_009"] = CreateList(text="Because my pussy is leaking like a broken faucet and it's got nothing to do with rain.", duration=6.62)
+translation["vibe_4_ren_010"] = CreateList(text="That's the fucking point. Dripping, dirty, and finally forgetting your boss's name.", duration=6.38)
+translation["vibe_4_ren_011"] = CreateList(text="Time to plug in the toy. Let's see how loud you scream when the battery dies.", duration=5.92)
+translation["vibe_4_manaka_012"] = CreateList(text="'Plug in'? Ren, did you bring a fucking vibrator or just your own dick?", duration=5.46)
+translation["vibe_4_manaka_013"] = CreateList(text="I don't like surprises when a metal thing goes inside my ass or pussy without asking.", duration=6.54)
+translation["vibe_4_ren_014"] = CreateList(text="Just to keep your brain from melting into the pavement while you're getting fucked by the wind.", duration=7.31)
+
+#-- Vibe Sequence 5: Vibrator Engagement (The Peak of Walking Arousal)
+translation["vibe_5_manaka_internal_001"] = CreateList(text="Oh fuck, it's buzzing right against my clit like an angry hornet. My hips are twitching on their own.", duration=7.77)
+translation["vibe_5_manaka_002"] = CreateList(text="Ren! That's fucking electric!", duration=2.23)
+translation["vibe_5_ren_003"] = CreateList(text="Walk for five minutes with that thing buried deep in your ass while you try not to cum.", duration=6.69)
+translation["vibe_5_manaka_004"] = CreateList(text="Five minutes?! You're trying to turn my legs into fucking noodles!", duration=5.08)
+translation["vibe_5_ren_005"] = CreateList(text="Just a little therapy for your brain. Now get the fuck walking before I tie you up.", duration=6.38)
+
+#-- Walk Sequence 2: Deepening Arousal (Toy in Action)
+translation["walk_2_manaka_internal_001"] = CreateList(text="That goddamn vibrator is buzzing inside my tight hole, making my thighs shake like jelly legs on a wet floor.", duration=8.38)
+translation["walk_2_manaka_internal_002"] = CreateList(text="Gotta keep my throat shut tight so no one hears me squealing like a pig in a slaughterhouse. Feels like hellfire inside, but I'm loving every second of the burn.", duration=12.38)
+translation["walk_2_ren_003"] = CreateList(text="You're wobbling like a drunk bitch looking for her tits, or maybe your ass is buzzing so hard it's gonna spark.", duration=8.54)
+translation["walk_2_manaka_004"] = CreateList(text="Fuck, yeah. It hurts like a bitch but feels like heaven on my clit.", duration=5.15)
+translation["walk_2_ren_005"] = CreateList(text="Still thinking about that fucking spreadsheet? Your brain's probably leaking ink or cum right now.", duration=7.54)
+translation["walk_2_manaka_internal_006"] = CreateList(text="My whole ass is buzzing like a goddamn lawnmower. Sweat dripping down my tits, cooling off that hot mess inside.", duration=8.62)
+translation["walk_2_manaka_007"] = CreateList(text="Yeah, the report? Fuck it. My brain's full of static and wet dreams now.", duration=5.54)
+translation["walk_2_ren_008.male"] = CreateList(text="Good girl. Now my dick is in your head too.", duration=3.31)
+translation["walk_2_ren_008.female"] = CreateList(text="Good girl. Now my tits are in your head too.", duration=3.38)
+translation["walk_2_ren_008.nonbinary"] = CreateList(text="Good girl. Now my ass is in your head too.", duration=3.23)
+
+
+#-- Crowd Reaction Sequence 1: Initial Exposure & Paranoia Build-up
+translation["crowd_1_generic_001"] = CreateList(text="(Student) ...so she got caught in the middle of a public fuckfest...", duration=5.23)
+translation["crowd_1_manaka_internal_002"] = CreateList(text="Those pricks are right there. If one of them glances my way, I'm gonna scream like a goddamn siren.", duration=7.62)
+translation["crowd_1_ren_003"] = CreateList(text="Lean into my ass. Use my body to block their dirty eyes from seeing your naked tits.", duration=6.46)
+translation["crowd_1_manaka_internal_004"] = CreateList(text="Feel that? That's the only thing keeping me from falling apart into a pile of twitching meat.", duration=7.15)
+translation["crowd_1_ren_005"] = CreateList(text="(Whispering) Squeeze your ass cheeks tight so you don't leak all over the pavement like a broken fucking faucet.", duration=8.62)
+translation["crowd_1_manaka_006"] = CreateList(text="Yeah, barely holding on. Takes a whole army of dick-sucking demons to break me like this.", duration=6.85)
+translation["crowd_1_generic_007"] = CreateList(text="(Student) Holy shit, did you see her tits? She's got a whole fucking vibrator in there!", duration=6.69)
+translation["crowd_1_generic_008"] = CreateList(text="(Student) Shh! Don't let them know we're watching the show.", duration=4.54)
+translation["crowd_1_manaka_internal_009"] = CreateList(text="Fuck, that was too fucking close.", duration=2.54)
+
+#-- Crowd Reaction Sequence 2: Heightened Paranoia & Control
+translation["crowd_2_manaka_internal_001"] = CreateList(text="Fuck, the streetlights are too damn bright. One wrong noise and they'll know my pussy's buzzing.", duration=7.38)
+translation["crowd_2_manaka_internal_002"] = CreateList(text="My clit is throbbing like a goddamn drum. This walk feels like I'm being dragged through a wire fence.", duration=7.85)
+translation["crowd_2_ren_003"] = CreateList(text="Looks like some horny bastards are watching us creep around in the dark.", duration=5.54)
+translation["crowd_2_manaka_004"] = CreateList(text="Ren, if my pussy squeals out loud again...", duration=3.23)
+translation["crowd_2_ren_005"] = CreateList(text="Probably not. But if you do, I'll bite your ear off.", duration=4.0)
+translation["crowd_2_ren_006"] = CreateList(text="Stare at 'em. Imagine their jaws dropping when they see your bare ass shaking in the wind.", duration=6.92)
+translation["crowd_2_manaka_007"] = CreateList(text="Yeah, probably think I've lost my damn mind from too much pleasure.", duration=5.15)
+translation["crowd_2_ren_008"] = CreateList(text="Right. Let's see if you can scream like a siren before we hit the next street corner.", duration=6.54)
+translation["crowd_2_manaka_009"] = CreateList(text="Fuck, Ren! You're pushing me right over the edge!", duration=3.77)
+translation["crowd_2_ren_010"] = CreateList(text="Okay, okay. Suck in your tits. Exhale like you're blowing smoke rings off a cigarette.", duration=6.62)
+translation["crowd_2_manaka_internal_011"] = CreateList(text="It's burning up inside me, feels like my soul is vibrating out of my ass.", duration=5.62)
+translation["crowd_2_manaka_internal_012"] = CreateList(text="One slip and the whole crowd hears my wet little squeals.", duration=4.38)
+translation["crowd_2_manaka_internal_013.male"] = CreateList(text="Lock onto his gaze. He's got that hungry look like he wants to eat me alive with his tongue.", duration=7.08)
+translation["crowd_2_manaka_internal_013.female"] = CreateList(text="Lock onto her gaze. She's got that hungry look like she wants to eat me alive with her tongue.", duration=7.23)
+translation["crowd_2_manaka_internal_013.nonbinary"] = CreateList(text="Lock onto their gaze. They've got that hungry look like they want to eat me alive with their tongue.", duration=7.69)
+translation["crowd_2_ren_014"] = CreateList(text="Yeah, your ass is twitching like a dog in heat. I can smell the sweat on you.", duration=5.92)
+translation["crowd_2_manaka_015"] = CreateList(text="Yeah, but if I stop moving, my clit's gonna explode like a fucking grenade.", duration=5.77)
+translation["crowd_2_ren_016"] = CreateList(text="Then we'll sprint until your legs give out and you drop to the ground like a broken doll.", duration=6.85)
+
+#-- Orgasm Sequence 1: The Build-Up & Holding Back
+translation["orgasm_1_ren_001"] = CreateList(text="You held your shit together, Manaka. Didn't spill a drop of cum on the floor.", duration=5.92)
+translation["orgasm_1_manaka_002"] = CreateList(text="I... I didn't leak yet. But fuck, Ren... my pussy is screaming for mercy right now.", duration=6.38)
+translation["orgasm_1_ren_003"] = CreateList(text="Want me to kill the toy? Or keep fucking your brain with work until you snap?", duration=5.92)
+translation["orgasm_1_manaka_004"] = CreateList(text="No...", duration=2.0)
+translation["orgasm_1_manaka_005"] = CreateList(text="Keep the noise buzzing... please.", duration=2.54)
+translation["orgasm_1_manaka_006"] = CreateList(text="My ass needs this right now.", duration=2.15)
+translation["orgasm_1_ren_007"] = CreateList(text="Then scream your load out for me, Manaka. Right here in the dirt against this shed wall.", duration=6.77)
+translation["orgasm_1_manaka_internal_008"] = CreateList(text="Oh shit... Ren! I'm ready to explode!", duration=2.85)
+translation["orgasm_1_manaka_internal_009"] = CreateList(text="The buzz is eating my clit alive, man.", duration=2.92)
+translation["orgasm_1_manaka_internal_010"] = CreateList(text="Feels like a goddamn lightning bolt right in my pussy.", duration=4.15)
+translation["orgasm_1_manaka_internal_011"] = CreateList(text="Way too fucking much.", duration=2.0)
+translation["orgasm_1_manaka_internal_012"] = CreateList(text="My clit's burning like hellfire.", duration=2.46)
+translation["orgasm_1_manaka_internal_013"] = CreateList(text="Keep the current flowing... please don't cut the power...", duration=4.38)
+translation["orgasm_1_ren_014"] = CreateList(text="That's it... let your juices flow free...", duration=3.15)
+translation["orgasm_1_manaka_internal_015"] = CreateList(text="My legs are jelly. Can't hold my weight.", duration=3.08)
+translation["orgasm_1_manaka_internal_016"] = CreateList(text="Bursting open like a ripe peach.", duration=2.46)
+
+#-- Orgasm Sequence 2: The Aftermath & Collapse
+translation["orgasm_2_manaka_001"] = CreateList(text="Oh fuck... Ren! I'm done!", duration=2.0)
+translation["orgasm_2_ren_002"] = CreateList(text="You looked fucking amazing in the dark.", duration=3.0)
+translation["orgasm_2_manaka_003"] = CreateList(text="That... was... wild as hell.", duration=2.15)
+translation["orgasm_2_ren_004"] = CreateList(text="Still got that report in your head spinning?", duration=3.38)
+translation["orgasm_2_manaka_005"] = CreateList(text="What? No. Fuck the paper trail.", duration=2.38)
+translation["orgasm_2_ren_006"] = CreateList(text="Then this circus act is over.", duration=2.23)
+
+#-- Post-Orgasm Sequence: Recovery & Future Planning
+translation["post_orgasm_manaka_internal_001"] = CreateList(text="My legs are so soft they're practically oozing out my ass.", duration=4.46)
+translation["post_orgasm_manaka_002"] = CreateList(text="Check me out, freak. Do I look like a disaster zone or a dripping mess of pure pleasure?", duration=6.77)
+translation["post_orgasm_ren_003"] = CreateList(text="Like a dirty rag in the park. A twitching, dripping mess.", duration=4.38)
+translation["post_orgasm_manaka_004"] = CreateList(text="Hell yeah. Like a broken doll in the gutter.", duration=3.38)
+translation["post_orgasm_ren_005"] = CreateList(text="Can you handle walking back to that office without your pussy leaking all over the floor again?", duration=7.31)
+translation["post_orgasm_manaka_006"] = CreateList(text="If I take one more step, my legs will turn to jelly and snap.", duration=4.69)
+translation["post_orgasm_manaka_007"] = CreateList(text="My skirt's soaked through. Looks like I just dipped it in a cum bucket.", duration=5.46)
+translation["post_orgasm_ren_008"] = CreateList(text="Yeah, it gives you that 'public whore' vibe.", duration=3.38)
+translation["post_orgasm_manaka_009"] = CreateList(text="Evidence that the VP's assistant is a total fucking animal in heat.", duration=5.15)
+translation["post_orgasm_ren_010"] = CreateList(text="You're not a slut, you're a high-class bitch who knows how to fuck off work for a minute.", duration=6.85)
+translation["post_orgasm_ren_011"] = CreateList(text="Here, cover yourself with this jumper. It's way easier than trying to get that blouse buttoned back up after a session like that.", duration=9.92)
+translation["post_orgasm_2_manaka_001"] = CreateList(text="If I don't scrub the stench off my pussy, my boss will know we were fucking in a park.", duration=6.62)
+translation["post_orgasm_2_ren_002"] = CreateList(text="He's gonna be jealous he didn't get to taste that juice on your clit.", duration=5.31)
+translation["post_orgasm_2_manaka_003"] = CreateList(text="(Laughs softly) You're a fucking maniac.", duration=3.08)
+translation["post_orgasm_2_ren_004"] = CreateList(text="And you finally stopped twitching like a dog with an itch.", duration=4.46)
+translation["post_orgasm_2_manaka_005"] = CreateList(text="Yeah... thanks for fixing my broken brain.", duration=3.23)
+translation["post_orgasm_2_ren_006.male"] = CreateList(text="Anytime you need a 'private fuck fest,' I'm your guy.", duration=4.08)
+translation["post_orgasm_2_ren_006.female"] = CreateList(text="Anytime you need a 'private fuck fest,' I'm your girl.", duration=4.15)
+translation["post_orgasm_2_ren_006.nonbinary"] = CreateList(text="Anytime you need a 'private fuck fest,' I'm your thing.", duration=4.23)
+translation["post_orgasm_2_manaka_007.male"] = CreateList(text="You know, usually when guys say they want to help with stress relief, it's just an excuse. But you actually got off on that one.", duration=9.85)
+translation["post_orgasm_2_manaka_007.female"] = CreateList(text="You know, usually when girls say they want to help with stress relief, it's just an excuse. But you actually got off on that one.", duration=9.92)
+translation["post_orgasm_2_manaka_007.nonbinary"] = CreateList(text="You know, usually when people say they want to help with stress relief, it's just an excuse. But you actually got off on that one.", duration=10.0)
+translation["post_orgasm_2_ren_008"] = CreateList(text="I don't fuck around with lies.", duration=2.31)
+translation["post_orgasm_2_manaka_009"] = CreateList(text="Yeah, I'm finally seeing the truth.", duration=2.69)
+translation["post_orgasm_2_ren_010"] = CreateList(text="Now let's go. My brain is buzzing like a hornet's nest after that...", duration=5.23)
+translation["post_orgasm_2_manaka_011"] = CreateList(text="Wait till we get home this time, please! I don't want to do it in public again.", duration=6.08)
+translation["post_orgasm_2_generic_012"] = CreateList(text="Fade out. Or fade into next scene of pure filth.", duration=3.69)

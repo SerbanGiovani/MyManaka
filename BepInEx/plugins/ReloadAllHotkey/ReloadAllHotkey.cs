@@ -39,7 +39,7 @@ namespace ReloadAllHotkey
             RequireCtrl = Config.Bind("Hotkey", "RequireCtrl", true, "Require LeftCtrl or RightCtrl.");
             RequireShift = Config.Bind("Hotkey", "RequireShift", false, "Require LeftShift or RightShift.");
             ReloadBepInExConfigs = Config.Bind("Reload", "ReloadBepInExConfigs", true, "Reload loaded BepInEx plugin config files. This does not unload/reload plugin DLL code.");
-            ReloadCustomMissions2 = Config.Bind("Reload", "ReloadCustomMissions2", true, "Call Custom Missions v2 Engine.Reload() to reload CustomMissions2 code.");
+            ReloadCustomMissions2 = Config.Bind("Reload", "ReloadCustomMissions2", false, "Call Custom Missions v2 Engine.Reload() to reload CustomMissions2 code. This is unsafe with active zones/areas; restart the game for CMv2 changes.");
 
             try
             {

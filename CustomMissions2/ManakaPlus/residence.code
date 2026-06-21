@@ -1,0 +1,4204 @@
+# ============================================================
+# RESIDENCE
+# ============================================================
+manakaplus_v22_residence:
+	thread = _this
+	mission_active = false
+	active_stage = ""
+	residence_crowded_spawn_limit = 50
+	residence_crowded_active = false
+	residence_npc_spawn_timer = 0
+	residence_npc_active = CreateList()
+	residence_npc_spawn_points = CreateList()
+	residence_stationary_npcs = CreateList()
+	residence_community_chat = null
+	residence_community_active = false
+	residence_community_state = 0
+	residence_community_panel = CreateMissionPanel()
+	residence_community_panel.SetVisible(false)
+	residence_community_panel.SetGaugeVisible(false)
+	residence_community_panel.SetRPText("")
+	residence_community_zone = null
+	residence_community_duration = 0
+	residence_community_start_pos = null
+	residence_community_dest_pos = Vector(-12.86, -0.09, -82.28)
+	residence_community_total_distance = 0
+	residence_community_pee_dog = null
+	residence_community_pee_stand = null
+	residence_community_pee_spread = null
+	residence_community_reward_timer = 0
+	manaka_points = CreateThread("manakaplus_v22_manaka_points")
+	residence_community_reward_overlay = CreateText()
+	residence_community_reward_overlay.SetAnchor(0.5, 0.5)
+	residence_community_reward_overlay.SetAlignment("Top")
+	residence_community_reward_overlay.SetSize(36)
+	residence_community_reward_overlay.SetWidth(1200)
+	residence_community_reward_overlay.SetFace(color=Color(1,1,1,1), dilate=0.35)
+	residence_community_reward_overlay.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.35)
+	residence_community_reward_overlay.SetFrontLayer(true)
+	residence_community_reward_overlay.Clear()
+	warning_sound = CreateAudio("Asset/Simple_ding_sound.mp3")
+	sandbox_missions = CreateThread("manakaplus_v22_residence_sandbox")
+
+	idle:
+		mission_active = false
+
+	start_residence:
+		warning_sound.Play()
+		mission_active = true
+		active_stage = "Residence"
+		mainthread.UpdateHub()
+		residence_crowded_active = crowded_enabled
+		residence_crowded_spawn_limit = crowded_limit
+		residence_npc_spawn_timer = 0
+		residence_npc_active = CreateList()
+		residence_npc_spawn_points = CreateList()
+		residence_stationary_npcs = CreateList()
+
+		if _state.Sitting
+			SetAction("StandUp")
+
+		SetStage("Residence")
+		teleport_wait = 0
+		listener = CreateListenerLocal("residence_teleport_wait")
+
+	residence_teleport_wait:
+		if mission_active
+			teleport_wait = teleport_wait + _timediff
+			if teleport_wait > 0.5
+				SetPlayerPosition(x=-29.66, y=-0.10, z=-121.48, rx=0.00000, ry=1.00000, rz=0.00000, rw=0.00000)
+				thread.Goto("residence_start")
+
+	residence_start:
+		# Residence-only mission Contacts are created after the real map is ready.
+		sandbox_missions.Start()
+
+		# The Town Community is recreated for every Residence run, like the Park contacts.
+		residence_community_active = true
+		residence_community_state = 0
+		residence_community_duration = 0
+		residence_community_reward_timer = 0
+		residence_community_reward_overlay.Clear()
+		residence_community_chat = CreateMessengerChat("小镇社区群", iconcolor = Color(0.2,0.65,0.35), icontext = "TC", icontextcolor = Color(1,1,1))
+		residence_community_chat.Add("操你妈的，埃德加又买新车了？上次做生意他还欠我差不多7000块，都五个月了！那个傻逼根本不在这个群里，对吧？", "Left", user="Hank", silent=false)
+		residence_community_chat.Add("注意用词，汉克", "Left", user="Cindy_moderator", silent=false)
+		residence_community_chat.Add("珊迪关你屁事", "Left", user="Hank", silent=false)
+		residence_community_chat.Add("[汉克已被移出群聊]", "Left", user="System", silent=true)
+		residence_community_chat.Add("对，是一辆白色丰田AE86，我没记错的话。他上周五酒吧那晚还欠我 200 块", "Left", user="Bob", silent=false)
+		residence_community_chat.SetButtons("看来有人刚买了新车")
+
+		community_area = CreateArea(type="sphere", stage="Residence", x=-12.86, y=-0.09, z=-82.28, r=0.5, outline=true, compass=true)
+		residence_community_zone = CreateZone(community_area)
+		residence_community_zone.SetVisible(false)
+		residence_community_zone.SetColor(0.3,0.8,1)
+		residence_community_pee_dog = CreateCondition("[Action_PeeDog]")
+		residence_community_pee_stand = CreateCondition("[Action_PeeStand]")
+		residence_community_pee_spread = CreateCondition("[Action_PeeKaikyaku]")
+		community_button_listener = CreateListenerLocal("residence_community_button_listener")
+		community_mission_listener = CreateListenerLocal("residence_community_mission_listener")
+
+
+		if residence_crowded_active
+			# Nine verified route endpoints. Walkers always travel to a different group.
+			residence_npc_spawn_points = CreateList()
+			residence_npc_spawn_points.Insert(CreateList(group="A", position=Vector(-36.01, -0.11, -67.53), rotation=Quaternion(0.00000, 0.99982, 0.00000, -0.01922)))
+			residence_npc_spawn_points.Insert(CreateList(group="A", position=Vector(-47.65, -0.11, -76.54), rotation=Quaternion(0.00000, 0.71243, 0.00000, 0.70174)))
+			residence_npc_spawn_points.Insert(CreateList(group="B", position=Vector(40.30, -0.11, -78.88), rotation=Quaternion(0.00000, -0.71140, 0.00000, 0.70278)))
+			residence_npc_spawn_points.Insert(CreateList(group="B", position=Vector(29.16, -0.11, -69.80), rotation=Quaternion(0.00000, 0.99972, 0.00000, -0.02359)))
+			residence_npc_spawn_points.Insert(CreateList(group="C", position=Vector(43.36, -0.11, -120.57), rotation=Quaternion(0.00000, -0.70770, 0.00000, 0.70652)))
+			residence_npc_spawn_points.Insert(CreateList(group="C", position=Vector(29.04, -0.11, -128.59), rotation=Quaternion(0.00000, 0.01313, 0.00000, 0.99991)))
+			residence_npc_spawn_points.Insert(CreateList(group="D", position=Vector(-10.12, -0.11, -119.55), rotation=Quaternion(0.00000, -0.70584, 0.00000, 0.70837)))
+			residence_npc_spawn_points.Insert(CreateList(group="D", position=Vector(-27.45, -0.10, -124.74), rotation=Quaternion(0.00000, -0.00099, 0.00000, 1.00000)))
+			residence_npc_spawn_points.Insert(CreateList(group="E", position=Vector(-43.74, -0.09, -94.10), rotation=Quaternion(0.00000, 0.73375, 0.00000, 0.67942)))
+
+			# Nine stationary residents. A zero-distance waypoint settles their idle animation without retiring them.
+			stationary_data = CreateList()
+			stationary_data.Insert(CreateList(position=Vector(-4.32, -0.11, -109.16), rotation=Quaternion(0.00000, 0.05845, 0.00000, 0.99829), phone=false, headset=false))
+			stationary_data.Insert(CreateList(position=Vector(-4.36, -0.11, -110.13), rotation=Quaternion(0.00000, -0.71325, 0.00000, 0.70091), phone=true, headset=false))
+			stationary_data.Insert(CreateList(position=Vector(-16.84, -0.11, -124.85), rotation=Quaternion(0.00000, 0.03224, 0.00000, 0.99948), phone=true, headset=false))
+			stationary_data.Insert(CreateList(position=Vector(-14.26, -0.11, -112.60), rotation=Quaternion(0.00000, -0.22410, 0.00000, 0.97457), phone=false, headset=true))
+			stationary_data.Insert(CreateList(position=Vector(-1.33, -0.11, -100.09), rotation=Quaternion(0.00000, 0.00786, 0.00000, 0.99997), phone=false, headset=false))
+			stationary_data.Insert(CreateList(position=Vector(7.37, -0.11, -121.81), rotation=Quaternion(0.00000, 0.23429, 0.00000, 0.97217), phone=true, headset=false))
+			stationary_data.Insert(CreateList(position=Vector(7.83, -0.11, -120.66), rotation=Quaternion(0.00000, 0.98212, 0.00000, -0.18824), phone=false, headset=true))
+			stationary_data.Insert(CreateList(position=Vector(-0.17, -0.11, -104.79), rotation=Quaternion(0.00000, -0.84758, 0.00000, 0.53066), phone=false, headset=false))
+			stationary_data.Insert(CreateList(position=Vector(-43.19, 0.01, -102.78), rotation=Quaternion(0.00000, 0.95237, 0.00000, -0.30495), phone=false, headset=false))
+			i = 0
+			while i < stationary_data.Count()
+				info = stationary_data[i]
+				avatar_roll = RandomInt(0, 4)
+				avatar_type = "NewFemale"
+				if avatar_roll == 1
+					avatar_type = "PreviousFemale"
+				if avatar_roll == 2
+					avatar_type = "NewMale"
+				if avatar_roll == 3
+					avatar_type = "PreviousMale"
+				npc = CreateNPC(avatar_type, position=info.position, rotation=info.rotation)
+				npc.SkipStrangeness(false)
+				npc.CanGameOver(true)
+				npc.Smartphone(info.phone)
+				npc.Headset(info.headset)
+				npc.ClearWaypoints()
+				npc.AddWaypoint(info.position)
+				residence_stationary_npcs.Insert(npc)
+				i = i + 1
+			crowded_listener = CreateListenerLocal("residence_crowded_listener")
+
+		mainthread.ArmStageWatch()
+
+	residence_community_button_listener:
+		if mission_active
+			if residence_community_active && residence_community_state == 0
+				clicked = residence_community_chat.Clicked()
+				if clicked != null
+					residence_community_chat.SetButtons()
+					residence_community_state = 1
+					residence_community_start_pos = Vector(_state.Position.x, _state.Position.y, _state.Position.z)
+					residence_community_total_distance = Vector3Distance(residence_community_start_pos, residence_community_dest_pos)
+					residence_community_zone.SetVisible(true)
+					residence_community_panel.SetVisible(true)
+					residence_community_panel.SetText("找到埃德加的白色丰田")
+					residence_community_panel.SetRPText("")
+					residence_community_panel.SetGaugeVisible(true)
+					residence_community_panel.SetGaugeProgress(0)
+
+	residence_community_mission_listener:
+		if residence_community_reward_timer > 0
+			residence_community_reward_timer = residence_community_reward_timer - _timediff
+			if residence_community_reward_timer <= 0
+				residence_community_reward_overlay.Clear()
+		if mission_active
+			if residence_community_active
+				if residence_community_state == 1
+					community_distance = Vector3Distance(_state.Position, residence_community_dest_pos)
+					community_gauge = 0
+					if residence_community_total_distance > 0
+						if community_distance < residence_community_total_distance
+							community_gauge = (residence_community_total_distance - community_distance) / residence_community_total_distance
+					residence_community_panel.SetGaugeProgress(community_gauge)
+					if residence_community_zone.Inside()
+						residence_community_state = 2
+						residence_community_duration = 0
+						residence_community_panel.SetText("在车上排尿 10 秒")
+						residence_community_panel.SetRPText("100 RP + 100 MP")
+						residence_community_panel.SetGaugeVisible(true)
+						residence_community_panel.SetGaugeProgress(0)
+
+				if residence_community_state == 2
+					community_peeing = false
+					if residence_community_pee_dog.Check()
+						community_peeing = true
+					if residence_community_pee_stand.Check()
+						community_peeing = true
+					if residence_community_pee_spread.Check()
+						community_peeing = true
+					if residence_community_zone.Inside() && community_peeing
+						residence_community_duration = residence_community_duration + _timediff
+					else
+						residence_community_duration = 0
+					residence_community_panel.SetGaugeProgress(residence_community_duration / 10)
+					if residence_community_duration >= 10
+						AddCurrentEarnRP(100)
+						manaka_points.Add(amount=100)
+						mainthread.UpdateHub()
+						residence_community_reward_overlay.Clear()
+						residence_community_reward_overlay.Add(text="100 RP + 100 Manaka Points Added")
+						residence_community_reward_timer = 5
+						residence_community_state = 3
+						residence_community_active = false
+						residence_community_zone.SetVisible(false)
+						residence_community_panel.SetVisible(false)
+						residence_community_chat.Add("[珊迪已邀请埃德加进入群聊]", "Left", user="System", silent=true)
+						residence_community_chat.Add("我发誓一定会找到往我车上撒尿的人！我要把那个混蛋整得后悔出生！", "Left", user="Edgar", silent=false)
+						residence_community_chat.Add("[鲍勃已邀请汉克进入群聊]", "Left", user="System", silent=true)
+
+	residence_crowded_listener:
+		if mission_active
+			if residence_crowded_active
+				if _state.Position.stage == "Residence"
+					# Retired walkers are scene-owned; only drop finished references from our counter.
+					i = residence_npc_active.Count() - 1
+					while i >= 0
+						entry = residence_npc_active[i]
+						if entry.npc.Finished()
+							residence_npc_active.Remove(i)
+						i = i - 1
+
+					residence_npc_spawn_timer = residence_npc_spawn_timer + _timediff
+					if residence_npc_spawn_timer >= 5
+						residence_npc_spawn_timer = 0
+						if residence_npc_active.Count() < residence_crowded_spawn_limit
+							spawn_index = RandomInt(0, residence_npc_spawn_points.Count())
+							spawn_info = residence_npc_spawn_points[spawn_index]
+							destination_index = RandomInt(0, residence_npc_spawn_points.Count())
+							while residence_npc_spawn_points[destination_index].group == spawn_info.group
+								destination_index = RandomInt(0, residence_npc_spawn_points.Count())
+							destination_info = residence_npc_spawn_points[destination_index]
+
+							avatar_roll = RandomInt(0, 4)
+							avatar_type = "NewFemale"
+							if avatar_roll == 1
+								avatar_type = "PreviousFemale"
+							if avatar_roll == 2
+								avatar_type = "NewMale"
+							if avatar_roll == 3
+								avatar_type = "PreviousMale"
+
+							npc = CreateNPC(avatar_type, position=spawn_info.position, rotation=spawn_info.rotation)
+							npc.SkipStrangeness(false)
+							npc.CanGameOver(true)
+							npc.Stopped(false)
+							accessory_roll = RandomInt(0, 100)
+							walker_phone = false
+							walker_headset = false
+							if accessory_roll < 15
+								walker_phone = true
+							if accessory_roll >= 15 && accessory_roll < 30
+								walker_headset = true
+							npc.Smartphone(walker_phone)
+							npc.Headset(walker_headset)
+							npc.ClearWaypoints()
+							npc.AddWaypoint(destination_info.position, last=true)
+							residence_npc_active.Insert(CreateList(npc=npc))
+
+	CancelCurrentMission:
+		if sandbox_missions.IsActive()
+			sandbox_missions.CancelCurrentMission()
+		elseif residence_community_state != 0
+			residence_community_state = 0
+			residence_community_duration = 0
+			if residence_community_zone != null
+				residence_community_zone.SetVisible(false)
+			if residence_community_panel != null
+				residence_community_panel.SetVisible(false)
+				residence_community_panel.SetGaugeProgress(0)
+			if residence_community_chat != null
+				residence_community_chat.Clear()
+				residence_community_chat.Add("任务已取消，小镇社区群的委托已重新开放", "Left", user="小镇社区群", silent=true)
+				residence_community_chat.SetButtons("看来有人刚买了新车")
+		mainthread.UpdateHub()
+
+	Cancel:
+		sandbox_missions.Reset()
+		mission_active = false
+		active_stage = ""
+		residence_crowded_active = false
+		residence_npc_spawn_timer = 0
+		residence_npc_active = CreateList()
+		residence_npc_spawn_points = CreateList()
+		residence_stationary_npcs = CreateList()
+		residence_community_active = false
+		residence_community_state = 0
+		residence_community_duration = 0
+		residence_community_reward_timer = 0
+		residence_community_reward_overlay.Clear()
+		if residence_community_chat != null
+			residence_community_chat.SetButtons()
+			residence_community_chat.Clear()
+			residence_community_chat = null
+		if residence_community_zone != null
+			residence_community_zone.SetVisible(false)
+		if residence_community_panel != null
+			residence_community_panel.SetVisible(false)
+			residence_community_panel.SetGaugeVisible(false)
+			residence_community_panel.SetGaugeProgress(0)
+			residence_community_panel.SetRPText("")
+		thread.Goto("idle")
+
+# ============================================================
+# RESIDENCE SANDBOX
+# ============================================================
+manakaplus_v22_residence_sandbox:
+	thread = _this
+	active = false
+	contact = null
+	contact_was_open = false
+	menu_state = "main"
+	mission_active = false
+	mission_preparing = false
+	prepare_step = 0
+	prepare_timer = 0
+	coat_moved = false
+	selected_time = 5
+	always_naked = false
+	interruptible = true
+	locked_mp_reward = 150
+	progress = 0
+	outfit_lock_timer = 0
+	reward_overlay_timer = 0
+
+	done1 = false
+	done2 = false
+	done3 = false
+	done4 = false
+	done5 = false
+	done6 = false
+	rung1 = false
+	rung2 = false
+	rung3 = false
+	rung4 = false
+	rung5 = false
+	rung6 = false
+	armed1 = false
+	armed2 = false
+	armed3 = false
+	armed4 = false
+	armed5 = false
+	armed6 = false
+	timer1 = 0
+	timer2 = 0
+	timer3 = 0
+	timer4 = 0
+	timer5 = 0
+	timer6 = 0
+	allow_bra = false
+	allow_panties = false
+	allow_necktie = false
+	allow_hoodie = false
+	allow_shirt = false
+	allow_skirt = false
+	allow_socks = false
+	allow_shoes = false
+	outfit_remaining = null
+
+	manaka_points = CreateThread("manakaplus_v22_manaka_points")
+	teleporting = CreateThread("manakaplus_v22_residence_teleporting")
+	home_sweet_home = CreateThread("manakaplus_v22_residence_home_sweet_home")
+
+	condition_bell = CreateCondition("[Action_Pinpon]")
+	condition_daytime = CreateCondition("[IsDayTime]")
+	condition_bra = CreateCondition("[Cosplay_m_cosplay_general_upper_bra]")
+	condition_panties = CreateCondition("[Cosplay_m_cosplay_general_upper_ultimate_pants]")
+	condition_necktie = CreateCondition("[Cosplay_m_cosplay_school_hoodie_necktie]")
+	condition_hoodie = CreateCondition("[Cosplay_m_cosplay_school_hoodie_hoodie]")
+	condition_shirt = CreateCondition("[Cosplay_m_cosplay_school_hoodie_shirt]")
+	condition_skirt = CreateCondition("[Cosplay_m_cosplay_school_hoodie_skirt]")
+	condition_socks = CreateCondition("[Cosplay_m_cosplay_school_hoodie_socks]")
+	condition_shoes = CreateCondition("[Cosplay_m_cosplay_school_hoodie_shoes]")
+
+	main_panel = CreateMissionPanel()
+	main_panel.SetVisible(false)
+	main_panel.SetGaugeVisible(true)
+	main_panel.SetGaugeProgress(0)
+	main_panel.SetRPText("")
+
+	location1_panel = CreateMissionPanel()
+	location1_panel.SetVisible(false)
+	location1_panel.SetGaugeVisible(true)
+	location1_panel.SetGaugeProgress(0)
+	location1_panel.SetRPText("")
+	location2_panel = CreateMissionPanel()
+	location2_panel.SetVisible(false)
+	location2_panel.SetGaugeVisible(true)
+	location2_panel.SetGaugeProgress(0)
+	location2_panel.SetRPText("")
+	location3_panel = CreateMissionPanel()
+	location3_panel.SetVisible(false)
+	location3_panel.SetGaugeVisible(true)
+	location3_panel.SetGaugeProgress(0)
+	location3_panel.SetRPText("")
+	location4_panel = CreateMissionPanel()
+	location4_panel.SetVisible(false)
+	location4_panel.SetGaugeVisible(true)
+	location4_panel.SetGaugeProgress(0)
+	location4_panel.SetRPText("")
+	location5_panel = CreateMissionPanel()
+	location5_panel.SetVisible(false)
+	location5_panel.SetGaugeVisible(true)
+	location5_panel.SetGaugeProgress(0)
+	location5_panel.SetRPText("")
+	location6_panel = CreateMissionPanel()
+	location6_panel.SetVisible(false)
+	location6_panel.SetGaugeVisible(true)
+	location6_panel.SetGaugeProgress(0)
+	location6_panel.SetRPText("")
+
+	location1_area = CreateArea(type="sphere", stage="Residence", x=-5.62, y=-0.08, z=-85.53, r=1.2, outline=true, compass=true)
+	location1_zone = CreateZone(location1_area)
+	location1_zone.SetVisible(false)
+	location1_zone.SetColor(1,0.65,0.2)
+	location2_area = CreateArea(type="sphere", stage="Residence", x=-3.64, y=-0.10, z=-74.10, r=1.2, outline=true, compass=true)
+	location2_zone = CreateZone(location2_area)
+	location2_zone.SetVisible(false)
+	location2_zone.SetColor(1,0.65,0.2)
+	location3_area = CreateArea(type="sphere", stage="Residence", x=14.02, y=-0.10, z=-83.66, r=1.2, outline=true, compass=true)
+	location3_zone = CreateZone(location3_area)
+	location3_zone.SetVisible(false)
+	location3_zone.SetColor(1,0.65,0.2)
+	location4_area = CreateArea(type="sphere", stage="Residence", x=6.46, y=-0.10, z=-84.00, r=1.2, outline=true, compass=true)
+	location4_zone = CreateZone(location4_area)
+	location4_zone.SetVisible(false)
+	location4_zone.SetColor(1,0.65,0.2)
+	location5_area = CreateArea(type="sphere", stage="Residence", x=2.57, y=-0.10, z=-111.12, r=1.2, outline=true, compass=true)
+	location5_zone = CreateZone(location5_area)
+	location5_zone.SetVisible(false)
+	location5_zone.SetColor(1,0.65,0.2)
+	location6_area = CreateArea(type="sphere", stage="Residence", x=13.36, y=-0.08, z=-117.32, r=1.2, outline=true, compass=true)
+	location6_zone = CreateZone(location6_area)
+	location6_zone.SetVisible(false)
+	location6_zone.SetColor(1,0.65,0.2)
+
+	reward_overlay = CreateText()
+	reward_overlay.SetAnchor(0.5, 0.5)
+	reward_overlay.SetAlignment("Top")
+	reward_overlay.SetSize(36)
+	reward_overlay.SetWidth(1200)
+	reward_overlay.SetFace(color=Color(1,1,1,1), dilate=0.35)
+	reward_overlay.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.35)
+	reward_overlay.SetFrontLayer(true)
+	reward_overlay.Clear()
+
+	listener = CreateListenerLocal("update")
+	Log("ManakaPlus v2: Residence Sandbox Mission Contact loaded.")
+
+	Start:
+		active = true
+		contact_was_open = false
+		menu_state = "main"
+		selected_time = 5
+		always_naked = false
+		interruptible = true
+		reward_overlay_timer = 0
+		reward_overlay.Clear()
+		ResetMissionState()
+		teleporting.Reset()
+		teleporting.ResetDifficulty()
+		home_sweet_home.Cancel()
+		home_sweet_home.SetDifficultyNormal()
+		home_sweet_home.SetPunishmentOff()
+		contact = CreateMessengerChat("沙盒任务", iconcolor=Color(0.85,0.38,0.18), icontext="SM", icontextcolor=Color(1,1,1))
+		ShowMainMenu()
+
+	Reset:
+		active = false
+		if teleporting.IsActive()
+			teleporting.GlobalCancel()
+		if home_sweet_home.IsActive()
+			home_sweet_home.Cancel()
+		CleanupMissionRuntime()
+		reward_overlay_timer = 0
+		reward_overlay.Clear()
+		selected_time = 5
+		always_naked = false
+		interruptible = true
+		if contact != null
+			contact.SetButtons()
+			contact.Clear()
+			contact = null
+		contact_was_open = false
+		menu_state = "main"
+
+	IsActive:
+		_result = mission_active || mission_preparing || teleporting.IsActive() || home_sweet_home.IsActive()
+
+	GetActiveMissionName:
+		_result = ""
+		if teleporting.IsActive()
+			_result = "传送狂乱"
+		elseif home_sweet_home.IsActive()
+			_result = "甜蜜之家"
+		elseif mission_active || mission_preparing
+			_result = "烦人的邻居"
+
+	CancelCurrentMission:
+		if teleporting.IsActive()
+			teleporting.GlobalCancel()
+		elseif home_sweet_home.IsActive()
+			home_sweet_home.Cancel()
+		elseif mission_active || mission_preparing
+			CleanupMissionRuntime()
+		ShowMainMenu()
+
+	ShowMainMenu:
+		menu_state = "main"
+		if contact != null
+			active_name = GetActiveMissionName()
+			if active_name == ""
+				active_name = "无"
+			contact.Clear()
+			contact.Add("沙盒任务\n当前任务：" + active_name, "Left", user="Residence", silent=true)
+			contact.SetButtons(CreateList("烦人的邻居", "传送狂乱", "甜蜜之家"), ids=CreateList("annoying", "teleporting", "home_sweet_home"))
+
+	ShowAnnoyingDetails:
+		menu_state = "annoying_details"
+		if contact != null
+			contact.Clear()
+			contact.Add(BuildMissionText(), "Left", user="Residence", silent=true)
+			contact.SetButtons(CreateList("开始", "难度", "返回"), ids=CreateList("start", "difficulty", "return"))
+
+	ShowAnnoyingDifficulty:
+		menu_state = "annoying_difficulty"
+		if contact != null
+			contact.Clear()
+			contact.Add(BuildDifficultyText(), "Left", user="Residence", silent=true)
+			contact.SetButtons(CreateList("时间：" + selected_time + "秒", "保持全裸：" + GetNakedText(), "可中断：" + GetInterruptibleText(), "返回"), ids=CreateList("time", "naked", "interruptible", "return"))
+
+
+	ShowHomeSweetHomeDetails:
+		menu_state = "home_sweet_home_details"
+		if contact != null
+			contact.Clear()
+			contact.Add(home_sweet_home.GetMissionText(), "Left", user="Residence", silent=true)
+			contact.SetButtons(CreateList("开始", "难度：" + home_sweet_home.GetDifficultyLabel(), "惩罚模式：" + home_sweet_home.GetPunishmentLabel(), "返回"), ids=CreateList("start", "difficulty", "punishment", "return"))
+
+	StartHomeSweetHome:
+		if mission_active == false && mission_preparing == false && teleporting.IsActive() == false && home_sweet_home.IsActive() == false
+			home_sweet_home.Start()
+			menu_state = "home_sweet_home_active"
+			if contact != null
+				contact.Clear()
+				contact.Add("甜蜜之家\n任务进行中\n\n使用 ManakaPlus v2 > 取消当前任务 即可停止", "Left", user="Residence", silent=true)
+				contact.SetButtons()
+
+	ShowHomeSweetHomeComplete:
+		menu_state = "home_sweet_home_complete"
+		if contact != null
+			contact.Clear()
+			hsh_reward_rp = home_sweet_home.GetRewardRP()
+			hsh_reward_mp = home_sweet_home.GetRewardMP()
+			contact.Add("甜蜜之家已完成\n\n获得" + hsh_reward_rp + " RP 与 " + hsh_reward_mp + " Manaka 点数", "Left", user="Residence", silent=true)
+			contact.SetButtons(CreateList("返回"), ids=CreateList("return"))
+
+	ShowTeleportingDetails:
+		menu_state = "teleport_details"
+		if contact != null
+			contact.Clear()
+			contact.Add(teleporting.GetMissionText(), "Left", user="Residence", silent=true)
+			contact.SetButtons(CreateList("开始", "难度", "规则与操作", "返回"), ids=CreateList("start", "difficulty", "rules", "return"))
+
+	ShowTeleportingDifficulty:
+		menu_state = "teleport_difficulty"
+		if contact != null
+			contact.Clear()
+			contact.Add(teleporting.GetDifficultyText(), "Left", user="Residence", silent=true)
+			contact.SetButtons(CreateList(teleporting.GetRoundsLabel(), teleporting.GetTeleportIntervalLabel(), teleporting.GetStartingEnergyLabel(), teleporting.GetMaxEnergyLabel(), teleporting.GetRPEnergyLabel(), teleporting.GetRPRequiredLabel(), "返回"), ids=CreateList("rounds", "interval", "start_energy", "max_energy", "rp_energy", "rp_required", "return"))
+
+	ShowTeleportingRules:
+		menu_state = "teleport_rules"
+		if contact != null
+			contact.Clear()
+			contact.Add(teleporting.GetRulesText(), "Left", user="Residence", silent=true)
+			contact.SetButtons(CreateList("返回"), ids=CreateList("return"))
+
+	StartTeleportingMission:
+		if mission_active == false && mission_preparing == false && teleporting.IsActive() == false && home_sweet_home.IsActive() == false
+			teleporting.Start()
+			menu_state = "teleport_active"
+			if contact != null
+				contact.Clear()
+				contact.Add("传送狂乱\n任务进行中\n\n使用 ManakaPlus v2 > 取消当前任务 可停止任务，或结算无限模式奖励", "Left", user="Residence", silent=true)
+				contact.SetButtons()
+
+	ShowTeleportingComplete:
+		menu_state = "teleport_complete"
+		if contact != null
+			contact.Clear()
+			message = teleporting.GetFinishMessage()
+			if message == ""
+				message = "传送狂乱已完成"
+			contact.Add(message, "Left", user="Residence", silent=true)
+			contact.SetButtons(CreateList("返回"), ids=CreateList("return"))
+
+	GetNakedText:
+		_result = "关闭"
+		if always_naked
+			_result = "开启"
+
+	GetInterruptibleText:
+		_result = "关闭"
+		if interruptible
+			_result = "开启"
+
+	GetTimeBonus:
+		_result = 0
+		if selected_time == 8
+			_result = 30
+		elseif selected_time == 10
+			_result = 60
+
+	GetNakedBonus:
+		_result = 0
+		if always_naked
+			_result = 40
+
+	GetInterruptibleBonus:
+		_result = 0
+		if interruptible == false
+			_result = 30
+
+	GetDetectionBonus:
+		# Use the live runtime value when Start is pressed, matching v1.3 Downtown.
+		_result = 0
+		if _state.Detection < 0.3
+			_result = 80
+		elseif _state.Detection <= 0.5
+			_result = 40
+		elseif _state.Detection <= 0.7
+			_result = 20
+
+	BuildMissionText:
+		requirement_text = "任务要求：胸罩、蕾丝内裤、学生制服A"
+		if always_naked
+			requirement_text = "任务要求：全裸"
+		_result = requirement_text + "\n奖励：150 RP + 150 Manaka 点数\n按响六家门铃，并在每个区域停留 " + selected_time + " 秒。若提前离开，需要再次按门铃才能继续"
+
+	BuildDifficultyText:
+		selected_bonus = GetTimeBonus() + GetNakedBonus() + GetInterruptibleBonus()
+		_result = "Manaka 点数总加成：" + selected_bonus + "\n露出可疑度加成：51–70% 时 20 Manaka 点数 | 30–50% 时 40 点 | 低于 30% 时 80 点 | 高于 70% 时无加成\n白天加成：30 Manaka 点数"
+
+	CycleTime:
+		if selected_time == 5
+			selected_time = 8
+		elseif selected_time == 8
+			selected_time = 10
+		else
+			selected_time = 5
+		ShowAnnoyingDifficulty()
+
+	ToggleNaked:
+		if always_naked
+			always_naked = false
+		else
+			always_naked = true
+		ShowAnnoyingDifficulty()
+
+	ToggleInterruptible:
+		if interruptible
+			interruptible = false
+		else
+			interruptible = true
+		ShowAnnoyingDifficulty()
+
+
+	BeginMission:
+		if mission_active == false && mission_preparing == false && teleporting.IsActive() == false && home_sweet_home.IsActive() == false
+			mission_active = true
+			mission_preparing = true
+			prepare_step = 0
+			prepare_timer = 0
+			progress = 0
+			outfit_lock_timer = 0
+			locked_mp_reward = 150 + GetDetectionBonus() + GetTimeBonus() + GetNakedBonus() + GetInterruptibleBonus()
+			if condition_daytime.Check()
+				locked_mp_reward = locked_mp_reward + 30
+			InitializeLocationState()
+			MoveCoatAway()
+			ShowAllUnfinishedZones()
+			main_panel.SetText("已完成地点：0/6")
+			main_panel.SetGaugeProgress(0)
+			main_panel.SetVisible(true)
+			menu_state = "active"
+			if contact != null
+				contact.Clear()
+				contact.Add("烦人的邻居\n任务进行中\n\n使用 ManakaPlus v2 > 取消当前任务 即可停止", "Left", user="Residence", silent=true)
+				contact.SetButtons()
+
+	InitializeLocationState:
+		done1 = false
+		done2 = false
+		done3 = false
+		done4 = false
+		done5 = false
+		done6 = false
+		rung1 = false
+		rung2 = false
+		rung3 = false
+		rung4 = false
+		rung5 = false
+		rung6 = false
+		armed1 = false
+		armed2 = false
+		armed3 = false
+		armed4 = false
+		armed5 = false
+		armed6 = false
+		timer1 = 0
+		timer2 = 0
+		timer3 = 0
+		timer4 = 0
+		timer5 = 0
+		timer6 = 0
+		allow_bra = true
+		allow_panties = true
+		allow_necktie = true
+		allow_hoodie = true
+		allow_shirt = true
+		allow_skirt = true
+		allow_socks = true
+		allow_shoes = true
+		outfit_remaining = CreateList("m_cosplay_general_upper_bra", "m_cosplay_general_upper_ultimate_pants", "m_cosplay_school_hoodie_necktie", "m_cosplay_school_hoodie_hoodie", "m_cosplay_school_hoodie_shirt", "m_cosplay_school_hoodie_skirt", "m_cosplay_school_hoodie_socks", "m_cosplay_school_hoodie_shoes")
+
+	MoveCoatAway:
+		DropItem(itemtype="Coat", position=_state.Position, compass=false)
+		CollectItem(itemtype="Coat")
+		coat_away_pos = CreateList(stage="Apart", x=-1.84, y=0.00, z=-0.20, rx=0, ry=0, rz=0, rw=0)
+		DropItem(itemtype="Coat", stage="Apart", position=coat_away_pos, compass=false)
+		coat_moved = true
+
+	RestoreCoat:
+		if coat_moved
+			CollectItem(itemtype="Coat")
+			coat_return_pos = CreateList(stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y, z=_state.Position.z, rx=0, ry=0, rz=0, rw=0)
+			DropItem(itemtype="Coat", position=coat_return_pos, compass=false)
+			coat_moved = false
+
+	PrepareMission:
+		prepare_timer = prepare_timer + _timediff
+		if always_naked
+			if prepare_step == 0 && prepare_timer >= 0.25
+				UnequipAllCosplay()
+				prepare_step = 3
+				mission_preparing = false
+		else
+			if prepare_step == 0 && prepare_timer >= 0.25
+				UnequipAllCosplay()
+				prepare_timer = 0
+				prepare_step = 1
+			elseif prepare_step == 1 && prepare_timer >= 0.25
+				EquipAllowedOutfit()
+				prepare_timer = 0
+				prepare_step = 2
+			elseif prepare_step == 2 && prepare_timer >= 0.75
+				# Do not block the mission on outfit condition checks.
+				# The hard-force monitor below keeps the allowed outfit restored.
+				EquipAllowedOutfit()
+				mission_preparing = false
+				prepare_step = 3
+
+	EquipAllowedOutfit:
+		# Equip the complete starting outfit in one call, matching the proven v1.3 pattern.
+		if allow_bra && allow_panties && allow_necktie && allow_hoodie && allow_shirt && allow_skirt && allow_socks && allow_shoes
+			EquipCosplay("m_cosplay_general_upper_bra", "m_cosplay_general_upper_ultimate_pants", "m_cosplay_school_hoodie_necktie", "m_cosplay_school_hoodie_hoodie", "m_cosplay_school_hoodie_shirt", "m_cosplay_school_hoodie_skirt", "m_cosplay_school_hoodie_socks", "m_cosplay_school_hoodie_shoes")
+		else
+			if allow_bra
+				EquipCosplay("m_cosplay_general_upper_bra")
+			if allow_panties
+				EquipCosplay("m_cosplay_general_upper_ultimate_pants")
+			if allow_necktie
+				EquipCosplay("m_cosplay_school_hoodie_necktie")
+			if allow_hoodie
+				EquipCosplay("m_cosplay_school_hoodie_hoodie")
+			if allow_shirt
+				EquipCosplay("m_cosplay_school_hoodie_shirt")
+			if allow_skirt
+				EquipCosplay("m_cosplay_school_hoodie_skirt")
+			if allow_socks
+				EquipCosplay("m_cosplay_school_hoodie_socks")
+			if allow_shoes
+				EquipCosplay("m_cosplay_school_hoodie_shoes")
+
+	ForceAllowedOutfit:
+		if always_naked == false && mission_preparing == false
+			outfit_lock_timer = outfit_lock_timer + _timediff
+			if outfit_lock_timer >= 1
+				# Town Inspector pattern: only rebuild the outfit when an allowed piece is missing.
+				missing_required = false
+				if allow_bra && condition_bra.Check() == false
+					missing_required = true
+				if allow_panties && condition_panties.Check() == false
+					missing_required = true
+				if allow_necktie && condition_necktie.Check() == false
+					missing_required = true
+				if allow_hoodie && condition_hoodie.Check() == false
+					missing_required = true
+				if allow_shirt && condition_shirt.Check() == false
+					missing_required = true
+				if allow_skirt && condition_skirt.Check() == false
+					missing_required = true
+				if allow_socks && condition_socks.Check() == false
+					missing_required = true
+				if allow_shoes && condition_shoes.Check() == false
+					missing_required = true
+				if missing_required
+					UnequipAllCosplay()
+					EquipAllowedOutfit()
+				outfit_lock_timer = 0
+
+	RemoveTwoOutfitItems:
+		if always_naked == false
+			remove_count = 0
+			while remove_count < 2 && outfit_remaining.Count() > 0
+				remove_index = RandomInt(0, outfit_remaining.Count() - 1)
+				remove_item = outfit_remaining[remove_index]
+				UnequipCosplay(remove_item)
+				if remove_item == "m_cosplay_general_upper_bra"
+					allow_bra = false
+				elseif remove_item == "m_cosplay_general_upper_ultimate_pants"
+					allow_panties = false
+				elseif remove_item == "m_cosplay_school_hoodie_necktie"
+					allow_necktie = false
+				elseif remove_item == "m_cosplay_school_hoodie_hoodie"
+					allow_hoodie = false
+				elseif remove_item == "m_cosplay_school_hoodie_shirt"
+					allow_shirt = false
+				elseif remove_item == "m_cosplay_school_hoodie_skirt"
+					allow_skirt = false
+				elseif remove_item == "m_cosplay_school_hoodie_socks"
+					allow_socks = false
+				elseif remove_item == "m_cosplay_school_hoodie_shoes"
+					allow_shoes = false
+				outfit_remaining.Remove(remove_index)
+				remove_count = remove_count + 1
+
+	ShowAllUnfinishedZones:
+		if done1
+			location1_zone.SetVisible(false)
+		else
+			location1_zone.SetVisible(true)
+		if done2
+			location2_zone.SetVisible(false)
+		else
+			location2_zone.SetVisible(true)
+		if done3
+			location3_zone.SetVisible(false)
+		else
+			location3_zone.SetVisible(true)
+		if done4
+			location4_zone.SetVisible(false)
+		else
+			location4_zone.SetVisible(true)
+		if done5
+			location5_zone.SetVisible(false)
+		else
+			location5_zone.SetVisible(true)
+		if done6
+			location6_zone.SetVisible(false)
+		else
+			location6_zone.SetVisible(true)
+
+	HideAllZones:
+		location1_zone.SetVisible(false)
+		location2_zone.SetVisible(false)
+		location3_zone.SetVisible(false)
+		location4_zone.SetVisible(false)
+		location5_zone.SetVisible(false)
+		location6_zone.SetVisible(false)
+
+	HideLocationPanels:
+		location1_panel.SetVisible(false)
+		location1_panel.SetGaugeProgress(0)
+		location1_panel.SetRPText("")
+		location2_panel.SetVisible(false)
+		location2_panel.SetGaugeProgress(0)
+		location2_panel.SetRPText("")
+		location3_panel.SetVisible(false)
+		location3_panel.SetGaugeProgress(0)
+		location3_panel.SetRPText("")
+		location4_panel.SetVisible(false)
+		location4_panel.SetGaugeProgress(0)
+		location4_panel.SetRPText("")
+		location5_panel.SetVisible(false)
+		location5_panel.SetGaugeProgress(0)
+		location5_panel.SetRPText("")
+		location6_panel.SetVisible(false)
+		location6_panel.SetGaugeProgress(0)
+		location6_panel.SetRPText("")
+
+	ResetMissionState:
+		mission_active = false
+		mission_preparing = false
+		prepare_step = 0
+		prepare_timer = 0
+		progress = 0
+		outfit_lock_timer = 0
+		HideAllZones()
+		HideLocationPanels()
+		main_panel.SetVisible(false)
+		main_panel.SetGaugeProgress(0)
+		main_panel.SetRPText("")
+
+	CleanupMissionOutfit:
+		UnequipCosplay("m_cosplay_general_upper_bra", "m_cosplay_general_upper_ultimate_pants", "m_cosplay_school_hoodie_necktie", "m_cosplay_school_hoodie_hoodie", "m_cosplay_school_hoodie_shirt", "m_cosplay_school_hoodie_skirt", "m_cosplay_school_hoodie_socks", "m_cosplay_school_hoodie_shoes")
+
+	CleanupMissionRuntime:
+		if mission_active || mission_preparing || coat_moved
+			CleanupMissionOutfit()
+			RestoreCoat()
+		ResetMissionState()
+
+	FinishMission:
+		AddCurrentEarnRP(150)
+		manaka_points.Add(amount=locked_mp_reward)
+		mainthread.UpdateHub()
+		reward_overlay.Clear()
+		reward_overlay.Add(text="150 RP + " + locked_mp_reward + " Manaka Points Added")
+		reward_overlay_timer = 5
+		_save.ManakaPlusV2ResidenceAnnoyingNeighborCompleted = true
+		CleanupMissionOutfit()
+		RestoreCoat()
+		ResetMissionState()
+		ShowAnnoyingDetails()
+
+	UpdateMission:
+		main_panel.SetText("" + progress + "/6 个地点已完成")
+		main_panel.SetGaugeProgress(progress / 6.0)
+		main_panel.SetVisible(true)
+		ShowAllUnfinishedZones()
+		ForceAllowedOutfit()
+
+		# House 1.
+		if done1 == false && location1_zone.Inside()
+			location1_panel.SetText("按响门铃，并且不要离开区域")
+			location1_panel.SetVisible(true)
+			if condition_bell.Check()
+				if rung1 == false
+					RemoveTwoOutfitItems()
+					rung1 = true
+				armed1 = true
+			if armed1
+				timer1 = timer1 + _timediff
+			location1_panel.SetGaugeProgress(timer1 / selected_time)
+			location1_panel.SetRPText("" + Floor(timer1) + "/" + selected_time + "秒")
+			if timer1 >= selected_time
+				done1 = true
+				armed1 = false
+				location1_zone.SetVisible(false)
+				location1_panel.SetVisible(false)
+				progress = progress + 1
+		else
+			location1_panel.SetVisible(false)
+			if armed1
+				armed1 = false
+				if interruptible == false
+					timer1 = 0
+
+		# House 2.
+		if done2 == false && location2_zone.Inside()
+			location2_panel.SetText("按响门铃，并且不要离开区域")
+			location2_panel.SetVisible(true)
+			if condition_bell.Check()
+				if rung2 == false
+					RemoveTwoOutfitItems()
+					rung2 = true
+				armed2 = true
+			if armed2
+				timer2 = timer2 + _timediff
+			location2_panel.SetGaugeProgress(timer2 / selected_time)
+			location2_panel.SetRPText("" + Floor(timer2) + "/" + selected_time + "秒")
+			if timer2 >= selected_time
+				done2 = true
+				armed2 = false
+				location2_zone.SetVisible(false)
+				location2_panel.SetVisible(false)
+				progress = progress + 1
+		else
+			location2_panel.SetVisible(false)
+			if armed2
+				armed2 = false
+				if interruptible == false
+					timer2 = 0
+
+		# House 3.
+		if done3 == false && location3_zone.Inside()
+			location3_panel.SetText("按响门铃，并且不要离开区域")
+			location3_panel.SetVisible(true)
+			if condition_bell.Check()
+				if rung3 == false
+					RemoveTwoOutfitItems()
+					rung3 = true
+				armed3 = true
+			if armed3
+				timer3 = timer3 + _timediff
+			location3_panel.SetGaugeProgress(timer3 / selected_time)
+			location3_panel.SetRPText("" + Floor(timer3) + "/" + selected_time + "秒")
+			if timer3 >= selected_time
+				done3 = true
+				armed3 = false
+				location3_zone.SetVisible(false)
+				location3_panel.SetVisible(false)
+				progress = progress + 1
+		else
+			location3_panel.SetVisible(false)
+			if armed3
+				armed3 = false
+				if interruptible == false
+					timer3 = 0
+
+		# House 4.
+		if done4 == false && location4_zone.Inside()
+			location4_panel.SetText("按响门铃，并且不要离开区域")
+			location4_panel.SetVisible(true)
+			if condition_bell.Check()
+				if rung4 == false
+					RemoveTwoOutfitItems()
+					rung4 = true
+				armed4 = true
+			if armed4
+				timer4 = timer4 + _timediff
+			location4_panel.SetGaugeProgress(timer4 / selected_time)
+			location4_panel.SetRPText("" + Floor(timer4) + "/" + selected_time + "秒")
+			if timer4 >= selected_time
+				done4 = true
+				armed4 = false
+				location4_zone.SetVisible(false)
+				location4_panel.SetVisible(false)
+				progress = progress + 1
+		else
+			location4_panel.SetVisible(false)
+			if armed4
+				armed4 = false
+				if interruptible == false
+					timer4 = 0
+
+		# House 5.
+		if done5 == false && location5_zone.Inside()
+			location5_panel.SetText("按响门铃，并且不要离开区域")
+			location5_panel.SetVisible(true)
+			if condition_bell.Check()
+				if rung5 == false
+					RemoveTwoOutfitItems()
+					rung5 = true
+				armed5 = true
+			if armed5
+				timer5 = timer5 + _timediff
+			location5_panel.SetGaugeProgress(timer5 / selected_time)
+			location5_panel.SetRPText("" + Floor(timer5) + "/" + selected_time + "秒")
+			if timer5 >= selected_time
+				done5 = true
+				armed5 = false
+				location5_zone.SetVisible(false)
+				location5_panel.SetVisible(false)
+				progress = progress + 1
+		else
+			location5_panel.SetVisible(false)
+			if armed5
+				armed5 = false
+				if interruptible == false
+					timer5 = 0
+
+		# House 6.
+		if done6 == false && location6_zone.Inside()
+			location6_panel.SetText("按响门铃，并且不要离开区域")
+			location6_panel.SetVisible(true)
+			if condition_bell.Check()
+				if rung6 == false
+					RemoveTwoOutfitItems()
+					rung6 = true
+				armed6 = true
+			if armed6
+				timer6 = timer6 + _timediff
+			location6_panel.SetGaugeProgress(timer6 / selected_time)
+			location6_panel.SetRPText("" + Floor(timer6) + "/" + selected_time + "秒")
+			if timer6 >= selected_time
+				done6 = true
+				armed6 = false
+				location6_zone.SetVisible(false)
+				location6_panel.SetVisible(false)
+				progress = progress + 1
+		else
+			location6_panel.SetVisible(false)
+			if armed6
+				armed6 = false
+				if interruptible == false
+					timer6 = 0
+
+		main_panel.SetText("" + progress + "/6 个地点已完成")
+		main_panel.SetGaugeProgress(progress / 6.0)
+		if progress >= 6 && mission_active
+			FinishMission()
+
+
+	update:
+		if reward_overlay_timer > 0
+			reward_overlay_timer = reward_overlay_timer - _timediff
+			if reward_overlay_timer <= 0
+				reward_overlay.Clear()
+
+		if active && contact != null
+			opened = contact.Opened()
+			if opened && contact_was_open == false
+				ShowMainMenu()
+			contact_was_open = opened
+
+			clicked = contact.Clicked()
+			if clicked != null
+				if menu_state == "main"
+					if clicked == "annoying"
+						ShowAnnoyingDetails()
+					elseif clicked == "teleporting"
+						ShowTeleportingDetails()
+					elseif clicked == "home_sweet_home"
+						ShowHomeSweetHomeDetails()
+				elseif menu_state == "annoying_details"
+					if clicked == "start"
+						BeginMission()
+					elseif clicked == "difficulty"
+						ShowAnnoyingDifficulty()
+					elseif clicked == "return"
+						ShowMainMenu()
+				elseif menu_state == "annoying_difficulty"
+					if clicked == "time"
+						CycleTime()
+					elseif clicked == "naked"
+						ToggleNaked()
+					elseif clicked == "interruptible"
+						ToggleInterruptible()
+					elseif clicked == "return"
+						ShowAnnoyingDetails()
+				elseif menu_state == "home_sweet_home_details"
+					if clicked == "start"
+						StartHomeSweetHome()
+					elseif clicked == "difficulty"
+						home_sweet_home.CycleDifficulty()
+						ShowHomeSweetHomeDetails()
+					elseif clicked == "punishment"
+						home_sweet_home.TogglePunishment()
+						ShowHomeSweetHomeDetails()
+					elseif clicked == "return"
+						ShowMainMenu()
+				elseif menu_state == "home_sweet_home_complete"
+					ShowHomeSweetHomeDetails()
+				elseif menu_state == "teleport_details"
+					if clicked == "start"
+						StartTeleportingMission()
+					elseif clicked == "difficulty"
+						ShowTeleportingDifficulty()
+					elseif clicked == "rules"
+						ShowTeleportingRules()
+					elseif clicked == "return"
+						ShowMainMenu()
+				elseif menu_state == "teleport_difficulty"
+					if clicked == "rounds"
+						teleporting.CycleRounds()
+						ShowTeleportingDifficulty()
+					elseif clicked == "interval"
+						teleporting.CycleTeleportInterval()
+						ShowTeleportingDifficulty()
+					elseif clicked == "start_energy"
+						teleporting.CycleStartingEnergy()
+						ShowTeleportingDifficulty()
+					elseif clicked == "max_energy"
+						teleporting.CycleMaxEnergy()
+						ShowTeleportingDifficulty()
+					elseif clicked == "rp_energy"
+						teleporting.CycleRPEnergyGain()
+						ShowTeleportingDifficulty()
+					elseif clicked == "rp_required"
+						teleporting.CycleRPRequired()
+						ShowTeleportingDifficulty()
+					elseif clicked == "return"
+						ShowTeleportingDetails()
+				elseif menu_state == "teleport_rules"
+					ShowTeleportingDetails()
+				elseif menu_state == "teleport_complete"
+					ShowTeleportingDetails()
+
+		if active && teleporting.ConsumeCompleted()
+			ShowTeleportingComplete()
+
+		if active && home_sweet_home.ConsumeCompleted()
+			ShowHomeSweetHomeComplete()
+
+		if active && mission_active
+			if mission_preparing
+				PrepareMission()
+			else
+				UpdateMission()
+
+# ============================================================
+# RESIDENCE TELEPORTING
+# ============================================================
+manakaplus_v22_residence_teleporting:
+	thread = _this
+
+	# Difficulty-ready defaults. These values can be changed by the future Difficulty menu.
+	tm_total_rounds = 10
+	tm_endless = false
+	tm_prepare_duration = 15
+	tm_teleport_duration = 45
+	tm_start_energy = 72
+	tm_max_energy = 120
+	tm_teleport_cost = 24
+	tm_rp_required = 40
+	tm_rp_energy_gain = 8
+	tm_instant_time_bonus = 15
+
+	tm_active = false
+	tm_completed_signal = false
+	tm_energy = 0
+	tm_round = 0
+	tm_time_left = 0
+	tm_current_zone = 0
+	tm_zone_grace = 0
+	tm_rp_bank = 0
+	tm_rp_last_total = 0
+	tm_overlay_timer = 0
+	tm_overlay_flip = 0
+	tm_force_timer = 0
+	tm_coat_displaced = false
+	tm_coat_punished_ever = false
+	tm_remote_displaced = false
+	tm_remote_punished_ever = false
+	tm_remote_move_pending = false
+	tm_remote_drop_index = 0
+	tm_vibrator_forced = false
+	tm_vibrator_applied = false
+	tm_eyemask_forced = false
+	tm_coat_drop_index = 0
+	tm_instant_multiplier = 1.2
+	tm_special_visible = true
+	tm_special_overlay_flip = 0
+	tm_naked_recharge_timer = 0
+	tm_peeing_recharge_timer = 0
+	tm_orgasm_was_active = false
+	tm_first_normal_free = false
+	tm_daylight_start = false
+	tm_difficulty_mp_bonus = 0
+	tm_endless_completed_rounds = 0
+	tm_endless_rp_reward = 0
+	tm_endless_mp_reward = 0
+	tm_finish_message = ""
+	tm_accumulator_timer = 0
+
+	manaka_points = CreateThread("manakaplus_v22_manaka_points")
+
+	tm_condition_coat = CreateCondition("[(CoatFrontClosed,CoatFrontOpen1,CoatFrontOpen2,CoatBackClosed,CoatBackOpen)]")
+	tm_condition_remote = CreateCondition("[Item_VibeRemocon]")
+	tm_condition_vibrator = CreateCondition("[AdultToy_Vibrator]")
+	tm_condition_eyemask = CreateCondition("[AdultToy_EyeMask]")
+	tm_condition_naked = CreateCondition("[Exposed_All]")
+	tm_condition_peeing = CreateCondition("[Peeing]")
+	tm_condition_orgasm = CreateCondition("[Orgasm]")
+	tm_condition_handcuffs_back = CreateCondition("[HandcuffsBack]")
+	tm_condition_daytime = CreateCondition("[IsDayTime]")
+	tm_input_special_toggle = CreateInput("<Keyboard>/leftBracket")
+	tm_input_instant_teleport = CreateInput("<Keyboard>/rightBracket")
+	tm_input_endless_cancel = CreateInput("<Keyboard>/backslash")
+
+	# Low Risk locations.
+	tm_area3 = CreateArea(type="sphere", stage="Residence", x=-40.58, y=-0.10, z=-104.01, r=2.5, outline=true, compass=false)
+	tm_zone3 = CreateZone(tm_area3)
+	tm_zone3.SetVisible(false)
+	tm_zone3.SetColor(0.2,1,0.2)
+
+	tm_area9 = CreateArea(type="sphere", stage="Residence", x=29.28, y=-0.11, z=-102.21, r=2, outline=true, compass=false)
+	tm_zone9 = CreateZone(tm_area9)
+	tm_zone9.SetVisible(false)
+	tm_zone9.SetColor(0.2,1,0.2)
+
+	tm_area13 = CreateArea(type="sphere", stage="Residence", x=1.49, y=-0.11, z=-105.78, r=2.5, outline=true, compass=false)
+	tm_zone13 = CreateZone(tm_area13)
+	tm_zone13.SetVisible(false)
+	tm_zone13.SetColor(0.2,1,0.2)
+
+	# Medium Risk locations.
+	tm_area1 = CreateArea(type="sphere", stage="Residence", x=-26.31, y=-0.10, z=-101.28, r=2.5, outline=true, compass=false)
+	tm_zone1 = CreateZone(tm_area1)
+	tm_zone1.SetVisible(false)
+	tm_zone1.SetColor(1,0.65,0.2)
+
+	tm_area2 = CreateArea(type="sphere", stage="Residence", x=-5.20, y=-0.10, z=-101.20, r=2.5, outline=true, compass=false)
+	tm_zone2 = CreateZone(tm_area2)
+	tm_zone2.SetVisible(false)
+	tm_zone2.SetColor(1,0.65,0.2)
+
+	tm_area7 = CreateArea(type="sphere", stage="Residence", x=33.05, y=-0.22, z=-121.51, r=3.5, outline=true, compass=false)
+	tm_zone7 = CreateZone(tm_area7)
+	tm_zone7.SetVisible(false)
+	tm_zone7.SetColor(1,0.65,0.2)
+
+	tm_area10 = CreateArea(type="sphere", stage="Residence", x=8.77, y=-0.11, z=-89.25, r=2.5, outline=true, compass=false)
+	tm_zone10 = CreateZone(tm_area10)
+	tm_zone10.SetVisible(false)
+	tm_zone10.SetColor(1,0.65,0.2)
+
+	tm_area11 = CreateArea(type="sphere", stage="Residence", x=-11.94, y=-0.10, z=-88.40, r=3, outline=true, compass=false)
+	tm_zone11 = CreateZone(tm_area11)
+	tm_zone11.SetVisible(false)
+	tm_zone11.SetColor(1,0.65,0.2)
+
+	tm_area12 = CreateArea(type="sphere", stage="Residence", x=-5.33, y=-0.10, z=-112.68, r=2.5, outline=true, compass=false)
+	tm_zone12 = CreateZone(tm_area12)
+	tm_zone12.SetVisible(false)
+	tm_zone12.SetColor(1,0.65,0.2)
+
+	tm_area15 = CreateArea(type="sphere", stage="Residence", x=8.85, y=-0.10, z=-120.83, r=2.5, outline=true, compass=false)
+	tm_zone15 = CreateZone(tm_area15)
+	tm_zone15.SetVisible(false)
+	tm_zone15.SetColor(1,0.65,0.2)
+
+	tm_area16 = CreateArea(type="sphere", stage="Residence", x=-10.33, y=-0.09, z=-127.38, r=2.5, outline=true, compass=false)
+	tm_zone16 = CreateZone(tm_area16)
+	tm_zone16.SetVisible(false)
+	tm_zone16.SetColor(1,0.65,0.2)
+
+	# High Risk locations.
+	tm_area4 = CreateArea(type="sphere", stage="Residence", x=-35.56, y=-0.10, z=-73.22, r=3, outline=true, compass=false)
+	tm_zone4 = CreateZone(tm_area4)
+	tm_zone4.SetVisible(false)
+	tm_zone4.SetColor(1,0.2,0.2)
+
+	tm_area5 = CreateArea(type="sphere", stage="Residence", x=9.17, y=-0.10, z=-78.70, r=2.5, outline=true, compass=false)
+	tm_zone5 = CreateZone(tm_area5)
+	tm_zone5.SetVisible(false)
+	tm_zone5.SetColor(1,0.2,0.2)
+
+	tm_area6 = CreateArea(type="sphere", stage="Residence", x=8.47, y=-0.10, z=-102.42, r=3, outline=true, compass=false)
+	tm_zone6 = CreateZone(tm_area6)
+	tm_zone6.SetVisible(false)
+	tm_zone6.SetColor(1,0.2,0.2)
+
+	tm_area8 = CreateArea(type="sphere", stage="Residence", x=33.18, y=-0.22, z=-78.91, r=3.5, outline=true, compass=false)
+	tm_zone8 = CreateZone(tm_area8)
+	tm_zone8.SetVisible(false)
+	tm_zone8.SetColor(1,0.2,0.2)
+
+	tm_area14 = CreateArea(type="sphere", stage="Residence", x=-9.57, y=-0.10, z=-78.74, r=2.5, outline=true, compass=false)
+	tm_zone14 = CreateZone(tm_area14)
+	tm_zone14.SetVisible(false)
+	tm_zone14.SetColor(1,0.2,0.2)
+
+	# Safe preparation location.
+	tm_area17 = CreateArea(type="sphere", stage="Residence", x=-30.28, y=-0.11, z=-111.89, r=2, outline=true, compass=false)
+	tm_zone17 = CreateZone(tm_area17)
+	tm_zone17.SetVisible(false)
+	tm_zone17.SetColor(0.2,0.65,1)
+
+	# Dynamic upper-left Energy overlay.
+	tm_energy_overlay = CreateText()
+	tm_energy_overlay.SetAnchor(0.11, 0.935)
+	tm_energy_overlay.SetAlignment("TopLeft")
+	tm_energy_overlay.SetSize(27)
+	tm_energy_overlay.SetWidth(520)
+	tm_energy_overlay.SetFace(dilate=0.3)
+	tm_energy_overlay.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.3)
+	tm_energy_overlay.SetFrontLayer(true)
+	tm_energy_overlay.Clear()
+
+	tm_energy_overlay_alt = CreateText()
+	tm_energy_overlay_alt.SetAnchor(0.11, 0.935)
+	tm_energy_overlay_alt.SetAlignment("TopLeft")
+	tm_energy_overlay_alt.SetSize(27)
+	tm_energy_overlay_alt.SetWidth(520)
+	tm_energy_overlay_alt.SetFace(dilate=0.3)
+	tm_energy_overlay_alt.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.3)
+	tm_energy_overlay_alt.SetFrontLayer(true)
+	tm_energy_overlay_alt.Clear()
+
+	# Dynamic top-center Round and countdown overlay.
+	tm_status_overlay = CreateText()
+	tm_status_overlay.SetAnchor(0.51, 0.90)
+	tm_status_overlay.SetAlignment("Top")
+	tm_status_overlay.SetSize(25)
+	tm_status_overlay.SetWidth(500)
+	tm_status_overlay.SetFace(dilate=0.3)
+	tm_status_overlay.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.3)
+	tm_status_overlay.SetFrontLayer(true)
+	tm_status_overlay.Clear()
+
+	tm_status_overlay_alt = CreateText()
+	tm_status_overlay_alt.SetAnchor(0.51, 0.90)
+	tm_status_overlay_alt.SetAlignment("Top")
+	tm_status_overlay_alt.SetSize(25)
+	tm_status_overlay_alt.SetWidth(500)
+	tm_status_overlay_alt.SetFace(dilate=0.3)
+	tm_status_overlay_alt.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.3)
+	tm_status_overlay_alt.SetFrontLayer(true)
+	tm_status_overlay_alt.Clear()
+
+	# Reserved blue-zone overlay for future special location missions.
+	tm_special_overlay = CreateText()
+	tm_special_overlay.SetAnchor(0.04, 0.82)
+	tm_special_overlay.SetAlignment("TopLeft")
+	tm_special_overlay.SetSize(24)
+	tm_special_overlay.SetWidth(620)
+	tm_special_overlay.SetFace(dilate=0.3)
+	tm_special_overlay.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.3)
+	tm_special_overlay.SetFrontLayer(true)
+	tm_special_overlay.Clear()
+
+	tm_special_overlay_alt = CreateText()
+	tm_special_overlay_alt.SetAnchor(0.04, 0.82)
+	tm_special_overlay_alt.SetAlignment("TopLeft")
+	tm_special_overlay_alt.SetSize(24)
+	tm_special_overlay_alt.SetWidth(620)
+	tm_special_overlay_alt.SetFace(dilate=0.3)
+	tm_special_overlay_alt.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.3)
+	tm_special_overlay_alt.SetFrontLayer(true)
+	tm_special_overlay_alt.Clear()
+
+	tm_reward_overlay_timer = 0
+	tm_reward_overlay = CreateText()
+	tm_reward_overlay.SetAnchor(0.5, 0.5)
+	tm_reward_overlay.SetAlignment("Top")
+	tm_reward_overlay.SetSize(36)
+	tm_reward_overlay.SetWidth(1200)
+	tm_reward_overlay.SetFace(color=Color(1,1,1,1), dilate=0.35)
+	tm_reward_overlay.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.35)
+	tm_reward_overlay.SetFrontLayer(true)
+	tm_reward_overlay.Clear()
+
+	tm_listener = CreateListenerLocal("update")
+	Log("ManakaPlus v2: Teleporting Madness module loaded.")
+
+	Start:
+		CleanupRuntime()
+		tm_active = true
+		tm_completed_signal = false
+		tm_finish_message = ""
+		tm_energy = tm_start_energy
+		effective_max_energy = GetEffectiveMaxEnergy()
+		if tm_energy > effective_max_energy
+			tm_energy = effective_max_energy
+		tm_round = 0
+		tm_time_left = tm_prepare_duration
+		tm_current_zone = 17
+		tm_zone_grace = 0.75
+		tm_rp_bank = 0
+		tm_rp_last_total = GetCurrentEarnRP()
+		tm_overlay_timer = 0
+		tm_overlay_flip = 0
+		tm_force_timer = 0
+		tm_coat_displaced = false
+		tm_coat_punished_ever = false
+		tm_remote_displaced = false
+		tm_remote_punished_ever = false
+		tm_remote_move_pending = false
+		tm_remote_drop_index = 0
+		tm_vibrator_forced = false
+		tm_vibrator_applied = false
+		tm_eyemask_forced = false
+		tm_coat_drop_index = 0
+		tm_instant_multiplier = 1.2
+		tm_special_visible = true
+		tm_special_overlay_flip = 0
+		tm_naked_recharge_timer = 0
+		tm_peeing_recharge_timer = 0
+		tm_accumulator_timer = 0
+		tm_orgasm_was_active = tm_condition_orgasm.Check()
+		tm_first_normal_free = true
+		tm_daylight_start = tm_condition_daytime.Check()
+		tm_difficulty_mp_bonus = GetTotalMPBonus()
+		tm_endless_completed_rounds = 0
+		tm_endless_rp_reward = 0
+		tm_endless_mp_reward = 0
+		HideAllZones()
+		safe_position = GetZonePosition(index=17)
+		SetPlayerPosition(position=safe_position)
+		tm_zone17.SetVisible(true)
+		UpdateOverlays()
+		UpdateSpecialOverlay()
+
+	Reset:
+		tm_active = false
+		tm_reward_overlay_timer = 0
+		tm_reward_overlay.Clear()
+		tm_completed_signal = false
+		tm_finish_message = ""
+		CleanupRuntime()
+
+	ResetDifficulty:
+		tm_total_rounds = 10
+		tm_endless = false
+		tm_teleport_duration = 45
+		tm_start_energy = 72
+		tm_max_energy = 120
+		tm_rp_required = 40
+		tm_rp_energy_gain = 8
+
+	IsActive:
+		_result = tm_active
+
+	ConsumeCompleted:
+		_result = tm_completed_signal
+		tm_completed_signal = false
+
+	GetFinishMessage:
+		_result = tm_finish_message
+
+	GlobalCancel:
+		if tm_active
+			if tm_endless
+				EndEndlessMission()
+			else
+				tm_active = false
+				CleanupRuntime()
+
+	GetMissionText:
+		if tm_endless
+			_result = "在各区域间随机传送，并且不能离开传送区域。谨慎计算能量，尽可能坚持更多轮次\n奖励：根据完成轮数计算"
+		else
+			_result = "在各区域间随机传送，并且不能离开传送区域。谨慎计算能量并坚持 " + tm_total_rounds + " 轮\n奖励：150 RP + 150 Manaka 点数"
+
+	GetRulesText:
+		_result = "屏幕左上角会出现名为“传送能量（TE）”的新界面，默认初始值为 72\n\n每次普通传送消耗 " + tm_teleport_cost + " 点传送能量，初始安全区倒计时与第一次普通传送免费\n\n传送地点分为低、中、高风险三组。能量越少，被传送到高风险地点的概率越高\n\n如果能量不足以支付普通传送，你会受到惩罚并被送往随机高风险地点\n\n普通传送默认每 45 秒发生一次，可在难度菜单中调整\n\n你可以通过正常赚取 RP 或完成特殊任务恢复能量\n\n即时传送会额外消耗能量，并使当前传送计时增加 " + tm_instant_time_bonus + " 秒。连续使用会提高能量费用，直到下一次普通传送发生\n\n按 [ 显示或隐藏特殊任务\n按 ] 立即传送\n按 \\ 结束无限模式并结算奖励\n\n坚持完成全部轮次即可完成任务，祝你好运！"
+
+	GetDifficultyText:
+		text = "Manaka 点数总加成：" + GetTotalMPBonus() + " MP\n白天加成：50 Manaka 点数"
+		if tm_endless
+			text = text + "\n\n无限模式会根据完成轮数给予奖励，从第 16 轮开始奖励提高\n\n使用 ManakaPlus v2 > 取消当前任务，或按 \\ 结束无限模式并结算全部累计奖励。白天与难度的 Manaka 点数加成仅在完成至少 10 轮后发放"
+		_result = text
+
+	GetRoundsLabel:
+		if tm_endless
+			_result = "轮数：无限"
+		else
+			_result = "轮数：" + tm_total_rounds
+
+	GetTeleportIntervalLabel:
+		_result = "传送间隔：" + tm_teleport_duration + " 秒"
+
+	GetStartingEnergyLabel:
+		_result = "初始能量：" + tm_start_energy
+
+	GetMaxEnergyLabel:
+		_result = "最大能量：" + tm_max_energy
+
+	GetRPEnergyLabel:
+		_result = "每获得 RP：+" + tm_rp_energy_gain
+
+	GetRPRequiredLabel:
+		_result = "每获得 " + tm_rp_required + " RP"
+
+	CycleRounds:
+		if tm_endless
+			tm_endless = false
+			tm_total_rounds = 5
+		elseif tm_total_rounds == 5
+			tm_total_rounds = 10
+		elseif tm_total_rounds == 10
+			tm_total_rounds = 15
+		else
+			tm_endless = true
+
+	CycleTeleportInterval:
+		if tm_teleport_duration >= 60
+			tm_teleport_duration = 15
+		else
+			tm_teleport_duration = tm_teleport_duration + 5
+
+	CycleStartingEnergy:
+		if tm_start_energy == 24
+			tm_start_energy = 48
+		elseif tm_start_energy == 48
+			tm_start_energy = 72
+		elseif tm_start_energy == 72
+			tm_start_energy = 96
+		else
+			tm_start_energy = 24
+
+	CycleMaxEnergy:
+		if tm_max_energy >= 192
+			tm_max_energy = 48
+		else
+			tm_max_energy = tm_max_energy + 24
+
+	CycleRPEnergyGain:
+		if tm_rp_energy_gain == 4
+			tm_rp_energy_gain = 6
+		elseif tm_rp_energy_gain == 6
+			tm_rp_energy_gain = 8
+		elseif tm_rp_energy_gain == 8
+			tm_rp_energy_gain = 10
+		elseif tm_rp_energy_gain == 10
+			tm_rp_energy_gain = 12
+		else
+			tm_rp_energy_gain = 4
+
+	CycleRPRequired:
+		if tm_rp_required >= 80
+			tm_rp_required = 20
+		else
+			tm_rp_required = tm_rp_required + 10
+
+	GetTotalMPBonus:
+		bonus = 0
+		if tm_endless == false && tm_total_rounds == 15
+			bonus = bonus + 50
+		if tm_teleport_duration <= 40
+			bonus = bonus + ((45 - tm_teleport_duration) / 5) * 30
+		if tm_start_energy == 48
+			bonus = bonus + 20
+		elseif tm_start_energy == 24
+			bonus = bonus + 40
+		if tm_max_energy == 96
+			bonus = bonus + 30
+		elseif tm_max_energy == 72
+			bonus = bonus + 60
+		elseif tm_max_energy == 48
+			bonus = bonus + 90
+		if tm_rp_energy_gain == 6
+			bonus = bonus + 30
+		elseif tm_rp_energy_gain == 4
+			bonus = bonus + 60
+		if tm_rp_required == 50
+			bonus = bonus + 30
+		elseif tm_rp_required == 60
+			bonus = bonus + 60
+		elseif tm_rp_required == 70
+			bonus = bonus + 90
+		elseif tm_rp_required == 80
+			bonus = bonus + 120
+		_result = Floor(bonus)
+
+	ShowRewardOverlay:
+		tm_reward_overlay.Clear()
+		tm_reward_overlay.Add(text="" + Floor(reward_rp) + " RP + " + Floor(reward_mp) + " Manaka Points Added")
+		tm_reward_overlay_timer = 5
+
+	CleanupRuntime:
+		HideAllZones()
+		ClearOverlays()
+		RestoreMissionItems()
+		SetVibrator("Off")
+		if tm_vibrator_applied
+			UnequipAdultToy("Vibrator")
+		if tm_eyemask_forced
+			UnequipAdultToy("EyeMask")
+		SetVibrator("Off")
+		tm_vibrator_forced = false
+		tm_vibrator_applied = false
+		tm_eyemask_forced = false
+		tm_remote_move_pending = false
+		tm_remote_drop_index = 0
+		tm_coat_drop_index = 0
+		tm_instant_multiplier = 1.2
+		tm_special_visible = true
+		tm_special_overlay_flip = 0
+		tm_naked_recharge_timer = 0
+		tm_peeing_recharge_timer = 0
+		tm_accumulator_timer = 0
+		tm_orgasm_was_active = false
+		tm_first_normal_free = false
+		tm_current_zone = 0
+		tm_zone_grace = 0
+
+	RestoreMissionItems:
+		if tm_coat_punished_ever
+			if tm_condition_coat.Check() == false
+				coat_collected = CollectItem(itemtype="Coat")
+				if coat_collected
+					coat_return_position = CreateList(stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y, z=_state.Position.z, rx=0, ry=0, rz=0, rw=1)
+					DropItem(itemtype="Coat", position=coat_return_position, compass=false)
+			tm_coat_displaced = false
+			tm_coat_punished_ever = false
+			tm_coat_drop_index = 0
+		if tm_remote_punished_ever
+			if tm_condition_remote.Check() == false
+				CollectItem(itemtype="VibeRemocon")
+			tm_remote_displaced = false
+			tm_remote_punished_ever = false
+
+	FinishMission:
+		reward_mp = 150 + tm_difficulty_mp_bonus
+		if tm_daylight_start
+			reward_mp = reward_mp + 50
+		AddCurrentEarnRP(150)
+		manaka_points.Add(amount=reward_mp)
+		mainthread.UpdateHub()
+		ShowRewardOverlay(reward_rp=150, reward_mp=reward_mp)
+		_save.ManakaPlusV2ResidenceTeleportingMadnessCompleted = true
+		tm_finish_message = "传送狂乱已完成\n奖励：150 RP + " + reward_mp + " Manaka 点数"
+		tm_active = false
+		CleanupRuntime()
+		tm_completed_signal = true
+
+	CompleteEndlessRound:
+		while tm_endless_completed_rounds < tm_round
+			tm_endless_completed_rounds = tm_endless_completed_rounds + 1
+			if tm_endless_completed_rounds >= 16
+				tm_endless_rp_reward = tm_endless_rp_reward + 40
+				tm_endless_mp_reward = tm_endless_mp_reward + 30
+			else
+				tm_endless_rp_reward = tm_endless_rp_reward + 25
+				tm_endless_mp_reward = tm_endless_mp_reward + 20
+
+	EndEndlessMission:
+		if tm_active && tm_endless
+			reward_rp = tm_endless_rp_reward
+			reward_mp = tm_endless_mp_reward
+			if tm_endless_completed_rounds >= 10
+				reward_mp = reward_mp + tm_difficulty_mp_bonus
+				if tm_daylight_start
+					reward_mp = reward_mp + 50
+			AddCurrentEarnRP(reward_rp)
+			manaka_points.Add(amount=reward_mp)
+			mainthread.UpdateHub()
+			ShowRewardOverlay(reward_rp=reward_rp, reward_mp=reward_mp)
+			if tm_endless_completed_rounds >= 10
+				_save.ManakaPlusV2ResidenceTeleportingMadnessCompleted = true
+			tm_finish_message = "无限模式已结束，共完成 " + tm_endless_completed_rounds + " 轮\n奖励：" + reward_rp + " RP + " + reward_mp + " Manaka 点数"
+			tm_active = false
+			CleanupRuntime()
+			tm_completed_signal = true
+
+	IsTeleportSafetyChipEquipped:
+		_result = mainthread.IsShopItemEquipped(item="teleport_safety_chip")
+
+	IsEnergyOrgasmConverterEquipped:
+		_result = mainthread.IsShopItemEquipped(item="energy_orgasm_converter")
+
+	GetEffectiveMaxEnergy:
+		_result = tm_max_energy
+
+	GetEffectiveRPRequired:
+		_result = tm_rp_required
+
+	ProcessMissionItemEffects:
+		if tm_energy > tm_max_energy
+			tm_energy = tm_max_energy
+
+	ClearOverlays:
+		tm_energy_overlay.Clear()
+		tm_energy_overlay_alt.Clear()
+		tm_status_overlay.Clear()
+		tm_status_overlay_alt.Clear()
+		tm_special_overlay.Clear()
+		tm_special_overlay_alt.Clear()
+
+	UpdateOverlays:
+		time_display = Floor(tm_time_left + 0.999)
+		if time_display < 0
+			time_display = 0
+		energy_text = "Teleporting Energy: " + Floor(tm_energy)
+		if tm_endless
+			status_text = "Round: " + tm_round + " / Endless\nNext Teleport: " + time_display + "s"
+		else
+			status_text = "Round: " + tm_round + " / " + tm_total_rounds + "\nNext Teleport: " + time_display + "s"
+		if tm_overlay_flip == 0
+			tm_energy_overlay.Clear()
+			tm_energy_overlay_alt.Clear()
+			tm_status_overlay.Clear()
+			tm_status_overlay_alt.Clear()
+			tm_energy_overlay.Add(text=energy_text, duration=-1)
+			tm_status_overlay.Add(text=status_text, duration=-1)
+			tm_overlay_flip = 1
+		else
+			tm_energy_overlay.Clear()
+			tm_energy_overlay_alt.Clear()
+			tm_status_overlay.Clear()
+			tm_status_overlay_alt.Clear()
+			tm_energy_overlay_alt.Add(text=energy_text, duration=-1)
+			tm_status_overlay_alt.Add(text=status_text, duration=-1)
+			tm_overlay_flip = 0
+	UpdateSpecialOverlay:
+		tm_special_overlay.Clear()
+		tm_special_overlay_alt.Clear()
+		if tm_special_visible
+			orgasm_rule_text = "Orgasm: -12 TE\nSelf-handcuffed Orgasm: only -4 TE"
+			if IsEnergyOrgasmConverterEquipped()
+				orgasm_rule_text = "Orgasm: +2 TE (Energy Orgasm Converter)"
+			special_text = "Special Missions\nNaked: +1 TE every 3s\nNaked while the Coat is outside your zone: +1 TE every 2s\nDetection Risk 50% or lower: +1 TE per RP recharge\nDetection Risk above 50%: +2 TE per RP recharge\nPeeing: +1 TE every 3s\n" + orgasm_rule_text
+			if tm_endless
+				display_mp_reward = tm_endless_mp_reward
+				if tm_endless_completed_rounds >= 10
+					display_mp_reward = display_mp_reward + tm_difficulty_mp_bonus
+					if tm_daylight_start
+						display_mp_reward = display_mp_reward + 50
+				special_text = special_text + "\n\nTotal Rewards: " + tm_endless_rp_reward + " RP / " + display_mp_reward + " MP\nPress \\ or use ManakaPlus v2 > Cancel current Mission to end and collect."
+			if tm_special_overlay_flip == 0
+				tm_special_overlay.Add(text=special_text, duration=-1)
+				tm_special_overlay_flip = 1
+			else
+				tm_special_overlay_alt.Add(text=special_text, duration=-1)
+				tm_special_overlay_flip = 0
+	ToggleSpecialOverlay:
+		if tm_special_visible
+			tm_special_visible = false
+		else
+			tm_special_visible = true
+		UpdateSpecialOverlay()
+
+	ReleaseForcedEyeMask:
+		if tm_eyemask_forced
+			UnequipAdultToy("EyeMask")
+			tm_eyemask_forced = false
+
+	CoatOutsideCurrentZone:
+		_result = false
+		if tm_coat_displaced && tm_condition_coat.Check() == false && tm_coat_drop_index != tm_current_zone
+			_result = true
+
+	ProcessNakedRecharge:
+		if tm_condition_naked.Check()
+			recharge_interval = 3
+			if CoatOutsideCurrentZone()
+				recharge_interval = 2
+			tm_naked_recharge_timer = tm_naked_recharge_timer + _timediff
+			while tm_naked_recharge_timer >= recharge_interval
+				tm_naked_recharge_timer = tm_naked_recharge_timer - recharge_interval
+				tm_energy = tm_energy + 1
+				effective_max = GetEffectiveMaxEnergy()
+				if tm_energy > effective_max
+					tm_energy = effective_max
+		else
+			tm_naked_recharge_timer = 0
+
+	ProcessPeeingRecharge:
+		if tm_condition_peeing.Check()
+			tm_peeing_recharge_timer = tm_peeing_recharge_timer + _timediff
+			while tm_peeing_recharge_timer >= 3
+				tm_peeing_recharge_timer = tm_peeing_recharge_timer - 3
+				tm_energy = tm_energy + 1
+				effective_max = GetEffectiveMaxEnergy()
+				if tm_energy > effective_max
+					tm_energy = effective_max
+		else
+			tm_peeing_recharge_timer = 0
+
+	ProcessOrgasmPenalty:
+		orgasm_now = tm_condition_orgasm.Check()
+		if orgasm_now && tm_orgasm_was_active == false
+			if IsEnergyOrgasmConverterEquipped()
+				tm_energy = tm_energy + 2
+				effective_max = GetEffectiveMaxEnergy()
+				if tm_energy > effective_max
+					tm_energy = effective_max
+			else
+				orgasm_penalty = 12
+				if tm_condition_handcuffs_back.Check()
+					orgasm_penalty = 4
+				tm_energy = tm_energy - orgasm_penalty
+				if tm_energy < 0
+					tm_energy = 0
+		tm_orgasm_was_active = orgasm_now
+
+
+	TrackEarnedRP:
+		current_rp_total = GetCurrentEarnRP()
+		rp_gain = current_rp_total - tm_rp_last_total
+		if rp_gain > 0
+			# GetCurrentEarnRP contains RP after the current RP multiplier.
+			# Normalize it so the displayed base RP rates remain the mission's Energy currency.
+			base_rp_gain = rp_gain
+			rp_multiplier = _state.RpBonus
+			if rp_multiplier != null && rp_multiplier > 0
+				base_rp_gain = rp_gain / rp_multiplier
+			tm_rp_bank = tm_rp_bank + base_rp_gain
+			effective_rp_required = GetEffectiveRPRequired()
+			while tm_rp_bank >= effective_rp_required
+				tm_rp_bank = tm_rp_bank - effective_rp_required
+				detection_bonus = 2
+				if _state.Detection <= 0.5
+					detection_bonus = 1
+				tm_energy = tm_energy + tm_rp_energy_gain + detection_bonus
+				effective_max = GetEffectiveMaxEnergy()
+				if tm_energy > effective_max
+					tm_energy = effective_max
+		tm_rp_last_total = current_rp_total
+
+	AttemptNextRound:
+		if tm_first_normal_free
+			ReleaseForcedEyeMask()
+			risk_group = PickRiskGroup()
+			next_zone = PickLocation(group=risk_group)
+			tm_round = tm_round + 1
+			TeleportToZone(index=next_zone)
+			tm_time_left = tm_teleport_duration
+			tm_instant_multiplier = 1.2
+			tm_first_normal_free = false
+		elseif tm_energy >= tm_teleport_cost
+			ReleaseForcedEyeMask()
+			tm_energy = tm_energy - tm_teleport_cost
+			risk_group = PickRiskGroup()
+			next_zone = PickLocation(group=risk_group)
+			tm_round = tm_round + 1
+			TeleportToZone(index=next_zone)
+			tm_time_left = tm_teleport_duration
+			tm_instant_multiplier = 1.2
+		else
+			ApplyInsufficientEnergyPunishment()
+
+	AttemptInstantTeleport:
+		instant_cost = Ceil(tm_teleport_cost * tm_instant_multiplier)
+		if tm_energy >= instant_cost
+			ReleaseForcedEyeMask()
+			tm_energy = tm_energy - instant_cost
+			risk_group = PickRiskGroup()
+			next_zone = PickLocation(group=risk_group)
+			TeleportToZone(index=next_zone)
+			tm_time_left = tm_time_left + tm_instant_time_bonus
+			tm_instant_multiplier = tm_instant_multiplier + 0.2
+			if tm_instant_multiplier > 2
+				tm_instant_multiplier = 2
+
+	PickRiskGroup:
+		low_chance = 5
+		medium_chance = 15
+		if tm_energy >= 96
+			low_chance = 65
+			medium_chance = 25
+		elseif tm_energy >= 72
+			low_chance = 50
+			medium_chance = 35
+		elseif tm_energy >= 48
+			low_chance = 35
+			medium_chance = 40
+		elseif tm_energy >= 24
+			low_chance = 20
+			medium_chance = 40
+
+		if IsTeleportSafetyChipEquipped()
+			high_chance = 100 - low_chance - medium_chance
+			safety_shift = 10
+			if high_chance < safety_shift
+				safety_shift = high_chance
+			low_chance = low_chance + safety_shift
+
+		medium_limit = low_chance + medium_chance
+		roll = RandomInt(1, 100)
+		if roll <= low_chance
+			_result = "Low"
+		elseif roll <= medium_limit
+			_result = "Medium"
+		else
+			_result = "High"
+
+	PickLocation:
+		if group == null
+			group = _args[0]
+		candidate = tm_current_zone
+		attempts = 0
+		while candidate == tm_current_zone && attempts < 10
+			if group == "Low"
+				choice = RandomInt(1, 3)
+				if choice == 1
+					candidate = 3
+				elseif choice == 2
+					candidate = 9
+				else
+					candidate = 13
+			elseif group == "Medium"
+				choice = RandomInt(1, 8)
+				if choice == 1
+					candidate = 1
+				elseif choice == 2
+					candidate = 2
+				elseif choice == 3
+					candidate = 7
+				elseif choice == 4
+					candidate = 10
+				elseif choice == 5
+					candidate = 11
+				elseif choice == 6
+					candidate = 12
+				elseif choice == 7
+					candidate = 15
+				else
+					candidate = 16
+			else
+				choice = RandomInt(1, 5)
+				if choice == 1
+					candidate = 4
+				elseif choice == 2
+					candidate = 5
+				elseif choice == 3
+					candidate = 6
+				elseif choice == 4
+					candidate = 8
+				else
+					candidate = 14
+			attempts = attempts + 1
+		_result = candidate
+
+	ApplyInsufficientEnergyPunishment:
+		# Punishment teleports never increase the completed round count.
+		tm_energy = tm_energy + 24
+		effective_max = GetEffectiveMaxEnergy()
+		if tm_energy > effective_max
+			tm_energy = effective_max
+
+		if tm_condition_coat.Check()
+			MoveCoatToRandomMissionZone()
+		elseif tm_remote_displaced == false
+			# Force the toy first. The remote is created shortly afterward by the game,
+			# so its actual displacement is completed by the update listener.
+			EquipAdultToy("Vibrator")
+			SetVibrator("Random")
+			tm_vibrator_forced = true
+			tm_vibrator_applied = true
+			BeginRemoteDisplacement()
+		else
+			EquipAdultToy("EyeMask")
+			tm_eyemask_forced = true
+
+		punishment_zone = PickLocation(group="High")
+		TeleportToZone(index=punishment_zone)
+		tm_time_left = tm_teleport_duration
+
+	MoveCoatToRandomMissionZone:
+		DropItem(itemtype="Coat", position=_state.Position, compass=false)
+		CollectItem(itemtype="Coat")
+		drop_index = RandomInt(1, 17)
+		tm_coat_drop_index = drop_index
+		drop_position = GetZonePosition(index=drop_index)
+		DropItem(itemtype="Coat", position=drop_position, compass=false)
+		tm_coat_displaced = true
+		tm_coat_punished_ever = true
+
+	BeginRemoteDisplacement:
+		tm_remote_displaced = true
+		tm_remote_punished_ever = true
+		tm_remote_move_pending = true
+		tm_remote_drop_index = RandomInt(1, 17)
+
+	ProcessRemoteDisplacement:
+		if tm_remote_move_pending
+			if tm_condition_vibrator.Check() == false
+				EquipAdultToy("Vibrator")
+			SetVibrator("Random")
+			if tm_condition_remote.Check()
+				drop_position = GetZonePosition(index=tm_remote_drop_index)
+				dropped_remote = DropItem(itemtype="VibeRemocon", position=drop_position, compass=false)
+				if dropped_remote != null
+					tm_remote_move_pending = false
+
+	GetZonePosition:
+		if index == null
+			index = _args[0]
+		if index == 1
+			_result = CreateList(stage="Residence", x=-26.31, y=-0.10, z=-101.28, rx=0, ry=0, rz=0, rw=1)
+		elseif index == 2
+			_result = CreateList(stage="Residence", x=-5.20, y=-0.10, z=-101.20, rx=0, ry=0, rz=0, rw=1)
+		elseif index == 3
+			_result = CreateList(stage="Residence", x=-40.58, y=-0.10, z=-104.01, rx=0, ry=0, rz=0, rw=1)
+		elseif index == 4
+			_result = CreateList(stage="Residence", x=-35.56, y=-0.10, z=-73.22, rx=0, ry=0, rz=0, rw=1)
+		elseif index == 5
+			_result = CreateList(stage="Residence", x=9.17, y=-0.10, z=-78.70, rx=0, ry=0, rz=0, rw=1)
+		elseif index == 6
+			_result = CreateList(stage="Residence", x=8.47, y=-0.10, z=-102.42, rx=0, ry=0, rz=0, rw=1)
+		elseif index == 7
+			_result = CreateList(stage="Residence", x=33.05, y=-0.22, z=-121.51, rx=0, ry=0, rz=0, rw=1)
+		elseif index == 8
+			_result = CreateList(stage="Residence", x=33.18, y=-0.22, z=-78.91, rx=0, ry=0, rz=0, rw=1)
+		elseif index == 9
+			_result = CreateList(stage="Residence", x=29.28, y=-0.11, z=-102.21, rx=0, ry=0, rz=0, rw=1)
+		elseif index == 10
+			_result = CreateList(stage="Residence", x=8.77, y=-0.11, z=-89.25, rx=0, ry=0, rz=0, rw=1)
+		elseif index == 11
+			_result = CreateList(stage="Residence", x=-11.94, y=-0.10, z=-88.40, rx=0, ry=0, rz=0, rw=1)
+		elseif index == 12
+			_result = CreateList(stage="Residence", x=-5.33, y=-0.10, z=-112.68, rx=0, ry=0, rz=0, rw=1)
+		elseif index == 13
+			_result = CreateList(stage="Residence", x=1.49, y=-0.11, z=-105.78, rx=0, ry=0, rz=0, rw=1)
+		elseif index == 14
+			_result = CreateList(stage="Residence", x=-9.57, y=-0.10, z=-78.74, rx=0, ry=0, rz=0, rw=1)
+		elseif index == 15
+			_result = CreateList(stage="Residence", x=8.85, y=-0.10, z=-120.83, rx=0, ry=0, rz=0, rw=1)
+		elseif index == 16
+			_result = CreateList(stage="Residence", x=-10.33, y=-0.09, z=-127.38, rx=0, ry=0, rz=0, rw=1)
+		else
+			_result = CreateList(stage="Residence", x=-30.28, y=-0.11, z=-111.89, rx=0, ry=0, rz=0, rw=1)
+
+	TeleportToZone:
+		if index == null
+			index = _args[0]
+		HideAllZones()
+		tm_current_zone = index
+		ShowCurrentZone()
+		tm_zone_grace = 0.75
+		position = GetZonePosition(index=index)
+		SetPlayerPosition(position=position)
+
+	ReturnPlayerToCurrentZone:
+		position = GetZonePosition(index=tm_current_zone)
+		SetPlayerPosition(position=position)
+		tm_zone_grace = 0.5
+
+	ShowCurrentZone:
+		if tm_current_zone == 1
+			tm_zone1.SetVisible(true)
+		elseif tm_current_zone == 2
+			tm_zone2.SetVisible(true)
+		elseif tm_current_zone == 3
+			tm_zone3.SetVisible(true)
+		elseif tm_current_zone == 4
+			tm_zone4.SetVisible(true)
+		elseif tm_current_zone == 5
+			tm_zone5.SetVisible(true)
+		elseif tm_current_zone == 6
+			tm_zone6.SetVisible(true)
+		elseif tm_current_zone == 7
+			tm_zone7.SetVisible(true)
+		elseif tm_current_zone == 8
+			tm_zone8.SetVisible(true)
+		elseif tm_current_zone == 9
+			tm_zone9.SetVisible(true)
+		elseif tm_current_zone == 10
+			tm_zone10.SetVisible(true)
+		elseif tm_current_zone == 11
+			tm_zone11.SetVisible(true)
+		elseif tm_current_zone == 12
+			tm_zone12.SetVisible(true)
+		elseif tm_current_zone == 13
+			tm_zone13.SetVisible(true)
+		elseif tm_current_zone == 14
+			tm_zone14.SetVisible(true)
+		elseif tm_current_zone == 15
+			tm_zone15.SetVisible(true)
+		elseif tm_current_zone == 16
+			tm_zone16.SetVisible(true)
+		elseif tm_current_zone == 17
+			tm_zone17.SetVisible(true)
+
+	CurrentZoneInside:
+		_result = true
+		if tm_current_zone == 1
+			_result = tm_zone1.Inside()
+		elseif tm_current_zone == 2
+			_result = tm_zone2.Inside()
+		elseif tm_current_zone == 3
+			_result = tm_zone3.Inside()
+		elseif tm_current_zone == 4
+			_result = tm_zone4.Inside()
+		elseif tm_current_zone == 5
+			_result = tm_zone5.Inside()
+		elseif tm_current_zone == 6
+			_result = tm_zone6.Inside()
+		elseif tm_current_zone == 7
+			_result = tm_zone7.Inside()
+		elseif tm_current_zone == 8
+			_result = tm_zone8.Inside()
+		elseif tm_current_zone == 9
+			_result = tm_zone9.Inside()
+		elseif tm_current_zone == 10
+			_result = tm_zone10.Inside()
+		elseif tm_current_zone == 11
+			_result = tm_zone11.Inside()
+		elseif tm_current_zone == 12
+			_result = tm_zone12.Inside()
+		elseif tm_current_zone == 13
+			_result = tm_zone13.Inside()
+		elseif tm_current_zone == 14
+			_result = tm_zone14.Inside()
+		elseif tm_current_zone == 15
+			_result = tm_zone15.Inside()
+		elseif tm_current_zone == 16
+			_result = tm_zone16.Inside()
+		elseif tm_current_zone == 17
+			_result = tm_zone17.Inside()
+
+	HideAllZones:
+		tm_zone1.SetVisible(false)
+		tm_zone2.SetVisible(false)
+		tm_zone3.SetVisible(false)
+		tm_zone4.SetVisible(false)
+		tm_zone5.SetVisible(false)
+		tm_zone6.SetVisible(false)
+		tm_zone7.SetVisible(false)
+		tm_zone8.SetVisible(false)
+		tm_zone9.SetVisible(false)
+		tm_zone10.SetVisible(false)
+		tm_zone11.SetVisible(false)
+		tm_zone12.SetVisible(false)
+		tm_zone13.SetVisible(false)
+		tm_zone14.SetVisible(false)
+		tm_zone15.SetVisible(false)
+		tm_zone16.SetVisible(false)
+		tm_zone17.SetVisible(false)
+
+	update:
+		if tm_reward_overlay_timer > 0
+			tm_reward_overlay_timer = tm_reward_overlay_timer - _timediff
+			if tm_reward_overlay_timer <= 0
+				tm_reward_overlay.Clear()
+
+		if tm_active
+			ProcessMissionItemEffects()
+			TrackEarnedRP()
+			ProcessNakedRecharge()
+			ProcessPeeingRecharge()
+			ProcessOrgasmPenalty()
+
+			if tm_input_endless_cancel.WasPressed() && tm_endless
+				EndEndlessMission()
+
+			if tm_active
+				if tm_input_special_toggle.WasPressed()
+					ToggleSpecialOverlay()
+				if tm_input_instant_teleport.WasPressed()
+					AttemptInstantTeleport()
+
+				# Retrieved punishment items immediately become available for a future punishment again.
+				if tm_coat_displaced && tm_condition_coat.Check()
+					tm_coat_displaced = false
+					tm_coat_drop_index = 0
+				if tm_remote_displaced && tm_remote_move_pending == false && tm_condition_remote.Check()
+					tm_remote_displaced = false
+					tm_vibrator_forced = false
+
+				# Keep forced punishment equipment active until its stated release condition.
+				tm_force_timer = tm_force_timer + _timediff
+				if tm_force_timer >= 0.5
+					tm_force_timer = 0
+					if tm_remote_move_pending
+						ProcessRemoteDisplacement()
+					if tm_vibrator_forced && tm_condition_remote.Check() == false
+						if tm_condition_vibrator.Check() == false
+							EquipAdultToy("Vibrator")
+						SetVibrator("Random")
+					if tm_eyemask_forced && tm_condition_eyemask.Check() == false
+						EquipAdultToy("EyeMask")
+
+				# Leaving any active mission zone simply returns the player to its center.
+				if tm_zone_grace > 0
+					tm_zone_grace = tm_zone_grace - _timediff
+				else
+					if CurrentZoneInside() == false
+						ReturnPlayerToCurrentZone()
+
+				tm_time_left = tm_time_left - _timediff
+				if tm_time_left <= 0
+					if tm_endless
+						CompleteEndlessRound()
+						AttemptNextRound()
+					elseif tm_round >= tm_total_rounds
+						FinishMission()
+					else
+						AttemptNextRound()
+
+				if tm_active
+					tm_overlay_timer = tm_overlay_timer + _timediff
+					if tm_overlay_timer >= 0.2
+						tm_overlay_timer = 0
+						UpdateOverlays()
+						UpdateSpecialOverlay()
+
+# ============================================================
+# RESIDENCE HOME SWEET HOME
+# ============================================================
+manakaplus_v22_residence_home_sweet_home:
+	thread = _this
+	active = false
+	completed_signal = false
+	difficulty = "Normal"
+	stationary_phone_use_min = 8
+	stationary_phone_use_max = 13
+	stationary_phone_break = 7
+	moving_interval = 2
+	patrol_speed = 1
+	extreme_patrol_pairs = false
+	punishment_mode = false
+	punishment_wait_timer = 0
+	punishment_active = false
+	punishment_handcuff_added_by_mission = false
+	reward_overlay_timer = 0
+	toll_paid = false
+	toll_timer = 0
+	locked_vibrator = false
+	locked_titrotor = false
+	locked_kurirotor = false
+	locked_pistonanal = false
+	locked_pistonpussy = false
+	locked_handcuff = false
+	toll_ticket_active = false
+	coat_moved = false
+	last_reward_rp = 150
+	last_reward_mp = 150
+	toy_force_timer = 0
+	eyemask_timer = 0
+	eyemask_force_timer = 0
+	eyemask_added_by_mission = false
+	moving_index = 0
+	moving_direction = 1
+	moving_timer = 0
+	moving_touch_cooldown = 0
+	stationary_npcs = CreateList()
+	patrol1_npc = null
+	patrol1_npc_b = null
+	patrol2_npc = null
+	patrol2_npc_b = null
+	special_npc = null
+	patrol1_phase = 0
+	patrol1_index = 0
+	patrol1_next_index = 1
+	patrol1_b_index = 2
+	patrol1_b_next_index = 3
+	patrol1_scan_step = 0
+	patrol1_scan_timer = 0
+	patrol2_phase = 0
+	patrol2_index = 0
+	patrol2_next_index = 1
+	patrol2_b_index = 2
+	patrol2_b_next_index = 3
+	patrol2_scan_step = 0
+	patrol2_scan_timer = 0
+	special_phase = 0
+	special_index = 0
+	special_next_index = 1
+	special_wait_timer = 0
+
+	manaka_points = CreateThread("manakaplus_v22_manaka_points")
+
+	condition_vibrator = CreateCondition("[AdultToy_Vibrator]")
+	condition_titrotor = CreateCondition("[AdultToy_TitRotor]")
+	condition_kurirotor = CreateCondition("[AdultToy_KuriRotor]")
+	condition_pistonanal = CreateCondition("[AdultToy_PistonAnal]")
+	condition_pistonpussy = CreateCondition("[AdultToy_PistonPussy]")
+	condition_eyemask = CreateCondition("[AdultToy_EyeMask]")
+	condition_blindfolded = CreateCondition("[Blindfolded]")
+	condition_handcuffsback = CreateCondition("[HandcuffsBack]")
+	condition_self_handcuff = CreateCondition("[AdultToy_Handcuff]")
+
+	start_position = Vector(37.45, -0.11, -120.80)
+	start_rotation = Quaternion(0.00000, -0.69227, 0.00000, 0.72164)
+	destination_position = Vector(-29.17, -0.09, -117.42)
+	home_total_distance = 0
+	home_distance = 0
+	home_gauge = 0
+	toys_position = Vector(29.26, -0.11, -121.41)
+	barrier1_return_position = Vector(-9.66, -0.11, -73.79)
+
+	start_area = CreateArea(type="sphere", stage="Residence", x=37.45, y=-0.11, z=-120.80, r=1, outline=true, compass=false)
+	start_zone = CreateZone(start_area)
+	start_zone.SetVisible(false)
+	start_zone.SetColor(0.2,0.65,1)
+
+	destination_area = CreateArea(type="sphere", stage="Residence", x=-29.17, y=-0.09, z=-117.42, r=1, outline=true, compass=true)
+	destination_zone = CreateZone(destination_area)
+	destination_zone.SetVisible(false)
+	destination_zone.SetColor(0.2,1,0.2)
+
+	toys_area = CreateArea(type="sphere", stage="Residence", x=29.26, y=-0.11, z=-121.41, r=0.6, outline=true, compass=false)
+	toys_zone = CreateZone(toys_area)
+	toys_zone.SetVisible(false)
+	toys_zone.SetColor(1,0.65,0.2)
+
+	toys_gate_visible_area = CreateArea(type="cuboid", stage="Residence", x1=26.78, y1=-0.11, z1=-124.38, x2=26.78, y2=-0.11, z2=-118.38, w=2, h=1, outline=true, compass=false)
+	toys_gate_visible_zone = CreateZone(toys_gate_visible_area)
+	toys_gate_visible_zone.SetVisible(false)
+	toys_gate_visible_zone.SetColor(1,0.2,0.2)
+	toys_gate_trigger_area = CreateArea(type="cuboid", stage="Residence", x1=26.78, y1=-1.61, z1=-124.38, x2=26.78, y2=-1.61, z2=-118.38, w=2, h=4, outline=true, compass=false)
+	toys_gate_trigger_zone = CreateZone(toys_gate_trigger_area)
+	toys_gate_trigger_zone.SetVisible(false)
+
+	barrier1_visible_area = CreateArea(type="cuboid", stage="Residence", x1=-12.28, y1=-0.11, z1=-76.35, x2=-12.28, y2=-0.11, z2=-70.35, w=2, h=1, outline=true, compass=false)
+	barrier1_visible_zone = CreateZone(barrier1_visible_area)
+	barrier1_visible_zone.SetVisible(false)
+	barrier1_visible_zone.SetColor(1,0.2,0.2)
+	barrier1_trigger_area = CreateArea(type="cuboid", stage="Residence", x1=-12.28, y1=-1.61, z1=-76.35, x2=-12.28, y2=-1.61, z2=-70.35, w=2, h=4, outline=true, compass=false)
+	barrier1_trigger_zone = CreateZone(barrier1_trigger_area)
+	barrier1_trigger_zone.SetVisible(false)
+
+	moving_zones = CreateList()
+	moving_i = 0
+	while moving_i < 12
+		moving_ratio = moving_i / 11.0
+		moving_x = 33.17 + (33.11 - 33.17) * moving_ratio
+		moving_y = -0.21
+		moving_z = -82.38 + (-118.19 + 82.38) * moving_ratio
+		moving_visible_area = CreateArea(type="cuboid", stage="Residence", x1=moving_x, y1=moving_y, z1=moving_z - 0.9, x2=moving_x, y2=moving_y, z2=moving_z + 0.9, w=18, h=1, outline=true, compass=false)
+		moving_visible_zone = CreateZone(moving_visible_area)
+		moving_visible_zone.SetVisible(false)
+		moving_visible_zone.SetColor(1,0.15,0.15)
+		moving_trigger_area = CreateArea(type="cuboid", stage="Residence", x1=moving_x, y1=moving_y - 1.5, z1=moving_z - 0.9, x2=moving_x, y2=moving_y - 1.5, z2=moving_z + 0.9, w=18, h=4, outline=true, compass=false)
+		moving_trigger_zone = CreateZone(moving_trigger_area)
+		moving_trigger_zone.SetVisible(false)
+		moving_zones.Insert(CreateList(visible=moving_visible_zone, trigger=moving_trigger_zone))
+		moving_i = moving_i + 1
+
+	main_panel = CreateMissionPanel()
+	main_panel.SetVisible(false)
+	main_panel.SetGaugeVisible(false)
+	main_panel.SetRPText("")
+
+	toys_panel = CreateMissionPanel()
+	toys_panel.SetVisible(false)
+	toys_panel.SetGaugeVisible(true)
+	toys_panel.SetGaugeProgress(0)
+	toys_panel.SetRPText("")
+
+	reward_overlay = CreateText()
+	reward_overlay.SetAnchor(0.5, 0.5)
+	reward_overlay.SetAlignment("Top")
+	reward_overlay.SetSize(36)
+	reward_overlay.SetWidth(1200)
+	reward_overlay.SetFace(color=Color(1,1,1,1), dilate=0.35)
+	reward_overlay.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.35)
+	reward_overlay.SetFrontLayer(true)
+	reward_overlay.Clear()
+
+	patrol1_points = CreateList(Vector(-9.57, -0.10, -78.70), Vector(9.17, -0.11, -78.67), Vector(8.20, -0.11, -102.60), Vector(-14.93, -0.11, -101.11))
+	patrol2_points = CreateList(Vector(-26.29, -0.09, -101.26), Vector(-5.08, -0.09, -101.31), Vector(-14.52, -0.09, -113.48), Vector(-26.52, -0.09, -123.59))
+	special_points = CreateList(Vector(0.04, -0.11, -104.85), Vector(6.47, -0.11, -110.37))
+	special_rotations = CreateList(Quaternion(0.00000, -0.27900, 0.00000, 0.96029), Quaternion(0.00000, 0.74898, 0.00000, 0.66259))
+	scan_rotations = CreateList(Quaternion(0,0,0,1), Quaternion(0,0.38268,0,0.92388), Quaternion(0,0.70711,0,0.70711), Quaternion(0,0.92388,0,0.38268), Quaternion(0,1,0,0), Quaternion(0,0.92388,0,-0.38268), Quaternion(0,0.70711,0,-0.70711), Quaternion(0,0.38268,0,-0.92388))
+
+	listener = CreateListenerLocal("update")
+
+	GetDifficultyBonus:
+		_result = 0
+		if difficulty == "Hard"
+			_result = 100
+		elseif difficulty == "Extreme"
+			_result = 200
+
+	GetPunishmentBonus:
+		_result = 0
+		if punishment_mode
+			_result = 100
+
+	GetRewardRP:
+		_result = 150 + GetDifficultyBonus() + GetPunishmentBonus()
+
+	GetRewardMP:
+		_result = 150 + GetDifficultyBonus() + GetPunishmentBonus()
+
+	GetMissionText:
+		reward_rp = GetRewardRP()
+		reward_mp = GetRewardMP()
+		_result = "甜蜜之家\n真菜香必须找到安全回家的路线，避开沿途的社区巡逻与危险区域\n\n条件：全裸\n奖励：" + reward_rp + " RP + " + reward_mp + " Manaka 点数"
+		if difficulty == "Hard"
+			_result = _result + "\n困难难度加成：+100 RP + 100 Manaka 点数"
+		elseif difficulty == "Extreme"
+			_result = _result + "\n极限难度加成：+200 RP + 200 Manaka 点数"
+		if punishment_mode
+			_result = _result + "\n惩罚模式加成：+100 RP + 100 Manaka 点数\n\n惩罚模式：真菜香每隔 35–60 秒会被随机戴上眼罩并铐住"
+
+	GetDifficultyLabel:
+		_result = "普通"
+		if difficulty == "Hard"
+			_result = "困难"
+		elseif difficulty == "Extreme"
+			_result = "极限"
+
+	GetPunishmentLabel:
+		_result = "关闭"
+		if punishment_mode
+			_result = "开启"
+
+	SetPunishmentOff:
+		punishment_mode = false
+
+	TogglePunishment:
+		if punishment_mode
+			punishment_mode = false
+		else
+			punishment_mode = true
+
+	GetPhoneUseDuration:
+		_result = RandomInt(stationary_phone_use_min, stationary_phone_use_max)
+
+	IsSMTollTicketEquipped:
+		_result = mainthread.IsShopItemEquipped(item="sm_toll_ticket")
+
+	GetTollText:
+		_result = "至少装备 1 个震动器以解除此屏障"
+		if difficulty == "Hard"
+			_result = "装备 3 个震动器以解除此屏障"
+		elseif difficulty == "Extreme"
+			_result = "装备 3 个震动器与 2 个活塞机以解除此屏障"
+		if IsSMTollTicketEquipped()
+			_result = _result + "\n额外通行条件：主动使用手铐\n效果：震动器变为弱档，活塞机变为低速"
+
+	SetDifficultyNormal:
+		difficulty = "Normal"
+		stationary_phone_use_min = 8
+		stationary_phone_use_max = 13
+		stationary_phone_break = 7
+		moving_interval = 2
+		patrol_speed = 1
+		extreme_patrol_pairs = false
+
+	SetDifficultyHard:
+		difficulty = "Hard"
+		stationary_phone_use_min = 8
+		stationary_phone_use_max = 9
+		stationary_phone_break = 6
+		moving_interval = 1
+		patrol_speed = 1.2
+		extreme_patrol_pairs = false
+
+	SetDifficultyExtreme:
+		difficulty = "Extreme"
+		stationary_phone_use_min = 7
+		stationary_phone_use_max = 8
+		stationary_phone_break = 5
+		moving_interval = 0.5
+		patrol_speed = 1.2
+		extreme_patrol_pairs = true
+
+	CycleDifficulty:
+		if difficulty == "Normal"
+			SetDifficultyHard()
+		elseif difficulty == "Hard"
+			SetDifficultyExtreme()
+		else
+			SetDifficultyNormal()
+
+	IsActive:
+		_result = active
+
+	ConsumeCompleted:
+		_result = completed_signal
+		completed_signal = false
+
+	RandomAvatar:
+		avatar_roll = RandomInt(0, 4)
+		_result = "NewFemale"
+		if avatar_roll == 1
+			_result = "PreviousFemale"
+		elseif avatar_roll == 2
+			_result = "NewMale"
+		elseif avatar_roll == 3
+			_result = "PreviousMale"
+
+	Start:
+		if active == false
+			active = true
+			completed_signal = false
+			toll_paid = false
+			toll_timer = 0
+			locked_vibrator = false
+			locked_titrotor = false
+			locked_kurirotor = false
+			locked_pistonanal = false
+			locked_pistonpussy = false
+			locked_handcuff = false
+			toll_ticket_active = false
+			coat_moved = false
+			toy_force_timer = 0
+			punishment_wait_timer = RandomInt(35,61)
+			punishment_active = false
+			punishment_handcuff_added_by_mission = false
+			eyemask_timer = 0
+			eyemask_force_timer = 0
+			eyemask_added_by_mission = false
+			moving_index = 0
+			moving_direction = 1
+			moving_timer = 0
+			moving_touch_cooldown = 0
+			UnequipAllCosplay()
+			MoveCoatAway()
+			SpawnNPCs()
+			PrimeHomeSweetHomeCuboids()
+			ShowMissionZones()
+			home_total_distance = Vector3Distance(start_position, destination_position)
+			main_panel.SetText("找到安全回家的路线")
+			main_panel.SetRPText("" + GetRewardRP() + " RP + " + GetRewardMP() + " MP")
+			main_panel.SetGaugeVisible(true)
+			main_panel.SetGaugeProgress(0)
+			main_panel.SetVisible(true)
+			SetPlayerPosition(position=start_position, rotation=start_rotation)
+
+	MoveCoatAway:
+		DropItem(itemtype="Coat", position=_state.Position, compass=false)
+		CollectItem(itemtype="Coat")
+		coat_away_pos = CreateList(stage="Apart", x=-1.84, y=0.00, z=-0.20, rx=0, ry=0, rz=0, rw=0)
+		DropItem(itemtype="Coat", stage="Apart", position=coat_away_pos, compass=false)
+		coat_moved = true
+
+	RestoreCoat:
+		if coat_moved
+			CollectItem(itemtype="Coat")
+			coat_return_pos = CreateList(stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y, z=_state.Position.z, rx=0, ry=0, rz=0, rw=0)
+			DropItem(itemtype="Coat", position=coat_return_pos, compass=false)
+			coat_moved = false
+
+	ShowMissionZones:
+		start_zone.SetVisible(true)
+		destination_zone.SetVisible(true)
+		toys_zone.SetVisible(true)
+		toys_gate_visible_zone.SetVisible(true)
+		barrier1_visible_zone.SetVisible(true)
+		moving_i = 0
+		while moving_i < moving_zones.Count()
+			moving_entry = moving_zones[moving_i]
+			if moving_i == moving_index
+				moving_entry.visible.SetVisible(true)
+			else
+				moving_entry.visible.SetVisible(false)
+			moving_i = moving_i + 1
+
+	HideMissionZones:
+		start_zone.SetVisible(false)
+		destination_zone.SetVisible(false)
+		toys_zone.SetVisible(false)
+		toys_gate_visible_zone.SetVisible(false)
+		barrier1_visible_zone.SetVisible(false)
+		moving_i = 0
+		while moving_i < moving_zones.Count()
+			moving_entry = moving_zones[moving_i]
+			moving_entry.visible.SetVisible(false)
+			moving_i = moving_i + 1
+
+	PrimeHomeSweetHomeCuboids:
+		# CMv2 2.2.1 can throw while destroying a cuboid whose SquareEffect
+		# was never initialized. Prime every HSH cuboid once while Residence
+		# is loaded, then immediately hide it before normal zone display.
+		toys_gate_visible_zone.SetVisible(true)
+		toys_gate_visible_zone.SetVisible(false)
+		toys_gate_trigger_zone.SetVisible(true)
+		toys_gate_trigger_zone.SetVisible(false)
+		barrier1_visible_zone.SetVisible(true)
+		barrier1_visible_zone.SetVisible(false)
+		barrier1_trigger_zone.SetVisible(true)
+		barrier1_trigger_zone.SetVisible(false)
+		moving_i = 0
+		while moving_i < moving_zones.Count()
+			moving_entry = moving_zones[moving_i]
+			moving_entry.visible.SetVisible(true)
+			moving_entry.visible.SetVisible(false)
+			moving_entry.trigger.SetVisible(true)
+			moving_entry.trigger.SetVisible(false)
+			moving_i = moving_i + 1
+
+
+	SpawnNPCs:
+		stationary_npcs = CreateList()
+		stationary_data = CreateList()
+		stationary_data.Insert(CreateList(position=Vector(27.66, -0.11, -80.51), rotation=Quaternion(0.00000, 0.00786, 0.00000, 0.99997)))
+		stationary_data.Insert(CreateList(position=Vector(10.72, -0.11, -77.51), rotation=Quaternion(0.00000, 0.99985, 0.00000, -0.01746)))
+		stationary_data.Insert(CreateList(position=Vector(-17.31, -0.11, -96.55), rotation=Quaternion(0.00000, 0.71139, 0.00000, 0.70280)))
+		stationary_data.Insert(CreateList(position=Vector(-4.87, -0.11, -103.94), rotation=Quaternion(0.00000, -0.00089, 0.00000, 1.00000)))
+		stationary_data.Insert(CreateList(position=Vector(10.33, -0.11, -90.90), rotation=Quaternion(0.00000, -0.66197, 0.00000, 0.74953)))
+		stationary_data.Insert(CreateList(position=Vector(5.12, -0.11, -103.05), rotation=Quaternion(0.00000, 0.39473, 0.00000, 0.91880)))
+		stationary_data.Insert(CreateList(position=Vector(-27.91, -0.11, -103.32), rotation=Quaternion(0.00000, 0.70771, 0.00000, 0.70650)))
+		stationary_data.Insert(CreateList(position=Vector(-15.14, -0.09, -128.10), rotation=Quaternion(0.00000, 0.00178, 0.00000, 1.00000)))
+		stationary_data.Insert(CreateList(position=Vector(8.31, -0.09, -121.84), rotation=Quaternion(0.00000, 0.33799, 0.00000, 0.94115)))
+		if difficulty == "Hard" || difficulty == "Extreme"
+			stationary_data.Insert(CreateList(position=Vector(27.51, -0.11, -98.99), rotation=Quaternion(0.00000, 0.73787, 0.00000, 0.67494)))
+			stationary_data.Insert(CreateList(position=Vector(-12.52, -0.11, -83.77), rotation=Quaternion(0.00000, 0.71509, 0.00000, 0.69904)))
+			stationary_data.Insert(CreateList(position=Vector(38.81, -0.10, -109.87), rotation=Quaternion(0.00000, -0.66312, 0.00000, 0.74851)))
+			stationary_data.Insert(CreateList(position=Vector(-11.78, -0.11, -117.39), rotation=Quaternion(0.00000, -0.69652, 0.00000, 0.71753)))
+		stationary_i = 0
+		while stationary_i < stationary_data.Count()
+			stationary_info = stationary_data[stationary_i]
+			stationary_npc = CreateNPC(RandomAvatar(), position=stationary_info.position, rotation=stationary_info.rotation)
+			stationary_npc.SkipStrangeness(false)
+			stationary_npc.CanGameOver(true)
+			stationary_npc.Smartphone(true)
+			stationary_npc.Headset(false)
+			stationary_npc.Stopped(false)
+			stationary_npc.ClearWaypoints()
+			stationary_npc.AddWaypoint(stationary_info.position)
+			stationary_npcs.Insert(CreateList(npc=stationary_npc, phone=true, timer=GetPhoneUseDuration()))
+			stationary_i = stationary_i + 1
+
+		patrol1_npc = CreateNPC(RandomAvatar(), position=patrol1_points[0], rotation=Quaternion(0,0,0,1))
+		PrepareEnemyNPC(npc=patrol1_npc)
+		patrol1_npc.Stopped(true)
+		patrol1_npc.ClearWaypoints()
+		patrol1_npc.AddWaypoint(patrol1_points[0])
+		patrol1_phase = 0
+		patrol1_index = 0
+		patrol1_next_index = 1
+		patrol1_b_index = 2
+		patrol1_b_next_index = 3
+		patrol1_scan_step = 0
+		patrol1_scan_timer = 0
+		patrol1_npc.Warp(rotation=scan_rotations[0])
+		patrol1_npc_b = null
+		if extreme_patrol_pairs
+			patrol1_npc_b = CreateNPC(RandomAvatar(), position=patrol1_points[2], rotation=Quaternion(0,0,0,1))
+			PrepareEnemyNPC(npc=patrol1_npc_b)
+			patrol1_npc_b.Stopped(true)
+			patrol1_npc_b.ClearWaypoints()
+			patrol1_npc_b.AddWaypoint(patrol1_points[2])
+			patrol1_npc_b.Warp(rotation=scan_rotations[0])
+
+		patrol2_npc = CreateNPC(RandomAvatar(), position=patrol2_points[0], rotation=Quaternion(0,0,0,1))
+		PrepareEnemyNPC(npc=patrol2_npc)
+		patrol2_npc.Stopped(true)
+		patrol2_npc.ClearWaypoints()
+		patrol2_npc.AddWaypoint(patrol2_points[0])
+		patrol2_phase = 0
+		patrol2_index = 0
+		patrol2_next_index = 1
+		patrol2_b_index = 2
+		patrol2_b_next_index = 3
+		patrol2_scan_step = 0
+		patrol2_scan_timer = 0
+		patrol2_npc.Warp(rotation=scan_rotations[0])
+		patrol2_npc_b = null
+		if extreme_patrol_pairs
+			patrol2_npc_b = CreateNPC(RandomAvatar(), position=patrol2_points[2], rotation=Quaternion(0,0,0,1))
+			PrepareEnemyNPC(npc=patrol2_npc_b)
+			patrol2_npc_b.Stopped(true)
+			patrol2_npc_b.ClearWaypoints()
+			patrol2_npc_b.AddWaypoint(patrol2_points[2])
+			patrol2_npc_b.Warp(rotation=scan_rotations[0])
+
+		special_npc = CreateNPC(RandomAvatar(), position=special_points[0], rotation=special_rotations[0])
+		PrepareEnemyNPC(npc=special_npc)
+		special_npc.Stopped(true)
+		special_npc.ClearWaypoints()
+		special_npc.AddWaypoint(special_points[0])
+		special_phase = 0
+		special_index = 0
+		special_next_index = 1
+		special_wait_timer = 0
+
+	PrepareEnemyNPC:
+		npc.SkipStrangeness(false)
+		npc.CanGameOver(true)
+		npc.Smartphone(false)
+		npc.Headset(false)
+		npc.Speed(patrol_speed)
+		npc.Stopped(false)
+
+	UpdateStationaryNPCs:
+		stationary_i = 0
+		while stationary_i < stationary_npcs.Count()
+			stationary_entry = stationary_npcs[stationary_i]
+			if stationary_entry.npc != null
+				stationary_entry.timer = stationary_entry.timer - _timediff
+				if stationary_entry.timer <= 0
+					if stationary_entry.phone
+						stationary_entry.phone = false
+						stationary_entry.timer = stationary_phone_break
+						stationary_entry.npc.Smartphone(false)
+					else
+						stationary_entry.phone = true
+						stationary_entry.timer = GetPhoneUseDuration()
+						stationary_entry.npc.Smartphone(true)
+			stationary_i = stationary_i + 1
+
+	UpdatePatrol1:
+		if patrol1_npc != null
+			if patrol1_phase == 0
+				patrol1_scan_timer = patrol1_scan_timer + _timediff
+				if patrol1_scan_step == 0 || patrol1_scan_step == 2 || patrol1_scan_step == 4 || patrol1_scan_step == 6
+					if patrol1_scan_timer >= 3
+						patrol1_scan_timer = 0
+						if patrol1_scan_step >= 6
+							patrol1_phase = 1
+							patrol1_next_index = patrol1_index + 1
+							if patrol1_next_index >= patrol1_points.Count()
+								patrol1_next_index = 0
+							patrol1_npc.ClearWaypoints()
+							patrol1_npc.AddWaypoint(patrol1_points[patrol1_next_index])
+							patrol1_npc.Stopped(false)
+							if extreme_patrol_pairs && patrol1_npc_b != null
+								patrol1_b_next_index = patrol1_b_index + 1
+								if patrol1_b_next_index >= patrol1_points.Count()
+									patrol1_b_next_index = 0
+								patrol1_npc_b.ClearWaypoints()
+								patrol1_npc_b.AddWaypoint(patrol1_points[patrol1_b_next_index])
+								patrol1_npc_b.Stopped(false)
+						else
+							patrol1_scan_step = patrol1_scan_step + 1
+							patrol1_npc.Warp(rotation=scan_rotations[patrol1_scan_step])
+							if extreme_patrol_pairs && patrol1_npc_b != null
+								patrol1_npc_b.Warp(rotation=scan_rotations[patrol1_scan_step])
+				else
+					if patrol1_scan_timer >= 0.35
+						patrol1_scan_timer = 0
+						patrol1_scan_step = patrol1_scan_step + 1
+						patrol1_npc.Warp(rotation=scan_rotations[patrol1_scan_step])
+						if extreme_patrol_pairs && patrol1_npc_b != null
+							patrol1_npc_b.Warp(rotation=scan_rotations[patrol1_scan_step])
+			else
+				patrol1_arrived = patrol1_npc.Finished()
+				if extreme_patrol_pairs && patrol1_npc_b != null
+					patrol1_arrived = patrol1_arrived && patrol1_npc_b.Finished()
+				if patrol1_arrived
+					patrol1_index = patrol1_next_index
+					patrol1_phase = 0
+					patrol1_scan_timer = 0
+					patrol1_scan_step = 0
+					patrol1_npc.ClearWaypoints()
+					patrol1_npc.AddWaypoint(patrol1_points[patrol1_index])
+					patrol1_npc.Stopped(true)
+					patrol1_npc.Warp(rotation=scan_rotations[0])
+					if extreme_patrol_pairs && patrol1_npc_b != null
+						patrol1_b_index = patrol1_b_next_index
+						patrol1_npc_b.ClearWaypoints()
+						patrol1_npc_b.AddWaypoint(patrol1_points[patrol1_b_index])
+						patrol1_npc_b.Stopped(true)
+						patrol1_npc_b.Warp(rotation=scan_rotations[0])
+
+	UpdatePatrol2:
+		if patrol2_npc != null
+			if patrol2_phase == 0
+				patrol2_scan_timer = patrol2_scan_timer + _timediff
+				if patrol2_scan_step == 0 || patrol2_scan_step == 2 || patrol2_scan_step == 4 || patrol2_scan_step == 6
+					if patrol2_scan_timer >= 3
+						patrol2_scan_timer = 0
+						if patrol2_scan_step >= 6
+							patrol2_phase = 1
+							patrol2_next_index = patrol2_index + 1
+							if patrol2_next_index >= patrol2_points.Count()
+								patrol2_next_index = 0
+							patrol2_npc.ClearWaypoints()
+							patrol2_npc.AddWaypoint(patrol2_points[patrol2_next_index])
+							patrol2_npc.Stopped(false)
+							if extreme_patrol_pairs && patrol2_npc_b != null
+								patrol2_b_next_index = patrol2_b_index + 1
+								if patrol2_b_next_index >= patrol2_points.Count()
+									patrol2_b_next_index = 0
+								patrol2_npc_b.ClearWaypoints()
+								patrol2_npc_b.AddWaypoint(patrol2_points[patrol2_b_next_index])
+								patrol2_npc_b.Stopped(false)
+						else
+							patrol2_scan_step = patrol2_scan_step + 1
+							patrol2_npc.Warp(rotation=scan_rotations[patrol2_scan_step])
+							if extreme_patrol_pairs && patrol2_npc_b != null
+								patrol2_npc_b.Warp(rotation=scan_rotations[patrol2_scan_step])
+				else
+					if patrol2_scan_timer >= 0.35
+						patrol2_scan_timer = 0
+						patrol2_scan_step = patrol2_scan_step + 1
+						patrol2_npc.Warp(rotation=scan_rotations[patrol2_scan_step])
+						if extreme_patrol_pairs && patrol2_npc_b != null
+							patrol2_npc_b.Warp(rotation=scan_rotations[patrol2_scan_step])
+			else
+				patrol2_arrived = patrol2_npc.Finished()
+				if extreme_patrol_pairs && patrol2_npc_b != null
+					patrol2_arrived = patrol2_arrived && patrol2_npc_b.Finished()
+				if patrol2_arrived
+					patrol2_index = patrol2_next_index
+					patrol2_phase = 0
+					patrol2_scan_timer = 0
+					patrol2_scan_step = 0
+					patrol2_npc.ClearWaypoints()
+					patrol2_npc.AddWaypoint(patrol2_points[patrol2_index])
+					patrol2_npc.Stopped(true)
+					patrol2_npc.Warp(rotation=scan_rotations[0])
+					if extreme_patrol_pairs && patrol2_npc_b != null
+						patrol2_b_index = patrol2_b_next_index
+						patrol2_npc_b.ClearWaypoints()
+						patrol2_npc_b.AddWaypoint(patrol2_points[patrol2_b_index])
+						patrol2_npc_b.Stopped(true)
+						patrol2_npc_b.Warp(rotation=scan_rotations[0])
+
+	UpdateSpecialPatrol:
+		if special_npc != null
+			if special_phase == 0
+				special_wait_timer = special_wait_timer + _timediff
+				if special_wait_timer >= 5
+					special_wait_timer = 0
+					special_next_index = 1 - special_index
+					special_phase = 1
+					special_npc.ClearWaypoints()
+					special_npc.AddWaypoint(special_points[special_next_index], special_rotations[special_next_index])
+					special_npc.Stopped(false)
+			elseif special_npc.Finished()
+				special_index = special_next_index
+				special_phase = 0
+				special_wait_timer = 0
+				special_npc.ClearWaypoints()
+				special_npc.AddWaypoint(special_points[special_index])
+				special_npc.Stopped(true)
+				special_npc.Warp(rotation=special_rotations[special_index])
+
+	UpdateMovingZone:
+		moving_timer = moving_timer + _timediff
+		if moving_timer >= moving_interval
+			moving_timer = moving_timer - moving_interval
+			moving_entry = moving_zones[moving_index]
+			moving_entry.visible.SetVisible(false)
+			moving_index = moving_index + moving_direction
+			if moving_index >= moving_zones.Count() - 1
+				moving_index = moving_zones.Count() - 1
+				moving_direction = -1
+			elseif moving_index <= 0
+				moving_index = 0
+				moving_direction = 1
+			moving_entry = moving_zones[moving_index]
+			moving_entry.visible.SetVisible(true)
+
+		if moving_touch_cooldown > 0
+			moving_touch_cooldown = moving_touch_cooldown - _timediff
+		moving_entry = moving_zones[moving_index]
+		if moving_touch_cooldown <= 0 && moving_entry.trigger.Inside()
+			moving_touch_cooldown = 1
+			if eyemask_timer <= 0
+				eyemask_added_by_mission = condition_eyemask.Check() == false
+			eyemask_timer = eyemask_timer + 15
+			SetPlayerPosition(position=start_position, rotation=start_rotation)
+
+	UpdateEyeMaskPunishment:
+		if eyemask_timer > 0
+			eyemask_timer = eyemask_timer - _timediff
+			eyemask_force_timer = eyemask_force_timer + _timediff
+			if eyemask_force_timer >= 0.3
+				eyemask_force_timer = 0
+				if condition_eyemask.Check() == false
+					EquipAdultToy("EyeMask")
+			if eyemask_timer <= 0
+				eyemask_timer = 0
+				if punishment_mode == false
+					if eyemask_added_by_mission
+						UnequipAdultToy("EyeMask")
+					eyemask_added_by_mission = false
+
+	UpdateToll:
+		if toll_paid == false
+			if toys_zone.Inside()
+				toys_panel.SetVisible(true)
+				toys_panel.SetText(GetTollText())
+				toys_panel.SetRPText("")
+				toll_valid = condition_vibrator.Check() || condition_titrotor.Check() || condition_kurirotor.Check()
+				if difficulty == "Hard"
+					toll_valid = condition_vibrator.Check() && condition_titrotor.Check() && condition_kurirotor.Check()
+				elseif difficulty == "Extreme"
+					toll_valid = condition_vibrator.Check() && condition_titrotor.Check() && condition_kurirotor.Check() && condition_pistonanal.Check() && condition_pistonpussy.Check()
+				if IsSMTollTicketEquipped() && condition_self_handcuff.Check() == false
+					toll_valid = false
+				if toll_valid
+					toll_timer = toll_timer + _timediff
+					toys_zone.SetColor(0.2,1,0.2)
+				else
+					toll_timer = 0
+					toys_zone.SetColor(1,0.65,0.2)
+				toys_panel.SetGaugeProgress(toll_timer / 3)
+				if toll_timer >= 3
+					locked_vibrator = condition_vibrator.Check()
+					locked_titrotor = condition_titrotor.Check()
+					locked_kurirotor = condition_kurirotor.Check()
+					locked_pistonanal = condition_pistonanal.Check()
+					locked_pistonpussy = condition_pistonpussy.Check()
+					toll_ticket_active = IsSMTollTicketEquipped()
+					locked_handcuff = toll_ticket_active && condition_self_handcuff.Check()
+					toll_paid = true
+					toys_zone.SetVisible(false)
+					toys_gate_visible_zone.SetVisible(false)
+					toys_panel.SetVisible(false)
+			else
+				toll_timer = 0
+				toys_panel.SetVisible(false)
+		else
+			toys_panel.SetVisible(false)
+			toy_force_timer = toy_force_timer + _timediff
+			if toy_force_timer >= 0.4
+				toy_force_timer = 0
+				if locked_vibrator && condition_vibrator.Check() == false
+					EquipAdultToy("Vibrator")
+				if locked_titrotor && condition_titrotor.Check() == false
+					EquipAdultToy("TitRotor")
+				if locked_kurirotor && condition_kurirotor.Check() == false
+					EquipAdultToy("KuriRotor")
+				if locked_pistonanal && condition_pistonanal.Check() == false
+					EquipAdultToy("PistonAnal")
+				if locked_pistonpussy && condition_pistonpussy.Check() == false
+					EquipAdultToy("PistonPussy")
+				if locked_handcuff && condition_handcuffsback.Check() == false
+					LockHandcuffs(handcuffstype="Handcuff")
+				if toll_ticket_active
+					if locked_vibrator || locked_titrotor || locked_kurirotor
+						SetVibrator("Low")
+					if locked_pistonanal || locked_pistonpussy
+						SetPiston("Low")
+				else
+					if locked_vibrator || locked_titrotor || locked_kurirotor
+						SetVibrator("Random")
+					if locked_pistonanal || locked_pistonpussy
+						SetPiston("Random")
+
+	UpdateRandomPunishment:
+		if punishment_mode
+			if punishment_active
+				if condition_blindfolded.Check() == false && condition_handcuffsback.Check() == false
+					punishment_active = false
+					punishment_wait_timer = RandomInt(35,61)
+					punishment_handcuff_added_by_mission = false
+					if eyemask_timer <= 0
+						eyemask_added_by_mission = false
+			else
+				punishment_wait_timer = punishment_wait_timer - _timediff
+				if punishment_wait_timer <= 0
+					if condition_blindfolded.Check() == false
+						eyemask_added_by_mission = true
+						EquipAdultToy("EyeMask")
+					if condition_handcuffsback.Check() == false
+						punishment_handcuff_added_by_mission = true
+						LockHandcuffs(handcuffstype="Handcuff")
+					punishment_active = true
+
+	UpdateBarriers:
+		if toll_paid == false && toys_gate_trigger_zone.Inside()
+			SetPlayerPosition(position=toys_position)
+		if barrier1_trigger_zone.Inside()
+			SetPlayerPosition(position=barrier1_return_position)
+
+	Finish:
+		last_reward_rp = GetRewardRP()
+		last_reward_mp = GetRewardMP()
+		AddCurrentEarnRP(last_reward_rp)
+		manaka_points.Add(amount=last_reward_mp)
+		mainthread.UpdateHub()
+		_save.ManakaPlusV2ResidenceHomeSweetHomeCompleted = true
+		reward_overlay.Clear()
+		reward_overlay.Add(text="" + last_reward_rp + " RP + " + last_reward_mp + " Manaka Points Added")
+		reward_overlay_timer = 5
+		completed_signal = true
+		CleanupRuntime()
+
+	Cancel:
+		completed_signal = false
+		reward_overlay_timer = 0
+		reward_overlay.Clear()
+		CleanupRuntime()
+
+	CleanupRuntime:
+		active = false
+		HideMissionZones()
+		main_panel.SetVisible(false)
+		toys_panel.SetVisible(false)
+		toys_panel.SetGaugeProgress(0)
+		if toll_paid
+			SetVibrator("Off")
+			SetPiston("Off")
+		if punishment_handcuff_added_by_mission || locked_handcuff
+			UnlockHandcuffs()
+		if eyemask_added_by_mission
+			UnequipAdultToy("EyeMask")
+		eyemask_timer = 0
+		eyemask_force_timer = 0
+		eyemask_added_by_mission = false
+		CleanupNPCs()
+		RestoreCoat()
+		toll_paid = false
+		toll_timer = 0
+		locked_vibrator = false
+		locked_titrotor = false
+		locked_kurirotor = false
+		locked_pistonanal = false
+		locked_pistonpussy = false
+		locked_handcuff = false
+		toll_ticket_active = false
+		toy_force_timer = 0
+		punishment_wait_timer = 0
+		punishment_active = false
+		punishment_handcuff_added_by_mission = false
+
+	RetireNPC:
+		if npc != null
+			if npc.IsAlive()
+				npc.SkipStrangeness(true)
+				npc.CanGameOver(false)
+				npc.Smartphone(false)
+				npc.Headset(false)
+				npc.Stopped(false)
+				npc.Warp(position=Vector(retire_x, -0.11, -145))
+				npc.ClearWaypoints()
+				npc.AddWaypoint(Vector(retire_x + 1, -0.11, -145), last=true)
+
+	CleanupNPCs:
+		stationary_i = 0
+		while stationary_i < stationary_npcs.Count()
+			stationary_entry = stationary_npcs[stationary_i]
+			RetireNPC(npc=stationary_entry.npc, retire_x=55 + stationary_i)
+			stationary_i = stationary_i + 1
+		stationary_npcs = CreateList()
+		RetireNPC(npc=patrol1_npc, retire_x=65)
+		RetireNPC(npc=patrol1_npc_b, retire_x=66)
+		RetireNPC(npc=patrol2_npc, retire_x=67)
+		RetireNPC(npc=patrol2_npc_b, retire_x=68)
+		RetireNPC(npc=special_npc, retire_x=69)
+		patrol1_npc = null
+		patrol1_npc_b = null
+		patrol2_npc = null
+		patrol2_npc_b = null
+		special_npc = null
+
+	update:
+		if reward_overlay_timer > 0
+			reward_overlay_timer = reward_overlay_timer - _timediff
+			if reward_overlay_timer <= 0
+				reward_overlay.Clear()
+
+		if active
+			UpdateStationaryNPCs()
+			UpdatePatrol1()
+			UpdatePatrol2()
+			UpdateSpecialPatrol()
+			UpdateMovingZone()
+			UpdateEyeMaskPunishment()
+			UpdateToll()
+			UpdateRandomPunishment()
+			UpdateBarriers()
+			home_distance = Vector3Distance(_state.Position, destination_position)
+			home_gauge = 0
+			if home_total_distance > 0
+				if home_distance < home_total_distance
+					home_gauge = (home_total_distance - home_distance) / home_total_distance
+			if destination_zone.Inside()
+				home_gauge = 1
+			main_panel.SetGaugeProgress(home_gauge)
+			if destination_zone.Inside()
+				Finish()
+
+# ============================================================
+# RESIDENCE DARE
+# ============================================================
+manakaplus_v22_residence_dare:
+	thread = _this
+	active = false
+	state = 0
+	completed_signal = false
+	last_ep = 0
+	best_ep = 0
+	remaining = 300
+	elapsed = 0
+	second_timer = 0
+	prepare_timer = 0
+	ep = 0
+	rp_bank = 0
+	rp_last_total = 0
+	special_visible = true
+	ep_overlay_flip = 0
+	status_overlay_flip = 0
+	special_overlay_flip = 0
+	orgasm_was_active = false
+	coat_moved = false
+	coat_locked_for_run = false
+	champion_detection_qualified = false
+	passive_second_timer = 0
+	current_location = 0
+	location_cost_step = 0
+	location_cost_idle = 0
+	special_poll_duration = 80
+	special_poll_remaining = 80
+	current_event_0 = 0
+	current_event_1 = 0
+	current_event_2 = 0
+	current_event_3 = 0
+	previous_common_0 = 0
+	previous_common_1 = 0
+	previous_common_2 = 0
+	previous_time_event = 0
+	previous_rare_event = 0
+	poll_has_bodypaint_rare = false
+	rare_bodypaint_done = false
+	rare_detection_50_timer = 0
+	rare_detection_70_timer = 0
+	poll_rare_detection_50_done = false
+	poll_rare_detection_70_done = false
+	overlay_refresh_timer = 0
+	zone_check_timer = 0
+	npc_update_timer = 0
+	coat_remove_timer = 0
+	poll_coat_remove_done = false
+	poll_coat_return_done = false
+	poll_orgasm_exposed_done = false
+	poll_dildo_orgasm_done = false
+	orgasm_exposed_count = 0
+	dildo_orgasm_count = 0
+	time_event_11_timer = 0
+	time_event_11_orgasm_count = 0
+	poll_time_event_11_done = false
+	time_event_12_timer = 0
+	poll_time_event_12_done = false
+	time_event_13_orgasm_count = 0
+	poll_time_event_13_done = false
+	time_event_14_timer = 0
+	poll_time_event_14_done = false
+	time_event_11_blacklisted = false
+	time_event_12_blacklisted = false
+	time_event_13_blacklisted = false
+	time_event_14_blacklisted = false
+	crowded_npcs = CreateList()
+
+	condition_handbra = CreateCondition("[Action_Tebura]")
+	condition_bodypaint = CreateCondition("[Bodypaint]")
+	condition_exposed_any = CreateCondition("[(Exposed_Front,Exposed_Upper,Exposed_All)]")
+	condition_exposed_all = CreateCondition("[Exposed_All]")
+	condition_orgasm = CreateCondition("[Orgasm]")
+	condition_eyemask = CreateCondition("[AdultToy_EyeMask]")
+	condition_handcuffs_back = CreateCondition("[HandcuffsBack]")
+	condition_handcuffs_object = CreateCondition("[HandcuffsObject]")
+	condition_peeing = CreateCondition("[Peeing]")
+	condition_dildo_any = CreateCondition("[(Action_UseDildoFloorPussy1,Action_UseDildoFloorAnal1,Action_UseDildoWallPussy1,Action_UseDildoWallAnal1)]")
+	condition_vibrator_low = CreateCondition("[AdultToy_Vibrator,VibrationLow]")
+	condition_titrotor_low = CreateCondition("[AdultToy_TitRotor,VibrationLow]")
+	condition_kurirotor_low = CreateCondition("[AdultToy_KuriRotor,VibrationLow]")
+	condition_vibrator_high = CreateCondition("[AdultToy_Vibrator,VibrationHigh]")
+	condition_titrotor_high = CreateCondition("[AdultToy_TitRotor,VibrationHigh]")
+	condition_kurirotor_high = CreateCondition("[AdultToy_KuriRotor,VibrationHigh]")
+	condition_vibrator_random = CreateCondition("[AdultToy_Vibrator,VibrationRandom]")
+	condition_titrotor_random = CreateCondition("[AdultToy_TitRotor,VibrationRandom]")
+	condition_kurirotor_random = CreateCondition("[AdultToy_KuriRotor,VibrationRandom]")
+	input_special_toggle = CreateInput("<Keyboard>/leftBracket")
+	input_change_location = CreateInput("<Keyboard>/rightBracket")
+
+	dare_position_0 = Vector(7.67, -0.11, -102.30)
+	dare_position_1 = Vector(-14.89, -0.11, -101.21)
+	dare_position_2 = Vector(-9.56, -0.11, -78.75)
+	dare_position_3 = Vector(9.19, -0.11, -78.74)
+
+	dare_area_0 = CreateArea(type="sphere", stage="Residence", x=7.67, y=-0.11, z=-102.30, r=3.5, outline=true, compass=false)
+	dare_area_1 = CreateArea(type="sphere", stage="Residence", x=-14.89, y=-0.11, z=-101.21, r=2.8, outline=true, compass=false)
+	dare_area_2 = CreateArea(type="sphere", stage="Residence", x=-9.56, y=-0.11, z=-78.75, r=3, outline=true, compass=false)
+	dare_area_3 = CreateArea(type="sphere", stage="Residence", x=9.19, y=-0.11, z=-78.74, r=3, outline=true, compass=false)
+	dare_zone_0 = CreateZone(dare_area_0)
+	dare_zone_1 = CreateZone(dare_area_1)
+	dare_zone_2 = CreateZone(dare_area_2)
+	dare_zone_3 = CreateZone(dare_area_3)
+	dare_zone_0.SetVisible(false)
+	dare_zone_1.SetVisible(false)
+	dare_zone_2.SetVisible(false)
+	dare_zone_3.SetVisible(false)
+	dare_zone_0.SetColor(1,0.2,1)
+	dare_zone_1.SetColor(1,0.2,1)
+	dare_zone_2.SetColor(1,0.2,1)
+	dare_zone_3.SetColor(1,0.2,1)
+
+	main_panel = CreateMissionPanel()
+	main_panel.SetVisible(false)
+	main_panel.SetGaugeVisible(true)
+	main_panel.SetRPText("")
+
+	ep_overlay = CreateText()
+	ep_overlay.SetAnchor(0.11, 0.935)
+	ep_overlay.SetAlignment("TopLeft")
+	ep_overlay.SetSize(27)
+	ep_overlay.SetWidth(520)
+	ep_overlay.SetFace(dilate=0.3)
+	ep_overlay.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.3)
+	ep_overlay.SetFrontLayer(true)
+	ep_overlay.Clear()
+
+	ep_overlay_alt = CreateText()
+	ep_overlay_alt.SetAnchor(0.11, 0.935)
+	ep_overlay_alt.SetAlignment("TopLeft")
+	ep_overlay_alt.SetSize(27)
+	ep_overlay_alt.SetWidth(520)
+	ep_overlay_alt.SetFace(dilate=0.3)
+	ep_overlay_alt.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.3)
+	ep_overlay_alt.SetFrontLayer(true)
+	ep_overlay_alt.Clear()
+
+	status_overlay = CreateText()
+	status_overlay.SetAnchor(0.51, 0.90)
+	status_overlay.SetAlignment("Top")
+	status_overlay.SetSize(25)
+	status_overlay.SetWidth(600)
+	status_overlay.SetFace(dilate=0.3)
+	status_overlay.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.3)
+	status_overlay.SetFrontLayer(true)
+	status_overlay.Clear()
+
+	status_overlay_alt = CreateText()
+	status_overlay_alt.SetAnchor(0.51, 0.90)
+	status_overlay_alt.SetAlignment("Top")
+	status_overlay_alt.SetSize(25)
+	status_overlay_alt.SetWidth(600)
+	status_overlay_alt.SetFace(dilate=0.3)
+	status_overlay_alt.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.3)
+	status_overlay_alt.SetFrontLayer(true)
+	status_overlay_alt.Clear()
+
+	special_overlay = CreateText()
+	special_overlay.SetAnchor(0.04, 0.82)
+	special_overlay.SetAlignment("TopLeft")
+	special_overlay.SetSize(24)
+	special_overlay.SetWidth(620)
+	special_overlay.SetFace(dilate=0.3)
+	special_overlay.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.3)
+	special_overlay.SetFrontLayer(true)
+	special_overlay.Clear()
+
+	special_overlay_alt = CreateText()
+	special_overlay_alt.SetAnchor(0.04, 0.82)
+	special_overlay_alt.SetAlignment("TopLeft")
+	special_overlay_alt.SetSize(24)
+	special_overlay_alt.SetWidth(620)
+	special_overlay_alt.SetFace(dilate=0.3)
+	special_overlay_alt.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.3)
+	special_overlay_alt.SetFrontLayer(true)
+	special_overlay_alt.Clear()
+
+	reward_overlay = CreateText()
+	reward_overlay.SetAnchor(0.5, 0.5)
+	reward_overlay.SetAlignment("Top")
+	reward_overlay.SetSize(36)
+	reward_overlay.SetWidth(1200)
+	reward_overlay.SetFace(color=Color(1,1,1,1), dilate=0.35)
+	reward_overlay.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.35)
+	reward_overlay.SetFrontLayer(true)
+	reward_overlay.Clear()
+	reward_overlay_timer = 0
+
+	listener = CreateListenerLocal("update")
+	Log("ManakaPlus v2: Residence Dare module loaded.")
+
+	Start:
+		if active == false
+			active = true
+			state = 2
+			completed_signal = false
+			last_ep = 0
+			remaining = 300
+			elapsed = 0
+			second_timer = 0
+			prepare_timer = 0
+			ep = 0
+			rp_bank = 0
+			rp_last_total = GetCurrentEarnRP()
+			special_visible = true
+			ep_overlay_flip = 0
+			status_overlay_flip = 0
+			special_overlay_flip = 0
+			orgasm_was_active = false
+			coat_moved = false
+			coat_locked_for_run = false
+			champion_detection_qualified = _state.Detection >= 0.8
+			passive_second_timer = 0
+			dare_start_random_warmup = RandomInt(0, 3)
+			current_location = RandomInt(0, 3)
+			location_cost_step = 0
+			location_cost_idle = 0
+			special_poll_remaining = special_poll_duration
+			current_event_0 = 0
+			current_event_1 = 0
+			current_event_2 = 0
+			current_event_3 = 0
+			previous_common_0 = 0
+			previous_common_1 = 0
+			previous_common_2 = 0
+			previous_time_event = 0
+			previous_rare_event = 0
+			poll_has_bodypaint_rare = false
+			rare_bodypaint_done = false
+			rare_detection_50_timer = 0
+			rare_detection_70_timer = 0
+			poll_rare_detection_50_done = false
+			poll_rare_detection_70_done = false
+			overlay_refresh_timer = 0
+			zone_check_timer = 0
+			npc_update_timer = 0
+			time_event_11_blacklisted = false
+			time_event_12_blacklisted = false
+			time_event_13_blacklisted = false
+			time_event_14_blacklisted = false
+			ResetPollProgress()
+			SetActiveLocation(_location=current_location)
+			main_panel.SetVisible(false)
+			main_panel.SetRPText("")
+			main_panel.SetGaugeVisible(false)
+			ClearOverlays()
+			CleanupCrowdedNPCs()
+			SpawnCrowdedNPCs()
+			SetPlayerPosition(position=GetCurrentPosition())
+			RollSpecialEvents()
+			RefreshOverlays()
+
+	ResetPollProgress:
+		coat_remove_timer = 0
+		poll_coat_remove_done = false
+		poll_coat_return_done = false
+		poll_orgasm_exposed_done = false
+		poll_dildo_orgasm_done = false
+		orgasm_exposed_count = 0
+		dildo_orgasm_count = 0
+		time_event_11_timer = 0
+		time_event_11_orgasm_count = 0
+		poll_time_event_11_done = false
+		time_event_12_timer = 0
+		poll_time_event_12_done = false
+		time_event_13_orgasm_count = 0
+		poll_time_event_13_done = false
+		time_event_14_timer = 0
+		poll_time_event_14_done = false
+		rare_detection_50_timer = 0
+		rare_detection_70_timer = 0
+		poll_rare_detection_50_done = false
+		poll_rare_detection_70_done = false
+
+	IsActive:
+		_result = active
+
+	IsRunning:
+		_result = active && state == 2
+
+	ConsumeCompleted:
+		_result = completed_signal
+		completed_signal = false
+
+	GetLastEP:
+		_result = last_ep
+
+	GetBestEP:
+		if _save.ManakaPlusV2ResidenceDareBestEP == null
+			_save.ManakaPlusV2ResidenceDareBestEP = 0
+		_result = Floor(_save.ManakaPlusV2ResidenceDareBestEP)
+
+	GetCurrentPosition:
+		if current_location == 0
+			_result = dare_position_0
+		elseif current_location == 1
+			_result = dare_position_1
+		elseif current_location == 2
+			_result = dare_position_2
+		else
+			_result = dare_position_3
+
+	CurrentZoneInside:
+		if current_location == 0
+			_result = dare_zone_0.Inside()
+		elseif current_location == 1
+			_result = dare_zone_1.Inside()
+		elseif current_location == 2
+			_result = dare_zone_2.Inside()
+		else
+			_result = dare_zone_3.Inside()
+
+	SetActiveLocation:
+		current_location = _location
+		RefreshZoneVisibility()
+
+	RefreshZoneVisibility:
+		show_zone = active && _state.Position.stage == "Residence"
+		dare_zone_0.SetVisible(show_zone && current_location == 0)
+		dare_zone_1.SetVisible(show_zone && current_location == 1)
+		dare_zone_2.SetVisible(show_zone && current_location == 2)
+		dare_zone_3.SetVisible(show_zone && current_location == 3)
+
+	GetLocationChangeCost:
+		if location_cost_step <= 0
+			_result = 10
+		elseif location_cost_step == 1
+			_result = 12
+		elseif location_cost_step == 2
+			_result = 15
+		else
+			_result = 18
+
+	ChangeLocation:
+		cost_ep = GetLocationChangeCost()
+		if ep < cost_ep
+			return
+		ep = ep - cost_ep
+		if current_location == 0
+			next_roll = RandomInt(0, 2)
+			if next_roll == 0
+				SetActiveLocation(_location=1)
+			elseif next_roll == 1
+				SetActiveLocation(_location=2)
+			else
+				SetActiveLocation(_location=3)
+		elseif current_location == 1
+			next_roll = RandomInt(0, 2)
+			if next_roll == 0
+				SetActiveLocation(_location=0)
+			elseif next_roll == 1
+				SetActiveLocation(_location=2)
+			else
+				SetActiveLocation(_location=3)
+		elseif current_location == 2
+			next_roll = RandomInt(0, 2)
+			if next_roll == 0
+				SetActiveLocation(_location=0)
+			elseif next_roll == 1
+				SetActiveLocation(_location=1)
+			else
+				SetActiveLocation(_location=3)
+		else
+			next_roll = RandomInt(0, 2)
+			if next_roll == 0
+				SetActiveLocation(_location=0)
+			elseif next_roll == 1
+				SetActiveLocation(_location=1)
+			else
+				SetActiveLocation(_location=2)
+		SetPlayerPosition(position=GetCurrentPosition())
+		if location_cost_step < 3
+			location_cost_step = location_cost_step + 1
+		location_cost_idle = 0
+		RefreshZoneVisibility()
+
+	RandomCrowdedAvatar:
+		avatar_roll = RandomInt(0, 3)
+		_result = "NewFemale"
+		if avatar_roll == 1
+			_result = "PreviousFemale"
+		elseif avatar_roll == 2
+			_result = "NewMale"
+		elseif avatar_roll == 3
+			_result = "PreviousMale"
+
+	GetCrowdedPhoneUseDuration:
+		_result = RandomInt(24, 70)
+
+	GetCrowdedPhoneBreakDuration:
+		_result = RandomInt(5, 7)
+
+	SpawnCrowdedNPCs:
+		crowded_npcs = CreateList()
+		crowded_data = CreateList()
+		crowded_data.Insert(CreateList(position=Vector(-9.30, -0.10, -72.29), rotation=Quaternion(0.00000, 0.99983, 0.00000, -0.01833)))
+		crowded_data.Insert(CreateList(position=Vector(7.16, -0.09, -85.67), rotation=Quaternion(0.00000, 0.24277, 0.00000, 0.97009)))
+		crowded_data.Insert(CreateList(position=Vector(-1.33, -0.08, -77.36), rotation=Quaternion(0.00000, 0.72718, 0.00000, 0.68645)))
+		crowded_data.Insert(CreateList(position=Vector(-0.24, -0.08, -77.40), rotation=Quaternion(0.00000, -0.69529, 0.00000, 0.71873)))
+		crowded_data.Insert(CreateList(position=Vector(15.06, -0.09, -80.43), rotation=Quaternion(0.00000, 0.02967, 0.00000, 0.99956)))
+		crowded_data.Insert(CreateList(position=Vector(7.97, -0.09, -96.40), rotation=Quaternion(0.00000, 0.97815, 0.00000, 0.20791)))
+		crowded_data.Insert(CreateList(position=Vector(6.98, -0.11, -111.80), rotation=Quaternion(0.00000, 0.17623, 0.00000, 0.98435)))
+		crowded_data.Insert(CreateList(position=Vector(-4.27, -0.11, -103.09), rotation=Quaternion(0.00000, -0.55048, 0.00000, 0.83485)))
+		crowded_data.Insert(CreateList(position=Vector(-13.41, -0.11, -95.45), rotation=Quaternion(0.00000, 0.92751, 0.00000, -0.37381)))
+		crowded_data.Insert(CreateList(position=Vector(-26.32, -0.11, -100.20), rotation=Quaternion(0.00000, 0.82264, 0.00000, 0.56856)))
+		crowded_data.Insert(CreateList(position=Vector(-0.89, -0.11, -98.50), rotation=Quaternion(0.00000, 0.94322, 0.00000, 0.33216)))
+		crowded_data.Insert(CreateList(position=Vector(-12.87, -0.11, -85.13), rotation=Quaternion(0.00000, 0.30487, 0.00000, 0.95240)))
+		crowded_i = 0
+		while crowded_i < crowded_data.Count()
+			crowded_info = crowded_data[crowded_i]
+			crowded_npc = CreateNPC(RandomCrowdedAvatar(), position=crowded_info.position, rotation=crowded_info.rotation)
+			crowded_npc.SkipStrangeness(false)
+			crowded_npc.CanGameOver(true)
+			crowded_npc.Smartphone(true)
+			crowded_npc.Headset(false)
+			crowded_npc.Stopped(false)
+			crowded_npc.ClearWaypoints()
+			crowded_npc.AddWaypoint(crowded_info.position)
+			crowded_npcs.Insert(CreateList(npc=crowded_npc, phone=true, timer=GetCrowdedPhoneUseDuration()))
+			crowded_i = crowded_i + 1
+
+	UpdateCrowdedNPCs:
+		crowded_i = 0
+		while crowded_i < crowded_npcs.Count()
+			crowded_entry = crowded_npcs[crowded_i]
+			if crowded_entry.npc != null
+				crowded_entry.timer = crowded_entry.timer - _delta
+				if crowded_entry.timer <= 0
+					if crowded_entry.phone
+						crowded_entry.phone = false
+						crowded_entry.timer = GetCrowdedPhoneBreakDuration()
+						crowded_entry.npc.Smartphone(false)
+					else
+						crowded_entry.phone = true
+						crowded_entry.timer = GetCrowdedPhoneUseDuration()
+						crowded_entry.npc.Smartphone(true)
+			crowded_i = crowded_i + 1
+
+	RetireCrowdedNPC:
+		if npc != null
+			if npc.IsAlive()
+				npc.SkipStrangeness(true)
+				npc.CanGameOver(false)
+				npc.Smartphone(false)
+				npc.Headset(false)
+				npc.Stopped(false)
+				npc.Warp(position=Vector(retire_x, -0.11, -145))
+				npc.ClearWaypoints()
+				npc.AddWaypoint(Vector(retire_x + 1, -0.11, -145), last=true)
+
+	CleanupCrowdedNPCs:
+		crowded_i = 0
+		while crowded_i < crowded_npcs.Count()
+			crowded_entry = crowded_npcs[crowded_i]
+			RetireCrowdedNPC(npc=crowded_entry.npc, retire_x=80 + crowded_i)
+			crowded_i = crowded_i + 1
+		crowded_npcs = CreateList()
+
+	MoveCoatAway:
+		DropItem(itemtype="Coat", position=_state.Position, compass=false)
+		CollectItem(itemtype="Coat")
+		coat_away_pos = CreateList(stage="Apart", x=-1.84, y=0.00, z=-0.20, rx=0, ry=0, rz=0, rw=0)
+		DropItem(itemtype="Coat", stage="Apart", position=coat_away_pos, compass=false)
+		coat_moved = true
+
+	RestoreCoat:
+		if coat_moved
+			CollectItem(itemtype="Coat")
+			coat_return_pos = CreateList(stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y, z=_state.Position.z, rx=0, ry=0, rz=0, rw=0)
+			DropItem(itemtype="Coat", position=coat_return_pos, compass=false)
+			coat_moved = false
+		coat_locked_for_run = false
+
+	TrackEarnedRP:
+		current_rp_total = GetCurrentEarnRP()
+		rp_gain = current_rp_total - rp_last_total
+		if rp_gain > 0
+			rp_bank = rp_bank + rp_gain
+			while rp_bank >= 10
+				rp_bank = rp_bank - 10
+				ep = ep + 1
+		rp_last_total = current_rp_total
+
+	MapCommonRollToEvent:
+		if _roll == 0
+			_result = 1
+		elseif _roll == 1
+			_result = 2
+		elseif _roll == 2
+			_result = 3
+		elseif _roll == 3
+			if coat_moved
+				_result = 5
+			else
+				_result = 4
+		elseif _roll == 4
+			_result = 6
+		elseif _roll == 5
+			_result = 7
+		elseif _roll == 6
+			_result = 8
+		elseif _roll == 7
+			_result = 9
+		else
+			_result = 10
+
+	IsVibeEvent:
+		_result = _event == 8 || _event == 9 || _event == 10
+
+	CommonEventAllowed:
+		if (_event == 4 || _event == 5) && (coat_locked_for_run || poll_has_bodypaint_rare)
+			_result = false
+		else
+			_result = true
+
+	IsRareEvent:
+		_result = _event == 15 || _event == 16 || _event == 17
+
+	RollRareEvent:
+		attempts = 0
+		while attempts < 40
+			rare_roll = RandomInt(0, 2)
+			if rare_roll == 0
+				rare_event = 15
+			elseif rare_roll == 1
+				rare_event = 16
+			else
+				rare_event = 17
+			if rare_event != previous_rare_event
+				if rare_event != 15 || rare_bodypaint_done == false
+					_result = rare_event
+					return
+			attempts = attempts + 1
+		if rare_bodypaint_done == false && previous_rare_event != 15
+			_result = 15
+		elseif previous_rare_event != 16
+			_result = 16
+		elseif previous_rare_event != 17
+			_result = 17
+		elseif rare_bodypaint_done == false
+			_result = 15
+		else
+			_result = 16
+
+	RollCommonEvent:
+		attempts = 0
+		while attempts < 120
+			common_roll = RandomInt(0, 8)
+			common_event = MapCommonRollToEvent(_roll=common_roll)
+			if common_event != _exclude0 && common_event != _exclude1 && common_event != _exclude2 && common_event != _block0 && common_event != _block1 && common_event != _block2 && CommonEventAllowed(_event=common_event)
+				if _has_vibe == false || IsVibeEvent(_event=common_event) == false
+					_result = common_event
+					return
+			attempts = attempts + 1
+		if coat_moved
+			chain_event = 5
+		else
+			chain_event = 4
+			
+		if chain_event != _exclude0 && chain_event != _exclude1 && chain_event != _exclude2 && chain_event != _block0 && chain_event != _block1 && chain_event != _block2 && CommonEventAllowed(_event=chain_event)
+			_result = chain_event
+			return
+		if 1 != _exclude0 && 1 != _exclude1 && 1 != _exclude2 && 1 != _block0 && 1 != _block1 && 1 != _block2
+			_result = 1
+			return
+		if 2 != _exclude0 && 2 != _exclude1 && 2 != _exclude2 && 2 != _block0 && 2 != _block1 && 2 != _block2
+			_result = 2
+			return
+		if 3 != _exclude0 && 3 != _exclude1 && 3 != _exclude2 && 3 != _block0 && 3 != _block1 && 3 != _block2
+			_result = 3
+			return
+		if 6 != _exclude0 && 6 != _exclude1 && 6 != _exclude2 && 6 != _block0 && 6 != _block1 && 6 != _block2
+			_result = 6
+			return
+		if 7 != _exclude0 && 7 != _exclude1 && 7 != _exclude2 && 7 != _block0 && 7 != _block1 && 7 != _block2
+			_result = 7
+			return
+		if _has_vibe == false
+			if 8 != _exclude0 && 8 != _exclude1 && 8 != _exclude2 && 8 != _block0 && 8 != _block1 && 8 != _block2
+				_result = 8
+				return
+			if 9 != _exclude0 && 9 != _exclude1 && 9 != _exclude2 && 9 != _block0 && 9 != _block1 && 9 != _block2
+				_result = 9
+				return
+			if 10 != _exclude0 && 10 != _exclude1 && 10 != _exclude2 && 10 != _block0 && 10 != _block1 && 10 != _block2
+				_result = 10
+				return
+		_result = 1
+
+	IsTimeEventBlacklisted:
+		if _event == 11
+			_result = time_event_11_blacklisted
+		elseif _event == 12
+			_result = time_event_12_blacklisted
+		elseif _event == 13
+			_result = time_event_13_blacklisted
+		elseif _event == 14
+			_result = time_event_14_blacklisted
+		else
+			_result = true
+
+	RollTimeEvent:
+		attempts = 0
+		while attempts < 80
+			time_roll = RandomInt(0, 3)
+			if time_roll == 0
+				time_event = 11
+			elseif time_roll == 1
+				time_event = 12
+			elseif time_roll == 2
+				time_event = 13
+			else
+				time_event = 14
+			if time_event != previous_time_event && IsTimeEventBlacklisted(_event=time_event) == false
+				_result = time_event
+				return
+			attempts = attempts + 1
+		if previous_time_event != 11 && time_event_11_blacklisted == false
+			_result = 11
+		elseif previous_time_event != 12 && time_event_12_blacklisted == false
+			_result = 12
+		elseif previous_time_event != 13 && time_event_13_blacklisted == false
+			_result = 13
+		elseif previous_time_event != 14 && time_event_14_blacklisted == false
+			_result = 14
+		elseif time_event_11_blacklisted == false
+			_result = 11
+		elseif time_event_12_blacklisted == false
+			_result = 12
+		elseif time_event_13_blacklisted == false
+			_result = 13
+		elseif time_event_14_blacklisted == false
+			_result = 14
+		else
+			_result = 0
+
+	EventInPoll:
+		_result = current_event_0 == _event || current_event_1 == _event || current_event_2 == _event || current_event_3 == _event
+
+	EventHidden:
+		if _event == 4
+			_result = poll_coat_remove_done
+		elseif _event == 5
+			_result = poll_coat_return_done
+		elseif _event == 6
+			_result = poll_orgasm_exposed_done
+		elseif _event == 7
+			_result = poll_dildo_orgasm_done
+		elseif _event == 11
+			_result = poll_time_event_11_done
+		elseif _event == 12
+			_result = poll_time_event_12_done
+		elseif _event == 13
+			_result = poll_time_event_13_done
+		elseif _event == 14
+			_result = poll_time_event_14_done
+		elseif _event == 15
+			_result = rare_bodypaint_done
+		elseif _event == 16
+			_result = poll_rare_detection_50_done
+		elseif _event == 17
+			_result = poll_rare_detection_70_done
+		else
+			_result = false
+
+	RollSpecialEvents:
+		previous_common_0 = current_event_0
+		previous_common_1 = current_event_1
+		previous_common_2 = current_event_2
+		previous_time_event = current_event_3
+		previous_rare_event = 0
+		if IsRareEvent(_event=current_event_0)
+			previous_rare_event = current_event_0
+		elseif IsRareEvent(_event=current_event_1)
+			previous_rare_event = current_event_1
+		elseif IsRareEvent(_event=current_event_2)
+			previous_rare_event = current_event_2
+		rare_candidate = 0
+		rare_slot = -1
+		if RandomInt(0, 2) == 0
+			rare_candidate = RollRareEvent()
+			rare_slot = RandomInt(0, 2)
+		poll_has_bodypaint_rare = rare_candidate == 15
+		current_event_0 = 0
+		current_event_1 = 0
+		current_event_2 = 0
+		has_vibe_now = false
+		if rare_slot == 0
+			current_event_0 = rare_candidate
+		else
+			current_event_0 = RollCommonEvent(_exclude0=0, _exclude1=0, _exclude2=0, _block0=previous_common_0, _block1=previous_common_1, _block2=previous_common_2, _has_vibe=false)
+		has_vibe_now = IsVibeEvent(_event=current_event_0)
+		if rare_slot == 1
+			current_event_1 = rare_candidate
+		else
+			current_event_1 = RollCommonEvent(_exclude0=current_event_0, _exclude1=0, _exclude2=0, _block0=previous_common_0, _block1=previous_common_1, _block2=previous_common_2, _has_vibe=has_vibe_now)
+		if has_vibe_now == false
+			has_vibe_now = IsVibeEvent(_event=current_event_1)
+		if rare_slot == 2
+			current_event_2 = rare_candidate
+		else
+			current_event_2 = RollCommonEvent(_exclude0=current_event_0, _exclude1=current_event_1, _exclude2=0, _block0=previous_common_0, _block1=previous_common_1, _block2=previous_common_2, _has_vibe=has_vibe_now)
+		current_event_3 = RollTimeEvent()
+		special_poll_remaining = special_poll_duration
+		ResetPollProgress()
+
+	UpdatePassiveEP:
+		exposed_now = condition_exposed_any.Check()
+		passive_second_timer = passive_second_timer + _timediff
+		while passive_second_timer >= 1
+			passive_second_timer = passive_second_timer - 1
+			if exposed_now
+				if EventInPoll(_event=1) && condition_eyemask.Check()
+					ep = ep + 0.50
+				if EventInPoll(_event=2) && (condition_handcuffs_back.Check() || condition_handcuffs_object.Check())
+					ep = ep + 0.50
+				if EventInPoll(_event=3) && condition_peeing.Check()
+					ep = ep + 1
+				if EventInPoll(_event=8)
+					if condition_vibrator_low.Check()
+						ep = ep + 0.20
+					if condition_titrotor_low.Check()
+						ep = ep + 0.20
+					if condition_kurirotor_low.Check()
+						ep = ep + 0.20
+				if EventInPoll(_event=9)
+					if condition_vibrator_high.Check()
+						ep = ep + 0.50
+					if condition_titrotor_high.Check()
+						ep = ep + 0.50
+					if condition_kurirotor_high.Check()
+						ep = ep + 0.50
+				if EventInPoll(_event=10)
+					if condition_vibrator_random.Check()
+						ep = ep + 0.25
+					if condition_titrotor_random.Check()
+						ep = ep + 0.25
+					if condition_kurirotor_random.Check()
+						ep = ep + 0.25
+
+	UpdateCommonEvents:
+		if EventInPoll(_event=4)
+			if poll_coat_remove_done == false
+				if condition_exposed_all.Check()
+					coat_remove_timer = coat_remove_timer + _timediff
+				else
+					coat_remove_timer = 0
+				if coat_remove_timer >= 30
+					ep = ep + 20
+					MoveCoatAway()
+					poll_coat_remove_done = true
+					coat_remove_timer = 0
+		else
+			coat_remove_timer = 0
+
+		if EventInPoll(_event=5) && poll_coat_return_done == false
+			if _orgasm_triggered
+				RestoreCoat()
+				poll_coat_return_done = true
+
+		if EventInPoll(_event=6)
+			if poll_orgasm_exposed_done == false
+				if _orgasm_triggered && condition_exposed_any.Check()
+					orgasm_exposed_count = orgasm_exposed_count + 1
+					if orgasm_exposed_count >= 2
+						ep = ep + 10
+						poll_orgasm_exposed_done = true
+		else
+			orgasm_exposed_count = 0
+
+		if EventInPoll(_event=7)
+			if poll_dildo_orgasm_done == false
+				if _orgasm_triggered && condition_dildo_any.Check()
+					dildo_orgasm_count = 1
+					ep = ep + 10
+					poll_dildo_orgasm_done = true
+		else
+			dildo_orgasm_count = 0
+
+	UpdateTimeEvents:
+		if EventInPoll(_event=11)
+			if poll_time_event_11_done == false
+				if condition_eyemask.Check() && condition_exposed_any.Check()
+					time_event_11_timer = time_event_11_timer + _timediff
+				else
+					time_event_11_timer = 0
+				if _orgasm_triggered
+					time_event_11_orgasm_count = time_event_11_orgasm_count + 1
+				if time_event_11_timer >= 30 && time_event_11_orgasm_count >= 1
+					remaining = remaining + 60
+					poll_time_event_11_done = true
+					time_event_11_blacklisted = true
+		else
+			time_event_11_timer = 0
+			time_event_11_orgasm_count = 0
+
+		if EventInPoll(_event=12)
+			if poll_time_event_12_done == false
+				if condition_eyemask.Check() && condition_handcuffs_object.Check()
+					time_event_12_timer = time_event_12_timer + _timediff
+				else
+					time_event_12_timer = 0
+				if time_event_12_timer >= 30
+					remaining = remaining + 60
+					poll_time_event_12_done = true
+					time_event_12_blacklisted = true
+		else
+			time_event_12_timer = 0
+
+		if EventInPoll(_event=13)
+			if poll_time_event_13_done == false
+				if _orgasm_triggered && condition_exposed_all.Check()
+					time_event_13_orgasm_count = time_event_13_orgasm_count + 1
+					if time_event_13_orgasm_count >= 2
+						remaining = remaining + 60
+						poll_time_event_13_done = true
+						time_event_13_blacklisted = true
+		else
+			time_event_13_orgasm_count = 0
+
+		if EventInPoll(_event=14)
+			if poll_time_event_14_done == false
+				if condition_exposed_any.Check() && condition_vibrator_high.Check() && condition_titrotor_high.Check() && condition_kurirotor_high.Check()
+					time_event_14_timer = time_event_14_timer + _timediff
+				else
+					time_event_14_timer = 0
+				if time_event_14_timer >= 30
+					remaining = remaining + 60
+					poll_time_event_14_done = true
+					time_event_14_blacklisted = true
+		else
+			time_event_14_timer = 0
+
+	UpdateRareEvents:
+		if EventInPoll(_event=15) && rare_bodypaint_done == false
+			if condition_bodypaint.Check()
+				ep = ep + 15
+				if coat_moved == false
+					MoveCoatAway()
+				coat_locked_for_run = true
+				rare_bodypaint_done = true
+				poll_has_bodypaint_rare = false
+
+		if EventInPoll(_event=16)
+			if poll_rare_detection_50_done == false
+				if _state.Detection >= 0.5 && condition_exposed_all.Check()
+					rare_detection_50_timer = rare_detection_50_timer + _timediff
+				else
+					rare_detection_50_timer = 0
+				if rare_detection_50_timer >= 30
+					ep = ep + 15
+					poll_rare_detection_50_done = true
+		else
+			rare_detection_50_timer = 0
+
+		if EventInPoll(_event=17)
+			if poll_rare_detection_70_done == false
+				if _state.Detection >= 0.7 && condition_exposed_all.Check()
+					rare_detection_70_timer = rare_detection_70_timer + _timediff
+				else
+					rare_detection_70_timer = 0
+				if rare_detection_70_timer >= 30
+					ep = ep + 25
+					poll_rare_detection_70_done = true
+		else
+			rare_detection_70_timer = 0
+
+	FormatTimeEvent:
+		_result = "<i>" + _text + "</i>"
+
+	BuildEventText:
+		if _event == 1
+			_result = "+ Blindfold while exposed : +0.50 EP/s"
+		elseif _event == 2
+			_result = "+ Handcuffed while exposed : +0.50 EP/s"
+		elseif _event == 3
+			_result = "+ Peeing while exposed : +1 EP/s"
+		elseif _event == 4
+			coat_remove_left = 30 - Floor(coat_remove_timer)
+			_result = "* Naked to remove the Coat : " + coat_remove_left + "s  Reward 20 EP"
+		elseif _event == 5
+			_result = "* Orgasm 1 time to retrieve the Coat : 0/1"
+		elseif _event == 6
+			_result = "* Orgasm 2 times while exposed : " + orgasm_exposed_count + "/2  Reward 10 EP"
+		elseif _event == 7
+			_result = "* Using Dildo and Orgasm 1 time : " + dildo_orgasm_count + "/1  Reward 10 EP"
+		elseif _event == 8
+			_result = "+ Each Vibrator toy in Low speed while exposed : +0.20 EP/s"
+		elseif _event == 9
+			_result = "+ Each Vibrator toy in High speed while exposed : +0.50 EP/s"
+		elseif _event == 10
+			_result = "+ Each Vibrator toy in Random speed while exposed : +0.25 EP/s"
+		elseif _event == 11
+			time_event_11_left = 30 - Floor(time_event_11_timer)
+			_result = FormatTimeEvent(_text="* Blindfold while exposed, then Orgasm 1 time : " + time_event_11_left + "s  Extend 60s")
+		elseif _event == 12
+			time_event_12_left = 30 - Floor(time_event_12_timer)
+			_result = FormatTimeEvent(_text="* Blindfold + Object Handcuff : " + time_event_12_left + "s  Extend 60s")
+		elseif _event == 13
+			_result = FormatTimeEvent(_text="* While Naked, Orgasm 2 times : " + time_event_13_orgasm_count + "/2  Extend 60s")
+		elseif _event == 14
+			time_event_14_left = 30 - Floor(time_event_14_timer)
+			_result = FormatTimeEvent(_text="* While exposed, use all 3 Vibrators at High speed : " + time_event_14_left + "s  Extend 60s")
+		elseif _event == 15
+			_result = "* Bodypaint to remove the Coat permanently : Reward 15 EP"
+		elseif _event == 16
+			rare_detection_50_left = 30 - Floor(rare_detection_50_timer)
+			_result = "* Detection Risk no lower than 50% and Naked : " + rare_detection_50_left + "s  Reward 15 EP"
+		else
+			rare_detection_70_left = 30 - Floor(rare_detection_70_timer)
+			_result = "* Detection Risk no lower than 70% and Naked : " + rare_detection_70_left + "s  Reward 25 EP"
+	BuildSpecialText:
+		result_text = "<size=112%><b>Special Events will change in : " + Floor(special_poll_remaining) + "s</b></size>"
+		if current_event_0 != 0 && EventHidden(_event=current_event_0) == false
+			result_text = result_text + "\n<size=110%>" + BuildEventText(_event=current_event_0) + "</size>"
+		if current_event_1 != 0 && EventHidden(_event=current_event_1) == false
+			result_text = result_text + "\n<size=110%>" + BuildEventText(_event=current_event_1) + "</size>"
+		if current_event_2 != 0 && EventHidden(_event=current_event_2) == false
+			result_text = result_text + "\n<size=110%>" + BuildEventText(_event=current_event_2) + "</size>"
+		if current_event_3 != 0 && EventHidden(_event=current_event_3) == false
+			result_text = result_text + "\n<size=110%>" + BuildEventText(_event=current_event_3) + "</size>"
+		result_text = result_text + "\n\nPress ] to change the location , Cost " + GetLocationChangeCost() + " EP"
+		result_text = result_text + "\nPress [ to show/hide the Special Mission Panel"
+		_result = result_text
+	RefreshOverlays:
+		ep_text = "Exposure Point: " + Floor(ep)
+		if ep_overlay_flip == 0
+			ep_overlay.Clear()
+			ep_overlay.Add(text=ep_text, duration=-1)
+			ep_overlay_alt.Clear()
+			ep_overlay_flip = 1
+		else
+			ep_overlay_alt.Clear()
+			ep_overlay_alt.Add(text=ep_text, duration=-1)
+			ep_overlay.Clear()
+			ep_overlay_flip = 0
+		status_text = "Dare Time: " + Floor(remaining) + "s"
+		if remaining <= 60
+			status_text = "<color=#ff3333>" + status_text + "</color>"
+		if status_overlay_flip == 0
+			status_overlay.Clear()
+			status_overlay.Add(text=status_text, duration=-1)
+			status_overlay_alt.Clear()
+			status_overlay_flip = 1
+		else
+			status_overlay_alt.Clear()
+			status_overlay_alt.Add(text=status_text, duration=-1)
+			status_overlay.Clear()
+			status_overlay_flip = 0
+		special_overlay.Clear()
+		special_overlay_alt.Clear()
+		if special_visible
+			special_text = BuildSpecialText()
+			if special_overlay_flip == 0
+				special_overlay.Add(text=special_text, duration=-1)
+				special_overlay_flip = 1
+			else
+				special_overlay_alt.Add(text=special_text, duration=-1)
+				special_overlay_flip = 0
+	ClearOverlays:
+		ep_overlay.Clear()
+		ep_overlay_alt.Clear()
+		status_overlay.Clear()
+		status_overlay_alt.Clear()
+		special_overlay.Clear()
+		special_overlay_alt.Clear()
+
+	Finish:
+		last_ep = Floor(ep)
+		if _save.ManakaPlusV2ResidenceDareBestEP == null
+			_save.ManakaPlusV2ResidenceDareBestEP = 0
+		if last_ep > _save.ManakaPlusV2ResidenceDareBestEP
+			_save.ManakaPlusV2ResidenceDareBestEP = last_ep
+		best_ep = Floor(_save.ManakaPlusV2ResidenceDareBestEP)
+		if _save.ManakaPlusV2DaringSilverMedalOwned == null
+			_save.ManakaPlusV2DaringSilverMedalOwned = false
+		if _save.ManakaPlusV2DaringGoldMedalOwned == null
+			_save.ManakaPlusV2DaringGoldMedalOwned = false
+		if _save.ManakaPlusV2DaringChampionMedalOwned == null
+			_save.ManakaPlusV2DaringChampionMedalOwned = false
+		if best_ep >= 200
+			_save.ManakaPlusV2DaringSilverMedalOwned = true
+		if best_ep >= 400
+			_save.ManakaPlusV2DaringGoldMedalOwned = true
+		if last_ep >= 300 && champion_detection_qualified
+			_save.ManakaPlusV2DaringChampionMedalOwned = true
+		reward_overlay.Clear()
+		reward_overlay.Add(text="Dare Completed\n" + last_ep + " EP Saved\nBest Record: " + best_ep + " EP")
+		reward_overlay_timer = 5
+		completed_signal = true
+		CleanupRuntime()
+
+	Cancel:
+		completed_signal = false
+		CleanupRuntime()
+
+	CleanupRuntime:
+		active = false
+		state = 0
+		dare_zone_0.SetVisible(false)
+		dare_zone_1.SetVisible(false)
+		dare_zone_2.SetVisible(false)
+		dare_zone_3.SetVisible(false)
+		main_panel.SetVisible(false)
+		ClearOverlays()
+		CleanupCrowdedNPCs()
+		RestoreCoat()
+		prepare_timer = 0
+		passive_second_timer = 0
+		current_event_0 = 0
+		current_event_1 = 0
+		current_event_2 = 0
+		current_event_3 = 0
+		previous_common_0 = 0
+		previous_common_1 = 0
+		previous_common_2 = 0
+		previous_time_event = 0
+		previous_rare_event = 0
+		poll_has_bodypaint_rare = false
+		rare_bodypaint_done = false
+		rare_detection_50_timer = 0
+		rare_detection_70_timer = 0
+		poll_rare_detection_50_done = false
+		poll_rare_detection_70_done = false
+		overlay_refresh_timer = 0
+		zone_check_timer = 0
+		npc_update_timer = 0
+		location_cost_step = 0
+		location_cost_idle = 0
+		champion_detection_qualified = false
+		ResetPollProgress()
+
+	update:
+		if reward_overlay_timer > 0
+			reward_overlay_timer = reward_overlay_timer - _timediff
+			if reward_overlay_timer <= 0
+				reward_overlay.Clear()
+		if active
+			npc_update_timer = npc_update_timer + _timediff
+			if npc_update_timer >= 0.25
+				UpdateCrowdedNPCs(_delta=npc_update_timer)
+				npc_update_timer = 0
+			if _state.Position.stage != "Residence"
+				Cancel()
+			else
+				if champion_detection_qualified && _state.Detection < 0.8
+					champion_detection_qualified = false
+				zone_check_timer = zone_check_timer + _timediff
+				if zone_check_timer >= 0.10
+					zone_check_timer = 0
+					if CurrentZoneInside() == false
+						SetPlayerPosition(position=GetCurrentPosition())
+				if state == 2
+					TrackEarnedRP()
+					location_cost_idle = location_cost_idle + _timediff
+					if location_cost_step > 0 && location_cost_idle >= 60
+						location_cost_step = 0
+						location_cost_idle = 0
+					orgasm_now = condition_orgasm.Check()
+					orgasm_triggered = orgasm_now && orgasm_was_active == false
+					UpdateCommonEvents(_orgasm_triggered=orgasm_triggered)
+					UpdateRareEvents()
+					UpdateTimeEvents(_orgasm_triggered=orgasm_triggered)
+					orgasm_was_active = orgasm_now
+					UpdatePassiveEP()
+					special_poll_remaining = special_poll_remaining - _timediff
+					if special_poll_remaining <= 0
+						RollSpecialEvents()
+					if input_special_toggle.WasPressed()
+						if special_visible
+							special_visible = false
+						else
+							special_visible = true
+						overlay_refresh_timer = 1
+					if input_change_location.WasPressed()
+						ChangeLocation()
+						overlay_refresh_timer = 1
+					overlay_refresh_timer = overlay_refresh_timer + _timediff
+					if overlay_refresh_timer >= 0.20
+						overlay_refresh_timer = 0
+						RefreshOverlays()
+					second_timer = second_timer + _timediff
+					while second_timer >= 1
+						second_timer = second_timer - 1
+						remaining = remaining - 1
+						elapsed = elapsed + 1
+					if remaining <= 0
+						Finish()

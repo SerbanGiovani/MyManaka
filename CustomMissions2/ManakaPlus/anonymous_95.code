@@ -1,0 +1,1421 @@
+manakaplus_v22_anonymous95:
+	thread = _this
+	active = false
+	session_stage = ""
+	anon95_last_stage = ""
+	anon95_current_root_mode = 0
+	anon95_dare_completed = false
+	warning_sound = CreateAudio("Asset/Simple_ding_sound.mp3")
+	anon95_chat = null
+	anon95_branch = 0
+	anon95_done = false
+	anon95_dare_available = false
+	anon95_gamble_state = 0
+	anon95_reward_overlay_timer = 0
+	anon95_root_mode = 0
+	anon95_residence_dare_menu = "home"
+	manaka_points = CreateThread("manakaplus_v22_manaka_points")
+	residence_dare = CreateThread("manakaplus_v22_residence_dare")
+
+	# Shared module state. These variables must exist in the permanent module scope
+	# because the chat and runtime listeners are separate root listeners.
+	anon95_dare_state = 0
+	anon95_dare_precheck_duration = 0
+	anon95_dare_remaining = 300
+	anon95_dare_elapsed = 0
+	anon95_dare_second_timer = 0
+	anon95_dare_passive_timer = 0
+	anon95_dare_passive_bank = 0
+	anon95_dare_tempcoat_active = false
+	anon95_dare_coat_displaced = false
+	anon95_dare_tempcoat_remaining = 0
+	anon95_dare_tempcoat_second_timer = 0
+	anon95_dare_nipple_duration = 0
+	anon95_dare_nipple_done = false
+	anon95_dare_nipple_locked = false
+	anon95_dare_tempcoat_duration = 0
+	anon95_dare_tempcoat_locked = false
+	anon95_dare_ibalance_duration = 0
+	anon95_dare_ibalance_done = false
+	anon95_dare_toys_unlocked = false
+	anon95_dare_blindfold_unlocked = false
+	anon95_dare_blindfold_wear_duration = 0
+	anon95_dare_orgasm_unlocked = false
+	anon95_dare_orgasm_was_active = false
+	anon95_dare_pee_unlocked = false
+	anon95_dare_total_distance = 0
+	anon95_dare_area = null
+	anon95_dare_zone = null
+	anon95_dare_dest_pos = null
+	anon95_dare_panel = null
+	anon95_dare_overlay = null
+	anon95_dare_overlay_alt = null
+	anon95_dare_overlay_flip = 0
+	anon95_dare_overlay_refresh_timer = 0
+	anon95_dare_warning_panel = null
+	anon95_dare_nipple_panel = null
+	anon95_dare_tempcoat_panel = null
+	anon95_dare_ibalance_panel = null
+	anon95_dare_toys_panel = null
+	anon95_dare_blindfold_panel = null
+	anon95_dare_orgasm_panel = null
+	anon95_dare_pee_panel = null
+	anon95_dare_coat_return_pos = null
+	anon95_cancel_coat_away_pos = null
+	anon95_coat_away_pos = null
+	anon95_coat_pos = null
+	anon95_tempcoat_away_pos = null
+	anon95_tempcoat_pos = null
+	anon95_dist = 0
+	anon95_gauge = 0
+
+	anon95_gamble_prep_timer = 0
+	anon95_gamble_elapsed = 0
+	anon95_gamble_second_timer = 0
+	anon95_gamble_force_timer = 0
+	anon95_gamble_code = null
+	anon95_gamble_guess = null
+	anon95_gamble_selected = 0
+	anon95_gamble_actions = 15
+	anon95_gamble_rp_bank = 0
+	anon95_gamble_rp_last_total = 0
+	anon95_gamble_blindfold_mode = false
+	anon95_gamble_move_duration = 0
+	anon95_gamble_toy_disabled = false
+	anon95_gamble_toy_return_timer = 0
+	anon95_gamble_orgasm_was_active = false
+	anon95_gamble_overlay_flip = 0
+	anon95_gamble_panel = null
+	anon95_gamble_action_overlay = null
+	anon95_gamble_action_overlay_alt = null
+	anon95_gamble_rp_panel = null
+	anon95_gamble_toy_panel = null
+	anon95_gamble_overlay = null
+	anon95_gamble_overlay_alt = null
+	anon95_gamble_i = 0
+	anon95_digit_ok = false
+	anon95_digit = 0
+	anon95_gamble_rp_gain = 0
+	anon95_display_digit = ""
+	anon95_gamble_display = ""
+	anon95_gamble_solved = false
+	anon95_count_0 = 0
+	anon95_count_1 = 0
+	anon95_count_2 = 0
+	anon95_count_3 = 0
+	anon95_count_4 = 0
+	anon95_count_5 = 0
+	anon95_count_6 = 0
+	anon95_count_7 = 0
+	anon95_count_8 = 0
+	anon95_count_9 = 0
+
+	anon95_input_up = null
+	anon95_input_down = null
+	anon95_input_left = null
+	anon95_input_right = null
+	anon95_condition_nipple = null
+	anon95_condition_clit = null
+	anon95_condition_ibalance = null
+	anon95_condition_vibrator_random = null
+	anon95_condition_titrotor_random = null
+	anon95_condition_kurirotor_random = null
+	anon95_condition_blindfold = null
+	anon95_condition_orgasm = null
+	anon95_condition_handcuffsback = null
+	anon95_condition_peeing = null
+	anon95_condition_moving = null
+	anon95_condition_dashing = null
+	anon95_condition_npca = null
+	anon95_condition_handbra = null
+
+	anon95_reward_overlay = CreateText()
+	anon95_reward_overlay.SetAnchor(0.5, 0.5)
+	anon95_reward_overlay.SetAlignment("Top")
+	anon95_reward_overlay.SetSize(36)
+	anon95_reward_overlay.SetWidth(1200)
+	anon95_reward_overlay.SetFace(color=Color(1,1,1,1), dilate=0.35)
+	anon95_reward_overlay.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.35)
+	anon95_reward_overlay.SetFrontLayer(true)
+	anon95_reward_overlay.Clear()
+
+	anon95_dare_overlay = CreateText()
+	anon95_dare_overlay.SetAnchor(0.51, 0.90)
+	anon95_dare_overlay.SetAlignment("Top")
+	anon95_dare_overlay.SetSize(28)
+	anon95_dare_overlay.SetWidth(1000)
+	anon95_dare_overlay.SetFace(color=Color(1,1,1,1), dilate=0.35)
+	anon95_dare_overlay.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.35)
+	anon95_dare_overlay.SetFrontLayer(true)
+	anon95_dare_overlay.Clear()
+	anon95_dare_overlay_alt = CreateText()
+	anon95_dare_overlay_alt.SetAnchor(0.51, 0.90)
+	anon95_dare_overlay_alt.SetAlignment("Top")
+	anon95_dare_overlay_alt.SetSize(28)
+	anon95_dare_overlay_alt.SetWidth(1000)
+	anon95_dare_overlay_alt.SetFace(color=Color(1,1,1,1), dilate=0.35)
+	anon95_dare_overlay_alt.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.35)
+	anon95_dare_overlay_alt.SetFrontLayer(true)
+	anon95_dare_overlay_alt.Clear()
+
+	# Create these in the module root scope. The module remains alive for the whole mod session.
+	anon95_chat_listener_handle = CreateListener("anon95_chat_listener")
+	anon95_runtime_listener_handle = CreateListener("anon95_runtime_listener")
+
+	idle:
+		active = false
+
+	Start:
+		active = true
+		session_stage = _state.Position.stage
+		anon95_last_stage = session_stage
+		anon95_dare_completed = false
+		anon95_dare_available = session_stage == "Park"
+		anon95_done = false
+		anon95_reward_overlay_timer = 0
+		anon95_reward_overlay.Clear()
+		anon95_branch = 0
+		anon95_dare_state = 0
+		anon95_dare_precheck_duration = 0
+		anon95_dare_remaining = 300
+		anon95_dare_elapsed = 0
+		anon95_dare_second_timer = 0
+		anon95_dare_overlay_refresh_timer = 0
+		anon95_dare_overlay_flip = 0
+		anon95_dare_overlay.Clear()
+		anon95_dare_overlay_alt.Clear()
+		anon95_dare_passive_timer = 0
+		anon95_dare_passive_bank = 0
+		anon95_dare_tempcoat_active = false
+		anon95_dare_coat_displaced = false
+		anon95_dare_tempcoat_remaining = 0
+		anon95_dare_tempcoat_second_timer = 0
+		anon95_dare_nipple_duration = 0
+		anon95_dare_nipple_done = false
+		anon95_dare_nipple_locked = false
+		anon95_dare_tempcoat_duration = 0
+		anon95_dare_tempcoat_locked = false
+		anon95_dare_ibalance_duration = 0
+		anon95_dare_ibalance_done = false
+		anon95_dare_toys_unlocked = false
+		anon95_dare_blindfold_unlocked = false
+		anon95_dare_blindfold_wear_duration = 0
+		anon95_dare_orgasm_unlocked = false
+		anon95_dare_orgasm_was_active = false
+		anon95_dare_pee_unlocked = false
+		anon95_gamble_state = 0
+		anon95_gamble_prep_timer = 0
+		anon95_gamble_elapsed = 0
+		anon95_gamble_second_timer = 0
+		anon95_gamble_force_timer = 0
+		anon95_gamble_code = CreateList()
+		anon95_gamble_guess = CreateList()
+		anon95_gamble_selected = 0
+		anon95_gamble_actions = 15
+		anon95_gamble_rp_bank = 0
+		anon95_gamble_rp_last_total = GetCurrentEarnRP()
+		anon95_gamble_blindfold_mode = false
+		anon95_gamble_move_duration = 0
+		anon95_gamble_toy_disabled = false
+		anon95_gamble_toy_return_timer = 0
+		anon95_gamble_orgasm_was_active = false
+		anon95_gamble_overlay_flip = 0
+		anon95_dare_area = CreateArea(type="sphere", stage="Park", x=71.00, y=52.08, z=75.10, r=4, outline=true, compass=true)
+		anon95_dare_zone = CreateZone(anon95_dare_area)
+		anon95_dare_zone.SetVisible(false)
+		anon95_dare_zone.SetColor(1,0.2,1)
+		anon95_dare_dest_pos = Vector(71.00, 52.08, 75.10)
+
+		anon95_dare_panel = CreateMissionPanel()
+		anon95_dare_panel.SetVisible(false)
+		anon95_dare_panel.SetGaugeVisible(true)
+		anon95_dare_warning_panel = CreateMissionPanel()
+		anon95_dare_warning_panel.SetVisible(false)
+		anon95_dare_nipple_panel = CreateMissionPanel()
+		anon95_dare_nipple_panel.SetVisible(false)
+		anon95_dare_tempcoat_panel = CreateMissionPanel()
+		anon95_dare_tempcoat_panel.SetVisible(false)
+		anon95_dare_ibalance_panel = CreateMissionPanel()
+		anon95_dare_ibalance_panel.SetVisible(false)
+		anon95_dare_toys_panel = CreateMissionPanel()
+		anon95_dare_toys_panel.SetVisible(false)
+		anon95_dare_blindfold_panel = CreateMissionPanel()
+		anon95_dare_blindfold_panel.SetVisible(false)
+		anon95_dare_orgasm_panel = CreateMissionPanel()
+		anon95_dare_orgasm_panel.SetVisible(false)
+		anon95_dare_pee_panel = CreateMissionPanel()
+		anon95_dare_pee_panel.SetVisible(false)
+		anon95_gamble_panel = CreateMissionPanel()
+		anon95_gamble_panel.SetVisible(false)
+		anon95_gamble_panel.SetGaugeVisible(true)
+		anon95_gamble_panel.SetRPText("")
+		anon95_gamble_action_overlay = CreateText()
+		anon95_gamble_action_overlay.SetAnchor(0.11, 0.935)
+		anon95_gamble_action_overlay.SetAlignment("TopLeft")
+		anon95_gamble_action_overlay.SetSize(27)
+		anon95_gamble_action_overlay.SetWidth(520)
+		anon95_gamble_action_overlay.SetFace(dilate=0.3)
+		anon95_gamble_action_overlay.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.3)
+		anon95_gamble_action_overlay.SetFrontLayer(true)
+		anon95_gamble_action_overlay.Clear()
+		anon95_gamble_action_overlay_alt = CreateText()
+		anon95_gamble_action_overlay_alt.SetAnchor(0.11, 0.935)
+		anon95_gamble_action_overlay_alt.SetAlignment("TopLeft")
+		anon95_gamble_action_overlay_alt.SetSize(27)
+		anon95_gamble_action_overlay_alt.SetWidth(520)
+		anon95_gamble_action_overlay_alt.SetFace(dilate=0.3)
+		anon95_gamble_action_overlay_alt.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.3)
+		anon95_gamble_action_overlay_alt.SetFrontLayer(true)
+		anon95_gamble_action_overlay_alt.Clear()
+		anon95_gamble_action_overlay_flip = 0
+		anon95_gamble_rp_panel = CreateMissionPanel()
+		anon95_gamble_rp_panel.SetVisible(false)
+		anon95_gamble_rp_panel.SetGaugeVisible(true)
+		anon95_gamble_rp_panel.SetRPText("")
+		anon95_gamble_toy_panel = CreateMissionPanel()
+		anon95_gamble_toy_panel.SetVisible(false)
+		anon95_gamble_toy_panel.SetGaugeVisible(true)
+		anon95_gamble_toy_panel.SetRPText("")
+		anon95_gamble_overlay = CreateText()
+		anon95_gamble_overlay.SetAnchor(0.5, 0.88)
+		anon95_gamble_overlay.SetAlignment("Top")
+		anon95_gamble_overlay.SetSize(28)
+		anon95_gamble_overlay.SetWidth(1000)
+		anon95_gamble_overlay.SetFace(dilate=0.3)
+		anon95_gamble_overlay.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.3)
+		anon95_gamble_overlay.SetFrontLayer(true)
+		anon95_gamble_overlay.Clear()
+		anon95_gamble_overlay_alt = CreateText()
+		anon95_gamble_overlay_alt.SetAnchor(0.5, 0.88)
+		anon95_gamble_overlay_alt.SetAlignment("Top")
+		anon95_gamble_overlay_alt.SetSize(28)
+		anon95_gamble_overlay_alt.SetWidth(1000)
+		anon95_gamble_overlay_alt.SetFace(dilate=0.3)
+		anon95_gamble_overlay_alt.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.3)
+		anon95_gamble_overlay_alt.SetFrontLayer(true)
+		anon95_gamble_overlay_alt.Clear()
+
+		anon95_input_up = CreateInput("<Keyboard>/quote")
+		anon95_input_down = CreateInput("<Keyboard>/slash")
+		anon95_input_left = CreateInput("<Keyboard>/comma")
+		anon95_input_right = CreateInput("<Keyboard>/period")
+		anon95_condition_nipple = CreateCondition("[Action_ChikubiRotate]")
+		anon95_condition_clit = CreateCondition("[Action_OnaniArmKuri]")
+		anon95_condition_ibalance = CreateCondition("[Action_IBalance]")
+		anon95_condition_vibrator_random = CreateCondition("[AdultToy_Vibrator,VibrationRandom]")
+		anon95_condition_titrotor_random = CreateCondition("[AdultToy_TitRotor,VibrationRandom]")
+		anon95_condition_kurirotor_random = CreateCondition("[AdultToy_KuriRotor,VibrationRandom]")
+		anon95_condition_blindfold = CreateCondition("[AdultToy_EyeMask]")
+		anon95_condition_orgasm = CreateCondition("[Orgasm]")
+		anon95_condition_handcuffsback = CreateCondition("[HandcuffsBack]")
+		anon95_condition_peeing = CreateCondition("[Peeing]")
+		anon95_condition_moving = CreateCondition("[Moving]")
+		anon95_condition_dashing = CreateCondition("[Dashing]")
+		anon95_condition_npca = CreateCondition("[NPCArea]")
+		anon95_condition_handbra = CreateCondition("[Action_Tebura]")
+
+		anon95_chat = CreateMessengerChat("Anonymous_95", iconfilename = "Asset/Anonymous95Icon.png", iconcolor = Color(0.05,0.05,0.05), icontext = "95", icontextcolor = Color(1,1,1))
+		if _state.Position.stage == "Residence"
+			anon95_root_mode = 1
+			anon95_chat.Add("挑战，还是赌博？", "Left", user="Anonymous_95", silent=false)
+			anon95_chat.SetButtons(CreateList("挑战", "赌博"), ids=CreateList("dare", "gamble"))
+		else
+			anon95_dare_available = _state.Position.stage == "Park" && anon95_dare_completed == false
+			if anon95_dare_available
+				anon95_root_mode = 2
+				anon95_chat.Add("来一场 800 的挑战，还是赌博？", "Left", user="Anonymous_95", silent=false)
+				anon95_chat.SetButtons(CreateList("挑战", "赌博"), ids=CreateList("dare", "gamble"))
+			else
+				anon95_root_mode = 0
+				anon95_chat.Add("觉得自己今天走运吗？", "Left", user="Anonymous_95", silent=false)
+				anon95_chat.SetButtons(CreateList("赌博"), ids=CreateList("gamble"))
+	anon95_chat_listener:
+		if active
+			current_anon95_stage = _state.Position.stage
+			if current_anon95_stage != anon95_last_stage
+				if current_anon95_stage == "Park"
+					anon95_dare_completed = false
+				anon95_last_stage = current_anon95_stage
+			if anon95_branch == 0
+				current_dare_available = current_anon95_stage == "Park" && anon95_dare_completed == false
+				current_root_mode = 0
+				if current_anon95_stage == "Residence"
+					current_root_mode = 1
+				elseif current_dare_available
+					current_root_mode = 2
+				if current_dare_available != anon95_dare_available || current_root_mode != anon95_root_mode
+					anon95_dare_available = current_dare_available
+					anon95_root_mode = current_root_mode
+					anon95_chat.Clear()
+					if anon95_root_mode == 1
+						anon95_chat.Add("挑战，还是赌博？", "Left", user="Anonymous_95", silent=false)
+						anon95_chat.SetButtons(CreateList("挑战", "赌博"), ids=CreateList("dare", "gamble"))
+					elseif anon95_root_mode == 2
+						anon95_chat.Add("来一场 800 的挑战，还是赌博？", "Left", user="Anonymous_95", silent=false)
+						anon95_chat.SetButtons(CreateList("挑战", "赌博"), ids=CreateList("dare", "gamble"))
+					else
+						anon95_chat.Add("觉得自己今天走运吗？", "Left", user="Anonymous_95", silent=false)
+						anon95_chat.SetButtons(CreateList("赌博"), ids=CreateList("gamble"))
+			if anon95_branch == 1 && current_anon95_stage != "Park"
+				RestoreDareCoat()
+				anon95_branch = 0
+				anon95_dare_state = 0
+				anon95_dare_zone.SetVisible(false)
+				anon95_dare_panel.SetVisible(false)
+				anon95_dare_warning_panel.SetVisible(false)
+				anon95_dare_nipple_panel.SetVisible(false)
+				anon95_dare_tempcoat_panel.SetVisible(false)
+				anon95_dare_ibalance_panel.SetVisible(false)
+				anon95_dare_toys_panel.SetVisible(false)
+				anon95_dare_blindfold_panel.SetVisible(false)
+				anon95_dare_orgasm_panel.SetVisible(false)
+				anon95_dare_pee_panel.SetVisible(false)
+				anon95_chat.Clear()
+				anon95_chat.Add("挑战已取消，返回公园后可以再次尝试", "Left", user="Anonymous_95", silent=false)
+				anon95_chat.SetButtons(CreateList("赌博"), ids=CreateList("gamble"))
+				anon95_dare_available = false
+				mainthread.UpdateHub()
+			if anon95_branch == 3 && current_anon95_stage != "Residence"
+				residence_dare.Cancel()
+				anon95_branch = 0
+				anon95_residence_dare_menu = "home"
+				anon95_chat.Clear()
+				if current_anon95_stage == "Park" && anon95_dare_completed == false
+					anon95_root_mode = 2
+					anon95_dare_available = true
+					anon95_chat.Add("来一场 800 的挑战，还是赌博？", "Left", user="Anonymous_95", silent=false)
+					anon95_chat.SetButtons(CreateList("挑战", "赌博"), ids=CreateList("dare", "gamble"))
+				elseif current_anon95_stage == "Residence"
+					anon95_root_mode = 1
+					anon95_chat.Add("挑战，还是赌博？", "Left", user="Anonymous_95", silent=false)
+					anon95_chat.SetButtons(CreateList("挑战", "赌博"), ids=CreateList("dare", "gamble"))
+				else
+					anon95_root_mode = 0
+					anon95_dare_available = false
+					anon95_chat.Add("住宅区挑战已取消，返回住宅区后可以再次尝试", "Left", user="Anonymous_95", silent=false)
+					anon95_chat.SetButtons(CreateList("赌博"), ids=CreateList("gamble"))
+				mainthread.UpdateHub()
+			if anon95_chat != null && anon95_done == false
+				clicked = anon95_chat.Clicked()
+				if clicked != null
+					mainthread.UpdateHub()
+					handled_click = false
+					if anon95_branch == 0
+						if current_anon95_stage == "Residence"
+							if clicked == "dare" || clicked == 0
+								anon95_branch = 3
+								anon95_residence_dare_menu = "home"
+								anon95_chat.Clear()
+								res_best_ep = residence_dare.GetBestEP()
+								anon95_chat.Add("最佳纪录：" + res_best_ep + "\n\n挑战是一项在限定区域和时间内赚取暴露点数（EP）的挑战\n\n不要逞强到失败——只有成功结束挑战时，本局获得的 EP 才会保存", "Left", user="Anonymous_95", silent=false)
+								anon95_chat.SetButtons(CreateList("开始", "规则与操作", "特殊奖励", "返回"), ids=CreateList("start", "rules", "rewards", "return"))
+								handled_click = true
+								mainthread.UpdateHub()
+							if clicked == "gamble" || clicked == 1
+								anon95_branch = 2
+								anon95_gamble_state = 0
+								anon95_gamble_blindfold_mode = false
+								anon95_chat.Add("这是一个迷你开锁游戏。你会被铐住。要逃脱并赢得赌博，必须在 240 秒内破解锁具\n\n使用逗号（,）和句号（.）移动位置；使用斜杠（/）和撇号（'）更改数字。找出由 9 个数字组成的钥匙组合。选中正确数字时会响起 *叮* 声，请仔细听\n\n眼罩模式下，每获得 50 RP 会得到更多行动点数\n\n奖励：200 RP + 200 Manaka 点数", "Left", user="Anonymous_95", silent=false)
+								anon95_chat.SetButtons(CreateList("开始赌博", "眼罩：关闭", "返回"), ids=CreateList("gamble_start", "gamble_blindfold", "return"))
+								handled_click = true
+								mainthread.UpdateHub()
+						elseif anon95_dare_available
+							if clicked == "dare" || clicked == 0
+								session_stage = current_anon95_stage
+								anon95_branch = 1
+								anon95_dare_state = 0
+								anon95_chat.Add("目的地已标记，祝你好运。", "Left", user="Anonymous_95", silent=false)
+								anon95_chat.SetButtons(CreateList("开始", "返回"), ids=CreateList("start", "return"))
+								handled_click = true
+								mainthread.UpdateHub()
+							if clicked == "gamble" || clicked == 1
+								anon95_branch = 2
+								anon95_gamble_state = 0
+								anon95_gamble_blindfold_mode = false
+								anon95_chat.Add("这是一个迷你开锁游戏。你会被铐住。要逃脱并赢得赌博，必须在 240 秒内破解锁具\n\n使用逗号（,）和句号（.）移动位置；使用斜杠（/）和撇号（'）更改数字。找出由 9 个数字组成的钥匙组合。选中正确数字时会响起 *叮* 声，请仔细听\n\n眼罩模式下，每获得 50 RP 会得到更多行动点数\n\n奖励：200 RP + 200 Manaka 点数", "Left", user="Anonymous_95", silent=false)
+								anon95_chat.SetButtons(CreateList("开始赌博", "眼罩：关闭", "返回"), ids=CreateList("gamble_start", "gamble_blindfold", "return"))
+								handled_click = true
+								mainthread.UpdateHub()
+						else
+							if clicked == "gamble" || clicked == 0
+								anon95_branch = 2
+								anon95_gamble_state = 0
+								anon95_gamble_blindfold_mode = false
+								anon95_chat.Add("这是一个迷你开锁游戏。你会被铐住。要逃脱并赢得赌博，必须在 240 秒内破解锁具\n\n使用逗号（,）和句号（.）移动位置；使用斜杠（/）和撇号（'）更改数字。找出由 9 个数字组成的钥匙组合。选中正确数字时会响起 *叮* 声，请仔细听\n\n眼罩模式下，每获得 50 RP 会得到更多行动点数\n\n奖励：200 RP + 200 Manaka 点数", "Left", user="Anonymous_95", silent=false)
+								anon95_chat.SetButtons(CreateList("开始赌博", "眼罩：关闭", "返回"), ids=CreateList("gamble_start", "gamble_blindfold", "return"))
+								handled_click = true
+								mainthread.UpdateHub()
+					if handled_click == false && anon95_branch == 1
+						if anon95_dare_state == 0
+							if clicked == "start" || clicked == 0
+								anon95_dare_state = 1
+								anon95_dare_total_distance = Vector3Distance(_state.Position, anon95_dare_dest_pos)
+								anon95_chat.SetButtons()
+							if clicked == "return" || clicked == 1
+								RestoreDareCoat()
+								anon95_branch = 0
+								anon95_dare_state = 0
+								anon95_chat.Clear()
+								anon95_dare_available = _state.Position.stage == "Park" && anon95_dare_completed == false
+								if anon95_dare_available
+									anon95_chat.Add("来一场 800 的挑战，还是赌博？", "Left", user="Anonymous_95", silent=false)
+									anon95_chat.SetButtons(CreateList("挑战", "赌博"), ids=CreateList("dare", "gamble"))
+								else
+									anon95_chat.Add("觉得自己今天走运吗？", "Left", user="Anonymous_95", silent=false)
+									anon95_chat.SetButtons(CreateList("赌博"), ids=CreateList("gamble"))
+								mainthread.UpdateHub()
+						else
+							if clicked == "start" || clicked == 0
+								DropItem(itemtype="Coat", position=_state.Position, compass=false)
+								CollectItem(itemtype="Coat")
+								anon95_cancel_coat_away_pos = CreateList(stage="Apart", x=-1.84, y=0.00, z=-0.20, rx=0, ry=0, rz=0, rw=0)
+								DropItem(itemtype="Coat", stage="Apart", position=anon95_cancel_coat_away_pos, compass=false)
+								anon95_dare_coat_displaced = true
+								anon95_dare_state = 0
+								anon95_dare_precheck_duration = 0
+								anon95_dare_remaining = 300
+								anon95_dare_elapsed = 0
+								anon95_dare_tempcoat_active = false
+								anon95_dare_pee_unlocked = false
+								anon95_dare_zone.SetVisible(false)
+								anon95_dare_panel.SetVisible(false)
+								anon95_dare_warning_panel.SetVisible(false)
+								anon95_dare_nipple_panel.SetVisible(false)
+								anon95_dare_tempcoat_panel.SetVisible(false)
+								anon95_dare_ibalance_panel.SetVisible(false)
+								anon95_dare_toys_panel.SetVisible(false)
+								anon95_dare_blindfold_panel.SetVisible(false)
+								anon95_dare_orgasm_panel.SetVisible(false)
+								anon95_dare_pee_panel.SetVisible(false)
+								anon95_chat.Add("已取消", "Left", user="Anonymous_95", silent=false)
+								anon95_chat.SetButtons(CreateList("开始", "返回"), ids=CreateList("start", "return"))
+					if handled_click == false && anon95_branch == 3
+						if anon95_residence_dare_menu == "home"
+							if clicked == "start" || clicked == 0
+								handled_click = true
+								residence_dare.Start()
+								anon95_chat.Clear()
+								anon95_chat.Add("祝你好运。", "Left", user="Anonymous_95", silent=false)
+								anon95_chat.SetButtons()
+								mainthread.UpdateHub()
+							if clicked == "rules" || clicked == 1
+								handled_click = true
+								anon95_residence_dare_menu = "rules"
+								anon95_chat.Clear()
+								anon95_chat.Add("屏幕左上角会出现暴露点数计数器，显示本次挑战获得的 EP 总数。EP 只会在挑战成功结束后保存。\n\n挑战期间每获得 10 RP，会自动转换为 1 EP。住宅区挑战持续 300 秒\n\n特殊事件每 80 秒轮换一次。每份列表包含三个普通或稀有任务栏位，以及一个延时事件栏位。每份列表最多出现一个稀有事件，部分特殊任务每局只能完成一次\n\n你不能离开 挑战区域。当前 挑战区域在任务期间会保持可见。按 ] 可切换到其他 挑战区域，所需 EP 会显示在特殊任务面板上。连续使用会提高 EP 费用；停止切换一段时间后费用会重置\n\n按 [ 可显示或隐藏特殊任务面板", "Left", user="Anonymous_95", silent=false)
+								anon95_chat.SetButtons(CreateList("返回"), ids=CreateList("return"))
+								mainthread.UpdateHub()
+							if clicked == "rewards" || clicked == 2
+								handled_click = true
+								anon95_residence_dare_menu = "reward"
+								anon95_chat.Clear()
+								silver_reward_text = "-最佳纪录达到至少 200 EP：大胆者银牌"
+								gold_reward_text = "-最佳纪录达到至少 400 EP：大胆者金牌"
+								champion_reward_text = "-全程露出可疑度不低于 80%，并获得至少 300 EP：大胆者冠军奖牌"
+								if _save.ManakaPlusV2DaringSilverMedalOwned == true
+									silver_reward_text = "已拥有大胆者银牌"
+								if _save.ManakaPlusV2DaringGoldMedalOwned == true
+									gold_reward_text = "已拥有大胆者金牌"
+								if _save.ManakaPlusV2DaringChampionMedalOwned == true
+									champion_reward_text = "已拥有大胆者冠军奖牌"
+								anon95_chat.Add(silver_reward_text + "\n" + gold_reward_text + "\n" + champion_reward_text, "Left", user="Anonymous_95", silent=false)
+								anon95_chat.SetButtons(CreateList("返回"), ids=CreateList("return"))
+								mainthread.UpdateHub()
+							if clicked == "return" || clicked == 3
+								handled_click = true
+								anon95_branch = 0
+								anon95_chat.Clear()
+								anon95_root_mode = 1
+								anon95_chat.Add("挑战，还是赌博？", "Left", user="Anonymous_95", silent=false)
+								anon95_chat.SetButtons(CreateList("挑战", "赌博"), ids=CreateList("dare", "gamble"))
+								mainthread.UpdateHub()
+						else
+							if clicked == "return" || clicked == 0
+								handled_click = true
+								anon95_residence_dare_menu = "home"
+								anon95_chat.Clear()
+								res_best_ep = residence_dare.GetBestEP()
+								anon95_chat.Add("最佳纪录：" + res_best_ep + "\n\n挑战是一项在限定区域和时间内赚取暴露点数（EP）的挑战\n\n不要逞强到失败——只有成功结束挑战时，本局获得的 EP 才会保存", "Left", user="Anonymous_95", silent=false)
+								anon95_chat.SetButtons(CreateList("开始", "规则与操作", "特殊奖励", "返回"), ids=CreateList("start", "rules", "rewards", "return"))
+								mainthread.UpdateHub()
+					if handled_click == false && anon95_branch == 2
+						if anon95_gamble_state == 0
+							if clicked == "gamble_start" || clicked == 0
+								anon95_gamble_state = 1
+								session_stage = _state.Position.stage
+								anon95_gamble_prep_timer = 0
+								anon95_gamble_elapsed = 0
+								anon95_gamble_second_timer = 0
+								anon95_gamble_force_timer = 0
+								anon95_gamble_actions = 15
+								anon95_gamble_rp_bank = 0
+								anon95_gamble_rp_last_total = GetCurrentEarnRP()
+								anon95_gamble_move_duration = 0
+								anon95_gamble_toy_disabled = false
+								anon95_gamble_toy_return_timer = 0
+								anon95_chat.SetButtons()
+							if clicked == "gamble_blindfold" || clicked == 1
+								if anon95_gamble_blindfold_mode
+									anon95_gamble_blindfold_mode = false
+									anon95_chat.SetButtons(CreateList("开始赌博", "眼罩：关闭", "返回"), ids=CreateList("gamble_start", "gamble_blindfold", "return"))
+								else
+									anon95_gamble_blindfold_mode = true
+									anon95_chat.SetButtons(CreateList("开始赌博", "眼罩：开启", "返回"), ids=CreateList("gamble_start", "gamble_blindfold", "return"))
+							if clicked == "return" || clicked == 2
+								anon95_branch = 0
+								anon95_gamble_state = 0
+								anon95_chat.Clear()
+								return_stage = _state.Position.stage
+								if return_stage == "Residence"
+									anon95_root_mode = 1
+									anon95_dare_available = false
+									anon95_chat.Add("挑战，还是赌博？", "Left", user="Anonymous_95", silent=false)
+									anon95_chat.SetButtons(CreateList("挑战", "赌博"), ids=CreateList("dare", "gamble"))
+								else
+									anon95_dare_available = return_stage == "Park" && anon95_dare_completed == false
+									if anon95_dare_available
+										anon95_root_mode = 2
+										anon95_chat.Add("来一场 800 的挑战，还是赌博？", "Left", user="Anonymous_95", silent=false)
+										anon95_chat.SetButtons(CreateList("挑战", "赌博"), ids=CreateList("dare", "gamble"))
+									else
+										anon95_root_mode = 0
+										anon95_chat.Add("觉得自己今天走运吗？", "Left", user="Anonymous_95", silent=false)
+										anon95_chat.SetButtons(CreateList("赌博"), ids=CreateList("gamble"))
+								mainthread.UpdateHub()
+						else
+							if clicked == "gamble_start" || clicked == 0
+								UnlockHandcuffs()
+								SetVibrator("Off")
+								UnequipAdultToy("Vibrator", "TitRotor", "KuriRotor")
+								if anon95_gamble_blindfold_mode
+									UnequipAdultToy("EyeMask")
+								SetVibrator("Off")
+								anon95_gamble_state = 0
+								anon95_gamble_prep_timer = 0
+								anon95_gamble_elapsed = 0
+								anon95_gamble_panel.SetVisible(false)
+								anon95_gamble_action_overlay.Clear()
+								anon95_gamble_action_overlay_alt.Clear()
+								anon95_gamble_rp_panel.SetVisible(false)
+								anon95_gamble_toy_panel.SetVisible(false)
+								if anon95_gamble_overlay != null
+									anon95_gamble_overlay.Clear()
+									anon95_gamble_overlay_alt.Clear()
+								anon95_chat.Clear()
+								anon95_chat.Add("已取消。", "Left", user="Anonymous_95", silent=false)
+								if anon95_gamble_blindfold_mode
+									anon95_chat.SetButtons(CreateList("开始赌博", "眼罩：开启", "返回"), ids=CreateList("gamble_start", "gamble_blindfold", "return"))
+								else
+									anon95_chat.SetButtons(CreateList("开始赌博", "眼罩：关闭", "返回"), ids=CreateList("gamble_start", "gamble_blindfold", "return"))
+
+	anon95_runtime_listener:
+		if anon95_reward_overlay_timer > 0
+			anon95_reward_overlay_timer = anon95_reward_overlay_timer - _timediff
+			if anon95_reward_overlay_timer <= 0
+				anon95_reward_overlay.Clear()
+		if active && anon95_branch == 3
+			if residence_dare.ConsumeCompleted()
+				res_ep = residence_dare.GetLastEP()
+				res_best_ep = residence_dare.GetBestEP()
+				anon95_branch = 0
+				anon95_chat.Clear()
+				anon95_chat.Add("住宅区挑战完成，已保存 " + res_ep + " EP。最佳纪录：" + res_best_ep + " EP。", "Left", user="Anonymous_95", silent=false)
+				anon95_chat.SetButtons(CreateList("挑战", "赌博"), ids=CreateList("dare", "gamble"))
+				anon95_root_mode = 1
+				mainthread.UpdateHub()
+		if active
+			if active && anon95_chat != null
+				# Anonymous_95 Dare branch for Park.
+				if anon95_branch == 1 && anon95_done == false && session_stage == "Park"
+					anon95_dare_zone.SetVisible(true)
+					if anon95_dare_state == 1
+						anon95_dare_panel.SetVisible(true)
+						anon95_dare_panel.SetText("前往指定地点")
+						anon95_dare_panel.SetRPText("")
+						anon95_dare_panel.SetGaugeVisible(true)
+						anon95_dist = Vector3Distance(_state.Position, anon95_dare_dest_pos)
+						anon95_gauge = 0
+						if anon95_dare_total_distance > 0
+							if anon95_dist < anon95_dare_total_distance
+								anon95_gauge = (anon95_dare_total_distance - anon95_dist) / anon95_dare_total_distance
+						if anon95_dist <= 4
+							anon95_gauge = 1
+						anon95_dare_panel.SetGaugeProgress(anon95_gauge)
+						if anon95_dare_zone.Inside()
+							anon95_dare_state = 2
+							anon95_dare_precheck_duration = 0
+					if anon95_dare_state == 2
+						anon95_dare_panel.SetVisible(true)
+						anon95_dare_panel.SetText("保持手遮胸以开始极限任务，做好准备")
+						anon95_dare_panel.SetRPText("")
+						anon95_dare_panel.SetGaugeVisible(true)
+						anon95_dare_warning_panel.SetVisible(true)
+						anon95_dare_warning_panel.SetText("警告：任务面板数量很多。开始前请调整显示设置或 UI 缩放")
+						if anon95_dare_zone.Inside()
+							if anon95_condition_handbra.Check()
+								anon95_dare_precheck_duration = anon95_dare_precheck_duration + _timediff
+							else
+								anon95_dare_precheck_duration = 0
+						else
+							anon95_dare_precheck_duration = 0
+						anon95_dare_panel.SetGaugeProgress(anon95_dare_precheck_duration / 3)
+						if anon95_dare_precheck_duration >= 3
+							anon95_dare_state = 3
+							anon95_dare_precheck_duration = 0
+							anon95_dare_remaining = 300
+							anon95_dare_elapsed = 0
+							anon95_dare_second_timer = 0
+							anon95_dare_passive_timer = 0
+							anon95_dare_passive_bank = 0
+							anon95_dare_tempcoat_active = false
+							anon95_dare_tempcoat_remaining = 0
+							anon95_dare_nipple_duration = 0
+							anon95_dare_nipple_done = false
+							anon95_dare_nipple_locked = false
+							anon95_dare_tempcoat_duration = 0
+							anon95_dare_tempcoat_locked = false
+							anon95_dare_ibalance_duration = 0
+							anon95_dare_ibalance_done = false
+							anon95_dare_toys_unlocked = false
+							anon95_dare_blindfold_unlocked = false
+							anon95_dare_blindfold_wear_duration = 0
+							anon95_dare_orgasm_unlocked = false
+							anon95_dare_orgasm_was_active = false
+							anon95_dare_pee_unlocked = false
+							anon95_dare_panel.SetVisible(false)
+							anon95_dare_overlay_refresh_timer = 0
+							anon95_dare_overlay_flip = 0
+							anon95_dare_overlay.Clear()
+							anon95_dare_overlay_alt.Clear()
+							RefreshParkDareOverlay()
+							anon95_dare_warning_panel.SetVisible(false)
+					if anon95_dare_state == 3
+						if anon95_dare_zone.Inside()
+							anon95_dare_second_timer = anon95_dare_second_timer + _timediff
+							if anon95_dare_second_timer >= 1
+								anon95_dare_second_timer = anon95_dare_second_timer - 1
+								anon95_dare_remaining = anon95_dare_remaining - 1
+								anon95_dare_elapsed = anon95_dare_elapsed + 1
+								if anon95_dare_pee_unlocked
+									if anon95_condition_peeing.Check()
+										anon95_dare_passive_bank = anon95_dare_passive_bank + 0.25
+						else
+							DropItem(itemtype="Coat", position=_state.Position, compass=false)
+							CollectItem(itemtype="Coat")
+							anon95_coat_away_pos = CreateList(stage="Apart", x=-1.84, y=0.00, z=-0.20, rx=0, ry=0, rz=0, rw=0)
+							DropItem(itemtype="Coat", stage="Apart", position=anon95_coat_away_pos, compass=false)
+							anon95_dare_coat_displaced = true
+							anon95_dare_state = 2
+							anon95_dare_remaining = 300
+							anon95_dare_elapsed = 0
+							anon95_dare_second_timer = 0
+							anon95_dare_passive_timer = 0
+							anon95_dare_passive_bank = 0
+							anon95_dare_tempcoat_active = false
+							anon95_dare_tempcoat_remaining = 0
+							anon95_dare_nipple_duration = 0
+							anon95_dare_nipple_done = false
+							anon95_dare_nipple_locked = false
+							anon95_dare_tempcoat_duration = 0
+							anon95_dare_tempcoat_locked = false
+							anon95_dare_ibalance_duration = 0
+							anon95_dare_ibalance_done = false
+							anon95_dare_toys_unlocked = false
+							anon95_dare_blindfold_unlocked = false
+							anon95_dare_blindfold_wear_duration = 0
+							anon95_dare_orgasm_unlocked = false
+							anon95_dare_pee_unlocked = false
+							ClearParkDareOverlay()
+							anon95_dare_panel.SetVisible(true)
+							anon95_dare_warning_panel.SetVisible(true)
+							anon95_dare_warning_panel.SetText("警告：任务面板数量很多。开始前请调整显示设置或 UI 缩放")
+							anon95_dare_nipple_panel.SetVisible(false)
+							anon95_dare_tempcoat_panel.SetVisible(false)
+							anon95_dare_ibalance_panel.SetVisible(false)
+							anon95_dare_toys_panel.SetVisible(false)
+							anon95_dare_blindfold_panel.SetVisible(false)
+							anon95_dare_orgasm_panel.SetVisible(false)
+							anon95_dare_pee_panel.SetVisible(false)
+
+						if anon95_dare_state == 3
+							if anon95_dare_nipple_done == false && anon95_dare_remaining <= 200
+								anon95_dare_nipple_locked = true
+							anon95_dare_panel.SetVisible(false)
+							anon95_dare_overlay_refresh_timer = anon95_dare_overlay_refresh_timer + _timediff
+							if anon95_dare_overlay_refresh_timer >= 0.20
+								anon95_dare_overlay_refresh_timer = 0
+								RefreshParkDareOverlay()
+							if anon95_dare_nipple_done == false && anon95_dare_nipple_locked == false
+								anon95_dare_nipple_panel.SetVisible(true)
+								anon95_dare_nipple_panel.SetText("进行玩弄乳头取回外套，但任务时间会增加 100 秒")
+								anon95_dare_nipple_panel.SetGaugeVisible(true)
+								if anon95_condition_nipple.Check()
+									anon95_dare_nipple_duration = anon95_dare_nipple_duration + _timediff
+								else
+									anon95_dare_nipple_duration = 0
+								anon95_dare_nipple_panel.SetGaugeProgress(anon95_dare_nipple_duration / 2)
+								if anon95_dare_nipple_duration >= 2
+									anon95_dare_nipple_done = true
+									anon95_dare_remaining = anon95_dare_remaining + 100
+									CollectItem(itemtype="Coat")
+									anon95_coat_pos = CreateList(stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y, z=_state.Position.z, rx=0, ry=0, rz=0, rw=0)
+									DropItem(itemtype="Coat", position=anon95_coat_pos, compass=false)
+									anon95_dare_coat_displaced = false
+									anon95_dare_nipple_panel.SetVisible(false)
+							else
+								anon95_dare_nipple_panel.SetVisible(false)
+								anon95_dare_nipple_duration = 0
+							if anon95_dare_tempcoat_active
+								anon95_dare_tempcoat_panel.SetVisible(true)
+								anon95_dare_tempcoat_panel.SetText("外套将在" + anon95_dare_tempcoat_remaining)
+								anon95_dare_tempcoat_panel.SetGaugeVisible(true)
+								anon95_dare_tempcoat_panel.SetGaugeProgress(anon95_dare_tempcoat_remaining / 15)
+								anon95_dare_tempcoat_second_timer = anon95_dare_tempcoat_second_timer + _timediff
+								if anon95_dare_tempcoat_second_timer >= 1
+									anon95_dare_tempcoat_second_timer = anon95_dare_tempcoat_second_timer - 1
+									anon95_dare_tempcoat_remaining = anon95_dare_tempcoat_remaining - 1
+								if anon95_dare_tempcoat_remaining <= 0
+									DropItem(itemtype="Coat", position=_state.Position, compass=false)
+									CollectItem(itemtype="Coat")
+									anon95_tempcoat_away_pos = CreateList(stage="Apart", x=-1.84, y=0.00, z=-0.20, rx=0, ry=0, rz=0, rw=0)
+									DropItem(itemtype="Coat", stage="Apart", position=anon95_tempcoat_away_pos, compass=false)
+									anon95_dare_coat_displaced = true
+									anon95_dare_tempcoat_active = false
+									anon95_dare_tempcoat_duration = 0
+							else
+								if anon95_dare_nipple_done || anon95_dare_tempcoat_locked
+									anon95_dare_tempcoat_panel.SetVisible(false)
+									anon95_dare_tempcoat_duration = 0
+								else
+									anon95_dare_tempcoat_panel.SetVisible(true)
+									anon95_dare_tempcoat_panel.SetText("进行玩弄阴蒂可暂时取回外套 15 秒，同时增加 30 秒任务时间")
+									anon95_dare_tempcoat_panel.SetGaugeVisible(true)
+									if anon95_condition_clit.Check()
+										anon95_dare_tempcoat_duration = anon95_dare_tempcoat_duration + _timediff
+									else
+										anon95_dare_tempcoat_duration = 0
+									anon95_dare_tempcoat_panel.SetGaugeProgress(anon95_dare_tempcoat_duration / 2)
+									if anon95_dare_tempcoat_duration >= 2
+										anon95_dare_remaining = anon95_dare_remaining + 30
+										anon95_dare_tempcoat_active = true
+										anon95_dare_tempcoat_remaining = 16
+										anon95_dare_tempcoat_second_timer = 0
+										anon95_dare_tempcoat_duration = 0
+										CollectItem(itemtype="Coat")
+										anon95_tempcoat_pos = CreateList(stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y, z=_state.Position.z, rx=0, ry=0, rz=0, rw=0)
+										DropItem(itemtype="Coat", position=anon95_tempcoat_pos, compass=false)
+										anon95_dare_coat_displaced = false
+							if anon95_dare_remaining <= 270 && anon95_dare_ibalance_done == false
+								anon95_dare_ibalance_panel.SetVisible(true)
+								anon95_dare_ibalance_panel.SetText("连续保持I字劈叉平衡 15 秒，可减少 30 秒任务时间")
+								anon95_dare_ibalance_panel.SetGaugeVisible(true)
+								if anon95_condition_ibalance.Check()
+									anon95_dare_ibalance_duration = anon95_dare_ibalance_duration + _timediff
+								else
+									anon95_dare_ibalance_duration = 0
+								anon95_dare_ibalance_panel.SetGaugeProgress(anon95_dare_ibalance_duration / 15)
+								if anon95_dare_ibalance_duration >= 15
+									anon95_dare_ibalance_done = true
+									anon95_dare_remaining = anon95_dare_remaining - 30
+									anon95_dare_ibalance_panel.SetVisible(false)
+							else
+								anon95_dare_ibalance_panel.SetVisible(false)
+							if anon95_dare_remaining <= 240 || anon95_dare_ibalance_done
+								anon95_dare_toys_unlocked = true
+							if anon95_dare_remaining <= 210
+								anon95_dare_blindfold_unlocked = true
+							if anon95_dare_remaining <= 180
+								anon95_dare_pee_unlocked = true
+							if anon95_dare_remaining <= 120
+								anon95_dare_orgasm_unlocked = true
+							if anon95_dare_toys_unlocked
+								if anon95_condition_vibrator_random.Check() || anon95_condition_titrotor_random.Check() || anon95_condition_kurirotor_random.Check()
+									anon95_dare_toys_panel.SetVisible(false)
+								else
+									anon95_dare_toys_panel.SetVisible(true)
+									anon95_dare_toys_panel.SetText("每装备一个震动器，主计时每 2 秒额外减少 0.25 秒")
+							else
+								anon95_dare_toys_panel.SetVisible(false)
+							if anon95_dare_blindfold_unlocked
+								if anon95_condition_blindfold.Check()
+									anon95_dare_blindfold_wear_duration = anon95_dare_blindfold_wear_duration + _timediff
+								else
+									anon95_dare_blindfold_wear_duration = 0
+								if anon95_dare_blindfold_wear_duration >= 15
+									anon95_dare_blindfold_panel.SetVisible(false)
+								else
+									anon95_dare_blindfold_panel.SetVisible(true)
+									anon95_dare_blindfold_panel.SetText("戴上眼罩满 15 秒后，主计时每 2 秒额外减少 0.50 秒")
+							else
+								anon95_dare_blindfold_wear_duration = 0
+								anon95_dare_blindfold_panel.SetVisible(false)
+							if anon95_dare_pee_unlocked
+								if anon95_condition_peeing.Check()
+									anon95_dare_pee_panel.SetVisible(false)
+								else
+									anon95_dare_pee_panel.SetVisible(true)
+									anon95_dare_pee_panel.SetText("排尿时，主计时每秒额外减少 0.25 秒")
+							else
+								anon95_dare_pee_panel.SetVisible(false)
+							if anon95_dare_orgasm_unlocked
+								if anon95_condition_handcuffsback.Check()
+									anon95_dare_orgasm_panel.SetVisible(false)
+								else
+									anon95_dare_orgasm_panel.SetVisible(true)
+									anon95_dare_orgasm_panel.SetText("高潮会使进度增加 30 秒；主动使用手铐时此效果无效")
+							else
+								anon95_dare_orgasm_panel.SetVisible(false)
+							anon95_dare_passive_timer = anon95_dare_passive_timer + _timediff
+							if anon95_dare_passive_timer >= 2
+								anon95_dare_passive_timer = anon95_dare_passive_timer - 2
+								if anon95_dare_toys_unlocked
+									if anon95_condition_vibrator_random.Check()
+										anon95_dare_passive_bank = anon95_dare_passive_bank + 0.25
+									if anon95_condition_titrotor_random.Check()
+										anon95_dare_passive_bank = anon95_dare_passive_bank + 0.25
+									if anon95_condition_kurirotor_random.Check()
+										anon95_dare_passive_bank = anon95_dare_passive_bank + 0.25
+								if anon95_dare_blindfold_unlocked
+									if anon95_condition_blindfold.Check() && anon95_dare_blindfold_wear_duration >= 15
+										anon95_dare_passive_bank = anon95_dare_passive_bank + 0.50
+								if anon95_dare_passive_bank >= 1
+									anon95_dare_passive_bank = anon95_dare_passive_bank - 1
+									anon95_dare_remaining = anon95_dare_remaining - 1
+							if anon95_dare_orgasm_unlocked
+								if anon95_condition_orgasm.Check()
+									if anon95_dare_orgasm_was_active == false
+										if !anon95_condition_handcuffsback.Check()
+											anon95_dare_remaining = anon95_dare_remaining + 30
+									anon95_dare_orgasm_was_active = true
+								else
+									anon95_dare_orgasm_was_active = false
+							if anon95_dare_remaining <= 0
+								AddCurrentEarnRP(800)
+								RestoreDareCoat()
+								anon95_chat.Clear()
+								anon95_chat.Add("很好", "Left", user="Anonymous_95", silent=false)
+								anon95_done = false
+								anon95_dare_completed = true
+								anon95_dare_available = false
+								anon95_branch = 0
+								anon95_dare_state = 0
+								anon95_chat.SetButtons(CreateList("赌博"), ids=CreateList("gamble"))
+								mainthread.UpdateHub()
+								anon95_dare_zone.SetVisible(false)
+								anon95_dare_panel.SetVisible(false)
+								ClearParkDareOverlay()
+								anon95_dare_warning_panel.SetVisible(false)
+								anon95_dare_nipple_panel.SetVisible(false)
+								anon95_dare_tempcoat_panel.SetVisible(false)
+								anon95_dare_ibalance_panel.SetVisible(false)
+								anon95_dare_toys_panel.SetVisible(false)
+								anon95_dare_blindfold_panel.SetVisible(false)
+								anon95_dare_orgasm_panel.SetVisible(false)
+								anon95_dare_pee_panel.SetVisible(false)
+
+
+				# Anonymous_95 Gamble branch. Lockpicking mini game.
+				if anon95_branch == 2 && anon95_done == false
+					if anon95_gamble_state == 1
+						anon95_gamble_prep_timer = anon95_gamble_prep_timer + _timediff
+						anon95_gamble_panel.SetVisible(true)
+						anon95_gamble_panel.SetText("赌博将在 15 秒后开始，做好准备")
+						anon95_gamble_panel.SetRPText("")
+						anon95_gamble_panel.SetGaugeVisible(true)
+						anon95_gamble_panel.SetGaugeProgress(anon95_gamble_prep_timer / 15)
+						if anon95_gamble_prep_timer >= 15
+							if session_stage == "Park"
+								mainthread.SyncParkRPBaseline()
+							anon95_gamble_rp_last_total = GetCurrentEarnRP()
+							LockHandcuffs(handcuffstype="Handcuff")
+							anon95_gamble_state = 2
+							anon95_gamble_elapsed = 0
+							anon95_gamble_second_timer = 0
+							anon95_gamble_force_timer = 0
+							anon95_gamble_selected = 0
+							anon95_gamble_actions = 15
+							anon95_gamble_rp_bank = 0
+							anon95_gamble_move_duration = 0
+							anon95_gamble_toy_disabled = false
+							anon95_gamble_toy_return_timer = 0
+							anon95_gamble_orgasm_was_active = false
+							anon95_gamble_code = CreateList()
+							anon95_gamble_guess = CreateList()
+							anon95_count_0 = 0
+							anon95_count_1 = 0
+							anon95_count_2 = 0
+							anon95_count_3 = 0
+							anon95_count_4 = 0
+							anon95_count_5 = 0
+							anon95_count_6 = 0
+							anon95_count_7 = 0
+							anon95_count_8 = 0
+							anon95_count_9 = 0
+							anon95_gamble_i = 0
+							while anon95_gamble_i < 9
+								anon95_digit_ok = false
+								while anon95_digit_ok == false
+									anon95_digit = RandomInt(0, 9)
+									anon95_digit_ok = true
+									if anon95_digit == 0 && anon95_count_0 >= 2
+										anon95_digit_ok = false
+									if anon95_digit == 1 && anon95_count_1 >= 2
+										anon95_digit_ok = false
+									if anon95_digit == 2 && anon95_count_2 >= 2
+										anon95_digit_ok = false
+									if anon95_digit == 3 && anon95_count_3 >= 2
+										anon95_digit_ok = false
+									if anon95_digit == 4 && anon95_count_4 >= 2
+										anon95_digit_ok = false
+									if anon95_digit == 5 && anon95_count_5 >= 2
+										anon95_digit_ok = false
+									if anon95_digit == 6 && anon95_count_6 >= 2
+										anon95_digit_ok = false
+									if anon95_digit == 7 && anon95_count_7 >= 2
+										anon95_digit_ok = false
+									if anon95_digit == 8 && anon95_count_8 >= 2
+										anon95_digit_ok = false
+									if anon95_digit == 9 && anon95_count_9 >= 2
+										anon95_digit_ok = false
+								anon95_gamble_code.Insert(anon95_digit)
+								if anon95_digit == 0
+									anon95_count_0 = anon95_count_0 + 1
+								if anon95_digit == 1
+									anon95_count_1 = anon95_count_1 + 1
+								if anon95_digit == 2
+									anon95_count_2 = anon95_count_2 + 1
+								if anon95_digit == 3
+									anon95_count_3 = anon95_count_3 + 1
+								if anon95_digit == 4
+									anon95_count_4 = anon95_count_4 + 1
+								if anon95_digit == 5
+									anon95_count_5 = anon95_count_5 + 1
+								if anon95_digit == 6
+									anon95_count_6 = anon95_count_6 + 1
+								if anon95_digit == 7
+									anon95_count_7 = anon95_count_7 + 1
+								if anon95_digit == 8
+									anon95_count_8 = anon95_count_8 + 1
+								if anon95_digit == 9
+									anon95_count_9 = anon95_count_9 + 1
+								anon95_gamble_guess.Insert(0)
+								anon95_gamble_i = anon95_gamble_i + 1
+					if anon95_gamble_state == 2
+						anon95_gamble_force_timer = anon95_gamble_force_timer + _timediff
+						if anon95_gamble_force_timer >= 1
+							anon95_gamble_force_timer = 0
+							if _state.Handcuffs.Type == "None"
+								LockHandcuffs(handcuffstype="Handcuff")
+							if anon95_gamble_blindfold_mode
+								if !_state.AdultToys["EyeMask"]
+									EquipAdultToy("EyeMask")
+							if anon95_gamble_toy_disabled == false
+								if !_state.AdultToys["Vibrator"]
+									EquipAdultToy("Vibrator")
+								if !_state.AdultToys["TitRotor"]
+									EquipAdultToy("TitRotor")
+								if !_state.AdultToys["KuriRotor"]
+									EquipAdultToy("KuriRotor")
+								SetVibrator("Random")
+						anon95_gamble_second_timer = anon95_gamble_second_timer + _timediff
+						if anon95_gamble_second_timer >= 1
+							anon95_gamble_second_timer = anon95_gamble_second_timer - 1
+							anon95_gamble_elapsed = anon95_gamble_elapsed + 1
+						current_gamble_rp_total = GetCurrentEarnRP()
+						anon95_gamble_rp_gain = current_gamble_rp_total - anon95_gamble_rp_last_total
+						if anon95_gamble_rp_gain > 0
+							anon95_gamble_rp_bank = anon95_gamble_rp_bank + anon95_gamble_rp_gain
+							while anon95_gamble_rp_bank >= 50
+								anon95_gamble_rp_bank = anon95_gamble_rp_bank - 50
+								if anon95_gamble_blindfold_mode
+									anon95_gamble_actions = anon95_gamble_actions + 8
+								else
+									anon95_gamble_actions = anon95_gamble_actions + 5
+						anon95_gamble_rp_last_total = current_gamble_rp_total
+						if anon95_gamble_toy_disabled == false
+							if anon95_condition_orgasm.Check()
+								if anon95_gamble_orgasm_was_active == false
+									anon95_gamble_orgasm_was_active = true
+									anon95_gamble_selected = 0
+									anon95_gamble_code = CreateList()
+									anon95_gamble_guess = CreateList()
+									anon95_count_0 = 0
+									anon95_count_1 = 0
+									anon95_count_2 = 0
+									anon95_count_3 = 0
+									anon95_count_4 = 0
+									anon95_count_5 = 0
+									anon95_count_6 = 0
+									anon95_count_7 = 0
+									anon95_count_8 = 0
+									anon95_count_9 = 0
+									anon95_gamble_i = 0
+									while anon95_gamble_i < 9
+										anon95_digit_ok = false
+										while anon95_digit_ok == false
+											anon95_digit = RandomInt(0, 9)
+											anon95_digit_ok = true
+											if anon95_digit == 0 && anon95_count_0 >= 2
+												anon95_digit_ok = false
+											if anon95_digit == 1 && anon95_count_1 >= 2
+												anon95_digit_ok = false
+											if anon95_digit == 2 && anon95_count_2 >= 2
+												anon95_digit_ok = false
+											if anon95_digit == 3 && anon95_count_3 >= 2
+												anon95_digit_ok = false
+											if anon95_digit == 4 && anon95_count_4 >= 2
+												anon95_digit_ok = false
+											if anon95_digit == 5 && anon95_count_5 >= 2
+												anon95_digit_ok = false
+											if anon95_digit == 6 && anon95_count_6 >= 2
+												anon95_digit_ok = false
+											if anon95_digit == 7 && anon95_count_7 >= 2
+												anon95_digit_ok = false
+											if anon95_digit == 8 && anon95_count_8 >= 2
+												anon95_digit_ok = false
+											if anon95_digit == 9 && anon95_count_9 >= 2
+												anon95_digit_ok = false
+										anon95_gamble_code.Insert(anon95_digit)
+										if anon95_digit == 0
+											anon95_count_0 = anon95_count_0 + 1
+										if anon95_digit == 1
+											anon95_count_1 = anon95_count_1 + 1
+										if anon95_digit == 2
+											anon95_count_2 = anon95_count_2 + 1
+										if anon95_digit == 3
+											anon95_count_3 = anon95_count_3 + 1
+										if anon95_digit == 4
+											anon95_count_4 = anon95_count_4 + 1
+										if anon95_digit == 5
+											anon95_count_5 = anon95_count_5 + 1
+										if anon95_digit == 6
+											anon95_count_6 = anon95_count_6 + 1
+										if anon95_digit == 7
+											anon95_count_7 = anon95_count_7 + 1
+										if anon95_digit == 8
+											anon95_count_8 = anon95_count_8 + 1
+										if anon95_digit == 9
+											anon95_count_9 = anon95_count_9 + 1
+										anon95_gamble_guess.Insert(0)
+										anon95_gamble_i = anon95_gamble_i + 1
+							else
+								anon95_gamble_orgasm_was_active = false
+						else
+							anon95_gamble_orgasm_was_active = false
+						if anon95_gamble_toy_disabled
+							anon95_gamble_toy_return_timer = anon95_gamble_toy_return_timer - _timediff
+							if anon95_gamble_toy_return_timer <= 0
+								anon95_gamble_toy_disabled = false
+								anon95_gamble_move_duration = 0
+						else
+							if (anon95_condition_moving.Check() || anon95_condition_dashing.Check()) && anon95_condition_npca.Check()
+								anon95_gamble_move_duration = anon95_gamble_move_duration + _timediff
+							else
+								anon95_gamble_move_duration = anon95_gamble_move_duration
+							if anon95_gamble_move_duration >= 10
+								anon95_gamble_toy_disabled = true
+								anon95_gamble_toy_return_timer = RandomInt(20, 24)
+								anon95_gamble_move_duration = 0
+								SetVibrator("Off")
+								UnequipAdultToy("Vibrator", "TitRotor", "KuriRotor")
+								SetVibrator("Off")
+						if anon95_input_left.WasPressed()
+							anon95_gamble_selected = anon95_gamble_selected - 1
+							if anon95_gamble_selected < 0
+								anon95_gamble_selected = 8
+							if anon95_gamble_guess[anon95_gamble_selected] == anon95_gamble_code[anon95_gamble_selected]
+								warning_sound.Play()
+						if anon95_input_right.WasPressed()
+							anon95_gamble_selected = anon95_gamble_selected + 1
+							if anon95_gamble_selected > 8
+								anon95_gamble_selected = 0
+							if anon95_gamble_guess[anon95_gamble_selected] == anon95_gamble_code[anon95_gamble_selected]
+								warning_sound.Play()
+						if anon95_input_up.WasPressed()
+							anon95_gamble_guess[anon95_gamble_selected] = anon95_gamble_guess[anon95_gamble_selected] + 1
+							anon95_gamble_actions = anon95_gamble_actions - 1
+							if anon95_gamble_guess[anon95_gamble_selected] > 9
+								anon95_gamble_guess[anon95_gamble_selected] = 0
+							if anon95_gamble_guess[anon95_gamble_selected] == anon95_gamble_code[anon95_gamble_selected]
+								warning_sound.Play()
+						if anon95_input_down.WasPressed()
+							anon95_gamble_guess[anon95_gamble_selected] = anon95_gamble_guess[anon95_gamble_selected] - 1
+							anon95_gamble_actions = anon95_gamble_actions - 1
+							if anon95_gamble_guess[anon95_gamble_selected] < 0
+								anon95_gamble_guess[anon95_gamble_selected] = 9
+							if anon95_gamble_guess[anon95_gamble_selected] == anon95_gamble_code[anon95_gamble_selected]
+								warning_sound.Play()
+						if anon95_gamble_actions <= 0
+							anon95_gamble_selected = 0
+							anon95_gamble_actions = anon95_gamble_actions + 15
+							anon95_gamble_code = CreateList()
+							anon95_gamble_guess = CreateList()
+							anon95_count_0 = 0
+							anon95_count_1 = 0
+							anon95_count_2 = 0
+							anon95_count_3 = 0
+							anon95_count_4 = 0
+							anon95_count_5 = 0
+							anon95_count_6 = 0
+							anon95_count_7 = 0
+							anon95_count_8 = 0
+							anon95_count_9 = 0
+							anon95_gamble_i = 0
+							while anon95_gamble_i < 9
+								anon95_digit_ok = false
+								while anon95_digit_ok == false
+									anon95_digit = RandomInt(0, 9)
+									anon95_digit_ok = true
+									if anon95_digit == 0 && anon95_count_0 >= 2
+										anon95_digit_ok = false
+									if anon95_digit == 1 && anon95_count_1 >= 2
+										anon95_digit_ok = false
+									if anon95_digit == 2 && anon95_count_2 >= 2
+										anon95_digit_ok = false
+									if anon95_digit == 3 && anon95_count_3 >= 2
+										anon95_digit_ok = false
+									if anon95_digit == 4 && anon95_count_4 >= 2
+										anon95_digit_ok = false
+									if anon95_digit == 5 && anon95_count_5 >= 2
+										anon95_digit_ok = false
+									if anon95_digit == 6 && anon95_count_6 >= 2
+										anon95_digit_ok = false
+									if anon95_digit == 7 && anon95_count_7 >= 2
+										anon95_digit_ok = false
+									if anon95_digit == 8 && anon95_count_8 >= 2
+										anon95_digit_ok = false
+									if anon95_digit == 9 && anon95_count_9 >= 2
+										anon95_digit_ok = false
+								anon95_gamble_code.Insert(anon95_digit)
+								if anon95_digit == 0
+									anon95_count_0 = anon95_count_0 + 1
+								if anon95_digit == 1
+									anon95_count_1 = anon95_count_1 + 1
+								if anon95_digit == 2
+									anon95_count_2 = anon95_count_2 + 1
+								if anon95_digit == 3
+									anon95_count_3 = anon95_count_3 + 1
+								if anon95_digit == 4
+									anon95_count_4 = anon95_count_4 + 1
+								if anon95_digit == 5
+									anon95_count_5 = anon95_count_5 + 1
+								if anon95_digit == 6
+									anon95_count_6 = anon95_count_6 + 1
+								if anon95_digit == 7
+									anon95_count_7 = anon95_count_7 + 1
+								if anon95_digit == 8
+									anon95_count_8 = anon95_count_8 + 1
+								if anon95_digit == 9
+									anon95_count_9 = anon95_count_9 + 1
+								anon95_gamble_guess.Insert(0)
+								anon95_gamble_i = anon95_gamble_i + 1
+						number_line = ""
+						anon95_gamble_i = 0
+						while anon95_gamble_i < 9
+							if anon95_gamble_blindfold_mode
+								anon95_display_digit = "X"
+							else
+								anon95_display_digit = anon95_gamble_guess[anon95_gamble_i]
+							if anon95_gamble_i == anon95_gamble_selected
+								number_line = number_line + "[" + anon95_display_digit + "]"
+							else
+								number_line = number_line + " " + anon95_display_digit + " "
+							if anon95_gamble_i < 8
+								number_line = number_line + " "
+							anon95_gamble_i = anon95_gamble_i + 1
+						anon95_gamble_display = number_line
+						if anon95_gamble_overlay_flip == 0
+							anon95_gamble_overlay.Clear()
+							anon95_gamble_overlay_alt.Clear()
+							anon95_gamble_overlay.Add(text=anon95_gamble_display, duration=-1)
+							anon95_gamble_overlay_flip = 1
+						else
+							anon95_gamble_overlay.Clear()
+							anon95_gamble_overlay_alt.Clear()
+							anon95_gamble_overlay_alt.Add(text=anon95_gamble_display, duration=-1)
+							anon95_gamble_overlay_flip = 0
+						anon95_gamble_panel.SetVisible(true)
+						anon95_gamble_panel.SetText("在 240 秒内解开锁具" + anon95_gamble_elapsed)
+						anon95_gamble_panel.SetRPText("200 RP + 200 MP")
+						anon95_gamble_panel.SetGaugeVisible(true)
+						anon95_gamble_panel.SetGaugeProgress(anon95_gamble_elapsed / 240)
+						action_text = "Action Points: " + anon95_gamble_actions
+						if anon95_gamble_action_overlay_flip == 0
+							anon95_gamble_action_overlay.Clear()
+							anon95_gamble_action_overlay_alt.Clear()
+							anon95_gamble_action_overlay.Add(text=action_text, duration=-1)
+							anon95_gamble_action_overlay_flip = 1
+						else
+							anon95_gamble_action_overlay.Clear()
+							anon95_gamble_action_overlay_alt.Clear()
+							anon95_gamble_action_overlay_alt.Add(text=action_text, duration=-1)
+							anon95_gamble_action_overlay_flip = 0
+						anon95_gamble_rp_panel.SetVisible(true)
+						if anon95_gamble_blindfold_mode
+							anon95_gamble_rp_panel.SetText("每获得 50 RP，增加 8 点行动点数")
+						else
+							anon95_gamble_rp_panel.SetText("每获得 50 RP，增加 5 点行动点数")
+						anon95_gamble_rp_panel.SetGaugeVisible(true)
+						anon95_gamble_rp_panel.SetGaugeProgress(anon95_gamble_rp_bank / 50)
+						if anon95_gamble_toy_disabled
+							anon95_gamble_toy_panel.SetVisible(false)
+						else
+							anon95_gamble_toy_panel.SetVisible(true)
+							anon95_gamble_toy_panel.SetText("高潮会重置锁具，保持移动可暂时禁用此效果")
+							anon95_gamble_toy_panel.SetGaugeProgress(anon95_gamble_move_duration / 10)
+						anon95_gamble_solved = true
+						anon95_gamble_i = 0
+						while anon95_gamble_i < 9
+							if anon95_gamble_guess[anon95_gamble_i] != anon95_gamble_code[anon95_gamble_i]
+								anon95_gamble_solved = false
+							anon95_gamble_i = anon95_gamble_i + 1
+						if anon95_gamble_solved
+							AddCurrentEarnRP(200)
+							manaka_points.Add(amount=200)
+							mainthread.UpdateHub()
+							anon95_reward_overlay.Clear()
+							anon95_reward_overlay.Add(text="200 RP + 200 Manaka Points Added")
+							anon95_reward_overlay_timer = 5
+							UnlockHandcuffs()
+							SetVibrator("Off")
+							UnequipAdultToy("Vibrator", "TitRotor", "KuriRotor")
+							if anon95_gamble_blindfold_mode
+								UnequipAdultToy("EyeMask")
+							SetVibrator("Off")
+							anon95_chat.Clear()
+							anon95_chat.Add("很好", "Left", user="Anonymous_95", silent=false)
+							anon95_gamble_state = 0
+							if anon95_gamble_blindfold_mode
+								anon95_chat.SetButtons(CreateList("开始赌博", "眼罩：开启", "返回"), ids=CreateList("gamble_start", "gamble_blindfold", "return"))
+							else
+								anon95_chat.SetButtons(CreateList("开始赌博", "眼罩：关闭", "返回"), ids=CreateList("gamble_start", "gamble_blindfold", "return"))
+							anon95_gamble_panel.SetVisible(false)
+							anon95_gamble_action_overlay.Clear()
+							anon95_gamble_action_overlay_alt.Clear()
+							anon95_gamble_rp_panel.SetVisible(false)
+							anon95_gamble_toy_panel.SetVisible(false)
+							anon95_gamble_overlay.Clear()
+							anon95_gamble_overlay_alt.Clear()
+						if anon95_gamble_elapsed >= 240 && anon95_done == false
+							UnlockHandcuffs()
+							SetVibrator("Off")
+							UnequipAdultToy("Vibrator", "TitRotor", "KuriRotor")
+							if anon95_gamble_blindfold_mode
+								UnequipAdultToy("EyeMask")
+							SetVibrator("Off")
+							anon95_chat.Clear()
+							anon95_chat.Add("运气不太好", "Left", user="Anonymous_95", silent=false)
+							anon95_gamble_state = 0
+							anon95_gamble_elapsed = 0
+							anon95_gamble_panel.SetVisible(false)
+							anon95_gamble_action_overlay.Clear()
+							anon95_gamble_action_overlay_alt.Clear()
+							anon95_gamble_rp_panel.SetVisible(false)
+							anon95_gamble_toy_panel.SetVisible(false)
+							anon95_gamble_overlay.Clear()
+							anon95_gamble_overlay_alt.Clear()
+							if anon95_gamble_blindfold_mode
+								anon95_chat.SetButtons(CreateList("开始赌博", "眼罩：开启", "返回"), ids=CreateList("gamble_start", "gamble_blindfold", "return"))
+							else
+								anon95_chat.SetButtons(CreateList("开始赌博", "眼罩：关闭", "返回"), ids=CreateList("gamble_start", "gamble_blindfold", "return"))
+
+
+
+
+	RefreshParkDareOverlay:
+		dare_overlay_text = "Do not leave this zone. Survive. " + anon95_dare_remaining + "s\nReward: 1000 RP"
+		if anon95_dare_remaining <= 60
+			dare_overlay_text = "<color=#ff3333>" + dare_overlay_text + "</color>"
+		if anon95_dare_overlay_flip == 0
+			anon95_dare_overlay.Clear()
+			anon95_dare_overlay.Add(text=dare_overlay_text, duration=-1)
+			anon95_dare_overlay_alt.Clear()
+			anon95_dare_overlay_flip = 1
+		else
+			anon95_dare_overlay_alt.Clear()
+			anon95_dare_overlay_alt.Add(text=dare_overlay_text, duration=-1)
+			anon95_dare_overlay.Clear()
+			anon95_dare_overlay_flip = 0
+	ClearParkDareOverlay:
+		anon95_dare_overlay.Clear()
+		anon95_dare_overlay_alt.Clear()
+		anon95_dare_overlay_refresh_timer = 0
+
+
+	RestoreDareCoat:
+		if anon95_dare_coat_displaced
+			CollectItem(itemtype="Coat")
+			anon95_dare_coat_return_pos = CreateList(stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y, z=_state.Position.z, rx=0, ry=0, rz=0, rw=0)
+			DropItem(itemtype="Coat", position=anon95_dare_coat_return_pos, compass=false)
+			anon95_dare_coat_displaced = false
+
+
+	RefreshContact:
+		if anon95_chat != null
+			anon95_chat.Clear()
+			anon95_last_stage = _state.Position.stage
+			anon95_dare_available = anon95_last_stage == "Park" && anon95_dare_completed == false
+			if anon95_last_stage == "Residence"
+				anon95_root_mode = 1
+				anon95_chat.Add("挑战，还是赌博？", "Left", user="Anonymous_95", silent=false)
+				anon95_chat.SetButtons(CreateList("挑战", "赌博"), ids=CreateList("dare", "gamble"))
+			elseif anon95_dare_available
+				anon95_root_mode = 2
+				anon95_chat.Add("来一场 800 的挑战，还是赌博？", "Left", user="Anonymous_95", silent=false)
+				anon95_chat.SetButtons(CreateList("挑战", "赌博"), ids=CreateList("dare", "gamble"))
+			else
+				anon95_root_mode = 0
+				anon95_chat.Add("觉得自己今天走运吗？", "Left", user="Anonymous_95", silent=false)
+				anon95_chat.SetButtons(CreateList("赌博"), ids=CreateList("gamble"))
+
+	IsBusy:
+		_result = active && (anon95_branch != 0 || residence_dare.IsActive())
+
+	CancelMission:
+		if anon95_branch == 1
+			RestoreDareCoat()
+		if anon95_branch == 3
+			residence_dare.Cancel()
+		if anon95_branch == 2 && anon95_gamble_state > 0
+			UnlockHandcuffs()
+		SetVibrator("Off")
+		UnequipAdultToy("Vibrator", "TitRotor", "KuriRotor")
+		if anon95_gamble_blindfold_mode
+			UnequipAdultToy("EyeMask")
+		SetVibrator("Off")
+		anon95_dare_zone.SetVisible(false)
+		anon95_dare_panel.SetVisible(false)
+		ClearParkDareOverlay()
+		anon95_dare_warning_panel.SetVisible(false)
+		anon95_dare_nipple_panel.SetVisible(false)
+		anon95_dare_tempcoat_panel.SetVisible(false)
+		anon95_dare_ibalance_panel.SetVisible(false)
+		anon95_dare_toys_panel.SetVisible(false)
+		anon95_dare_blindfold_panel.SetVisible(false)
+		anon95_dare_orgasm_panel.SetVisible(false)
+		anon95_dare_pee_panel.SetVisible(false)
+		anon95_gamble_panel.SetVisible(false)
+		anon95_gamble_rp_panel.SetVisible(false)
+		anon95_gamble_toy_panel.SetVisible(false)
+		anon95_gamble_overlay.Clear()
+		anon95_gamble_overlay_alt.Clear()
+		anon95_gamble_action_overlay.Clear()
+		anon95_gamble_action_overlay_alt.Clear()
+		anon95_branch = 0
+		anon95_done = false
+		anon95_gamble_state = 0
+		anon95_dare_state = 0
+		anon95_residence_dare_menu = "home"
+		anon95_dare_available = _state.Position.stage == "Park" && anon95_dare_completed == false
+		anon95_chat.Clear()
+		anon95_chat.Add("已取消。", "Left", user="Anonymous_95", silent=false)
+		if _state.Position.stage == "Residence"
+			anon95_root_mode = 1
+			anon95_chat.SetButtons(CreateList("挑战", "赌博"), ids=CreateList("dare", "gamble"))
+		elseif anon95_dare_available
+			anon95_root_mode = 2
+			anon95_chat.SetButtons(CreateList("挑战", "赌博"), ids=CreateList("dare", "gamble"))
+		else
+			anon95_root_mode = 0
+			anon95_chat.SetButtons(CreateList("赌博"), ids=CreateList("gamble"))
+		mainthread.UpdateHub()

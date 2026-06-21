@@ -1,0 +1,1562 @@
+manakaplus_v22_park:
+	thread = _this
+	mission_active = false
+	active_stage = ""
+	park_naked_progress_overlay = CreateText()
+	park_naked_progress_overlay.SetAnchor(0.11, 0.935)
+	park_naked_progress_overlay.SetAlignment("TopLeft")
+	park_naked_progress_overlay.SetSize(27)
+	park_naked_progress_overlay.SetWidth(700)
+	park_naked_progress_overlay.SetFace(color=Color(1,1,1,1), dilate=0.3)
+	park_naked_progress_overlay.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.3)
+	park_naked_progress_overlay.SetFrontLayer(true)
+	park_naked_progress_overlay.Clear()
+	park_naked_progress_overlay_alt = CreateText()
+	park_naked_progress_overlay_alt.SetAnchor(0.11, 0.935)
+	park_naked_progress_overlay_alt.SetAlignment("TopLeft")
+	park_naked_progress_overlay_alt.SetSize(27)
+	park_naked_progress_overlay_alt.SetWidth(700)
+	park_naked_progress_overlay_alt.SetFace(color=Color(1,1,1,1), dilate=0.3)
+	park_naked_progress_overlay_alt.SetOutline(color=Color(0.05,0.05,0.05,1), width=0.3)
+	park_naked_progress_overlay_alt.SetFrontLayer(true)
+	park_naked_progress_overlay_alt.Clear()
+	park_naked_progress_overlay_flip = 0
+	park_naked_progress_overlay_timer = 0
+	park_start_zone = null
+	park_path_zone = null
+	park_naked_panel = null
+	park_teleport_panel = null
+	park_crowded_panel = null
+	park_condition_naked = null
+	park_condition_handbra = null
+	park_condition_hipthrust = null
+	park_condition_path = null
+	park_naked_duration = 0
+	park_teleport_duration = 0
+	park_crowded_duration = 0
+	park_naked_started = false
+	park_coat_moved = false
+	park_rp_target = 5000
+	park_rp_progress = 0
+	park_rp_last_total = 0
+	park_rp_ready = false
+	park_penalty_timer = 0
+	park_teleport_test_started = false
+	park_teleport_setting = 60
+	park_teleport_round = 0
+	park_teleport_round_target = 10
+	park_teleport_endless = false
+	park_teleport_intro_active = false
+	park_teleport_intro_timer = 0
+	park_teleport_round_timer = 0
+	park_teleport_zone_grace = 0
+	park_teleport_current_index = -1
+	park_teleport_previous_index = -1
+	park_walk_start_zone = null
+	park_walk_dest_zone = null
+	park_walk_panel = null
+	park_walk_state = 0
+	park_walk_precheck_duration = 0
+	park_walk_force_timer = 0
+	park_walk_start_pos = null
+	park_walk_dest_pos = null
+	park_walk_total_distance = 0
+	park_cage_zone = null
+	park_cage_panel = null
+	park_cage_state = 0
+	park_cage_precheck_duration = 0
+	park_cage_duration = 0
+	park_toilet_start_zone = null
+	park_toilet_dest_zone = null
+	park_toilet_panel = null
+	park_toilet_punish_panel = null
+	park_toilet_state = 0
+	park_toilet_precheck_duration = 0
+	park_toilet_punish_active = false
+	park_toilet_punish_duration = 0
+	park_toilet_force_timer = 0
+	park_toilet_start_pos = null
+	park_toilet_dest_pos = null
+	park_toilet_total_distance = 0
+	park_toilet_caged_start_zone = null
+	park_toilet_caged_warning_zone = null
+	park_toilet_caged_panel = null
+	park_toilet_caged_info_panel = null
+	park_toilet_caged_main_panel = null
+	park_toilet_caged_state = 0
+	park_toilet_caged_precheck_duration = 0
+	park_toilet_caged_duration = 0
+	park_toilet_caged_hide_penalty_timer = 0
+	park_toilet_caged_sound_cooldown = 0
+	park_toilet_caged_warning_pos = null
+	warning_sound = CreateAudio("Asset/Simple_ding_sound.mp3")
+	park_condition_coat = null
+	park_condition_ganimata_walk = null
+	park_condition_no_dash = null
+	bigj_chat = null
+	bigj_active = false
+	bigj_done = false
+	bigj_mission = 0
+	bigj_condition_photo = null
+	bigj_gallery = null
+	bigj_button_listener = null
+	bigj_confirm_listener = null
+	park_side_notice_panel = null
+	park_side_notice_timer = 0
+
+	idle:
+		mission_active = false
+
+	start_park:
+		warning_sound.Play()
+		mission_active = true
+		park_teleport_setting = teleport_duration
+		park_teleport_round_target = teleport_rounds
+		park_teleport_endless = teleport_endless
+		active_stage = "Park"
+		mainthread.UpdateHub()
+
+		if _state.Sitting
+			SetAction("StandUp")
+
+		SetStage("Park")
+		teleport_wait = 0
+		listener = CreateListenerLocal("park_teleport_wait")
+
+	park_teleport_wait:
+		if mission_active
+			teleport_wait = teleport_wait + _timediff
+			if teleport_wait > 0.5
+				SetPlayerPosition(x=65.67, y=50.03, z=36.66, rx=0.00000, ry=1.00000, rz=0.00000, rw=0.00000)
+				thread.Goto("park_start")
+
+	park_start:
+		# Park warm-up setup. Small interact point + hidden whole-map/path zone.
+		park_start_area = CreateArea(type="sphere", stage="Park", x=65.67, y=50.03, z=36.66, r=0.5, outline=true, compass=true)
+		park_start_zone = CreateZone(park_start_area)
+		park_start_zone.SetVisible(true)
+		park_start_zone.SetColor(1,0.75,0.5)
+
+		park_path_area = CreateArea(type="sphere", stage="Park", x=75.67, y=52.08, z=83.53, r=999, outline=false, compass=false)
+		park_path_zone = CreateZone(park_path_area)
+		park_path_zone.SetVisible(false)
+		park_path_zone.SetColor(0.4,0.8,1)
+
+		# Random Teleport Challenge v0.9.1.1 zone visibility test.
+		park_tp_central_area = CreateArea(type="sphere", stage="Park", x=75.67, y=52.08, z=83.53, r=14, outline=true, compass=true)
+		park_tp_central_zone = CreateZone(park_tp_central_area)
+		park_tp_central_zone.SetVisible(false)
+		park_tp_central_zone.SetColor(0.4,0.8,1)
+		park_tp_seat1_area = CreateArea(type="sphere", stage="Park", x=32.10, y=50.07, z=41.89, r=4, outline=true, compass=true)
+		park_tp_seat1_zone = CreateZone(park_tp_seat1_area)
+		park_tp_seat1_zone.SetVisible(false)
+		park_tp_seat1_zone.SetColor(0.4,0.8,1)
+		park_tp_seat2_area = CreateArea(type="sphere", stage="Park", x=78.41, y=50.01, z=125.80, r=4.5, outline=true, compass=true)
+		park_tp_seat2_zone = CreateZone(park_tp_seat2_area)
+		park_tp_seat2_zone.SetVisible(false)
+		park_tp_seat2_zone.SetColor(0.4,0.8,1)
+		park_tp_cross1_area = CreateArea(type="sphere", stage="Park", x=63.86, y=51.00, z=61.62, r=5, outline=true, compass=true)
+		park_tp_cross1_zone = CreateZone(park_tp_cross1_area)
+		park_tp_cross1_zone.SetVisible(false)
+		park_tp_cross1_zone.SetColor(0.4,0.8,1)
+		park_tp_cross2_area = CreateArea(type="sphere", stage="Park", x=88.79, y=50.04, z=125.76, r=5, outline=true, compass=true)
+		park_tp_cross2_zone = CreateZone(park_tp_cross2_area)
+		park_tp_cross2_zone.SetVisible(false)
+		park_tp_cross2_zone.SetColor(0.4,0.8,1)
+		park_tp_cross3_area = CreateArea(type="sphere", stage="Park", x=79.84, y=50.05, z=41.25, r=5, outline=true, compass=true)
+		park_tp_cross3_zone = CreateZone(park_tp_cross3_area)
+		park_tp_cross3_zone.SetVisible(false)
+		park_tp_cross3_zone.SetColor(0.4,0.8,1)
+		park_tp_cross4_area = CreateArea(type="sphere", stage="Park", x=41.51, y=50.06, z=63.37, r=5, outline=true, compass=true)
+		park_tp_cross4_zone = CreateZone(park_tp_cross4_area)
+		park_tp_cross4_zone.SetVisible(false)
+		park_tp_cross4_zone.SetColor(0.4,0.8,1)
+		park_tp_bridge_area = CreateArea(type="sphere", stage="Park", x=113.72, y=52.98, z=84.07, r=3, outline=true, compass=true)
+		park_tp_bridge_zone = CreateZone(park_tp_bridge_area)
+		park_tp_bridge_zone.SetVisible(false)
+		park_tp_bridge_zone.SetColor(0.4,0.8,1)
+		park_tp_underbridge_area = CreateArea(type="sphere", stage="Park", x=113.63, y=49.05, z=83.92, r=3.5, outline=true, compass=true)
+		park_tp_underbridge_zone = CreateZone(park_tp_underbridge_area)
+		park_tp_underbridge_zone.SetVisible(false)
+		park_tp_underbridge_zone.SetColor(0.4,0.8,1)
+		park_tp_vend1_area = CreateArea(type="sphere", stage="Park", x=47.50, y=50.05, z=113.83, r=4, outline=true, compass=true)
+		park_tp_vend1_zone = CreateZone(park_tp_vend1_area)
+		park_tp_vend1_zone.SetVisible(false)
+		park_tp_vend1_zone.SetColor(0.4,0.8,1)
+		park_tp_vend2_area = CreateArea(type="sphere", stage="Park", x=89.02, y=51.02, z=110.89, r=3.5, outline=true, compass=true)
+		park_tp_vend2_zone = CreateZone(park_tp_vend2_area)
+		park_tp_vend2_zone.SetVisible(false)
+		park_tp_vend2_zone.SetColor(0.4,0.8,1)
+		park_tp_vend3_area = CreateArea(type="sphere", stage="Park", x=74.67, y=51.00, z=55.37, r=3.5, outline=true, compass=true)
+		park_tp_vend3_zone = CreateZone(park_tp_vend3_area)
+		park_tp_vend3_zone.SetVisible(false)
+		park_tp_vend3_zone.SetColor(0.4,0.8,1)
+		park_tp_outside_toilet_area = CreateArea(type="sphere", stage="Park", x=114.09, y=49.06, z=122.37, r=4.5, outline=true, compass=true)
+		park_tp_outside_toilet_zone = CreateZone(park_tp_outside_toilet_area)
+		park_tp_outside_toilet_zone.SetVisible(false)
+		park_tp_outside_toilet_zone.SetColor(0.4,0.8,1)
+		park_tp_female_toilet_area = CreateArea(type="sphere", stage="Park", x=122.59, y=49.06, z=119.83, r=3, outline=true, compass=true)
+		park_tp_female_toilet_zone = CreateZone(park_tp_female_toilet_area)
+		park_tp_female_toilet_zone.SetVisible(false)
+		park_tp_female_toilet_zone.SetColor(0.4,0.8,1)
+		park_tp_male_toilet_area = CreateArea(type="sphere", stage="Park", x=122.55, y=49.06, z=124.45, r=3, outline=true, compass=true)
+		park_tp_male_toilet_zone = CreateZone(park_tp_male_toilet_area)
+		park_tp_male_toilet_zone.SetVisible(false)
+		park_tp_male_toilet_zone.SetColor(0.4,0.8,1)
+		park_tp_maze_area = CreateArea(type="sphere", stage="Park", x=113.38, y=49.00, z=42.49, r=13, outline=true, compass=true)
+		park_tp_maze_zone = CreateZone(park_tp_maze_area)
+		park_tp_maze_zone.SetVisible(false)
+		park_tp_maze_zone.SetColor(0.4,0.8,1)
+		park_tp_lucky_area = CreateArea(type="sphere", stage="Park", x=62.34, y=52.02, z=92.22, r=1, outline=true, compass=true)
+		park_tp_lucky_zone = CreateZone(park_tp_lucky_area)
+		park_tp_lucky_zone.SetVisible(false)
+		park_tp_lucky_zone.SetColor(0.4,0.8,1)
+
+		park_walk_start_area = CreateArea(type="sphere", stage="Park", x=120.26, y=49.05, z=57.90, r=0.5, outline=true, compass=true)
+		park_walk_start_zone = CreateZone(park_walk_start_area)
+		park_walk_start_zone.SetVisible(false)
+		park_walk_start_zone.SetColor(1,0.75,0.5)
+
+		park_walk_dest_area = CreateArea(type="sphere", stage="Park", x=111.23, y=49.02, z=109.84, r=0.5, outline=true, compass=true)
+		park_walk_dest_zone = CreateZone(park_walk_dest_area)
+		park_walk_dest_zone.SetVisible(false)
+		park_walk_dest_zone.SetColor(0.5,1,0.5)
+
+		park_cage_area = CreateArea(type="sphere", stage="Park", x=75.67, y=52.08, z=83.53, r=14, outline=true, compass=true)
+		park_cage_zone = CreateZone(park_cage_area)
+		park_cage_zone.SetVisible(false)
+		park_cage_zone.SetColor(1,0.75,0.5)
+
+		park_toilet_start_area = CreateArea(type="sphere", stage="Park", x=37.57, y=50.01, z=47.97, r=0.5, outline=true, compass=true)
+		park_toilet_start_zone = CreateZone(park_toilet_start_area)
+		park_toilet_start_zone.SetVisible(false)
+		park_toilet_start_zone.SetColor(1,0.75,0.5)
+
+		park_toilet_dest_area = CreateArea(type="sphere", stage="Park", x=119.85, y=49.06, z=126.91, r=0.5, outline=true, compass=true)
+		park_toilet_dest_zone = CreateZone(park_toilet_dest_area)
+		park_toilet_dest_zone.SetVisible(false)
+		park_toilet_dest_zone.SetColor(0.5,1,0.5)
+
+		park_toilet_caged_start_area = CreateArea(type="sphere", stage="Park", x=124.26, y=49.06, z=125.69, r=0.4, outline=true, compass=true)
+		park_toilet_caged_start_zone = CreateZone(park_toilet_caged_start_area)
+		park_toilet_caged_start_zone.SetVisible(false)
+		park_toilet_caged_start_zone.SetColor(1,0.75,0.5)
+
+		park_toilet_caged_warning_area = CreateArea(type="sphere", stage="Park", x=118.67, y=49.06, z=125.65, r=0.5, outline=false, compass=false)
+		park_toilet_caged_warning_zone = CreateZone(park_toilet_caged_warning_area)
+		park_toilet_caged_warning_zone.SetVisible(false)
+		park_toilet_caged_warning_zone.SetColor(1,0.2,0.2)
+
+		park_walk_start_pos = Vector(120.26, 49.05, 57.90)
+		park_walk_dest_pos = Vector(111.23, 49.02, 109.84)
+		park_walk_total_distance = Vector3Distance(park_walk_start_pos, park_walk_dest_pos)
+		park_toilet_start_pos = Vector(37.57, 50.01, 47.97)
+		park_toilet_dest_pos = Vector(119.85, 49.06, 126.91)
+		park_toilet_total_distance = Vector3Distance(park_toilet_start_pos, park_toilet_dest_pos)
+		park_toilet_caged_warning_pos = Vector(118.67, 49.06, 125.65)
+
+		park_naked_panel = CreateMissionPanel()
+		park_naked_panel.SetVisible(false)
+		park_naked_panel.SetGaugeVisible(true)
+		park_naked_panel.SetRPText("")
+
+		park_teleport_panel = CreateMissionPanel()
+		park_teleport_panel.SetVisible(false)
+		park_teleport_panel.SetGaugeVisible(true)
+		park_teleport_panel.SetRPText("")
+
+		park_crowded_panel = CreateMissionPanel()
+		park_crowded_panel.SetVisible(false)
+		park_crowded_panel.SetGaugeVisible(true)
+		park_crowded_panel.SetRPText("")
+
+		# One simple name panel per teleport test zone.
+		park_tp_central_panel = CreateMissionPanel()
+		park_tp_central_panel.SetVisible(false)
+		park_tp_central_panel.SetGaugeVisible(false)
+		park_tp_central_panel.SetRPText("")
+		park_tp_central_panel.SetText("中央公园")
+		park_tp_seat1_panel = CreateMissionPanel()
+		park_tp_seat1_panel.SetVisible(false)
+		park_tp_seat1_panel.SetGaugeVisible(false)
+		park_tp_seat1_panel.SetRPText("")
+		park_tp_seat1_panel.SetText("公园座椅 1")
+		park_tp_seat2_panel = CreateMissionPanel()
+		park_tp_seat2_panel.SetVisible(false)
+		park_tp_seat2_panel.SetGaugeVisible(false)
+		park_tp_seat2_panel.SetRPText("")
+		park_tp_seat2_panel.SetText("公园座椅 2")
+		park_tp_cross1_panel = CreateMissionPanel()
+		park_tp_cross1_panel.SetVisible(false)
+		park_tp_cross1_panel.SetGaugeVisible(false)
+		park_tp_cross1_panel.SetRPText("")
+		park_tp_cross1_panel.SetText("道路 1")
+		park_tp_cross2_panel = CreateMissionPanel()
+		park_tp_cross2_panel.SetVisible(false)
+		park_tp_cross2_panel.SetGaugeVisible(false)
+		park_tp_cross2_panel.SetRPText("")
+		park_tp_cross2_panel.SetText("道路 2")
+		park_tp_cross3_panel = CreateMissionPanel()
+		park_tp_cross3_panel.SetVisible(false)
+		park_tp_cross3_panel.SetGaugeVisible(false)
+		park_tp_cross3_panel.SetRPText("")
+		park_tp_cross3_panel.SetText("道路 3")
+		park_tp_cross4_panel = CreateMissionPanel()
+		park_tp_cross4_panel.SetVisible(false)
+		park_tp_cross4_panel.SetGaugeVisible(false)
+		park_tp_cross4_panel.SetRPText("")
+		park_tp_cross4_panel.SetText("道路 4")
+		park_tp_bridge_panel = CreateMissionPanel()
+		park_tp_bridge_panel.SetVisible(false)
+		park_tp_bridge_panel.SetGaugeVisible(false)
+		park_tp_bridge_panel.SetRPText("")
+		park_tp_bridge_panel.SetText("石桥上")
+		park_tp_underbridge_panel = CreateMissionPanel()
+		park_tp_underbridge_panel.SetVisible(false)
+		park_tp_underbridge_panel.SetGaugeVisible(false)
+		park_tp_underbridge_panel.SetRPText("")
+		park_tp_underbridge_panel.SetText("石桥下")
+		park_tp_vend1_panel = CreateMissionPanel()
+		park_tp_vend1_panel.SetVisible(false)
+		park_tp_vend1_panel.SetGaugeVisible(false)
+		park_tp_vend1_panel.SetRPText("")
+		park_tp_vend1_panel.SetText("自动售货机 1")
+		park_tp_vend2_panel = CreateMissionPanel()
+		park_tp_vend2_panel.SetVisible(false)
+		park_tp_vend2_panel.SetGaugeVisible(false)
+		park_tp_vend2_panel.SetRPText("")
+		park_tp_vend2_panel.SetText("自动售货机 2")
+		park_tp_vend3_panel = CreateMissionPanel()
+		park_tp_vend3_panel.SetVisible(false)
+		park_tp_vend3_panel.SetGaugeVisible(false)
+		park_tp_vend3_panel.SetRPText("")
+		park_tp_vend3_panel.SetText("自动售货机 3")
+		park_tp_outside_toilet_panel = CreateMissionPanel()
+		park_tp_outside_toilet_panel.SetVisible(false)
+		park_tp_outside_toilet_panel.SetGaugeVisible(false)
+		park_tp_outside_toilet_panel.SetRPText("")
+		park_tp_outside_toilet_panel.SetText("厕所外")
+		park_tp_female_toilet_panel = CreateMissionPanel()
+		park_tp_female_toilet_panel.SetVisible(false)
+		park_tp_female_toilet_panel.SetGaugeVisible(false)
+		park_tp_female_toilet_panel.SetRPText("")
+		park_tp_female_toilet_panel.SetText("女厕所")
+		park_tp_male_toilet_panel = CreateMissionPanel()
+		park_tp_male_toilet_panel.SetVisible(false)
+		park_tp_male_toilet_panel.SetGaugeVisible(false)
+		park_tp_male_toilet_panel.SetRPText("")
+		park_tp_male_toilet_panel.SetText("男厕所")
+		park_tp_maze_panel = CreateMissionPanel()
+		park_tp_maze_panel.SetVisible(false)
+		park_tp_maze_panel.SetGaugeVisible(false)
+		park_tp_maze_panel.SetRPText("")
+		park_tp_maze_panel.SetText("迷宫")
+		park_tp_lucky_panel = CreateMissionPanel()
+		park_tp_lucky_panel.SetVisible(false)
+		park_tp_lucky_panel.SetGaugeVisible(false)
+		park_tp_lucky_panel.SetRPText("")
+		park_tp_lucky_panel.SetText("幸运区域")
+
+		park_walk_panel = CreateMissionPanel()
+		park_walk_panel.SetVisible(false)
+		park_walk_panel.SetGaugeVisible(true)
+		park_walk_panel.SetRPText("")
+
+		park_cage_panel = CreateMissionPanel()
+		park_cage_panel.SetVisible(false)
+		park_cage_panel.SetGaugeVisible(true)
+		park_cage_panel.SetRPText("")
+
+		park_toilet_panel = CreateMissionPanel()
+		park_toilet_panel.SetVisible(false)
+		park_toilet_panel.SetGaugeVisible(true)
+		park_toilet_panel.SetRPText("")
+
+		park_toilet_punish_panel = CreateMissionPanel()
+		park_toilet_punish_panel.SetVisible(false)
+		park_toilet_punish_panel.SetGaugeVisible(true)
+		park_toilet_punish_panel.SetRPText("")
+
+		park_toilet_caged_panel = CreateMissionPanel()
+		park_toilet_caged_panel.SetVisible(false)
+		park_toilet_caged_panel.SetGaugeVisible(true)
+		park_toilet_caged_panel.SetRPText("")
+
+		park_toilet_caged_info_panel = CreateMissionPanel()
+		park_toilet_caged_info_panel.SetVisible(false)
+		park_toilet_caged_info_panel.SetGaugeVisible(false)
+		park_toilet_caged_info_panel.SetRPText("")
+
+		park_toilet_caged_main_panel = CreateMissionPanel()
+		park_toilet_caged_main_panel.SetVisible(false)
+		park_toilet_caged_main_panel.SetGaugeVisible(true)
+		park_toilet_caged_main_panel.SetRPText("")
+
+		park_side_notice_panel = CreateMissionPanel()
+		park_side_notice_panel.SetVisible(false)
+		park_side_notice_panel.SetGaugeVisible(true)
+		park_side_notice_panel.SetRPText("")
+
+		# Anonymous_95 panels, conditions, contact, and listeners are owned by its own module.
+
+		park_condition_naked = CreateCondition("[Exposed_All]")
+		park_condition_handbra = CreateCondition("[Action_Tebura]")
+		park_condition_hipthrust = CreateCondition("[Action_GanimataKoshiHeko]")
+		park_condition_path = CreateCondition("[NPCArea]")
+		park_condition_coat = CreateCondition("[(CoatFrontClosed,CoatFrontOpen1,CoatFrontOpen2,CoatBackClosed,CoatBackOpen)]")
+		park_condition_ganimata_walk = CreateCondition("[Action_GanimataWalk]")
+		park_condition_no_dash = CreateCondition("[!Dashing]")
+
+		listener = CreateListenerLocal("park_listener")
+		mainthread.ArmStageWatch()
+
+	park_listener:
+		if mission_active
+			if mainthread.AnonymousIsBusy()
+				if park_cage_zone != null
+					park_cage_zone.SetVisible(false)
+				if park_cage_panel != null
+					park_cage_panel.SetVisible(false)
+
+			# Global stage reset: Park stage stays active only while player remains in Park.
+			if mission_active
+				if _state.Position.stage != "Park"
+					mainthread.RequestReset()
+
+			if park_naked_started == false && park_teleport_test_started == false
+				if park_start_zone.Inside()
+					park_naked_panel.SetVisible(true)
+					park_naked_panel.SetText("全裸保持 5 秒以开始全裸挑战；必须留在道路范围内")
+					park_naked_panel.SetRPText("")
+					park_naked_panel.SetGaugeVisible(true)
+					if park_condition_naked.Check()
+						park_naked_duration = park_naked_duration + _timediff
+					else
+						park_naked_duration = 0
+					park_naked_panel.SetGaugeProgress(park_naked_duration / 5)
+
+					park_teleport_panel.SetVisible(true)
+					park_teleport_panel.SetText("保持手遮胸 5 秒，开始随机传送挑战")
+					park_teleport_panel.SetRPText("")
+					park_teleport_panel.SetGaugeVisible(true)
+					if park_condition_handbra.Check()
+						park_teleport_duration = park_teleport_duration + _timediff
+					else
+						park_teleport_duration = 0
+					park_teleport_panel.SetGaugeProgress(park_teleport_duration / 5)
+					if park_teleport_duration >= 5
+						park_teleport_test_started = true
+						park_teleport_intro_active = true
+						park_teleport_intro_timer = 0
+						park_teleport_round = 0
+						park_teleport_round_timer = 0
+						park_teleport_zone_grace = 0
+						park_teleport_previous_index = -1
+						park_teleport_current_index = -1
+						park_start_zone.SetVisible(false)
+						park_naked_panel.SetVisible(false)
+						park_crowded_panel.SetVisible(false)
+						park_teleport_panel.SetVisible(true)
+						park_teleport_panel.SetText("这是没有奖励的自由挑战，做好准备")
+						park_teleport_panel.SetRPText("")
+						park_teleport_panel.SetGaugeVisible(true)
+						park_teleport_panel.SetGaugeProgress(0)
+					if park_naked_duration >= 5
+						CollectItem(itemtype="Coat")
+						coat_away_pos = CreateList(stage="Apart", x=-1.84, y=0.00, z=-0.20, rx=0, ry=0, rz=0, rw=0)
+						DropItem(itemtype="Coat", stage="Apart", position=coat_away_pos, compass=false)
+						park_coat_moved = true
+						park_naked_started = true
+						park_start_zone.SetVisible(false)
+						park_path_zone.SetVisible(true)
+						park_walk_start_zone.SetVisible(true)
+						park_cage_zone.SetVisible(true)
+						park_toilet_start_zone.SetVisible(true)
+						park_toilet_caged_start_zone.SetVisible(true)
+						park_rp_progress = 0
+						park_rp_last_total = GetCurrentEarnRP()
+						park_rp_ready = false
+						park_penalty_timer = 0
+						park_naked_progress_overlay_timer = 0
+						park_naked_progress_overlay_flip = 0
+						park_naked_progress_overlay.Clear()
+						park_naked_progress_overlay_alt.Clear()
+						park_naked_panel.SetVisible(false)
+						park_teleport_panel.SetVisible(false)
+						park_crowded_panel.SetVisible(false)
+						park_side_notice_timer = 15
+						bigj_active = true
+						bigj_done = false
+						bigj_mission = 1
+						bigj_condition_photo = CreateCondition("[NearNPC]")
+						bigj_gallery = CreateGallery(bigj_condition_photo)
+						bigj_chat = CreateMessengerChat("BigJ", iconfilename = "Asset/BigJIcon.png", iconcolor = Color(0.7,0.2,1), icontext = "BJ", icontextcolor = Color(1,1,1))
+						bigj_chat.Add("嘿，迷人的真菜香！BigJ 来了，也是你作品的忠实粉丝，嘿嘿嘿。听说你需要帮忙赚点 RP？靠近别人时拍一张自慰照发给 BigJ，BigJ 就给你 200 RP，很划算吧？", "Left", user="BigJ", silent=false)
+						bigj_chat.SetButtons("发送照片")
+						bigj_button_listener = CreateListenerLocal("bigj_button_listener")
+						bigj_confirm_listener = CreateListenerLocal("bigj_confirm_listener")
+						# Anonymous_95 now appears when Park stage starts, not after Naked pre-check.
+				else
+					park_naked_duration = 0
+					park_teleport_duration = 0
+					park_crowded_duration = 0
+					park_start_zone.SetColor(1,0.75,0.5)
+					park_naked_panel.SetVisible(false)
+					park_teleport_panel.SetVisible(false)
+					park_crowded_panel.SetVisible(false)
+			if park_naked_started
+				park_path_zone.SetVisible(true)
+				if park_path_zone.Inside()
+					current_park_rp_total = GetCurrentEarnRP()
+					if park_condition_path.Check()
+						park_path_zone.SetColor(0.5,1,0.5)
+						park_penalty_timer = 0
+						if park_rp_ready == false
+							park_rp_ready = true
+							park_rp_last_total = current_park_rp_total
+						park_rp_gain = current_park_rp_total - park_rp_last_total
+						if park_rp_gain > 0
+							park_rp_progress = park_rp_progress + park_rp_gain
+						park_rp_last_total = current_park_rp_total
+					else
+						park_path_zone.SetColor(1,0.2,0.2)
+						park_penalty_timer = park_penalty_timer + _timediff
+						if park_penalty_timer >= 2
+							park_penalty_timer = 0
+							park_penalty_amount = 10
+							if park_rp_progress > 2500
+								park_penalty_amount = 20
+							if park_rp_progress > 4000
+								park_penalty_amount = 30
+							AddCurrentEarnRP(0 - park_penalty_amount)
+							park_rp_progress = park_rp_progress - park_penalty_amount
+							if park_rp_progress < 0
+								park_rp_progress = 0
+						park_rp_last_total = GetCurrentEarnRP()
+						park_rp_ready = true
+					if park_rp_progress > park_rp_target
+						park_rp_progress = park_rp_target
+					if bigj_done && bigj_mission == 1 && park_rp_progress >= 1500
+						bigj_mission = 2
+						bigj_done = false
+						bigj_active = true
+						bigj_condition_photo = CreateCondition("[NearNPC,Orgasm]")
+						bigj_gallery = CreateGallery(bigj_condition_photo)
+						bigj_chat.Add("火热的 RP 来咯！这是你的下一剂兴奋剂：靠近某个人，并在高潮的瞬间拍照", "Left", user="BigJ", silent=false)
+						bigj_chat.SetButtons("发送照片")
+					if bigj_done && bigj_mission == 2 && park_rp_progress >= 3000
+						bigj_mission = 3
+						bigj_done = false
+						bigj_active = true
+						bigj_condition_photo = CreateCondition("[AdultToy_EyeMask,NearNPC,Action_Haigure]")
+						bigj_gallery = CreateGallery(bigj_condition_photo)
+						bigj_chat.Add("小鸟在天上飞，RP 在 BigJ 手里……你只需要戴上眼罩，靠近某个人，再摆出高叉姿势", "Left", user="BigJ", silent=false)
+						bigj_chat.SetButtons("发送照片")
+					park_naked_progress_overlay_timer = park_naked_progress_overlay_timer + _timediff
+					if park_naked_progress_overlay_timer >= 0.20
+						park_naked_progress_overlay_timer = 0
+						RefreshNakedProgressOverlay()
+					if park_side_notice_timer > 0
+						park_side_notice_timer = park_side_notice_timer - _timediff
+						park_side_notice_panel.SetVisible(true)
+						park_side_notice_panel.SetText("地图上出现了新任务，请查看罗盘导航")
+						park_side_notice_panel.SetGaugeVisible(true)
+						park_side_notice_panel.SetGaugeProgress(park_side_notice_timer / 15)
+					else
+						park_side_notice_panel.SetVisible(false)
+					if park_rp_progress >= park_rp_target
+						AddCurrentEarnRP(5000)
+						if park_coat_moved
+							CollectItem(itemtype="Coat")
+							park_finish_coat_pos = CreateList(stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y, z=_state.Position.z, rx=0, ry=0, rz=0, rw=0)
+							DropItem(itemtype="Coat", position=park_finish_coat_pos, compass=false)
+							park_coat_moved = false
+						park_naked_started = false
+						park_path_zone.SetVisible(false)
+						ClearNakedProgressOverlay()
+						mainthread.RequestReset()
+				else
+					ClearNakedProgressOverlay()
+
+				# Park side mission 01: Spread-leg walk road route.
+				if park_walk_state == 0
+					park_walk_start_zone.SetVisible(true)
+					park_walk_dest_zone.SetVisible(false)
+					if park_walk_start_zone.Inside()
+						park_walk_panel.SetVisible(true)
+						park_walk_panel.SetText("使用叉腿走路前往道路另一端")
+						park_walk_panel.SetRPText("")
+						park_walk_panel.SetGaugeVisible(true)
+						if park_condition_ganimata_walk.Check()
+							park_walk_precheck_duration = park_walk_precheck_duration + _timediff
+							park_walk_start_zone.SetColor(0.5,1,0.5)
+						else
+							park_walk_precheck_duration = 0
+							park_walk_start_zone.SetColor(1,0.75,0.5)
+						park_walk_panel.SetGaugeProgress(park_walk_precheck_duration / 3)
+						if park_walk_precheck_duration >= 3
+							park_walk_state = 1
+							park_walk_start_zone.SetVisible(false)
+							park_walk_dest_zone.SetVisible(true)
+							park_walk_precheck_duration = 0
+							park_walk_panel.SetGaugeProgress(0)
+					else
+						park_walk_precheck_duration = 0
+						park_walk_panel.SetVisible(false)
+				if park_walk_state == 1
+					park_walk_dest_zone.SetVisible(true)
+					park_walk_panel.SetVisible(true)
+					park_walk_panel.SetText("使用叉腿走路前往道路另一端")
+					park_walk_panel.SetRPText("500 RP")
+					park_walk_panel.SetGaugeVisible(true)
+					park_walk_distance = Vector3Distance(_state.Position, park_walk_dest_pos)
+					park_walk_gauge = 0
+					if park_walk_distance < park_walk_total_distance
+						park_walk_gauge = (park_walk_total_distance - park_walk_distance) / park_walk_total_distance
+					if park_walk_distance <= 1
+						park_walk_gauge = 1
+					park_walk_panel.SetGaugeProgress(park_walk_gauge)
+					park_walk_force_timer = park_walk_force_timer + _timediff
+					if park_walk_force_timer >= 0.4
+						park_walk_force_timer = 0
+						if _state.Sitting
+							SetAction("StandUp")
+						if _state.Crouching
+							SetAction("None")
+						if _state.Action != "GanimataWalk"
+							SetAction("GanimataWalk")
+					if park_walk_dest_zone.Inside()
+						AddCurrentEarnRP(500)
+						SetAction("None")
+						park_walk_state = 2
+						park_walk_dest_zone.SetVisible(false)
+						park_walk_panel.SetVisible(false)
+				if park_walk_state == 2
+					park_walk_start_zone.SetVisible(false)
+					park_walk_dest_zone.SetVisible(false)
+					park_walk_panel.SetVisible(false)
+
+				# Park side mission 02: Caged Zone timer. Leaving the area resets this side mission to pre-check.
+				if park_cage_state == 0 && mainthread.AnonymousIsBusy() == false
+					park_cage_zone.SetVisible(true)
+					if park_cage_zone.Inside()
+						park_cage_panel.SetVisible(true)
+						park_cage_panel.SetText("保持手遮胸以激活囚笼区域")
+						park_cage_panel.SetRPText("")
+						park_cage_panel.SetGaugeVisible(true)
+						if park_condition_handbra.Check()
+							park_cage_precheck_duration = park_cage_precheck_duration + _timediff
+							park_cage_zone.SetColor(0.5,1,0.5)
+						else
+							park_cage_precheck_duration = 0
+							park_cage_zone.SetColor(1,0.75,0.5)
+						park_cage_panel.SetGaugeProgress(park_cage_precheck_duration / 3)
+						if park_cage_precheck_duration >= 3
+							park_cage_state = 1
+							park_cage_duration = 0
+							park_cage_precheck_duration = 0
+							park_cage_panel.SetGaugeProgress(0)
+					else
+						park_cage_precheck_duration = 0
+						park_cage_panel.SetVisible(false)
+				if park_cage_state == 1 && mainthread.AnonymousIsBusy() == false
+					park_cage_zone.SetVisible(true)
+					park_cage_panel.SetVisible(true)
+					park_cage_panel.SetText("120 秒内不要离开此区域")
+					park_cage_panel.SetRPText("500 RP")
+					park_cage_panel.SetGaugeVisible(true)
+					if park_cage_zone.Inside()
+						park_cage_duration = park_cage_duration + _timediff
+						park_cage_zone.SetColor(0.5,1,0.5)
+					else
+						park_cage_state = 0
+						park_cage_duration = 0
+						park_cage_precheck_duration = 0
+						park_cage_zone.SetColor(1,0.75,0.5)
+					park_cage_panel.SetGaugeProgress(park_cage_duration / 120)
+					if park_cage_duration >= 120
+						AddCurrentEarnRP(500)
+						park_cage_state = 2
+						park_cage_zone.SetVisible(false)
+						park_cage_panel.SetVisible(false)
+				if park_cage_state == 2
+					park_cage_zone.SetVisible(false)
+					park_cage_panel.SetVisible(false)
+
+				# Park side mission 03: no-running toilet route, with safe non-stacking punishment.
+				if park_toilet_state == 0
+					park_toilet_start_zone.SetVisible(true)
+					park_toilet_dest_zone.SetVisible(false)
+					if park_toilet_start_zone.Inside()
+						park_toilet_panel.SetVisible(true)
+						park_toilet_panel.SetText("保持手遮胸开始：禁止奔跑，前往公园厕所")
+						park_toilet_panel.SetRPText("")
+						park_toilet_panel.SetGaugeVisible(true)
+						if park_condition_handbra.Check()
+							park_toilet_precheck_duration = park_toilet_precheck_duration + _timediff
+							park_toilet_start_zone.SetColor(0.5,1,0.5)
+						else
+							park_toilet_precheck_duration = 0
+							park_toilet_start_zone.SetColor(1,0.75,0.5)
+						park_toilet_panel.SetGaugeProgress(park_toilet_precheck_duration / 3)
+						if park_toilet_precheck_duration >= 3
+							park_toilet_state = 1
+							park_toilet_start_zone.SetVisible(false)
+							park_toilet_dest_zone.SetVisible(true)
+							park_toilet_precheck_duration = 0
+							park_toilet_panel.SetGaugeProgress(0)
+					else
+						park_toilet_precheck_duration = 0
+						park_toilet_panel.SetVisible(false)
+				if park_toilet_state == 1
+					park_toilet_dest_zone.SetVisible(true)
+					park_toilet_panel.SetVisible(true)
+					park_toilet_panel.SetText("禁止奔跑，前往公园厕所")
+					park_toilet_panel.SetRPText("750 RP")
+					park_toilet_panel.SetGaugeVisible(true)
+					park_toilet_distance = Vector3Distance(_state.Position, park_toilet_dest_pos)
+					park_toilet_gauge = 0
+					if park_toilet_distance < park_toilet_total_distance
+						park_toilet_gauge = (park_toilet_total_distance - park_toilet_distance) / park_toilet_total_distance
+					if park_toilet_distance <= 1
+						park_toilet_gauge = 1
+					park_toilet_panel.SetGaugeProgress(park_toilet_gauge)
+					if !park_condition_no_dash.Check()
+						if park_toilet_punish_active == false
+							park_toilet_punish_active = true
+						park_toilet_punish_duration = 0
+					if park_toilet_dest_zone.Inside()
+						AddCurrentEarnRP(750)
+						park_toilet_state = 2
+						park_toilet_dest_zone.SetVisible(false)
+						park_toilet_panel.SetVisible(false)
+						park_toilet_punish_active = false
+						park_toilet_punish_duration = 0
+						park_toilet_force_timer = 0
+						SetVibrator("Off")
+						UnequipAdultToy("Vibrator", "TitRotor", "KuriRotor")
+						SetVibrator("Off")
+						park_toilet_punish_panel.SetVisible(false)
+				if park_toilet_state == 2
+					park_toilet_start_zone.SetVisible(false)
+					park_toilet_dest_zone.SetVisible(false)
+					park_toilet_panel.SetVisible(false)
+
+				if park_toilet_punish_active && park_toilet_state == 1
+					park_toilet_punish_panel.SetVisible(true)
+					park_toilet_punish_panel.SetText("违反规则，已追加惩罚")
+					park_toilet_punish_panel.SetRPText("")
+					park_toilet_punish_panel.SetGaugeVisible(true)
+					park_toilet_force_timer = park_toilet_force_timer + _timediff
+					if park_toilet_force_timer >= 0.4
+						park_toilet_force_timer = 0
+						if !_state.AdultToys["Vibrator"]
+							EquipAdultToy("Vibrator")
+						if !_state.AdultToys["TitRotor"]
+							EquipAdultToy("TitRotor")
+						if !_state.AdultToys["KuriRotor"]
+							EquipAdultToy("KuriRotor")
+						SetVibrator("High")
+					park_toilet_punish_duration = park_toilet_punish_duration + _timediff
+					park_toilet_punish_panel.SetGaugeProgress(park_toilet_punish_duration / 8)
+					if park_toilet_punish_duration >= 8
+						park_toilet_punish_active = false
+						park_toilet_punish_duration = 0
+						SetVibrator("Off")
+						UnequipAdultToy("Vibrator", "TitRotor", "KuriRotor")
+						SetVibrator("Off")
+						park_toilet_punish_panel.SetVisible(false)
+				else
+					park_toilet_punish_panel.SetVisible(false)
+
+
+				# Park side mission 04: Toilet Caged. Warning sound + coat hiding test.
+				if park_toilet_caged_state == 0
+					park_toilet_caged_start_zone.SetVisible(true)
+					park_toilet_caged_warning_zone.SetVisible(false)
+					if park_toilet_caged_start_zone.Inside()
+						park_toilet_caged_panel.SetVisible(true)
+						park_toilet_caged_panel.SetText("保持手遮胸开始厕所囚笼挑战；最好在厕所内有 NPC 时开始")
+						park_toilet_caged_panel.SetRPText("")
+						park_toilet_caged_panel.SetGaugeVisible(true)
+						if park_condition_handbra.Check()
+							park_toilet_caged_precheck_duration = park_toilet_caged_precheck_duration + _timediff
+							park_toilet_caged_start_zone.SetColor(0.5,1,0.5)
+						else
+							park_toilet_caged_precheck_duration = 0
+							park_toilet_caged_start_zone.SetColor(1,0.75,0.5)
+						park_toilet_caged_panel.SetGaugeProgress(park_toilet_caged_precheck_duration / 3)
+						if park_toilet_caged_precheck_duration >= 3
+							park_toilet_caged_state = 1
+							park_toilet_caged_precheck_duration = 0
+							park_toilet_caged_duration = 0
+							park_toilet_caged_hide_penalty_timer = 0
+							park_toilet_caged_sound_cooldown = 0
+							# Return the coat for this side mission. No coat teleport checks while active.
+							CollectItem(itemtype="Coat")
+							park_toilet_caged_coat_pos = CreateList(stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y, z=_state.Position.z, rx=0, ry=0, rz=0, rw=0)
+							DropItem(itemtype="Coat", position=park_toilet_caged_coat_pos, compass=false)
+							park_toilet_caged_panel.SetVisible(false)
+							park_toilet_caged_warning_zone.SetVisible(true)
+					else
+						park_toilet_caged_precheck_duration = 0
+						park_toilet_caged_panel.SetVisible(false)
+						park_toilet_caged_start_zone.SetColor(1,0.75,0.5)
+				if park_toilet_caged_state == 1
+					park_toilet_caged_start_zone.SetVisible(true)
+					park_toilet_caged_warning_zone.SetVisible(true)
+					park_toilet_caged_info_panel.SetVisible(true)
+					park_toilet_caged_info_panel.SetText("注意听 *叮* 声，它会提醒你有 NPC 进入厕所")
+					park_toilet_caged_info_panel.SetRPText("")
+					park_toilet_caged_info_panel.SetGaugeVisible(false)
+					park_toilet_caged_main_panel.SetVisible(true)
+					park_toilet_caged_main_panel.SetText("不要离开此区域，坚持 120 秒；躲藏会缓慢扣除进度")
+					park_toilet_caged_main_panel.SetRPText("750 RP")
+					park_toilet_caged_main_panel.SetGaugeVisible(true)
+
+					if park_toilet_caged_sound_cooldown > 0
+						park_toilet_caged_sound_cooldown = park_toilet_caged_sound_cooldown - _timediff
+					if park_toilet_caged_sound_cooldown < 0
+						park_toilet_caged_sound_cooldown = 0
+					if park_toilet_caged_sound_cooldown == 0
+						npc_warning_found = false
+						npc_i = _state.NPCs.Count()
+						while npc_i > 0
+							npc_i -= 1
+							npc_state = _state.NPCs[npc_i]
+							if Vector3Distance(npc_state.Position, park_toilet_caged_warning_pos) <= 0.5
+								npc_warning_found = true
+								npc_i = 0
+						if npc_warning_found
+							warning_sound.Play()
+							park_toilet_caged_sound_cooldown = 3
+
+					if park_toilet_caged_start_zone.Inside()
+						park_toilet_caged_start_zone.SetColor(0.5,1,0.5)
+						if park_condition_coat.Check()
+							park_toilet_caged_hide_penalty_timer = park_toilet_caged_hide_penalty_timer + _timediff
+							if park_toilet_caged_hide_penalty_timer >= 2
+								park_toilet_caged_hide_penalty_timer = 0
+								park_toilet_caged_duration = park_toilet_caged_duration - 1
+								if park_toilet_caged_duration < 0
+									park_toilet_caged_duration = 0
+						else
+							park_toilet_caged_duration = park_toilet_caged_duration + _timediff
+							park_toilet_caged_hide_penalty_timer = 0
+					else
+						# Leaving the zone ends this attempt and moves the coat away again.
+						DropItem(itemtype="Coat", position=_state.Position, compass=false)
+						CollectItem(itemtype="Coat")
+						park_toilet_caged_away_pos = CreateList(stage="Apart", x=-1.84, y=0.00, z=-0.20, rx=0, ry=0, rz=0, rw=0)
+						DropItem(itemtype="Coat", stage="Apart", position=park_toilet_caged_away_pos, compass=false)
+						park_toilet_caged_state = 0
+						park_toilet_caged_duration = 0
+						park_toilet_caged_precheck_duration = 0
+						park_toilet_caged_hide_penalty_timer = 0
+						park_toilet_caged_sound_cooldown = 0
+						park_toilet_caged_info_panel.SetVisible(false)
+						park_toilet_caged_main_panel.SetVisible(false)
+						park_toilet_caged_warning_zone.SetVisible(false)
+						park_toilet_caged_start_zone.SetColor(1,0.75,0.5)
+					park_toilet_caged_main_panel.SetGaugeProgress(park_toilet_caged_duration / 120)
+					if park_toilet_caged_duration >= 120
+						AddCurrentEarnRP(750)
+						# Completion ends this side mission and moves the coat away again.
+						DropItem(itemtype="Coat", position=_state.Position, compass=false)
+						CollectItem(itemtype="Coat")
+						park_toilet_caged_finish_away_pos = CreateList(stage="Apart", x=-1.84, y=0.00, z=-0.20, rx=0, ry=0, rz=0, rw=0)
+						DropItem(itemtype="Coat", stage="Apart", position=park_toilet_caged_finish_away_pos, compass=false)
+						park_toilet_caged_state = 2
+						park_toilet_caged_start_zone.SetVisible(false)
+						park_toilet_caged_warning_zone.SetVisible(false)
+						park_toilet_caged_panel.SetVisible(false)
+						park_toilet_caged_info_panel.SetVisible(false)
+						park_toilet_caged_main_panel.SetVisible(false)
+				if park_toilet_caged_state == 2
+					park_toilet_caged_start_zone.SetVisible(false)
+					park_toilet_caged_warning_zone.SetVisible(false)
+					park_toilet_caged_panel.SetVisible(false)
+					park_toilet_caged_info_panel.SetVisible(false)
+					park_toilet_caged_main_panel.SetVisible(false)
+
+
+				# Anonymous_95 runtime moved to anon95_runtime_listener so it can work with or without Park Naked Challenge.
+
+			if park_teleport_test_started
+				if park_teleport_intro_active
+					park_teleport_intro_timer = park_teleport_intro_timer + _timediff
+					park_teleport_panel.SetVisible(true)
+					park_teleport_panel.SetText("这是没有奖励的自由挑战，做好准备")
+					park_teleport_panel.SetRPText("")
+					park_teleport_panel.SetGaugeVisible(true)
+					park_teleport_panel.SetGaugeProgress(park_teleport_intro_timer / 15)
+					if park_teleport_intro_timer >= 15
+						park_teleport_intro_active = false
+						park_teleport_round = 1
+						park_teleport_round_timer = 0
+						park_teleport_zone_grace = 0
+						park_teleport_current_index = RandomInt(0, 16)
+						park_tp_central_zone.SetVisible(false)
+						park_tp_seat1_zone.SetVisible(false)
+						park_tp_seat2_zone.SetVisible(false)
+						park_tp_cross1_zone.SetVisible(false)
+						park_tp_cross2_zone.SetVisible(false)
+						park_tp_cross3_zone.SetVisible(false)
+						park_tp_cross4_zone.SetVisible(false)
+						park_tp_bridge_zone.SetVisible(false)
+						park_tp_underbridge_zone.SetVisible(false)
+						park_tp_vend1_zone.SetVisible(false)
+						park_tp_vend2_zone.SetVisible(false)
+						park_tp_vend3_zone.SetVisible(false)
+						park_tp_outside_toilet_zone.SetVisible(false)
+						park_tp_female_toilet_zone.SetVisible(false)
+						park_tp_male_toilet_zone.SetVisible(false)
+						park_tp_maze_zone.SetVisible(false)
+						park_tp_lucky_zone.SetVisible(false)
+						park_tp_central_panel.SetVisible(false)
+						park_tp_seat1_panel.SetVisible(false)
+						park_tp_seat2_panel.SetVisible(false)
+						park_tp_cross1_panel.SetVisible(false)
+						park_tp_cross2_panel.SetVisible(false)
+						park_tp_cross3_panel.SetVisible(false)
+						park_tp_cross4_panel.SetVisible(false)
+						park_tp_bridge_panel.SetVisible(false)
+						park_tp_underbridge_panel.SetVisible(false)
+						park_tp_vend1_panel.SetVisible(false)
+						park_tp_vend2_panel.SetVisible(false)
+						park_tp_vend3_panel.SetVisible(false)
+						park_tp_outside_toilet_panel.SetVisible(false)
+						park_tp_female_toilet_panel.SetVisible(false)
+						park_tp_male_toilet_panel.SetVisible(false)
+						park_tp_maze_panel.SetVisible(false)
+						park_tp_lucky_panel.SetVisible(false)
+						if park_teleport_current_index == 0
+							park_tp_central_zone.SetVisible(true)
+							park_tp_central_panel.SetVisible(true)
+							SetPlayerPosition(x=75.67, y=52.08, z=83.53, rx=0, ry=1, rz=0, rw=0)
+						if park_teleport_current_index == 1
+							park_tp_seat1_zone.SetVisible(true)
+							park_tp_seat1_panel.SetVisible(true)
+							SetPlayerPosition(x=32.10, y=50.07, z=41.89, rx=0, ry=1, rz=0, rw=0)
+						if park_teleport_current_index == 2
+							park_tp_seat2_zone.SetVisible(true)
+							park_tp_seat2_panel.SetVisible(true)
+							SetPlayerPosition(x=78.41, y=50.01, z=125.80, rx=0, ry=1, rz=0, rw=0)
+						if park_teleport_current_index == 3
+							park_tp_cross1_zone.SetVisible(true)
+							park_tp_cross1_panel.SetVisible(true)
+							SetPlayerPosition(x=63.86, y=51.00, z=61.62, rx=0, ry=1, rz=0, rw=0)
+						if park_teleport_current_index == 4
+							park_tp_cross2_zone.SetVisible(true)
+							park_tp_cross2_panel.SetVisible(true)
+							SetPlayerPosition(x=88.79, y=50.04, z=125.76, rx=0, ry=1, rz=0, rw=0)
+						if park_teleport_current_index == 5
+							park_tp_cross3_zone.SetVisible(true)
+							park_tp_cross3_panel.SetVisible(true)
+							SetPlayerPosition(x=79.84, y=50.05, z=41.25, rx=0, ry=1, rz=0, rw=0)
+						if park_teleport_current_index == 6
+							park_tp_cross4_zone.SetVisible(true)
+							park_tp_cross4_panel.SetVisible(true)
+							SetPlayerPosition(x=41.51, y=50.06, z=63.37, rx=0, ry=1, rz=0, rw=0)
+						if park_teleport_current_index == 7
+							park_tp_bridge_zone.SetVisible(true)
+							park_tp_bridge_panel.SetVisible(true)
+							SetPlayerPosition(x=113.72, y=52.98, z=84.07, rx=0, ry=1, rz=0, rw=0)
+						if park_teleport_current_index == 8
+							park_tp_underbridge_zone.SetVisible(true)
+							park_tp_underbridge_panel.SetVisible(true)
+							SetPlayerPosition(x=113.63, y=49.05, z=83.92, rx=0, ry=1, rz=0, rw=0)
+						if park_teleport_current_index == 9
+							park_tp_vend1_zone.SetVisible(true)
+							park_tp_vend1_panel.SetVisible(true)
+							SetPlayerPosition(x=47.50, y=50.05, z=113.83, rx=0, ry=1, rz=0, rw=0)
+						if park_teleport_current_index == 10
+							park_tp_vend2_zone.SetVisible(true)
+							park_tp_vend2_panel.SetVisible(true)
+							SetPlayerPosition(x=89.02, y=51.02, z=110.89, rx=0, ry=1, rz=0, rw=0)
+						if park_teleport_current_index == 11
+							park_tp_vend3_zone.SetVisible(true)
+							park_tp_vend3_panel.SetVisible(true)
+							SetPlayerPosition(x=74.67, y=51.00, z=55.37, rx=0, ry=1, rz=0, rw=0)
+						if park_teleport_current_index == 12
+							park_tp_outside_toilet_zone.SetVisible(true)
+							park_tp_outside_toilet_panel.SetVisible(true)
+							SetPlayerPosition(x=114.09, y=49.06, z=122.37, rx=0, ry=1, rz=0, rw=0)
+						if park_teleport_current_index == 13
+							park_tp_female_toilet_zone.SetVisible(true)
+							park_tp_female_toilet_panel.SetVisible(true)
+							SetPlayerPosition(x=122.59, y=49.06, z=119.83, rx=0, ry=1, rz=0, rw=0)
+						if park_teleport_current_index == 14
+							park_tp_male_toilet_zone.SetVisible(true)
+							park_tp_male_toilet_panel.SetVisible(true)
+							SetPlayerPosition(x=122.55, y=49.06, z=124.45, rx=0, ry=1, rz=0, rw=0)
+						if park_teleport_current_index == 15
+							park_tp_maze_zone.SetVisible(true)
+							park_tp_maze_panel.SetVisible(true)
+							SetPlayerPosition(x=113.38, y=49.00, z=42.49, rx=0, ry=1, rz=0, rw=0)
+						if park_teleport_current_index == 16
+							park_tp_lucky_zone.SetVisible(true)
+							park_tp_lucky_panel.SetVisible(true)
+							SetPlayerPosition(x=62.34, y=52.02, z=92.22, rx=0, ry=1, rz=0, rw=0)
+				else
+					park_teleport_zone_grace = park_teleport_zone_grace + _timediff
+					park_teleport_round_timer = park_teleport_round_timer + _timediff
+					park_teleport_panel.SetVisible(true)
+					park_teleport_panel.SetText("距离传送还有 " + park_teleport_setting + " 秒")
+					if park_teleport_endless
+						park_teleport_panel.SetRPText("轮次 " + park_teleport_round + " / 无限")
+					else
+						park_teleport_panel.SetRPText("轮次 " + park_teleport_round + " / " + park_teleport_round_target)
+					park_teleport_panel.SetGaugeVisible(true)
+					park_teleport_panel.SetGaugeProgress(park_teleport_round_timer / park_teleport_setting)
+					if park_teleport_zone_grace > 0.5
+						park_teleport_inside = false
+						if park_teleport_current_index == 0
+							if park_tp_central_zone.Inside()
+								park_teleport_inside = true
+						if park_teleport_current_index == 1
+							if park_tp_seat1_zone.Inside()
+								park_teleport_inside = true
+						if park_teleport_current_index == 2
+							if park_tp_seat2_zone.Inside()
+								park_teleport_inside = true
+						if park_teleport_current_index == 3
+							if park_tp_cross1_zone.Inside()
+								park_teleport_inside = true
+						if park_teleport_current_index == 4
+							if park_tp_cross2_zone.Inside()
+								park_teleport_inside = true
+						if park_teleport_current_index == 5
+							if park_tp_cross3_zone.Inside()
+								park_teleport_inside = true
+						if park_teleport_current_index == 6
+							if park_tp_cross4_zone.Inside()
+								park_teleport_inside = true
+						if park_teleport_current_index == 7
+							if park_tp_bridge_zone.Inside()
+								park_teleport_inside = true
+						if park_teleport_current_index == 8
+							if park_tp_underbridge_zone.Inside()
+								park_teleport_inside = true
+						if park_teleport_current_index == 9
+							if park_tp_vend1_zone.Inside()
+								park_teleport_inside = true
+						if park_teleport_current_index == 10
+							if park_tp_vend2_zone.Inside()
+								park_teleport_inside = true
+						if park_teleport_current_index == 11
+							if park_tp_vend3_zone.Inside()
+								park_teleport_inside = true
+						if park_teleport_current_index == 12
+							if park_tp_outside_toilet_zone.Inside()
+								park_teleport_inside = true
+						if park_teleport_current_index == 13
+							if park_tp_female_toilet_zone.Inside()
+								park_teleport_inside = true
+						if park_teleport_current_index == 14
+							if park_tp_male_toilet_zone.Inside()
+								park_teleport_inside = true
+						if park_teleport_current_index == 15
+							if park_tp_maze_zone.Inside()
+								park_teleport_inside = true
+						if park_teleport_current_index == 16
+							if park_tp_lucky_zone.Inside()
+								park_teleport_inside = true
+						if park_teleport_inside == false
+							if park_teleport_current_index == 0
+								SetPlayerPosition(x=75.67, y=52.08, z=83.53, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 1
+								SetPlayerPosition(x=32.10, y=50.07, z=41.89, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 2
+								SetPlayerPosition(x=78.41, y=50.01, z=125.80, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 3
+								SetPlayerPosition(x=63.86, y=51.00, z=61.62, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 4
+								SetPlayerPosition(x=88.79, y=50.04, z=125.76, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 5
+								SetPlayerPosition(x=79.84, y=50.05, z=41.25, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 6
+								SetPlayerPosition(x=41.51, y=50.06, z=63.37, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 7
+								SetPlayerPosition(x=113.72, y=52.98, z=84.07, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 8
+								SetPlayerPosition(x=113.63, y=49.05, z=83.92, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 9
+								SetPlayerPosition(x=47.50, y=50.05, z=113.83, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 10
+								SetPlayerPosition(x=89.02, y=51.02, z=110.89, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 11
+								SetPlayerPosition(x=74.67, y=51.00, z=55.37, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 12
+								SetPlayerPosition(x=114.09, y=49.06, z=122.37, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 13
+								SetPlayerPosition(x=122.59, y=49.06, z=119.83, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 14
+								SetPlayerPosition(x=122.55, y=49.06, z=124.45, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 15
+								SetPlayerPosition(x=113.38, y=49.00, z=42.49, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 16
+								SetPlayerPosition(x=62.34, y=52.02, z=92.22, rx=0, ry=1, rz=0, rw=0)
+					if park_teleport_round_timer >= park_teleport_setting
+						park_teleport_finish_now = false
+						if park_teleport_endless == false
+							if park_teleport_round >= park_teleport_round_target
+								park_teleport_finish_now = true
+						if park_teleport_finish_now
+							park_tp_central_zone.SetVisible(false)
+							park_tp_seat1_zone.SetVisible(false)
+							park_tp_seat2_zone.SetVisible(false)
+							park_tp_cross1_zone.SetVisible(false)
+							park_tp_cross2_zone.SetVisible(false)
+							park_tp_cross3_zone.SetVisible(false)
+							park_tp_cross4_zone.SetVisible(false)
+							park_tp_bridge_zone.SetVisible(false)
+							park_tp_underbridge_zone.SetVisible(false)
+							park_tp_vend1_zone.SetVisible(false)
+							park_tp_vend2_zone.SetVisible(false)
+							park_tp_vend3_zone.SetVisible(false)
+							park_tp_outside_toilet_zone.SetVisible(false)
+							park_tp_female_toilet_zone.SetVisible(false)
+							park_tp_male_toilet_zone.SetVisible(false)
+							park_tp_maze_zone.SetVisible(false)
+							park_tp_lucky_zone.SetVisible(false)
+							park_tp_central_panel.SetVisible(false)
+							park_tp_seat1_panel.SetVisible(false)
+							park_tp_seat2_panel.SetVisible(false)
+							park_tp_cross1_panel.SetVisible(false)
+							park_tp_cross2_panel.SetVisible(false)
+							park_tp_cross3_panel.SetVisible(false)
+							park_tp_cross4_panel.SetVisible(false)
+							park_tp_bridge_panel.SetVisible(false)
+							park_tp_underbridge_panel.SetVisible(false)
+							park_tp_vend1_panel.SetVisible(false)
+							park_tp_vend2_panel.SetVisible(false)
+							park_tp_vend3_panel.SetVisible(false)
+							park_tp_outside_toilet_panel.SetVisible(false)
+							park_tp_female_toilet_panel.SetVisible(false)
+							park_tp_male_toilet_panel.SetVisible(false)
+							park_tp_maze_panel.SetVisible(false)
+							park_tp_lucky_panel.SetVisible(false)
+							park_teleport_panel.SetGaugeProgress(0)
+							park_teleport_panel.SetVisible(false)
+							SetPlayerPosition(x=65.67, y=50.03, z=36.66, rx=0.00000, ry=1.00000, rz=0.00000, rw=0.00000)
+							park_teleport_test_started = false
+							park_teleport_intro_active = false
+							park_teleport_duration = 0
+							park_teleport_round = 0
+							park_teleport_round_timer = 0
+							park_teleport_zone_grace = 0
+							mainthread.RequestReset()
+						else
+							park_teleport_previous_index = park_teleport_current_index
+							park_teleport_roll = RandomInt(0, 15)
+							park_teleport_current_index = park_teleport_roll
+							if park_teleport_current_index >= park_teleport_previous_index
+								park_teleport_current_index = park_teleport_current_index + 1
+							park_teleport_round = park_teleport_round + 1
+							park_teleport_round_timer = 0
+							park_teleport_zone_grace = 0
+							park_tp_central_zone.SetVisible(false)
+							park_tp_seat1_zone.SetVisible(false)
+							park_tp_seat2_zone.SetVisible(false)
+							park_tp_cross1_zone.SetVisible(false)
+							park_tp_cross2_zone.SetVisible(false)
+							park_tp_cross3_zone.SetVisible(false)
+							park_tp_cross4_zone.SetVisible(false)
+							park_tp_bridge_zone.SetVisible(false)
+							park_tp_underbridge_zone.SetVisible(false)
+							park_tp_vend1_zone.SetVisible(false)
+							park_tp_vend2_zone.SetVisible(false)
+							park_tp_vend3_zone.SetVisible(false)
+							park_tp_outside_toilet_zone.SetVisible(false)
+							park_tp_female_toilet_zone.SetVisible(false)
+							park_tp_male_toilet_zone.SetVisible(false)
+							park_tp_maze_zone.SetVisible(false)
+							park_tp_lucky_zone.SetVisible(false)
+							park_tp_central_panel.SetVisible(false)
+							park_tp_seat1_panel.SetVisible(false)
+							park_tp_seat2_panel.SetVisible(false)
+							park_tp_cross1_panel.SetVisible(false)
+							park_tp_cross2_panel.SetVisible(false)
+							park_tp_cross3_panel.SetVisible(false)
+							park_tp_cross4_panel.SetVisible(false)
+							park_tp_bridge_panel.SetVisible(false)
+							park_tp_underbridge_panel.SetVisible(false)
+							park_tp_vend1_panel.SetVisible(false)
+							park_tp_vend2_panel.SetVisible(false)
+							park_tp_vend3_panel.SetVisible(false)
+							park_tp_outside_toilet_panel.SetVisible(false)
+							park_tp_female_toilet_panel.SetVisible(false)
+							park_tp_male_toilet_panel.SetVisible(false)
+							park_tp_maze_panel.SetVisible(false)
+							park_tp_lucky_panel.SetVisible(false)
+							if park_teleport_current_index == 0
+								park_tp_central_zone.SetVisible(true)
+								park_tp_central_panel.SetVisible(true)
+								SetPlayerPosition(x=75.67, y=52.08, z=83.53, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 1
+								park_tp_seat1_zone.SetVisible(true)
+								park_tp_seat1_panel.SetVisible(true)
+								SetPlayerPosition(x=32.10, y=50.07, z=41.89, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 2
+								park_tp_seat2_zone.SetVisible(true)
+								park_tp_seat2_panel.SetVisible(true)
+								SetPlayerPosition(x=78.41, y=50.01, z=125.80, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 3
+								park_tp_cross1_zone.SetVisible(true)
+								park_tp_cross1_panel.SetVisible(true)
+								SetPlayerPosition(x=63.86, y=51.00, z=61.62, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 4
+								park_tp_cross2_zone.SetVisible(true)
+								park_tp_cross2_panel.SetVisible(true)
+								SetPlayerPosition(x=88.79, y=50.04, z=125.76, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 5
+								park_tp_cross3_zone.SetVisible(true)
+								park_tp_cross3_panel.SetVisible(true)
+								SetPlayerPosition(x=79.84, y=50.05, z=41.25, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 6
+								park_tp_cross4_zone.SetVisible(true)
+								park_tp_cross4_panel.SetVisible(true)
+								SetPlayerPosition(x=41.51, y=50.06, z=63.37, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 7
+								park_tp_bridge_zone.SetVisible(true)
+								park_tp_bridge_panel.SetVisible(true)
+								SetPlayerPosition(x=113.72, y=52.98, z=84.07, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 8
+								park_tp_underbridge_zone.SetVisible(true)
+								park_tp_underbridge_panel.SetVisible(true)
+								SetPlayerPosition(x=113.63, y=49.05, z=83.92, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 9
+								park_tp_vend1_zone.SetVisible(true)
+								park_tp_vend1_panel.SetVisible(true)
+								SetPlayerPosition(x=47.50, y=50.05, z=113.83, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 10
+								park_tp_vend2_zone.SetVisible(true)
+								park_tp_vend2_panel.SetVisible(true)
+								SetPlayerPosition(x=89.02, y=51.02, z=110.89, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 11
+								park_tp_vend3_zone.SetVisible(true)
+								park_tp_vend3_panel.SetVisible(true)
+								SetPlayerPosition(x=74.67, y=51.00, z=55.37, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 12
+								park_tp_outside_toilet_zone.SetVisible(true)
+								park_tp_outside_toilet_panel.SetVisible(true)
+								SetPlayerPosition(x=114.09, y=49.06, z=122.37, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 13
+								park_tp_female_toilet_zone.SetVisible(true)
+								park_tp_female_toilet_panel.SetVisible(true)
+								SetPlayerPosition(x=122.59, y=49.06, z=119.83, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 14
+								park_tp_male_toilet_zone.SetVisible(true)
+								park_tp_male_toilet_panel.SetVisible(true)
+								SetPlayerPosition(x=122.55, y=49.06, z=124.45, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 15
+								park_tp_maze_zone.SetVisible(true)
+								park_tp_maze_panel.SetVisible(true)
+								SetPlayerPosition(x=113.38, y=49.00, z=42.49, rx=0, ry=1, rz=0, rw=0)
+							if park_teleport_current_index == 16
+								park_tp_lucky_zone.SetVisible(true)
+								park_tp_lucky_panel.SetVisible(true)
+								SetPlayerPosition(x=62.34, y=52.02, z=92.22, rx=0, ry=1, rz=0, rw=0)
+
+
+	park_hide_all_teleport_zones:
+		park_tp_central_zone.SetVisible(false)
+		park_tp_seat1_zone.SetVisible(false)
+		park_tp_seat2_zone.SetVisible(false)
+		park_tp_cross1_zone.SetVisible(false)
+		park_tp_cross2_zone.SetVisible(false)
+		park_tp_cross3_zone.SetVisible(false)
+		park_tp_cross4_zone.SetVisible(false)
+		park_tp_bridge_zone.SetVisible(false)
+		park_tp_underbridge_zone.SetVisible(false)
+		park_tp_vend1_zone.SetVisible(false)
+		park_tp_vend2_zone.SetVisible(false)
+		park_tp_vend3_zone.SetVisible(false)
+		park_tp_outside_toilet_zone.SetVisible(false)
+		park_tp_female_toilet_zone.SetVisible(false)
+		park_tp_male_toilet_zone.SetVisible(false)
+		park_tp_maze_zone.SetVisible(false)
+		park_tp_lucky_zone.SetVisible(false)
+		park_tp_central_panel.SetVisible(false)
+		park_tp_seat1_panel.SetVisible(false)
+		park_tp_seat2_panel.SetVisible(false)
+		park_tp_cross1_panel.SetVisible(false)
+		park_tp_cross2_panel.SetVisible(false)
+		park_tp_cross3_panel.SetVisible(false)
+		park_tp_cross4_panel.SetVisible(false)
+		park_tp_bridge_panel.SetVisible(false)
+		park_tp_underbridge_panel.SetVisible(false)
+		park_tp_vend1_panel.SetVisible(false)
+		park_tp_vend2_panel.SetVisible(false)
+		park_tp_vend3_panel.SetVisible(false)
+		park_tp_outside_toilet_panel.SetVisible(false)
+		park_tp_female_toilet_panel.SetVisible(false)
+		park_tp_male_toilet_panel.SetVisible(false)
+		park_tp_maze_panel.SetVisible(false)
+		park_tp_lucky_panel.SetVisible(false)
+
+	park_apply_teleport_zone: # index
+		park_tp_index = _args[0]
+		park_hide_all_teleport_zones()
+		if park_tp_index == 0
+			park_tp_central_zone.SetVisible(true)
+			park_tp_central_panel.SetVisible(true)
+			SetPlayerPosition(x=75.67, y=52.08, z=83.53, rx=0, ry=1, rz=0, rw=0)
+		if park_tp_index == 1
+			park_tp_seat1_zone.SetVisible(true)
+			park_tp_seat1_panel.SetVisible(true)
+			SetPlayerPosition(x=32.10, y=50.07, z=41.89, rx=0, ry=1, rz=0, rw=0)
+		if park_tp_index == 2
+			park_tp_seat2_zone.SetVisible(true)
+			park_tp_seat2_panel.SetVisible(true)
+			SetPlayerPosition(x=78.41, y=50.01, z=125.80, rx=0, ry=1, rz=0, rw=0)
+		if park_tp_index == 3
+			park_tp_cross1_zone.SetVisible(true)
+			park_tp_cross1_panel.SetVisible(true)
+			SetPlayerPosition(x=63.86, y=51.00, z=61.62, rx=0, ry=1, rz=0, rw=0)
+		if park_tp_index == 4
+			park_tp_cross2_zone.SetVisible(true)
+			park_tp_cross2_panel.SetVisible(true)
+			SetPlayerPosition(x=88.79, y=50.04, z=125.76, rx=0, ry=1, rz=0, rw=0)
+		if park_tp_index == 5
+			park_tp_cross3_zone.SetVisible(true)
+			park_tp_cross3_panel.SetVisible(true)
+			SetPlayerPosition(x=79.84, y=50.05, z=41.25, rx=0, ry=1, rz=0, rw=0)
+		if park_tp_index == 6
+			park_tp_cross4_zone.SetVisible(true)
+			park_tp_cross4_panel.SetVisible(true)
+			SetPlayerPosition(x=41.51, y=50.06, z=63.37, rx=0, ry=1, rz=0, rw=0)
+		if park_tp_index == 7
+			park_tp_bridge_zone.SetVisible(true)
+			park_tp_bridge_panel.SetVisible(true)
+			SetPlayerPosition(x=113.72, y=52.98, z=84.07, rx=0, ry=1, rz=0, rw=0)
+		if park_tp_index == 8
+			park_tp_underbridge_zone.SetVisible(true)
+			park_tp_underbridge_panel.SetVisible(true)
+			SetPlayerPosition(x=113.63, y=49.05, z=83.92, rx=0, ry=1, rz=0, rw=0)
+		if park_tp_index == 9
+			park_tp_vend1_zone.SetVisible(true)
+			park_tp_vend1_panel.SetVisible(true)
+			SetPlayerPosition(x=47.50, y=50.05, z=113.83, rx=0, ry=1, rz=0, rw=0)
+		if park_tp_index == 10
+			park_tp_vend2_zone.SetVisible(true)
+			park_tp_vend2_panel.SetVisible(true)
+			SetPlayerPosition(x=89.02, y=51.02, z=110.89, rx=0, ry=1, rz=0, rw=0)
+		if park_tp_index == 11
+			park_tp_vend3_zone.SetVisible(true)
+			park_tp_vend3_panel.SetVisible(true)
+			SetPlayerPosition(x=74.67, y=51.00, z=55.37, rx=0, ry=1, rz=0, rw=0)
+		if park_tp_index == 12
+			park_tp_outside_toilet_zone.SetVisible(true)
+			park_tp_outside_toilet_panel.SetVisible(true)
+			SetPlayerPosition(x=114.09, y=49.06, z=122.37, rx=0, ry=1, rz=0, rw=0)
+		if park_tp_index == 13
+			park_tp_female_toilet_zone.SetVisible(true)
+			park_tp_female_toilet_panel.SetVisible(true)
+			SetPlayerPosition(x=122.59, y=49.06, z=119.83, rx=0, ry=1, rz=0, rw=0)
+		if park_tp_index == 14
+			park_tp_male_toilet_zone.SetVisible(true)
+			park_tp_male_toilet_panel.SetVisible(true)
+			SetPlayerPosition(x=122.55, y=49.06, z=124.45, rx=0, ry=1, rz=0, rw=0)
+		if park_tp_index == 15
+			park_tp_maze_zone.SetVisible(true)
+			park_tp_maze_panel.SetVisible(true)
+			SetPlayerPosition(x=113.38, y=49.00, z=42.49, rx=0, ry=1, rz=0, rw=0)
+		if park_tp_index == 16
+			park_tp_lucky_zone.SetVisible(true)
+			park_tp_lucky_panel.SetVisible(true)
+			SetPlayerPosition(x=62.34, y=52.02, z=92.22, rx=0, ry=1, rz=0, rw=0)
+
+
+	bigj_button_listener:
+		if mission_active
+			if bigj_active && bigj_done == false
+				if bigj_chat != null
+					if bigj_chat.Clicked() != null
+						if bigj_gallery == null
+							bigj_condition_photo = CreateCondition("[NearNPC]")
+							bigj_gallery = CreateGallery(bigj_condition_photo)
+						bigj_gallery.Show()
+
+	bigj_confirm_listener:
+		if mission_active
+			if bigj_active && bigj_done == false
+				if bigj_gallery != null
+					if bigj_gallery.Confirmed()
+						selection = bigj_gallery.GetSelection()
+						if selection.Count()>0
+							bigj_chat.SetButtons()
+							bigj_chat.Add(selection["0"], "Right", silent=true)
+							if bigj_mission == 1
+								AddCurrentEarnRP(200)
+								bigj_chat.Add("非常不错，我喜欢你的热情，姑娘。下次见", "Left", user="BigJ", silent=false)
+							if bigj_mission == 2
+								AddCurrentEarnRP(225)
+								bigj_chat.Add("你从来没让 BigJ 失望过，嘿嘿嘿", "Left", user="BigJ", silent=false)
+							if bigj_mission == 3
+								AddCurrentEarnRP(250)
+								bigj_chat.Add("我的天！今天是我有生以来最高兴的一天！", "Left", user="BigJ", silent=false)
+							bigj_done = true
+							bigj_active = false
+							bigj_condition_photo = null
+							bigj_gallery = null
+
+
+
+	HideAllTeleportZones:
+		if park_tp_central_zone != null
+			park_tp_central_zone.SetVisible(false)
+		if park_tp_central_panel != null
+			park_tp_central_panel.SetVisible(false)
+		if park_tp_seat1_zone != null
+			park_tp_seat1_zone.SetVisible(false)
+		if park_tp_seat1_panel != null
+			park_tp_seat1_panel.SetVisible(false)
+		if park_tp_seat2_zone != null
+			park_tp_seat2_zone.SetVisible(false)
+		if park_tp_seat2_panel != null
+			park_tp_seat2_panel.SetVisible(false)
+		if park_tp_cross1_zone != null
+			park_tp_cross1_zone.SetVisible(false)
+		if park_tp_cross1_panel != null
+			park_tp_cross1_panel.SetVisible(false)
+		if park_tp_cross2_zone != null
+			park_tp_cross2_zone.SetVisible(false)
+		if park_tp_cross2_panel != null
+			park_tp_cross2_panel.SetVisible(false)
+		if park_tp_cross3_zone != null
+			park_tp_cross3_zone.SetVisible(false)
+		if park_tp_cross3_panel != null
+			park_tp_cross3_panel.SetVisible(false)
+		if park_tp_cross4_zone != null
+			park_tp_cross4_zone.SetVisible(false)
+		if park_tp_cross4_panel != null
+			park_tp_cross4_panel.SetVisible(false)
+		if park_tp_bridge_zone != null
+			park_tp_bridge_zone.SetVisible(false)
+		if park_tp_bridge_panel != null
+			park_tp_bridge_panel.SetVisible(false)
+		if park_tp_underbridge_zone != null
+			park_tp_underbridge_zone.SetVisible(false)
+		if park_tp_underbridge_panel != null
+			park_tp_underbridge_panel.SetVisible(false)
+		if park_tp_vend1_zone != null
+			park_tp_vend1_zone.SetVisible(false)
+		if park_tp_vend1_panel != null
+			park_tp_vend1_panel.SetVisible(false)
+		if park_tp_vend2_zone != null
+			park_tp_vend2_zone.SetVisible(false)
+		if park_tp_vend2_panel != null
+			park_tp_vend2_panel.SetVisible(false)
+		if park_tp_vend3_zone != null
+			park_tp_vend3_zone.SetVisible(false)
+		if park_tp_vend3_panel != null
+			park_tp_vend3_panel.SetVisible(false)
+		if park_tp_outside_toilet_zone != null
+			park_tp_outside_toilet_zone.SetVisible(false)
+		if park_tp_outside_toilet_panel != null
+			park_tp_outside_toilet_panel.SetVisible(false)
+		if park_tp_female_toilet_zone != null
+			park_tp_female_toilet_zone.SetVisible(false)
+		if park_tp_female_toilet_panel != null
+			park_tp_female_toilet_panel.SetVisible(false)
+		if park_tp_male_toilet_zone != null
+			park_tp_male_toilet_zone.SetVisible(false)
+		if park_tp_male_toilet_panel != null
+			park_tp_male_toilet_panel.SetVisible(false)
+		if park_tp_maze_zone != null
+			park_tp_maze_zone.SetVisible(false)
+		if park_tp_maze_panel != null
+			park_tp_maze_panel.SetVisible(false)
+		if park_tp_lucky_zone != null
+			park_tp_lucky_zone.SetVisible(false)
+		if park_tp_lucky_panel != null
+			park_tp_lucky_panel.SetVisible(false)
+
+	RefreshNakedProgressOverlay:
+		park_progress_text = "Stay in the Path, Earn 5000 RP\nProgress: " + Floor(park_rp_progress) + " / " + park_rp_target + " RP"
+		if park_naked_progress_overlay_flip == 0
+			park_naked_progress_overlay.Clear()
+			park_naked_progress_overlay.Add(text=park_progress_text, duration=-1)
+			park_naked_progress_overlay_alt.Clear()
+			park_naked_progress_overlay_flip = 1
+		else
+			park_naked_progress_overlay_alt.Clear()
+			park_naked_progress_overlay_alt.Add(text=park_progress_text, duration=-1)
+			park_naked_progress_overlay.Clear()
+			park_naked_progress_overlay_flip = 0
+	ClearNakedProgressOverlay:
+		park_naked_progress_overlay.Clear()
+		park_naked_progress_overlay_alt.Clear()
+
+	SyncRPBaseline:
+		park_rp_last_total = GetCurrentEarnRP()
+
+	IsCurrentMissionActive:
+		_result = park_naked_started || park_teleport_test_started || park_walk_state == 1 || park_cage_state == 1 || park_toilet_state == 1 || park_toilet_caged_state == 1
+
+
+	Cancel:
+		mission_active = false
+		active_stage = ""
+		ClearNakedProgressOverlay()
+		if park_start_zone != null
+			park_start_zone.SetVisible(false)
+		if park_path_zone != null
+			park_path_zone.SetVisible(false)
+		if park_naked_panel != null
+			park_naked_panel.SetVisible(false)
+		if park_teleport_panel != null
+			park_teleport_panel.SetVisible(false)
+		if park_crowded_panel != null
+			park_crowded_panel.SetVisible(false)
+		HideAllTeleportZones()
+		if park_walk_start_zone != null
+			park_walk_start_zone.SetVisible(false)
+		if park_walk_dest_zone != null
+			park_walk_dest_zone.SetVisible(false)
+		if park_walk_panel != null
+			park_walk_panel.SetVisible(false)
+		if park_cage_zone != null
+			park_cage_zone.SetVisible(false)
+		if park_cage_panel != null
+			park_cage_panel.SetVisible(false)
+		if park_toilet_start_zone != null
+			park_toilet_start_zone.SetVisible(false)
+		if park_toilet_dest_zone != null
+			park_toilet_dest_zone.SetVisible(false)
+		if park_toilet_panel != null
+			park_toilet_panel.SetVisible(false)
+		if park_toilet_punish_panel != null
+			park_toilet_punish_panel.SetVisible(false)
+		if park_toilet_caged_start_zone != null
+			park_toilet_caged_start_zone.SetVisible(false)
+		if park_toilet_caged_warning_zone != null
+			park_toilet_caged_warning_zone.SetVisible(false)
+		if park_toilet_caged_panel != null
+			park_toilet_caged_panel.SetVisible(false)
+		if park_toilet_caged_info_panel != null
+			park_toilet_caged_info_panel.SetVisible(false)
+		if park_toilet_caged_main_panel != null
+			park_toilet_caged_main_panel.SetVisible(false)
+		if park_side_notice_panel != null
+			park_side_notice_panel.SetVisible(false)
+		if park_walk_state == 1
+			SetAction("None")
+		if bigj_chat != null
+			bigj_chat.SetButtons()
+			bigj_chat.Clear()
+			bigj_chat = null
+		bigj_active = false
+		bigj_done = false
+		bigj_mission = 0
+		bigj_condition_photo = null
+		bigj_gallery = null
+		if park_coat_moved
+			CollectItem(itemtype="Coat")
+			park_coat_return_pos = CreateList(stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y, z=_state.Position.z, rx=0, ry=0, rz=0, rw=0)
+			DropItem(itemtype="Coat", position=park_coat_return_pos, compass=false)
+			park_coat_moved = false
+		thread.Goto("idle")
+

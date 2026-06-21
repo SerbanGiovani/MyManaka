@@ -1,0 +1,57 @@
+{
+	"title":{
+		"En":"Park Stroll"
+	},
+	"description":{
+		"En":""
+	},
+	"settings":[
+		{
+			"type":"Label",
+			"title":"Text Rate (Slower <-> Faster)"
+		},
+		{
+			"name":"text_rate",
+			"type":"Float",
+            "minvalue":0.5,
+            "maxvalue":1.5,
+            "default":1
+		},
+		{
+			"type":"Label",
+			"title":"Ren Can Be Male"
+		},
+		{
+			"name":"ren_can_be_male",
+			"type":"Boolean",
+			"default":true
+		},
+		{
+			"type":"Label",
+			"title":"Ren Can Be Female"
+		},
+		{
+			"name":"ren_can_be_female",
+			"type":"Boolean",
+			"default":true
+		},
+		{
+			"type":"Label",
+			"title":"Ren Is Non-Binary"
+		},
+		{
+			"name":"ren_non_binary",
+			"type":"Boolean",
+			"default":false
+		},
+		{
+			"type":"Label",
+			"title":"Language Override"
+		},
+		{
+			"name":"language_override",
+			"type":"String",
+			"default":""
+		}
+	]
+}

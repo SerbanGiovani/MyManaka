@@ -1,0 +1,32 @@
+manakaplus_v22_manaka_points:
+	thread = _this
+
+	Get:
+		if _save.ManakaPlusV2ManakaPoints == null
+			_save.ManakaPlusV2ManakaPoints = 0
+		_result = Floor(_save.ManakaPlusV2ManakaPoints)
+
+	Add:
+		if amount == null
+			amount = _args[0]
+		if amount == null
+			amount = 0
+		if amount < 0
+			amount = 0
+		current = Get()
+		_save.ManakaPlusV2ManakaPoints = current + Floor(amount)
+		_result = Floor(_save.ManakaPlusV2ManakaPoints)
+
+
+	Spend:
+		if amount == null
+			amount = _args[0]
+		if amount == null
+			amount = 0
+		amount = Floor(amount)
+		current = Get()
+		if amount >= 0 && current >= amount
+			_save.ManakaPlusV2ManakaPoints = current - amount
+			_result = true
+		else
+			_result = false

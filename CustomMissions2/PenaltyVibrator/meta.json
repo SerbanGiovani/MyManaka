@@ -1,0 +1,59 @@
+{
+	"title":{
+		"En":"Penalty Vibrator",
+		"Sc":"惩罚振动器",
+		"Tc":"懲罰振動器",
+		"Ja":"ペナルティ・バイブレーター",
+		"Ko":"벌칙 바이브레이터"
+	},
+	"version":"2026-06-27",
+	"changelog":{
+		"2026-06-26":[
+			"Added support for piston penalties",
+			"Added settings to choose which toys have penalties",
+			"Fixed an issue where changing maps would briefly apply maximum penalty",
+			"Added option to tweak the game's zones that count as hiding",
+			"Added non-English translations"
+		],
+		"initial":["Initial release"]
+	},
+	"settings":[
+		{
+			"name":"vibrator",
+			"title":{
+				"En":"Vibrator",
+				"Sc":"振动器",
+				"Tc":"振動器",
+				"Ja":"バイブレーター",
+				"Ko":"진동기"
+			},
+			"type":"Boolean",
+			"default":true
+		},
+		{
+			"name":"piston",
+			"title":{
+				"En":"Piston",
+				"Sc":"活塞",
+				"Tc":"活塞",
+				"Ja":"ピストン",
+				"Ko":"피스톤"
+			},
+			"type":"Boolean",
+			"default":false
+		},
+		{"type":"Label","title":" "},
+		{
+			"name":"tweak_hiding",
+			"title":{
+				"En":"Tweak hiding zones",
+				"Sc":"调整隐藏区域",
+				"Tc":"調整隱藏區域",
+				"Ja":"ゾーンを調整する",
+				"Ko":"숨기기 영역 조정"
+			},
+			"type":"Boolean",
+			"default":true
+		}
+	]
+}

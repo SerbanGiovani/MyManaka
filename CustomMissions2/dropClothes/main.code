@@ -1,0 +1,861 @@
+mainthread = CreateThread("main")
+
+main:
+	thread = _this
+	condSex = CreateCondition("(Action_SexStandBack, Action_SexKijoui)")
+	condNoHandcuffs = CreateCondition("[NoHandcuffs]")
+	# --- ITEM LISTS ---
+	all_tops = CreateList("m_cosplay_general_upper_rain_coat","m_cosplay_maid_onepiece","m_cosplay_ninja_tops","m_cosplay_sister_leotard","m_cosplay_bunny_tops","m_cosplay_latex_pony_tops","m_cosplay_jailer_jacket","m_cosplay_jailer_reotard","m_cosplay_suit_chic_jacket","m_cosplay_suit_chic_shirt","m_cosplay_suit_luxe_jacket","m_cosplay_suit_luxe_tops","m_cosplay_sweater_tops","m_cosplay_glossy_jacket","m_cosplay_glossy_knit","m_cosplay_school_hoodie_hoodie","m_cosplay_school_hoodie_shirt","m_cosplay_school_gal_blazer","m_cosplay_school_gal_cardigan_winter","m_cosplay_school_gal_shirt_winter","m_cosplay_school_gal_shirt_summer", "Sailor Bikini Bra","Underboobs Top","Halloween Top","Sexy Devil Top","Tatsumaki Dress","Tentacle Leotard","maidbunny_Skirts","maidbunny_Clothes","Skimpy Nurse Top","VIPER shirt","Miko Hakue","Cat Bikini Bra","Loose Shirt Black","Loose Shirt White","Sexy Beach Shirt","Sheet Ghost Cloth","Slutty Bodycon Dress","Heart Jacket","Prisoner Jacket","Casual Ao Yem Top","Casual Dongtan Cardigan","Casual Dongtan One Piece","Bath Towel","Naked Apron","Naked Apron Open Boobs","Onsenato Bra","Open Boobs Sweater Top","Christmas Bikini Bra","Christmas Cape","Sexy Sailor Shirt","JiraiKei SkirtFlare","JiraiKei Outfit","Open Student Shirt")
+	
+	all_bottoms = CreateList("m_cosplay_general_upper_sling_shot","m_cosplay_general_upper_swimsuit","m_cosplay_general_upper_sukumizu","m_cosplay_general_upper_rubber_suit","m_cosplay_succubus_cosplay_skirt","m_cosplay_sister_cloth","m_cosplay_jump_suit_suit","m_cosplay_suit_chic_skirt","m_cosplay_suit_chic_pants","m_cosplay_suit_luxe_pants","m_cosplay_school_hoodie_skirt","m_cosplay_school_gal_skirt", "Hot Pants","Sailor Bikini Panty","Open Leotard","Skimpy Nurse Skirt","Miko Hibakama","Cat Bikini Panty","Heart Skirt","Onsenato Towel","Open Boobs Sweater Skirt","Virgin Killer Sweater Full Body","Christmas Bikini Panty","Sexy Sailor Skirt","Open Student Skirt","Sailor Moon Skirt")
+
+	all_shoes = CreateList("m_cosplay_general_leg_stocking_rain_boots","m_cosplay_general_leg_heel","m_cosplay_general_leg_stocking_sneaker","m_cosplay_general_leg_stocking_pin_heel","m_cosplay_general_leg_boots","m_cosplay_general_leg_long_boots","m_cosplay_general_leg_high_heel_boots","m_cosplay_maid_shoes","m_cosplay_ninja_boots","m_cosplay_sister_shoes","m_cosplay_kemono_foot","m_cosplay_bunny_shoes","m_cosplay_latex_pony_boots","m_cosplay_jump_suit_boots","m_cosplay_jailer_boots","m_cosplay_cow_boots","m_cosplay_suit_chic_shoes","m_cosplay_suit_luxe_shoes","m_cosplay_glossy_boots","m_cosplay_school_hoodie_shoes","m_cosplay_school_gal_shoes","m_cosplay_school_hoodie_socks","m_cosplay_school_gal_sockes", "Evening Dress II Heels","Fashion Platform Heels Black","Fashion Platform Heels Logo","Fashion Platform Heels White","Heels High","Tentacle Stockings and Shoes","Sexy Beach Shoes","Summer Mule Heels","Brazil Miku Flip Flops","Christmas Bikini Boots","ES socks")
+
+	all_bras = CreateList("m_cosplay_general_upper_bra","m_cosplay_general_upper_chack_bikini_bra","m_cosplay_general_upper_micro_bikini_bra","m_cosplay_succubus_cosplay_tops","m_cosplay_sister_curtain","m_cosplay_cow_bra", "Babydoll Top","Babydoll White Top","BikiniRed Top","Latex Harness","Bikini Bra","Sheer shirt","Ribbon Bra","Ribbon Open Bra")
+
+	all_pants = CreateList("m_cosplay_general_upper_race_pants","m_cosplay_general_upper_ultimate_pants","m_cosplay_general_upper_chack_bikini_pants","m_cosplay_general_upper_micro_bikini_pants","m_cosplay_succubus_cosplay_pants","m_cosplay_sister_pants","m_cosplay_cow_pants","m_cosplay_wild_pants","m_cosplay_sweater_pants","m_cosplay_suit_chic_panty","m_cosplay_general_leg_stocking_nieso","m_cosplay_general_leg_stocking_race","m_cosplay_general_leg_stocking_race_dark","m_cosplay_general_leg_stocking_net","m_cosplay_general_leg_stocking_net_thin","m_cosplay_general_leg_stocking_net_dark","m_cosplay_general_leg_stocking_net_dark_thin","m_cosplay_general_leg_stocking","m_cosplay_general_leg_stocking_stripe","m_cosplay_maid_stocking","m_cosplay_sister_socks","m_cosplay_bunny_sockes","m_cosplay_suit_chic_stocking", "Babydoll Panties","Babydoll White Panties","BikiniRed Bottom","X Strap Underwear","Kunihiro socks","Full Body Stockings","Full Body Stockings White","Low Rise Stockings","Low Rise Stockings White","Open Crotch Stockings","Open Crotch Stockings White","Halloween Socks","Burgundy Underwear","Bikini Panty","Skimpy Nurse Thong","Happi Fundoshi","Cat Bikini Stockings","Sexy Beach Panty","Slutty Bodycon Panties","Naked Apron Panty","Ribbon Panty","Christmas Panty","Sexy Sailor Panty")
+
+	# --- NAME MAPPING ---
+	item_names = CreateList()
+	item_names["m_cosplay_general_upper_rain_coat"] = "雨衣"
+	item_names["m_cosplay_maid_onepiece"] = "连衣裙"
+	item_names["m_cosplay_ninja_tops"] = "忍者上装"
+	item_names["m_cosplay_sister_leotard"] = "修女连体衣"
+	item_names["m_cosplay_bunny_tops"] = "兔女郎上装"
+	item_names["m_cosplay_latex_pony_tops"] = "乳胶马上装"
+	item_names["m_cosplay_jailer_jacket"] = "看守夹克"
+	item_names["m_cosplay_jailer_reotard"] = "看守连体衣"
+	item_names["m_cosplay_suit_chic_jacket"] = "西装A夹克"
+	item_names["m_cosplay_suit_chic_shirt"] = "西装A衬衫"
+	item_names["m_cosplay_suit_luxe_jacket"] = "西装B夹克"
+	item_names["m_cosplay_suit_luxe_tops"] = "西装B上装"
+	item_names["m_cosplay_sweater_tops"] = "成人毛衣"
+	item_names["m_cosplay_glossy_jacket"] = "羽绒夹克"
+	item_names["m_cosplay_glossy_knit"] = "针织衫"
+	item_names["m_cosplay_school_hoodie_hoodie"] = "连帽衫"
+	item_names["m_cosplay_school_hoodie_shirt"] = "学生A衬衫"
+	item_names["m_cosplay_school_gal_blazer"] = "西服外套"
+	item_names["m_cosplay_school_gal_cardigan_winter"] = "冬季开衫"
+	item_names["m_cosplay_school_gal_shirt_winter"] = "冬季衬衫"
+	item_names["m_cosplay_school_gal_shirt_summer"] = "夏季衬衫"
+
+	item_names["m_cosplay_general_upper_sling_shot"] = "吊带比基尼"
+	item_names["m_cosplay_general_upper_swimsuit"] = "竞技泳衣"
+	item_names["m_cosplay_general_upper_sukumizu"] = "学生泳衣"
+	item_names["m_cosplay_general_upper_rubber_suit"] = "橡胶紧身衣"
+	item_names["m_cosplay_succubus_cosplay_skirt"] = "魅魔裙子"
+	item_names["m_cosplay_sister_cloth"] = "修女上装"
+	item_names["m_cosplay_jump_suit_suit"] = "连体衣西装"
+	item_names["m_cosplay_suit_chic_skirt"] = "西装A裙子"
+	item_names["m_cosplay_suit_chic_pants"] = "西装A西装裤"
+	item_names["m_cosplay_suit_luxe_pants"] = "西装B西装裤"
+	item_names["m_cosplay_school_hoodie_skirt"] = "学生A裙子"
+	item_names["m_cosplay_school_gal_skirt"] = "学生B裙子"
+
+	item_names["m_cosplay_general_leg_stocking_rain_boots"] = "雨靴"
+	item_names["m_cosplay_general_leg_heel"] = "高跟鞋"
+	item_names["m_cosplay_general_leg_stocking_sneaker"] = "运动鞋"
+	item_names["m_cosplay_general_leg_stocking_pin_heel"] = "细高跟鞋"
+	item_names["m_cosplay_general_leg_boots"] = "靴子"
+	item_names["m_cosplay_general_leg_long_boots"] = "长筒靴"
+	item_names["m_cosplay_general_leg_high_heel_boots"] = "高跟靴"
+	item_names["m_cosplay_maid_shoes"] = "乐福鞋"
+	item_names["m_cosplay_ninja_boots"] = "忍者靴子"
+	item_names["m_cosplay_sister_shoes"] = "修女鞋子"
+	item_names["m_cosplay_kemono_foot"] = "兽人鞋子"
+	item_names["m_cosplay_bunny_shoes"] = "兔女郎鞋子"
+	item_names["m_cosplay_latex_pony_boots"] = "乳胶马靴子"
+	item_names["m_cosplay_jump_suit_boots"] = "连体衣靴子"
+	item_names["m_cosplay_jailer_boots"] = "看守靴子"
+	item_names["m_cosplay_cow_boots"] = "牛靴"
+	item_names["m_cosplay_suit_chic_shoes"] = "西装A鞋子"
+	item_names["m_cosplay_suit_luxe_shoes"] = "西装B鞋子"
+	item_names["m_cosplay_glossy_boots"] = "羽绒长筒靴"
+	item_names["m_cosplay_school_hoodie_shoes"] = "学生A鞋子"
+	item_names["m_cosplay_school_gal_shoes"] = "学生B鞋子"
+	item_names["m_cosplay_school_hoodie_socks"] = "学生A袜子"
+	item_names["m_cosplay_school_gal_sockes"] = "学生B袜子"
+
+	item_names["m_cosplay_general_upper_bra"] = "胸罩"
+	item_names["m_cosplay_general_upper_chack_bikini_bra"] = "开洞比基尼胸罩"
+	item_names["m_cosplay_general_upper_micro_bikini_bra"] = "超小比基尼胸罩"
+	item_names["m_cosplay_succubus_cosplay_tops"] = "魅魔上装"
+	item_names["m_cosplay_sister_curtain"] = "胸帘"
+	item_names["m_cosplay_cow_bra"] = "牛胸罩"
+
+	item_names["m_cosplay_general_upper_race_pants"] = "蕾丝内裤"
+	item_names["m_cosplay_general_upper_ultimate_pants"] = "内裤"
+	item_names["m_cosplay_general_upper_chack_bikini_pants"] = "开洞比基尼裤"
+	item_names["m_cosplay_general_upper_micro_bikini_pants"] = "超小比基尼裤"
+	item_names["m_cosplay_succubus_cosplay_pants"] = "魅魔内裤"
+	item_names["m_cosplay_sister_pants"] = "修女内裤"
+	item_names["m_cosplay_cow_pants"] = "牛内裤"
+	item_names["m_cosplay_wild_pants"] = "热裤"
+	item_names["m_cosplay_sweater_pants"] = "毛衣内裤"
+	item_names["m_cosplay_suit_chic_panty"] = "西装A内裤"
+
+	item_names["m_cosplay_general_leg_stocking_nieso"] = "过膝袜"
+	item_names["m_cosplay_general_leg_stocking_race"] = "蕾丝丝袜"
+	item_names["m_cosplay_general_leg_stocking_race_dark"] = "蕾丝丝袜（暗）"
+	item_names["m_cosplay_general_leg_stocking_net"] = "网眼丝袜"
+	item_names["m_cosplay_general_leg_stocking_net_thin"] = "细网眼丝袜"
+	item_names["m_cosplay_general_leg_stocking_net_dark"] = "网眼丝袜（暗）"
+	item_names["m_cosplay_general_leg_stocking_net_dark_thin"] = "细网眼丝袜（暗）"
+	item_names["m_cosplay_general_leg_stocking"] = "丝袜"
+	item_names["m_cosplay_general_leg_stocking_stripe"] = "条纹丝袜"
+	item_names["m_cosplay_maid_stocking"] = "女仆丝袜"
+	item_names["m_cosplay_sister_socks"] = "修女袜子"
+	item_names["m_cosplay_bunny_sockes"] = "兔女郎袜子"
+	item_names["m_cosplay_suit_chic_stocking"] = "西装A丝袜"
+
+	# --- STATE TRACKING ---
+	dropped_items = CreateList()
+	pickup_queue = CreateList()
+	last_worn_status = CreateList()
+	
+	# Buffer for handling Set Logic
+	pending_drops = CreateList()
+	recent_equip_timer = 0
+	
+	area = null
+	compArea = null
+	
+	# Communication Flag
+	just_dropped_flag = false
+	
+	# Mission Logic Variables
+	missionState = 0
+	last_drop_pos = null
+	mission_total_items = 0
+	mission_drops_done = 0
+	stage_max_dist = 0.0
+	current_leg_dist = 0.0
+	dropped_items_before_mission = 0
+	mission_start_stage = ""
+	
+	resetTime = 0
+	complianceTimer = 0
+	fail_reason = ""
+	
+	missionpanel = CreateMissionPanel()
+	missionpanel.SetVisible(false)
+	
+	# --- MISSION SETTINGS INITIALIZATION ---
+	_save.MissionActive = false 
+	
+	# --- SAVE DATA INITIALIZATION ---
+	if _save.DroppedData == null
+		_save.DroppedData = CreateList()
+	
+	# --- LOAD LOGIC (Visuals Only) ---
+	idx = 0
+	while idx < _save.DroppedData.Count()
+		savedEntry = _save.DroppedData[idx]
+		sID = savedEntry[0]
+		sType = savedEntry[1]
+		sStage = savedEntry[2]
+		sX = savedEntry[3]
+		sY = savedEntry[4]
+		sZ = savedEntry[5]
+	
+		dispName = item_names[sID]
+		if dispName == null
+			dispName = sID
+		
+		area = CreateInteractArea(stage=sStage, x=sX, y=sY, z=sZ, r=0.3, text="穿上" + dispName)
+		compArea = CreateArea(type="sphere", stage=sStage, x=sX, y=sY, z=sZ, r=0.3, outline=true, compass=false)
+		
+		runEntry = CreateList(sID, area, sType, compArea)
+		dropped_items.Insert(runEntry)
+		
+		area = null
+		compArea = null
+		idx = idx + 1
+
+	# --- INITIAL STATUS CHECK ---
+	i = 0
+	while i < all_tops.Count()
+		item = all_tops[i]
+		last_worn_status[item] = _state.Cosplay[item]
+		i = i + 1
+	i = 0
+	while i < all_bottoms.Count()
+		item = all_bottoms[i]
+		last_worn_status[item] = _state.Cosplay[item]
+		i = i + 1
+	i = 0
+	while i < all_shoes.Count()
+		item = all_shoes[i]
+		last_worn_status[item] = _state.Cosplay[item]
+		i = i + 1
+
+	i = 0
+	while i < all_bras.Count()
+		item = all_bras[i]
+		last_worn_status[item] = _state.Cosplay[item]
+		i = i + 1
+
+	i = 0
+	while i < all_pants.Count()
+		item = all_pants[i]
+		last_worn_status[item] = _state.Cosplay[item]
+		i = i + 1
+
+	# --- START LOOPS ---
+	listener = CreateListenerLocal("monitor_loop")
+	mission_listener = CreateListenerLocal("mission_logic")
+	# --- KEY INPUT ---
+	inp_drop_top = CreateInput("<Keyboard>/U")
+	inp_drop_bottom = CreateInput("<Keyboard>/I")
+	inp_drop_shoe = CreateInput("")
+	input_listener = CreateListenerLocal("input_loop")
+	
+	settingsChat = CreateMessengerChat("服装回收器", icontext="CFG", iconcolor=Color(0.2, 0.2, 0.2))
+	thread.Goto("chat_loop")
+
+	# ==================================================================================
+	# MAIN LOOP: PHYSICS & ANIMATIONS
+	# ==================================================================================
+	monitor_loop:
+		
+		currentStage = _state.Position.stage
+		
+		# --- DETECTION PHASE ---
+		
+		# TOPS
+		i = 0
+		while i < all_tops.Count()
+			item = all_tops[i]
+			is_currently_worn = _state.Cosplay[item]
+			
+			if (last_worn_status[item] == true) && (is_currently_worn == false)
+				# UNEQUIPPED: Add to pending ONLY if not at home
+				if currentStage != "Apart"
+					pend = CreateList(item, 0.0, "Top")
+					pending_drops.Insert(pend)
+			
+			elseif (last_worn_status[item] == false) && (is_currently_worn == true)
+				# EQUIPPED: Set safety timer (Swap detected)
+				recent_equip_timer = 0.3
+				
+			last_worn_status[item] = is_currently_worn
+			i = i + 1
+
+		# BOTTOMS
+		i = 0
+		while i < all_bottoms.Count()
+			item = all_bottoms[i]
+			is_currently_worn = _state.Cosplay[item]
+			
+			if (last_worn_status[item] == true) && (is_currently_worn == false)
+				# UNEQUIPPED: Add to pending ONLY if not at home
+				if currentStage != "Apart"
+					pend = CreateList(item, 0.0, "Bottom")
+					pending_drops.Insert(pend)
+			
+			elseif (last_worn_status[item] == false) && (is_currently_worn == true)
+				# EQUIPPED
+				recent_equip_timer = 0.3
+			
+			last_worn_status[item] = is_currently_worn
+			i = i + 1
+			
+		# Shoes
+		i = 0
+		while i < all_shoes.Count()
+			item = all_shoes[i]
+			is_currently_worn = _state.Cosplay[item]
+			
+			if (last_worn_status[item] == true) && (is_currently_worn == false)
+				# UNEQUIPPED: Add to pending ONLY if not at home
+				if currentStage != "Apart"
+					pend = CreateList(item, 0.0, "Shoe")
+					pending_drops.Insert(pend)
+			
+			elseif (last_worn_status[item] == false) && (is_currently_worn == true)
+				# EQUIPPED
+				recent_equip_timer = 0.3
+			
+			last_worn_status[item] = is_currently_worn
+			i = i + 1
+
+		# Bras
+		i = 0
+		while i < all_bras.Count()
+			item = all_bras[i]
+			is_currently_worn = _state.Cosplay[item]
+			
+			if (last_worn_status[item] == true) && (is_currently_worn == false)
+				# UNEQUIPPED: Add to pending ONLY if not at home
+				if currentStage != "Apart"
+					pend = CreateList(item, 0.0, "Bra")
+					pending_drops.Insert(pend)
+			
+			elseif (last_worn_status[item] == false) && (is_currently_worn == true)
+				# EQUIPPED
+				recent_equip_timer = 0.3
+			
+			last_worn_status[item] = is_currently_worn
+			i = i + 1
+
+		# Pants
+		i = 0
+		while i < all_pants.Count()
+			item = all_pants[i]
+			is_currently_worn = _state.Cosplay[item]
+			
+			if (last_worn_status[item] == true) && (is_currently_worn == false)
+				# UNEQUIPPED: Add to pending ONLY if not at home
+				if currentStage != "Apart"
+					pend = CreateList(item, 0.0, "Pant")
+					pending_drops.Insert(pend)
+			
+			elseif (last_worn_status[item] == false) && (is_currently_worn == true)
+				# EQUIPPED
+				recent_equip_timer = 0.3
+			
+			last_worn_status[item] = is_currently_worn
+			i = i + 1
+			
+		# --- PROCESSING PHASE (The Grace Period Logic) ---
+		
+		# Decrement Swap Timer
+		if recent_equip_timer > 0
+			recent_equip_timer = recent_equip_timer - _timediff
+		
+		# CHECK 1: SWAP PROTECTION
+		# If we equipped something recently, CLEAR pending drops (assume swap)
+		if (recent_equip_timer > 0) && (pending_drops.Count() > 0)
+			pending_drops = CreateList()
+			
+		# CHECK 2: MASS UNEQUIP PROTECTION (Naked Set)
+		# If multiple items are waiting to drop, CLEAR them (assume "Remove All" or Set)
+		if pending_drops.Count() > 1
+			pending_drops = CreateList()
+			
+		# CHECK 3: EXECUTE VALID DROPS
+		# Iterate backwards to remove processed items
+		k = pending_drops.Count() - 1
+		while k >= 0
+			entry = pending_drops[k]
+			entry[1] = entry[1] + _timediff # Increase timer
+			
+			# If 0.2s passed without cancellation, it's a real drop
+			if entry[1] > 0.2
+				if !condSex.Check() && condNoHandcuffs.Check()
+					dItem = entry[0]
+					dType = entry[2]
+				
+					# === PERFORM DROP ===
+				
+					if dType == "Top"
+						SetAction("TakeOffBra")
+					elseif dType == "Bottom"
+						SetAction("TakeOffPants")
+					elseif dType == "Shoe"
+						SetAction("PickUpItem")
+					elseif dType == "Bra"
+						SetAction("TakeOffBra")
+					elseif dType == "Pant"
+						SetAction("TakeOffPants")
+				
+					OwnCosplay(dItem, owns=false)
+				
+					pX = _state.Position.x
+					pY = _state.Position.y
+					pZ = _state.Position.z
+				
+					dispName = item_names[dItem]
+					if dispName == null
+						dispName = dItem
+				
+					area = CreateInteractArea(stage=currentStage, x=pX, y=pY, z=pZ, r=0.3, text="穿上" + dispName)
+					compArea = CreateArea(type="sphere", stage=currentStage, x=pX, y=pY, z=pZ, r=0.3, outline=true, compass=false)
+				
+					finalEntry = CreateList(dItem, area, dType, compArea)
+					dropped_items.Insert(finalEntry)
+				
+					saveEntry = CreateList(dItem, dType, currentStage, pX, pY, pZ)
+					_save.DroppedData.Insert(saveEntry)
+				
+					area = null
+					compArea = null
+					just_dropped_flag = true
+				
+				# Remove from pending
+				pending_drops.Remove(k)
+				
+			k = k - 1
+			
+		# 3. CHECK FOR INTERACTION (Pickups)
+		k = dropped_items.Count() - 1
+		while k >= 0
+			entry = dropped_items[k]
+			itemID = entry[0]
+			areaObject = entry[1]
+			iType = entry[2]
+			compObject = entry[3]
+			
+			if areaObject.Check() && condNoHandcuffs.Check()
+				SetAction("PickUpItem")
+				processEntry = CreateList(itemID, iType, 0.0, 0)
+				pickup_queue.Insert(processEntry)
+				
+				entry[1] = null
+				entry[3] = null
+				areaObject = null
+				compObject = null
+				dropped_items.Remove(k)
+			k = k - 1
+
+		entry = null
+		areaObject = null
+		compObject = null
+
+		# 4. PROCESS PICKUP QUEUE
+		j = pickup_queue.Count() - 1
+		while j >= 0
+			pEntry = pickup_queue[j]
+			pEntry[2] = pEntry[2] + _timediff
+			timer = pEntry[2]
+			phase = pEntry[3]
+			pType = pEntry[1]
+			pItem = pEntry[0]
+			
+			if (phase == 0) && (timer > 1.5)
+				if pType == "Top"
+					SetAction("TakeOnBra")
+				elseif pType == "Bottom"
+					SetAction("TakeOnPants")
+				elseif pType == "Shoe"
+					SetAction("PickUpItem")
+				elseif pType == "Bra"
+					SetAction("TakeOnBra")
+				elseif pType == "Pant"
+					SetAction("TakeOnPants")
+				pEntry[3] = 1
+			
+			if (phase == 1) && (timer > 4.0)
+				OwnCosplay(pItem, owns=true)
+				EquipCosplay(pItem)
+				last_worn_status[pItem] = true
+				
+				sIdx = 0
+				while sIdx < _save.DroppedData.Count()
+					if _save.DroppedData[sIdx][0] == pItem
+						_save.DroppedData.Remove(sIdx)
+						sIdx = _save.DroppedData.Count() + 999 
+					sIdx = sIdx + 1
+				
+				pickup_queue.Remove(j)
+			j = j - 1
+
+	# ==================================================================================
+	# INPUT LOOP: MANUAL TOP DROP
+	# ==================================================================================
+	input_loop:
+
+		# ===== TOP =====
+		if inp_drop_top.WasPressed()
+			i = 0
+			while i < all_tops.Count()
+				item = all_tops[i]
+			
+				if _state.Cosplay[item] == true
+				
+					if _state.Position.stage != "Apart"
+						pend = CreateList(item, 0.0, "Top")
+						pending_drops.Insert(pend)
+				
+					i = all_tops.Count() + 999
+			
+				i = i + 1
+
+		# ===== Bottom =====
+		if inp_drop_bottom.WasPressed()
+			i = 0
+			while i < all_bottoms.Count()
+				item = all_bottoms[i]
+			
+				if _state.Cosplay[item] == true
+				
+					if _state.Position.stage != "Apart"
+						pend = CreateList(item, 0.0, "Bottom")
+						pending_drops.Insert(pend)
+				
+					i = all_bottoms.Count() + 999
+			
+				i = i + 1
+
+		# ===== Shoe =====
+		if inp_drop_shoe.WasPressed()
+			i = 0
+			while i < all_shoes.Count()
+				item = all_shoes[i]
+			
+				if _state.Cosplay[item] == true
+				
+					if _state.Position.stage != "Apart"
+						pend = CreateList(item, 0.0, "Shoe")
+						pending_drops.Insert(pend)
+				
+					i = all_shoes.Count() + 999
+			
+				i = i + 1
+
+	# ==================================================================================
+	# MISSION LOOP: THE GAME LOGIC
+	# ==================================================================================
+	mission_logic:
+		
+		curStage = _state.Position.stage
+		
+		# Valid Check: Turned On? Not Home? Coat Not Dropped?
+		isLogicActive = false
+		if (_save.MissionActive == true) && (curStage != "Apart") && (_state.Coat.Dropped == true)
+			isLogicActive = true
+		
+		if missionState > 0
+			isLogicActive = true
+
+		if isLogicActive == true
+			currentPos = Vector(_state.Position.x, _state.Position.y, _state.Position.z)
+			
+			# -- CENTRALIZED INTEGRITY CHECKS --
+			if (missionState > 0) && (missionState < 5)
+				
+				# 1. COAT INTEGRITY
+				if _state.Coat.Dropped == false
+					fail_reason = "Mission Failed! You picked up your coat!"
+					thread.Goto("reset_sequence")
+
+				# 2. PREMATURE PICKUP
+				if (dropped_items.Count() - dropped_items_before_mission) < mission_drops_done
+					if (missionState < 3)
+						fail_reason = "Picked up too early! Resetting."
+						thread.Goto("reset_sequence")
+				
+				# 3. PREMATURE DROP
+				if (missionState == 1) && (just_dropped_flag == true)
+					fail_reason = "Dropped next item too early! Resetting."
+					thread.Goto("reset_sequence")
+				
+				# 4. NUDITY COMPLIANCE
+				if mission_drops_done == mission_total_items
+					if missionState != 3
+						complianceTimer = complianceTimer + _timediff
+						if complianceTimer > 2.0
+							if _state.Exposed.All == false
+								fail_reason = "Failed! You covered up!"
+								thread.Goto("reset_sequence")
+					else
+						complianceTimer = 0
+				else
+					complianceTimer = 0
+					
+				# 5. STAGE CHANGE
+				if _state.Position.stage != mission_start_stage
+					fail_reason = "Mission Failed! You left the area!"
+					thread.Goto("reset_sequence")
+
+			# -- STATE MACHINE --
+			
+			# STATE 0: WAITING FOR START
+			if missionState == 0
+				if just_dropped_flag == true
+						
+					wornCount = 0
+					c = 0
+					while c < all_tops.Count()
+						if _state.Cosplay[all_tops[c]] == true
+							wornCount = wornCount + 1
+						c = c + 1						
+					c = 0
+					while c < all_bottoms.Count()
+						if _state.Cosplay[all_bottoms[c]] == true
+							wornCount = wornCount + 1
+						c = c + 1
+					
+					mission_total_items = wornCount + 1
+					if (dropped_items.Count() > 1)
+						dropped_items_before_mission = (dropped_items.Count() - 1)
+					else
+						dropped_items_before_mission = 0					
+
+					if mission_total_items >= 2
+						# STAGE DISTANCE CONFIG
+						stage_max_dist = 60.0
+						if curStage == "Residence"
+							stage_max_dist = 60.0
+						elseif curStage == "Park"
+							stage_max_dist = 80.0
+						elseif curStage == "Convenience"
+							stage_max_dist = 10.0
+						elseif curStage == "StationFront"
+							stage_max_dist = 80.0
+						elseif curStage == "Mansion"
+							stage_max_dist = 30.0
+						elseif curStage == "ShoppingMall"
+							stage_max_dist = 90.0
+						elseif curStage == "FashionShop"
+							stage_max_dist = 12.0
+							
+						current_leg_dist = stage_max_dist / mission_total_items
+						mission_drops_done = 1
+						last_drop_pos = currentPos
+						mission_start_stage = curStage
+						missionState = 1 # Start Walking
+						
+						missionpanel.SetVisible(true)
+						missionpanel.SetGaugeVisible(true)
+					else
+						missionpanel.SetVisible(false)
+				else
+					missionpanel.SetVisible(false)
+				
+				just_dropped_flag = false 
+			
+			# STATE 1: WALKING LEG
+			elseif missionState == 1
+				diff = Vector3Sub(currentPos, last_drop_pos)
+				dist = Vector3Length(diff)
+				
+				prog = dist / current_leg_dist
+				if prog > 1.0
+					prog = 1.0
+				missionpanel.SetGaugeProgress(prog)
+				
+				dInt = Floor(dist)
+				lInt = Floor(current_leg_dist)
+				
+				missionpanel.SetText("Walk away (" + mission_drops_done + "/" + mission_total_items + "): " + dInt + "/" + lInt + "m")
+				
+				if dist >= current_leg_dist
+					missionState = 2
+					missionpanel.SetGaugeVisible(false)
+					
+					if mission_drops_done == mission_total_items
+						missionState = 3 # Pickup Phase
+						missionpanel.SetText("Distance reached! Go back and pick up everything.")
+					else
+						missionpanel.SetText("Distance reached! Drop item " + (mission_drops_done + 1) + ".")
+			
+			# STATE 2: READY FOR DROP
+			elseif missionState == 2
+				if just_dropped_flag == true
+					# Re-verify distance
+					diff = Vector3Sub(currentPos, last_drop_pos)
+					dist = Vector3Length(diff)
+					
+					if dist >= current_leg_dist
+						mission_drops_done = mission_drops_done + 1
+						last_drop_pos = currentPos
+						missionState = 1 # Back to walking
+						missionpanel.SetGaugeVisible(true)
+					else
+						fail_reason = "Moved closer before dropping! Fail!"
+						thread.Goto("reset_sequence")
+					
+					just_dropped_flag = false
+
+			# STATE 3: PICKUP PHASE
+			elseif missionState == 3
+				count = dropped_items.Count() - dropped_items_before_mission
+				missionpanel.SetText("Pick up remaining items: " + count)
+				
+				if count <= 0
+					# SUCCESS TRIGGER
+					missionState = 4
+					fail_reason = "Mission Complete! +110 RP"
+					AddCurrentEarnRP(110)
+					thread.Goto("reset_sequence")
+			
+			# STATE 5: RESET DELAY
+			elseif missionState == 5
+				missionpanel.SetText(fail_reason)
+				resetTime = resetTime + _timediff
+				if resetTime > 4.0
+					missionpanel.SetVisible(false)
+					missionState = 0
+					last_drop_pos = null
+					mission_drops_done = 0
+					mission_start_stage = ""
+					resetTime = 0
+					
+			# Consumption cleanup
+			if just_dropped_flag == true
+				just_dropped_flag = false
+				
+		else
+			# Logic Inactive
+			if missionpanel.GetVisible() == true
+				missionpanel.SetVisible(false)
+			missionState = 0
+			if just_dropped_flag == true
+				just_dropped_flag = false
+
+	# --- UI TIMERS ---
+	reset_sequence:
+		missionpanel.SetGaugeVisible(false)
+		missionState = 5
+		resetTime = 0
+
+	# ==================================================================================
+	# CHAT LOOP
+	# ==================================================================================
+	chat_loop:
+		statusText = "私服任务:关闭"
+		
+		if _save.MissionActive == true
+			statusText = "已全部回收"
+			
+		settingsChat.SetButtons(btnText, "在家中回收所有服装")
+		
+		listener_chat = CreateListenerLocal("wait_for_toggle")
+		
+		wait_for_toggle:
+			click = settingsChat.Clicked()
+			
+			# Button 0: Toggle ON/OFF
+			if click == false
+				if _save.MissionActive == true
+					_save.MissionActive = false
+					settingsChat.Add("Mission Deactivated.", "Right",silent=true)
+				else
+					_save.MissionActive = true
+					settingsChat.Add("Mission Activated.", "Right",silent=true)
+				thread.Goto("chat_loop")
+			
+			# Button 1: Retrieve All Logic
+			elseif click == 1
+				if _state.Position.stage == "Apart"
+					thread.Goto("retrieve_all_sequence")
+
+	# --- RETRIEVE ALL SUBROUTINE ---
+	retrieve_all_sequence:
+		# 1. Clear Current Scene Visuals
+		k = 0
+		while k < dropped_items.Count()
+			entry = dropped_items[k]
+			entry[1] = null # Area
+			entry[3] = null # Compass
+			area = null
+			compArea = null
+
+			k = k + 1
+		dropped_items = CreateList()
+		
+		# 2. Restore Inventory from Save (Global)
+		k = 0
+		while k < _save.DroppedData.Count()
+			sID = _save.DroppedData[k][0]
+			OwnCosplay(sID, owns=true)
+			k = k + 1
+		
+		# 3. Wipe Data
+		_save.DroppedData = CreateList()
+		pickup_queue = CreateList()
+		pending_drops = CreateList() # Clear pending as well
+		
+		settingsChat.Add("已全部回收", "Right",silent=true)
+		thread.Goto("chat_loop")
+
+analPlugs = CreateThread("anal_plugs")
+anal_plugs:
+	condSex = CreateCondition("(Action_SexStandBack, Action_SexKijoui)")
+
+	#("(Cosplay_m_cosplay_general_genital_anal_plug, Cosplay_m_cosplay_general_genital_beads, Cosplay_m_cosplay_general_genital_rubbit_tail, Cosplay_m_cosplay_general_genital_ninjin, Cosplay_m_cosplay_general_genital_tail_plug, Cosplay_m_cosplay_general_genital_plug_light, Cosplay_m_cosplay_succubus_cosplay_tail, Cosplay_m_cosplay_kemono_tail, Cosplay_m_cosplay_latex_pony_tail, Cosplay_m_cosplay_cow_tail)")
+	allPlugs = CreateList("m_cosplay_general_genital_anal_plug", "m_cosplay_general_genital_beads", "m_cosplay_general_genital_rubbit_tail", "m_cosplay_general_genital_ninjin", "m_cosplay_general_genital_tail_plug", "m_cosplay_general_genital_plug_light", "m_cosplay_succubus_cosplay_tail", "m_cosplay_kemono_tail", "m_cosplay_latex_pony_tail", "m_cosplay_cow_tail")
+	plug = CreateList()
+	plug[0] = CreateCondition("Cosplay_m_cosplay_general_genital_anal_plug")
+	plug[1] = CreateCondition("Cosplay_m_cosplay_general_genital_beads")
+	plug[2] = CreateCondition("Cosplay_m_cosplay_general_genital_rubbit_tail")
+	plug[3] = CreateCondition("Cosplay_m_cosplay_general_genital_ninjin")
+	plug[4] = CreateCondition("Cosplay_m_cosplay_general_genital_tail_plug")
+	plug[5] = CreateCondition("Cosplay_m_cosplay_general_genital_plug_light")
+	plug[6] = CreateCondition("Cosplay_m_cosplay_succubus_cosplay_tail")
+	plug[7] = CreateCondition("Cosplay_m_cosplay_kemono_tail")
+	plug[8] = CreateCondition("Cosplay_m_cosplay_latex_pony_tail")
+	plug[9] = CreateCondition("Cosplay_m_cosplay_cow_tail")
+	nrOfPlugs = plug.Count()
+
+	plugEquiped = CreateList()
+	plugFlag = CreateList()
+	i = 0
+	while i < nrOfPlugs
+		if plug[i].Check()
+			plugEquiped[i] = true
+		else
+			plugEquiped[i] = false
+		i = i + 1
+
+	t1 = 0
+	t2 = 0
+	lookingForPlugs = CreateListener("checking_plugs")
+
+	checking_plugs:
+	# 总开关
+		# =========================
+		# SAFE SYNC IN APART
+		# =========================
+		if _state.Position.stage == "Apart"
+			i = 0
+			while i < nrOfPlugs
+				plugEquiped[i] = plug[i].Check()
+				plugFlag[i] = null
+				i = i + 1
+
+			t1 = 0
+			t2 = 0
+
+		# =========================
+		# NORMAL LOGIC OUTSIDE APART
+		# =========================
+		else
+			i = 0
+			while i < nrOfPlugs # check each type of plug
+				if t1 > 2.0
+					if plug[i].Check() # if plug is equiped
+						if !plugEquiped[i] # and was not equiped before
+							plugFlag[i] = "start_insert"
+							t1 = 0
+					else
+						if plugEquiped[i]
+							plugFlag[i] = "start_remove"
+							t1 = 0
+					plugEquiped[i] = plug[i].Check() # save this frames equipment for the next check
+
+				if plugFlag[i] == "start_insert"
+					if t1 > 0
+						UnequipCosplay(allPlugs[i]) # hide plug
+						if !condSex.Check()
+							SetAction("InsertAnalPlug") # play animation
+						plugFlag[i] = "show_plug"
+						t2 = 0
+
+				if plugFlag[i] == "start_remove"
+					if t1 > 0
+						EquipCosplay(allPlugs[i])
+						if !condSex.Check()
+							SetAction("ExtractAnalPlug")
+						plugFlag[i] = "hide_plug"
+						t2 = 0
+
+				if plugFlag[i] == "show_plug"
+					if t2 > 0.8
+						EquipCosplay(allPlugs[i])
+						plugFlag[i] = null
+
+				if plugFlag[i] == "hide_plug"
+					if t2 > 1.5
+						UnequipCosplay(allPlugs[i])
+						plugFlag[i] = null
+
+				i = i + 1
+
+			t1 = t1 + _timediff
+			t2 = t2 + _timediff
+			if t1 > 9999
+				t1 = 0
+			if t2 > 9999
+				t2 = 0

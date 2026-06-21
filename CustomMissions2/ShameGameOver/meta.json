@@ -134,7 +134,7 @@
 			"maxvalue":20,
 			"default":10
 		},
-		{"type":"Label", "title":"Triggers game over when it reaches the max"},
+		{"type":"Label", "title":"Starts at this value. Triggers game over when it reaches 0"},
 		{
 			"name":"del_shame",
 			"title":"Shame fallout",
@@ -143,7 +143,14 @@
 			"maxvalue":30,
 			"default":10
 		},
-		{"type":"Label", "title":"Number of seconds to remove 1 shame when out of sight (0 = no fallout)"},
+		{"type":"Label", "title":"Number of seconds to restore 1 shame when out of sight (0 = no fallout)"},
+		{
+			"name":"rp_shame_recovery",
+			"title":"RP shame recovery",
+			"type":"String",
+			"default":"100"
+		},
+		{"type":"Label", "title":"Restore 1 shame for every this many earned RP (0 = disabled)"},
 		{
 			"name":"del_handcuffed",
 			"title":"Handcuffs modifier",

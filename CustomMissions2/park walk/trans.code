@@ -1,0 +1,92 @@
+
+# TRANSLATION_OVERRIDE = null
+
+register_translation:
+	if LANG_CODE == null
+		LANG_CODE = _args[0]
+		
+	if translation == null
+		translation = _args[1]
+		
+	if Global("translation_db") == null
+		#Log("Creating translation")
+		Global("translation_db", CreateList())
+	
+	translation_db[LANG_CODE] = translation
+	
+
+# do in-line look up of translation key
+loc:
+	key = _args[0]
+	entry = loc_entry(key)
+	if GetType(entry) == "String"
+		_result = entry
+	else
+		_result = entry.text
+
+
+# do suffix aware look up 
+tr:
+	key = _args[0]
+	if suffix == null
+		suffix = _args[1]
+	entry = loc_entry(key, suffix)
+	
+	if GetType(entry) == "String"
+		entry = CreateList(text=entry)
+		_result = CreateList(text=entry.text, entry=entry)
+	else
+		_result = CreateList(text=entry.text, entry=entry)
+
+
+# look up translation_db for suffixed line, and fall back if none exist.
+loc_entry:
+	key = _args[0]
+	handled = false
+
+	# Get translation database
+	db = Global("translation_db")
+
+	# Determine language (fallback to English)
+	lang = get_lang()
+
+	# Try suffix variant if available
+	if suffix == null
+		suffix = _args[1]
+		
+	if (suffix != null) && (suffix != "")
+		entry = db[lang][key + suffix]
+		if entry != null
+			_result = entry
+			handled = true
+			
+	# Fallback to base key
+	if !handled
+		entry = db[lang][key]
+
+		if entry == null
+			Log("ERROR: Translation key not found: " + key)
+			_result = CreateList(text=key)
+
+		_result = entry
+
+
+get_lang:
+
+	if TRANSLATION_OVERRIDE != null
+		_result = TRANSLATION_OVERRIDE
+
+	else
+		lang = _settings.language_override
+		
+		if (lang == null) || (lang == "")
+			lang = GetLanguage()
+		
+		db = Global("translation_db")
+		if db[lang] == null
+			if shown_missing_tranlation == null
+				Log("Could not find translation for language " + lang + ", falling back to En")
+				shown_missing_tranlation = true
+			lang = "En"
+		
+		_result = lang

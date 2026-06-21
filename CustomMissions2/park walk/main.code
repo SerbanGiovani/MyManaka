@@ -1,0 +1,1054 @@
+CreateRenSubtitleObject:
+	obj = CreateText()
+	obj.SetSize(30)
+	obj.SetAnchor(0.5, 0.4)
+	obj.SetFace(color=Color(0,0,0.6), dilate=0.4)
+	obj.SetOutline(color=Color(1,1,1), width=0.2)
+	obj.SetFrontLayer(true)
+	_result = obj
+	
+
+subtitles_ren = CreateRenSubtitleObject()
+subtitles_ren_interrupt = CreateRenSubtitleObject()
+
+subtitles_manaka = CreateText()
+subtitles_manaka.SetSize(30)
+subtitles_manaka.SetAnchor(0.5,0.4)
+subtitles_manaka.SetFace(color=Color(0.8,0.1,0.6), dilate=0.4)
+subtitles_manaka.SetOutline(color=Color(1,1,1), width=0.2)
+subtitles_manaka.SetFrontLayer(true)
+subtitles_manaka_internal = CreateText()
+subtitles_manaka_internal.SetSize(30)
+subtitles_manaka_internal.SetAnchor(0.5,0.4)
+subtitles_manaka_internal.SetFace(color=Color(0.4,0.1,0.3), dilate=0.4)
+subtitles_manaka_internal.SetOutline(color=Color(1,1,1), width=0.2)
+subtitles_manaka_internal.SetFrontLayer(true)
+
+subtitles_generic = CreateText()
+subtitles_generic.SetSize(30)
+subtitles_generic.SetAnchor(0.5,0.4)
+subtitles_generic.SetFace(color=Color(0.2,0.2,0.2), dilate=0.4)
+subtitles_generic.SetOutline(color=Color(1,1,1), width=0.2)
+subtitles_generic.SetFrontLayer(true)
+
+subtitle_thread = CreateThread("subtitles_manager")
+ecstasy_thread = CreateThread("ecstasy_manager")
+
+bus_init:
+	result = CreateList()
+	result.flags = CreateList()
+	_result = result
+	
+bus = bus_init()
+
+chat = null
+missionpanel = CreateMissionPanel()
+	
+zipsound = CreateAudio("zip.wav")
+gaspsound = CreateAudio("gasp.wav")
+orgasmsound = CreateAudio("orgasm.wav")
+	
+ren = null
+
+rengender = null
+
+globals = CreateList()
+
+mainthread = CreateThread("main")
+
+mp = CreateMissionPanel()
+
+#DumpVariable(_state, 6)
+
+gender_suffix:
+	if rengender == "male"
+		_result = ".male"
+	elseif rengender == "female"
+		_result = ".female"
+	elseif rengender == "nonbinary"
+		_result = ".nonbinary"
+	else
+		_result = null
+		
+
+main:
+	thread = _this
+	
+	start_subtitles_and_wait:
+		manager.Start(data=data)
+		_result = CreateListenerLocal("subtitle_listener", manager=manager, nextstep=nextstep)
+					
+					
+	
+	thread.Goto("init")
+	init:
+		#DumpVariable(GetAllWaypoints(),3)
+		
+		Log("Creating chat")
+		chat = CreateMessengerChat(loc("name_chat"), iconcolor = Color(0,1,0), icontext = "PB", icontextcolor = Color(1,1,1))	
+		chat.Add(loc("main_chat_boss_001"), "Left", user=loc("name_boss"), silent=true)
+		if (_save.checkpoint == null)
+			_save.checkpoint = 0
+			
+		if _save.checkpoint == 0
+			chat.SetButtons(loc("main_chat_button_001"))
+		else
+			chat.SetButtons(loc("main_chat_button_001"), loc("main_chat_button_002"))
+			
+		listener = CreateListenerLocal("waitforbuttoncheckpoint")
+			
+		waitforbuttoncheckpoint:
+			if chat.Clicked() == 0
+				chat.SetButtons()
+				chat.Add(loc("main_chat_button_001"), "Right", user="Manaka", silent=true)
+				_save.checkpoint = 0
+				thread.Goto("start")
+				
+			elseif chat.Clicked() == 1
+				chat.SetButtons()
+				chat.Add(loc("main_chat_button_002"), "Right", user=loc("name_manaka"), silent=true)
+				chat.Add(loc("main_chat_boss_002"), "Left", user=loc("name_boss"), silent=true)
+				thread.Goto("start")
+	
+	
+	
+	start:			
+		subtitle_thread.Init(bus=bus)
+		ecstasy_thread.Init(bus=bus)
+		ShowBlackscreen(fadein = 0.2, duration = 2, fadeout = 0.2)
+		SetStage("Park")
+		#CollectItem(itemtype="HandcuffKey")
+		SetPlayerPosition(x=30.6, y=52, z=35)
+		
+		w = CreateListenerLocal("wait_listener", duration=0.5, nextcheckpoint="start_2")
+		
+	start_2:
+		
+		npc_types = CreateList()
+		if _settings.ren_can_be_male
+			npc_types.Insert("NewMale")
+		if _settings.ren_can_be_female
+			npc_types.Insert("NewFemale")
+			
+		if npc_types.Count() == 0
+			npc_types = CreateList("NewFemale", "NewMale")
+			
+		ren_type = npc_types[ RandomInt(0, npc_types.Count()) ]
+		
+		rengender = get_gender(ren_type)
+		
+		if _settings.ren_non_binary == true
+			rengender = "nonbinary"
+		
+		ren = CreateNPC(ren_type, position=Vector(71.57, 51.00, 57.53), rotation=Quaternion(0.00000, 0.87335, 0.00000, 0.48710))	
+		ren.SkipStrangeness(true)
+		ren.Smartphone(false)
+		ren.Headset(false)
+		ren.Speed(0.8)
+				
+		UnequipAdultToy("AnalPlug", "Vibrator", "EyeMask", "Handcuff", "KeyHandcuff", "TimerHandcuff", "TitRotor", "KuriRotor", "PistonFuta", "PistonAnal", "PistonPussy")
+		UnlockHandcuffs()
+
+		if _save.checkpoint != 0
+			Log("Checkpoint " + _save.checkpoint)
+			if _save.checkpoint == 1
+				thread.Goto("checkpoint_1")
+			elseif _save.checkpoint == 2
+				thread.Goto("checkpoint_2")
+			elseif _save.checkpoint == 3
+				thread.Goto("checkpoint_3")
+			elseif _save.checkpoint == 4
+				thread.Goto("checkpoint_4")
+			elseif _save.checkpoint == 5
+				thread.Goto("checkpoint_5")
+			elseif _save.checkpoint == 6
+				thread.Goto("checkpoint_6")
+		else
+			thread.Goto("start_3")
+		
+	start_3:
+		SetPlayerPosition(x=77.14, y=51.00, z=55.69, rx=0.00000, ry=0.99808, rz=0.00000, rw=0.06192)
+
+		UnequipAllCosplay()
+		EquipCosplay(CreateList("m_cosplay_general_upper_race_pants", "m_cosplay_suit_chic_stocking", "m_cosplay_suit_chic_shirt", "m_cosplay_suit_chic_jacket", "m_cosplay_suit_chic_card", "m_cosplay_suit_chic_skirt", "m_cosplay_suit_chic_shoes"))
+		DropItem(itemtype="Coat", stage="Apart", x=1.8, y=0, z=0.5)
+		
+		chat.Add(loc("main_chat_boss_003"), "Left", user=loc("name_boss"), silent=true)
+			
+		w = CreateListenerLocal("chat_closed_listener", nextcheckpoint="start_4")
+		
+	start_4:
+		Log("starto")
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("start_4_manaka_internal_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("start_4_manaka_002", suffix=gender_suffix())))
+		#---Ren walks up from behind---
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("start_4_ren_003", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("start_4_manaka_internal_004", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("start_4_manaka_005", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("start_4_manaka_006", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("start_4_ren_007", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("start_4_manaka_008", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("start_4_manaka_009", suffix=gender_suffix())))
+		
+		
+		
+		wd = CreateList()
+		wd.Insert(WP_Move(Position=Vector(76.16, 51.00, 55.08))) #path
+		wd.Insert(WP_FacePlayerForever())
+		
+		subtitle_thread.Start(data=sd)
+		subtitle_finished_listener = CreateListenerLocal("subtitle_listener", manager=subtitle_thread, nextstep = "start_5")
+		
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=wd, npc=ren, bus=bus)
+		
+	start_5:
+	
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("start_5_ren_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("start_5_ren_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("start_5_ren_003", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("start_5_manaka_internal_004", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("start_5_manaka_005", suffix=gender_suffix())))
+		sd.Insert(SP_WaitForMarker(marker="ren_walk_to_tree"))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("start_5_ren_006", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("start_5_manaka_007", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("start_5_ren_008", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("start_5_manaka_internal_009", suffix=gender_suffix())))
+		sd.Insert(SP_WaitForMarker(marker="tree_walk_done"))
+		
+		wd = CreateList()
+		wd.Insert(WP_Move(Position=Vector(80.06, 50.05, 39.56))) #path
+		wd.Insert(WP_EmitMarker(marker="ren_walk_to_tree"))
+		wd.Insert(WP_Move(Position=Vector(83.76, 50.64, 23.63))) #tree
+		wd.Insert(WP_EmitMarker(marker="tree_walk_done"))
+		wd.Insert(WP_FacePlayerForever())
+		
+		subtitle_thread.Start(data=sd)
+		subtitle_finished_listener = CreateListenerLocal("subtitle_listener", manager=subtitle_thread, nextstep = "start_6")
+		
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=wd, npc=ren, max_distance=5, resume_distance=4, subtitles=subtitles_ren, interrupt_subtitle=subtitles_ren_interrupt, bus=bus)
+		
+	start_6:
+		sd = CreateList(
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("start_6_manaka_internal_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("start_6_manaka_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("start_6_ren_003", suffix=gender_suffix())))
+		#---Ren pulls out the cuffs.---
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("start_6_manaka_004", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("start_6_ren_005", suffix=gender_suffix())))
+		#---Ren steps closer---
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("start_6_manaka_006", suffix=gender_suffix())))
+
+		
+		subtitle_thread.Start(data=sd)
+		subtitle_finished_listener = CreateListenerLocal("subtitle_listener", manager=subtitle_thread, nextstep = "undress_1")
+		
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=CreateList(WP_FacePlayerForever()), max_distance=1.5, resume_distance=1, interrupt_subtitle=subtitles_ren_interrupt, npc=ren, face_player_when_waiting=true)
+		
+	checkpoint_1:
+		ren.Warp(position=Vector(83.76, 50.64, 23.63), rotation=Quaternion(0.00000, 0.99038, 0.00000, -0.13835))
+		
+		SetPlayerPosition(x=85.08, y=50.56, z=23.02, rx=0.00000, ry=-0.38852, rz=0.00000, rw=0.92144)
+		
+		UnequipAllCosplay()
+		EquipCosplay(CreateList("m_cosplay_general_upper_race_pants", "m_cosplay_suit_chic_stocking", "m_cosplay_suit_chic_shirt", "m_cosplay_suit_chic_jacket", "m_cosplay_suit_chic_card", "m_cosplay_suit_chic_skirt", "m_cosplay_suit_chic_shoes"))
+		DropItem(itemtype="Coat", stage="Apart", x=1.8, y=0, z=0.5)
+		
+		w = CreateListenerLocal("chat_closed_listener", nextcheckpoint="undress_1")
+	
+	
+	undress_1:
+		wd = CreateList()
+		wd.Insert(WP_FacePlayer())
+		
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=wd, npc=ren)
+		
+		_save.checkpoint = 1
+		mp.SetText(loc("undress_1_settext_001"))
+		mp.SetVisible(true)
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_1_ren_001", suffix=gender_suffix())))
+		#---Manaka reluctantly removes her jacket.---
+		subtitle_thread.Start(data=sd)
+		
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=CreateList(WP_FacePlayerForever()), max_distance=1.5, resume_distance=1, interrupt_subtitle=subtitles_ren_interrupt, npc=ren, face_player_when_waiting=true)
+		
+		jacket_prompt = CreateInteractArea(stage = "Park", x=85.08, y=50.56, z=23.02, r=0.3, text=loc("undress_1_interact_area_001"))
+		
+		condition = CreateCondition("!Cosplay_m_cosplay_suit_chic_jacket")
+		
+		double_condition:
+			if jacket_prompt.Check()
+				UnequipCosplay("m_cosplay_suit_chic_jacket")
+		
+			if condition.Check()
+				thread.Goto("undress_2")
+				
+		w = CreateListenerLocal("double_condition")
+		
+	undress_2:
+		mp.SetVisible(false)
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("undress_2_manaka_001", suffix=gender_suffix())))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="undress_3")
+		
+	undress_3:
+		mp.SetText(loc("undress_3_settext_002"))
+		mp.SetVisible(true)
+		prompt = CreateInteractArea(stage = "Park", x=84.12, y=50.62, z=23.50, r=0.3, text=loc("undress_3_interact_area_002"))
+		
+		double_condition:
+			if prompt.Check()
+				LockHandcuffs(handcuffstype="TimerHandcuff", duration=999)
+				thread.Goto("undress_5")
+				
+		w = CreateListenerLocal("double_condition")
+		
+		
+	undress_5:
+		mp.SetText(loc("undress_5_settext_003"))
+		mp.SetVisible(true)
+		prompt = CreateInteractArea(stage = "Park", x=85.08, y=50.56, z=23.02, r=0.3, text=loc("undress_5_interact_area_003"))
+		
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_5_ren_001", suffix=gender_suffix())))
+		subtitle_thread.Start(data=sd)
+		
+		double_condition:
+			if prompt.Check()
+				SetPlayerPosition(x=85.02, y=50.59, z=23.17, rx=0.00000, ry=0.99386, rz=0.00000, rw=-0.11065)
+				UnlockHandcuffs()
+				LockHandcuffs(handcuffstype="TimerHandcuff", attachtoobject=true, duration=999)
+				thread.Goto("undress_6")
+				
+		w = CreateListenerLocal("double_condition")
+		
+	undress_6:
+	
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_6_ren_001", suffix=gender_suffix())))
+		sd.Insert(SP_Blackout(delay = 1, duration=9, fadeout=0))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("undress_6_manaka_002", suffix=gender_suffix())))
+		sd.Insert(SP_EmitMarker(marker="ren_approach"))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_6_ren_003", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("undress_6_manaka_internal_004", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("undress_6_manaka_internal_005", suffix=gender_suffix())))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="undress_8")
+		
+		npc_escort = CreateThread("escort_manager")
+		wd = CreateList()
+		wd.Insert(WP_WaitForMarker(marker="ren_approach"))
+		wd.Insert(WP_Move(Position=Vector(84.51, 50.47, 22.67)))
+		wd.Insert(WP_FacePlayer())
+		wd.Insert(WP_Move(Position=Vector(84.83, 50.52, 22.83)))
+		wd.Insert(WP_FacePlayerForever())
+		npc_escort.StartEscort(data=wd, npc=ren, face_player_when_waiting=true)
+		
+		
+	undress_7:
+
+		mp.SetVisible(false)
+		sd = CreateList()
+
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("undress_7_manaka_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_7_ren_002", suffix=gender_suffix())))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="undress_8")
+		
+	undress_8:
+		zipsound.Play()
+		UnequipCosplay("m_cosplay_suit_chic_skirt")
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_8_ren_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("undress_8_manaka_internal_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("undress_8_manaka_003", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_8_ren_004", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_8_manaka_internal_005", suffix=gender_suffix())))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="undress_9")
+		
+	undress_9: 
+		UnequipCosplay("m_cosplay_suit_chic_shoes")
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_9_manaka_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_9_ren_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_9_ren_003", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_9_manaka_internal_004", suffix=gender_suffix())))
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="undress_10")
+	
+	undress_10:
+		UnequipCosplay("m_cosplay_suit_chic_stocking")
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_10_ren_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("undress_10_manaka_internal_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("undress_10_manaka_003", suffix=gender_suffix())))
+		sd.Insert(SP_EmitMarker(marker="ren_walk_back"))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_10_ren_004", suffix=gender_suffix())))
+		sd.Insert(SP_WaitForMarker(marker="ren_is_back"))
+		
+		#---Ren looks her over, standing in the moonlight---
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_10_ren_005", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("undress_10_manaka_006", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_10_ren_007", suffix=gender_suffix())))
+
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="undress_11")
+		
+		wd = CreateList()
+		wd.Insert(WP_WaitForMarker(marker="ren_walk_back"))
+		wd.Insert(WP_FaceDirection(Yaw=180))
+		wd.Insert(WP_Wait(duration=1))
+		wd.Insert(WP_Move(Position=Vector(85.84, 50.41, 22.30)))
+		wd.Insert(WP_EmitMarker(marker="ren_is_back"))
+		wd.Insert(WP_FacePlayerForever())
+		
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=wd, npc=ren, bus=bus)
+		
+	
+
+	undress_11:
+		UnlockHandcuffs()
+		
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("undress_11_manaka_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_11_ren_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("undress_11_manaka_003", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_11_ren_004", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("undress_11_manaka_005", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_11_ren_006", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("undress_11_manaka_007", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_11_ren_008", suffix=gender_suffix())))
+
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="undress_14")
+		
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=CreateList(WP_FacePlayerForever()), max_distance=3, resume_distance=2.5, interrupt_subtitle=subtitles_ren_interrupt, npc=ren, face_player_when_waiting=true)
+	
+	checkpoint_2:
+		UnequipAllCosplay()
+		EquipCosplay(CreateList("m_cosplay_suit_chic_shirt", "m_cosplay_general_upper_race_pants", "m_cosplay_suit_chic_card"))
+		DropItem(itemtype="Coat", stage="Apart", x=1.8, y=0, z=0.5)
+		
+		ren.Warp(position=Vector(83.76, 50.64, 23.63), rotation=Quaternion(0.00000, 0.16763, 0.00000, 0.98585))
+		SetPlayerPosition(x=85.08, y=50.56, z=23.02, rx=0.00000, ry=0.29320, rz=0.00000, rw=0.95605)
+		
+		w = CreateListenerLocal("chat_closed_listener", nextcheckpoint="undress_14")
+	
+	checkpoint_2_5:
+		
+	
+	undress_14:
+		_save.checkpoint = 2
+		
+		mp.SetText(loc("undress_14_settext_005"))
+		mp.SetVisible(true)
+		
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("undress_14_manaka_internal_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("undress_14_manaka_internal_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("undress_14_manaka_internal_003", suffix=gender_suffix())))
+		sd.Insert(SP_WaitForMarker(marker="on_path"))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("undress_14_manaka_internal_004", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("undress_14_manaka_internal_005", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("undress_14_manaka_internal_006", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_14_ren_007", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("undress_14_manaka_008", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("undress_14_ren_009", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("undress_14_manaka_internal_010", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("undress_14_manaka_internal_011", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("undress_14_manaka_internal_012", suffix=gender_suffix())))
+		sd.Insert(SP_WaitForMarker(marker="Offtrail"))
+		sd.Insert(SP_EmitMarker(marker="Offtrail_2"))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("undress_14_manaka_013", suffix=gender_suffix())))
+		
+		subtitle_thread.Start(data=sd)
+		#listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="walk_1")
+		
+		wd = CreateList()
+		wd.Insert(WP_Move(Position=Vector(78.96, 50.05, 39.37))) 
+		wd.Insert(WP_Wait(duration=2))
+		wd.Insert(WP_EmitMarker(marker="on_path"))
+		wd.Insert(WP_Wait(duration=3))
+		wd.Insert(WP_Move(Position=Vector(67.54, 50.05, 39.50))) 
+		wd.Insert(WP_Move(Position=Vector(50.14, 50.05, 39.52))) 
+		wd.Insert(WP_Move(Position=Vector(47.95, 50.01, 34.15))) 
+		wd.Insert(WP_EmitMarker(marker="Offtrail"))
+		wd.Insert(WP_WaitForMarker(marker="Offtrail_2"))
+		wd.Insert(WP_Move(Position=Vector(37.74, 51.11, 26.90))) 
+		#wd.Insert(WP_Move(Position=Vector(41.65, 50.05, 96.74))) 
+		#wd.Insert(WP_Move(Position=Vector(26.71, 50.69, 104.65))) 
+		wd.Insert(WP_FacePlayer())
+		
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=wd, npc=ren, max_distance=1.5, resume_distance=1, subtitles=subtitles_ren, interrupt_subtitle=subtitles_ren_interrupt, bus=bus, face_player_when_waiting=true)
+		
+		listener = CreateListenerLocal("escort_wait", manager=npc_escort, nextstep="strip_1")
+		
+		
+	checkpoint_3:
+		UnequipAllCosplay()
+		EquipCosplay(CreateList("m_cosplay_general_upper_race_pants", "m_cosplay_suit_chic_shirt", "m_cosplay_suit_chic_card"))
+		DropItem(itemtype="Coat", stage="Apart", x=1.8, y=0, z=0.5)
+		
+		ren.Warp(position=Vector(37.74, 51.11, 26.90), rotation=Quaternion(0.00000, -0.16763, 0.00000, 0.98585))
+		SetPlayerPosition(x=37.20, y=50.97, z=26.24, rx=0.00000, ry=0.60136, rz=0.00000, rw=0.79898)
+		
+		w = CreateListenerLocal("chat_closed_listener", nextcheckpoint="strip_1")
+	
+	strip_1:
+		mp.SetVisible(false)
+		_save.checkpoint = 3
+		
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("strip_1_ren_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("strip_1_manaka_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("strip_1_ren_003", suffix=gender_suffix())))
+		
+		
+		wd = CreateList()
+		wd.Insert(WP_FacePlayerForever())
+
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=wd, npc=ren, max_distance=5, resume_distance=4, subtitles=subtitles_ren, interrupt_subtitle=subtitles_ren_interrupt, bus=bus)
+				
+		subtitle_thread.Start(data=sd)
+		subtitle_finished_listener = CreateListenerLocal("subtitle_listener", manager=subtitle_thread, nextstep = "strip_2")
+		
+	strip_2:
+		mp.SetText(loc("strip_2_settext_006"))
+		mp.SetVisible(true)
+		shirt_prompt = CreateInteractArea(stage = "Park", x=37.43, y=51.01, z=26.55, r=0.3, text=loc("strip_2_interact_area_005"))
+		
+		condition = CreateCondition("!Cosplay_m_cosplay_suit_chic_shirt")
+		
+		double_condition:
+			if shirt_prompt.Check()
+				UnequipCosplay("m_cosplay_suit_chic_shirt")
+		
+			if condition.Check()
+				EquipCosplay("m_cosplay_general_upper_bra")
+				thread.Goto("strip_3")
+				
+		w = CreateListenerLocal("double_condition")
+	
+	strip_3:
+		sd=CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("strip_3_ren_001", suffix=gender_suffix())))
+		#---Ren pulls out a pair of sleek metal handcuffs from their jacket pocket.---
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("strip_3_manaka_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("strip_3_ren_003", suffix=gender_suffix())))
+
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="strip_4")
+		
+	strip_4:
+		mp.SetText(loc("strip_4_settext_007"))
+		mp.SetVisible(true)
+		prompt = CreateInteractArea(stage = "Park", x=37.43, y=51.01, z=26.55, r=0.3, text=loc("strip_4_interact_area_006"))
+		
+		double_condition:
+			if prompt.Check()
+				LockHandcuffs(handcuffstype="KeyHandcuff")
+				DropItem(itemtype="HandcuffKey", stage="Apart", x=0, y=0, z=0.5)
+				thread.Goto("strip_5")
+				
+		w = CreateListenerLocal("double_condition")
+		
+	strip_5:
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("strip_5_manaka_internal_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("strip_5_manaka_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("strip_5_ren_003", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("strip_5_ren_004", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("strip_5_manaka_internal_005", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("strip_5_manaka_internal_006", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("strip_5_manaka_007", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("strip_5_manaka_008", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("strip_5_ren_009", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("strip_5_ren_010", suffix=gender_suffix())))
+		sd.Insert(SP_Blackout(delay = 1, duration=9))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("strip_5_manaka_internal_011", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("strip_5_manaka_internal_012", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("strip_5_manaka_015", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("strip_5_ren_016", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("strip_5_manaka_017", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("strip_5_ren_018", suffix=gender_suffix())))
+
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("strip_5_manaka_internal_019", suffix=gender_suffix())))
+		
+		wd = CreateList()
+		wd.Insert(WP_FacePlayerForever())
+
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=wd, npc=ren, max_distance=1.5, resume_distance=1, subtitles=subtitles_ren, interrupt_subtitle=subtitles_ren_interrupt, bus=bus)
+		
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="strip_6")
+			
+	strip_6:
+		UnequipCosplay("m_cosplay_general_upper_race_pants")
+		gaspsound.Play()
+		sd = CreateList()
+		sd.Insert(SP_Ecstasy(key="jump", value=0.8))
+		#---Ren slides their hands under the waistband of her panties. They slowly drag them down over her hips and thighs until they pool at her ankles.---
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("strip_6_manaka_internal_001", suffix=gender_suffix())))
+		#---She shivers violently as the cool night air hits her bare skin directly. Ren steps back to admire their work.---
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("strip_6_ren_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("strip_6_manaka_internal_003", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("strip_6_manaka_004", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("strip_6_ren_005", suffix=gender_suffix())))
+
+		
+		wd = CreateList()
+		wd.Insert(WP_FacePlayerForever())
+
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=wd, npc=ren, max_distance=1.5, resume_distance=1, subtitles=subtitles_ren, interrupt_subtitle=subtitles_ren_interrupt, bus=bus)
+		
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="walk_1_1")
+		
+	
+	checkpoint_4:
+		UnequipAllCosplay()
+		EquipCosplay(CreateList("m_cosplay_general_upper_bra", "m_cosplay_suit_chic_card"))
+		DropItem(itemtype="Coat", stage="Apart", x=1.8, y=0, z=0.5)
+		LockHandcuffs(handcuffstype="KeyHandcuff")
+		DropItem(itemtype="HandcuffKey", stage="Apart", x=0, y=0, z=0.5)
+		
+		ren.Warp(position=Vector(37.74, 51.11, 26.90), rotation=Quaternion(0.00000, -0.16763, 0.00000, 0.98585))
+		SetPlayerPosition(x=37.20, y=50.97, z=26.24, rx=0.00000, ry=0.60136, rz=0.00000, rw=0.79898)
+		
+		w = CreateListenerLocal("chat_closed_listener", nextcheckpoint="walk_1_1")
+	
+	walk_1_1:
+		_save.checkpoint = 4
+		sd = CreateList()
+		sd.Insert(SP_Ecstasy(key="clamp", value=CreateList(min=0.1, max=0.9)))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("walk_1_1_ren_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("walk_1_1_manaka_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("walk_1_1_ren_003", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("walk_1_1_manaka_internal_004", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("walk_1_1_manaka_internal_005", suffix=gender_suffix())))
+		sd.Insert(SP_WaitForMarker(marker="on_gravel"))
+		#---They step back onto the paved path. Manaka walks slowly, her bare feet sinking into the cool stones, her hands clenched behind her back.---
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("walk_1_1_manaka_006", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("walk_1_1_ren_007", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("walk_1_1_manaka_internal_008", suffix=gender_suffix())))
+		sd.Insert(SP_Wait(duration=2.0))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("walk_1_1_ren_009", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("walk_1_1_manaka_internal_010", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("walk_1_1_ren_011", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("walk_1_1_manaka_internal_012", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("walk_1_1_ren_013", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("walk_1_1_manaka_014", suffix=gender_suffix())))
+		
+		
+		wd = CreateList()
+		wd.Insert(WP_Move(Position=Vector(38.75, 50.07, 44.62))) 
+		wd.Insert(WP_EmitMarker(marker="on_gravel"))
+		wd.Insert(WP_Move(Position=Vector(38.96, 50.06, 62.98))) 
+		wd.Insert(WP_EmitMarker(marker="at_corner"))
+		wd.Insert(WP_Move(Position=Vector(41.58, 50.06, 63.27))) 
+		wd.Insert(WP_Move(Position=Vector(41.65, 50.05, 96.74))) 
+		wd.Insert(WP_Move(Position=Vector(26.71, 50.69, 104.65))) 
+		wd.Insert(WP_FacePlayer())
+
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=wd, npc=ren, max_distance=1.5, resume_distance=1, subtitles=subtitles_ren, interrupt_subtitle=subtitles_ren_interrupt, bus=bus, face_player_when_waiting=true)
+		
+		subtitle_thread.Start(data=sd)
+		listener = CreateListenerLocal("escort_wait", manager=npc_escort, nextstep="vibe_1")
+		
+	checkpoint_5:
+		SetPlayerPosition(x=26.83, y=50.74, z=103.99, rx=0, ry=0.01866, rz=0, rw=0.99983)
+		ren.Warp(position=Vector(26.71, 50.69, 104.65), rotation=Quaternion(0.00000, -0.01866, 0.00000, 0.99983))
+		UnequipAllCosplay()
+		EquipCosplay(CreateList("m_cosplay_general_upper_bra", "m_cosplay_suit_chic_card"))
+		DropItem(itemtype="Coat", stage="Apart", x=1.8, y=0, z=0.5)
+		LockHandcuffs(handcuffstype="KeyHandcuff")
+		DropItem(itemtype="HandcuffKey", stage="Apart", x=0, y=0, z=0.5)
+		
+		w = CreateListenerLocal("chat_closed_listener", nextcheckpoint="vibe_1")
+	
+		#Park (26.83, 50.74, 103.99) Rotation: (0.00000, 0.01866, 0.00000, 0.99983)
+		
+	vibe_1:
+		_save.checkpoint = 5
+		sd = CreateList()
+		sd.Insert(SP_Ecstasy(key="clamp", value=CreateList(min=0.3, max=0.9)))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("vibe_1_ren_001", suffix=gender_suffix())))
+		#---Ren removes the lanyard---
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="vibe_2")
+		
+		wd = CreateList()
+		wd.Insert(WP_FacePlayerForever())
+
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=wd, npc=ren, max_distance=1.5, resume_distance=1, subtitles=subtitles_ren, interrupt_subtitle=subtitles_ren_interrupt, bus=bus)
+		
+	vibe_2:
+		UnequipCosplay("m_cosplay_suit_chic_card")
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("vibe_2_manaka_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("vibe_2_ren_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("vibe_2_manaka_internal_003", suffix=gender_suffix())))
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=CreateList(WP_FacePlayerForever()), npc=ren, max_distance=1.5, resume_distance=1, subtitles=subtitles_ren, interrupt_subtitle=subtitles_ren_interrupt, bus=bus)
+		
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="vibe_3")
+		
+	vibe_3:
+		UnequipCosplay("m_cosplay_general_upper_bra")
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("vibe_3_manaka_internal_001", suffix=gender_suffix())))
+		
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="vibe_4")
+		
+		wd = CreateList()
+		wd.Insert(WP_FacePlayerForever())
+
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=wd, npc=ren, max_distance=1.5, resume_distance=1, subtitles=subtitles_ren, interrupt_subtitle=subtitles_ren_interrupt, bus=bus, face_player_when_waiting=true)
+		
+	vibe_4:
+		UnlockHandcuffs()
+		
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("vibe_4_ren_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("vibe_4_manaka_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("vibe_4_ren_003", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("vibe_4_ren_004", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("vibe_4_manaka_internal_005", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("vibe_4_manaka_internal_006", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("vibe_4_manaka_007", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("vibe_4_ren_008", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("vibe_4_manaka_009", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("vibe_4_ren_010", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("vibe_4_ren_011", suffix=gender_suffix())))
+		#---Ren unzips the bag, revealing a sleek remote and two small, discreet vibrators.---
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("vibe_4_manaka_012", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("vibe_4_manaka_013", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("vibe_4_ren_014", suffix=gender_suffix())))
+
+		
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="vibe_5")
+		
+		wd = CreateList()
+		wd.Insert(WP_FacePlayerForever())
+
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=wd, npc=ren, max_distance=1.5, resume_distance=1, subtitles=subtitles_ren, interrupt_subtitle=subtitles_ren_interrupt, bus=bus, face_player_when_waiting=true)
+		
+		
+	vibe_5:
+		EquipAdultToy("Vibrator")
+		SetVibrator("Low")
+		DropItem(itemtype="VibeRemocon", stage="Apart", x=0.8, y=0, z=0.5)
+		sd = CreateList()
+		sd.Insert(SP_Ecstasy(key="clamp", value=CreateList(min=0.4, max=0.6)))
+		gaspsound.Play()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("vibe_5_manaka_internal_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("vibe_5_manaka_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("vibe_5_ren_003", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("vibe_5_manaka_004", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("vibe_5_ren_005", suffix=gender_suffix())))
+
+		
+		wd = CreateList()
+		wd.Insert(WP_FacePlayerForever())
+
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=wd, npc=ren, max_distance=1.5, resume_distance=1, subtitles=subtitles_ren, interrupt_subtitle=subtitles_ren_interrupt, bus=bus, face_player_when_waiting=true)
+
+		
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="walk_2")
+		
+		
+	checkpoint_6:
+		SetPlayerPosition(x=26.83, y=50.74, z=103.99, rx=0, ry=0.01866, rz=0, rw=0.99983)
+		ren.Warp(position=Vector(26.71, 50.69, 104.65), rotation=Quaternion(0.00000, -0.01866, 0.00000, 0.99983))
+		UnequipAllCosplay()
+		EquipAdultToy("Vibrator")
+		SetVibrator("Low")
+		DropItem(itemtype="Coat", stage="Apart", x=1.8, y=0, z=0.5)
+		DropItem(itemtype="VibeRemocon", stage="Apart", x=0.8, y=0, z=0.5)
+
+		
+		w = CreateListenerLocal("chat_closed_listener", nextcheckpoint="walk_2")
+	
+	walk_2:
+		_save.checkpoint = 6
+		mei = CreateNPC("PreviousFemale", position=Vector(56.02, 51.00, 66.852), body=11)	
+		mei.Smartphone(false)
+		mei.Headset(false)
+		mei.Speed(0.5)
+		mei.AddWaypoint(29) #sit down
+		mei.AddWaypoint(29)
+
+		aoi = CreateNPC("PreviousFemale", position=Vector(57.02, 51.00, 66.85), rotation=Quaternion(0.00000, 0.30850, 0.00000, 0.95122), body=14)
+		aoi.Smartphone(true)
+		aoi.Headset(false)
+		aoi.AddWaypoint(Vector(57.02, 51.00, 66.85))
+		
+		globals.mei = mei
+		globals.aoi = aoi
+		
+		SetVibrator("Low")
+		
+		
+		sd = CreateList()
+		sd.Insert(SP_Ecstasy(key="clamp", value=CreateList(min=0.4, max=0.6)))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("walk_2_manaka_internal_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("walk_2_manaka_internal_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("walk_2_ren_003", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("walk_2_manaka_004", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("walk_2_ren_005", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("walk_2_manaka_internal_006", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("walk_2_manaka_007", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("walk_2_ren_008", suffix=gender_suffix())))
+
+		#---They walk slowly, passing by a group of students sitting on a bench nearby. Manaka tenses up, but Ren squeezes her hand reassuringly.---
+
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="crowd_1")
+		
+		wd = CreateList()
+		wd.Insert(WP_Move(Position=Vector(41.43, 50.05, 96.47))) 
+		wd.Insert(WP_Move(Position=Vector(41.66, 50.05, 86.55))) 
+		wd.Insert(WP_Move(Position=Vector(43.84, 50.05, 85.86)))
+		wd.Insert(WP_Move(Position=Vector(44.04, 50.05, 76.78))) 
+		#wd.Insert(WP_Move(Position=Vector(26.71, 50.69, 104.65))) 
+		wd.Insert(WP_FacePlayer())
+		wd.Insert(WP_EmitMarker(marker="naked_walk_done"))
+		
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=wd, npc=ren, max_distance=1.5, resume_distance=1, subtitles=subtitles_ren, interrupt_subtitle=subtitles_ren_interrupt, bus=bus, face_player_when_waiting=true)
+
+	crowd_1:
+		taiga = CreateNPC("PreviousMale", position=Vector(65.49, 52.06, 74.60), rotation=Quaternion(0.00000, -0.33603, 0.00000, 0.94185), body=10)	
+		taiga.Smartphone(false)
+		taiga.Headset(false)
+		taiga.Speed(0.5)
+		taiga.AddWaypoint(Vector(65.49, 52.06, 74.60)) 
+		taiga.SkipStrangeness(true)
+
+
+		rio = CreateNPC("PreviousFemale", position=Vector(65.03, 52.04, 75.0), rotation=Quaternion(0.00000, 0.92061, 0.00000, 0.39049), body=11)
+		rio.Smartphone(false)
+		rio.Headset(false)
+		rio.SkipStrangeness(true)
+		rio.AddWaypoint(Vector(65.03, 52.04, 75.0)) 
+		
+		globals.taiga = taiga
+		globals.rio = rio
+		
+		sd = CreateList()
+		sd.Insert(SP_WaitForMarker(marker="stranger_walk_start"))
+		sd.Insert(SP_Message(subtitle=subtitles_generic, data=tr("crowd_1_generic_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("crowd_1_manaka_internal_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("crowd_1_ren_003", suffix=gender_suffix())))
+		
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("crowd_1_manaka_internal_004", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("crowd_1_ren_005", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("crowd_1_manaka_006", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_generic, data=tr("crowd_1_generic_007", suffix=gender_suffix())))
+		sd.Insert(SP_Ecstasy(key="jump", value=0.9))
+		sd.Insert(SP_Message(subtitle=subtitles_generic, data=tr("crowd_1_generic_008", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("crowd_1_manaka_internal_009", suffix=gender_suffix())))
+		sd.Insert(SP_WaitForMarker(marker="stranger_walk_done"))
+		
+
+		wd = CreateList()
+		wd.Insert(WP_Move(Position=Vector(48.08, 51.00, 75.27))) # up the stairs
+		wd.Insert(WP_EmitMarker(marker="stranger_walk_start"))
+		wd.Insert(WP_SetSpeed(speed=0.5))
+		wd.Insert(WP_Move(Position=Vector(52.42, 51.00, 71.26))) # start of strangers
+		wd.Insert(WP_Move(Position=Vector(56.05, 51.00, 65.93))) # middle of strangers 
+		wd.Insert(WP_Move(Position=Vector(64.03, 51.00, 61.59))) # middle of strangers 
+		wd.Insert(WP_Move(Position=Vector(65.84, 51.00, 65.66))) # end of strangers
+		wd.Insert(WP_SetSpeed(speed=0.8))
+		#wd.Insert(WP_Move(Position=Vector(26.71, 50.69, 104.65))) 
+		wd.Insert(WP_FacePlayer())
+		wd.Insert(WP_EmitMarker(marker="stranger_walk_done"))
+		
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=wd, npc=ren, max_distance=2, resume_distance=1.5, subtitles=subtitles_ren, interrupt_subtitle=subtitles_ren_interrupt, bus=bus, face_player_when_waiting=true)
+		
+		
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="crowd_2")
+		
+	crowd_2:
+		#globals.mei = null
+		#globals.aoi = null
+		
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("crowd_2_manaka_internal_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("crowd_2_manaka_internal_002", suffix=gender_suffix())))
+		sd.Insert(SP_WaitForMarker(marker="near_couple"))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("crowd_2_ren_003", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("crowd_2_manaka_004", suffix=gender_suffix())))
+		sd.Insert(SP_EmitMarker(marker="lover_walk_start"))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("crowd_2_ren_005", suffix=gender_suffix())))
+		#---Ren pauses nearby the couple---
+		sd.Insert(SP_WaitForMarker(marker="lover_walk_middle"))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("crowd_2_ren_006", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("crowd_2_manaka_007", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("crowd_2_ren_008", suffix=gender_suffix())))
+		#---Ren presses the button on the remote.---
+		sd.Insert(SP_Ecstasy(key="setvibrator", value="High"))
+		sd.Insert(SP_Ecstasy(key="clamp", value=CreateList(min=0.8, max=0.9)))
+		#---The vibration spikes sharply, sending a jolt of intense pleasure through her body. She stumbles slightly, catching herself on Ren's arm.---
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("crowd_2_manaka_009", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("crowd_2_ren_010", suffix=gender_suffix())))
+		#---They stand frozen for a moment, inches from the couple. The vibrator pulses relentlessly against her clit.---
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("crowd_2_manaka_internal_011", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("crowd_2_manaka_internal_012", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("crowd_2_manaka_internal_013", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("crowd_2_ren_014", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("crowd_2_manaka_015", suffix=gender_suffix())))
+		sd.Insert(SP_EmitMarker(marker="lover_walk_continue"))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("crowd_2_ren_016", suffix=gender_suffix())))
+		sd.Insert(SP_WaitForMarker(marker="lover_walk_done"))
+		
+		
+		wd = CreateList()
+		wd.Insert(WP_Move(Position=Vector(70.23, 52.06, 72.38))) # up the stairs
+		wd.Insert(WP_EmitMarker(marker="near_couple"))
+		wd.Insert(WP_WaitForMarker(marker="lover_walk_start"))
+		wd.Insert(WP_SetSpeed(speed=0.5))
+		wd.Insert(WP_Move(Position=Vector(67.20, 52.06, 75.77))) # start of lovers
+		wd.Insert(WP_EmitMarker(marker="lover_walk_middle"))
+		wd.Insert(WP_WaitForMarker(marker="lover_walk_continue"))
+		wd.Insert(WP_Move(Position=Vector(64.71, 52.06, 81.10))) # middle of lovers 
+		wd.Insert(WP_SetSpeed(speed=0.8))
+		wd.Insert(WP_Move(Position=Vector(65.00, 52.06, 87.70))) # end of lovers
+		wd.Insert(WP_Move(Position=Vector(61.27, 52.01, 90.86))) # garage 1
+		wd.Insert(WP_Move(Position=Vector(61.76, 52.01, 92.30))) # garage 2
+		
+		wd.Insert(WP_EmitMarker(marker="lover_walk_done"))
+		wd.Insert(WP_FacePlayerForever())
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=wd, npc=ren, max_distance=2, resume_distance=1.5, subtitles=subtitles_ren, interrupt_subtitle=subtitles_ren_interrupt, bus=bus, face_player_when_waiting=true)
+
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="orgasm_1")
+
+	
+		
+	orgasm_1:
+		
+		sd = CreateList()
+		#---Ren and Manaka reach a shed.---
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("orgasm_1_ren_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("orgasm_1_manaka_002", suffix=gender_suffix())))
+		#---Ren reaches down and grabs the remote, hovering their thumb over the power button.---
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("orgasm_1_ren_003", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("orgasm_1_manaka_004", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("orgasm_1_manaka_005", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("orgasm_1_manaka_006", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("orgasm_1_ren_007", suffix=gender_suffix())))
+		#---The world explodes into a white-hot haze of sensation.---
+		#---Manaka bites her lip hard to suppress a scream as the orgasm crashes over her. Her body convulses against Ren's hand and the tree trunk.---
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("orgasm_1_manaka_internal_008", suffix=gender_suffix())))
+
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("orgasm_1_manaka_internal_009", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("orgasm_1_manaka_internal_010", suffix=gender_suffix())))
+		sd.Insert(SP_Blackout(color=Color(0.5, 0.1, 0.3), duration=1, delay=0.5))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("orgasm_1_manaka_internal_011", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("orgasm_1_manaka_internal_012", suffix=gender_suffix())))
+		sd.Insert(SP_Blackout(color=Color(0.8, 0.8, 0.8), duration=1, delay=0.5))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("orgasm_1_manaka_internal_013", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("orgasm_1_ren_014", suffix=gender_suffix())))
+		sd.Insert(SP_Ecstasy(key="clamp", value=CreateList(min=0, max=1)))
+		sd.Insert(SP_Blackout(color=Color(0.5, 0.1, 0.3), duration=3, delay=0.75))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("orgasm_1_manaka_internal_015", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("orgasm_1_manaka_internal_016", suffix=gender_suffix())))
+		
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="orgasm_2")
+		
+		wd = CreateList()
+		wd.Insert(WP_FacePlayerForever())
+		
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=wd, npc=ren, face_player_when_waiting=true)
+		
+	orgasm_2:
+		orgasmsound.Play()
+		sd = CreateList()
+		sd.Insert(SP_Ecstasy(key="orgasm", value=2))
+		#---Manaka rides the wave of ecstasy, her legs shaking with the force of it.---
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("orgasm_2_manaka_001", suffix=gender_suffix())))
+		sd.Insert(SP_Ecstasy(key="setvibrator", value="Off"))
+		#---The orgasm subsides slowly, leaving Manaka panting and boneless against Ren.---
+		sd.Insert(SP_Blackout(color=Color(0.5, 0.1, 0.3), duration=3, delay=0.75))
+		sd.Insert(SP_Ecstasy(key="orgasm", value=2))
+		sd.Insert(SP_Wait(duration=8))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("orgasm_2_ren_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("orgasm_2_manaka_003", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("orgasm_2_ren_004", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("orgasm_2_manaka_005", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("orgasm_2_ren_006", suffix=gender_suffix())))
+
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="post_orgasm")
+		
+		wd = CreateList()
+		wd.Insert(WP_FacePlayerForever())
+		
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=wd, npc=ren, face_player_when_waiting=true)
+		
+	post_orgasm:
+		UnequipAdultToy("Vibrator")
+		globals= null
+	
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka_internal, data=tr("post_orgasm_manaka_internal_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("post_orgasm_manaka_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("post_orgasm_ren_003", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("post_orgasm_manaka_004", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("post_orgasm_ren_005", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("post_orgasm_manaka_006", suffix=gender_suffix())))
+		#---Manaka starts gathering her clothes---
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("post_orgasm_manaka_007", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("post_orgasm_ren_008", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("post_orgasm_manaka_009", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("post_orgasm_ren_010", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("post_orgasm_ren_011", suffix=gender_suffix())))
+
+		
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="post_orgasm_2")
+		
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=CreateList(WP_FacePlayerForever()), npc=ren, face_player_when_waiting=true)
+
+	post_orgasm_2:
+		EquipCosplay(CreateList("m_cosplay_suit_chic_stocking", "m_cosplay_general_upper_race_pants", "m_cosplay_suit_chic_skirt", "m_cosplay_school_hoodie_hoodie"))
+		
+		sd = CreateList()
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("post_orgasm_2_manaka_001", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("post_orgasm_2_ren_002", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("post_orgasm_2_manaka_003", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("post_orgasm_2_ren_004", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("post_orgasm_2_manaka_005", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("post_orgasm_2_ren_006", suffix=gender_suffix())))
+		#---They walk out of the park together, Manaka leaning heavily on Ren---
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("post_orgasm_2_manaka_007", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("post_orgasm_2_ren_008", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("post_orgasm_2_manaka_009", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_ren, data=tr("post_orgasm_2_ren_010", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_manaka, data=tr("post_orgasm_2_manaka_011", suffix=gender_suffix())))
+		sd.Insert(SP_Message(subtitle=subtitles_generic, data=tr("post_orgasm_2_generic_012", suffix=gender_suffix())))
+
+		listener = start_subtitles_and_wait(data=sd, manager=subtitle_thread, nextstep="post_orgasm_3")
+		
+		npc_escort = CreateThread("escort_manager")
+		npc_escort.StartEscort(data=CreateList(WP_FacePlayerForever()), npc=ren, face_player_when_waiting=true)
+				
+				
+		
+	post_orgasm_3:
+		subtitle_thread = null
+		ecstasy_thread = null
+		ren = null
+		
+	

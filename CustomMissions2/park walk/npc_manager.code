@@ -1,0 +1,518 @@
+WP_Move:
+	_result = CreateList(type="Move", Position=Position, Last=Last)
+	
+WP_Wait:
+	_result = CreateList(type="Pause", duration=duration)
+
+WP_FacePlayer:
+	_result = CreateList(type="FacePlayer")
+
+WP_FaceDirection:
+	_result = CreateList(type="FaceDirection", Yaw=Yaw)
+	
+WP_WaitForPlayer:
+	_result = CreateList(type="WaitForPlayer", Distance=Distance, Timeout=Timeout,InterruptMessage=InterruptMessage,ContinueAfterTimeout=ContinueAfterTimeout, InterruptFired=false)
+	
+WP_EmitMarker:
+	_result = CreateList(type="EmitMarker", marker=marker)
+
+WP_WaitForMarker:
+	_result = CreateList(type="WaitForMarker", marker=marker)
+
+WP_MoveToPlayer:
+	_result = CreateList(type="MoveToPlayer", Distance=Distance)
+	
+WP_FacePlayerWhenWaiting:
+	_result = CreateList(type="FacePlayerWhenWaiting", Enabled=Enabled)
+
+WP_FacePlayerForever:
+	_result = CreateList(type="FacePlayerForever")
+	
+WP_Ecstasy:
+	_result = CreateList(type="Ecstasy", key=key, value=value)	
+	
+WP_SetSpeed:
+	_result = CreateList(type="Ecstasy", speed=speed)
+
+escort_manager:
+
+	# Persistent state initialization
+	if this == null
+		this = CreateList()
+		this.data = data
+		this.npc = npc
+		this.index = 0
+		this.active = true
+		this.max_distance = max_distance
+		this.resume_distance = resume_distance
+		this.bus = bus
+		this.timer = 0
+		this.rotating = false
+		this.moving = false
+		this.waiting = false
+		this.waiting_for_player = false
+		this.interrupted = false
+		this.face_player_when_waiting = true
+		this.return_rotation = null
+
+	# Create runner
+	runner = CreateListenerLocal("escort_runner")
+
+
+	StartEscort:
+		this.data = data
+		this.npc = npc
+		this.id = npc.GetID()
+		this.index = -1
+		this.active = true
+		this.max_distance = max_distance
+		this.resume_distance = resume_distance
+		this.timer = 0
+		this.rotating = false
+		this.moving = false
+		this.waiting = false
+		this.waiting_for_player = false
+		this.interrupted = false
+		this.subtitles = subtitles
+		this.bus = bus
+		this.interrupt_subtitle = interrupt_subtitle
+		this.face_player_when_waiting = face_player_when_waiting
+		this.return_rotation = null
+
+		if this.max_distance == null
+			this.max_distance = 0
+		if this.face_player_when_waiting == null
+			this.face_player_when_waiting = true
+
+	Is_Active:
+		_result = this.active
+
+
+	escort_runner:
+
+		# 1. Handle interrupts (even if inactive)
+		if HandleInterrupts()
+
+		# 2. If inactive or NPC dead → stop
+		elseif !this.active
+			# nothing more
+		elseif !this.npc.IsAlive()
+			this.active = false
+
+		else
+
+			# 3. Distance-based pause/resume
+			HandleEscortPauseResume()
+
+			# 4. If interrupted or paused → only tick rotation
+			if this.interrupted || this.waiting_for_player
+				TickRotation()
+				
+			elseif this.face_player_forever
+				dir = Vector3Sub(_state.Position, this.npc.GetPosition())
+				this.rotate_target = yaw_from_direction(dir)
+				this.rotating = true
+				TickRotation()
+				
+			else
+
+				# 5. Tick in-progress actions (movement, rotation, timers)
+				if TickInProgressAction()
+					# still busy → stop here
+				else
+					# 6. Advance to next waypoint
+					AdvanceWaypoint()
+
+
+	HandleInterrupts:
+		_result = false
+		if this.bus != null
+			flags = this.bus.flags
+
+			# Start interrupt
+			flag = "escort." + this.id + ".interrupt"
+			if flags[flag] != null
+				Log("Interrupt")
+				_result = true
+				this.interrupted = true
+				#this.npc.Stopped(true)
+				this.npc.ClearWaypoints()
+				this.npc.AddWaypoint(this.npc.GetPosition()) # Necessary to stop the NPC walking off forever
+
+				if flags[flag+".face"]
+					dir = Vector3Sub(_state.Position, this.npc.GetPosition())
+					this.rotate_target = yaw_from_direction(dir)
+					this.rotating = true
+
+				flags[flag] = null
+				flags[flag+".face"] = null
+
+			# Clear interrupt
+			if flags["escort.interrupt.clear"] != null
+				Log("Interrupt Cleared")
+				_result = true
+				this.interrupted = false
+
+				
+				# Look at the previous waypoint (the one we were executing) 
+				prev = this.data[this.index] 
+				if (prev != null) && (prev.type == "Move") 
+					# Re-dispatch the same Move waypoint 
+					# (this will re-add the waypoint and restore correct heading) 
+					#npc_pos = this.npc.GetPosition()
+					#this.npc.Respawn(position=npc_pos, rotation=npc_pos)
+					
+					this.moving = true 
+					this.npc.AddWaypoint(prev.Position, last=prev.Last) 
+					
+					
+				
+				flags[flag+".clear"] = null
+
+
+	HandleEscortPauseResume:
+		# Player too far → pause escort
+		if (this.max_distance > 0) && (Vector3Distance(_state.Position, this.npc.GetPosition()) > this.max_distance)
+		
+			if !this.waiting_for_player
+				this.wait_distance = this.resume_distance
+				this.waiting_for_player = true
+				this.npc.Stopped(true)
+
+				if this.bus != null
+					flags = this.bus.flags
+					flags["subtitles.pause"] = true
+					flags["subtitles.interrupt"] = CreateList(subtitle=this.interrupt_subtitle,text="Hey! Keep up!",delay=0,fadein=0,duration=2,fadeout=0.1)
+
+				
+				
+			if this.face_player_when_waiting
+				# Store original heading only once
+				if this.return_rotation == null
+					this.return_rotation = yaw_from_direction(this.npc.GetPosition())
+
+				# Turn to face player
+				dir = Vector3Sub(_state.Position, this.npc.GetPosition())
+				this.rotate_target = yaw_from_direction(dir)
+				this.rotating = true
+
+		# Player caught up → resume
+		elseif this.waiting_for_player
+			dist = Vector3Distance(_state.Position, this.npc.GetPosition())
+			if dist < this.wait_distance
+				this.waiting_for_player = false
+				this.npc.Stopped(false)
+				if this.bus != null
+					this.bus.flags["subtitles.resume"] = true
+					
+				if this.face_player_when_waiting && (this.return_rotation != null)
+					# Rotate back to original heading
+					this.rotate_target = this.return_rotation
+					this.rotating = true
+					this.return_rotation = null
+					
+
+
+	TickRotation:
+		if this.rotating
+			finished = rotate_towards(npc=this.npc, look_target=this.rotate_target)
+			if finished
+				this.rotating = false
+				
+	TickInProgressAction:
+
+		# --- Update timers ---
+		if this.timer > 0
+			this.timer = this.timer - _timediff
+
+		# --- Update rotation ---
+		if this.rotating
+			finished = rotate_towards(npc=this.npc, look_target=this.rotate_target)
+			if finished
+				this.rotating = false
+
+		# --- Update movement ---
+		if this.moving && !this.rotating
+
+			if this.move_to_player_distance != null
+				dist = Vector3Distance(_state.Position, this.npc.GetPosition())
+
+				if dist <= this.move_to_player_distance
+					this.moving = false
+					this.move_to_player_distance = null
+				else
+					this.npc.ClearWaypoints()
+					this.npc.AddWaypoint(_state.Position)
+
+			else
+				if this.npc.Finished()
+					this.moving = false
+
+
+		# --- Face player while explicitly waiting ---
+		if this.face_player_when_waiting && (this.waiting || this.waiting_for_player || (this.timer > 0)) && !this.moving && !this.rotating
+
+			dir = Vector3Sub(_state.Position, this.npc.GetPosition())
+			this.rotate_target = yaw_from_direction(dir)
+			this.rotating = true
+			TickRotation()
+
+
+		# --- Decide whether we are still busy ---
+		if this.timer > 0 || this.rotating || this.moving
+			_result = true
+		else
+			_result = false
+
+
+				
+			
+	AdvanceWaypoint:
+
+		this.index = this.index + 1
+		entry = this.data[this.index]
+		
+		this.move_to_player_distance = null
+
+		if entry == null
+			this.active = false
+		else
+			DispatchWaypoint(entry=entry)
+
+	DispatchWaypoint:
+
+		if entry.type == "Move"
+			this.moving = true
+			this.waiting = false
+			this.npc.AddWaypoint(entry.Position, last=entry.Last)
+
+		elseif entry.type == "Pause"
+			this.timer = entry.duration
+
+		elseif entry.type == "FacePlayer"
+			dir = Vector3Sub(_state.Position, this.npc.GetPosition())
+			this.rotate_target = yaw_from_direction(dir)
+			this.rotating = true
+
+		elseif entry.type == "FaceDirection"
+			this.rotate_target = entry.Yaw
+			this.rotating = true
+
+		elseif entry.type == "WaitForPlayer"
+			HandleWaitForPlayer(entry=entry)
+
+		elseif entry.type == "EmitMarker"
+			if this.bus != null
+				#Log("Emitting Event " + entry.marker)
+				this.bus.flags[entry.marker] = true
+			else
+				Log("WARNING: Emitting marker but no bus to emit to")
+
+		elseif entry.type == "WaitForMarker"
+			HandleWaitForMarker(entry=entry)
+
+		elseif entry.type == "SetSpeed"
+			this.npc.Speed(entry.speed)
+			
+		elseif entry.type == "MoveToPlayer"
+			this.moving = true
+			this.waiting = false
+			this.move_to_player_distance = entry.Distance
+			
+		elseif entry.type == "FacePlayerForever"
+			this.face_player_forever = true
+			
+		elseif entry.type == "Ecstasy"
+			if this.bus != null
+				this.bus.flags["ecstasy." + entry.key] = entry.value
+			else
+				Log("WARNING: Ecstasy marker but no bus to emit to")
+
+
+
+
+	HandleWaitForPlayer:
+
+		dist = Vector3Distance(_state.Position, this.npc.GetPosition())
+
+		if dist <= entry.Distance
+			# continue
+		else
+			entry.Timeout = entry.Timeout - _timediff
+
+			if entry.Timeout <= 0
+
+				if (entry.InterruptMessage != null) && !entry.InterruptFired
+					if this.bus != null
+						this.bus.flags["subtitles.interrupt"] = CreateList(subtitle=this.interrupt_subtitle,text=entry.InterruptMessage,duration=3)
+					entry.InterruptFired = true
+					entry.Timeout = 5.0
+					this.index = this.index - 1
+
+				else
+					if entry.ContinueAfterTimeout
+						# continue
+					else
+						entry.Timeout = 2.0
+						this.index = this.index - 1
+
+			else
+				this.index = this.index - 1
+
+
+	HandleWaitForMarker:
+		this.waiting = true
+		if this.bus != null
+			if this.bus.flags[entry.marker]
+				this.bus.flags[entry.marker] = null
+			else
+				this.index = this.index - 1
+		else
+			Log("WARNING: Waiting for marker but no bus to wait for")
+			Log("WARNING: This will wait forever")
+
+
+escort_wait:
+	if manager.Is_Active() == false
+		thread.Goto(nextstep)
+		
+
+
+	
+PI = 3.14159
+
+atan2: #(y, x) 
+	if y == null
+		y = _args[0]
+		x = _args[1]
+		
+	if x > 0
+		_result = Atan(y / x) 
+		
+	elseif x < 0
+		if y >= 0
+			_result = Atan(y / x) + PI 
+		else 
+			_result = Atan(y / x) - PI 
+	else # x == 0 
+		if y > 0
+			_result = PI / 2 
+		elseif y < 0
+			_result = -PI / 2 
+		else
+			_result = 0 # undefined, but fine
+			
+
+yaw_from_quat: #q
+	if q == null
+		q = _args[0]
+	
+	y = q.ry
+	w = q.rw
+	
+	sin_term = 2 * (w * y)
+	cos_term = 1 - 2 * (y * y)
+	
+	yaw_rad = atan2(sin_term, cos_term)
+	_result = yaw_rad * 180 / PI
+
+clamp_angle: # a
+	a = _args[0]
+	while a > 180
+		a = a - 360
+		
+	while a < (-180)
+		a = a + 360
+		
+	_result = a
+
+slerp_angle: #(a0, a1, t)
+	a0 = _args[0]
+	a1 = _args[1]
+	t = _args[2]
+	
+	delta = a1 - a0
+	
+	# wrap to [-180, 180]
+	delta = clamp_angle(delta)
+		
+	_result = a0 + (delta * t)
+
+quat_from_yaw:
+	angle_deg = _args[0]
+	
+	half = (angle_deg * PI / 180) * 0.5
+
+	_result = Quaternion(0, Sin(half), 0, Cos(half))
+
+slerp_yaw_quat: #(q, target_angle_deg, t)
+	if q == null
+		q = _args[0]
+		target_angle_deg = _args[1]
+		t = _args[2]
+	
+	# 1. Extract current yaw
+	a0 = yaw_from_quat(q)
+
+	# 2. Interpolate angle
+	a = slerp_angle(a0, target_angle_deg, t)
+
+	# 3. Convert back to quaternion
+	_result = quat_from_yaw(a)
+
+
+
+yaw_from_direction: #dir
+	dir = _args[0]
+	
+	# dir.x and dir.z define the horizontal direction
+	
+	yaw_rad = atan2(dir.x, dir.z)
+	_result = yaw_rad * 180 / PI
+	
+	
+rotate_to_face: # (npc, npcB_position, t):
+	npc = _args[0]
+	
+	npcB_pos = _args[1]
+	t = _args[2]
+	
+	
+	# 1. direction vector
+	dir = Vector3Sub(npcB_pos, npc.GetPosition())
+	
+	# 2. convert to yaw
+	target_yaw = yaw_from_direction(dir)
+	
+	
+	_result = rotate_towards(npc=npc, look_target=target_yaw)
+
+
+rotate_towards: # npc, look_target=look_target
+	# Returns true when rotation is finished
+
+	current = yaw_from_quat(npc.GetPosition())
+	target  = look_target
+
+	delta = target - current
+	delta = clamp_angle(delta)
+
+	minTurnThreshold = 3.0   # degrees; dead zone
+	maxTurnPerTick   = 5.0   # degrees per frame
+
+	# 1. If the angle is too small, treat as finished and do nothing
+	if Abs(delta) < minTurnThreshold
+		_result = true
+		# no warp
+	else
+		# 2. Compute the next step toward the target
+		if Abs(delta) <= maxTurnPerTick
+			angle = target
+			_result = true
+		else
+			angle = current + Sign(delta) * maxTurnPerTick
+			_result = false
+
+		# 3. Apply the rotation
+		new_q = quat_from_yaw(angle)
+		npc.Warp(rotation = new_q)

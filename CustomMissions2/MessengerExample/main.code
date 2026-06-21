@@ -1,0 +1,126 @@
+mainthread = CreateThread("main")
+
+main:
+	thread = _this
+	
+	chat = CreateMessengerChat("Messenger Example", iconcolor = Color(1,0,0), icontext = "MEx", icontextcolor = Color(1,1,1))	
+		
+	thread.Goto("step1")
+	
+	step1:
+		chat.Add("This is an example to showcase the text messenger feature", "Left", user="Developer", silent=true)
+		chat.Add("You can also also add buttons to allow predefined inputs", "Left", user="Developer", silent=true)
+		chat.Add("Try clicking the button.", "Left", user="Developer", silent=true)
+		chat.SetButtons("THE BUTTON")
+		
+		listener = CreateListener("waitforbutton")
+		
+		waitforbutton:
+			if chat.Clicked() != null
+				thread.Goto("step2")	
+	step2:
+		chat.SetButtons()
+		chatdata = CreateList()
+		chatdata[0] = CreateList(text="I pressed the button", align="Right", user="", delay=0)
+		chatdata[1] = CreateList(text="Good", align="Left", user="Developer", delay=1)
+		chatdata[2] = CreateList(text="You can add images, like this", align="Left", user="Developer", delay=1.5)
+		chatdata[3] = CreateList(text=GetImageReference("Images/test.png"), align="Left", user="Developer", delay=1.5)
+		chatdata[4] = CreateList(text="You can also add photos.", align="Left", user="Developer", delay=2)
+		chatdata[5] = CreateList(text="Click the button to open the gallery and select an image.", align="Left", user="Developer", delay=2)
+		thread.Goto("chatoutput", data=chatdata, nextstep="step2b")
+	step2b:
+		chat.SetButtons("Open Gallery")
+			
+		thread.Goto("selectimage")
+		
+		selectimage:
+			gallery = CreateGallery()
+				
+			listener = CreateListener("waitforbutton")
+			listener2 = CreateListener("waitforconfirm")
+			
+			waitforbutton:
+				if chat.Clicked() != null
+					gallery.Show()					
+			
+			waitforconfirm:
+				if gallery.Confirmed()
+					selection = gallery.GetSelection()
+					if selection.Count()>0
+						chat.SetButtons()
+						thread.Goto("step3", image=selection["0"])
+	step3:
+		chat.Add(image, "Right", silent=true)
+		chatdata = CreateList()
+		chatdata[0] = CreateList(text="Nice.", align="Left", user="Developer", delay=1)
+		chatdata[1] = CreateList(text="You can also take photos by script.\nLike this:", align="Left", user="Developer", delay=2)
+		chatdata[2] = CreateList(delay=2) #delay photo output
+		thread.Goto("chatoutput", data=chatdata, nextstep="step3b")
+	step3b:	
+		direction = Vector3Rotate(_state.Position, Vector(0,0.3,0.3)) #rotate vector (0,0,1) to get player direction
+		direction = Vector3Rotate(Quaternion(0, 0.3826834, 0, 0.9238795), direction) #rotate by 45° around Y-axis
+		position = Vector3Sub(_state.CameraTarget.Crotch, direction)	
+		snapshotobject = CreateSnapshot(position = position, direction = direction, width = 864, height = -1, fov = 60)
+		thread.Goto("step4", sso=snapshotobject)
+	step4:
+		file = sso.Save(hidden = true)
+		chat.Add(file, "Left", user="Developer", silent=true)
+		DeleteSnapshot(file) #flags the image as deleted, it will be removed on the next start of the game if there is no reference to it in any save file
+		sso = null #destroy screenshot object so it doesn't render repeatedly
+		
+		chatdata = CreateList()
+		chatdata[0] = CreateList(text="Now lets try something more spicy.", align="Left", user="Developer", delay=2)
+		chatdata[1] = CreateList(text="Go outside and take a picture of yourself doing a double peace while naked.", align="Left", user="Developer", delay=2)
+		chatdata[2] = CreateList(text="The gallery will be filtered to only show eligible pictures.", align="Left", user="Developer", delay=2)
+		thread.Goto("chatoutput", data=chatdata, nextstep="step4b")
+	step4b:
+		chat.SetButtons("Open Gallery")
+		
+		thread.Goto("selectimage")
+		
+		selectimage:
+			gallery = CreateGallery("gallery_callback")
+			#condition = CreateCondition("[Action_AhegaoDoublePiece,Exposed_All]")
+			#area = CreateArea(type="sphere", stage="Residence", x=0, y=0, z=0, r=1000, outline=false, compass=false)
+			#gallery = CreateGallery(condition, area) #can also use coditions and areas/zones
+				
+			listener = CreateListener("waitforbutton")
+			listener2 = CreateListener("waitforconfirm")
+			
+			gallery_callback: #will be called repeatedly for each image
+				if (data.Position.stage != "Apart") && (data.Action == "AhegaoDoublePiece") && (data.Exposed.All)
+					_result = true
+			
+			waitforbutton:
+				if chat.Clicked() != null
+					gallery.Show()					
+			
+			waitforconfirm:
+				if gallery.Confirmed()
+					selection = gallery.GetSelection()
+					if selection.Count()>0
+						chat.SetButtons()
+						thread.Goto("step5", image=selection["0"])
+	step5:
+		chat.Add(image, "Right", silent=true)
+		chat.Add("--END OF SHOWCASE--", "Left", silent=true)
+		
+	chatoutput:
+		if index == null
+			index = 0
+		listener = CreateListener("delay", duration=data[index].delay)
+			
+		delay:
+			if time == null
+				time = 0
+			time = time + _timediff
+			if time > duration
+				if data[index].text != null
+					if data[index].user == null
+						chat.Add(data[index].text, data[index].align, silent=true)
+					else
+						chat.Add(data[index].text, data[index].align, user=data[index].user, silent=true)
+				if data[index+1] != null
+					thread.Goto("chatoutput", data=data, index=index+1, nextstep=nextstep)
+				else
+					thread.Goto(nextstep)

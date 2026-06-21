@@ -1,0 +1,81 @@
+penaltyVibrator = CreateThread("penaltyVibrator")
+
+penaltyVibrator:
+	thread = _this
+	thread.Goto("haveRemote")
+
+	waitForDroppingRemote:
+		if _state.Items.VibeRemocon == 0
+			thread.Goto("notHaveRemote")
+
+	autoStrength:
+		if _state.Items.VibeRemocon > 0
+			thread.Goto("haveRemote")
+
+		if strength == null
+			strength = -1
+		if last_stage_change == null || _stagechanged
+			last_stage_change = _time
+
+		prev = strength
+
+		if hiding()
+			strength = 3
+		elseif _state.Dashing
+			strength = 2
+		elseif _state.Moving
+			strength = 1
+		else
+			strength = 0
+
+		if _time - last_stage_change < 0.5
+			# Suppress penalties for a bit after changing stages, since NPCArea might not be set yet
+			strength = prev
+		if prev != strength
+			set_toys(strength)
+
+	haveRemote:
+		listener = CreateListener("waitForDroppingRemote")
+
+	notHaveRemote:
+		listener = CreateListener("autoStrength")
+
+set_toys:
+	piston_strength = _args[0]
+	vibe_strength = _args[0]
+	if vibe_strength > 0
+		vibe_strength -= 1
+	if _settings.piston
+		SetPiston(piston_strength)
+	if _settings.vibrator
+		SetVibrator(vibe_strength)
+
+# Areas exempt from the hiding penalty because they aren't hidden
+public_areas = CreateList()
+# Park entrance (except for behind the sign)
+public_areas.Insert(CreateArea(type="sphere", stage="Park", x=68, y=50, z=24.7, r=4.6))
+public_areas.Insert(CreateArea(type="sphere", stage="Park", x=70, y=50, z=30.2, r=4.2))
+public_areas.Insert(CreateArea(type="sphere", stage="Park", x=68, y=50, z=34.7, r=4))
+# Mall elevator area
+public_areas.Insert(CreateArea(type="cylinder", stage="ShoppingMall", x=51, y=-8.6, z=-20, r=4, h=12))
+
+public_zone = CreateZone(public_areas)
+public_zone.SetVisible(false)
+
+# Extra areas that trigger the hiding penalty because they're hidden
+private_areas = CreateList()
+# House by apartment building
+private_areas.Insert(CreateArea(type="sphere", stage="Mansion", x=21.2, y=-0.1, z=152, r=5))
+private_areas.Insert(CreateArea(type="sphere", stage="Mansion", x=23, y=-0.1, z=149, r=3))
+# Stalls in park bathroom
+private_areas.Insert(CreateArea(type="sphere", stage="Park", x=123.5, y=49, z=122, r=1.6))
+private_areas.Insert(CreateArea(type="sphere", stage="Park", x=125, y=49, z=121, r=0.5))
+private_areas.Insert(CreateArea(type="sphere", stage="Park", x=122, y=49, z=121, r=0.5))
+private_areas.Insert(CreateArea(type="sphere", stage="Park", x=122, y=49, z=123, r=0.5))
+private_areas.Insert(CreateArea(type="sphere", stage="Park", x=125, y=49, z=123, r=0.5))
+
+private_zone = CreateZone(private_areas)
+private_zone.SetVisible(false)
+
+hiding:
+	_result = (!_state.NPCArea || (_settings.tweak_hiding && (private_zone.Inside() && !_state.InOpenToilet))) && (!_settings.tweak_hiding || (!public_zone.Inside()))

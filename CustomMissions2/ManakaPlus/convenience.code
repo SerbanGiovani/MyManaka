@@ -1,0 +1,575 @@
+manakaplus_v22_convenience:
+	thread = _this
+	mission_active = false
+	active_stage = ""
+	missionpanel = CreateMissionPanel()
+	missionpanel.SetVisible(false)
+	missionpanel.SetGaugeVisible(false)
+	missionpanel.SetRPText("")
+	convenience_start_zone = null
+	convenience_global_zone = null
+	convenience_naked_panel = null
+	convenience_crowded_panel = null
+	convenience_naked_duration = 0
+	convenience_naked_started = false
+	convenience_coat_moved = false
+	convenience_challenge_state = 0
+	convenience_haigure_duration = 0
+	convenience_rp_target = 300
+	convenience_rp_progress = 0
+	convenience_rp_last_total = 0
+	convenience_rp_was_ready = false
+	convenience_blindfold_duration = 0
+	convenience_blindfold_force_timer = 0
+	convenience_showing_duration = 0
+	convenience_toy_npc_duration = 0
+	convenience_moving_blindfold_duration = 0
+	convenience_object_handcuff_duration = 0
+	convenience_dildo_duration = 0
+	convenience_bonus_zone = null
+	convenience_bonus_handbra_duration = 0
+	convenience_bonus_curse_duration = 0
+	convenience_bonus_force_timer = 0
+	convenience_npc_a = null
+	convenience_npc_b = null
+	convenience_npc_c = null
+	convenience_npcs_spawned = false
+	warning_sound = CreateAudio("Asset/Simple_ding_sound.mp3")
+
+	idle:
+		mission_active = false
+
+	start_convenience:
+		warning_sound.Play()
+		mission_active = true
+		active_stage = "Convenience"
+		mainthread.UpdateHub()
+
+		if _state.Sitting
+			SetAction("StandUp")
+
+		SetStage("Convenience",daytime=true)
+		teleport_wait = 0
+		listener = CreateListenerLocal("convenience_teleport_wait")
+
+	convenience_teleport_wait:
+		if mission_active
+			teleport_wait = teleport_wait + _timediff
+			if teleport_wait > 0.5
+				SetPlayerPosition(x=-3.20, y=0.12, z=-14.29, rx=0.00000, ry=1.00000, rz=0.00000, rw=0.00000)
+				thread.Goto("convenience_start")
+
+	convenience_start:
+		# Convenience Store first setup. Small interact point + hidden whole-map zone.
+		convenience_start_area = CreateArea(type="sphere", stage="Convenience", x=-3.20, y=0.12, z=-14.29, r=0.5, outline=true, compass=true)
+		convenience_start_zone = CreateZone(convenience_start_area)
+		convenience_start_zone.SetVisible(true)
+		convenience_start_zone.SetColor(1,0.75,0.5)
+
+		convenience_global_area = CreateArea(type="sphere", stage="Convenience", x=-0.93, y=0.12, z=-10.97, r=999, outline=false, compass=false)
+		convenience_global_zone = CreateZone(convenience_global_area)
+		convenience_global_zone.SetVisible(false)
+		convenience_global_zone.SetColor(0.4,0.8,1)
+
+		convenience_bonus_area = CreateArea(type="sphere", stage="Convenience", x=-0.14, y=0.12, z=-7.94, r=0.3, outline=true, compass=true)
+		convenience_bonus_zone = CreateZone(convenience_bonus_area)
+		convenience_bonus_zone.SetVisible(false)
+		convenience_bonus_zone.SetColor(1,0,0)
+
+		convenience_naked_panel = CreateMissionPanel()
+		convenience_naked_panel.SetVisible(false)
+		convenience_naked_panel.SetGaugeVisible(true)
+		convenience_naked_panel.SetRPText("")
+
+		convenience_crowded_panel = CreateMissionPanel()
+		convenience_crowded_panel.SetVisible(false)
+		convenience_crowded_panel.SetGaugeVisible(false)
+		convenience_crowded_panel.SetRPText("")
+
+		convenience_condition_naked = CreateCondition("[Exposed_All]")
+		convenience_condition_handbra = CreateCondition("[Action_Tebura]")
+		convenience_condition_haigure = CreateCondition("[Action_Haigure]")
+		convenience_condition_no_dash = CreateCondition("[!Dashing]")
+		convenience_condition_showing = CreateCondition("[ShowingOff]")
+		convenience_condition_toy_npc = CreateCondition("[AdultToy_Vibrator,AdultToy_TitRotor,AdultToy_KuriRotor,VibrationRandom,NearNPC]")
+		convenience_condition_blindfold_moving = CreateCondition("[AdultToy_EyeMask,Moving]")
+		convenience_condition_handcuffs_object = CreateCondition("[HandcuffsObject]")
+		convenience_condition_dildo = CreateCondition("[(Action_UseDildoFloorPussy1,Action_UseDildoFloorAnal1,Action_UseDildoWallPussy1,Action_UseDildoWallAnal1,Action_UseDildoWallFella1)]")
+		convenience_condition_moving = CreateCondition("[Moving]")
+		convenience_naked_duration = 0
+		convenience_naked_started = false
+		convenience_coat_moved = false
+		convenience_challenge_state = 0
+		convenience_haigure_duration = 0
+		convenience_rp_target = 300
+		convenience_rp_progress = 0
+		convenience_rp_last_total = GetCurrentEarnRP()
+		convenience_rp_was_ready = false
+		convenience_blindfold_duration = 0
+		convenience_blindfold_force_timer = 0
+		convenience_showing_duration = 0
+		convenience_toy_npc_duration = 0
+		convenience_moving_blindfold_duration = 0
+		convenience_object_handcuff_duration = 0
+		convenience_dildo_duration = 0
+		convenience_bonus_handbra_duration = 0
+		convenience_bonus_curse_duration = 0
+		convenience_bonus_force_timer = 0
+		convenience_npc_a = null
+		convenience_npc_b = null
+		convenience_npc_c = null
+		convenience_npcs_spawned = false
+
+
+		listener = CreateListenerLocal("convenience_listener")
+		mainthread.ArmStageWatch()
+
+	convenience_listener:
+		if mission_active
+			# Global stage reset: Convenience Store stage stays active only while player remains in Convenience.
+			# If the player changes map during an active Convenience challenge, reset immediately so Messenger returns to Stage Selection.
+			if mission_active
+				if _state.Position.stage != "Convenience"
+					mainthread.RequestReset()
+				if convenience_naked_started && _stagechanged
+					mainthread.RequestReset()
+
+			if convenience_naked_started == false
+				if convenience_start_zone.Inside()
+					convenience_naked_panel.SetVisible(true)
+					convenience_naked_panel.SetText("白天全裸保持 5 秒，开始全裸挑战")
+					convenience_naked_panel.SetRPText("")
+					convenience_naked_panel.SetGaugeVisible(true)
+					if convenience_condition_naked.Check()
+						convenience_naked_duration = convenience_naked_duration + _timediff
+						convenience_start_zone.SetColor(0.5,1,0.5)
+					else
+						convenience_naked_duration = 0
+						convenience_start_zone.SetColor(1,1,0.5)
+					convenience_naked_panel.SetGaugeProgress(convenience_naked_duration / 5)
+
+					convenience_crowded_panel.SetVisible(false)
+
+					if convenience_naked_duration >= 5
+						CollectItem(itemtype="Coat")
+						coat_away_pos = CreateList(stage="Apart", x=-1.84, y=0.00, z=-0.20, rx=0, ry=0, rz=0, rw=0)
+						DropItem(itemtype="Coat", stage="Apart", position=coat_away_pos, compass=false)
+						convenience_coat_moved = true
+						convenience_naked_started = true
+						convenience_challenge_state = 1
+						convenience_haigure_duration = 0
+						convenience_rp_progress = 0
+						convenience_rp_last_total = GetCurrentEarnRP()
+						convenience_rp_was_ready = false
+						convenience_blindfold_duration = 0
+						convenience_blindfold_force_timer = 0
+						convenience_showing_duration = 0
+						convenience_toy_npc_duration = 0
+						convenience_moving_blindfold_duration = 0
+						convenience_object_handcuff_duration = 0
+						convenience_dildo_duration = 0
+						convenience_bonus_handbra_duration = 0
+						convenience_bonus_curse_duration = 0
+						convenience_bonus_force_timer = 0
+						convenience_start_zone.SetVisible(false)
+						convenience_global_zone.SetVisible(true)
+						# Convenience Naked Challenge dangerous NPCs. Zero-distance waypoint wakes them without moving; do not use last=true.
+						if convenience_npcs_spawned == false
+							convenience_npc_a = CreateNPC("NewFemale", position=Vector(-0.95, 0.12, -6.35), rotation=Quaternion(0.00000, 0.03228, 0.00000, 0.99948))
+							convenience_npc_a.Smartphone(false)
+							convenience_npc_a.Headset(true)
+							convenience_npc_a.SkipStrangeness(false)
+							convenience_npc_a.CanGameOver(true)
+							convenience_npc_a.Stopped(false)
+							convenience_npc_a.ClearWaypoints()
+							convenience_npc_a.AddWaypoint(Vector(-0.95, 0.12, -6.35))
+
+							convenience_npc_b = CreateNPC("NewMale", position=Vector(3.74, 0.12, -9.94), rotation=Quaternion(0.00000, 0.05408, 0.00000, 0.99854))
+							convenience_npc_b.Smartphone(true)
+							convenience_npc_b.Headset(false)
+							convenience_npc_b.SkipStrangeness(false)
+							convenience_npc_b.CanGameOver(true)
+							convenience_npc_b.Stopped(false)
+							convenience_npc_b.ClearWaypoints()
+							convenience_npc_b.AddWaypoint(Vector(3.74, 0.12, -9.94))
+
+							convenience_npc_c = CreateNPC("NewFemale", position=Vector(-2.48, 0.12, -8.00), rotation=Quaternion(0.00000, 0.97130, 0.00000, 0.23786))
+							convenience_npc_c.Smartphone(true)
+							convenience_npc_c.Headset(false)
+							convenience_npc_c.SkipStrangeness(false)
+							convenience_npc_c.CanGameOver(true)
+							convenience_npc_c.Stopped(false)
+							convenience_npc_c.ClearWaypoints()
+							convenience_npc_c.AddWaypoint(Vector(-2.48, 0.12, -8.00))
+							convenience_npcs_spawned = true
+						convenience_naked_panel.SetVisible(false)
+						convenience_crowded_panel.SetVisible(false)
+				else
+					convenience_naked_duration = 0
+					convenience_start_zone.SetColor(1,0.75,0.5)
+					convenience_naked_panel.SetVisible(false)
+					convenience_crowded_panel.SetVisible(false)
+			else
+				convenience_global_zone.SetVisible(true)
+				if convenience_global_zone.Inside()
+					missionpanel.SetVisible(true)
+
+					# Naked Challenge Mission 01: High-leg Pose, straight timer.
+					if convenience_challenge_state == 1
+						missionpanel.SetText("先热身一下！连续保持高叉姿势 15 秒")
+						missionpanel.SetRPText("25 RP")
+						missionpanel.SetGaugeVisible(true)
+						if convenience_condition_haigure.Check()
+							convenience_haigure_duration = convenience_haigure_duration + _timediff
+							convenience_global_zone.SetColor(0.5,1,0.5)
+						else
+							convenience_haigure_duration = 0
+							convenience_global_zone.SetColor(1,1,0.5)
+						missionpanel.SetGaugeProgress(convenience_haigure_duration / 15)
+						if convenience_haigure_duration >= 15
+							AddCurrentEarnRP(25)
+							convenience_challenge_state = 2
+							convenience_rp_progress = 0
+							convenience_rp_last_total = GetCurrentEarnRP()
+							convenience_rp_was_ready = false
+							missionpanel.SetGaugeProgress(0)
+
+					# Naked Challenge Mission 02: earn RP without dashing. Dashing resets this step only.
+					if convenience_challenge_state == 2
+						missionpanel.SetText("禁止奔跑，赚取 300 RP")
+						missionpanel.SetRPText("300 RP")
+						missionpanel.SetGaugeVisible(true)
+						current_convenience_rp_total = GetCurrentEarnRP()
+						if convenience_condition_no_dash.Check()
+							convenience_global_zone.SetColor(0.5,1,0.5)
+							if convenience_rp_was_ready == false
+								convenience_rp_was_ready = true
+								convenience_rp_last_total = current_convenience_rp_total
+							rp_convenience_gain = current_convenience_rp_total - convenience_rp_last_total
+							if rp_convenience_gain > 0
+								convenience_rp_progress = convenience_rp_progress + rp_convenience_gain
+							convenience_rp_last_total = current_convenience_rp_total
+						else
+							convenience_global_zone.SetColor(1,1,0.5)
+							convenience_rp_progress = 0
+							convenience_rp_last_total = current_convenience_rp_total
+							convenience_rp_was_ready = false
+						if convenience_rp_progress > convenience_rp_target
+							convenience_rp_progress = convenience_rp_target
+						missionpanel.SetGaugeProgress(convenience_rp_progress / convenience_rp_target)
+						if convenience_rp_progress >= convenience_rp_target
+							convenience_challenge_state = 3
+							convenience_blindfold_duration = 0
+							convenience_blindfold_force_timer = 0
+							missionpanel.SetGaugeProgress(0)
+
+					# Naked Challenge Mission 03: force blindfold for 30 seconds.
+					if convenience_challenge_state == 3
+						missionpanel.SetText("没料到会有眼罩吧！")
+						missionpanel.SetRPText("75 RP")
+						missionpanel.SetGaugeVisible(true)
+						convenience_blindfold_force_timer = convenience_blindfold_force_timer + _timediff
+						if convenience_blindfold_force_timer >= 0.4
+							convenience_blindfold_force_timer = 0
+							if !_state.AdultToys["EyeMask"]
+								EquipAdultToy("EyeMask")
+						convenience_blindfold_duration = convenience_blindfold_duration + _timediff
+						convenience_global_zone.SetColor(0.5,1,0.5)
+						missionpanel.SetGaugeProgress(convenience_blindfold_duration / 30)
+						if convenience_blindfold_duration >= 30
+							AddCurrentEarnRP(75)
+							UnequipAdultToy("EyeMask")
+							convenience_challenge_state = 4
+							convenience_showing_duration = 0
+							missionpanel.SetGaugeProgress(0)
+
+					# Naked Challenge Mission 04: showing off accumulated timer. Condition can be interrupted; progress pauses instead of reset.
+					if convenience_challenge_state == 4
+						missionpanel.SetText("展示身体 30 秒")
+						missionpanel.SetRPText("75 RP")
+						missionpanel.SetGaugeVisible(true)
+						if convenience_condition_showing.Check()
+							convenience_showing_duration = convenience_showing_duration + _timediff
+							convenience_global_zone.SetColor(0.5,1,0.5)
+						else
+							convenience_global_zone.SetColor(1,1,0.5)
+						missionpanel.SetGaugeProgress(convenience_showing_duration / 30)
+						if convenience_showing_duration >= 30
+							AddCurrentEarnRP(75)
+							convenience_challenge_state = 5
+							convenience_toy_npc_duration = 0
+							missionpanel.SetGaugeProgress(0)
+
+					# Naked Challenge Mission 05: all vibration toys on random near NPCs, accumulated timer. Condition can be interrupted; progress pauses instead of reset.
+					if convenience_challenge_state == 5
+						missionpanel.SetText("所有玩具设为随机速度，并靠近 NPC 持续 40 秒")
+						missionpanel.SetRPText("200 RP")
+						missionpanel.SetGaugeVisible(true)
+						if convenience_condition_toy_npc.Check()
+							convenience_toy_npc_duration = convenience_toy_npc_duration + _timediff
+							convenience_global_zone.SetColor(0.5,1,0.5)
+						else
+							convenience_global_zone.SetColor(1,1,0.5)
+						missionpanel.SetGaugeProgress(convenience_toy_npc_duration / 40)
+						if convenience_toy_npc_duration >= 40
+							AddCurrentEarnRP(200)
+							convenience_challenge_state = 6
+							convenience_moving_blindfold_duration = 0
+							missionpanel.SetGaugeProgress(0)
+
+					# Naked Challenge Mission 06: blindfold and moving, straight timer. Break resets this step only.
+					if convenience_challenge_state == 6
+						missionpanel.SetText("戴着眼罩连续移动 15 秒")
+						missionpanel.SetRPText("150 RP")
+						missionpanel.SetGaugeVisible(true)
+						if convenience_condition_blindfold_moving.Check()
+							convenience_moving_blindfold_duration = convenience_moving_blindfold_duration + _timediff
+							convenience_global_zone.SetColor(0.5,1,0.5)
+						else
+							convenience_moving_blindfold_duration = 0
+							convenience_global_zone.SetColor(1,1,0.5)
+						missionpanel.SetGaugeProgress(convenience_moving_blindfold_duration / 15)
+						if convenience_moving_blindfold_duration >= 15
+							AddCurrentEarnRP(150)
+							convenience_challenge_state = 7
+							convenience_object_handcuff_duration = 0
+							missionpanel.SetGaugeProgress(0)
+
+					# Naked Challenge Mission 07: locked in object handcuffs, straight timer. Break resets this step only.
+					if convenience_challenge_state == 7
+						missionpanel.SetText("将自己铐在物体上连续 30 秒")
+						missionpanel.SetRPText("225 RP")
+						missionpanel.SetGaugeVisible(true)
+						if convenience_condition_handcuffs_object.Check()
+							convenience_object_handcuff_duration = convenience_object_handcuff_duration + _timediff
+							convenience_global_zone.SetColor(0.5,1,0.5)
+						else
+							convenience_object_handcuff_duration = 0
+							convenience_global_zone.SetColor(1,1,0.5)
+						missionpanel.SetGaugeProgress(convenience_object_handcuff_duration / 30)
+						if convenience_object_handcuff_duration >= 30
+							AddCurrentEarnRP(225)
+							convenience_challenge_state = 8
+							convenience_dildo_duration = 0
+							convenience_bonus_handbra_duration = 0
+							convenience_bonus_curse_duration = 0
+							convenience_bonus_force_timer = 0
+							if convenience_bonus_zone != null
+								convenience_bonus_zone.SetVisible(true)
+								convenience_bonus_zone.SetColor(1,0,0)
+							missionpanel.SetGaugeProgress(0)
+
+					# Naked Challenge Mission 08: dildo action accumulated timer. Bonus red zone can replace this ending path.
+					if convenience_challenge_state == 8
+						if convenience_bonus_zone != null
+							convenience_bonus_zone.SetVisible(true)
+							convenience_bonus_zone.SetColor(1,0,0)
+
+						if convenience_bonus_zone != null && convenience_bonus_zone.Inside()
+							missionpanel.SetText("嗯？这是什么？保持手遮胸 5 秒来一探究竟……")
+							missionpanel.SetRPText("奖励？")
+							missionpanel.SetGaugeVisible(true)
+							if convenience_condition_handbra.Check()
+								convenience_bonus_handbra_duration = convenience_bonus_handbra_duration + _timediff
+								convenience_bonus_zone.SetColor(0.5,0,0)
+							else
+								convenience_bonus_handbra_duration = 0
+								convenience_bonus_zone.SetColor(1,0,0)
+							missionpanel.SetGaugeProgress(convenience_bonus_handbra_duration / 5)
+							if convenience_bonus_handbra_duration >= 5
+								convenience_challenge_state = 80
+								convenience_bonus_curse_duration = 0
+								convenience_bonus_force_timer = 0
+								convenience_dildo_duration = 0
+								if convenience_bonus_zone != null
+									convenience_bonus_zone.SetVisible(false)
+								missionpanel.SetGaugeProgress(0)
+						else
+							convenience_bonus_handbra_duration = 0
+							missionpanel.SetText("使用假阳具 30 秒并领取奖励")
+							missionpanel.SetRPText("2250 RP")
+							missionpanel.SetGaugeVisible(true)
+							if convenience_condition_dildo.Check()
+								convenience_dildo_duration = convenience_dildo_duration + _timediff
+								convenience_global_zone.SetColor(0.5,1,0.5)
+							else
+								convenience_global_zone.SetColor(1,1,0.5)
+							missionpanel.SetGaugeProgress(convenience_dildo_duration / 30)
+							if convenience_dildo_duration >= 30
+								AddCurrentEarnRP(2250)
+								convenience_challenge_state = 99
+								if convenience_bonus_zone != null
+									convenience_bonus_zone.SetVisible(false)
+								if convenience_npc_a != null
+									convenience_npc_a.SkipStrangeness(true)
+									convenience_npc_a.CanGameOver(false)
+									convenience_npc_a.Stopped(false)
+									convenience_npc_a.ClearWaypoints()
+									convenience_npc_a.AddWaypoint(Vector(3.03, 0.11, -8.60), last=true)
+									convenience_npc_a = null
+								if convenience_npc_b != null
+									convenience_npc_b.SkipStrangeness(true)
+									convenience_npc_b.CanGameOver(false)
+									convenience_npc_b.Stopped(false)
+									convenience_npc_b.ClearWaypoints()
+									convenience_npc_b.AddWaypoint(Vector(3.03, 0.11, -8.60), last=true)
+									convenience_npc_b = null
+								if convenience_npc_c != null
+									convenience_npc_c.SkipStrangeness(true)
+									convenience_npc_c.CanGameOver(false)
+									convenience_npc_c.Stopped(false)
+									convenience_npc_c.ClearWaypoints()
+									convenience_npc_c.AddWaypoint(Vector(3.03, 0.11, -8.60), last=true)
+									convenience_npc_c = null
+								convenience_npcs_spawned = false
+								if convenience_npc_a != null
+									convenience_npc_a.SkipStrangeness(true)
+									convenience_npc_a.CanGameOver(false)
+									convenience_npc_a.Stopped(false)
+									convenience_npc_a.ClearWaypoints()
+									convenience_npc_a.AddWaypoint(Vector(3.03, 0.11, -8.60), last=true)
+									convenience_npc_a = null
+								if convenience_npc_b != null
+									convenience_npc_b.SkipStrangeness(true)
+									convenience_npc_b.CanGameOver(false)
+									convenience_npc_b.Stopped(false)
+									convenience_npc_b.ClearWaypoints()
+									convenience_npc_b.AddWaypoint(Vector(3.03, 0.11, -8.60), last=true)
+									convenience_npc_b = null
+								if convenience_npc_c != null
+									convenience_npc_c.SkipStrangeness(true)
+									convenience_npc_c.CanGameOver(false)
+									convenience_npc_c.Stopped(false)
+									convenience_npc_c.ClearWaypoints()
+									convenience_npc_c.AddWaypoint(Vector(3.03, 0.11, -8.60), last=true)
+									convenience_npc_c = null
+								convenience_npcs_spawned = false
+								if convenience_coat_moved
+									CollectItem(itemtype="Coat")
+									convenience_finish_coat_pos = CreateList(stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y, z=_state.Position.z, rx=0, ry=0, rz=0, rw=0)
+									DropItem(itemtype="Coat", position=convenience_finish_coat_pos, compass=false)
+									convenience_coat_moved = false
+								missionpanel.SetVisible(false)
+
+					# Naked Challenge Bonus Ending: cursed spread-leg walk. Moving progress can be interrupted; progress pauses instead of reset.
+					if convenience_challenge_state == 80
+						missionpanel.SetText("糟了……你中了诅咒！保持移动来解除它！")
+						missionpanel.SetRPText("3000 RP")
+						missionpanel.SetGaugeVisible(true)
+						convenience_bonus_force_timer = convenience_bonus_force_timer + _timediff
+						if convenience_bonus_force_timer >= 0.4
+							convenience_bonus_force_timer = 0
+							if _state.Sitting
+								SetAction("StandUp")
+							if _state.Crouching
+								SetAction("None")
+							if _state.Action != "GanimataWalk"
+								SetAction("GanimataWalk")
+							if !_state.AdultToys["EyeMask"]
+								EquipAdultToy("EyeMask")
+						if convenience_condition_moving.Check()
+							convenience_bonus_curse_duration = convenience_bonus_curse_duration + _timediff
+							convenience_global_zone.SetColor(0.5,1,0.5)
+						else
+							convenience_global_zone.SetColor(1,1,0.5)
+						missionpanel.SetGaugeProgress(convenience_bonus_curse_duration / 40)
+						if convenience_bonus_curse_duration >= 40
+							AddCurrentEarnRP(3000)
+							SetAction("None")
+							UnequipAdultToy("EyeMask")
+							convenience_challenge_state = 99
+							if convenience_bonus_zone != null
+								convenience_bonus_zone.SetVisible(false)
+							if convenience_npc_a != null
+								convenience_npc_a.SkipStrangeness(true)
+								convenience_npc_a.CanGameOver(false)
+								convenience_npc_a.Stopped(false)
+								convenience_npc_a.ClearWaypoints()
+								convenience_npc_a.AddWaypoint(Vector(3.03, 0.11, -8.60), last=true)
+								convenience_npc_a = null
+							if convenience_npc_b != null
+								convenience_npc_b.SkipStrangeness(true)
+								convenience_npc_b.CanGameOver(false)
+								convenience_npc_b.Stopped(false)
+								convenience_npc_b.ClearWaypoints()
+								convenience_npc_b.AddWaypoint(Vector(3.03, 0.11, -8.60), last=true)
+								convenience_npc_b = null
+							if convenience_npc_c != null
+								convenience_npc_c.SkipStrangeness(true)
+								convenience_npc_c.CanGameOver(false)
+								convenience_npc_c.Stopped(false)
+								convenience_npc_c.ClearWaypoints()
+								convenience_npc_c.AddWaypoint(Vector(3.03, 0.11, -8.60), last=true)
+								convenience_npc_c = null
+							convenience_npcs_spawned = false
+							if convenience_coat_moved
+								CollectItem(itemtype="Coat")
+								convenience_bonus_finish_coat_pos = CreateList(stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y, z=_state.Position.z, rx=0, ry=0, rz=0, rw=0)
+								DropItem(itemtype="Coat", position=convenience_bonus_finish_coat_pos, compass=false)
+								convenience_coat_moved = false
+							missionpanel.SetVisible(false)
+
+					if convenience_challenge_state == 99
+						if convenience_bonus_zone != null
+							convenience_bonus_zone.SetVisible(false)
+						missionpanel.SetVisible(false)
+						mainthread.RequestReset()
+				else
+					missionpanel.SetVisible(false)
+
+
+
+
+
+	IsCurrentMissionActive:
+		_result = convenience_naked_started || convenience_challenge_state != 0
+
+	Cancel:
+		mission_active = false
+		active_stage = ""
+		if convenience_start_zone != null
+			convenience_start_zone.SetVisible(false)
+		if convenience_global_zone != null
+			convenience_global_zone.SetVisible(false)
+		if convenience_naked_panel != null
+			convenience_naked_panel.SetVisible(false)
+		if convenience_crowded_panel != null
+			convenience_crowded_panel.SetVisible(false)
+		if convenience_bonus_zone != null
+			convenience_bonus_zone.SetVisible(false)
+		# NPC references can become invalid immediately after leaving Convenience.
+		if _state.Position.stage == "Convenience"
+			if convenience_npc_a != null
+				convenience_npc_a.SkipStrangeness(true)
+				convenience_npc_a.CanGameOver(false)
+				convenience_npc_a.Stopped(false)
+				convenience_npc_a.ClearWaypoints()
+				convenience_npc_a.AddWaypoint(Vector(3.03, 0.11, -8.60), last=true)
+			if convenience_npc_b != null
+				convenience_npc_b.SkipStrangeness(true)
+				convenience_npc_b.CanGameOver(false)
+				convenience_npc_b.Stopped(false)
+				convenience_npc_b.ClearWaypoints()
+				convenience_npc_b.AddWaypoint(Vector(3.03, 0.11, -8.60), last=true)
+			if convenience_npc_c != null
+				convenience_npc_c.SkipStrangeness(true)
+				convenience_npc_c.CanGameOver(false)
+				convenience_npc_c.Stopped(false)
+				convenience_npc_c.ClearWaypoints()
+				convenience_npc_c.AddWaypoint(Vector(3.03, 0.11, -8.60), last=true)
+		convenience_npc_a = null
+		convenience_npc_b = null
+		convenience_npc_c = null
+		convenience_npcs_spawned = false
+		if convenience_challenge_state == 3
+			UnequipAdultToy("EyeMask")
+		if convenience_challenge_state == 80
+			SetAction("None")
+			UnequipAdultToy("EyeMask")
+		if convenience_coat_moved
+			CollectItem(itemtype="Coat")
+			convenience_coat_return_pos = CreateList(stage=_state.Position.stage, x=_state.Position.x, y=_state.Position.y, z=_state.Position.z, rx=0, ry=0, rz=0, rw=0)
+			DropItem(itemtype="Coat", position=convenience_coat_return_pos, compass=false)
+			convenience_coat_moved = false
+		thread.Goto("idle")
+

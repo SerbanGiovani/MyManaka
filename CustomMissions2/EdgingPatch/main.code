@@ -1,0 +1,90 @@
+ep = CreateList()
+ep.burst_enabled = true
+ep.burst_eaten = 0
+ep.burst_multiplier = 0.5
+was_orgasm = false
+if GetType(_settings.burst_multiplier) == "String"
+	parsed = ToNumber(_settings.burst_multiplier)
+	if parsed != null
+		ep.burst_multiplier = parsed
+_mod.burst_pending = 0
+_mod.burst_eaten = 0
+_mod.burst_multiplier = ep.burst_multiplier
+_mod.updated = false
+
+t_m = CreateThread("main")
+
+main:
+	hold = 0
+	inp = CreateInput("<Keyboard>/"+_settings.key)
+	inp_l = CreateListener("input_listener")
+	input_listener:
+		if inp.WasPressed()
+			edge()
+			if _settings.hold_delay > 0
+				hold = _time + _settings.hold_delay
+		elseif inp.IsPressed()
+			if hold > 0 && _time > hold
+				edge()
+				hold = _time + 0.1
+		else
+			hold = 0
+		if ep.burst_enabled
+			burst_tick()
+
+edge:
+	_result = false
+	stam = GetStamina()
+	ecst = GetEcstasy()
+	stam_cost = _settings.stamina_cost / 100
+	ecst_down = _settings.ecstasy_reduction / 100
+	if stam_cost <= 0
+		stam_cost = 0
+	if ecst_down <= 0
+		ecst_down = 0
+	if stam >= stam_cost && ecst > 0 && ecst_down > 0
+		eaten = Min(ecst, ecst_down)
+		add_stamina(-stam_cost)
+		AddEcstasy(-eaten)
+		if ep.burst_enabled
+			ep.burst_eaten = ep.burst_eaten + eaten
+			_mod.burst_eaten = ep.burst_eaten
+			Log(Format("[EdgingPatch] Burst stored {0:F2} ecstasy", ep.burst_eaten))
+		_result = true
+
+burst_tick:
+	if _state.Orgasm
+		if !was_orgasm
+			burst_score = ep.burst_eaten * ep.burst_multiplier
+			_mod.burst_pending = Floor(burst_score)
+			_mod.burst_eaten = ep.burst_eaten
+			_mod.burst_multiplier = ep.burst_multiplier
+			_mod.updated = true
+			Log(Format("[EdgingPatch] Burst release eaten={0:F2} multiplier={1:F2} score={2:F2} pending={3:0}", ep.burst_eaten, ep.burst_multiplier, burst_score, _mod.burst_pending))
+			ep.burst_eaten = 0
+		was_orgasm = true
+	else
+		was_orgasm = false
+
+# When stamina is used natively in the game, there is a pause before it starts recharging again, and the
+# stamina bar flashes red if stamina is paused at 0. CMv2 doesn't integrate into this, so fake the
+# recharging pause by undoing the every frame's stamina recharge for a few seconds.
+stam_l = null
+lock_until = 0
+stam_max = 100
+
+add_stamina:
+	amount = _args[0]
+	AddStamina(amount)
+	if amount < 0
+		stam_max = GetStamina()
+		lock_until = _time + 2
+		if stam_l == null
+			stam_l = CreateListener("stamina_listener")
+
+stamina_listener:
+	if _time < lock_until
+		if GetStamina() > stam_max
+			SetStamina(stam_max)
+	else
+		stam_l = null

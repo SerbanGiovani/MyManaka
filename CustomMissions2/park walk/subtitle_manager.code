@@ -1,0 +1,267 @@
+SP_Message:
+	if delay == null
+		delay = 0.5
+	if fadein == null
+		fadein = 0.2
+	if fadeout == null
+		fadeout = 0.2
+		
+	if data != null
+		_result = CreateList(type="Message",subtitle=subtitle,text=data.text,duration=data.entry.duration,delay=delay,fadein=fadein,fadeout=fadeout)
+	else
+		_result = CreateList(type="Message",subtitle=subtitle,text=text,duration=duration,delay=delay,fadein=fadein,fadeout=fadeout)
+
+SP_WaitForMarker:
+	_result = CreateList(type="WaitForMarker",marker=marker)
+	
+SP_EmitMarker:
+	_result = CreateList(type="EmitMarker",marker=marker)
+
+SP_Wait:
+	_result = CreateList(type="Wait",duration=duration)
+
+SP_InterruptEscort:
+	_result = CreateList(type="InterruptEscort", target=target, turntofaceplayer=turntofaceplayer)
+
+SP_InterruptEscortRelease:
+	_result = CreateList(type="InterruptEscortRelease", target=target)
+
+SP_Ecstasy:
+	_result = CreateList(type="Ecstasy", key=key, value=value)
+	
+SP_Blackout:
+	_result = CreateList(type="Blackout", color=color, delay=delay, fadein=fadein, duration=duration, fadeout=fadeout)
+
+
+subtitles_manager:
+
+	# Initialise persistent state
+	if this == null
+		this = CreateList()
+		this.active = false
+		this.data = null
+		this.index = -1
+		this.timer = 0
+		this.paused = false
+		this.bus = null
+
+	# Create the runner listener
+	runner = CreateListenerLocal("subtitle_runner")
+	
+	Init: # bus
+		this.bus = bus
+		this.key_callback_function = key_callback_function
+	
+	Start: # data
+		if this.active
+			if (this.data[this.index] != null) && (this.data[this.index].subtitle != null)
+				this.data[this.index].subtitle.Clear()
+		this.active = true
+		this.data = data
+		this.index = -1
+		this.timer = 0
+		this.paused = false
+
+	Pause:
+		if this.paused == false
+			# Clear current subtitle
+			entry = this.data[this.index]
+			if (entry != null) && (entry.subtitle != null)
+				entry.subtitle.Clear()
+
+			# Rewind so the same subtitle will re-display
+			this.index = this.index - 1
+			this.timer = 0
+
+		this.paused = true
+
+	Resume:
+		this.paused = false
+
+	Cancel:
+		this.active = false
+		this.data = null
+		this.timer = 0
+		this.index = -1
+		this.paused = false
+		
+	Interrupt:
+		# If inactive, start a fresh run
+		if !this.active
+			this.active = true
+			this.index = -1
+			this.timer = 0
+			this.paused = false
+			this.data = CreateList()  # or null, depending on your design
+
+
+		# Now show the interrupt subtitle
+		if entry.subtitle != null
+			entry.subtitle.Clear()
+			entry.subtitle.Add(text=entry.text, delay=0.5, fadein=0, duration=entry.duration, fadeout=0.1)
+
+			# Hide main subtitle if active
+			if (this.data[this.index] != null) && (this.data[this.index].subtitle != null)
+				this.data[this.index].subtitle.Clear()
+
+
+			this.timer = entry.duration + 0.2
+		
+		
+	Is_Active:
+		_result = this.active
+		
+
+	HandleMessage: # entry
+
+		# Clear the subtitle object
+		entry.subtitle.Clear()
+		
+		entry.duration *= (2 - _settings.text_rate)
+
+		# Add the new text
+		Log("Show message: " + entry.text)
+		entry.subtitle.Add(text=entry.text,delay=entry.delay,fadein=entry.fadein,duration=entry.duration,fadeout=entry.fadeout)
+
+		# Set timer for next entry
+		this.timer = entry.duration + entry.delay + entry.fadein + entry.fadeout
+
+		
+	HandleWaitForMarker: # entry
+		HandleWaitForMarker: # entry
+		if this.bus != null
+			#Log("Looking for event " + entry.marker)
+			if this.bus.flags[entry.marker]
+				# marker consumed → continue
+				this.bus.flags[entry.marker] = null
+			else
+				# Stay on this entry
+				this.index = this.index - 1
+	
+	
+	HandleEmitMarker: # entry
+		if this.bus != null
+			Log("Emitting Event " + entry.marker)
+			this.bus.flags[entry.marker] = true
+		# No timer → next entry runs immediately
+		
+	HandleWait:
+		# Set timer for next entry
+		this.timer = entry.duration
+		
+			
+	HandleInterruptEscort:
+		DumpVariable(entry, 4)
+		if this.bus != null
+			flags = this.bus.flags
+			flag = "escort." + entry.target + "interrupt"
+			flags[flag] = true
+
+			if entry.turntofaceplayer
+				flags[flag + ".face"] = true
+
+	HandleInterruptEscortRelease:
+		DumpVariable(entry, 4)
+		if this.bus != null
+			this.bus.flags["escort."+ entry.target+".interrupt.clear"] = true
+
+	HandleEcstacy:
+		if this.bus != null
+			#Log("ecstasy." + entry.key)
+			this.bus.flags["ecstasy." + entry.key] = entry.value
+			
+	HandleBlackout:
+		DumpVariable(entry, 4)
+		if entry.color == null
+			entry.color = Color(0,0,0)
+		if entry.delay == null
+			entry.delay = 0
+		if entry.fadein == null
+			entry.fadein = 0.5
+		if entry.fadeout == null
+			entry.fadeout = 0.5
+		if entry.duration == null
+			entry.duration = 2
+		ShowBlackscreen(color=entry.color, delay=entry.delay, fadein=entry.fadein, duration=entry.duration, fadeout=entry.fadeout)
+
+
+	subtitle_runner:
+
+		# Handle interrupts first (allowed even when inactive)
+		if this.bus != null
+			flags = this.bus.flags
+
+			if flags["subtitles.interrupt"] != null
+				entry = flags["subtitles.interrupt"]
+				Interrupt(entry=entry)
+				flags["subtitles.interrupt"] = null
+
+		# If not active, do nothing else
+		if !this.active
+			# nothing more to do this tick
+		else
+
+			# Handle pause/resume
+			if this.bus != null
+				flags = this.bus.flags
+
+				if flags["subtitles.pause"]
+					flags["subtitles.pause"] = null
+					Pause()
+
+				if flags["subtitles.resume"]
+					flags["subtitles.resume"] = null
+					Resume()
+
+			# If paused, do nothing else
+			if this.paused
+				# nothing more to do
+			else
+
+				# If we still have time left on the current entry, just tick the timer
+				if this.timer > 0
+					this.timer = this.timer - _timediff
+				else
+
+					# Advance to next entry
+					this.index = this.index + 1
+					entry = this.data[this.index]
+
+					if entry == null
+						this.active = false
+					else
+
+						# Dispatch by type
+						if entry.type == "Message"
+							HandleMessage(entry=entry)
+
+						elseif entry.type == "WaitForMarker"
+							HandleWaitForMarker(entry=entry)
+
+						elseif entry.type == "EmitMarker"
+							HandleEmitMarker(entry=entry)
+						
+						elseif entry.type == "Wait"
+							HandleWait(entry=entry)
+							
+						elseif entry.type == "InterruptEscort"
+							HandleInterruptEscort(entry=entry)
+
+						elseif entry.type == "InterruptEscortRelease"
+							HandleInterruptEscortRelease()
+
+						elseif entry.type == "Ecstasy"
+							HandleEcstacy(entry=entry)
+							
+						elseif entry.type == "Blackout"
+							HandleBlackout(entry=entry)
+
+						else
+							Log("Unknown subtitle entry type: " + entry.type)
+					
+
+
+subtitle_listener:
+	if !manager.Is_Active()
+		thread.Goto(nextstep)
+		
