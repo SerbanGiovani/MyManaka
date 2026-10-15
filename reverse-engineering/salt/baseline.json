@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "source": {
+    "kind": "user-provided-prior-reverse-engineering-result",
+    "recorded_date": "2026-10-16",
+    "independently_recovered_this_session": false
+  },
+  "original_directory": "E:\\SecretFlasherManakaREA",
+  "repository_base_commit": "c1a4f0fef84419e9a048357c55bca6bf8c775ef9",
+  "keydata_guid": "add7ae9ef7e0477e9d0aeb6d43949b7a",
+  "salt": {
+    "text": "-265379604",
+    "encoding": "utf-8",
+    "hex": "2D 32 36 35 33 37 39 36 30 34"
+  },
+  "password": "チiA7よハこNﾉｸPﾜすDまｴネbぬﾇチwおﾙうモ",
+  "password_encoding": "utf-8",
+  "password_normalization": "none",
+  "key_derivation": {
+    "algorithm": "PBKDF2-HMAC-SHA1",
+    "iterations": 1000,
+    "key_length_bytes": 32
+  },
+  "cipher": {
+    "algorithm": "AES",
+    "key_bits": 256,
+    "mode": null,
+    "iv": null,
+    "padding": null
+  },
+  "limitations": [
+    "The salt, GUID, password and KDF parameters are supplied prior findings, not independently extracted from Git in this session.",
+    "UTF-8 password encoding is the explicit local derivation assumption; no Unicode normalization is applied.",
+    "Cipher mode, IV and padding are not established by the supplied findings.",
+    "PBKDF2 consistency does not verify successful game-asset decryption."
+  ]
+}

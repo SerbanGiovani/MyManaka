@@ -1,0 +1,34 @@
+{
+  "repository": "E:\\SecretFlasherManaka v1.1.3_Uncensored",
+  "commit": "c1a4f0fef84419e9a048357c55bca6bf8c775ef9",
+  "tracked_wrapper": "BepInEx/interop/IKA9nt.Encrypter.dll",
+  "wrapper_sha256": "60efe344e94846b5d340b0ec0258b9c84e7b5108c447d35ef67f6247b0e51222",
+  "original_directory": "E:\\SecretFlasherManakaREA",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "metadata_version": 31,
+  "method": {
+    "file_offset": 4872740,
+    "declaring_type_index": 9794,
+    "token": "0x60000ac",
+    "parameter_start": 82448,
+    "name": "IKA9nt.Encrypter.EncrypterCore.GetSalt",
+    "module_method_index": 171
+  },
+  "native": {
+    "image_base": "0x180000000",
+    "module_file_offset": "0x24e9050",
+    "module_method_count": 210,
+    "method_pointer_table_va": "0x182d03c70",
+    "method_va": "0x18143e460",
+    "method_file_offset": "0x143cc60",
+    "byte_window_length": 480,
+    "byte_window_sha256": "fd39022fb371fe684e422b076cb46a47db1980bc77e03dab802a32d4e21ad825"
+  },
+  "limitations": [
+    "The tracked wrapper delegates to native IL2CPP code; it does not contain the original GetSalt implementation.",
+    "A method address and byte window alone do not establish a salt value or derivation algorithm.",
+    "Codegen-module layout and metadata parsing are restricted to this supplied game build.",
+    "No target code was loaded or executed."
+  ]
+}

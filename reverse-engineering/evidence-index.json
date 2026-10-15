@@ -1,0 +1,473 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-10-15T19:35:24.851371+00:00",
+  "status": "consistent",
+  "canonical_rea_observations": 20,
+  "rea_queries_completed": 15,
+  "artifacts": [
+    {
+      "path": ".gitattributes",
+      "bytes": 159,
+      "sha256": "5f387f02c668dcc4f294596ac01a77521501fd53e7e89179096944fe913e03fd"
+    },
+    {
+      "path": "assets/input-inventory.json",
+      "bytes": 5613,
+      "sha256": "98b34f2eb3e6288d3c35be423a83278f6644ab46e414a8ffdb6b69a403e59889"
+    },
+    {
+      "path": "assets/inspect_resources.py",
+      "bytes": 21385,
+      "sha256": "0f5701062fce19a3881652cbda4fd024a4505c7d0a46a9911b16feea201ab81a"
+    },
+    {
+      "path": "assets/README.md",
+      "bytes": 5221,
+      "sha256": "b467879e555125e132263e68ec43fdd8a970d4a9e99dd3c1b716c404550ea5ea"
+    },
+    {
+      "path": "assets/resources-keydata.json",
+      "bytes": 59468,
+      "sha256": "475690bda734759c850ce0ab24c8d47d4b7387370f520270e06c7eba14f055c6"
+    },
+    {
+      "path": "audit.py",
+      "bytes": 7394,
+      "sha256": "11b8090958f7a0441e783ced599aeef39678dbd123a343700a3fb041f4d38479"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6686,
+      "sha256": "df8c3eae5682256ff7f278382ea24c05eb6e0be4f695946bbdbd353a0e24ce33"
+    },
+    {
+      "path": "salt/baseline.json",
+      "bytes": 1291,
+      "sha256": "466d0d5b5e4e1b4f2b42c1a48d99e05e562a876d66571cb3e887e28d121475c1"
+    },
+    {
+      "path": "salt/crypto.py",
+      "bytes": 16209,
+      "sha256": "6c7ab9591869251564c9fb171add882e9957da4d7478861950e54adfba5ae6bc"
+    },
+    {
+      "path": "salt/derive.py",
+      "bytes": 2441,
+      "sha256": "054b61b723f9f886c1e1e548420e0a71064fff98a2626880f31a5933776abf23"
+    },
+    {
+      "path": "salt/evidence/artifact-identity.json",
+      "bytes": 1526,
+      "sha256": "30f14f4a3472148252d2ffbf08b73f9358962c747bb38c23e2836012625535f6"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x6000001-procedure_pseudo_code.json",
+      "bytes": 19466,
+      "sha256": "18971f8a74e95457c364190844f22d6cd6f8bcadd3c0ea2bf4712870ef9bcecd"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x6000001-procedure_pseudo_code.pseudocode.c",
+      "bytes": 6164,
+      "sha256": "09c8652e71b9a28041b7800a77d8726ac68a6bd55c2ba65036343beb79d54705"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x6000002-procedure_pseudo_code.json",
+      "bytes": 14110,
+      "sha256": "5fe816eebe5df4bc2c2f93386f2db1a8ba0c1b2f1ef1fa395e8689717b56943a"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x6000002-procedure_pseudo_code.pseudocode.c",
+      "bytes": 3670,
+      "sha256": "9decd4763f6704eb2f3d2e1b0f20296ddc6a91b3421d66b339e3b563a3e291c0"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x6000008-procedure_pseudo_code.json",
+      "bytes": 17242,
+      "sha256": "1f7a447116eb19ba55a1cb37850a162b69bf6c4aeb46807fd15c92ef6a12ddf6"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x6000008-procedure_pseudo_code.pseudocode.c",
+      "bytes": 5139,
+      "sha256": "73fb3f3bd4321a22c81871860b406430184b5f4ae22306fb9ffd94b8f1bea4f3"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x6000009-analyze_function.json",
+      "bytes": 339495,
+      "sha256": "f311388450373edb13353ddbbf4edffc68399228b07b54067903813b58700d1a"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x6000009-procedure_pseudo_code.json",
+      "bytes": 11542,
+      "sha256": "132ae4d6f42d8d367238dbbb7c8b85e64eeb6ab8a9ba7df5720b0d9d704a952c"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x6000009-procedure_pseudo_code.pseudocode.c",
+      "bytes": 2481,
+      "sha256": "c7c1a04c33ff684dbf79a1acfb33fee799d7d97abc20b487087ca8cf26104ba6"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x6000013-procedure_pseudo_code.json",
+      "bytes": 8110,
+      "sha256": "0ae09371f55084d86b94b74755cdd16f97a4b8566ca72a5d3fab6da9a8ca4294"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x6000013-procedure_pseudo_code.pseudocode.c",
+      "bytes": 935,
+      "sha256": "bbfdd6db9f79ed6c61540e2c6bd5d21a1071ab32b536027615e5f020ed5e0f72"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x6000014-procedure_pseudo_code.json",
+      "bytes": 7718,
+      "sha256": "7df2bbd3f1f4cd33cb53ed1de2a08f9869369688ab32e86d942d9758c3140ca4"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x6000014-procedure_pseudo_code.pseudocode.c",
+      "bytes": 751,
+      "sha256": "58a693c66b2281695a7d091d57fd2e3b01a9dc4b9c51e03ac982d3399f560f48"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x60000a8-procedure_pseudo_code.json",
+      "bytes": 20422,
+      "sha256": "a447967c3e9930acc4a66c3e43c30559855223b4695d5b2251b41b91213a568a"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x60000a8-procedure_pseudo_code.pseudocode.c",
+      "bytes": 6548,
+      "sha256": "ff426a57c3010d8ce4421c1ab343dada60aca424a0b581253957c6f9a1d31e1d"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x60000aa-procedure_pseudo_code.json",
+      "bytes": 16270,
+      "sha256": "b5ae01f59bf7a2e16bc9352f8effb980e321643ebee13df04dff6204f0b93355"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x60000aa-procedure_pseudo_code.pseudocode.c",
+      "bytes": 4663,
+      "sha256": "842304f41a578c8ed704ac63dfac9a5305cd0428ba624ea7b5821968a3b5c787"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x60000ab-procedure_pseudo_code.json",
+      "bytes": 12970,
+      "sha256": "75fc39eff42f9801d6947319cbb3679004f57a11ffd89b849f4117386585ffba"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x60000ab-procedure_pseudo_code.pseudocode.c",
+      "bytes": 3127,
+      "sha256": "78ca4d10687d53e5917d676e616c202bed499a61997ad890bb200719b890975d"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x60000ad-analyze_function.json",
+      "bytes": 190417,
+      "sha256": "696a3302d7567e2e4fb1c3375a2f46bd1d29883bfb8680061a9cd10874742176"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x60000ad-procedure_pseudo_code.json",
+      "bytes": 8774,
+      "sha256": "47fb460e5381d351b98220179139520a3f44a09618f994392d2e57642eaf7ab9"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/0x60000ad-procedure_pseudo_code.pseudocode.c",
+      "bytes": 1226,
+      "sha256": "8e6926ebc10cb2d3462b49a57d1758029062e776a252c12c6df3fb16180f60ad"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/rea-evidence.json",
+      "bytes": 409604,
+      "sha256": "e762b20e818af4a55bdd2fc1e556c4f64015a22572ec7211b43923695481d906"
+    },
+    {
+      "path": "salt/evidence/crypto-batch/run.json",
+      "bytes": 6695,
+      "sha256": "6f40f7381597981a50664b8d7a24f852598d6739d590820e2a8eaaf6ff7214eb"
+    },
+    {
+      "path": "salt/evidence/crypto-batch-helpers/0x6000003-procedure_pseudo_code.json",
+      "bytes": 8378,
+      "sha256": "65209c93dd9bc4a8280ac435bdeb010e2967f83fd7ca851d2fb4248bb13f808e"
+    },
+    {
+      "path": "salt/evidence/crypto-batch-helpers/0x6000003-procedure_pseudo_code.pseudocode.c",
+      "bytes": 1016,
+      "sha256": "1c707a71d462add3e963b90c148aa175183b7ea04fd77950b7c17536b5e3dd03"
+    },
+    {
+      "path": "salt/evidence/crypto-batch-helpers/0x6000255-procedure_pseudo_code.json",
+      "bytes": 11086,
+      "sha256": "ed43ee515281385204e654401c41d0e5d4f524af661f139b0abb9fb51067d239"
+    },
+    {
+      "path": "salt/evidence/crypto-batch-helpers/0x6000255-procedure_pseudo_code.pseudocode.c",
+      "bytes": 2240,
+      "sha256": "9906a9f9fb8855704dce38cadc63c24e5388ce80689fa2762681b65e274eab8d"
+    },
+    {
+      "path": "salt/evidence/crypto-batch-helpers/0x6001562-procedure_pseudo_code.json",
+      "bytes": 7876,
+      "sha256": "ce6a257ebc8f387e37202fea6b0d49baa1c1249642b677fef645649520b36673"
+    },
+    {
+      "path": "salt/evidence/crypto-batch-helpers/0x6001562-procedure_pseudo_code.pseudocode.c",
+      "bytes": 812,
+      "sha256": "0e706af8cc9d1e4c8b69a5a228d07c7f532dbbd9782c463ede7582e815ed1333"
+    },
+    {
+      "path": "salt/evidence/crypto-batch-helpers/rea-evidence.json",
+      "bytes": 25187,
+      "sha256": "c5d822a12d1e36bd34da205b3ab86cd017df31f0825a28bc9078fb703deb878b"
+    },
+    {
+      "path": "salt/evidence/crypto-batch-helpers/run.json",
+      "bytes": 1959,
+      "sha256": "755a0849a7a8d6902928e98457d15df7980ebe78c765d8293460a2b638ea6f81"
+    },
+    {
+      "path": "salt/evidence/decryption-verification.json",
+      "bytes": 681,
+      "sha256": "d5b5f5c4f7c5f722cb7cb6889ff6a9fe85df9fa8b4221e7ea63e94a2059c1f11"
+    },
+    {
+      "path": "salt/evidence/decryption.json",
+      "bytes": 2945,
+      "sha256": "1f72c3b361324634cf3af542adb59f856f08d0a10924d8c5ec207b4455b8d101"
+    },
+    {
+      "path": "salt/evidence/derivation.json",
+      "bytes": 870,
+      "sha256": "b002545b028443504109863612884cba36d0b51ff84b067afb8458e9db33b222"
+    },
+    {
+      "path": "salt/evidence/dotnet-verification.json",
+      "bytes": 162,
+      "sha256": "a3abaddd5c435522d2fbca7e557727b7be8c56cd722448ecd81e13af48814331"
+    },
+    {
+      "path": "salt/evidence/native-getsalt-focused.json",
+      "bytes": 11085,
+      "sha256": "4aced17e790bd626483249232d57c597107c94927750e49f74ee1e8325814d78"
+    },
+    {
+      "path": "salt/evidence/native-getsalt-focused.pseudocode.c",
+      "bytes": 2761,
+      "sha256": "92d7ad6cc3b9bd3202922b4b75b6f432b87a881db7f60f19dfb6a71e2480dce5"
+    },
+    {
+      "path": "salt/evidence/native-getsalt-focused.run.json",
+      "bytes": 1807,
+      "sha256": "e6983ef2c2509f001469c519ef1e03503fc64937f87222398b4680e577a8a995"
+    },
+    {
+      "path": "salt/evidence/rea-evidence.json",
+      "bytes": 876227,
+      "sha256": "03a2116a89f4b7a5811c9e3b9a9842e1477088975f14c30e08baac24f13234b0"
+    },
+    {
+      "path": "salt/evidence/recovered-crypto.json",
+      "bytes": 3245,
+      "sha256": "d49f3586cf8e9a5948ef77f0979938143e0044b02d3176612530d9843279aab2"
+    },
+    {
+      "path": "salt/extract.py",
+      "bytes": 7193,
+      "sha256": "d00ab79cdea9f2f9ce9589f04d88efaeb754c14c600ec56f4842183cbc1f9a73"
+    },
+    {
+      "path": "salt/extracted/GetSalt.native-window.bin",
+      "bytes": 480,
+      "sha256": "fd39022fb371fe684e422b076cb46a47db1980bc77e03dab802a32d4e21ad825"
+    },
+    {
+      "path": "salt/extracted/IKA9nt.Encrypter.from-git.dll",
+      "bytes": 118784,
+      "sha256": "60efe344e94846b5d340b0ec0258b9c84e7b5108c447d35ef67f6247b0e51222"
+    },
+    {
+      "path": "salt/extracted/manifest.json",
+      "bytes": 1526,
+      "sha256": "30f14f4a3472148252d2ffbf08b73f9358962c747bb38c23e2836012625535f6"
+    },
+    {
+      "path": "salt/metadata.py",
+      "bytes": 15612,
+      "sha256": "3b31ca7b06cf4fcfca880172df9d8bcc83440ae14d266554735e0950cdba5c29"
+    },
+    {
+      "path": "salt/native-getsalt.seeds.tsv",
+      "bytes": 130,
+      "sha256": "217503a7e48aca14380b7fb55b6464145f1402f902fc8e5429f29e14c2b474f7"
+    },
+    {
+      "path": "salt/native.py",
+      "bytes": 6344,
+      "sha256": "3c557627ccfb40b047e9c649a9a32c61e17fb60dfd7d00ba55fdc540d6d394b0"
+    },
+    {
+      "path": "salt/prepare_batch.py",
+      "bytes": 5836,
+      "sha256": "416a40fe5dbc4ccdd0e8ea49136e7f6a6158e923287bb6be85c28a17beee5b0e"
+    },
+    {
+      "path": "salt/README.md",
+      "bytes": 6019,
+      "sha256": "8b312a8c0df2951239fa020eefb0b3c28f3dc9eada4cff2a457aae9932c7e791"
+    },
+    {
+      "path": "salt/run_batch.mjs",
+      "bytes": 6384,
+      "sha256": "8d5bb55b1b632788d2704024b821ea9dc8cd89eae985c88a184ca5f9367657f0"
+    },
+    {
+      "path": "salt/symbols/crypto-enums.json",
+      "bytes": 1417,
+      "sha256": "764a5393aad351a9b6299abea541e80a785ba0680a3d14becb034d4856246c65"
+    },
+    {
+      "path": "salt/symbols/crypto-getstream.plan.json",
+      "bytes": 1654,
+      "sha256": "446b06066f930745024789f0153fbe16552e3aad31a6842ae0058519b65aa675"
+    },
+    {
+      "path": "salt/symbols/crypto-getstream.seeds.tsv",
+      "bytes": 3573,
+      "sha256": "ae08edcfee8c6b8999e0a6bc3a8ff06df9999cfb990aea70ac7247d1f41c7e19"
+    },
+    {
+      "path": "salt/symbols/crypto-helpers.plan.json",
+      "bytes": 2264,
+      "sha256": "7089e9135638336ce2a45bd5e8e57b46abd4b4dc04c50e169b775bf74217571c"
+    },
+    {
+      "path": "salt/symbols/crypto-helpers.seeds.tsv",
+      "bytes": 3619,
+      "sha256": "d3d2a14908bbe05a1ed4f1e0a733889e13446dc47454eab165e2b89251231dc8"
+    },
+    {
+      "path": "salt/symbols/crypto.plan.json",
+      "bytes": 4820,
+      "sha256": "03e6459e1397fa9bdc17b32942803f4edc0e645396ea1a78254f511da4dd7326"
+    },
+    {
+      "path": "salt/symbols/crypto.seeds.tsv",
+      "bytes": 4297,
+      "sha256": "a4abe8133285e28d36e3726a066fb9e30563117adcca3b8103d553745ae92dfa"
+    },
+    {
+      "path": "salt/symbols/encrypter.methods.tsv",
+      "bytes": 23212,
+      "sha256": "c141f2e274a3a43d00c08e5d9a54a8e20eb97895f26c50cfaeb820983562772c"
+    },
+    {
+      "path": "salt/symbols/index-summary.json",
+      "bytes": 17773,
+      "sha256": "1ee30b094bb5039f184c111d3c567db07fe9e208a21295561610dac0333f1543"
+    },
+    {
+      "path": "unknowns.json",
+      "bytes": 1442,
+      "sha256": "4bf19b0892e779e83bd2da13a041090c19c6395d7f24260472ef23cdc8941f80"
+    }
+  ],
+  "inputs_checked": [],
+  "observations": [
+    {
+      "evidence_id": "ev_05ec85353a6b8129f18251cbbe86a55b1bcc706d311d8da20272f5fac0f0c640",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_0cce00d85aa03838a3baefef58c09b0f828d3d041c7d9c2ad5f53bf89303c6c2",
+      "operation": "analyze_function",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_16a409c7f4790734e3bb1398701fc920699857acc76b3c0b0d4b3a4fb7a1a756",
+      "operation": "inspect_managed_artifact",
+      "subject_sha256": "60efe344e94846b5d340b0ec0258b9c84e7b5108c447d35ef67f6247b0e51222"
+    },
+    {
+      "evidence_id": "ev_283630b2bcc5c349511387f35d7692840a1bfc51509abe252372b53650c32a4e",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_2a6fe4c8478dcc8d8201a2f626d7d839dbd0f5503685c2ddc9fe0a4263a140b4",
+      "operation": "inspect_managed_members",
+      "subject_sha256": "60efe344e94846b5d340b0ec0258b9c84e7b5108c447d35ef67f6247b0e51222"
+    },
+    {
+      "evidence_id": "ev_2aa88eabf097d20312280477b7e42d1fce0847acd21e8aba5a1ef334dbea718e",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_2f63dc8b449df2962c6b9396b446efae96d8b1b86c5069cfbc43804e1147ace4",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_4c6eee946708e920568c896d443b3196675380c5b6920b93b9d95a521db923ad",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_5db9c7cef4489c0de9bc3c079a027abebfcc696f17a3b31c29d7b8aa7e599c33",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_61a982795be46f90c2bc51fd9c0d9d5301c334451213e6ea69c0041a36607fe1",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_72ec8b6908f1d8df41f74c8d58bde69f0dfa24514bf3215d89f102c124ecbb34",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_7e6c79f352d76f287dbb1ac75df381b1efa13dc3731fea2954759ba19a37b59e",
+      "operation": "inspect_analysis_view",
+      "subject_sha256": "60efe344e94846b5d340b0ec0258b9c84e7b5108c447d35ef67f6247b0e51222"
+    },
+    {
+      "evidence_id": "ev_b909b2a42daf01e45f605aac161dfee3be9ad764b7268d18291248a36777cd01",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_bf279891c89f761b34b45f3212594b397232eb5af0ed657410cabe7518be56b6",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_c59272d613d3d1c26976416061e617a9cf739cc574b0469f234fb37440d7bff2",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_ca64578c8e8d6f796bc03fe7abd37bdac57f0246c280d5655f8f22a4464eb7a8",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_d57052769c83214819813926f4aa881351d8c9eca571bb3cbc2298716371db68",
+      "operation": "analyze_function",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_da8ab7c4df73b20cbd377aec5a7327830772b14dbc91b5e2df47d1b15763c1ab",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_e1ebc5e626babc5f70df7b711746e81571fcb6844cddee5fb0cd0de2635a4c4e",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_f330265a3d0fddb2a77caf90eab312fa71cd101db365fc172dfbc122c15f907c",
+      "operation": "inspect_analysis_view",
+      "subject_sha256": "60efe344e94846b5d340b0ec0258b9c84e7b5108c447d35ef67f6247b0e51222"
+    }
+  ],
+  "scope": "File integrity and declared evidence consistency, not global source equivalence or runtime verification"
+}

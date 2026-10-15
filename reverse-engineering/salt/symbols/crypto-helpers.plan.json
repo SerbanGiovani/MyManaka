@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "name": "resource-crypto-helpers",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\crypto-helpers.seeds.tsv",
+  "seed_sha256": "d3d2a14908bbe05a1ed4f1e0a733889e13446dc47454eab165e2b89251231dc8",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\crypto-batch-helpers",
+  "seed_count": 46,
+  "functions": [
+    {
+      "metadata_id": 76172,
+      "qualified_name": "PasswordMap::.cctor",
+      "token": "0x6000003",
+      "va": "0x181430c30",
+      "file_offset": 21165104,
+      "label": "PasswordMap___cctor__06000003",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 5473,
+      "qualified_name": "System.Security.Cryptography.Rfc2898DeriveBytes::.ctor",
+      "token": "0x6001562",
+      "va": "0x181495490",
+      "file_offset": 21576848,
+      "label": "System_Security_Cryptography_Rfc2898DeriveBytes___ctor__06001562",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 596,
+      "qualified_name": "System.String::TrimWhiteSpaceHelper",
+      "token": "0x6000255",
+      "va": "0x18147d780",
+      "file_offset": 21479296,
+      "label": "System_String__TrimWhiteSpaceHelper__06000255",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "One displayed seed alias per address; full alias sets remain in methods.sqlite.",
+    "Disabled discovery passes limit cross-function and indirect-call coverage.",
+    "Names and addresses are static metadata-derived coordinates, not execution observations."
+  ]
+}

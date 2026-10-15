@@ -1,0 +1,184 @@
+{
+  "plan": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\crypto.plan.json",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "started_at_utc": "2026-10-15T19:16:20.875Z",
+  "seed_sha256": "a4abe8133285e28d36e3726a066fb9e30563117adcca3b8103d553745ae92dfa",
+  "functions": [
+    {
+      "metadata_id": 76342,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::GetStream",
+      "token": "0x60000ad",
+      "va": "0x18143e640",
+      "file_offset": 21220928,
+      "label": "IKA9nt_Encrypter_EncrypterCore__GetStream__060000ad",
+      "operations": [
+        "procedure_pseudo_code",
+        "analyze_function"
+      ],
+      "operation": "procedure_pseudo_code",
+      "evidence_id": "ev_2aa88eabf097d20312280477b7e42d1fce0847acd21e8aba5a1ef334dbea718e",
+      "elapsed_seconds": 77.465
+    },
+    {
+      "metadata_id": 76342,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::GetStream",
+      "token": "0x60000ad",
+      "va": "0x18143e640",
+      "file_offset": 21220928,
+      "label": "IKA9nt_Encrypter_EncrypterCore__GetStream__060000ad",
+      "operations": [
+        "procedure_pseudo_code",
+        "analyze_function"
+      ],
+      "operation": "analyze_function",
+      "evidence_id": "ev_0cce00d85aa03838a3baefef58c09b0f828d3d041c7d9c2ad5f53bf89303c6c2",
+      "elapsed_seconds": 0.109
+    },
+    {
+      "metadata_id": 76337,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::GetPasswordFromMap",
+      "token": "0x60000a8",
+      "va": "0x18143da40",
+      "file_offset": 21217856,
+      "label": "IKA9nt_Encrypter_EncrypterCore__GetPasswordFromMap__060000a8",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "operation": "procedure_pseudo_code",
+      "evidence_id": "ev_b909b2a42daf01e45f605aac161dfee3be9ad764b7268d18291248a36777cd01",
+      "elapsed_seconds": 0.101
+    },
+    {
+      "metadata_id": 76339,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::GetPasswordFromAdditionalMap",
+      "token": "0x60000aa",
+      "va": "0x18143df70",
+      "file_offset": 21219184,
+      "label": "IKA9nt_Encrypter_EncrypterCore__GetPasswordFromAdditionalMap__060000aa",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "operation": "procedure_pseudo_code",
+      "evidence_id": "ev_c59272d613d3d1c26976416061e617a9cf739cc574b0469f234fb37440d7bff2",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "metadata_id": 76340,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::PasswordCharacterSubstring",
+      "token": "0x60000ab",
+      "va": "0x18143e390",
+      "file_offset": 21220240,
+      "label": "IKA9nt_Encrypter_EncrypterCore__PasswordCharacterSubstring__060000ab",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "operation": "procedure_pseudo_code",
+      "evidence_id": "ev_ca64578c8e8d6f796bc03fe7abd37bdac57f0246c280d5655f8f22a4464eb7a8",
+      "elapsed_seconds": 0.036
+    },
+    {
+      "metadata_id": 76170,
+      "qualified_name": "PasswordMap::.ctor",
+      "token": "0x6000001",
+      "va": "0x181430540",
+      "file_offset": 21163328,
+      "label": "PasswordMap___ctor__06000001",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "operation": "procedure_pseudo_code",
+      "evidence_id": "ev_bf279891c89f761b34b45f3212594b397232eb5af0ed657410cabe7518be56b6",
+      "elapsed_seconds": 0.057
+    },
+    {
+      "metadata_id": 76171,
+      "qualified_name": "PasswordMap::Substring",
+      "token": "0x6000002",
+      "va": "0x181430b50",
+      "file_offset": 21164880,
+      "label": "PasswordMap__Substring__06000002",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "operation": "procedure_pseudo_code",
+      "evidence_id": "ev_4c6eee946708e920568c896d443b3196675380c5b6920b93b9d95a521db923ad",
+      "elapsed_seconds": 0.036
+    },
+    {
+      "metadata_id": 76177,
+      "qualified_name": "SeekableAesAssetBundle.Scripts.SeekableAesStream::.ctor",
+      "token": "0x6000008",
+      "va": "0x181430e50",
+      "file_offset": 21165648,
+      "label": "SeekableAesAssetBundle_Scripts_SeekableAesStream___ctor__06000008",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "operation": "procedure_pseudo_code",
+      "evidence_id": "ev_72ec8b6908f1d8df41f74c8d58bde69f0dfa24514bf3215d89f102c124ecbb34",
+      "elapsed_seconds": 0.048
+    },
+    {
+      "metadata_id": 76178,
+      "qualified_name": "SeekableAesAssetBundle.Scripts.SeekableAesStream::Cipher",
+      "token": "0x6000009",
+      "va": "0x181431250",
+      "file_offset": 21166672,
+      "label": "SeekableAesAssetBundle_Scripts_SeekableAesStream__Cipher__06000009",
+      "operations": [
+        "procedure_pseudo_code",
+        "analyze_function"
+      ],
+      "operation": "procedure_pseudo_code",
+      "evidence_id": "ev_da8ab7c4df73b20cbd377aec5a7327830772b14dbc91b5e2df47d1b15763c1ab",
+      "elapsed_seconds": 0.028
+    },
+    {
+      "metadata_id": 76178,
+      "qualified_name": "SeekableAesAssetBundle.Scripts.SeekableAesStream::Cipher",
+      "token": "0x6000009",
+      "va": "0x181431250",
+      "file_offset": 21166672,
+      "label": "SeekableAesAssetBundle_Scripts_SeekableAesStream__Cipher__06000009",
+      "operations": [
+        "procedure_pseudo_code",
+        "analyze_function"
+      ],
+      "operation": "analyze_function",
+      "evidence_id": "ev_d57052769c83214819813926f4aa881351d8c9eca571bb3cbc2298716371db68",
+      "elapsed_seconds": 0.094
+    },
+    {
+      "metadata_id": 76188,
+      "qualified_name": "SeekableAesAssetBundle.Scripts.SeekableAesStream::Read",
+      "token": "0x6000013",
+      "va": "0x181431660",
+      "file_offset": 21167712,
+      "label": "SeekableAesAssetBundle_Scripts_SeekableAesStream__Read__06000013",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "operation": "procedure_pseudo_code",
+      "evidence_id": "ev_283630b2bcc5c349511387f35d7692840a1bfc51509abe252372b53650c32a4e",
+      "elapsed_seconds": 0.011
+    },
+    {
+      "metadata_id": 76189,
+      "qualified_name": "SeekableAesAssetBundle.Scripts.SeekableAesStream::Read",
+      "token": "0x6000014",
+      "va": "0x181431710",
+      "file_offset": 21167888,
+      "label": "SeekableAesAssetBundle_Scripts_SeekableAesStream__Read__06000014",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "operation": "procedure_pseudo_code",
+      "evidence_id": "ev_5db9c7cef4489c0de9bc3c079a027abebfcc696f17a3b31c29d7b8aa7e599c33",
+      "elapsed_seconds": 0.01
+    }
+  ],
+  "success": true,
+  "global_mcp_configuration_changed": false,
+  "elapsed_seconds": 84.668,
+  "finished_at_utc": "2026-10-15T19:17:45.545Z"
+}

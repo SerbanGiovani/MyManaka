@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "name": "resource-crypto-getstream",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\crypto-getstream.seeds.tsv",
+  "seed_sha256": "ae08edcfee8c6b8999e0a6bc3a8ff06df9999cfb990aea70ac7247d1f41c7e19",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\crypto-batch-getstream",
+  "seed_count": 45,
+  "functions": [
+    {
+      "metadata_id": 76342,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::GetStream",
+      "token": "0x60000ad",
+      "va": "0x18143e640",
+      "file_offset": 21220928,
+      "label": "IKA9nt_Encrypter_EncrypterCore__GetStream__060000ad",
+      "operations": [
+        "procedure_pseudo_code",
+        "analyze_function"
+      ]
+    }
+  ],
+  "limitations": [
+    "One displayed seed alias per address; full alias sets remain in methods.sqlite.",
+    "Disabled discovery passes limit cross-function and indirect-call coverage.",
+    "Names and addresses are static metadata-derived coordinates, not execution observations."
+  ]
+}

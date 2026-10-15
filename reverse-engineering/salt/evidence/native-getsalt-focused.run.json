@@ -1,0 +1,37 @@
+{
+  "started_at_utc": "2026-10-15T18:43:38.385102+00:00",
+  "elapsed_seconds": 82.109,
+  "exit_code": 0,
+  "success": true,
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "target_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "procedure": "0x18143e460",
+  "provider_startup_timeout_ms": 600000,
+  "analyzer_preset": "ghidra-default+disabled:Disassemble Entry Points,Function Start Search,Subroutine References,Reference,Data Reference,Create Address Tables,Non-Returning Functions - Discovered,Decompiler Switch Analysis",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "snapshot": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\.cache\\native-focused-snapshot.json",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\native-getsalt.seeds.tsv",
+  "output": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\native-getsalt-focused.json",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.EXE",
+    "C:\\Users\\for_j\\AppData\\Roaming\\npm\\node_modules\\rea-agents\\scripts\\rea.mjs",
+    "decompile",
+    "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+    "0x18143e460",
+    "--provider=ghidra",
+    "--snapshot=E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\.cache\\native-focused-snapshot.json",
+    "--json"
+  ],
+  "ghidra_max_heap": "2G",
+  "public_launcher_sha256": "526105418604cc6e5a202a6275b700814e27450bfaffd45e7510530ba669de8d",
+  "global_mcp_configuration_changed": false
+}

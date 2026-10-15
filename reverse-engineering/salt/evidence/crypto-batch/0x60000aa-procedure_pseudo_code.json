@@ -1,0 +1,117 @@
+{
+  "evidence_id": "ev_c59272d613d3d1c26976416061e617a9cf739cc574b0469f234fb37440d7bff2",
+  "subject": {
+    "name": "GameAssembly.dll",
+    "digest": {
+      "sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    "local_path": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+    "format": "pe",
+    "architecture": "x86_64"
+  },
+  "provider": {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "version": "12.1.4"
+  },
+  "analysis_profile": {
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "parameters": {
+      "target_kind": "executable",
+      "target_format": "pe",
+      "executable_role": "shared-library",
+      "managed": false,
+      "native_aot_metadata": {
+        "contract_revision": "rtr-9.1-x64-pe-read-only-v3",
+        "source_bytes": 134217728,
+        "work_units": 67108864,
+        "working_memory_bytes": 67108864,
+        "report_bytes": 4194304
+      },
+      "architecture": "x86_64",
+      "available_architectures": [
+        "x86_64"
+      ],
+      "import_mode": "ephemeral-source-immutable",
+      "pdb_observations": "program-info-v1",
+      "annotation_policy": "atomic-function-entry-metadata-v1",
+      "load_image_observations": "source-mappings-entry-context-v2",
+      "function_body_evidence": "complete-inclusive-ranges-v1",
+      "function_references": "complete-body-and-entry-reference-manager-v2",
+      "call_relationship_coverage": "function-body-call-coverage-v5",
+      "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+      "string_inventory_evidence": "defined-data-coverage-v1",
+      "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+      "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+      "instruction_flow_evidence": "decoded-return-pcode-v1",
+      "instruction_references": "exact-address-incoming-v1",
+      "function_boundary_observations": "ghidra-function-boundary-limitations-v3",
+      "no_return_repair": "disabled-windows-p0",
+      "process_launch": "official-headless-script-v1",
+      "jump_table_evidence": "typed-case-default-blocks-v1",
+      "decompiler_jump_loads": true,
+      "loader": "auto-from-header",
+      "language_id": "auto-from-header",
+      "compiler_spec_id": "auto-default",
+      "analyzer_preset": "ghidra-default+disabled:Disassemble Entry Points,Function Start Search,Subroutine References,Reference,Data Reference,Create Address Tables,Non-Returning Functions - Discovered,Decompiler Switch Analysis",
+      "analysis_options": {
+        "disabled_analyzers": [
+          "Disassemble Entry Points",
+          "Function Start Search",
+          "Subroutine References",
+          "Reference",
+          "Data Reference",
+          "Create Address Tables",
+          "Non-Returning Functions - Discovered",
+          "Decompiler Switch Analysis"
+        ]
+      },
+      "analysis_seeds": {
+        "format": "rea-ghidra-seeds-v1",
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\crypto.seeds.tsv",
+        "configured_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\crypto.seeds.tsv",
+        "sha256": "be744d40ac589f3edbcf2846326811588b0feeded1f62321ec16e85a7a8f3552",
+        "entries": {
+          "function": 54,
+          "code": 0,
+          "label": 0
+        }
+      }
+    },
+    "digest": "67eae463a76f7749d738423fca65f6f477d12d445f972ebd21f6440cab0bb952"
+  },
+  "predicate_type": "rea.analysis",
+  "operation": "procedure_pseudo_code",
+  "parameters": {
+    "procedure": "0x18143df70"
+  },
+  "raw_result": {
+    "value": "\r\nlonglong IKA9nt_Encrypter_EncrypterCore__GetPasswordFromAdditionalMap__060000aa(undefined8 param_1)\r\n\r\n{\r\n  code *pcVar1;\r\n  int iVar2;\r\n  int iVar3;\r\n  longlong lVar4;\r\n  undefined8 uVar5;\r\n  longlong lVar6;\r\n  longlong lVar7;\r\n  undefined8 uVar8;\r\n  undefined8 uVar9;\r\n  int iVar10;\r\n  undefined4 auStackX_18 [4];\r\n  ulonglong in_stack_ffffffffffffff88;\r\n  undefined8 uStack_48;\r\n  undefined4 uStack_40;\r\n  undefined4 uStack_3c;\r\n  undefined4 uStack_30;\r\n  \r\n  if (cRam0000000182ebaaca == '\\0') {\r\n    FUN_1802f2810(0x182d53300);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d64a10);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d5bfb8);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d64e78);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d52f00);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d64a40);\r\n    LOCK();\r\n    UNLOCK();\r\n    cRam0000000182ebaaca = '\\x01';\r\n  }\r\n  iVar10 = 0;\r\n  uStack_30 = 0;\r\n  if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n    FUN_18035c820(lRam0000000182d5bfb8);\r\n  }\r\n  lVar7 = *(longlong *)(*(longlong *)(lRam0000000182d5bfb8 + 0xb8) + 0x20);\r\n  if (lVar7 != 0) {\r\n    lVar7 = *(longlong *)(lVar7 + 0x18);\r\n    if (lVar7 != 0) {\r\n      lVar4 = FUN_180eb45b0(lVar7,param_1,uRam0000000182d64a10);\r\n      lVar7 = **(longlong **)(lRam0000000182d52f00 + 0xb8);\r\n      if (lVar4 != 0) {\r\n        for (; iVar10 < *(int *)(lVar4 + 0x10); iVar10 = iVar10 + 1) {\r\n          if (*(int *)(lRam0000000182d64e78 + 0xe0) == 0) {\r\n            FUN_18035c820(lRam0000000182d64e78);\r\n          }\r\n          lVar6 = **(longlong **)(lRam0000000182d64e78 + 0xb8);\r\n          uVar5 = FUN_18147cec0(lVar4,iVar10,1,0);\r\n          if (lVar6 == 0) {\r\ncode_r0x00018143e2c0:\r\n            FUN_18031dad0();\r\n            goto code_r0x00018143e2c6;\r\n          }\r\n          in_stack_ffffffffffffff88 = in_stack_ffffffffffffff88 & 0xffffffff00000000;\r\n          iVar2 = FUN_18147e670(lVar6,uVar5,0,*(undefined4 *)(lVar6 + 0x10),\r\n                                in_stack_ffffffffffffff88,0);\r\n          if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n            FUN_18035c820(lRam0000000182d5bfb8);\r\n          }\r\n          lVar6 = *(longlong *)(*(longlong *)(lRam0000000182d5bfb8 + 0xb8) + 0x18);\r\n          if (lVar6 == 0) {\r\ncode_r0x00018143e2bb:\r\n            FUN_18031dad0();\r\n            goto code_r0x00018143e2c0;\r\n          }\r\n          lVar6 = *(longlong *)(lVar6 + 0x18);\r\n          if (lVar6 == 0) {\r\n            FUN_18031dad0();\r\n            goto code_r0x00018143e2bb;\r\n          }\r\n          lVar6 = FUN_18147cec0(lVar6,iVar10);\r\n          if (*(int *)(lRam0000000182d53300 + 0xe0) == 0) {\r\n            FUN_18035c820();\r\n          }\r\n          iVar3 = 0;\r\n          if (lVar6 != 0) {\r\n            if (cRam0000000182eb54e8 == '\\0') {\r\n              FUN_1802f2810(0x182d30368);\r\n              LOCK();\r\n              UNLOCK();\r\n              cRam0000000182eb54e8 = '\\x01';\r\n            }\r\n            uStack_48 = lVar6 + 0x14;\r\n            uStack_40 = *(undefined4 *)(lVar6 + 0x10);\r\n            auStackX_18[0] = 0;\r\n            uStack_3c = 0;\r\n            in_stack_ffffffffffffff88 = 0;\r\n            iVar3 = FUN_18162c4f0(&uStack_48,0x10,0x1000,auStackX_18,0);\r\n          }\r\n          uVar5 = IKA9nt_Encrypter_EncrypterCore__PasswordCharacterSubstring__060000ab\r\n                            (iVar2 - iVar3,0);\r\n          lVar7 = FUN_181478910(lVar7,uVar5);\r\n        }\r\n        if (lVar7 != 0) {\r\n          iVar10 = FUN_18147e670(lVar7,uRam0000000182d64a40,0,*(undefined4 *)(lVar7 + 0x10),\r\n                                 in_stack_ffffffffffffff88 & 0xffffffff00000000,0);\r\n          if (iVar10 < 0) {\r\n            return lVar7;\r\n          }\r\ncode_r0x00018143e2c6:\r\n          uVar5 = func_0x00018031d720(0x182d531f8);\r\n          uVar5 = func_0x00018031d8c0(uVar5,1);\r\n          FUN_1800039f0(uVar5);\r\n          FUN_180002cd0(uVar5,0,param_1);\r\n          uVar8 = func_0x00018031d720(0x182d5bfb8);\r\n          func_0x0001800039e0(uVar8);\r\n          uVar8 = func_0x00018031d720(0x182d64a38);\r\n          uVar9 = func_0x00018031d720(0x182d64a30);\r\n          uVar5 = FUN_18143f3a0(uVar9,uVar8,uVar5,0);\r\n          uVar8 = func_0x00018031d720(0x182d53398);\r\n          uVar8 = func_0x00018031da80(uVar8);\r\n          FUN_18165bfb0(uVar8,uVar5,0);\r\n          uVar5 = func_0x00018031d720(0x182d649e8);\r\n          FUN_18031da90(uVar8,uVar5);\r\n          pcVar1 = (code *)swi(3);\r\n          lVar7 = (*pcVar1)();\r\n          return lVar7;\r\n        }\r\n        FUN_18031dad0();\r\n      }\r\n      FUN_18031dad0();\r\n    }\r\n    FUN_18031dad0();\r\n  }\r\n  FUN_18031dad0();\r\n  pcVar1 = (code *)swi(3);\r\n  lVar7 = (*pcVar1)();\r\n  return lVar7;\r\n}\r\n\r\n",
+    "limitations": []
+  },
+  "normalized_result": "\r\nlonglong IKA9nt_Encrypter_EncrypterCore__GetPasswordFromAdditionalMap__060000aa(undefined8 param_1)\r\n\r\n{\r\n  code *pcVar1;\r\n  int iVar2;\r\n  int iVar3;\r\n  longlong lVar4;\r\n  undefined8 uVar5;\r\n  longlong lVar6;\r\n  longlong lVar7;\r\n  undefined8 uVar8;\r\n  undefined8 uVar9;\r\n  int iVar10;\r\n  undefined4 auStackX_18 [4];\r\n  ulonglong in_stack_ffffffffffffff88;\r\n  undefined8 uStack_48;\r\n  undefined4 uStack_40;\r\n  undefined4 uStack_3c;\r\n  undefined4 uStack_30;\r\n  \r\n  if (cRam0000000182ebaaca == '\\0') {\r\n    FUN_1802f2810(0x182d53300);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d64a10);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d5bfb8);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d64e78);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d52f00);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d64a40);\r\n    LOCK();\r\n    UNLOCK();\r\n    cRam0000000182ebaaca = '\\x01';\r\n  }\r\n  iVar10 = 0;\r\n  uStack_30 = 0;\r\n  if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n    FUN_18035c820(lRam0000000182d5bfb8);\r\n  }\r\n  lVar7 = *(longlong *)(*(longlong *)(lRam0000000182d5bfb8 + 0xb8) + 0x20);\r\n  if (lVar7 != 0) {\r\n    lVar7 = *(longlong *)(lVar7 + 0x18);\r\n    if (lVar7 != 0) {\r\n      lVar4 = FUN_180eb45b0(lVar7,param_1,uRam0000000182d64a10);\r\n      lVar7 = **(longlong **)(lRam0000000182d52f00 + 0xb8);\r\n      if (lVar4 != 0) {\r\n        for (; iVar10 < *(int *)(lVar4 + 0x10); iVar10 = iVar10 + 1) {\r\n          if (*(int *)(lRam0000000182d64e78 + 0xe0) == 0) {\r\n            FUN_18035c820(lRam0000000182d64e78);\r\n          }\r\n          lVar6 = **(longlong **)(lRam0000000182d64e78 + 0xb8);\r\n          uVar5 = FUN_18147cec0(lVar4,iVar10,1,0);\r\n          if (lVar6 == 0) {\r\ncode_r0x00018143e2c0:\r\n            FUN_18031dad0();\r\n            goto code_r0x00018143e2c6;\r\n          }\r\n          in_stack_ffffffffffffff88 = in_stack_ffffffffffffff88 & 0xffffffff00000000;\r\n          iVar2 = FUN_18147e670(lVar6,uVar5,0,*(undefined4 *)(lVar6 + 0x10),\r\n                                in_stack_ffffffffffffff88,0);\r\n          if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n            FUN_18035c820(lRam0000000182d5bfb8);\r\n          }\r\n          lVar6 = *(longlong *)(*(longlong *)(lRam0000000182d5bfb8 + 0xb8) + 0x18);\r\n          if (lVar6 == 0) {\r\ncode_r0x00018143e2bb:\r\n            FUN_18031dad0();\r\n            goto code_r0x00018143e2c0;\r\n          }\r\n          lVar6 = *(longlong *)(lVar6 + 0x18);\r\n          if (lVar6 == 0) {\r\n            FUN_18031dad0();\r\n            goto code_r0x00018143e2bb;\r\n          }\r\n          lVar6 = FUN_18147cec0(lVar6,iVar10);\r\n          if (*(int *)(lRam0000000182d53300 + 0xe0) == 0) {\r\n            FUN_18035c820();\r\n          }\r\n          iVar3 = 0;\r\n          if (lVar6 != 0) {\r\n            if (cRam0000000182eb54e8 == '\\0') {\r\n              FUN_1802f2810(0x182d30368);\r\n              LOCK();\r\n              UNLOCK();\r\n              cRam0000000182eb54e8 = '\\x01';\r\n            }\r\n            uStack_48 = lVar6 + 0x14;\r\n            uStack_40 = *(undefined4 *)(lVar6 + 0x10);\r\n            auStackX_18[0] = 0;\r\n            uStack_3c = 0;\r\n            in_stack_ffffffffffffff88 = 0;\r\n            iVar3 = FUN_18162c4f0(&uStack_48,0x10,0x1000,auStackX_18,0);\r\n          }\r\n          uVar5 = IKA9nt_Encrypter_EncrypterCore__PasswordCharacterSubstring__060000ab\r\n                            (iVar2 - iVar3,0);\r\n          lVar7 = FUN_181478910(lVar7,uVar5);\r\n        }\r\n        if (lVar7 != 0) {\r\n          iVar10 = FUN_18147e670(lVar7,uRam0000000182d64a40,0,*(undefined4 *)(lVar7 + 0x10),\r\n                                 in_stack_ffffffffffffff88 & 0xffffffff00000000,0);\r\n          if (iVar10 < 0) {\r\n            return lVar7;\r\n          }\r\ncode_r0x00018143e2c6:\r\n          uVar5 = func_0x00018031d720(0x182d531f8);\r\n          uVar5 = func_0x00018031d8c0(uVar5,1);\r\n          FUN_1800039f0(uVar5);\r\n          FUN_180002cd0(uVar5,0,param_1);\r\n          uVar8 = func_0x00018031d720(0x182d5bfb8);\r\n          func_0x0001800039e0(uVar8);\r\n          uVar8 = func_0x00018031d720(0x182d64a38);\r\n          uVar9 = func_0x00018031d720(0x182d64a30);\r\n          uVar5 = FUN_18143f3a0(uVar9,uVar8,uVar5,0);\r\n          uVar8 = func_0x00018031d720(0x182d53398);\r\n          uVar8 = func_0x00018031da80(uVar8);\r\n          FUN_18165bfb0(uVar8,uVar5,0);\r\n          uVar5 = func_0x00018031d720(0x182d649e8);\r\n          FUN_18031da90(uVar8,uVar5);\r\n          pcVar1 = (code *)swi(3);\r\n          lVar7 = (*pcVar1)();\r\n          return lVar7;\r\n        }\r\n        FUN_18031dad0();\r\n      }\r\n      FUN_18031dad0();\r\n    }\r\n    FUN_18031dad0();\r\n  }\r\n  FUN_18031dad0();\r\n  pcVar1 = (code *)swi(3);\r\n  lVar7 = (*pcVar1)();\r\n  return lVar7;\r\n}\r\n\r\n",
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+    "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+    "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+    "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+    "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+    "External functions and functions without an analyzable body return null; other decompiler failures remain explicit.",
+    "Windows Ghidra P0 accepts native x86 and x86-64 PE applications and DLLs, and explicitly selected raw 6502 images; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+    "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no bearer token.",
+    "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically.",
+    "Ghidra analysis was seeded before auto-analysis from E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\crypto.seeds.tsv (sha256 be744d40ac589f3edbcf2846326811588b0feeded1f62321ec16e85a7a8f3552: 54 function, 0 code, 0 label entries). Seeded functions, code and names are caller assertions, not Ghidra discoveries.",
+    "Seed outcome: 4 functions created, 50 already present, 0 failed; 0 code seeds decoded, 0 failed; 0 labels applied, 0 failed; 0 seeds outside initialized memory.",
+    "The target references PDB GameAssembly.pdb (GUID 9ed6a21b-e8f5-425a-9301-e52d6c440c63, age (hex) 7, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

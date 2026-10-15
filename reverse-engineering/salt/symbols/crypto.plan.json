@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "name": "resource-crypto",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\crypto.seeds.tsv",
+  "seed_sha256": "a4abe8133285e28d36e3726a066fb9e30563117adcca3b8103d553745ae92dfa",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\crypto-batch",
+  "seed_count": 54,
+  "functions": [
+    {
+      "metadata_id": 76342,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::GetStream",
+      "token": "0x60000ad",
+      "va": "0x18143e640",
+      "file_offset": 21220928,
+      "label": "IKA9nt_Encrypter_EncrypterCore__GetStream__060000ad",
+      "operations": [
+        "procedure_pseudo_code",
+        "analyze_function"
+      ]
+    },
+    {
+      "metadata_id": 76337,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::GetPasswordFromMap",
+      "token": "0x60000a8",
+      "va": "0x18143da40",
+      "file_offset": 21217856,
+      "label": "IKA9nt_Encrypter_EncrypterCore__GetPasswordFromMap__060000a8",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76339,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::GetPasswordFromAdditionalMap",
+      "token": "0x60000aa",
+      "va": "0x18143df70",
+      "file_offset": 21219184,
+      "label": "IKA9nt_Encrypter_EncrypterCore__GetPasswordFromAdditionalMap__060000aa",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76340,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::PasswordCharacterSubstring",
+      "token": "0x60000ab",
+      "va": "0x18143e390",
+      "file_offset": 21220240,
+      "label": "IKA9nt_Encrypter_EncrypterCore__PasswordCharacterSubstring__060000ab",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76170,
+      "qualified_name": "PasswordMap::.ctor",
+      "token": "0x6000001",
+      "va": "0x181430540",
+      "file_offset": 21163328,
+      "label": "PasswordMap___ctor__06000001",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76171,
+      "qualified_name": "PasswordMap::Substring",
+      "token": "0x6000002",
+      "va": "0x181430b50",
+      "file_offset": 21164880,
+      "label": "PasswordMap__Substring__06000002",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76177,
+      "qualified_name": "SeekableAesAssetBundle.Scripts.SeekableAesStream::.ctor",
+      "token": "0x6000008",
+      "va": "0x181430e50",
+      "file_offset": 21165648,
+      "label": "SeekableAesAssetBundle_Scripts_SeekableAesStream___ctor__06000008",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76178,
+      "qualified_name": "SeekableAesAssetBundle.Scripts.SeekableAesStream::Cipher",
+      "token": "0x6000009",
+      "va": "0x181431250",
+      "file_offset": 21166672,
+      "label": "SeekableAesAssetBundle_Scripts_SeekableAesStream__Cipher__06000009",
+      "operations": [
+        "procedure_pseudo_code",
+        "analyze_function"
+      ]
+    },
+    {
+      "metadata_id": 76188,
+      "qualified_name": "SeekableAesAssetBundle.Scripts.SeekableAesStream::Read",
+      "token": "0x6000013",
+      "va": "0x181431660",
+      "file_offset": 21167712,
+      "label": "SeekableAesAssetBundle_Scripts_SeekableAesStream__Read__06000013",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76189,
+      "qualified_name": "SeekableAesAssetBundle.Scripts.SeekableAesStream::Read",
+      "token": "0x6000014",
+      "va": "0x181431710",
+      "file_offset": 21167888,
+      "label": "SeekableAesAssetBundle_Scripts_SeekableAesStream__Read__06000014",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "One displayed seed alias per address; full alias sets remain in methods.sqlite.",
+    "Disabled discovery passes limit cross-function and indirect-call coverage.",
+    "Names and addresses are static metadata-derived coordinates, not execution observations."
+  ]
+}

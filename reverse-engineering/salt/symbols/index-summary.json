@@ -1,0 +1,712 @@
+{
+  "schema_version": 1,
+  "source_kind": "derived-static-IL2CPP-v31-index",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "database": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\.cache\\methods.sqlite",
+  "images": 76,
+  "types": 10508,
+  "methods": 79095,
+  "parameters": 85581,
+  "literals": 12040,
+  "mapping_status": {
+    "generic-or-unresolved": 1467,
+    "mapped": 70948,
+    "null-pointer": 6680
+  },
+  "shared_native_addresses": 4523,
+  "image_mapping": [
+    {
+      "id": 0,
+      "name": "mscorlib.dll",
+      "first_type": 0,
+      "type_count": 1608,
+      "method_slots": 11338,
+      "status": "mapped",
+      "module_va": "0x18294d5f0"
+    },
+    {
+      "id": 1,
+      "name": "Assembly-CSharp.dll",
+      "first_type": 1608,
+      "type_count": 1378,
+      "method_slots": 7782,
+      "status": "mapped",
+      "module_va": "0x1824e92e0"
+    },
+    {
+      "id": 2,
+      "name": "UnityEngine.UIElementsModule.dll",
+      "first_type": 2986,
+      "type_count": 1092,
+      "method_slots": 7486,
+      "status": "mapped",
+      "module_va": "0x1829b4550"
+    },
+    {
+      "id": 3,
+      "name": "Unity.InputSystem.dll",
+      "first_type": 4078,
+      "type_count": 653,
+      "method_slots": 5837,
+      "status": "mapped",
+      "module_va": "0x182978f10"
+    },
+    {
+      "id": 4,
+      "name": "Unity.Mathematics.dll",
+      "first_type": 4731,
+      "type_count": 103,
+      "method_slots": 9338,
+      "status": "mapped",
+      "module_va": "0x182983120"
+    },
+    {
+      "id": 5,
+      "name": "Unity.VisualScripting.Core.dll",
+      "first_type": 4834,
+      "type_count": 558,
+      "method_slots": 4940,
+      "status": "mapped",
+      "module_va": "0x182998f10"
+    },
+    {
+      "id": 6,
+      "name": "UnityEngine.CoreModule.dll",
+      "first_type": 5392,
+      "type_count": 848,
+      "method_slots": 4020,
+      "status": "mapped",
+      "module_va": "0x1829a8240"
+    },
+    {
+      "id": 7,
+      "name": "VRM10.dll",
+      "first_type": 6240,
+      "type_count": 350,
+      "method_slots": 2249,
+      "status": "mapped",
+      "module_va": "0x1829c5a70"
+    },
+    {
+      "id": 8,
+      "name": "Unity.RenderPipelines.Core.Runtime.dll",
+      "first_type": 6590,
+      "type_count": 511,
+      "method_slots": 3012,
+      "status": "mapped",
+      "module_va": "0x18298d310"
+    },
+    {
+      "id": 9,
+      "name": "UniGLTF.dll",
+      "first_type": 7101,
+      "type_count": 490,
+      "method_slots": 2365,
+      "status": "mapped",
+      "module_va": "0x18296e990"
+    },
+    {
+      "id": 10,
+      "name": "Unity.TextMeshPro.dll",
+      "first_type": 7591,
+      "type_count": 177,
+      "method_slots": 1620,
+      "status": "mapped",
+      "module_va": "0x182996b10"
+    },
+    {
+      "id": 11,
+      "name": "System.Core.dll",
+      "first_type": 7768,
+      "type_count": 605,
+      "method_slots": 2940,
+      "status": "mapped",
+      "module_va": "0x182961150"
+    },
+    {
+      "id": 12,
+      "name": "Unity.Burst.dll",
+      "first_type": 8373,
+      "type_count": 92,
+      "method_slots": 3642,
+      "status": "mapped",
+      "module_va": "0x182974ea0"
+    },
+    {
+      "id": 13,
+      "name": "System.dll",
+      "first_type": 8465,
+      "type_count": 245,
+      "method_slots": 1504,
+      "status": "mapped",
+      "module_va": "0x18296ab60"
+    },
+    {
+      "id": 14,
+      "name": "UnityEngine.UI.dll",
+      "first_type": 8710,
+      "type_count": 206,
+      "method_slots": 1900,
+      "status": "mapped",
+      "module_va": "0x1829c29c0"
+    },
+    {
+      "id": 15,
+      "name": "UnityEngine.TextCoreTextEngineModule.dll",
+      "first_type": 8916,
+      "type_count": 68,
+      "method_slots": 472,
+      "status": "mapped",
+      "module_va": "0x1829b3860"
+    },
+    {
+      "id": 16,
+      "name": "Unity.Postprocessing.Runtime.dll",
+      "first_type": 8984,
+      "type_count": 145,
+      "method_slots": 609,
+      "status": "mapped",
+      "module_va": "0x18298c480"
+    },
+    {
+      "id": 17,
+      "name": "Unity.Splines.dll",
+      "first_type": 9129,
+      "type_count": 117,
+      "method_slots": 909,
+      "status": "mapped",
+      "module_va": "0x182993560"
+    },
+    {
+      "id": 18,
+      "name": "ch.sycoforge.Decal.dll",
+      "first_type": 9246,
+      "type_count": 80,
+      "method_slots": 715,
+      "status": "mapped",
+      "module_va": "0x1824ea1e0"
+    },
+    {
+      "id": 19,
+      "name": "Unity.Animation.Rigging.dll",
+      "first_type": 9326,
+      "type_count": 141,
+      "method_slots": 815,
+      "status": "mapped",
+      "module_va": "0x182972fa0"
+    },
+    {
+      "id": 20,
+      "name": "UnityEngine.IMGUIModule.dll",
+      "first_type": 9467,
+      "type_count": 45,
+      "method_slots": 569,
+      "status": "mapped",
+      "module_va": "0x1829aee60"
+    },
+    {
+      "id": 21,
+      "name": "UniHumanoid.dll",
+      "first_type": 9512,
+      "type_count": 79,
+      "method_slots": 422,
+      "status": "mapped",
+      "module_va": "0x182972300"
+    },
+    {
+      "id": 22,
+      "name": "UnityEngine.dll",
+      "first_type": 9591,
+      "type_count": 1,
+      "method_slots": 0,
+      "status": "no-module",
+      "module_va": null
+    },
+    {
+      "id": 23,
+      "name": "UnityEngine.ParticleSystemModule.dll",
+      "first_type": 9592,
+      "type_count": 48,
+      "method_slots": 1072,
+      "status": "mapped",
+      "module_va": "0x1829afbe0"
+    },
+    {
+      "id": 24,
+      "name": "VrmLib.dll",
+      "first_type": 9640,
+      "type_count": 61,
+      "method_slots": 281,
+      "status": "mapped",
+      "module_va": "0x1829c8150"
+    },
+    {
+      "id": 25,
+      "name": "UnityEngine.AnimationModule.dll",
+      "first_type": 9701,
+      "type_count": 61,
+      "method_slots": 333,
+      "status": "mapped",
+      "module_va": "0x1829a7680"
+    },
+    {
+      "id": 26,
+      "name": "IKA9nt.Encrypter.dll",
+      "first_type": 9762,
+      "type_count": 37,
+      "method_slots": 210,
+      "status": "mapped",
+      "module_va": "0x1824eae50"
+    },
+    {
+      "id": 27,
+      "name": "UnityEngine.AndroidJNIModule.dll",
+      "first_type": 9799,
+      "type_count": 15,
+      "method_slots": 235,
+      "status": "mapped",
+      "module_va": "0x1829a7000"
+    },
+    {
+      "id": 28,
+      "name": "UnityEngine.PropertiesModule.dll",
+      "first_type": 9814,
+      "type_count": 105,
+      "method_slots": 267,
+      "status": "mapped",
+      "module_va": "0x1829b13c0"
+    },
+    {
+      "id": 29,
+      "name": "UnityEngine.PhysicsModule.dll",
+      "first_type": 9919,
+      "type_count": 30,
+      "method_slots": 239,
+      "status": "mapped",
+      "module_va": "0x1829b0f50"
+    },
+    {
+      "id": 30,
+      "name": "UnityEngine.UnityWebRequestModule.dll",
+      "first_type": 9949,
+      "type_count": 14,
+      "method_slots": 122,
+      "status": "mapped",
+      "module_va": "0x1829c4f20"
+    },
+    {
+      "id": 31,
+      "name": "VRM10.MToon10.dll",
+      "first_type": 9963,
+      "type_count": 48,
+      "method_slots": 128,
+      "status": "mapped",
+      "module_va": "0x1829c57d0"
+    },
+    {
+      "id": 32,
+      "name": "UnityEngine.TextCoreFontEngineModule.dll",
+      "first_type": 10011,
+      "type_count": 24,
+      "method_slots": 138,
+      "status": "mapped",
+      "module_va": "0x1829b34a0"
+    },
+    {
+      "id": 33,
+      "name": "System.Numerics.dll",
+      "first_type": 10035,
+      "type_count": 15,
+      "method_slots": 91,
+      "status": "mapped",
+      "module_va": "0x18296a8b0"
+    },
+    {
+      "id": 34,
+      "name": "FastSpringBone10.dll",
+      "first_type": 10050,
+      "type_count": 32,
+      "method_slots": 74,
+      "status": "mapped",
+      "module_va": "0x1824ea3b0"
+    },
+    {
+      "id": 35,
+      "name": "UnityEngine.XRModule.dll",
+      "first_type": 10082,
+      "type_count": 33,
+      "method_slots": 89,
+      "status": "mapped",
+      "module_va": "0x1829c5510"
+    },
+    {
+      "id": 36,
+      "name": "LeTai.TranslucentImage.dll",
+      "first_type": 10115,
+      "type_count": 20,
+      "method_slots": 88,
+      "status": "mapped",
+      "module_va": "0x18294d290"
+    },
+    {
+      "id": 37,
+      "name": "UnityEngine.AIModule.dll",
+      "first_type": 10135,
+      "type_count": 20,
+      "method_slots": 111,
+      "status": "mapped",
+      "module_va": "0x1829a6d90"
+    },
+    {
+      "id": 38,
+      "name": "UnityEngine.UIModule.dll",
+      "first_type": 10155,
+      "type_count": 11,
+      "method_slots": 111,
+      "status": "mapped",
+      "module_va": "0x1829c2750"
+    },
+    {
+      "id": 39,
+      "name": "UnityEngine.Physics2DModule.dll",
+      "first_type": 10166,
+      "type_count": 13,
+      "method_slots": 81,
+      "status": "mapped",
+      "module_va": "0x1829b0d50"
+    },
+    {
+      "id": 40,
+      "name": "Unity.AI.Navigation.dll",
+      "first_type": 10179,
+      "type_count": 13,
+      "method_slots": 120,
+      "status": "mapped",
+      "module_va": "0x182972c40"
+    },
+    {
+      "id": 41,
+      "name": "UnityEngine.TerrainModule.dll",
+      "first_type": 10192,
+      "type_count": 15,
+      "method_slots": 52,
+      "status": "mapped",
+      "module_va": "0x1829b3270"
+    },
+    {
+      "id": 42,
+      "name": "UnityEngine.TextRenderingModule.dll",
+      "first_type": 10207,
+      "type_count": 13,
+      "method_slots": 50,
+      "status": "mapped",
+      "module_va": "0x1829b4250"
+    },
+    {
+      "id": 43,
+      "name": "UnityEngine.InputLegacyModule.dll",
+      "first_type": 10220,
+      "type_count": 13,
+      "method_slots": 73,
+      "status": "mapped",
+      "module_va": "0x1829af800"
+    },
+    {
+      "id": 44,
+      "name": "UnityEngine.AudioModule.dll",
+      "first_type": 10233,
+      "type_count": 18,
+      "method_slots": 59,
+      "status": "mapped",
+      "module_va": "0x1829a80a0"
+    },
+    {
+      "id": 45,
+      "name": "UnityEngine.TilemapModule.dll",
+      "first_type": 10251,
+      "type_count": 15,
+      "method_slots": 52,
+      "status": "mapped",
+      "module_va": "0x1829b43d0"
+    },
+    {
+      "id": 46,
+      "name": "LeTai.TranslucentImage.Demo.dll",
+      "first_type": 10266,
+      "type_count": 23,
+      "method_slots": 58,
+      "status": "mapped",
+      "module_va": "0x18294d0f0"
+    },
+    {
+      "id": 47,
+      "name": "UnityEngine.SharedInternalsModule.dll",
+      "first_type": 10289,
+      "type_count": 30,
+      "method_slots": 69,
+      "status": "mapped",
+      "module_va": "0x1829b2cd0"
+    },
+    {
+      "id": 48,
+      "name": "UnityEngine.VFXModule.dll",
+      "first_type": 10319,
+      "type_count": 14,
+      "method_slots": 34,
+      "status": "mapped",
+      "module_va": "0x1829c51e0"
+    },
+    {
+      "id": 49,
+      "name": "UnityEngine.AssetBundleModule.dll",
+      "first_type": 10333,
+      "type_count": 6,
+      "method_slots": 32,
+      "status": "mapped",
+      "module_va": "0x1829a7e80"
+    },
+    {
+      "id": 50,
+      "name": "UnityEngine.SubsystemsModule.dll",
+      "first_type": 10339,
+      "type_count": 15,
+      "method_slots": 34,
+      "status": "mapped",
+      "module_va": "0x1829b2f50"
+    },
+    {
+      "id": 51,
+      "name": "UnityEngine.VideoModule.dll",
+      "first_type": 10354,
+      "type_count": 16,
+      "method_slots": 18,
+      "status": "mapped",
+      "module_va": "0x1829c5320"
+    },
+    {
+      "id": 52,
+      "name": "UnityEngine.InputModule.dll",
+      "first_type": 10370,
+      "type_count": 7,
+      "method_slots": 17,
+      "status": "mapped",
+      "module_va": "0x1829af9e0"
+    },
+    {
+      "id": 53,
+      "name": "UnityEngine.UnityAnalyticsModule.dll",
+      "first_type": 10377,
+      "type_count": 11,
+      "method_slots": 12,
+      "status": "mapped",
+      "module_va": "0x1829c4d60"
+    },
+    {
+      "id": 54,
+      "name": "UnityEngine.VRModule.dll",
+      "first_type": 10388,
+      "type_count": 4,
+      "method_slots": 16,
+      "status": "mapped",
+      "module_va": "0x1829c5420"
+    },
+    {
+      "id": 55,
+      "name": "IKA9nt.Encrypter.Demo2.dll",
+      "first_type": 10392,
+      "type_count": 8,
+      "method_slots": 19,
+      "status": "mapped",
+      "module_va": "0x1824ea4b0"
+    },
+    {
+      "id": 56,
+      "name": "UnityEngine.JSONSerializeModule.dll",
+      "first_type": 10400,
+      "type_count": 2,
+      "method_slots": 6,
+      "status": "mapped",
+      "module_va": "0x1829afae0"
+    },
+    {
+      "id": 57,
+      "name": "UnityEngine.UnityWebRequestAudioModule.dll",
+      "first_type": 10402,
+      "type_count": 3,
+      "method_slots": 9,
+      "status": "mapped",
+      "module_va": "0x1829c4e40"
+    },
+    {
+      "id": 58,
+      "name": "IKA9nt.Encrypter.Demo.dll",
+      "first_type": 10405,
+      "type_count": 13,
+      "method_slots": 39,
+      "status": "mapped",
+      "module_va": "0x1824ea6c0"
+    },
+    {
+      "id": 59,
+      "name": "UnityEngine.DirectorModule.dll",
+      "first_type": 10418,
+      "type_count": 2,
+      "method_slots": 3,
+      "status": "mapped",
+      "module_va": "0x1829aec30"
+    },
+    {
+      "id": 60,
+      "name": "UnityEngine.GridModule.dll",
+      "first_type": 10420,
+      "type_count": 2,
+      "method_slots": 1,
+      "status": "mapped",
+      "module_va": "0x1829aecf0"
+    },
+    {
+      "id": 61,
+      "name": "UnityEngine.ImageConversionModule.dll",
+      "first_type": 10422,
+      "type_count": 2,
+      "method_slots": 4,
+      "status": "mapped",
+      "module_va": "0x1829aeda0"
+    },
+    {
+      "id": 62,
+      "name": "UnityEngine.ScreenCaptureModule.dll",
+      "first_type": 10424,
+      "type_count": 3,
+      "method_slots": 2,
+      "status": "mapped",
+      "module_va": "0x1829b2c10"
+    },
+    {
+      "id": 63,
+      "name": "UnityEngine.SpriteShapeModule.dll",
+      "first_type": 10427,
+      "type_count": 2,
+      "method_slots": 0,
+      "status": "no-module",
+      "module_va": null
+    },
+    {
+      "id": 64,
+      "name": "UnityEngine.TerrainPhysicsModule.dll",
+      "first_type": 10429,
+      "type_count": 2,
+      "method_slots": 0,
+      "status": "no-module",
+      "module_va": null
+    },
+    {
+      "id": 65,
+      "name": "UniGLTF.UniUnlit.dll",
+      "first_type": 10431,
+      "type_count": 11,
+      "method_slots": 33,
+      "status": "mapped",
+      "module_va": "0x18296e5a0"
+    },
+    {
+      "id": 66,
+      "name": "Mono.Security.dll",
+      "first_type": 10442,
+      "type_count": 5,
+      "method_slots": 20,
+      "status": "mapped",
+      "module_va": "0x18294d500"
+    },
+    {
+      "id": 67,
+      "name": "UniGLTF.Utils.dll",
+      "first_type": 10447,
+      "type_count": 12,
+      "method_slots": 27,
+      "status": "mapped",
+      "module_va": "0x18296e6d0"
+    },
+    {
+      "id": 68,
+      "name": "System.Xml.dll",
+      "first_type": 10459,
+      "type_count": 3,
+      "method_slots": 1,
+      "status": "mapped",
+      "module_va": "0x18296aac0"
+    },
+    {
+      "id": 69,
+      "name": "Unity.Animation.Rigging.DocCodeExamples.dll",
+      "first_type": 10462,
+      "type_count": 8,
+      "method_slots": 9,
+      "status": "mapped",
+      "module_va": "0x182972ec0"
+    },
+    {
+      "id": 70,
+      "name": "Unity.Burst.Unsafe.dll",
+      "first_type": 10470,
+      "type_count": 4,
+      "method_slots": 37,
+      "status": "mapped",
+      "module_va": "0x1829749e0"
+    },
+    {
+      "id": 71,
+      "name": "Unity.MemoryProfiler.dll",
+      "first_type": 10474,
+      "type_count": 9,
+      "method_slots": 9,
+      "status": "mapped",
+      "module_va": "0x18298c3b0"
+    },
+    {
+      "id": 72,
+      "name": "IKA9nt.Encrypter.Demo3.dll",
+      "first_type": 10483,
+      "type_count": 7,
+      "method_slots": 4,
+      "status": "mapped",
+      "module_va": "0x1824ea570"
+    },
+    {
+      "id": 73,
+      "name": "System.Configuration.dll",
+      "first_type": 10490,
+      "type_count": 10,
+      "method_slots": 17,
+      "status": "mapped",
+      "module_va": "0x182961050"
+    },
+    {
+      "id": 74,
+      "name": "Unity.InputSystem.ForUI.dll",
+      "first_type": 10500,
+      "type_count": 3,
+      "method_slots": 2,
+      "status": "mapped",
+      "module_va": "0x182978e60"
+    },
+    {
+      "id": 75,
+      "name": "__Generated",
+      "first_type": 10503,
+      "type_count": 5,
+      "method_slots": 3,
+      "status": "mapped",
+      "module_va": "0x1829c86e0"
+    }
+  ],
+  "limitations": [
+    "Only the pinned build and v31 layouts are supported.",
+    "Generic methods with null pointers remain unresolved; runtime generic contexts are not reconstructed.",
+    "Duplicate native addresses preserve all metadata aliases and do not identify a unique runtime method.",
+    "Type names do not reconstruct nested-type ownership or C++/C# signatures.",
+    "Parameter and return type indices refer to runtime Il2CppType data, not decoded source types.",
+    "No original code was loaded or executed; metadata names and tokens are build-local coordinates."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "kind": "project-analyst-unknown-ledger",
+  "scope": "Pinned Manaka build, resource-crypto workflow; not a REA server residual registry",
+  "items": [
+    {"id":"U001","status":"open","question":"Resolve null/generic native pointers and exact runtime instantiations","boundary":"1467 generic-or-unresolved and 6680 null pointers remain in the static metadata index; shared native addresses are not unique runtime identities"},
+    {"id":"U002","status":"open","question":"Restore complete native signatures, indirect call targets and cross-function references","boundary":"Focused analysis disables whole-image discovery and retains Ghidra warnings; stream bytes were independently reproduced and structurally validated"},
+    {"id":"U003","status":"open","question":"Interpret/export every decrypted Unity object, mesh, material and MonoBehaviour field","boundary":"All container blocks and node ranges are validated; the 76079-object table is parsed, individual object semantics are not all verified"},
+    {"id":"U004","status":"open","question":"Validate additional resource/DLC maps and other game builds","boundary":"Only the observed models label and pinned binary/resource hashes are supported"},
+    {"id":"U005","status":"open","question":"Observe actual runtime stream behavior, threading and mod compatibility","boundary":"No game execution, live attach or runtime instrumentation was performed"}
+  ]
+}
