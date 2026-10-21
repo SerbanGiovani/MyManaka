@@ -7,6 +7,8 @@
 
 后续已补齐 EncrypterBundle 槽 2 → BridgeAssetBundle → Unity LoadAssetAsync / GetResult → 25 个回调 → 缓存及实例化/应用消费者，新增 56 份非空 REA 观察；另 3 份空 Listing 响应明确保留为不可用结果。见 [资源请求后续链报告](asset-followup.md) 与 `salt/evidence/asset-followup.json`。实际分配的包桥接类型为 BridgeAssetBundle，旧伪代码中的 EncryptLabelData 构造函数名是共享地址种子别名。
 
+已继续连接标题新游戏/继续 → 选项与存档槽 → 淡出 → SpringboardLoadEmpty → MStage 目标关卡 → InGameManager/StageController 初始化 → EventMethodManager 每帧接口分派，新增 109 次非空 REA 函数查询。标题动画等待 25 个回调的门槛、10 个构建场景、8 条真实关卡配置及 5 个标题按钮绑定均有静态证据。见 [场景与初始化报告](scene-chain.md)、`salt/evidence/scene-chain.json` 和 `assets/scene-inventory.json`。这些成果提供重建依据，尚未形成可独立运行的游戏或完成启动验证。
+
 ## 已完成
 
 | 项目 | 结果 | 证据 |
@@ -20,6 +22,8 @@
 | 解密副本 | 223,101,993 字节，SHA-256 `98621b2c4fa4f9de80f355fae5776ab17efc016bcc81c581bcd0917af4308367` | `salt/.cache/decrypted/models.unity3d` |
 | 容器验证 | UnityFS v8 / Unity 2022.3.62f2，3 节点，全部 3,819 块可解码，总解压流 500,551,232 字节 | `salt/evidence/decryption-verification.json` |
 | 对象目录 | 主 SerializedFile v22，2,650 类型、76,079 对象，带 type tree | `salt/evidence/decryption.json` |
+| 标题进入游戏 | 新游戏/继续分支、两次场景切换、状态恢复及主要初始化/更新入口 | `scene-chain.md`、`salt/evidence/scene-chain.json` |
+| 原始场景配置 | BuildSettings 10 场景、MStage 8 记录、入口组件与 5 个按钮持久调用 | `assets/scene-inventory.json` |
 
 解密包主节点是 `CAB-2afa88b54ee4aa6beff98892b77cac4c`，另有 `.resS` 和 `.resource`。对象表已读通，不等于每个模型、材质或 MonoBehaviour 字段的业务含义均已恢复。
 
@@ -66,6 +70,11 @@ python reverse-engineering/salt/prepare_loading.py
 node reverse-engineering/salt/run_batch.mjs reverse-engineering/salt/symbols/loading.plan.json
 python reverse-engineering/salt/loading_evidence.py --check
 python reverse-engineering/salt/asset_evidence.py --check
+python reverse-engineering/assets/inspect_scenes.py --check
+python reverse-engineering/salt/scene_evidence.py --check
+
+# 按选定程序集增加元数据名称种子；选中方法的别名优先
+python reverse-engineering/salt/prepare_loading.py --name scene-example --seed-assembly Assembly-CSharp.dll --method-id 16862
 
 # find 的 id 可用于选择其他方法，生成独立种子和计划，不必改脚本
 python reverse-engineering/salt/prepare_batch.py --method-id 76342 --name getstream
@@ -82,4 +91,4 @@ REA 输出保留 `evidence_id`、输入 SHA-256、分析 profile、种子承诺�
 
 批量入口使用同一 Ghidra 会话避免重复导入，导出证据后关闭。未修改 Codex 全局 MCP 配置。直接用旧默认全库模式仍可能很慢，快照也未提供本机 5 秒重放；后续使用批量入口，读取既有结果则直接打开保存的伪代码/JSON。
 
-当前范围只验证本构建的 `models` 资源包，其他包、动态补丁、运行时状态、泛型实例、所有对象语义仍未完成。完整引用图和部分间接调用/类型签名也未恢复；关闭的全库发现选项会限制这类结论。未知项见 `unknowns.json`，证据文件指纹见 `evidence-index.json`。
+资源解密验证限于本构建的 `models` 包；另已静态追踪标题进入游戏的场景、状态与主要初始化入口。其他包、动态补丁、实际运行时顺序、其余泛型实例和所有对象语义仍未完成。完整引用图、部分间接调用/类型签名、动画事件/状态机、ES3 全序列化和玩法子状态尚未恢复；关闭的全库发现选项会限制这类结论。未知项见 `unknowns.json`，证据文件指纹见 `evidence-index.json`。

@@ -103,6 +103,15 @@ def main():
     check(all(r["callback_evidence_id"] in observations and r["verified_consumer_methods"] for r in followup["requests"]), "Callback or consumer evidence missing")
     check(all(c["evidence_id"] in observations for r in followup["requests"] for c in r["verified_consumer_methods"]), "Consumer references missing observations")
     check(followup["interface_dispatch"]["method_id"] == 76228 and followup["request_get_result_dispatch"]["method_id"] == 78749, "Unexpected interface dispatch target")
+    scenes = read(ROOT / "salt/evidence/scene-chain.json")
+    scene_assets = read(ROOT / "assets/scene-inventory.json")
+    check(scenes["native_sha256"] == identity["native_sha256"] and scenes["metadata_sha256"] == identity["metadata_sha256"], "Scene chain identity mismatch")
+    check(all(m["evidence_id"] in observations for m in scenes["methods"]), "Scene chain references missing native observations")
+    check(sum(m["new_this_round"] for m in scenes["methods"]) == scenes["new_observations"], "Scene observation count differs")
+    check(scene_assets["source"]["sha256"] == asset["source_sha256"], "Scene asset bundle differs")
+    build_settings = scene_assets["build_settings"]
+    check(hashlib.sha256(bytes.fromhex(build_settings["raw_hex"])).hexdigest() == build_settings["source"]["sha256"], "BuildSettings bytes differ")
+    check(build_settings["scene_count"] == 10, "Unexpected scene configuration")
     checked_inputs = []
     if args.inputs:
         original = Path(identity["original_directory"])
@@ -116,6 +125,7 @@ def main():
         supplements = [read(ROOT / "salt/symbols" / name) for name in
                       ("dispatch-metadata.json", "field-offsets.json", "instantiation-generics.json")]
         source_records = list(declarations["sources"])
+        source_records.extend([scene_assets["stage_enum"]["source"], scene_assets["stage_enum"]["parser"]])
         for supplement in supplements:
             source_records.extend(supplement.get("sources", []))
             if supplement.get("parser_source"):

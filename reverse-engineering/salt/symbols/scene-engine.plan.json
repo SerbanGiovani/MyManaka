@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "name": "scene-engine",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\scene-engine.seeds.tsv",
+  "seed_sha256": "340a4ffda60e5a3dc54871904afb8430d3a73de6b8b65fc504ab446356eca3b7",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\scene-engine",
+  "seed_count": 6253,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 49952,
+      "qualified_name": "UnityEngine.SceneManagement.SceneManager::LoadScene",
+      "assembly": "UnityEngine.CoreModule.dll",
+      "token": "0x6000ca0",
+      "va": "0x181f593a0",
+      "file_offset": 32865184,
+      "label": "UnityEngine_SceneManagement_SceneManager__LoadScene__06000ca0",
+      "file_stem": "49952-06000ca0",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 49953,
+      "qualified_name": "UnityEngine.SceneManagement.SceneManager::LoadScene",
+      "assembly": "UnityEngine.CoreModule.dll",
+      "token": "0x6000ca1",
+      "va": "0x181f59410",
+      "file_offset": 32865296,
+      "label": "UnityEngine_SceneManagement_SceneManager__LoadScene__06000ca1",
+      "file_stem": "49953-06000ca1",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 49954,
+      "qualified_name": "UnityEngine.SceneManagement.SceneManager::LoadScene",
+      "assembly": "UnityEngine.CoreModule.dll",
+      "token": "0x6000ca2",
+      "va": "0x181f59470",
+      "file_offset": 32865392,
+      "label": "UnityEngine_SceneManagement_SceneManager__LoadScene__06000ca2",
+      "file_stem": "49954-06000ca2",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 49955,
+      "qualified_name": "UnityEngine.SceneManagement.SceneManager::LoadSceneAsync",
+      "assembly": "UnityEngine.CoreModule.dll",
+      "token": "0x6000ca3",
+      "va": "0x181f59530",
+      "file_offset": 32865584,
+      "label": "UnityEngine_SceneManagement_SceneManager__LoadSceneAsync__06000ca3",
+      "file_stem": "49955-06000ca3",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 49956,
+      "qualified_name": "UnityEngine.SceneManagement.SceneManager::LoadSceneAsync",
+      "assembly": "UnityEngine.CoreModule.dll",
+      "token": "0x6000ca4",
+      "va": "0x181f595e0",
+      "file_offset": 32865760,
+      "label": "UnityEngine_SceneManagement_SceneManager__LoadSceneAsync__06000ca4",
+      "file_stem": "49956-06000ca4",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_180477f00",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x180477f00",
+      "file_offset": 4679424,
+      "label": "native_only_180477f00__00000000",
+      "file_stem": "native-0x180477f00",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_180478000",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x180478000",
+      "file_offset": 4679680,
+      "label": "native_only_180478000__00000000",
+      "file_stem": "native-0x180478000",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

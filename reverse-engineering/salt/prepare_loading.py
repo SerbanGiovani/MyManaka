@@ -21,6 +21,8 @@ def main():
     parser.add_argument("--name", default="loading")
     parser.add_argument("--method-id", type=int, action="append")
     parser.add_argument("--native-va", action="append", help="Explicit native-only callee address from prior evidence")
+    parser.add_argument("--seed-assembly", action="append", default=[],
+                        help="Also name mapped methods in this exact indexed assembly; selected aliases take priority")
     parser.add_argument("--operation", choices=("procedure_pseudo_code", "procedure_assembly"), action="append",
                         help="Static REA query; default is pseudocode")
     args = parser.parse_args()
@@ -51,8 +53,10 @@ def main():
         selected.append({"id": None, "qualified_name": f"native_only_{va:x}", "token": 0,
                          "va": hex(va), "file_offset": pe.offset(va, executable=True), "assembly": None})
     seeds = {r["va"]: r for r in selected}
+    if set(args.seed_assembly) - {r["assembly"] for r in rows}:
+        parser.error("seed assembly is absent from the mapped method index")
     for r in rows:
-        if r["assembly"] == "IKA9nt.Encrypter.dll" or r["owner"] in HELPER_TYPES:
+        if r["assembly"] in ["IKA9nt.Encrypter.dll", *args.seed_assembly] or r["owner"] in HELPER_TYPES:
             seeds.setdefault(r["va"], r)
     seed_path = HERE / f"symbols/{args.name}.seeds.tsv"
     seed_path.write_text("# Metadata-derived assertions; first alias displayed, all aliases retained in SQLite.\n" +
@@ -62,6 +66,7 @@ def main():
             "seed_file": str(seed_path), "seed_sha256": hashlib.sha256(seed_path.read_bytes()).hexdigest(),
             "disabled_analyzers": DISABLED, "timeout_ms": 600000,
             "output_directory": str(HERE / f"evidence/{args.name}"), "seed_count": len(seeds),
+            "additional_seed_assemblies": args.seed_assembly,
             "functions": [{"metadata_id": r["id"], "qualified_name": r["qualified_name"], "assembly": r["assembly"],
                 "token": hex(r["token"]), "va": r["va"], "file_offset": r["file_offset"], "label": label(r),
                 "file_stem": f"{r['id']}-{r['token']:08x}" if r['id'] is not None else f"native-{r['va']}",

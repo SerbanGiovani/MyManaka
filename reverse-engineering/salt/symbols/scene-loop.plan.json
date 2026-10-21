@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "name": "scene-loop",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\scene-loop.seeds.tsv",
+  "seed_sha256": "ef2117509dd961546267fc96a561b546c3e460d8957f6004476e46e0b8f1f9ec",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\scene-loop",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 14757,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerController::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000d5c",
+      "va": "0x180643a10",
+      "file_offset": 6562320,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerController__OnUpdate__06000d5c",
+      "file_stem": "14757-06000d5c",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15829,
+      "qualified_name": "ExposureUnnoticed2.Object3D.IngameManager.AssetReferencer::Awake",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600118c",
+      "va": "0x180454510",
+      "file_offset": 4533520,
+      "label": "ExposureUnnoticed2_Object3D_IngameManager_AssetReferencer__Awake__0600118c",
+      "file_stem": "15829-0600118c",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16735,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.EventMethodManager::OnStart",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001516",
+      "va": "0x18048b1f0",
+      "file_offset": 4758000,
+      "label": "ExposureUnnoticed2_Scripts_InGame_EventMethodManager__OnStart__06001516",
+      "file_stem": "16735-06001516",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16736,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.EventMethodManager::FixedUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001517",
+      "va": "0x18048b3c0",
+      "file_offset": 4758464,
+      "label": "ExposureUnnoticed2_Scripts_InGame_EventMethodManager__FixedUpdate__06001517",
+      "file_stem": "16736-06001517",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16737,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.EventMethodManager::Update",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001518",
+      "va": "0x18048b510",
+      "file_offset": 4758800,
+      "label": "ExposureUnnoticed2_Scripts_InGame_EventMethodManager__Update__06001518",
+      "file_stem": "16737-06001518",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16738,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.EventMethodManager::LateUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001519",
+      "va": "0x18048b760",
+      "file_offset": 4759392,
+      "label": "ExposureUnnoticed2_Scripts_InGame_EventMethodManager__LateUpdate__06001519",
+      "file_stem": "16738-06001519",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17224,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.InputManager::Update",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60016ff",
+      "va": "0x1804afeb0",
+      "file_offset": 4908720,
+      "label": "ExposureUnnoticed2_Scripts_Base_InputManager__Update__060016ff",
+      "file_stem": "17224-060016ff",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17438,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SystemManager::.cctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017d5",
+      "va": "0x1804bbab0",
+      "file_offset": 4956848,
+      "label": "ExposureUnnoticed2_Scripts_Base_SystemManager___cctor__060017d5",
+      "file_stem": "17438-060017d5",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

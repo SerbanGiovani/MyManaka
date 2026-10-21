@@ -1,0 +1,422 @@
+{
+  "schema_version": 1,
+  "name": "scene-state",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\scene-state.seeds.tsv",
+  "seed_sha256": "81177067522f83080e1fc01a20bc44e19eb2175860743e616362f1234303f25d",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\scene-state",
+  "seed_count": 6251,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 15985,
+      "qualified_name": "ExposureUnnoticed2.Master.Stage.MStage::CheckInitialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001228",
+      "va": "0x180464060",
+      "file_offset": 4597856,
+      "label": "ExposureUnnoticed2_Master_Stage_MStage__CheckInitialize__06001228",
+      "file_stem": "15985-06001228",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15986,
+      "qualified_name": "ExposureUnnoticed2.Master.Stage.MStage::Get",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001229",
+      "va": "0x1804643d0",
+      "file_offset": 4598736,
+      "label": "ExposureUnnoticed2_Master_Stage_MStage__Get__06001229",
+      "file_stem": "15986-06001229",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16741,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameStateData::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600151c",
+      "va": "0x18048bbd0",
+      "file_offset": 4760528,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameStateData___ctor__0600151c",
+      "file_stem": "16741-0600151c",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16967,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.SaveManager::IsExistSaveData",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60015fe",
+      "va": "0x18049bf10",
+      "file_offset": 4826896,
+      "label": "ExposureUnnoticed2_Scripts_InGame_SaveManager__IsExistSaveData__060015fe",
+      "file_stem": "16967-060015fe",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16971,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.SaveManager::Load",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001602",
+      "va": "0x18049d380",
+      "file_offset": 4832128,
+      "label": "ExposureUnnoticed2_Scripts_InGame_SaveManager__Load__06001602",
+      "file_stem": "16971-06001602",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16972,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.SaveManager::LoadSaveDataSlotIndex",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001603",
+      "va": "0x18049f190",
+      "file_offset": 4839824,
+      "label": "ExposureUnnoticed2_Scripts_InGame_SaveManager__LoadSaveDataSlotIndex__06001603",
+      "file_stem": "16972-06001603",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16973,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.SaveManager::LoadSaveDataIsTrial",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001604",
+      "va": "0x18049f210",
+      "file_offset": 4839952,
+      "label": "ExposureUnnoticed2_Scripts_InGame_SaveManager__LoadSaveDataIsTrial__06001604",
+      "file_stem": "16973-06001604",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17052,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.StageController::Start",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001653",
+      "va": "0x1804a3d60",
+      "file_offset": 4859232,
+      "label": "ExposureUnnoticed2_Scripts_InGame_StageController__Start__06001653",
+      "file_stem": "17052-06001653",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17063,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.StageController::<Start>b__32_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600165e",
+      "va": "0x1804a5240",
+      "file_offset": 4864576,
+      "label": "ExposureUnnoticed2_Scripts_InGame_StageController___Start_b__32_0__0600165e",
+      "file_stem": "17063-0600165e",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17064,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.StageController::<Start>b__32_1",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600165f",
+      "va": "0x1804a58e0",
+      "file_offset": 4866272,
+      "label": "ExposureUnnoticed2_Scripts_InGame_StageController___Start_b__32_1__0600165f",
+      "file_stem": "17064-0600165f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17074,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.StageTransController::TransStage",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001669",
+      "va": "0x1804a7190",
+      "file_offset": 4872592,
+      "label": "ExposureUnnoticed2_Scripts_InGame_StageTransController__TransStage__06001669",
+      "file_stem": "17074-06001669",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17433,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SystemManager::CreateIfNoExist",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017d0",
+      "va": "0x1804bb1f0",
+      "file_offset": 4954608,
+      "label": "ExposureUnnoticed2_Scripts_Base_SystemManager__CreateIfNoExist__060017d0",
+      "file_stem": "17433-060017d0",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17434,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SystemManager::Awake",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017d1",
+      "va": "0x1804bb380",
+      "file_offset": 4955008,
+      "label": "ExposureUnnoticed2_Scripts_Base_SystemManager__Awake__060017d1",
+      "file_stem": "17434-060017d1",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17436,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SystemManager::Update",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017d3",
+      "va": "0x1804bba90",
+      "file_offset": 4956816,
+      "label": "ExposureUnnoticed2_Scripts_Base_SystemManager__Update__060017d3",
+      "file_stem": "17436-060017d3",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17443,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.TimeScaleManager::SwitchMode",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017da",
+      "va": "0x1804bbf60",
+      "file_offset": 4958048,
+      "label": "ExposureUnnoticed2_Scripts_Base_TimeScaleManager__SwitchMode__060017da",
+      "file_stem": "17443-060017da",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17840,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.SaveDataSelectPanel.ManualSavePanelView::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001967",
+      "va": "0x1804e2fe0",
+      "file_offset": 5117920,
+      "label": "ExposureUnnoticed2_ObjectUI_SaveDataSelectPanel_ManualSavePanelView__Initialize__06001967",
+      "file_stem": "17840-06001967",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17842,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.SaveDataSelectPanel.ManualSavePanelView::OnClickSlot",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001969",
+      "va": "0x1804e30e0",
+      "file_offset": 5118176,
+      "label": "ExposureUnnoticed2_ObjectUI_SaveDataSelectPanel_ManualSavePanelView__OnClickSlot__06001969",
+      "file_stem": "17842-06001969",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17846,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.SaveDataSelectPanel.ManualSavePanelView::Open",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600196d",
+      "va": "0x1804e3e70",
+      "file_offset": 5121648,
+      "label": "ExposureUnnoticed2_ObjectUI_SaveDataSelectPanel_ManualSavePanelView__Open__0600196d",
+      "file_stem": "17846-0600196d",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17850,
+      "qualified_name": "<>c::<OnClickSlot>b__11_1",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001971",
+      "va": "0x1804e4180",
+      "file_offset": 5122432,
+      "label": "__c___OnClickSlot_b__11_1__06001971",
+      "file_stem": "17850-06001971",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17851,
+      "qualified_name": "<>c::<OnClickSlot>b__11_2",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001972",
+      "va": "0x1804e4230",
+      "file_offset": 5122608,
+      "label": "__c___OnClickSlot_b__11_2__06001972",
+      "file_stem": "17851-06001972",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17853,
+      "qualified_name": "<>c__DisplayClass11_0::<OnClickSlot>g__OnSelect|0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001974",
+      "va": "0x1804e4240",
+      "file_offset": 5122624,
+      "label": "__c__DisplayClass11_0___OnClickSlot_g__OnSelect_0__06001974",
+      "file_stem": "17853-06001974",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17854,
+      "qualified_name": "<>c__DisplayClass11_0::<OnClickSlot>b__3",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001975",
+      "va": "0x1804e4610",
+      "file_offset": 5123600,
+      "label": "__c__DisplayClass11_0___OnClickSlot_b__3__06001975",
+      "file_stem": "17854-06001975",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17855,
+      "qualified_name": "<>c__DisplayClass11_0::<OnClickSlot>b__4",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001976",
+      "va": "0x1804e46f0",
+      "file_offset": 5123824,
+      "label": "__c__DisplayClass11_0___OnClickSlot_b__4__06001976",
+      "file_stem": "17855-06001976",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17856,
+      "qualified_name": "<>c__DisplayClass11_0::<OnClickSlot>b__5",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001977",
+      "va": "0x1804e4710",
+      "file_offset": 5123856,
+      "label": "__c__DisplayClass11_0___OnClickSlot_b__5__06001977",
+      "file_stem": "17856-06001977",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17869,
+      "qualified_name": "<>c::<TransScene>b__10_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001984",
+      "va": "0x1804e5bf0",
+      "file_offset": 5129200,
+      "label": "__c___TransScene_b__10_0__06001984",
+      "file_stem": "17869-06001984",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 49934,
+      "qualified_name": "UnityEngine.SceneManagement.SceneManagerAPIInternal::LoadSceneAsyncNameIndexInternal",
+      "assembly": "UnityEngine.CoreModule.dll",
+      "token": "0x6000c8e",
+      "va": "0x181f58740",
+      "file_offset": 32862016,
+      "label": "UnityEngine_SceneManagement_SceneManagerAPIInternal__LoadSceneAsyncNameIndexInternal__06000c8e",
+      "file_stem": "49934-06000c8e",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 49935,
+      "qualified_name": "UnityEngine.SceneManagement.SceneManagerAPIInternal::LoadSceneAsyncNameIndexInternal_Injected",
+      "assembly": "UnityEngine.CoreModule.dll",
+      "token": "0x6000c8f",
+      "va": "0x181f587c0",
+      "file_offset": 32862144,
+      "label": "UnityEngine_SceneManagement_SceneManagerAPIInternal__LoadSceneAsyncNameIndexInternal_Injected__06000c8f",
+      "file_stem": "49935-06000c8f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 49939,
+      "qualified_name": "UnityEngine.SceneManagement.SceneManagerAPI::LoadSceneAsyncByNameOrIndex",
+      "assembly": "UnityEngine.CoreModule.dll",
+      "token": "0x6000c93",
+      "va": "0x181f58960",
+      "file_offset": 32862560,
+      "label": "UnityEngine_SceneManagement_SceneManagerAPI__LoadSceneAsyncByNameOrIndex__06000c93",
+      "file_stem": "49939-06000c93",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 49945,
+      "qualified_name": "UnityEngine.SceneManagement.SceneManager::LoadSceneAsyncNameIndexInternal",
+      "assembly": "UnityEngine.CoreModule.dll",
+      "token": "0x6000c99",
+      "va": "0x181f58bf0",
+      "file_offset": 32863216,
+      "label": "UnityEngine_SceneManagement_SceneManager__LoadSceneAsyncNameIndexInternal__06000c99",
+      "file_stem": "49945-06000c99",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 49957,
+      "qualified_name": "UnityEngine.SceneManagement.SceneManager::Internal_SceneLoaded",
+      "assembly": "UnityEngine.CoreModule.dll",
+      "token": "0x6000ca5",
+      "va": "0x181f59650",
+      "file_offset": 32865872,
+      "label": "UnityEngine_SceneManagement_SceneManager__Internal_SceneLoaded__06000ca5",
+      "file_stem": "49957-06000ca5",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}
