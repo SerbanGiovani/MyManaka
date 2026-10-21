@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "name": "npc-model-selection",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\npc-model-selection.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\npc-model-selection",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 15425,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcAvatarComponent::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000ff8",
+      "va": "0x18041f300",
+      "file_offset": 4315904,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcAvatarComponent__Initialize__06000ff8",
+      "file_stem": "15425-06000ff8",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15434,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcAvatarSelector::CreateAvatar",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001001",
+      "va": "0x1804227a0",
+      "file_offset": 4329376,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcAvatarSelector__CreateAvatar__06001001",
+      "file_stem": "15434-06001001",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15450,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcComponent::CreateController",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001011",
+      "va": "0x180424060",
+      "file_offset": 4335712,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcComponent__CreateController__06001011",
+      "file_stem": "15450-06001011",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15587,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcManager::InstantiateNpc",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600109a",
+      "va": "0x18042fe70",
+      "file_offset": 4384368,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcManager__InstantiateNpc__0600109a",
+      "file_stem": "15587-0600109a",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15588,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcManager::CreateFixedNpc",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600109b",
+      "va": "0x180430190",
+      "file_offset": 4385168,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcManager__CreateFixedNpc__0600109b",
+      "file_stem": "15588-0600109b",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "evidence_id": "ev_045eb66aa008830387f93b5acf64d95024c45572e0970c06fe7c33fda337e439",
+  "subject": {
+    "name": "GameAssembly.dll",
+    "digest": {
+      "sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    "local_path": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+    "format": "pe",
+    "architecture": "x86_64"
+  },
+  "provider": {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "version": "12.1.4"
+  },
+  "analysis_profile": {
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "parameters": {
+      "target_kind": "executable",
+      "target_format": "pe",
+      "executable_role": "shared-library",
+      "managed": false,
+      "native_aot_metadata": {
+        "contract_revision": "rtr-9.1-x64-pe-read-only-v3",
+        "source_bytes": 134217728,
+        "work_units": 67108864,
+        "working_memory_bytes": 67108864,
+        "report_bytes": 4194304
+      },
+      "architecture": "x86_64",
+      "available_architectures": [
+        "x86_64"
+      ],
+      "import_mode": "ephemeral-source-immutable",
+      "pdb_observations": "program-info-v1",
+      "annotation_policy": "atomic-function-entry-metadata-v1",
+      "load_image_observations": "source-mappings-entry-context-v2",
+      "function_body_evidence": "complete-inclusive-ranges-v1",
+      "function_references": "complete-body-and-entry-reference-manager-v2",
+      "call_relationship_coverage": "function-body-call-coverage-v5",
+      "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+      "string_inventory_evidence": "defined-data-coverage-v1",
+      "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+      "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+      "instruction_flow_evidence": "decoded-return-pcode-v1",
+      "instruction_references": "exact-address-incoming-v1",
+      "function_boundary_observations": "ghidra-function-boundary-limitations-v3",
+      "no_return_repair": "disabled-windows-p0",
+      "process_launch": "official-headless-script-v1",
+      "jump_table_evidence": "typed-case-default-blocks-v1",
+      "decompiler_jump_loads": true,
+      "loader": "auto-from-header",
+      "language_id": "auto-from-header",
+      "compiler_spec_id": "auto-default",
+      "analyzer_preset": "ghidra-default+disabled:Disassemble Entry Points,Function Start Search,Subroutine References,Reference,Data Reference,Create Address Tables,Non-Returning Functions - Discovered,Decompiler Switch Analysis",
+      "analysis_options": {
+        "disabled_analyzers": [
+          "Disassemble Entry Points",
+          "Function Start Search",
+          "Subroutine References",
+          "Reference",
+          "Data Reference",
+          "Create Address Tables",
+          "Non-Returning Functions - Discovered",
+          "Decompiler Switch Analysis"
+        ]
+      },
+      "analysis_seeds": {
+        "format": "rea-ghidra-seeds-v1",
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\npc-model-initialize.seeds.tsv",
+        "configured_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\npc-model-initialize.seeds.tsv",
+        "sha256": "edb1674a4796bf1518dae44ec44255b8ff01b232332794e9e1c6c0a928b1c53e",
+        "entries": {
+          "function": 6246,
+          "code": 0,
+          "label": 0
+        }
+      }
+    },
+    "digest": "ed156a55e93bc6e8bb2ffe4cf076a2ff895cb146c2b64afb252b38ac680b9b11"
+  },
+  "predicate_type": "rea.analysis",
+  "operation": "procedure_pseudo_code",
+  "parameters": {
+    "procedure": "0x180426ed0"
+  },
+  "raw_result": {
+    "value": "\r\nulonglong ExposureUnnoticed2_Object3D_NPC_Script_NpcController___ctor__06001054\r\n                    (longlong param_1,undefined8 param_2)\r\n\r\n{\r\n  longlong lVar1;\r\n  ulonglong uVar2;\r\n  code *pcVar3;\r\n  undefined8 uVar4;\r\n  ulonglong uVar5;\r\n  ulonglong uVar6;\r\n  uint uVar7;\r\n  bool bVar8;\r\n  \r\n  bVar8 = DAT_182eb5d50 != 0;\r\n  *(undefined4 *)(param_1 + 0x74) = 0x3f800000;\r\n  *(undefined1 *)(param_1 + 0x7c) = 1;\r\n  *(undefined8 *)(param_1 + 0x28) = param_2;\r\n  if (bVar8) {\r\n    uVar7 = (uint)(param_1 + 0x28U >> 0xc);\r\n    uVar5 = (ulonglong)((uVar7 & 0x1fffff) >> 6);\r\n    do {\r\n      uVar6 = *(ulonglong *)(&DAT_182f0c920 + uVar5 * 8);\r\n      LOCK();\r\n      bVar8 = uVar6 == *(ulonglong *)(&DAT_182f0c920 + uVar5 * 8);\r\n      if (bVar8) {\r\n        *(ulonglong *)(&DAT_182f0c920 + uVar5 * 8) = uVar6 | 1L << (ulonglong)(uVar7 & 0x3f);\r\n      }\r\n      UNLOCK();\r\n    } while (!bVar8);\r\n  }\r\n  lVar1 = *(longlong *)(param_1 + 0x28);\r\n  if (lVar1 != 0) {\r\n    pcVar3 = DAT_182ec1088;\r\n    if ((DAT_182ec1088 == (code *)0x0) &&\r\n       (pcVar3 = (code *)FUN_1802cf0c0(\"UnityEngine.Component::get_gameObject()\"),\r\n       pcVar3 == (code *)0x0)) {\r\n      uVar4 = FUN_1802ced60(\"UnityEngine.Component::get_gameObject()\");\r\n                    /* WARNING: Subroutine does not return */\r\n      FUN_1802cca90(uVar4,0);\r\n    }\r\n    DAT_182ec1088 = pcVar3;\r\n    uVar4 = (*DAT_182ec1088)(lVar1);\r\n    bVar8 = DAT_182eb5d50 != 0;\r\n    *(undefined8 *)(param_1 + 0x18) = uVar4;\r\n    if (bVar8) {\r\n      uVar7 = (uint)(param_1 + 0x18U >> 0xc);\r\n      uVar5 = (ulonglong)((uVar7 & 0x1fffff) >> 6);\r\n      do {\r\n        uVar6 = *(ulonglong *)(&DAT_182f0c920 + uVar5 * 8);\r\n        LOCK();\r\n        bVar8 = uVar6 == *(ulonglong *)(&DAT_182f0c920 + uVar5 * 8);\r\n        if (bVar8) {\r\n          *(ulonglong *)(&DAT_182f0c920 + uVar5 * 8) = uVar6 | 1L << (uVar7 & 0x3f);\r\n        }\r\n        UNLOCK();\r\n      } while (!bVar8);\r\n    }\r\n    lVar1 = *(longlong *)(param_1 + 0x28);\r\n    if (lVar1 != 0) {\r\n      pcVar3 = DAT_182ec1080;\r\n      if ((DAT_182ec1080 == (code *)0x0) &&\r\n         (pcVar3 = (code *)FUN_1802cf0c0(\"UnityEngine.Component::get_transform()\"),\r\n         pcVar3 == (code *)0x0)) {\r\n        uVar4 = FUN_1802ced60(\"UnityEngine.Component::get_transform()\");\r\n                    /* WARNING: Subroutine does not return */\r\n        FUN_1802cca90(uVar4,0);\r\n      }\r\n      DAT_182ec1080 = pcVar3;\r\n      uVar5 = (*DAT_182ec1080)(lVar1);\r\n      bVar8 = DAT_182eb5d50 != 0;\r\n      *(ulonglong *)(param_1 + 0x10) = uVar5;\r\n      if (bVar8) {\r\n        uVar7 = (uint)(param_1 + 0x10U >> 0xc);\r\n        uVar6 = (ulonglong)((uVar7 & 0x1fffff) >> 6);\r\n        do {\r\n          uVar2 = *(ulonglong *)(&DAT_182f0c920 + uVar6 * 8);\r\n          LOCK();\r\n          uVar5 = *(ulonglong *)(&DAT_182f0c920 + uVar6 * 8);\r\n          bVar8 = uVar2 == uVar5;\r\n          if (bVar8) {\r\n            *(ulonglong *)(&DAT_182f0c920 + uVar6 * 8) = uVar2 | 1L << (uVar7 & 0x3f);\r\n            uVar5 = uVar2;\r\n          }\r\n          UNLOCK();\r\n        } while (!bVar8);\r\n      }\r\n      return uVar5;\r\n    }\r\n  }\r\n                    /* WARNING: Subroutine does not return */\r\n  FUN_18031dad0();\r\n}\r\n\r\n",
+    "limitations": [
+      "Ghidra Listing reports a terminal call at 0x18042706c to 0x18031dad0 FUN_18031dad0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+      "Ghidra Listing reports a terminal call at 0x180427083 to 0x1802cca90 FUN_1802cca90 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+      "Ghidra Listing reports a terminal call at 0x18042709a to 0x1802cca90 FUN_1802cca90 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return."
+    ]
+  },
+  "normalized_result": "\r\nulonglong ExposureUnnoticed2_Object3D_NPC_Script_NpcController___ctor__06001054\r\n                    (longlong param_1,undefined8 param_2)\r\n\r\n{\r\n  longlong lVar1;\r\n  ulonglong uVar2;\r\n  code *pcVar3;\r\n  undefined8 uVar4;\r\n  ulonglong uVar5;\r\n  ulonglong uVar6;\r\n  uint uVar7;\r\n  bool bVar8;\r\n  \r\n  bVar8 = DAT_182eb5d50 != 0;\r\n  *(undefined4 *)(param_1 + 0x74) = 0x3f800000;\r\n  *(undefined1 *)(param_1 + 0x7c) = 1;\r\n  *(undefined8 *)(param_1 + 0x28) = param_2;\r\n  if (bVar8) {\r\n    uVar7 = (uint)(param_1 + 0x28U >> 0xc);\r\n    uVar5 = (ulonglong)((uVar7 & 0x1fffff) >> 6);\r\n    do {\r\n      uVar6 = *(ulonglong *)(&DAT_182f0c920 + uVar5 * 8);\r\n      LOCK();\r\n      bVar8 = uVar6 == *(ulonglong *)(&DAT_182f0c920 + uVar5 * 8);\r\n      if (bVar8) {\r\n        *(ulonglong *)(&DAT_182f0c920 + uVar5 * 8) = uVar6 | 1L << (ulonglong)(uVar7 & 0x3f);\r\n      }\r\n      UNLOCK();\r\n    } while (!bVar8);\r\n  }\r\n  lVar1 = *(longlong *)(param_1 + 0x28);\r\n  if (lVar1 != 0) {\r\n    pcVar3 = DAT_182ec1088;\r\n    if ((DAT_182ec1088 == (code *)0x0) &&\r\n       (pcVar3 = (code *)FUN_1802cf0c0(\"UnityEngine.Component::get_gameObject()\"),\r\n       pcVar3 == (code *)0x0)) {\r\n      uVar4 = FUN_1802ced60(\"UnityEngine.Component::get_gameObject()\");\r\n                    /* WARNING: Subroutine does not return */\r\n      FUN_1802cca90(uVar4,0);\r\n    }\r\n    DAT_182ec1088 = pcVar3;\r\n    uVar4 = (*DAT_182ec1088)(lVar1);\r\n    bVar8 = DAT_182eb5d50 != 0;\r\n    *(undefined8 *)(param_1 + 0x18) = uVar4;\r\n    if (bVar8) {\r\n      uVar7 = (uint)(param_1 + 0x18U >> 0xc);\r\n      uVar5 = (ulonglong)((uVar7 & 0x1fffff) >> 6);\r\n      do {\r\n        uVar6 = *(ulonglong *)(&DAT_182f0c920 + uVar5 * 8);\r\n        LOCK();\r\n        bVar8 = uVar6 == *(ulonglong *)(&DAT_182f0c920 + uVar5 * 8);\r\n        if (bVar8) {\r\n          *(ulonglong *)(&DAT_182f0c920 + uVar5 * 8) = uVar6 | 1L << (uVar7 & 0x3f);\r\n        }\r\n        UNLOCK();\r\n      } while (!bVar8);\r\n    }\r\n    lVar1 = *(longlong *)(param_1 + 0x28);\r\n    if (lVar1 != 0) {\r\n      pcVar3 = DAT_182ec1080;\r\n      if ((DAT_182ec1080 == (code *)0x0) &&\r\n         (pcVar3 = (code *)FUN_1802cf0c0(\"UnityEngine.Component::get_transform()\"),\r\n         pcVar3 == (code *)0x0)) {\r\n        uVar4 = FUN_1802ced60(\"UnityEngine.Component::get_transform()\");\r\n                    /* WARNING: Subroutine does not return */\r\n        FUN_1802cca90(uVar4,0);\r\n      }\r\n      DAT_182ec1080 = pcVar3;\r\n      uVar5 = (*DAT_182ec1080)(lVar1);\r\n      bVar8 = DAT_182eb5d50 != 0;\r\n      *(ulonglong *)(param_1 + 0x10) = uVar5;\r\n      if (bVar8) {\r\n        uVar7 = (uint)(param_1 + 0x10U >> 0xc);\r\n        uVar6 = (ulonglong)((uVar7 & 0x1fffff) >> 6);\r\n        do {\r\n          uVar2 = *(ulonglong *)(&DAT_182f0c920 + uVar6 * 8);\r\n          LOCK();\r\n          uVar5 = *(ulonglong *)(&DAT_182f0c920 + uVar6 * 8);\r\n          bVar8 = uVar2 == uVar5;\r\n          if (bVar8) {\r\n            *(ulonglong *)(&DAT_182f0c920 + uVar6 * 8) = uVar2 | 1L << (uVar7 & 0x3f);\r\n            uVar5 = uVar2;\r\n          }\r\n          UNLOCK();\r\n        } while (!bVar8);\r\n      }\r\n      return uVar5;\r\n    }\r\n  }\r\n                    /* WARNING: Subroutine does not return */\r\n  FUN_18031dad0();\r\n}\r\n\r\n",
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+    "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+    "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+    "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+    "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+    "External functions and functions without an analyzable body return null; other decompiler failures remain explicit.",
+    "Ghidra Listing reports a terminal call at 0x18042706c to 0x18031dad0 FUN_18031dad0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+    "Ghidra Listing reports a terminal call at 0x180427083 to 0x1802cca90 FUN_1802cca90 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+    "Ghidra Listing reports a terminal call at 0x18042709a to 0x1802cca90 FUN_1802cca90 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+    "Windows Ghidra P0 accepts native x86 and x86-64 PE applications and DLLs, and explicitly selected raw 6502 images; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+    "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no bearer token.",
+    "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically.",
+    "Ghidra analysis was seeded before auto-analysis from E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\npc-model-initialize.seeds.tsv (sha256 edb1674a4796bf1518dae44ec44255b8ff01b232332794e9e1c6c0a928b1c53e: 6246 function, 0 code, 0 label entries). Seeded functions, code and names are caller assertions, not Ghidra discoveries.",
+    "Seed outcome: 774 functions created, 5472 already present, 0 failed; 0 code seeds decoded, 0 failed; 0 labels applied, 0 failed; 0 seeds outside initialized memory.",
+    "The target references PDB GameAssembly.pdb (GUID 9ed6a21b-e8f5-425a-9301-e52d6c440c63, age (hex) 7, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

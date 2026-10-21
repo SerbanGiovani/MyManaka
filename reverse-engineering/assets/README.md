@@ -5,6 +5,7 @@
 ## 已建立的证据
 
 - `input-inventory.json` 保存四个实际输入的大小、SHA-256、头部、GUID 搜索边界及结果和本地工具的限定盘点。
+- `npc-model-wiring.json` / `inspect_npc_models.py`：完整解析当前NpcManager与NpcComponent模板，保留九候选模型的Animator/Receiver/Avatar组件身份、AvatarType原始枚举、Casual1限定引用候选及models脚本指针盘点。`--check`可复现；它与 [NPC模型初始化报告](../npc-model-chain.md) 的原生选择链共同确认Receiver由模型prefab克隆继承，Casual1不在当前工厂候选中。全局运行添加/覆盖仍未证明或排除。
 - `npc-animation-events.json` / `inspect_npc_animation.py`：使用同构建、同class/hash/engine的models donor schema，完整消费原始357个clip、48个controller与1246个Animator；保留四个NPC发现事件、时长/循环字段、Npc控制器clip表引用及10个Animator接线。`animator-wiring.json` / `inspect_animator.py` / `animator_tree.py`另完整解析选定Player/Npc控制器图和6个玩家Animator。复查脚本均支持`--check`；原生参数/接收器及边界见 [动画接线报告](../animator-wiring.md)。
 - `resources-keydata.json` 保存 UnityFS 块/节点表、SerializedFile 元数据摘要、KeyData 对象及关联 MonoScript 的原始字节、SHA-256、字段跨度、原始 IL2CPP 字段记录。
 - `inspect_resources.py` 使用 Python 标准库读取所需目录、元数据和少量块，支持本构建观察到的 UnityFS v8 / flags `0x243`、LZ4 或未压缩数据块、little-endian SerializedFile v22、IL2CPP metadata v31。运行实测约 3 秒（包括 2.44 GB 输入的流式 SHA-256），不加载或执行目标程序集。

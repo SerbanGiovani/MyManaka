@@ -160,6 +160,20 @@ def main():
     for controller in wiring["controllers"]:
         check(hashlib.sha256(bytes.fromhex(controller["raw_hex"])).hexdigest() == controller["source"]["sha256"], "Controller original bytes differ")
         check(controller["decoded"]["end_of_object_verified"] and controller["decoded"]["bytes_consumed"] == controller["source"]["object"]["size"], "Controller schema did not consume object")
+    npc_model = read(ROOT / "salt/evidence/npc-model-chain.json")
+    model_assets = read(ROOT / "assets/npc-model-wiring.json")
+    check(npc_model["native_sha256"] == identity["native_sha256"] and npc_model["metadata_sha256"] == identity["metadata_sha256"], "NPC model native identity differs")
+    check(all(m["evidence_id"] in observations for m in npc_model["methods"]), "NPC model chain references missing native evidence")
+    check(sum(m["new_this_round"] for m in npc_model["methods"]) == npc_model["new_observations"], "NPC model observation count differs")
+    for dependency in [*npc_model["asset_dependencies"], npc_model["component_registration_inventory"]["registration_dependency"]]:
+        check(digest(ROOT / dependency["path"]) == dependency["sha256"], "NPC model dependency differs")
+    for dependency in [*model_assets["parser_sources"], model_assets["npc_event_dependency"]]:
+        check(digest(Path(dependency["path"])) == dependency["sha256"], "NPC model parser fingerprint differs")
+    check(model_assets["original_bundle"]["sha256"] == asset["source_sha256"] and model_assets["models_bundle"]["sha256"] == decryption["plaintext"]["sha256"], "NPC model asset sources differ")
+    check(len(model_assets["selected_nine_model_wiring"]) == 9 and not model_assets["casual1"]["in_selected_npc_component_model_fields"], "NPC model candidate set differs")
+    check(model_assets["npc_manager"]["end_of_object_verified"] and model_assets["npc_component"]["end_of_object_verified"], "NPC model component schemas did not consume objects")
+    component_inventory = npc_model["component_registration_inventory"]
+    check(component_inventory["method_spec_count_scanned"] == 113283 and len(component_inventory["add_component_specs"]) == 61 and component_inventory["receiver_concrete_instantiation_count"] == 0, "Bounded AddComponent inventory differs")
     checked_inputs = []
     if args.inputs:
         original = Path(identity["original_directory"])
@@ -177,6 +191,8 @@ def main():
         source_records.extend(player_assets["wrapper_declarations"]["sources"])
         source_records.extend(bareta_assets["wrapper_declarations"]["sources"])
         source_records.extend(producer["sources"])
+        source_records.extend(model_assets["wrapper_declarations"]["sources"])
+        source_records.extend([model_assets["wrapper_attribute_observations"]["parser"], model_assets["wrapper_attribute_observations"]["source"]])
         for supplement in supplements:
             source_records.extend(supplement.get("sources", []))
             if supplement.get("parser_source"):

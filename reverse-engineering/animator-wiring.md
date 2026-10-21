@@ -1,5 +1,7 @@
 # AnimatorController 与发现/Sad 动画事件接线
 
+后续补充：[NPC模型选择与初始化](npc-model-chain.md) 已确认当前工厂的九候选模型均自带Receiver，Casual1不在其候选字段中；下文Casual1来源待查描述是上一阶段边界，实际运行仍未观察。
+
 本轮把原生参数写入、序列化 ControllerConstant、片段 AnimationEvent 和同物体接收组件连接起来。NPC `OnAnimBaretaSound` 对应四种发现动作；玩家 `OnEndSad` 对应 `Action.Sad`，随后可触发另一个图层的 `Upper.BaretaEscape`。这些是当前构建的静态接线与条件，尚未观察实际播放或回调。
 
 原始输入仍为 `E:\SecretFlasherManakaREA`，不启动游戏、不改原始文件。原生/metadata 指纹沿用 `salt/evidence/artifact-identity.json`；原始 data.unity3d 与解密 models 指纹分别为 `20781bef…710ae93a`、`98621b2c…4308367`。
