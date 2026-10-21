@@ -1,0 +1,117 @@
+{
+  "evidence_id": "ev_1e75377c629fc1eea4bae1b369933a8e837ad6489ae50ce44986b8e8d51ee54c",
+  "subject": {
+    "name": "GameAssembly.dll",
+    "digest": {
+      "sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    "local_path": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+    "format": "pe",
+    "architecture": "x86_64"
+  },
+  "provider": {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "version": "12.1.4"
+  },
+  "analysis_profile": {
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "parameters": {
+      "target_kind": "executable",
+      "target_format": "pe",
+      "executable_role": "shared-library",
+      "managed": false,
+      "native_aot_metadata": {
+        "contract_revision": "rtr-9.1-x64-pe-read-only-v3",
+        "source_bytes": 134217728,
+        "work_units": 67108864,
+        "working_memory_bytes": 67108864,
+        "report_bytes": 4194304
+      },
+      "architecture": "x86_64",
+      "available_architectures": [
+        "x86_64"
+      ],
+      "import_mode": "ephemeral-source-immutable",
+      "pdb_observations": "program-info-v1",
+      "annotation_policy": "atomic-function-entry-metadata-v1",
+      "load_image_observations": "source-mappings-entry-context-v2",
+      "function_body_evidence": "complete-inclusive-ranges-v1",
+      "function_references": "complete-body-and-entry-reference-manager-v2",
+      "call_relationship_coverage": "function-body-call-coverage-v5",
+      "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+      "string_inventory_evidence": "defined-data-coverage-v1",
+      "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+      "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+      "instruction_flow_evidence": "decoded-return-pcode-v1",
+      "instruction_references": "exact-address-incoming-v1",
+      "function_boundary_observations": "ghidra-function-boundary-limitations-v3",
+      "no_return_repair": "disabled-windows-p0",
+      "process_launch": "official-headless-script-v1",
+      "jump_table_evidence": "typed-case-default-blocks-v1",
+      "decompiler_jump_loads": true,
+      "loader": "auto-from-header",
+      "language_id": "auto-from-header",
+      "compiler_spec_id": "auto-default",
+      "analyzer_preset": "ghidra-default+disabled:Disassemble Entry Points,Function Start Search,Subroutine References,Reference,Data Reference,Create Address Tables,Non-Returning Functions - Discovered,Decompiler Switch Analysis",
+      "analysis_options": {
+        "disabled_analyzers": [
+          "Disassemble Entry Points",
+          "Function Start Search",
+          "Subroutine References",
+          "Reference",
+          "Data Reference",
+          "Create Address Tables",
+          "Non-Returning Functions - Discovered",
+          "Decompiler Switch Analysis"
+        ]
+      },
+      "analysis_seeds": {
+        "format": "rea-ghidra-seeds-v1",
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\loading.seeds.tsv",
+        "configured_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\loading.seeds.tsv",
+        "sha256": "6076a2f1c6f2b635e76c4ee20a68584bde964850a21acd1fa3045a3f8c2965b1",
+        "entries": {
+          "function": 572,
+          "code": 0,
+          "label": 0
+        }
+      }
+    },
+    "digest": "32c816380047435d4756d606bebe5e16e4ae1de3f7c539288cec469170f3b9fc"
+  },
+  "predicate_type": "rea.analysis",
+  "operation": "procedure_pseudo_code",
+  "parameters": {
+    "procedure": "0x181435ec0"
+  },
+  "raw_result": {
+    "value": "\r\n/* WARNING: Removing unreachable block (ram,0x00018143635c) */\r\n/* WARNING: Removing unreachable block (ram,0x00018143636c) */\r\n/* WARNING: Removing unreachable block (ram,0x00018143637b) */\r\n/* WARNING: Removing unreachable block (ram,0x00018143638f) */\r\n/* WARNING: Removing unreachable block (ram,0x0001814363a7) */\r\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\r\n\r\nundefined8\r\nIKA9nt_Encrypter_EncrypterCore__LoadBundleFromStream__06000074\r\n          (longlong param_1,undefined8 param_2,int param_3)\r\n\r\n{\r\n  char cVar1;\r\n  undefined8 uVar2;\r\n  undefined8 uVar3;\r\n  longlong lVar4;\r\n  undefined8 uVar5;\r\n  code *pcVar6;\r\n  undefined8 uVar7;\r\n  undefined4 uVar8;\r\n  longlong alStack_28 [2];\r\n  \r\n  if (cRam0000000182ebaa9b == '\\0') {\r\n    FUN_1802f2810(0x182d5bfb8);\r\n    LOCK();\r\n    UNLOCK();\r\n    cRam0000000182ebaa9b = '\\x01';\r\n  }\r\n  if (param_1 == 0) {\r\n                    /* WARNING: Subroutine does not return */\r\n    FUN_18031dad0();\r\n  }\r\n  lVar4 = *(longlong *)(param_1 + 0x10);\r\n  if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n    FUN_18035c820();\r\n  }\r\n  if (cRam0000000182ebaa9e == '\\0') {\r\n    FUN_1802f2810(0x182d64c98,param_2,param_3,0);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d64c90);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d526b8);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d64cb0);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d34310);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d5bfb8);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(&DAT_182d2c730);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(&DAT_182d531f8);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d64ca8);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d64ca0);\r\n    LOCK();\r\n    UNLOCK();\r\n    cRam0000000182ebaa9e = '\\x01';\r\n  }\r\n  alStack_28[0] = 0;\r\n  if (lVar4 != 0) {\r\n    uVar2 = System_String__ToLower__06000247(lVar4,0);\r\n    if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n      FUN_18035c820();\r\n    }\r\n    cVar1 = IKA9nt_Encrypter_EncrypterCore__ErrorCheck03__0600009a(uVar2,0);\r\n    if (cVar1 == '\\0') {\r\n      if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n        FUN_18035c820();\r\n      }\r\n      IKA9nt_Encrypter_EncrypterCore__ErrorCheck01__06000097(uVar2,0);\r\n      IKA9nt_Encrypter_EncrypterCore__GetKeyReference__06000087(uVar2,&stack0x00000008,alStack_28,0)\r\n      ;\r\n      uVar3 = IKA9nt_Encrypter_EncrypterCore__GetAssetBundlePath__060000b4(alStack_28[0],uVar2,0);\r\n      cVar1 = IKA9nt_Encrypter_EncrypterCore__PlatformIsWindows__060000b2(0);\r\n      if (cVar1 != '\\0') {\r\n        if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n          FUN_18035c820();\r\n        }\r\n        cVar1 = System_IO_File__Exists__06002a8a(uVar3,0);\r\n        lVar4 = alStack_28[0];\r\n        if (cVar1 == '\\0') {\r\n          if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n            FUN_18035c820();\r\n          }\r\n          if (cRam0000000182ebaad5 == '\\0') {\r\n            FUN_1802f2810(0x182d5bfb8);\r\n            LOCK();\r\n            UNLOCK();\r\n            cRam0000000182ebaad5 = '\\x01';\r\n          }\r\n          if (lVar4 == 0) goto code_r0x00018143664a;\r\n          uVar3 = System_Int64__ToString__06000732(lVar4 + 0x18,0);\r\n          if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n            FUN_18035c820();\r\n          }\r\n          uVar3 = IKA9nt_Encrypter_EncrypterCore__GetAssetBundlePathWinx86__060000b6(uVar3,0);\r\n        }\r\n      }\r\n      if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n        FUN_18035c820();\r\n      }\r\n      IKA9nt_Encrypter_EncrypterCore__ErrorCheck02__06000098(uVar3,0);\r\n      if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n        FUN_18035c820();\r\n      }\r\n      IKA9nt_Encrypter_EncrypterCore__GetPasswordFromMap__060000a8(&stack0x00000010,uVar2,0);\r\n      if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n        FUN_18035c820();\r\n      }\r\n      cVar1 = IKA9nt_Encrypter_EncrypterCore__PlatformIsAndroid__060000b3(0);\r\n      if (cVar1 != '\\0') {\r\n        if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n          FUN_18035c820();\r\n        }\r\n        lVar4 = *(longlong *)(*(longlong *)(lRam0000000182d5bfb8 + 0xb8) + 0x38);\r\n        if ((lVar4 == 0) || (*(int *)(lVar4 + 0x10) == 0)) {\r\n          lVar4 = FUN_1802c36c0(DAT_182d531f8,1);\r\n          if (lVar4 != 0) {\r\n            FUN_180002cd0(lVar4,0,uVar3);\r\n            if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n              FUN_18035c820();\r\n            }\r\n            uVar5 = IKA9nt_Encrypter_EncrypterCore__MultiLangFormat__060000b9\r\n                              (uRam0000000182d64ca8,uRam0000000182d64ca0,lVar4,0);\r\n            if (*(int *)(lRam0000000182d526b8 + 0xe0) == 0) {\r\n              FUN_18035c820();\r\n            }\r\n            FUN_181effd60(uVar5,0);\r\n            uVar2 = IKA9nt_Encrypter_EncrypterCore__LoadBundleForAndroid__0600007e\r\n                              (uVar3,uVar2,param_2,0);\r\n            return uVar2;\r\n          }\r\n          goto code_r0x00018143664a;\r\n        }\r\n      }\r\n      if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n        FUN_18035c820();\r\n      }\r\n      uVar8 = 0;\r\n      if (param_3 != 0) {\r\n        if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n          FUN_18035c820();\r\n        }\r\n        uVar8 = *(undefined4 *)(*(longlong *)(lRam0000000182d5bfb8 + 0xb8) + 0x28);\r\n      }\r\n      if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n        FUN_18035c820();\r\n      }\r\n      uVar3 = IKA9nt_Encrypter_EncrypterCore__GetStream__060000ad\r\n                        (*(undefined8 *)(*(longlong *)(lRam0000000182d5bfb8 + 0xb8) + 0x18),uVar2,\r\n                         uVar3,param_2,0);\r\n      UnityEngine_AssetBundle__ValidateLoadFromStream__06000004(uVar3,0);\r\n      pcVar6 = pcRam0000000182ebf5d8;\r\n      if ((pcRam0000000182ebf5d8 == (code *)0x0) &&\r\n         (pcVar6 = (code *)FUN_1802cf0c0(\r\n                                        \"UnityEngine.AssetBundle::LoadFromStreamInternal(System.IO.Stream,System.UInt32,System.UInt32)\"\r\n                                        ), pcVar6 == (code *)0x0)) {\r\n        uVar2 = func_0x0001802ced60(\r\n                                   \"UnityEngine.AssetBundle::LoadFromStreamInternal(System.IO.Stream,System.UInt32,System.UInt32)\"\r\n                                   );\r\n                    /* WARNING: Subroutine does not return */\r\n        FUN_1802cca90(uVar2,0);\r\n      }\r\n      pcRam0000000182ebf5d8 = pcVar6;\r\n      uVar5 = (*pcRam0000000182ebf5d8)(uVar3,0,uVar8);\r\n      uVar7 = FUN_1802c43a0(uRam0000000182d64c98);\r\n      IKA9nt_Encrypter_EncryptLabelData___ctor__06000024(uVar7,uVar5,uVar2,0);\r\n      lVar4 = **(longlong **)(lRam0000000182d5bfb8 + 0xb8);\r\n      uVar5 = FUN_1802c43a0(uRam0000000182d64c90);\r\n      CacheData___ctor__060000bd(uVar5,uVar7,uVar3,0,0);\r\n      if (lVar4 == 0) goto code_r0x00018143664a;\r\n      FUN_180eba640(lVar4,uVar2,uVar5,2,\r\n                    *(undefined8 *)\r\n                     (*(longlong *)(*(longlong *)(lRam0000000182d64cb0 + 0x20) + 0xc0) + 0x100));\r\n      if (*(int *)(_DAT_182d2c730 + 0xe0) == 0) {\r\n        FUN_18035c820();\r\n      }\r\n      FUN_18165e470(0);\r\n      uVar2 = 1;\r\n    }\r\n    else {\r\n      uVar2 = 0;\r\n    }\r\n    return uVar2;\r\n  }\r\ncode_r0x00018143664a:\r\n                    /* WARNING: Subroutine does not return */\r\n  FUN_18031dad0();\r\n}\r\n\r\n",
+    "limitations": []
+  },
+  "normalized_result": "\r\n/* WARNING: Removing unreachable block (ram,0x00018143635c) */\r\n/* WARNING: Removing unreachable block (ram,0x00018143636c) */\r\n/* WARNING: Removing unreachable block (ram,0x00018143637b) */\r\n/* WARNING: Removing unreachable block (ram,0x00018143638f) */\r\n/* WARNING: Removing unreachable block (ram,0x0001814363a7) */\r\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\r\n\r\nundefined8\r\nIKA9nt_Encrypter_EncrypterCore__LoadBundleFromStream__06000074\r\n          (longlong param_1,undefined8 param_2,int param_3)\r\n\r\n{\r\n  char cVar1;\r\n  undefined8 uVar2;\r\n  undefined8 uVar3;\r\n  longlong lVar4;\r\n  undefined8 uVar5;\r\n  code *pcVar6;\r\n  undefined8 uVar7;\r\n  undefined4 uVar8;\r\n  longlong alStack_28 [2];\r\n  \r\n  if (cRam0000000182ebaa9b == '\\0') {\r\n    FUN_1802f2810(0x182d5bfb8);\r\n    LOCK();\r\n    UNLOCK();\r\n    cRam0000000182ebaa9b = '\\x01';\r\n  }\r\n  if (param_1 == 0) {\r\n                    /* WARNING: Subroutine does not return */\r\n    FUN_18031dad0();\r\n  }\r\n  lVar4 = *(longlong *)(param_1 + 0x10);\r\n  if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n    FUN_18035c820();\r\n  }\r\n  if (cRam0000000182ebaa9e == '\\0') {\r\n    FUN_1802f2810(0x182d64c98,param_2,param_3,0);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d64c90);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d526b8);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d64cb0);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d34310);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d5bfb8);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(&DAT_182d2c730);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(&DAT_182d531f8);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d64ca8);\r\n    LOCK();\r\n    UNLOCK();\r\n    FUN_1802f2810(0x182d64ca0);\r\n    LOCK();\r\n    UNLOCK();\r\n    cRam0000000182ebaa9e = '\\x01';\r\n  }\r\n  alStack_28[0] = 0;\r\n  if (lVar4 != 0) {\r\n    uVar2 = System_String__ToLower__06000247(lVar4,0);\r\n    if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n      FUN_18035c820();\r\n    }\r\n    cVar1 = IKA9nt_Encrypter_EncrypterCore__ErrorCheck03__0600009a(uVar2,0);\r\n    if (cVar1 == '\\0') {\r\n      if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n        FUN_18035c820();\r\n      }\r\n      IKA9nt_Encrypter_EncrypterCore__ErrorCheck01__06000097(uVar2,0);\r\n      IKA9nt_Encrypter_EncrypterCore__GetKeyReference__06000087(uVar2,&stack0x00000008,alStack_28,0)\r\n      ;\r\n      uVar3 = IKA9nt_Encrypter_EncrypterCore__GetAssetBundlePath__060000b4(alStack_28[0],uVar2,0);\r\n      cVar1 = IKA9nt_Encrypter_EncrypterCore__PlatformIsWindows__060000b2(0);\r\n      if (cVar1 != '\\0') {\r\n        if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n          FUN_18035c820();\r\n        }\r\n        cVar1 = System_IO_File__Exists__06002a8a(uVar3,0);\r\n        lVar4 = alStack_28[0];\r\n        if (cVar1 == '\\0') {\r\n          if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n            FUN_18035c820();\r\n          }\r\n          if (cRam0000000182ebaad5 == '\\0') {\r\n            FUN_1802f2810(0x182d5bfb8);\r\n            LOCK();\r\n            UNLOCK();\r\n            cRam0000000182ebaad5 = '\\x01';\r\n          }\r\n          if (lVar4 == 0) goto code_r0x00018143664a;\r\n          uVar3 = System_Int64__ToString__06000732(lVar4 + 0x18,0);\r\n          if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n            FUN_18035c820();\r\n          }\r\n          uVar3 = IKA9nt_Encrypter_EncrypterCore__GetAssetBundlePathWinx86__060000b6(uVar3,0);\r\n        }\r\n      }\r\n      if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n        FUN_18035c820();\r\n      }\r\n      IKA9nt_Encrypter_EncrypterCore__ErrorCheck02__06000098(uVar3,0);\r\n      if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n        FUN_18035c820();\r\n      }\r\n      IKA9nt_Encrypter_EncrypterCore__GetPasswordFromMap__060000a8(&stack0x00000010,uVar2,0);\r\n      if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n        FUN_18035c820();\r\n      }\r\n      cVar1 = IKA9nt_Encrypter_EncrypterCore__PlatformIsAndroid__060000b3(0);\r\n      if (cVar1 != '\\0') {\r\n        if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n          FUN_18035c820();\r\n        }\r\n        lVar4 = *(longlong *)(*(longlong *)(lRam0000000182d5bfb8 + 0xb8) + 0x38);\r\n        if ((lVar4 == 0) || (*(int *)(lVar4 + 0x10) == 0)) {\r\n          lVar4 = FUN_1802c36c0(DAT_182d531f8,1);\r\n          if (lVar4 != 0) {\r\n            FUN_180002cd0(lVar4,0,uVar3);\r\n            if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n              FUN_18035c820();\r\n            }\r\n            uVar5 = IKA9nt_Encrypter_EncrypterCore__MultiLangFormat__060000b9\r\n                              (uRam0000000182d64ca8,uRam0000000182d64ca0,lVar4,0);\r\n            if (*(int *)(lRam0000000182d526b8 + 0xe0) == 0) {\r\n              FUN_18035c820();\r\n            }\r\n            FUN_181effd60(uVar5,0);\r\n            uVar2 = IKA9nt_Encrypter_EncrypterCore__LoadBundleForAndroid__0600007e\r\n                              (uVar3,uVar2,param_2,0);\r\n            return uVar2;\r\n          }\r\n          goto code_r0x00018143664a;\r\n        }\r\n      }\r\n      if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n        FUN_18035c820();\r\n      }\r\n      uVar8 = 0;\r\n      if (param_3 != 0) {\r\n        if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n          FUN_18035c820();\r\n        }\r\n        uVar8 = *(undefined4 *)(*(longlong *)(lRam0000000182d5bfb8 + 0xb8) + 0x28);\r\n      }\r\n      if (*(int *)(lRam0000000182d5bfb8 + 0xe0) == 0) {\r\n        FUN_18035c820();\r\n      }\r\n      uVar3 = IKA9nt_Encrypter_EncrypterCore__GetStream__060000ad\r\n                        (*(undefined8 *)(*(longlong *)(lRam0000000182d5bfb8 + 0xb8) + 0x18),uVar2,\r\n                         uVar3,param_2,0);\r\n      UnityEngine_AssetBundle__ValidateLoadFromStream__06000004(uVar3,0);\r\n      pcVar6 = pcRam0000000182ebf5d8;\r\n      if ((pcRam0000000182ebf5d8 == (code *)0x0) &&\r\n         (pcVar6 = (code *)FUN_1802cf0c0(\r\n                                        \"UnityEngine.AssetBundle::LoadFromStreamInternal(System.IO.Stream,System.UInt32,System.UInt32)\"\r\n                                        ), pcVar6 == (code *)0x0)) {\r\n        uVar2 = func_0x0001802ced60(\r\n                                   \"UnityEngine.AssetBundle::LoadFromStreamInternal(System.IO.Stream,System.UInt32,System.UInt32)\"\r\n                                   );\r\n                    /* WARNING: Subroutine does not return */\r\n        FUN_1802cca90(uVar2,0);\r\n      }\r\n      pcRam0000000182ebf5d8 = pcVar6;\r\n      uVar5 = (*pcRam0000000182ebf5d8)(uVar3,0,uVar8);\r\n      uVar7 = FUN_1802c43a0(uRam0000000182d64c98);\r\n      IKA9nt_Encrypter_EncryptLabelData___ctor__06000024(uVar7,uVar5,uVar2,0);\r\n      lVar4 = **(longlong **)(lRam0000000182d5bfb8 + 0xb8);\r\n      uVar5 = FUN_1802c43a0(uRam0000000182d64c90);\r\n      CacheData___ctor__060000bd(uVar5,uVar7,uVar3,0,0);\r\n      if (lVar4 == 0) goto code_r0x00018143664a;\r\n      FUN_180eba640(lVar4,uVar2,uVar5,2,\r\n                    *(undefined8 *)\r\n                     (*(longlong *)(*(longlong *)(lRam0000000182d64cb0 + 0x20) + 0xc0) + 0x100));\r\n      if (*(int *)(_DAT_182d2c730 + 0xe0) == 0) {\r\n        FUN_18035c820();\r\n      }\r\n      FUN_18165e470(0);\r\n      uVar2 = 1;\r\n    }\r\n    else {\r\n      uVar2 = 0;\r\n    }\r\n    return uVar2;\r\n  }\r\ncode_r0x00018143664a:\r\n                    /* WARNING: Subroutine does not return */\r\n  FUN_18031dad0();\r\n}\r\n\r\n",
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+    "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+    "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+    "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+    "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+    "External functions and functions without an analyzable body return null; other decompiler failures remain explicit.",
+    "Windows Ghidra P0 accepts native x86 and x86-64 PE applications and DLLs, and explicitly selected raw 6502 images; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+    "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no bearer token.",
+    "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically.",
+    "Ghidra analysis was seeded before auto-analysis from E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\loading.seeds.tsv (sha256 6076a2f1c6f2b635e76c4ee20a68584bde964850a21acd1fa3045a3f8c2965b1: 572 function, 0 code, 0 label entries). Seeded functions, code and names are caller assertions, not Ghidra discoveries.",
+    "Seed outcome: 78 functions created, 494 already present, 0 failed; 0 code seeds decoded, 0 failed; 0 labels applied, 0 failed; 0 seeds outside initialized memory.",
+    "The target references PDB GameAssembly.pdb (GUID 9ed6a21b-e8f5-425a-9301-e52d6c440c63, age (hex) 7, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

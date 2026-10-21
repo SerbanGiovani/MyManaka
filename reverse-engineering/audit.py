@@ -79,10 +79,23 @@ def main():
                 observations[key] = {"canonical": canonical, "operation": record["operation"], "subject_sha256": subject_hash}
     for key in ("password_map_initializer_evidence", "password_map_constructor_evidence", "password_decoder_evidence"):
         check(recovered[key] in observations, f"Missing password reconstruction evidence: {key}")
-    runs = [read(ROOT / "salt/evidence" / directory / "run.json") for directory in ("crypto-batch", "crypto-batch-helpers")]
+    run_paths = sorted((ROOT / "salt/evidence").glob("*/run.json"))
+    runs = [read(path) for path in run_paths]
     for run in runs:
-        check(run["success"] and not run.get("close_error"), "A required REA batch did not complete cleanly")
+        check(run["success"] and not run.get("close_error") and not run.get("transport_close_error"), "A required REA batch did not complete cleanly")
         check(all(item["evidence_id"] in observations for item in run["functions"]), "Batch references missing evidence")
+    loading = read(ROOT / "salt/evidence/loading-chain.json")
+    declarations = read(ROOT / "salt/symbols/loading-declarations.json")
+    check(loading["native_sha256"] == identity["native_sha256"] and loading["metadata_sha256"] == identity["metadata_sha256"], "Loading chain identity mismatch")
+    check(all(m["evidence_id"] in observations for m in loading["methods"]), "Loading chain references missing native evidence")
+    check(all(m["evidence_id"] in observations for m in loading["native_only_procedures"]), "Loading chain references missing native-only evidence")
+    check(len(loading["title_asset_requests"]) == 25 and all(r["label"] == "models" for r in loading["title_asset_requests"]), "Title resource requests differ")
+    prefab = declarations["original_resource_prefab"]
+    for name in ("gameobject", "encrypter_core_instance"):
+        record = prefab[name]
+        check(hashlib.sha256(bytes.fromhex(record["raw_hex"])).hexdigest() == record["sha256"], "Prefab raw-byte fingerprint mismatch")
+    check(prefab["encrypter_core_instance"]["fields"]["keyData"]["pointer"] == {"file_id": 0, "path_id": 61594}, "Prefab KeyData reference differs")
+    check(prefab["source_sha256"] == asset["source_sha256"], "Prefab bundle identity mismatch")
     checked_inputs = []
     if args.inputs:
         original = Path(identity["original_directory"])
@@ -92,6 +105,11 @@ def main():
                  (original / "SecretFlasherManaka_Data/data.unity3d", asset["source_sha256"]),
                  (Path(decryption["source"]), decryption["source_sha256"]),
                  (Path(decryption["plaintext"]["path"]), decryption["plaintext"]["sha256"])]
+        known = {str(path).casefold() for path, _ in paths}
+        for source in declarations["sources"]:
+            if source["path"].casefold() not in known:
+                paths.append((Path(source["path"]), source["sha256"]))
+                known.add(source["path"].casefold())
         for path, expected in paths:
             actual = digest(path)
             check(actual == expected, f"Input fingerprint differs: {path}")

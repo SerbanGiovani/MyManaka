@@ -67,7 +67,7 @@ try {
       if (evidence.subject?.digest?.sha256 !== plan.native_sha256 || evidence.provider?.id !== 'ghidra' || !evidence.evidence_id) {
         throw Error('Function evidence identity mismatch');
       }
-      const stem = `${fn.token}-${operation}`;
+      const stem = `${fn.file_stem ?? fn.token}-${operation}`;
       await writeFile(join(plan.output_directory, stem + '.json'), JSON.stringify(evidence, null, 2) + '\n');
       if (operation === 'procedure_pseudo_code') {
         if (typeof evidence.normalized_result !== 'string' || !evidence.normalized_result.trim()) throw Error('No pseudocode body');

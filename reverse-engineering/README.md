@@ -3,6 +3,8 @@
 工作分支 `codex/rea-salt`。原始文件固定取自 `E:\SecretFlasherManakaREA`，输入指纹验证通过才继续分析。
 分析阶段仅执行离线解析、REA/Ghidra 分析和本地解密；未启动游戏或修改原始游戏文件。
 
+2026-10-21 已补齐 Windows 上层加载链：初始化资源 → KeyData → 标题场景 `models` 请求 → 路径/密码 → 解密流 → Unity 包加载 → 完成缓存与 25 个资源请求。本轮新增 54 份原生观察，见 [上层调用链报告](loading-chain.md)；完整证据坐标及绑定见 `salt/evidence/loading-chain.json`。
+
 ## 已完成
 
 | 项目 | 结果 | 证据 |
@@ -56,6 +58,11 @@ python reverse-engineering/salt/crypto.py verify
 
 # 复核已保存证据，并校验原始文件与解密副本的指纹
 python reverse-engineering/audit.py --inputs
+
+# 上层加载链：选择入口并复用同一 REA 批次会话
+python reverse-engineering/salt/prepare_loading.py
+node reverse-engineering/salt/run_batch.mjs reverse-engineering/salt/symbols/loading.plan.json
+python reverse-engineering/salt/loading_evidence.py --check
 
 # find 的 id 可用于选择其他方法，生成独立种子和计划，不必改脚本
 python reverse-engineering/salt/prepare_batch.py --method-id 76342 --name getstream

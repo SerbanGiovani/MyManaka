@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "name": "loading-guards",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\loading-guards.seeds.tsv",
+  "seed_sha256": "03b53b2b85287baa1609364c8e2053b22f8e8bde40e3f320594f8246f4eaee83",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\loading-guards",
+  "seed_count": 573,
+  "functions": [
+    {
+      "metadata_id": 17438,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SystemManager::.cctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017d5",
+      "va": "0x1804bbab0",
+      "file_offset": 4956848,
+      "label": "ExposureUnnoticed2_Scripts_Base_SystemManager___cctor__060017d5",
+      "file_stem": "17438-060017d5",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76277,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::.ctor",
+      "assembly": "IKA9nt.Encrypter.dll",
+      "token": "0x600006c",
+      "va": "0x1814351d0",
+      "file_offset": 21182928,
+      "label": "IKA9nt_Encrypter_EncrypterCore___ctor__0600006c",
+      "file_stem": "76277-0600006c",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76278,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::StaticReset",
+      "assembly": "IKA9nt.Encrypter.dll",
+      "token": "0x600006d",
+      "va": "0x1814352d0",
+      "file_offset": 21183184,
+      "label": "IKA9nt_Encrypter_EncrypterCore__StaticReset__0600006d",
+      "file_stem": "76278-0600006d",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76320,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::ErrorCheck01",
+      "assembly": "IKA9nt.Encrypter.dll",
+      "token": "0x6000097",
+      "va": "0x18143c050",
+      "file_offset": 21211216,
+      "label": "IKA9nt_Encrypter_EncrypterCore__ErrorCheck01__06000097",
+      "file_stem": "76320-06000097",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76321,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::ErrorCheck02",
+      "assembly": "IKA9nt.Encrypter.dll",
+      "token": "0x6000098",
+      "va": "0x18143c370",
+      "file_offset": 21212016,
+      "label": "IKA9nt_Encrypter_EncrypterCore__ErrorCheck02__06000098",
+      "file_stem": "76321-06000098",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76323,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::ErrorCheck03",
+      "assembly": "IKA9nt.Encrypter.dll",
+      "token": "0x600009a",
+      "va": "0x18143c600",
+      "file_offset": 21212672,
+      "label": "IKA9nt_Encrypter_EncrypterCore__ErrorCheck03__0600009a",
+      "file_stem": "76323-0600009a",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76324,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::ErrorCheck04",
+      "assembly": "IKA9nt.Encrypter.dll",
+      "token": "0x600009b",
+      "va": "0x18143c7f0",
+      "file_offset": 21213168,
+      "label": "IKA9nt_Encrypter_EncrypterCore__ErrorCheck04__0600009b",
+      "file_stem": "76324-0600009b",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76327,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::ErrorCheck07",
+      "assembly": "IKA9nt.Encrypter.dll",
+      "token": "0x600009e",
+      "va": "0x18143cb60",
+      "file_offset": 21214048,
+      "label": "IKA9nt_Encrypter_EncrypterCore__ErrorCheck07__0600009e",
+      "file_stem": "76327-0600009e",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76328,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::ErrorCheck08",
+      "assembly": "IKA9nt.Encrypter.dll",
+      "token": "0x600009f",
+      "va": "0x18143cdd0",
+      "file_offset": 21214672,
+      "label": "IKA9nt_Encrypter_EncrypterCore__ErrorCheck08__0600009f",
+      "file_stem": "76328-0600009f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76345,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::GetWindowsx86Path",
+      "assembly": "IKA9nt.Encrypter.dll",
+      "token": "0x60000b0",
+      "va": "0x18143ec80",
+      "file_offset": 21222528,
+      "label": "IKA9nt_Encrypter_EncrypterCore__GetWindowsx86Path__060000b0",
+      "file_stem": "76345-060000b0",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76350,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::GetAssetBundlePathWinx86",
+      "assembly": "IKA9nt.Encrypter.dll",
+      "token": "0x60000b5",
+      "va": "0x18143f050",
+      "file_offset": 21223504,
+      "label": "IKA9nt_Encrypter_EncrypterCore__GetAssetBundlePathWinx86__060000b5",
+      "file_stem": "76350-060000b5",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76351,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::GetAssetBundlePathWinx86",
+      "assembly": "IKA9nt.Encrypter.dll",
+      "token": "0x60000b6",
+      "va": "0x18143f0c0",
+      "file_offset": 21223616,
+      "label": "IKA9nt_Encrypter_EncrypterCore__GetAssetBundlePathWinx86__060000b6",
+      "file_stem": "76351-060000b6",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76357,
+      "qualified_name": "IKA9nt.Encrypter.EncrypterCore::.cctor",
+      "assembly": "IKA9nt.Encrypter.dll",
+      "token": "0x60000bc",
+      "va": "0x18143f750",
+      "file_offset": 21225296,
+      "label": "IKA9nt_Encrypter_EncrypterCore___cctor__060000bc",
+      "file_stem": "76357-060000bc",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}
