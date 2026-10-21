@@ -52,6 +52,23 @@ def main():
     measured_inputs = saved.pop("inputs")
     check(measured == saved, "Runtime measurement summary differs")
     check(all(digest(runtime_dir / name) == fingerprint for name, fingerprint in measured_inputs.items()), "Runtime measurement input differs")
+    producer_dir = ROOT / "runtime/time-stop-producer"
+    producer_runtime = read(producer_dir / "manifest.json")
+    check(producer_runtime["trials"] == 32 and producer_runtime["session_closed"] and producer_runtime["target_exited"], "Producer runtime matrix/cleanup incomplete")
+    for source in producer_runtime["sources"]:
+        check(digest(producer_dir / source["path"]) == source["sha256"], "Producer instrument source differs")
+    for output in producer_runtime["outputs"]:
+        path = producer_dir / output["path"]
+        check(digest(path) == output["sha256"], "Producer compressed log differs")
+        payload = gzip.decompress(path.read_bytes())
+        check(len(payload) == output["uncompressed_bytes"] and hashlib.sha256(payload).hexdigest() == output["uncompressed_sha256"], "Producer raw log differs")
+    producer_analysis = runpy.run_path(str(producer_dir / "analyze.py"))
+    saved_producer = read(producer_dir / "results.json")
+    producer_measurement_inputs = saved_producer.pop("input_sha256")
+    check(producer_analysis["analyze"]() == saved_producer, "Producer measurements differ")
+    check(all(digest(producer_dir / name) == fingerprint for name, fingerprint in producer_measurement_inputs.items()), "Producer measurement input differs")
+    check(producer_runtime["inputs"][:4] == [{**entry, "fixture_path": str(Path(producer_runtime["fixture_root"]) / entry["relative_path"])} for entry in runtime["inputs"][:4]], "Producer native inputs differ from prior pinned build")
+    runtime_records = {runtime_dir / "rea-runtime.json": runtime, producer_dir / "rea-runtime.json": producer_runtime}
     asset = read(ROOT / "assets/resources-keydata.json")
     check(runtime_inputs["SecretFlasherManaka_Data/data.unity3d"] == asset["source_sha256"], "Runtime resources differ")
     recovered = read(ROOT / "salt/evidence/recovered-crypto.json")
@@ -93,18 +110,19 @@ def main():
             key = record["evidence_id"]
             subject = record.get("subject") or {}
             subject_hash = (subject.get("digest") or {}).get("sha256")
-            if path == runtime_dir / "rea-runtime.json":
+            if path in runtime_records:
+                selected_runtime = runtime_records[path]
                 check(subject_hash is None and record["provider"]["id"] == "frida" and
                       record["predicate_type"] == "rea.frida.instrumentation-observation", "Unexpected runtime Evidence provider/identity")
-                check(key in runtime["evidence_ids"] and record["parameters"]["session_id"] == runtime["frida_session_id"], "Unexpected runtime session")
+                check(key in selected_runtime["evidence_ids"] and record["parameters"]["session_id"] == selected_runtime["frida_session_id"], "Unexpected runtime session")
                 result = record["normalized_result"]
                 check(not result["messages_truncated"], "Runtime Evidence truncated")
                 if record["operation"] == "load_frida_script":
-                    check(digest(runtime_dir / Path(result["source_path"]).name) == result["source_sha256"], "Frida source fingerprint differs")
+                    check(digest(path.parent / Path(result["source_path"]).name) == result["source_sha256"], "Frida source fingerprint differs")
                 else:
-                    check(record["operation"] == "frida_session_status" and result["pid"] == runtime["pid"] and result["state"] == "detached", "Runtime target/status differs")
+                    check(record["operation"] == "frida_session_status" and result["pid"] == selected_runtime["pid"] and result["state"] == "detached", "Runtime target/status differs")
                     ready = next(m["payload"] for m in result["messages"] if m.get("payload", {}).get("kind") == "observer_ready")
-                    check(Path(ready["path"]) == Path(runtime["fixture_root"]) / "GameAssembly.dll", "Observed native module path differs")
+                    check(Path(ready["path"]) == Path(selected_runtime["fixture_root"]) / "GameAssembly.dll", "Observed native module path differs")
             else:
                 check(subject_hash in allowed_subjects, f"Unexpected evidence subject in {path}")
             canonical = json.dumps(record, sort_keys=True, ensure_ascii=False)
@@ -112,7 +130,7 @@ def main():
                 check(observations[key]["canonical"] == canonical, f"Conflicting copies of {key}")
             else:
                 observations[key] = {"canonical": canonical, "operation": record["operation"], "subject_sha256": subject_hash}
-    check(all(key in observations for key in runtime["evidence_ids"]), "Missing runtime observations")
+    check(all(key in observations for selected in runtime_records.values() for key in selected["evidence_ids"]), "Missing runtime observations")
     for key in ("password_map_initializer_evidence", "password_map_constructor_evidence", "password_decoder_evidence"):
         check(recovered[key] in observations, f"Missing password reconstruction evidence: {key}")
     run_paths = sorted((ROOT / "salt/evidence").glob("*/run.json"))
@@ -224,6 +242,15 @@ def main():
         check(digest(Path(source["path"])) == source["sha256"], "NPC FPS instruction source fingerprint differs")
     check(fps_instructions["native"]["sha256"] == identity["native_sha256"], "NPC FPS instruction native source differs")
     check(npc_fps["notification_delay_constant"]["raw_hex"] == "9a99193f", "NPC discovery delay constant differs")
+    time_stop = read(ROOT / "salt/evidence/time-stop-chain.json")
+    check(time_stop["native_sha256"] == identity["native_sha256"] and time_stop["metadata_sha256"] == identity["metadata_sha256"], "TimeStop native identity differs")
+    check(time_stop["new_observations"] == 16 and all(m["evidence_id"] in observations for m in time_stop["methods"]), "Missing TimeStop native observations")
+    for name in ("xref_scan_dependency", "player_controller_dependency"):
+        dependency = time_stop[name]
+        check(digest(ROOT / dependency["path"]) == dependency["sha256"], "TimeStop dependency differs")
+    stop_scan = read(ROOT / time_stop["xref_scan_dependency"]["path"])
+    check(stop_scan["scan"]["unwind_ranges"] == 139898 and len(stop_scan["scan"]["candidates"]) == 9, "TimeStop candidate scan differs")
+    check(digest(Path(stop_scan["parser"]["path"])) == stop_scan["parser"]["sha256"], "TimeStop scanner source differs")
     checked_inputs = []
     if args.inputs:
         original = Path(identity["original_directory"])
@@ -253,6 +280,11 @@ def main():
             for name in ("original_path", "fixture_path"):
                 source_records.append({"path": str(Path(entry[name])), "sha256": entry["sha256"]})
         source_records.append({"path": str(Path(runtime["fixture_root"]) / "BepInEx/plugins/NpcEventFixture.dll"), "sha256": runtime["plugin_dll_sha256"]})
+        for entry in producer_runtime["inputs"]:
+            for name in ("original_path", "fixture_path"):
+                if name in entry:
+                    source_records.append({"path": str(Path(entry[name])), "sha256": entry["sha256"]})
+        source_records.append({"path": str(Path(producer_runtime["fixture_root"]) / "BepInEx/plugins/TimeStopProducerFixture.dll"), "sha256": producer_runtime["plugin_dll_sha256"]})
         for source in source_records:
             # Derived SQLite byte identity is not portable after rebuilding it;
             # reconstruction scripts validate its build identity and coordinates.

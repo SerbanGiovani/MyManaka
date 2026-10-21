@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "evidence_type": "Supplemental Iced static candidate scan, not REA or a complete data-flow proof",
+  "native": {
+    "path": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+    "sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+  },
+  "decoder": {
+    "path": "E:\\SecretFlasherManakaREA\\BepInEx\\core\\Iced.dll",
+    "sha256": "f058c01321b4cdfc9b9151879e88e59571c8d0ba176fbcf95bc936a8f3d073ed"
+  },
+  "parser": {
+    "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\scan_time_stop.ps1",
+    "sha256": "f1912fac4ed6e14b9cdf6d4001075e95f27dbdc5f48a5f77715d70e7c6c4f1f1"
+  },
+  "scope": "Linear decoding of every PE RUNTIME_FUNCTION fragment; candidate intersection within each fragment only. Events class slot 182d58080 plus displacement a0; InGameManager slot182d53c48 plus byte MOV/SET store displacement14. Other aliases, split fragments, register/indirect paths remain unknown.",
+  "scan": {
+    "unwind_ranges": 139898,
+    "instructions": 8534275,
+    "candidates": [
+      {
+        "begin": "0x1804942b0",
+        "end": "0x180494af0",
+        "event_slot_refs": [],
+        "game_slot_refs": [
+          "0x180494311 lea rcx,[182D53C48h]",
+          "0x1804943c4 mov rax,[182D53C48h]",
+          "0x18049449b mov rax,[182D53C48h]",
+          "0x1804945c9 mov rax,[182D53C48h]",
+          "0x180494609 mov rax,[182D53C48h]",
+          "0x18049477e mov rax,[182D53C48h]",
+          "0x180494a06 mov rax,[182D53C48h]"
+        ],
+        "event_field_candidates": [],
+        "stop_field_write_candidates": [
+          "0x180494a90 mov byte ptr [rbx+14h],0"
+        ]
+      },
+      {
+        "begin": "0x1804960af",
+        "end": "0x180497a4e",
+        "event_slot_refs": [
+          "0x1804978e7 mov rax,[182D58080h]",
+          "0x1804978ff mov rax,[182D58080h]",
+          "0x18049791e mov rax,[182D58080h]"
+        ],
+        "game_slot_refs": [
+          "0x1804960b9 mov rax,[182D53C48h]",
+          "0x1804960d2 mov rax,[182D53C48h]",
+          "0x1804960ec mov rax,[182D53C48h]"
+        ],
+        "event_field_candidates": [
+          "0x180496c0e mov [rdi+0A0h],rax",
+          "0x180496c17 lea r8,[rdi+0A0h]",
+          "0x1804977ae mov rbp,[rdx+0A0h]"
+        ],
+        "stop_field_write_candidates": []
+      },
+      {
+        "begin": "0x1804985b0",
+        "end": "0x180498902",
+        "event_slot_refs": [
+          "0x1804985ef lea rcx,[182D58080h]",
+          "0x1804986b4 mov rax,[182D58080h]",
+          "0x1804986cc mov rax,[182D58080h]"
+        ],
+        "game_slot_refs": [
+          "0x180498611 lea rcx,[182D53C48h]",
+          "0x180498664 mov r8,[182D53C48h]"
+        ],
+        "event_field_candidates": [
+          "0x180498750 mov rbx,[rbx+0A0h]"
+        ],
+        "stop_field_write_candidates": []
+      },
+      {
+        "begin": "0x180498af0",
+        "end": "0x180498ca2",
+        "event_slot_refs": [],
+        "game_slot_refs": [
+          "0x180498b24 lea rcx,[182D53C48h]",
+          "0x180498c10 mov rax,[182D53C48h]"
+        ],
+        "event_field_candidates": [],
+        "stop_field_write_candidates": [
+          "0x180498c92 mov byte ptr [rbx+14h],0"
+        ]
+      },
+      {
+        "begin": "0x1804b5fc0",
+        "end": "0x1804b70ef",
+        "event_slot_refs": [
+          "0x1804b60f4 lea rcx,[182D58080h]",
+          "0x1804b61f5 mov rcx,[182D58080h]",
+          "0x1804b6216 mov rax,[182D58080h]",
+          "0x1804b6275 mov rcx,[182D58080h]",
+          "0x1804b6290 mov rax,[182D58080h]",
+          "0x1804b62f5 mov rcx,[182D58080h]",
+          "0x1804b6310 mov rax,[182D58080h]",
+          "0x1804b6375 mov rcx,[182D58080h]",
+          "0x1804b6390 mov rax,[182D58080h]",
+          "0x1804b63f5 mov rcx,[182D58080h]",
+          "0x1804b6410 mov rax,[182D58080h]",
+          "0x1804b6475 mov rcx,[182D58080h]",
+          "0x1804b6490 mov rax,[182D58080h]",
+          "0x1804b64f5 mov rcx,[182D58080h]",
+          "0x1804b6510 mov rax,[182D58080h]",
+          "0x1804b6575 mov rcx,[182D58080h]",
+          "0x1804b6590 mov rax,[182D58080h]",
+          "0x1804b65f5 mov rcx,[182D58080h]",
+          "0x1804b6610 mov rax,[182D58080h]",
+          "0x1804b6675 mov rcx,[182D58080h]",
+          "0x1804b6690 mov rax,[182D58080h]",
+          "0x1804b66f5 mov rcx,[182D58080h]",
+          "0x1804b6710 mov rax,[182D58080h]",
+          "0x1804b6775 mov rcx,[182D58080h]",
+          "0x1804b6790 mov rax,[182D58080h]",
+          "0x1804b67f5 mov rcx,[182D58080h]",
+          "0x1804b6810 mov rax,[182D58080h]",
+          "0x1804b6875 mov rcx,[182D58080h]",
+          "0x1804b6890 mov rax,[182D58080h]",
+          "0x1804b68f5 mov rcx,[182D58080h]",
+          "0x1804b6910 mov rax,[182D58080h]",
+          "0x1804b6975 mov rcx,[182D58080h]",
+          "0x1804b6990 mov rax,[182D58080h]",
+          "0x1804b69f5 mov rcx,[182D58080h]",
+          "0x1804b6a13 mov rax,[182D58080h]",
+          "0x1804b6a75 mov rcx,[182D58080h]",
+          "0x1804b6a93 mov rax,[182D58080h]",
+          "0x1804b6af5 mov rcx,[182D58080h]",
+          "0x1804b6b13 mov rax,[182D58080h]",
+          "0x1804b6b75 mov rcx,[182D58080h]",
+          "0x1804b6b93 mov rax,[182D58080h]",
+          "0x1804b6bf5 mov rcx,[182D58080h]",
+          "0x1804b6c13 mov rax,[182D58080h]",
+          "0x1804b6c75 mov rcx,[182D58080h]",
+          "0x1804b6c93 mov rax,[182D58080h]",
+          "0x1804b6cf5 mov rcx,[182D58080h]",
+          "0x1804b6d13 mov rax,[182D58080h]",
+          "0x1804b6d75 mov rcx,[182D58080h]",
+          "0x1804b6d93 mov rax,[182D58080h]",
+          "0x1804b6df5 mov rcx,[182D58080h]",
+          "0x1804b6e13 mov rax,[182D58080h]",
+          "0x1804b6e75 mov rcx,[182D58080h]",
+          "0x1804b6e93 mov rax,[182D58080h]",
+          "0x1804b6ef5 mov rcx,[182D58080h]",
+          "0x1804b6f13 mov rax,[182D58080h]",
+          "0x1804b6f75 mov rcx,[182D58080h]",
+          "0x1804b6f93 mov rax,[182D58080h]",
+          "0x1804b6ff5 mov rcx,[182D58080h]",
+          "0x1804b7013 mov rax,[182D58080h]",
+          "0x1804b7075 mov rcx,[182D58080h]",
+          "0x1804b7093 mov rax,[182D58080h]"
+        ],
+        "game_slot_refs": [],
+        "event_field_candidates": [
+          "0x1804b6c03 mov [rdx+0A0h],rax"
+        ],
+        "stop_field_write_candidates": []
+      },
+      {
+        "begin": "0x18052a150",
+        "end": "0x18052a2cc",
+        "event_slot_refs": [
+          "0x18052a179 lea rcx,[182D58080h]",
+          "0x18052a270 mov rax,[182D58080h]",
+          "0x18052a288 mov rax,[182D58080h]"
+        ],
+        "game_slot_refs": [],
+        "event_field_candidates": [
+          "0x18052a1df mov [rax+0A0h],ebx",
+          "0x18052a1f1 mov rdi,[rdi+0A0h]"
+        ],
+        "stop_field_write_candidates": []
+      },
+      {
+        "begin": "0x18052a360",
+        "end": "0x18052a476",
+        "event_slot_refs": [
+          "0x18052a394 lea rcx,[182D58080h]",
+          "0x18052a46f mov rax,[182D58080h]"
+        ],
+        "game_slot_refs": [],
+        "event_field_candidates": [
+          "0x18052a465 mov dword ptr [rax+0A0h],55h"
+        ],
+        "stop_field_write_candidates": []
+      },
+      {
+        "begin": "0x180627fc0",
+        "end": "0x180628336",
+        "event_slot_refs": [
+          "0x180628045 lea rcx,[182D58080h]",
+          "0x18062828e mov rax,[182D58080h]",
+          "0x1806282a6 mov rax,[182D58080h]"
+        ],
+        "game_slot_refs": [],
+        "event_field_candidates": [
+          "0x18062827c mov r14,[rsp+0A0h]"
+        ],
+        "stop_field_write_candidates": []
+      },
+      {
+        "begin": "0x1806293bf",
+        "end": "0x18062941f",
+        "event_slot_refs": [
+          "0x1806293ca mov rax,[182D58080h]",
+          "0x1806293e2 mov rax,[182D58080h]"
+        ],
+        "game_slot_refs": [],
+        "event_field_candidates": [
+          "0x1806293fe mov rbx,[rax+0A0h]"
+        ],
+        "stop_field_write_candidates": [
+          "0x1806293c7 mov [rax+14h],cl"
+        ]
+      }
+    ]
+  }
+}

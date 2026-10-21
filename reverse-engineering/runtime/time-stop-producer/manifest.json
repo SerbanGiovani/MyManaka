@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "scope": "Controlled original producer/Animator/EventManager/NPC runtime, not a natural input session",
+  "collected_utc": "2026-10-21T18:37:32.392319+00:00",
+  "pid": 44056,
+  "frida_session_id": "c9a18815-693d-47ca-a1e9-790fa96e3fc1",
+  "session_closed": true,
+  "target_exited": true,
+  "fixture_root": "E:\\ManakaREA-TimeStopFixture",
+  "trials": 32,
+  "unity": "2022.3.62f2",
+  "platform": "win32",
+  "architecture": "x64",
+  "sources": [
+    {
+      "path": "Probe.cs",
+      "sha256": "83654ad6f5caabd7400749a0525a4669cca0085c36fc0f4586e8b6e9d58efed6"
+    },
+    {
+      "path": "observe.js",
+      "sha256": "6031e03aebde439792141ae240d310c6253ebcccbc015bf2f3efa652def7d320"
+    }
+  ],
+  "inputs": [
+    {
+      "relative_path": "GameAssembly.dll",
+      "original_path": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+      "fixture_path": "E:\\ManakaREA-TimeStopFixture\\GameAssembly.dll",
+      "sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "relative_path": "UnityPlayer.dll",
+      "original_path": "E:\\SecretFlasherManakaREA\\UnityPlayer.dll",
+      "fixture_path": "E:\\ManakaREA-TimeStopFixture\\UnityPlayer.dll",
+      "sha256": "43fb0aea1b80c74963dae88ec7fc1c3c1993d893ce94d12972000fcc9b653ad1"
+    },
+    {
+      "relative_path": "SecretFlasherManaka_Data/data.unity3d",
+      "original_path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\data.unity3d",
+      "fixture_path": "E:\\ManakaREA-TimeStopFixture\\SecretFlasherManaka_Data\\data.unity3d",
+      "sha256": "20781befb4cc42f898b65fe03f3d16c0a77b53aecac6ddc388460cfb710ae93a"
+    },
+    {
+      "relative_path": "SecretFlasherManaka_Data/il2cpp_data/Metadata/global-metadata.dat",
+      "original_path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
+      "fixture_path": "E:\\ManakaREA-TimeStopFixture\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
+      "sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8"
+    },
+    {
+      "relative_path": "BepInEx/interop/Assembly-CSharp.dll",
+      "original_path": "E:\\SecretFlasherManakaREA\\BepInEx\\interop\\Assembly-CSharp.dll",
+      "fixture_path": "E:\\ManakaREA-TimeStopFixture\\BepInEx\\interop\\Assembly-CSharp.dll",
+      "sha256": "4603f1163ae85ba6b7faafe5fba5da642a6de2d81a93e5b711f35f04663c7744"
+    },
+    {
+      "relative_path": "BepInEx/core/Il2CppInterop.Runtime.dll",
+      "original_path": "E:\\SecretFlasherManakaREA\\BepInEx\\core\\Il2CppInterop.Runtime.dll",
+      "fixture_path": "E:\\ManakaREA-TimeStopFixture\\BepInEx\\core\\Il2CppInterop.Runtime.dll",
+      "sha256": "14d2ee6cbe2af5d9448c72faa802c67dc1378192046bc348ea6709bd8909d00d"
+    },
+    {
+      "relative_path": "models.unity3d",
+      "fixture_path": "E:\\ManakaREA-TimeStopFixture\\models.unity3d",
+      "sha256": "98621b2c4fa4f9de80f355fae5776ab17efc016bcc81c581bcd0917af4308367"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "fixture.jsonl.gz",
+      "sha256": "d0fc5177be1be2cb3419ca2e4451df179d308986cc32fddce0611cd47df17c1b",
+      "uncompressed_sha256": "b0c524669a94c5a20853f27fbf28a40a5bd2b365981727c51ba415167d01989c",
+      "uncompressed_bytes": 2436669
+    },
+    {
+      "path": "unity.log.gz",
+      "sha256": "9f7094e980239603c7ddbd5e108d903e0803bc8e47886dff6d682389338e685d",
+      "uncompressed_sha256": "def23e7e11b4d3fcb060c59e4a3687bff9f25a72967a2796424abcea8f5d287c",
+      "uncompressed_bytes": 16184
+    },
+    {
+      "path": "bepinex.log.gz",
+      "sha256": "7c182cb9b58e5391e0e917a165e3caadb881c7055ff0fa2935e2bc08d53b205c",
+      "uncompressed_sha256": "29fa387ed0f008ad1c201020e01d8fc76778c6f8211a1e92c0704edab47ceab9",
+      "uncompressed_bytes": 1162
+    }
+  ],
+  "plugin_dll_sha256": "de87be02255ed9550181454f4b80dd2a1a732e497cfb0257459b9b69f7ec204e",
+  "final_evidence_id": "ev_5d3012e7b64b4674f74935083345b9e3da15989b76e68870ec5f90ba0ade835e",
+  "evidence_ids": [
+    "ev_5d3012e7b64b4674f74935083345b9e3da15989b76e68870ec5f90ba0ade835e",
+    "ev_94e738f268e48c38291c7af199a4dfffd9f9a0b32bbc8e4ad43b2797a4e3f281"
+  ],
+  "limits": [
+    "No full scene/input/native NpcController.Initialize; native listener built exactly from target/method via original Action constructor.",
+    "Game bootstrap/root motion and irrelevant player clip audio/completion callbacks skipped; original OnChangeTimeStop and NPC handlers preserved.",
+    "Two early startup-only loaded records are retained in append-only fixture log; all32 trial records belong to selected PID/session.",
+    "Injected extra true broadcast and silent reset are counterfactual controls, not naturally observed gameplay.",
+    "First producer_enter flag is null because its native metadata slot was not resolved until the method initialized it; listener and leave flag are observed.",
+    "REA subject/environment remain null; PID/module-path plus this independent fingerprint manifest bind the runtime target."
+  ]
+}

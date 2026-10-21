@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "name": "time-stop-candidate-check",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\time-stop-candidate-check.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\time-stop-candidate-check",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 14471,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAdultGoodsController::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c3e",
+      "va": "0x180627fc0",
+      "file_offset": 6449088,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAdultGoodsController__Initialize__06000c3e",
+      "file_stem": "14471-06000c3e",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18609,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.OptionMenu.GraphicsOption.GraphicsOptionPanelView::<InitializeFov>b__32_1",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001c68",
+      "va": "0x18052a150",
+      "file_offset": 5409104,
+      "label": "ExposureUnnoticed2_ObjectUI_OptionMenu_GraphicsOption_GraphicsOptionPanelView___InitializeFov_b__32_1__06001c68",
+      "file_stem": "18609-06001c68",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18612,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.OptionMenu.GraphicsOption.GraphicsOptionPanelView::<AllReset>b__34_2",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001c6b",
+      "va": "0x18052a360",
+      "file_offset": 5409632,
+      "label": "ExposureUnnoticed2_ObjectUI_OptionMenu_GraphicsOption_GraphicsOptionPanelView___AllReset_b__34_2__06001c6b",
+      "file_stem": "18612-06001c6b",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

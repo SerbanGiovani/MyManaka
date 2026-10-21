@@ -1,0 +1,1282 @@
+{
+  "schema_version": 1,
+  "scope": "controlled original producer paths and explicit counterfactual controls",
+  "trials": 32,
+  "producer_calls": 76,
+  "npc_time_stop_deliveries": 80,
+  "native_events": 24,
+  "native_callbacks": 24,
+  "normal_path_trials": 24,
+  "injected_control_trials": 8,
+  "bootstrap_loaded_records": 2,
+  "results": [
+    {
+      "trial": "r1/female/producer_pair",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1801686485680",
+          "action": "1801686485536"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        1117,
+        1177
+      ],
+      "npc_event_frame": 1208,
+      "npc_callback_frame": 1244
+    },
+    {
+      "trial": "r1/female/producer_rapid_four",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1801686485248",
+          "action": "1801686485104"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        1388,
+        1391,
+        1393,
+        1453
+      ],
+      "npc_event_frame": 1482,
+      "npc_callback_frame": 1518
+    },
+    {
+      "trial": "r1/female/native_delegate_dedup",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1801686484384",
+          "action": "1801686484240"
+        },
+        {
+          "head": false,
+          "before": 2,
+          "after": 2,
+          "target": "1801686484384",
+          "action": "1801686483952"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        1659,
+        1719
+      ],
+      "npc_event_frame": 1750,
+      "npc_callback_frame": 1786
+    },
+    {
+      "trial": "r1/female/native_delegate_head_dedup",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1801686483376",
+          "action": "1801686483232"
+        },
+        {
+          "head": true,
+          "before": 2,
+          "after": 2,
+          "target": "1801686483376",
+          "action": "1801686482944"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        1930,
+        1990
+      ],
+      "npc_event_frame": 2021,
+      "npc_callback_frame": 2057
+    },
+    {
+      "trial": "r1/female/player_clip_pair",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799947195088",
+          "action": "1799947194944"
+        }
+      ],
+      "player_animation_triggers": 2,
+      "producer_frames": [
+        2226,
+        2307
+      ],
+      "npc_event_frame": 2313,
+      "npc_callback_frame": 2349
+    },
+    {
+      "trial": "r1/female/player_clip_retrigger",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799961468720",
+          "action": "1799961468576"
+        }
+      ],
+      "player_animation_triggers": 4,
+      "producer_frames": [
+        2529,
+        2602
+      ],
+      "npc_event_frame": 2503,
+      "npc_callback_frame": 2612
+    },
+    {
+      "trial": "r1/female/extra_true_broadcast",
+      "kind": "injected counterfactual",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        0,
+        0
+      ],
+      "native_events": 0,
+      "native_callbacks": 0,
+      "listener_broadcasts": 0,
+      "final_speed": 0,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799961467856",
+          "action": "1799961467712"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        2743,
+        2803
+      ],
+      "npc_event_frame": null,
+      "npc_callback_frame": null
+    },
+    {
+      "trial": "r1/female/silent_reset_then_toggle",
+      "kind": "injected counterfactual",
+      "producer_after_states": [
+        1,
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        0,
+        0
+      ],
+      "native_events": 0,
+      "native_callbacks": 0,
+      "listener_broadcasts": 0,
+      "final_speed": 0,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799961467136",
+          "action": "1799961466992"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        3014,
+        3026,
+        3074
+      ],
+      "npc_event_frame": null,
+      "npc_callback_frame": null
+    },
+    {
+      "trial": "r1/male/producer_pair",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799961466416",
+          "action": "1799961466272"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        3285,
+        3345
+      ],
+      "npc_event_frame": 3359,
+      "npc_callback_frame": 3395
+    },
+    {
+      "trial": "r1/male/producer_rapid_four",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799961465552",
+          "action": "1799961465408"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        3556,
+        3558,
+        3561,
+        3621
+      ],
+      "npc_event_frame": 3632,
+      "npc_callback_frame": 3668
+    },
+    {
+      "trial": "r1/male/native_delegate_dedup",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799935471408",
+          "action": "1799935471264"
+        },
+        {
+          "head": false,
+          "before": 2,
+          "after": 2,
+          "target": "1799935471408",
+          "action": "1799935470976"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        3827,
+        3887
+      ],
+      "npc_event_frame": 3901,
+      "npc_callback_frame": 3937
+    },
+    {
+      "trial": "r1/male/native_delegate_head_dedup",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799935470400",
+          "action": "1799935470256"
+        },
+        {
+          "head": true,
+          "before": 2,
+          "after": 2,
+          "target": "1799935470400",
+          "action": "1799935469968"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        4098,
+        4157
+      ],
+      "npc_event_frame": 4171,
+      "npc_callback_frame": 4207
+    },
+    {
+      "trial": "r1/male/player_clip_pair",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799935469392",
+          "action": "1799935469248"
+        }
+      ],
+      "player_animation_triggers": 2,
+      "producer_frames": [
+        4393,
+        4474
+      ],
+      "npc_event_frame": 4382,
+      "npc_callback_frame": 4499
+    },
+    {
+      "trial": "r1/male/player_clip_retrigger",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799935468528",
+          "action": "1799935468384"
+        }
+      ],
+      "player_animation_triggers": 4,
+      "producer_frames": [
+        4696,
+        4769
+      ],
+      "npc_event_frame": 4653,
+      "npc_callback_frame": 4689
+    },
+    {
+      "trial": "r1/male/extra_true_broadcast",
+      "kind": "injected counterfactual",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        0,
+        0
+      ],
+      "native_events": 0,
+      "native_callbacks": 0,
+      "listener_broadcasts": 0,
+      "final_speed": 0,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799935467664",
+          "action": "1799935467520"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        4910,
+        4970
+      ],
+      "npc_event_frame": null,
+      "npc_callback_frame": null
+    },
+    {
+      "trial": "r1/male/silent_reset_then_toggle",
+      "kind": "injected counterfactual",
+      "producer_after_states": [
+        1,
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        0,
+        0
+      ],
+      "native_events": 0,
+      "native_callbacks": 0,
+      "listener_broadcasts": 0,
+      "final_speed": 0,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1801685233024",
+          "action": "1801685232880"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        5181,
+        5193,
+        5241
+      ],
+      "npc_event_frame": null,
+      "npc_callback_frame": null
+    },
+    {
+      "trial": "r2/female/producer_pair",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1801685232304",
+          "action": "1801685232160"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        5452,
+        5512
+      ],
+      "npc_event_frame": 5543,
+      "npc_callback_frame": 5579
+    },
+    {
+      "trial": "r2/female/producer_rapid_four",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1801685231440",
+          "action": "1801685231296"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        5723,
+        5725,
+        5728,
+        5788
+      ],
+      "npc_event_frame": 5816,
+      "npc_callback_frame": 5852
+    },
+    {
+      "trial": "r2/female/native_delegate_dedup",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1801685230576",
+          "action": "1801685230432"
+        },
+        {
+          "head": false,
+          "before": 2,
+          "after": 2,
+          "target": "1801685230576",
+          "action": "1801685230144"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        5994,
+        6054
+      ],
+      "npc_event_frame": 6085,
+      "npc_callback_frame": 6121
+    },
+    {
+      "trial": "r2/female/native_delegate_head_dedup",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1801685229568",
+          "action": "1799922687792"
+        },
+        {
+          "head": true,
+          "before": 2,
+          "after": 2,
+          "target": "1801685229568",
+          "action": "1799922687504"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        6265,
+        6325
+      ],
+      "npc_event_frame": 6356,
+      "npc_callback_frame": 6392
+    },
+    {
+      "trial": "r2/female/player_clip_pair",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799922686928",
+          "action": "1799922686784"
+        }
+      ],
+      "player_animation_triggers": 2,
+      "producer_frames": [
+        6561,
+        6642
+      ],
+      "npc_event_frame": 6648,
+      "npc_callback_frame": 6684
+    },
+    {
+      "trial": "r2/female/player_clip_retrigger",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799922686064",
+          "action": "1799922685920"
+        }
+      ],
+      "player_animation_triggers": 4,
+      "producer_frames": [
+        6864,
+        6937
+      ],
+      "npc_event_frame": 6838,
+      "npc_callback_frame": 6947
+    },
+    {
+      "trial": "r2/female/extra_true_broadcast",
+      "kind": "injected counterfactual",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        0,
+        0
+      ],
+      "native_events": 0,
+      "native_callbacks": 0,
+      "listener_broadcasts": 0,
+      "final_speed": 0,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799922685200",
+          "action": "1799922685056"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        7078,
+        7138
+      ],
+      "npc_event_frame": null,
+      "npc_callback_frame": null
+    },
+    {
+      "trial": "r2/female/silent_reset_then_toggle",
+      "kind": "injected counterfactual",
+      "producer_after_states": [
+        1,
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        0,
+        0
+      ],
+      "native_events": 0,
+      "native_callbacks": 0,
+      "listener_broadcasts": 0,
+      "final_speed": 0,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799922684480",
+          "action": "1799922684336"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        7349,
+        7361,
+        7409
+      ],
+      "npc_event_frame": null,
+      "npc_callback_frame": null
+    },
+    {
+      "trial": "r2/male/producer_pair",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799950024496",
+          "action": "1799950024352"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        7620,
+        7680
+      ],
+      "npc_event_frame": 7694,
+      "npc_callback_frame": 7730
+    },
+    {
+      "trial": "r2/male/producer_rapid_four",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799950023632",
+          "action": "1799950023488"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        7891,
+        7893,
+        7896,
+        7956
+      ],
+      "npc_event_frame": 7967,
+      "npc_callback_frame": 8003
+    },
+    {
+      "trial": "r2/male/native_delegate_dedup",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799950022768",
+          "action": "1799950022624"
+        },
+        {
+          "head": false,
+          "before": 2,
+          "after": 2,
+          "target": "1799950022768",
+          "action": "1799950022336"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        8162,
+        8222
+      ],
+      "npc_event_frame": 8236,
+      "npc_callback_frame": 8272
+    },
+    {
+      "trial": "r2/male/native_delegate_head_dedup",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799950021760",
+          "action": "1799950021616"
+        },
+        {
+          "head": true,
+          "before": 2,
+          "after": 2,
+          "target": "1799950021760",
+          "action": "1799950021328"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        8433,
+        8493
+      ],
+      "npc_event_frame": 8507,
+      "npc_callback_frame": 8543
+    },
+    {
+      "trial": "r2/male/player_clip_pair",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799950020752",
+          "action": "1799950020608"
+        }
+      ],
+      "player_animation_triggers": 2,
+      "producer_frames": [
+        8729,
+        8810
+      ],
+      "npc_event_frame": 8718,
+      "npc_callback_frame": 8835
+    },
+    {
+      "trial": "r2/male/player_clip_retrigger",
+      "kind": "controlled original producer path",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        1
+      ],
+      "native_events": 1,
+      "native_callbacks": 1,
+      "listener_broadcasts": 1,
+      "final_speed": 1,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799950490864",
+          "action": "1799950490720"
+        }
+      ],
+      "player_animation_triggers": 4,
+      "producer_frames": [
+        9032,
+        9105
+      ],
+      "npc_event_frame": 8989,
+      "npc_callback_frame": 9025
+    },
+    {
+      "trial": "r2/male/extra_true_broadcast",
+      "kind": "injected counterfactual",
+      "producer_after_states": [
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        0,
+        0
+      ],
+      "native_events": 0,
+      "native_callbacks": 0,
+      "listener_broadcasts": 0,
+      "final_speed": 0,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799950490000",
+          "action": "1799950489856"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        9246,
+        9306
+      ],
+      "npc_event_frame": null,
+      "npc_callback_frame": null
+    },
+    {
+      "trial": "r2/male/silent_reset_then_toggle",
+      "kind": "injected counterfactual",
+      "producer_after_states": [
+        1,
+        1,
+        0
+      ],
+      "npc_delivery_states": [
+        1,
+        1,
+        0
+      ],
+      "npc_cache_after_delivery": [
+        1,
+        0,
+        0
+      ],
+      "native_events": 0,
+      "native_callbacks": 0,
+      "listener_broadcasts": 0,
+      "final_speed": 0,
+      "subscriptions": [
+        {
+          "head": false,
+          "before": 1,
+          "after": 2,
+          "target": "1799950489280",
+          "action": "1799950489136"
+        }
+      ],
+      "player_animation_triggers": 0,
+      "producer_frames": [
+        9517,
+        9529,
+        9577
+      ],
+      "npc_event_frame": null,
+      "npc_callback_frame": null
+    }
+  ],
+  "input_sha256": {
+    "fixture.jsonl.gz": "d0fc5177be1be2cb3419ca2e4451df179d308986cc32fddce0611cd47df17c1b",
+    "rea-runtime.json": "a787490915e69516868ef0e5ffaf77ad61612c5421ada91bc24892365b10675c"
+  }
+}

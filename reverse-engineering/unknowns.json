@@ -103,7 +103,13 @@
       "id": "U017",
       "status": "answered-within-controlled-fixture-scope",
       "question": "Measure OnAnimBaretaSound event delivery and delayed broadcasts under hiding, distance switching and TimeStop recovery",
-      "boundary": "60 controlled standing female/male trials, 2 repeats, actual shipped Unity Animator/native FPS/TimeStop/Scheduler and REA Frida entry observations; see npc-event-runtime.md, runtime/npc-event-timing/results.json and manifest.json. Repeated stop before event freezes speed at 0 in 4 trials; queued notifications survive stop/recovery. Natural TimeStop duplicate producers, complete NpcController.OnUpdate, sitting clips, other models, root deactivation/destruction, timeScale=0 and mods remain unverified."
+      "boundary": "60 controlled standing female/male trials, 2 repeats, actual shipped Unity Animator/native FPS/TimeStop/Scheduler and REA Frida entry observations; see npc-event-runtime.md, runtime/npc-event-timing/results.json and manifest.json. Repeated stop before event freezes speed at 0 in 4 trials; queued notifications survive stop/recovery. Natural TimeStop duplicate producers, complete NpcController.OnUpdate, sitting clips, other models, root deactivation/destruction, timeScale=0 and mods remain unverified. Follow-up time-stop-chain.md confirms the selected natural producer toggles before dispatch and equal native delegates are deduplicated.32 further controlled trials separate24 original-producer paths from8 injected counterfactual cache failures; no naturally repeated-stop source was identified within the bounded scan."
+    },
+    {
+      "id": "U018",
+      "status": "answered-within-selected-natural-chain-and-controlled-runtime",
+      "question": "Trace TimeStop production/dispatch and determine whether natural repeated stop notifications overwrite NPC speed cache",
+      "boundary": "16 new REA queries,8 reused observations,original enum/controller dependencies and139898-unwind-fragment candidate scan identify toggle-before-broadcast OnChangeTimeStop and native equal-delegate dedup/removal.32 runtime trials yield76 producer calls/80 NPC deliveries;24 original-producer paths preserve speed1 and deliver24 NPC events/callbacks,8 explicitly injected same-state/reset controls restore speed0 and yield no event. No natural duplicate-stop source was identified; full natural gameplay, arbitrary cross-listener reentry, reflection/Mods and indirect/split-fragment dataflow remain unverified. See time-stop-chain.md, salt/evidence/time-stop-chain.json and runtime/time-stop-producer/."
     }
   ]
 }

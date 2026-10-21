@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "name": "time-stop-auto",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\time-stop-auto.seeds.tsv",
+  "seed_sha256": "725f203ac9753fe17b1957fc8e3b53db3c0deb5723c36a03925e6bb094f363df",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\time-stop-auto",
+  "seed_count": 6248,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 14908,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerMiscProcess::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000df3",
+      "va": "0x1806556c0",
+      "file_offset": 6635200,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerMiscProcess__OnUpdate__06000df3",
+      "file_stem": "14908-06000df3",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16825,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.InGameEventListener::OnCompleteTransitionStageEvent",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001570",
+      "va": "0x1804942b0",
+      "file_offset": 4795056,
+      "label": "ExposureUnnoticed2_Scripts_InGame_InGameEventListener__OnCompleteTransitionStageEvent__06001570",
+      "file_stem": "16825-06001570",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16864,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.InGameManager::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001597",
+      "va": "0x1804985b0",
+      "file_offset": 4812208,
+      "label": "ExposureUnnoticed2_Scripts_InGame_InGameManager__OnUpdate__06001597",
+      "file_stem": "16864-06001597",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16868,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.InGameManager::<Start>b__52_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600159b",
+      "va": "0x180498af0",
+      "file_offset": 4813552,
+      "label": "ExposureUnnoticed2_Scripts_InGame_InGameManager___Start_b__52_0__0600159b",
+      "file_stem": "16868-0600159b",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_180993960",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x180993960",
+      "file_offset": 10035552,
+      "label": "native_only_180993960__00000000",
+      "file_stem": "native-0x180993960",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_1804960af",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x1804960af",
+      "file_offset": 4802735,
+      "label": "native_only_1804960af__00000000",
+      "file_stem": "native-0x1804960af",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

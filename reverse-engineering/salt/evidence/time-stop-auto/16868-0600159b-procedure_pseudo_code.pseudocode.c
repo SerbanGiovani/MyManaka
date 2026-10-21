@@ -1,0 +1,79 @@
+// Ghidra pseudocode; not original source or compilable C.
+// ev_e3fb0c17656aa72b5887f4d9ba36ac8654990e178f10026619d6fb1c3fc2a47c
+
+void ExposureUnnoticed2_Scripts_InGame_InGameManager___Start_b__52_0__0600159b(longlong param_1)
+
+{
+  undefined4 uVar1;
+  longlong lVar2;
+  longlong lVar3;
+  undefined8 uVar4;
+  
+  if (cRam0000000182eb79de == '\0') {
+    FUN_1802f2810(&DAT_182d59ac8);
+    LOCK();
+    UNLOCK();
+    FUN_1802f2810(&DAT_182d58398);
+    LOCK();
+    UNLOCK();
+    FUN_1802f2810(&DAT_182d53c48);
+    LOCK();
+    UNLOCK();
+    FUN_1802f2810(&DAT_182d594e8);
+    LOCK();
+    UNLOCK();
+    cRam0000000182eb79de = '\x01';
+  }
+  if (*(int *)(DAT_182d59ac8 + 0xe0) == 0) {
+    FUN_18035c820(DAT_182d59ac8);
+  }
+  if (*(longlong *)(param_1 + 0x28) != 0) {
+    lVar2 = *(longlong *)(*(longlong *)(param_1 + 0x28) + 0x50);
+    if (*(char *)(*(longlong *)(DAT_182d59ac8 + 0xb8) + 0xb) == '\0') {
+      if (lVar2 == 0) goto code_r0x000180498c9c;
+      ExposureUnnoticed2_Object3D_NPC_Script_NpcManager__OnLoadData__06001096(lVar2,0);
+    }
+    else {
+      if (lVar2 == 0) goto code_r0x000180498c9c;
+      *(undefined4 *)(lVar2 + 0x68) = 0;
+      ExposureUnnoticed2_Object3D_NPC_Script_NpcManager__RepopNpc__06001098(lVar2,0);
+    }
+    if (*(longlong *)(param_1 + 0x40) != 0) {
+      uVar1 = *(undefined4 *)(*(longlong *)(param_1 + 0x40) + 0x20);
+      if (*(int *)(DAT_182d594e8 + 0xe0) == 0) {
+        FUN_18035c820();
+      }
+      uVar4 = ExposureUnnoticed2_Master_Stage_MStage__Get__06001229(uVar1,0);
+      ExposureUnnoticed2_ObjectUI_StageNamePanel_StageNamePanelView__Open__06001a64(uVar4,0);
+      lVar2 = *(longlong *)(*(longlong *)(DAT_182d58398 + 0xb8) + 0x48);
+      if (lVar2 != 0) {
+        if (*(int *)(lVar2 + 0x10) != 0) {
+          return;
+        }
+        if ((((**(longlong **)(DAT_182d53c48 + 0xb8) != 0) &&
+             (lVar2 = *(longlong *)(**(longlong **)(DAT_182d53c48 + 0xb8) + 0x28), lVar2 != 0)) &&
+            (lVar2 = *(longlong *)(lVar2 + 0x30), lVar2 != 0)) &&
+           ((lVar2 = *(longlong *)(lVar2 + 0x40), lVar2 != 0 &&
+            (lVar2 = *(longlong *)(lVar2 + 200), lVar2 != 0)))) {
+          if (cRam0000000182eb8367 == '\0') {
+            FUN_1802f2810(&DAT_182d58398);
+            LOCK();
+            UNLOCK();
+            cRam0000000182eb8367 = '\x01';
+          }
+          lVar3 = *(longlong *)(*(longlong *)(DAT_182d58398 + 0xb8) + 0x48);
+          if (lVar3 != 0) {
+            *(undefined4 *)(lVar3 + 0x16c) = *(undefined4 *)(lVar2 + 0x10);
+            *(undefined1 *)(lVar2 + 0x30) = 0;
+            *(undefined1 *)(lVar2 + 0x14) = 0;
+            return;
+          }
+        }
+      }
+    }
+  }
+code_r0x000180498c9c:
+                    /* WARNING: Subroutine does not return */
+  FUN_18031dad0();
+}
+
