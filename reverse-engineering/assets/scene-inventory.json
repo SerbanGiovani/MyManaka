@@ -13,8 +13,8 @@
   },
   "inventory_parser": {
     "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\assets\\inspect_scenes.py",
-    "size": 43238,
-    "sha256": "18280a7368e2d1ec035d7194698e12ac9a59d26f8f30235e9ae93dccc7d98d05"
+    "size": 43256,
+    "sha256": "16b7a8383f2f6da61abec2ddaab8bda6f0d85adab326b32ccef7f13b4d144475"
   },
   "engine_version": "2022.3.62f2",
   "build_settings": {
@@ -17698,7 +17698,7 @@
       }
     ],
     "schema_boundary": "AssetReferencer.FadePanel is a PPtr after 27 leading reference fields, corroborated by original declaration order and generated property types. Animator class95 parses only owner/enabled/avatar/controller through byte40. AnimatorController class91 and AnimationClip class74 parse only NamedObject aligned name; remaining blobs are preserved opaque.",
-    "event_evidence_boundary": "Function-name byte occurrences are bounded observations inside specific clip objects, not AnimationEvent parsing. No event count/time/function dispatch or controller-to-clip association is established. A reliable Unity 6000 AnimationClip/AnimatorController schema or runtime trace remains required to prove fade-completion event wiring."
+    "event_evidence_boundary": "Function-name byte occurrences are bounded observations inside specific clip objects, not AnimationEvent parsing. No event count/time/function dispatch or controller-to-clip association is established. A reliable AnimationClip/AnimatorController schema for this build (2022.3.62f2) or runtime trace remains required to prove fade-completion event wiring."
   },
   "limitations": [
     "No game execution or REA session was opened; this is static serialized-resource evidence.",

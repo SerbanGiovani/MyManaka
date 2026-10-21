@@ -19,7 +19,8 @@ def read(path):
     return json.loads(path.read_text(encoding="utf-8-sig"))
 
 
-def build():
+def build(batch_prefix="scene-", reuse_method_ids=None, extra_type_names=(), dispatch_targets=None,
+          resource_boundary=None):
     identity = read(HERE / "evidence/artifact-identity.json")
     native = (DEFAULT_ROOT / "GameAssembly.dll").read_bytes()
     raw = (DEFAULT_ROOT / "SecretFlasherManaka_Data/il2cpp_data/Metadata/global-metadata.dat").read_bytes()
@@ -118,11 +119,11 @@ def build():
     unwind = [(pe.base + a, pe.base + b, exception_offset + i * 12)
               for i, (a, b, _) in enumerate(struct.iter_unpack("<III", native[exception_offset:exception_offset + exception_size]))]
 
-    reused_ids = {16362, 16366, 16369, 16370, 16402, 16403, 16862}
+    reused_ids = {16362, 16366, 16369, 16370, 16402, 16403, 16862} if reuse_method_ids is None else set(reuse_method_ids)
     observations, batches, usages = [], [], {}
     named_type_ids = set()
     for path in sorted((HERE / "evidence").glob("*/run.json")):
-        new = path.parent.name.startswith("scene-")
+        new = path.parent.name.startswith(batch_prefix)
         run = read(path)
         entries = run["functions"] if new else [f for f in run["functions"] if f["metadata_id"] in reused_ids]
         if not entries:
@@ -204,6 +205,7 @@ def build():
     # Persistent state/scene fields also used through shared getter and native helper bodies.
     selected_names = ["SystemManager", "GlobalData", "GameStateData", "InGameReferencer", "MStageRecord", "StageType", "OptionData", "SaveDataType",
                       "SystemStateData", "SystemData", "TempGameState", "SaveCategory", "InGameManager", "IsLoadDataEvent"]
+    selected_names.extend(extra_type_names)
     for i, name in names.items():
         if name.rsplit(".", 1)[-1] in selected_names:
             named_type_ids.add(i)
@@ -211,7 +213,8 @@ def build():
     for tid in sorted(named_type_ids):
         t, row = types[tid], rows[tid]
         # Keep game/selected scene types; generic library types would obscure the evidence.
-        if not (names[tid].startswith(("ExposureUnnoticed2.", "HadakaCoat.")) or names[tid].startswith("<>") or names[tid] == "SaveDataType"):
+        if not (names[tid].startswith(("ExposureUnnoticed2.", "HadakaCoat.")) or names[tid].startswith("<>")
+                or names[tid] == "SaveDataType" or names[tid].rsplit(".", 1)[-1] in extra_type_names):
             continue
         pointer_offset = row["offset_row_pointer_file_offset"]
         pointer = struct.unpack_from("<Q", native, pointer_offset)[0]
@@ -234,8 +237,9 @@ def build():
         named.append({"type_id": tid, "name": names[tid], "fields": ff})
     interface_offsets, vtable = md.records(38, "<ii"), md.records(36, "<I")
     dispatch = []
-    for class_id, interface_id, expected_method in [(2596, 2599, 16864), (2596, 2592, 16865),
-                                                   (methods[14757]["type_id"], 2599, 14757), (2869, 2863, 18344)]:
+    selected_dispatch = [(2596, 2599, 16864), (2596, 2592, 16865),
+                         (methods[14757]["type_id"], 2599, 14757), (2869, 2863, 18344)] if dispatch_targets is None else dispatch_targets
+    for class_id, interface_id, expected_method in selected_dispatch:
         cls, iface = types[class_id], types[interface_id]
         interface_method = iface[9]
         assert iface[16] == 1
@@ -270,7 +274,7 @@ def build():
                 "A shared native address retains all metadata aliases; a seed label alone does not prove the receiver type.",
                 "Raw E8 patterns only corroborate decompiler targets within the selected PE unwind range; instruction boundaries are not independently decoded here.",
                 "TypeInfo usage tags and registered fields give static identity/layout, not current runtime values.",
-                "Scene assets, persistent button calls and Animator controller pointers are separately recorded in assets/scene-inventory.json; animation event payloads remain unresolved."]}
+                resource_boundary or "Scene assets, persistent button calls and Animator controller pointers are separately recorded in assets/scene-inventory.json; animation event payloads remain unresolved."]}
 
 
 def main():

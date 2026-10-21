@@ -1,0 +1,357 @@
+{
+  "schema_version": 1,
+  "name": "player-core",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\player-core.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\player-core",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 14421,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.InputResolver::Resolve",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c0c",
+      "va": "0x180620800",
+      "file_offset": 6418432,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_InputResolver__Resolve__06000c0c",
+      "file_stem": "14421-06000c0c",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14422,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.InputResolver::IsPoseSkillInput",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c0d",
+      "va": "0x180621070",
+      "file_offset": 6420592,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_InputResolver__IsPoseSkillInput__06000c0d",
+      "file_stem": "14422-06000c0d",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14460,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAction::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c33",
+      "va": "0x180625280",
+      "file_offset": 6437504,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAction__Initialize__06000c33",
+      "file_stem": "14460-06000c33",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14461,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAction::OnFrameEnd",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c34",
+      "va": "0x1806253b0",
+      "file_offset": 6437808,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAction__OnFrameEnd__06000c34",
+      "file_stem": "14461-06000c34",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14462,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAction::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c35",
+      "va": "0x180625440",
+      "file_offset": 6437952,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAction__OnUpdate__06000c35",
+      "file_stem": "14462-06000c35",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14463,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAction::ChangeAction",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c36",
+      "va": "0x180627a90",
+      "file_offset": 6447760,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAction__ChangeAction__06000c36",
+      "file_stem": "14463-06000c36",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14894,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000de5",
+      "va": "0x180650b70",
+      "file_offset": 6615920,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerLocomotion__Initialize__06000de5",
+      "file_stem": "14894-06000de5",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14896,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::OnWarp",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000de7",
+      "va": "0x1806514f0",
+      "file_offset": 6618352,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerLocomotion__OnWarp__06000de7",
+      "file_stem": "14896-06000de7",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14897,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::CalcAutoChaseDirect",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000de8",
+      "va": "0x180651570",
+      "file_offset": 6618480,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerLocomotion__CalcAutoChaseDirect__06000de8",
+      "file_stem": "14897-06000de8",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14898,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::SetMoveSpeedInverse",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000de9",
+      "va": "0x1806518e0",
+      "file_offset": 6619360,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerLocomotion__SetMoveSpeedInverse__06000de9",
+      "file_stem": "14898-06000de9",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14899,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000dea",
+      "va": "0x180651940",
+      "file_offset": 6619456,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerLocomotion__OnUpdate__06000dea",
+      "file_stem": "14899-06000dea",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14900,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::OnFixedUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000deb",
+      "va": "0x180653b00",
+      "file_offset": 6628096,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerLocomotion__OnFixedUpdate__06000deb",
+      "file_stem": "14900-06000deb",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14901,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::StateUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000dec",
+      "va": "0x180654c80",
+      "file_offset": 6632576,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerLocomotion__StateUpdate__06000dec",
+      "file_stem": "14901-06000dec",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14903,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::OnEndAction",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000dee",
+      "va": "0x180655180",
+      "file_offset": 6633856,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerLocomotion__OnEndAction__06000dee",
+      "file_stem": "14903-06000dee",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14904,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::OnCompleteTransitionStageEvent",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000def",
+      "va": "0x1806553b0",
+      "file_offset": 6634416,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerLocomotion__OnCompleteTransitionStageEvent__06000def",
+      "file_stem": "14904-06000def",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14905,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::OnChangeTimeEvent",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000df0",
+      "va": "0x180655480",
+      "file_offset": 6634624,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerLocomotion__OnChangeTimeEvent__06000df0",
+      "file_stem": "14905-06000df0",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15116,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.PlayerMoveCalculator::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000ec3",
+      "va": "0x180406800",
+      "file_offset": 4214784,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_Other_PlayerMoveCalculator__Initialize__06000ec3",
+      "file_stem": "15116-06000ec3",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15117,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.PlayerMoveCalculator::OnWarp",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000ec4",
+      "va": "0x1804069d0",
+      "file_offset": 4215248,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_Other_PlayerMoveCalculator__OnWarp__06000ec4",
+      "file_stem": "15117-06000ec4",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15118,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.PlayerMoveCalculator::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000ec5",
+      "va": "0x180406a70",
+      "file_offset": 4215408,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_Other_PlayerMoveCalculator__OnUpdate__06000ec5",
+      "file_stem": "15118-06000ec5",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17225,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.InputManager::UpdateProcess",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001700",
+      "va": "0x1804afec0",
+      "file_offset": 4908736,
+      "label": "ExposureUnnoticed2_Scripts_Base_InputManager__UpdateProcess__06001700",
+      "file_stem": "17225-06001700",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17228,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.InputManager::GetVector3",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001703",
+      "va": "0x1804b0f80",
+      "file_offset": 4913024,
+      "label": "ExposureUnnoticed2_Scripts_Base_InputManager__GetVector3__06001703",
+      "file_stem": "17228-06001703",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17229,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.InputManager::GetVector2",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001704",
+      "va": "0x1804b1100",
+      "file_offset": 4913408,
+      "label": "ExposureUnnoticed2_Scripts_Base_InputManager__GetVector2__06001704",
+      "file_stem": "17229-06001704",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17373,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.InteractManager::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001794",
+      "va": "0x1804b7900",
+      "file_offset": 4940032,
+      "label": "ExposureUnnoticed2_Scripts_Base_InteractManager__Initialize__06001794",
+      "file_stem": "17373-06001794",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17375,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.InteractManager::GetHead",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001796",
+      "va": "0x1804b7a80",
+      "file_offset": 4940416,
+      "label": "ExposureUnnoticed2_Scripts_Base_InteractManager__GetHead__06001796",
+      "file_stem": "17375-06001796",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17379,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.InteractManager::OnInteract",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600179a",
+      "va": "0x1804b8020",
+      "file_offset": 4941856,
+      "label": "ExposureUnnoticed2_Scripts_Base_InteractManager__OnInteract__0600179a",
+      "file_stem": "17379-0600179a",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

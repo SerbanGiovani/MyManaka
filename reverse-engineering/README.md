@@ -11,6 +11,8 @@
 
 ## 已完成
 
+已继续建立 `PlayerController → InputResolver / PlayerLocomotion / PlayerAction → CharacterController.Move`，以及交互候选、事件广播与选定动作完成回调；新增 94 次非空 REA 查询。原始 PlayerAction 输入表（61 actions / 88 bindings）、14 组枚举、移动基础参数、78 条动作记录引用和玩家碰撞组件配置同步保留，见 [玩家玩法调用链](player-chain.md)、`salt/evidence/player-chain.json` 与 `assets/player-config.json`。跳跃存在未接通输入的代码分支，完整动画/交互/特殊状态与运行验证仍未完成。
+
 | 项目 | 结果 | 证据 |
 | --- | --- | --- |
 | 全局定位索引 | 76 程序集、10,508 类型、79,095 方法；70,948 个方法有原生地址 | `salt/symbols/index-summary.json` |
@@ -24,6 +26,8 @@
 | 对象目录 | 主 SerializedFile v22，2,650 类型、76,079 对象，带 type tree | `salt/evidence/decryption.json` |
 | 标题进入游戏 | 新游戏/继续分支、两次场景切换、状态恢复及主要初始化/更新入口 | `scene-chain.md`、`salt/evidence/scene-chain.json` |
 | 原始场景配置 | BuildSettings 10 场景、MStage 8 记录、入口组件与 5 个按钮持久调用 | `assets/scene-inventory.json` |
+| 玩家移动与操作 | 输入帧语义、普通移动/跑步/蹲姿、自动移动取消、Unity 位移出口、交互广播及选定完成回调 | `player-chain.md`、`salt/evidence/player-chain.json` |
+| 原始玩家配置 | 实际输入 map、默认键位、枚举数值、速度/动作前缀与 CharacterController 字段 | `assets/player-config.json` |
 
 解密包主节点是 `CAB-2afa88b54ee4aa6beff98892b77cac4c`，另有 `.resS` 和 `.resource`。对象表已读通，不等于每个模型、材质或 MonoBehaviour 字段的业务含义均已恢复。
 
@@ -72,6 +76,8 @@ python reverse-engineering/salt/loading_evidence.py --check
 python reverse-engineering/salt/asset_evidence.py --check
 python reverse-engineering/assets/inspect_scenes.py --check
 python reverse-engineering/salt/scene_evidence.py --check
+python reverse-engineering/assets/inspect_player.py --check
+python reverse-engineering/salt/player_evidence.py --check
 
 # 按选定程序集增加元数据名称种子；选中方法的别名优先
 python reverse-engineering/salt/prepare_loading.py --name scene-example --seed-assembly Assembly-CSharp.dll --method-id 16862

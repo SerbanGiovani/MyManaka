@@ -112,6 +112,18 @@ def main():
     build_settings = scene_assets["build_settings"]
     check(hashlib.sha256(bytes.fromhex(build_settings["raw_hex"])).hexdigest() == build_settings["source"]["sha256"], "BuildSettings bytes differ")
     check(build_settings["scene_count"] == 10, "Unexpected scene configuration")
+    player = read(ROOT / "salt/evidence/player-chain.json")
+    player_assets = read(ROOT / "assets/player-config.json")
+    check(digest(ROOT / player["configuration_dependency"]["path"]) == player["configuration_dependency"]["sha256"], "Player configuration dependency differs")
+    check(player["native_sha256"] == identity["native_sha256"] and player["metadata_sha256"] == identity["metadata_sha256"], "Player chain identity mismatch")
+    check(all(m["evidence_id"] in observations for m in player["methods"]), "Player chain references missing native evidence")
+    check(sum(m["new_this_round"] for m in player["methods"]) == player["new_observations"], "Player observation count differs")
+    check(player_assets["source_bundle"]["sha256"] == asset["source_sha256"], "Player asset bundle differs")
+    check(player_assets["decrypted_models_source"]["sha256"] == decryption["plaintext"]["sha256"], "Player prefab source differs")
+    for source in [player_assets["parser"], *player_assets["reused_parsers"]]:
+        check(digest(Path(source["path"])) == source["sha256"], "Player parser fingerprint differs")
+    check(len(player["direct_input_flag_assignments"]) >= 15, "Player input assignment map incomplete")
+    check(player["jump_input_boundary"]["observed_store_expressions"] == ["0"], "Jump input boundary differs")
     checked_inputs = []
     if args.inputs:
         original = Path(identity["original_directory"])
@@ -126,6 +138,7 @@ def main():
                       ("dispatch-metadata.json", "field-offsets.json", "instantiation-generics.json")]
         source_records = list(declarations["sources"])
         source_records.extend([scene_assets["stage_enum"]["source"], scene_assets["stage_enum"]["parser"]])
+        source_records.extend(player_assets["wrapper_declarations"]["sources"])
         for supplement in supplements:
             source_records.extend(supplement.get("sources", []))
             if supplement.get("parser_source"):

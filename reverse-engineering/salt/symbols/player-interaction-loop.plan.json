@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "name": "player-interaction-loop",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\player-interaction-loop.seeds.tsv",
+  "seed_sha256": "ffae776601abf47227da56dd7deff57d5781e06380fef1c9e4612b82cc67f686",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\player-interaction-loop",
+  "seed_count": 6252,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 14908,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerMiscProcess::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000df3",
+      "va": "0x1806556c0",
+      "file_offset": 6635200,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerMiscProcess__OnUpdate__06000df3",
+      "file_stem": "14908-06000df3",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14911,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerMiscProcess::ReturnInteractTokenIfNeed",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000df6",
+      "va": "0x180656860",
+      "file_offset": 6639712,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerMiscProcess__ReturnInteractTokenIfNeed__06000df6",
+      "file_stem": "14911-06000df6",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15844,
+      "qualified_name": "ExposureUnnoticed2.Object3D.IngameManager.InGameUiManager::OnLateUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600119b",
+      "va": "0x180455750",
+      "file_offset": 4538192,
+      "label": "ExposureUnnoticed2_Object3D_IngameManager_InGameUiManager__OnLateUpdate__0600119b",
+      "file_stem": "15844-0600119b",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15848,
+      "qualified_name": "ExposureUnnoticed2.Object3D.IngameManager.InGameUiManager::OnInteract",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600119f",
+      "va": "0x1804571b0",
+      "file_offset": 4544944,
+      "label": "ExposureUnnoticed2_Object3D_IngameManager_InGameUiManager__OnInteract__0600119f",
+      "file_stem": "15848-0600119f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17242,
+      "qualified_name": "<>c::<Awake>b__29_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001711",
+      "va": "0x1804b1f00",
+      "file_offset": 4916992,
+      "label": "__c___Awake_b__29_0__06001711",
+      "file_stem": "17242-06001711",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17243,
+      "qualified_name": "<>c::<Awake>b__29_1",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001712",
+      "va": "0x1804b1f10",
+      "file_offset": 4917008,
+      "label": "__c___Awake_b__29_1__06001712",
+      "file_stem": "17243-06001712",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 26950,
+      "qualified_name": "UnityEngine.InputSystem.InputAction::IsPressed",
+      "assembly": "Unity.InputSystem.dll",
+      "token": "0x6000159",
+      "va": "0x18194c370",
+      "file_offset": 26520432,
+      "label": "UnityEngine_InputSystem_InputAction__IsPressed__06000159",
+      "file_stem": "26950-06000159",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 26953,
+      "qualified_name": "UnityEngine.InputSystem.InputAction::WasPressedThisFrame",
+      "assembly": "Unity.InputSystem.dll",
+      "token": "0x600015c",
+      "va": "0x18194c4f0",
+      "file_offset": 26520816,
+      "label": "UnityEngine_InputSystem_InputAction__WasPressedThisFrame__0600015c",
+      "file_stem": "26953-0600015c",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 26955,
+      "qualified_name": "UnityEngine.InputSystem.InputAction::WasReleasedThisFrame",
+      "assembly": "Unity.InputSystem.dll",
+      "token": "0x600015e",
+      "va": "0x18194c600",
+      "file_offset": 26521088,
+      "label": "UnityEngine_InputSystem_InputAction__WasReleasedThisFrame__0600015e",
+      "file_stem": "26955-0600015e",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 27063,
+      "qualified_name": "UnityEngine.InputSystem.InputActionMap::get_Item",
+      "assembly": "Unity.InputSystem.dll",
+      "token": "0x60001ca",
+      "va": "0x181952d80",
+      "file_offset": 26547584,
+      "label": "UnityEngine_InputSystem_InputActionMap__get_Item__060001ca",
+      "file_stem": "27063-060001ca",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 77049,
+      "qualified_name": "UnityEngine.CharacterController::Move",
+      "assembly": "UnityEngine.PhysicsModule.dll",
+      "token": "0x60000a8",
+      "va": "0x181fb92f0",
+      "file_offset": 33258224,
+      "label": "UnityEngine_CharacterController__Move__060000a8",
+      "file_stem": "77049-060000a8",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 77056,
+      "qualified_name": "UnityEngine.CharacterController::Move_Injected",
+      "assembly": "UnityEngine.PhysicsModule.dll",
+      "token": "0x60000af",
+      "va": "0x181fb9510",
+      "file_offset": 33258768,
+      "label": "UnityEngine_CharacterController__Move_Injected__060000af",
+      "file_stem": "77056-060000af",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

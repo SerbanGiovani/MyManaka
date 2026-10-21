@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "name": "player-action-completion",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\player-action-completion.seeds.tsv",
+  "seed_sha256": "cbce2668c7992c4edd1c2a3ac1b317d7617efb6fbc04344dede39e1881cecd3b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\player-action-completion",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 14477,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationReceiver::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c44",
+      "va": "0x1806290c0",
+      "file_offset": 6453440,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationReceiver__Initialize__06000c44",
+      "file_stem": "14477-06000c44",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14488,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationReceiver::OnAnimEndPick",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c4f",
+      "va": "0x180629fa0",
+      "file_offset": 6457248,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationReceiver__OnAnimEndPick__06000c4f",
+      "file_stem": "14488-06000c4f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14489,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationReceiver::OnAnimEndPickUpItem",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c50",
+      "va": "0x18062a120",
+      "file_offset": 6457632,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationReceiver__OnAnimEndPickUpItem__06000c50",
+      "file_stem": "14489-06000c50",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14494,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationReceiver::CommonOnEndAnim",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c55",
+      "va": "0x18062afe0",
+      "file_offset": 6461408,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationReceiver__CommonOnEndAnim__06000c55",
+      "file_stem": "14494-06000c55",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14497,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationReceiver::EndArmAction",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c58",
+      "va": "0x18062b4f0",
+      "file_offset": 6462704,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationReceiver__EndArmAction__06000c58",
+      "file_stem": "14497-06000c58",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14507,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationReceiver::CommonStartAnim",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c62",
+      "va": "0x18062c500",
+      "file_offset": 6466816,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationReceiver__CommonStartAnim__06000c62",
+      "file_stem": "14507-06000c62",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14509,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationReceiver::OnEndSitDown",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c64",
+      "va": "0x18062c6c0",
+      "file_offset": 6467264,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationReceiver__OnEndSitDown__06000c64",
+      "file_stem": "14509-06000c64",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14513,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationReceiver::<CommonOnEndAnim>b__22_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c68",
+      "va": "0x18062c950",
+      "file_offset": 6467920,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationReceiver___CommonOnEndAnim_b__22_0__06000c68",
+      "file_stem": "14513-06000c68",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14514,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationReceiver::<OnEndSitDown>b__37_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c69",
+      "va": "0x18062c9a0",
+      "file_offset": 6468000,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationReceiver___OnEndSitDown_b__37_0__06000c69",
+      "file_stem": "14514-06000c69",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17227,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.InputManager::LateUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001702",
+      "va": "0x180422e80",
+      "file_offset": 4331136,
+      "label": "ExposureUnnoticed2_Scripts_Base_InputManager__LateUpdate__06001702",
+      "file_stem": "17227-06001702",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17299,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.Scheduler::get_Instance",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600174a",
+      "va": "0x1804b3a30",
+      "file_offset": 4923952,
+      "label": "ExposureUnnoticed2_Scripts_Base_Scheduler__get_Instance__0600174a",
+      "file_stem": "17299-0600174a",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17304,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.Scheduler::Update",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600174f",
+      "va": "0x1804b4040",
+      "file_offset": 4925504,
+      "label": "ExposureUnnoticed2_Scripts_Base_Scheduler__Update__0600174f",
+      "file_stem": "17304-0600174f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

@@ -532,7 +532,7 @@ def animator_and_event_evidence(investigation, scenes, declarations, prefab, wra
     return {"FadePanel_bindings": fades, "animators": animators, "attached_monobehaviours": mono_components,
             "same_node_animation_clip_inventory": clips,
             "schema_boundary": "AssetReferencer.FadePanel is a PPtr after 27 leading reference fields, corroborated by original declaration order and generated property types. Animator class95 parses only owner/enabled/avatar/controller through byte40. AnimatorController class91 and AnimationClip class74 parse only NamedObject aligned name; remaining blobs are preserved opaque.",
-            "event_evidence_boundary": "Function-name byte occurrences are bounded observations inside specific clip objects, not AnimationEvent parsing. No event count/time/function dispatch or controller-to-clip association is established. A reliable Unity 6000 AnimationClip/AnimatorController schema or runtime trace remains required to prove fade-completion event wiring."}
+            "event_evidence_boundary": "Function-name byte occurrences are bounded observations inside specific clip objects, not AnimationEvent parsing. No event count/time/function dispatch or controller-to-clip association is established. A reliable AnimationClip/AnimatorController schema for this build (2022.3.62f2) or runtime trace remains required to prove fade-completion event wiring."}
 
 
 def build(root):
