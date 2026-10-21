@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "name": "asset-completion",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\asset-completion.seeds.tsv",
+  "seed_sha256": "2119fb22636dc317b5b841c50af84713f75ca82f797427f5701ff779517268b6",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\asset-completion",
+  "seed_count": 575,
+  "functions": [
+    {
+      "metadata_id": 15829,
+      "qualified_name": "ExposureUnnoticed2.Object3D.IngameManager.AssetReferencer::Awake",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600118c",
+      "va": "0x180454510",
+      "file_offset": 4533520,
+      "label": "ExposureUnnoticed2_Object3D_IngameManager_AssetReferencer__Awake__0600118c",
+      "file_stem": "15829-0600118c",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16366,
+      "qualified_name": "ExposureUnnoticed2.Scripts.UI.TitleSceneView::Update",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60013a5",
+      "va": "0x18046f3e0",
+      "file_offset": 4643808,
+      "label": "ExposureUnnoticed2_Scripts_UI_TitleSceneView__Update__060013a5",
+      "file_stem": "16366-060013a5",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 78749,
+      "qualified_name": "UnityEngine.AssetBundleRequest::GetResult",
+      "assembly": "UnityEngine.AssetBundleModule.dll",
+      "token": "0x600001d",
+      "va": "0x181ef2f90",
+      "file_offset": 32446352,
+      "label": "UnityEngine_AssetBundleRequest__GetResult__0600001d",
+      "file_stem": "78749-0600001d",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

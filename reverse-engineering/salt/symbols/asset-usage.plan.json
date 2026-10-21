@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "name": "asset-usage",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\asset-usage.seeds.tsv",
+  "seed_sha256": "ae91c88b2288560c74ca28faf59a99051f63ccf2ffd44d61494e9532e4f4afb5",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\asset-usage",
+  "seed_count": 582,
+  "functions": [
+    {
+      "metadata_id": 13846,
+      "qualified_name": "ExposureUnnoticed2.Object3D.UIPlayer.UiPlayerController::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60009cd",
+      "va": "0x1805eb800",
+      "file_offset": 6201344,
+      "label": "ExposureUnnoticed2_Object3D_UIPlayer_UiPlayerController__Initialize__060009cd",
+      "file_stem": "13846-060009cd",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14623,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController::TransToMaterialAsset",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000cd6",
+      "va": "0x180637960",
+      "file_offset": 6512992,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBodyMaterialController__TransToMaterialAsset__06000cd6",
+      "file_stem": "14623-06000cd6",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14624,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController::SetupBodyPaintFromGameState",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000cd7",
+      "va": "0x180637bc0",
+      "file_offset": 6513600,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBodyMaterialController__SetupBodyPaintFromGameState__06000cd7",
+      "file_stem": "14624-06000cd7",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14627,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController::ApplyFromGameState",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000cda",
+      "va": "0x180638680",
+      "file_offset": 6516352,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBodyMaterialController__ApplyFromGameState__06000cda",
+      "file_stem": "14627-06000cda",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15066,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.FutanariController::SetupPaint",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e91",
+      "va": "0x180401350",
+      "file_offset": 4193104,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_Other_FutanariController__SetupPaint__06000e91",
+      "file_stem": "15066-06000e91",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15889,
+      "qualified_name": "ExposureUnnoticed2.Object3D.DropedCoat.DroppedItemController::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60011c8",
+      "va": "0x180459880",
+      "file_offset": 4554880,
+      "label": "ExposureUnnoticed2_Object3D_DropedCoat_DroppedItemController__Initialize__060011c8",
+      "file_stem": "15889-060011c8",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16087,
+      "qualified_name": "ExposureUnnoticed2.Master.Hair.MHair::CheckInitialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600128e",
+      "va": "0x180468e00",
+      "file_offset": 4617728,
+      "label": "ExposureUnnoticed2_Master_Hair_MHair__CheckInitialize__0600128e",
+      "file_stem": "16087-0600128e",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16265,
+      "qualified_name": "ExposureUnnoticed2.Master.Common.MCustomizeColor::get_Instance",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001340",
+      "va": "0x18046b7b0",
+      "file_offset": 4628400,
+      "label": "ExposureUnnoticed2_Master_Common_MCustomizeColor__get_Instance__06001340",
+      "file_stem": "16265-06001340",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 49122,
+      "qualified_name": "UnityEngine.GameObject::GetComponentFastPath",
+      "assembly": "UnityEngine.CoreModule.dll",
+      "token": "0x6000962",
+      "va": "0x181f3e150",
+      "file_offset": 32754000,
+      "label": "UnityEngine_GameObject__GetComponentFastPath__06000962",
+      "file_stem": "49122-06000962",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 49275,
+      "qualified_name": "UnityEngine.Object::Instantiate",
+      "assembly": "UnityEngine.CoreModule.dll",
+      "token": "0x60009fb",
+      "va": "0x181f439e0",
+      "file_offset": 32776672,
+      "label": "UnityEngine_Object__Instantiate__060009fb",
+      "file_stem": "49275-060009fb",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

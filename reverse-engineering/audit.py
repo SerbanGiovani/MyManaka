@@ -96,6 +96,13 @@ def main():
         check(hashlib.sha256(bytes.fromhex(record["raw_hex"])).hexdigest() == record["sha256"], "Prefab raw-byte fingerprint mismatch")
     check(prefab["encrypter_core_instance"]["fields"]["keyData"]["pointer"] == {"file_id": 0, "path_id": 61594}, "Prefab KeyData reference differs")
     check(prefab["source_sha256"] == asset["source_sha256"], "Prefab bundle identity mismatch")
+    followup = read(ROOT / "salt/evidence/asset-followup.json")
+    check(followup["native_sha256"] == identity["native_sha256"] and followup["metadata_sha256"] == identity["metadata_sha256"], "Asset followup identity mismatch")
+    check(len(followup["requests"]) == 25, "Incomplete title callback map")
+    check(all(r["evidence_id"] in observations for r in followup["rea_observations"]), "Asset followup references missing native observations")
+    check(all(r["callback_evidence_id"] in observations and r["verified_consumer_methods"] for r in followup["requests"]), "Callback or consumer evidence missing")
+    check(all(c["evidence_id"] in observations for r in followup["requests"] for c in r["verified_consumer_methods"]), "Consumer references missing observations")
+    check(followup["interface_dispatch"]["method_id"] == 76228 and followup["request_get_result_dispatch"]["method_id"] == 78749, "Unexpected interface dispatch target")
     checked_inputs = []
     if args.inputs:
         original = Path(identity["original_directory"])
@@ -106,7 +113,20 @@ def main():
                  (Path(decryption["source"]), decryption["source_sha256"]),
                  (Path(decryption["plaintext"]["path"]), decryption["plaintext"]["sha256"])]
         known = {str(path).casefold() for path, _ in paths}
-        for source in declarations["sources"]:
+        supplements = [read(ROOT / "salt/symbols" / name) for name in
+                      ("dispatch-metadata.json", "field-offsets.json", "instantiation-generics.json")]
+        source_records = list(declarations["sources"])
+        for supplement in supplements:
+            source_records.extend(supplement.get("sources", []))
+            if supplement.get("parser_source"):
+                source_records.append(supplement["parser_source"])
+        abi = supplements[-1]["iced_dispatch_abi_observations"]
+        source_records.append({"path": abi["decoder_path"], "sha256": abi["decoder_sha256"]})
+        for source in source_records:
+            # Derived SQLite byte identity is not portable after rebuilding it;
+            # reconstruction scripts validate its build identity and coordinates.
+            if ".cache" in Path(source["path"]).parts:
+                continue
             if source["path"].casefold() not in known:
                 paths.append((Path(source["path"]), source["sha256"]))
                 known.add(source["path"].casefold())

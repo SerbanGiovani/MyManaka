@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "name": "asset-consumers",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\asset-consumers.seeds.tsv",
+  "seed_sha256": "9cb6a1c69d6c1fca21d9ab70d3d28170616016295dd9b9be4d8de25e2ecc52fd",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\asset-consumers",
+  "seed_count": 577,
+  "functions": [
+    {
+      "metadata_id": 16369,
+      "qualified_name": "ExposureUnnoticed2.Scripts.UI.TitleSceneView::OnClickNewGame",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60013a8",
+      "va": "0x18046fc90",
+      "file_offset": 4646032,
+      "label": "ExposureUnnoticed2_Scripts_UI_TitleSceneView__OnClickNewGame__060013a8",
+      "file_stem": "16369-060013a8",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16370,
+      "qualified_name": "ExposureUnnoticed2.Scripts.UI.TitleSceneView::OnClickContinue",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60013a9",
+      "va": "0x18046fef0",
+      "file_offset": 4646640,
+      "label": "ExposureUnnoticed2_Scripts_UI_TitleSceneView__OnClickContinue__060013a9",
+      "file_stem": "16370-060013a9",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16402,
+      "qualified_name": "ExposureUnnoticed2.Scripts.UI.TitleSceneView::<OnClickNewGame>b__37_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60013c9",
+      "va": "0x180472a50",
+      "file_offset": 4657744,
+      "label": "ExposureUnnoticed2_Scripts_UI_TitleSceneView___OnClickNewGame_b__37_0__060013c9",
+      "file_stem": "16402-060013c9",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16403,
+      "qualified_name": "ExposureUnnoticed2.Scripts.UI.TitleSceneView::<OnClickContinue>b__38_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60013ca",
+      "va": "0x180472af0",
+      "file_offset": 4657904,
+      "label": "ExposureUnnoticed2_Scripts_UI_TitleSceneView___OnClickContinue_b__38_0__060013ca",
+      "file_stem": "16403-060013ca",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16862,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.InGameManager::Start",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001595",
+      "va": "0x180495dc0",
+      "file_offset": 4801984,
+      "label": "ExposureUnnoticed2_Scripts_InGame_InGameManager__Start__06001595",
+      "file_stem": "16862-06001595",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

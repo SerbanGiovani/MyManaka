@@ -5,6 +5,8 @@
 
 2026-10-21 已补齐 Windows 上层加载链：初始化资源 → KeyData → 标题场景 `models` 请求 → 路径/密码 → 解密流 → Unity 包加载 → 完成缓存与 25 个资源请求。本轮新增 54 份原生观察，见 [上层调用链报告](loading-chain.md)；完整证据坐标及绑定见 `salt/evidence/loading-chain.json`。
 
+后续已补齐 EncrypterBundle 槽 2 → BridgeAssetBundle → Unity LoadAssetAsync / GetResult → 25 个回调 → 缓存及实例化/应用消费者，新增 56 份非空 REA 观察；另 3 份空 Listing 响应明确保留为不可用结果。见 [资源请求后续链报告](asset-followup.md) 与 `salt/evidence/asset-followup.json`。实际分配的包桥接类型为 BridgeAssetBundle，旧伪代码中的 EncryptLabelData 构造函数名是共享地址种子别名。
+
 ## 已完成
 
 | 项目 | 结果 | 证据 |
@@ -63,6 +65,7 @@ python reverse-engineering/audit.py --inputs
 python reverse-engineering/salt/prepare_loading.py
 node reverse-engineering/salt/run_batch.mjs reverse-engineering/salt/symbols/loading.plan.json
 python reverse-engineering/salt/loading_evidence.py --check
+python reverse-engineering/salt/asset_evidence.py --check
 
 # find 的 id 可用于选择其他方法，生成独立种子和计划，不必改脚本
 python reverse-engineering/salt/prepare_batch.py --method-id 76342 --name getstream

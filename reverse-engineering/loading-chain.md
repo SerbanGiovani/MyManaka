@@ -77,7 +77,7 @@ LoadBundleFromStreamAsync("models", <Awake>b__30_0, "", 0)
 
 | 入口 | 解密与 Unity 接口 | 完成/缓存 |
 | --- | --- | --- |
-| Stream 同步 `0x181436120` | `GetStream` → `ValidateLoadFromStream` → `LoadFromStreamInternal(stream, crc=0, buffer)` | `EncryptLabelData` 与解密流保存在 `CacheData` 中。 |
+| Stream 同步 `0x181436120` | `GetStream` → `ValidateLoadFromStream` → `LoadFromStreamInternal(stream, crc=0, buffer)` | 实际分配的 `BridgeAssetBundle` 与解密流保存在 `CacheData` 中；旧伪代码的 EncryptLabelData 构造函数名是共享地址种子别名。 |
 | Stream 异步 `0x181436710` | `GetStream` → `ValidateLoadFromStream` → `LoadFromStreamAsyncInternal(stream, crc=0, buffer)` | `BridgeAssetBundleRequest` 转接 Unity 完成事件；内部回调写缓存，后一个回调调用用户 Action。 |
 | Memory 同步 `0x181437050` | 按文件长度分配 byte[]，从 `GetStream` 得到的流做一次虚拟 `Read`，然后 `LoadFromMemory_Internal(bytes, crc=0)` | 释放读取流；缓存加载后的标签数据。伪代码未显示循环补读，不能宣称所有流实现都自动读满。 |
 | Memory 异步 `0x181437740` | 直接创建 FileStream、`GetSalt` 与相同的 `SeekableAesStream`，然后创建模式 2 请求 | 状态机通过 `Task.Run` 发起读取，循环 Read / Copy 到 byte[]；解密结束触发 `completed2`，由回调调用 `LoadFromMemory_Internal` 并写缓存，再调用用户完成 Action。 |
@@ -88,7 +88,7 @@ LoadBundleFromStreamAsync("models", <Awake>b__30_0, "", 0)
 
 缓冲值必须区分单位和调用位置：预制体保存 **256**；内存异步读取代码把它左移 10 位作为分块字节数。标题场景传给流异步入口的是 **0**，实际 Unity Internal 调用同样传 **0**。不要把前者解释成标题场景固定向 Unity 传 256 字节，也不要把 Unity 参数 0 解释为引擎完全不使用缓冲。包装器的省略参数重载也会转发 0。
 
-资源请求最终经过 `EncrypterBundle` 接口分派；额外分析的 `0x18001f490` 是查找接口槽并间接调用的跳板，不是固定的 Unity `LoadAssetAsync` 实现。其运行时接收类型及 Unity 对象实例化不属于本次已经闭合的包加载到解密链。
+资源请求最终经过 `EncrypterBundle` 接口分派；`0x18001f490` 是查找接口槽并间接调用的跳板。后续已通过 TypeInfo、原始 vtable 和针对性 REA 分析，确定本路径接收类型为 `BridgeAssetBundle`、接口槽 2 对应其 `LoadAssetAsync`，并继续追踪了对象获取、25 个回调和实例化/缓存消费者。见 [资源请求后续链](asset-followup.md)。原始观察与旧种子标签不改写，以保留证据身份。
 
 ## 核心证据坐标
 

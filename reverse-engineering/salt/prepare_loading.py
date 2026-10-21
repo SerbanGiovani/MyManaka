@@ -21,6 +21,8 @@ def main():
     parser.add_argument("--name", default="loading")
     parser.add_argument("--method-id", type=int, action="append")
     parser.add_argument("--native-va", action="append", help="Explicit native-only callee address from prior evidence")
+    parser.add_argument("--operation", choices=("procedure_pseudo_code", "procedure_assembly"), action="append",
+                        help="Static REA query; default is pseudocode")
     args = parser.parse_args()
     import re
     if not re.fullmatch(r"[a-z][a-z0-9-]{0,40}", args.name):
@@ -63,7 +65,7 @@ def main():
             "functions": [{"metadata_id": r["id"], "qualified_name": r["qualified_name"], "assembly": r["assembly"],
                 "token": hex(r["token"]), "va": r["va"], "file_offset": r["file_offset"], "label": label(r),
                 "file_stem": f"{r['id']}-{r['token']:08x}" if r['id'] is not None else f"native-{r['va']}",
-                "operations": ["procedure_pseudo_code"]} for r in selected],
+                "operations": list(dict.fromkeys(args.operation or ["procedure_pseudo_code"]))} for r in selected],
             "limitations": ["Static observations; no game execution.", "Seeds are metadata assertions, not recovered source.",
                             "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."]}
     path = HERE / f"symbols/{args.name}.plan.json"

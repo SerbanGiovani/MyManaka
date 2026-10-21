@@ -1,0 +1,3306 @@
+{
+  "schema_version": 1,
+  "evidence_type": "selected on-disk tag6 method specifications and generic type arguments, with bounded Iced assembly observations",
+  "parser_source": {
+    "sha256": "f9bf8e432e9a914469a89c4827a4beb4672076b7d8ff504708241b4dcc295ef6",
+    "path": "E:\\SecretFlasherManakaREA\\BepInEx\\core\\LibCpp2IL.dll"
+  },
+  "parser_corroboration": [
+    {
+      "fields": [
+        {
+          "Name": "methodDefinitionIndex",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "classIndexIndex",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "methodIndexIndex",
+          "Type": "System.Int32"
+        }
+      ],
+      "type": "LibCpp2IL.BinaryStructures.Il2CppMethodSpec",
+      "read_il": [
+        {
+          "operand": null,
+          "offset": 0,
+          "opcode": "ldarg.0"
+        },
+        {
+          "operand": null,
+          "offset": 1,
+          "opcode": "ldarg.1"
+        },
+        {
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()",
+          "offset": 2,
+          "opcode": "callvirt"
+        },
+        {
+          "operand": "System.Int32 LibCpp2IL.BinaryStructures.Il2CppMethodSpec::methodDefinitionIndex",
+          "offset": 7,
+          "opcode": "stfld"
+        },
+        {
+          "operand": null,
+          "offset": 12,
+          "opcode": "ldarg.0"
+        },
+        {
+          "operand": null,
+          "offset": 13,
+          "opcode": "ldarg.1"
+        },
+        {
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()",
+          "offset": 14,
+          "opcode": "callvirt"
+        },
+        {
+          "operand": "System.Int32 LibCpp2IL.BinaryStructures.Il2CppMethodSpec::classIndexIndex",
+          "offset": 19,
+          "opcode": "stfld"
+        },
+        {
+          "operand": null,
+          "offset": 24,
+          "opcode": "ldarg.0"
+        },
+        {
+          "operand": null,
+          "offset": 25,
+          "opcode": "ldarg.1"
+        },
+        {
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()",
+          "offset": 26,
+          "opcode": "callvirt"
+        },
+        {
+          "operand": "System.Int32 LibCpp2IL.BinaryStructures.Il2CppMethodSpec::methodIndexIndex",
+          "offset": 31,
+          "opcode": "stfld"
+        },
+        {
+          "operand": null,
+          "offset": 36,
+          "opcode": "ret"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "Name": "pointerCount",
+          "Type": "System.UInt64"
+        },
+        {
+          "Name": "pointerStart",
+          "Type": "System.UInt64"
+        }
+      ],
+      "type": "LibCpp2IL.BinaryStructures.Il2CppGenericInst",
+      "read_il": [
+        {
+          "operand": null,
+          "offset": 0,
+          "opcode": "ldarg.0"
+        },
+        {
+          "operand": null,
+          "offset": 1,
+          "opcode": "ldarg.1"
+        },
+        {
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()",
+          "offset": 2,
+          "opcode": "callvirt"
+        },
+        {
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppGenericInst::pointerCount",
+          "offset": 7,
+          "opcode": "stfld"
+        },
+        {
+          "operand": null,
+          "offset": 12,
+          "opcode": "ldarg.0"
+        },
+        {
+          "operand": null,
+          "offset": 13,
+          "opcode": "ldarg.1"
+        },
+        {
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()",
+          "offset": 14,
+          "opcode": "callvirt"
+        },
+        {
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppGenericInst::pointerStart",
+          "offset": 19,
+          "opcode": "stfld"
+        },
+        {
+          "operand": null,
+          "offset": 24,
+          "opcode": "ret"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "MethodSpec identity and generic arguments are static declarations; actual invocation and object creation require native caller data-flow.",
+    "No target code was executed.",
+    "Only the three caller-selected tag6 usages are decoded; this is not an inventory of every generic method."
+  ],
+  "sources": [
+    {
+      "path": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+      "size": 51356160,
+      "sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
+      "size": 9890040,
+      "sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8"
+    }
+  ],
+  "registration_reference": {
+    "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\field-offsets.json",
+    "sha256": "79e19efde41f052bb1c80194eca5e62b4d7fadb74243cc18fcc6ea264370f04d",
+    "registration_va": "0x1828d02c0",
+    "methodSpecsCount": 113283,
+    "methodSpecs": "0x18254b2a0",
+    "genericInstsCount": 7578,
+    "genericInsts": "0x182539e40"
+  },
+  "selected_usages": [
+    {
+      "usage_va": "0x182d54d90",
+      "usage_file_offset": 47525776,
+      "usage_raw_uint64": "0xc00372c5",
+      "usage_raw_bytes": "c5 72 03 c0 00 00 00 00",
+      "usage_kind": 6,
+      "usage_kind_name": "MethodRef",
+      "decoded_method_spec_index": 112994,
+      "method_spec": {
+        "va": "0x182696338",
+        "file_offset": 40453432,
+        "raw_hex": "7e c0 00 00 ff ff ff ff f9 06 00 00",
+        "method_definition_index": 49278,
+        "class_inst_index": -1,
+        "method_inst_index": 1785
+      },
+      "method_definition": {
+        "method_id": 49278,
+        "declaring_type_id": 5774,
+        "declaring_type": "UnityEngine.Object",
+        "name": "Instantiate",
+        "token": "0x60009fe",
+        "generic_container_index": 1339,
+        "flags_hex": "0x96",
+        "return_runtime_type": {
+          "runtime_type_index": 870,
+          "pointer_entry_file_offset": 42858704,
+          "va": "0x182d70388",
+          "file_offset": 47637896,
+          "raw_hex": "99 06 00 00 00 00 00 00 00 00 1e 00",
+          "data": 1689,
+          "bits_hex": "0x1e0000",
+          "type_enum": 30,
+          "attributes": 0,
+          "unresolved_type_reason": "Not a direct CLASS/VALUETYPE metadata type-definition reference; raw data retained."
+        },
+        "parameters": [
+          {
+            "parameter_id": 50927,
+            "name": "original",
+            "token": "0x8000e2f",
+            "runtime_type": {
+              "runtime_type_index": 870,
+              "pointer_entry_file_offset": 42858704,
+              "va": "0x182d70388",
+              "file_offset": 47637896,
+              "raw_hex": "99 06 00 00 00 00 00 00 00 00 1e 00",
+              "data": 1689,
+              "bits_hex": "0x1e0000",
+              "type_enum": 30,
+              "attributes": 0,
+              "unresolved_type_reason": "Not a direct CLASS/VALUETYPE metadata type-definition reference; raw data retained."
+            }
+          },
+          {
+            "parameter_id": 50928,
+            "name": "parent",
+            "token": "0x8000e30",
+            "runtime_type": {
+              "runtime_type_index": 23035,
+              "pointer_entry_file_offset": 43036024,
+              "va": "0x182d7d7c8",
+              "file_offset": 47692232,
+              "raw_hex": "ae 16 00 00 00 00 00 00 00 00 12 00",
+              "data": 5806,
+              "bits_hex": "0x120000",
+              "type_enum": 18,
+              "attributes": 0,
+              "type_definition_index": 5806,
+              "full_name": "UnityEngine.Transform"
+            }
+          }
+        ],
+        "coordinate": {
+          "id": 49278,
+          "va": null,
+          "file_offset": null,
+          "status": "generic-or-unresolved"
+        },
+        "metadata_file_offset": 3898472,
+        "raw_hex": "cf 5e 03 00 8e 16 00 00 66 03 00 00 00 00 00 08 ef c6 00 00 3b 05 00 00 fe 09 00 06 96 00 00 00 ff ff 02 00"
+      },
+      "class_instantiation": {
+        "index": -1,
+        "meaning": "no instantiation context"
+      },
+      "method_instantiation": {
+        "index": 1785,
+        "pointer_entry_file_offset": 39041032,
+        "va": "0x182532e20",
+        "file_offset": 38998048,
+        "raw_hex": "01 00 00 00 00 00 00 00 f0 3e d1 82 01 00 00 00",
+        "type_argc": 1,
+        "type_argv_va": "0x182d13ef0",
+        "type_argv_file_offset": 47259888,
+        "raw_argv_hex": "e8 d7 d7 82 01 00 00 00",
+        "arguments": [
+          {
+            "va": "0x182d7d7e8",
+            "file_offset": 47692264,
+            "raw_hex": "70 16 00 00 00 00 00 00 00 00 12 00",
+            "data": 5744,
+            "bits_hex": "0x120000",
+            "type_enum": 18,
+            "attributes": 0,
+            "type_definition_index": 5744,
+            "full_name": "UnityEngine.GameObject"
+          }
+        ]
+      }
+    },
+    {
+      "usage_va": "0x182d5abb8",
+      "usage_file_offset": 47549880,
+      "usage_raw_uint64": "0xc00370cf",
+      "usage_raw_bytes": "cf 70 03 c0 00 00 00 00",
+      "usage_kind": 6,
+      "usage_kind_name": "MethodRef",
+      "decoded_method_spec_index": 112743,
+      "method_spec": {
+        "va": "0x182695774",
+        "file_offset": 40450420,
+        "raw_hex": "e0 bf 00 00 ff ff ff ff d5 1c 00 00",
+        "method_definition_index": 49120,
+        "class_inst_index": -1,
+        "method_inst_index": 7381
+      },
+      "method_definition": {
+        "method_id": 49120,
+        "declaring_type_id": 5744,
+        "declaring_type": "UnityEngine.GameObject",
+        "name": "GetComponent",
+        "token": "0x6000960",
+        "generic_container_index": 1315,
+        "flags_hex": "0x86",
+        "return_runtime_type": {
+          "runtime_type_index": 552,
+          "pointer_entry_file_offset": 42856160,
+          "va": "0x182d72e48",
+          "file_offset": 47648840,
+          "raw_hex": "81 06 00 00 00 00 00 00 00 00 1e 00",
+          "data": 1665,
+          "bits_hex": "0x1e0000",
+          "type_enum": 30,
+          "attributes": 0,
+          "unresolved_type_reason": "Not a direct CLASS/VALUETYPE metadata type-definition reference; raw data retained."
+        },
+        "parameters": [],
+        "coordinate": {
+          "id": 49120,
+          "va": null,
+          "file_offset": null,
+          "status": "generic-or-unresolved"
+        },
+        "metadata_file_offset": 3892784,
+        "raw_hex": "60 1c 0b 00 70 16 00 00 28 02 00 00 00 00 00 08 ff ff ff ff 23 05 00 00 60 09 00 06 86 00 00 00 ff ff 00 00"
+      },
+      "class_instantiation": {
+        "index": -1,
+        "meaning": "no instantiation context"
+      },
+      "method_instantiation": {
+        "index": 7381,
+        "pointer_entry_file_offset": 39085800,
+        "va": "0x182549750",
+        "file_offset": 39090512,
+        "raw_hex": "01 00 00 00 00 00 00 00 30 ac d1 82 01 00 00 00",
+        "type_argc": 1,
+        "type_argv_va": "0x182d1ac30",
+        "type_argv_file_offset": 47287856,
+        "raw_argv_hex": "98 c7 db 82 01 00 00 00",
+        "arguments": [
+          {
+            "va": "0x182dbc798",
+            "file_offset": 47950232,
+            "raw_hex": "a7 08 00 00 00 00 00 00 00 00 12 00",
+            "data": 2215,
+            "bits_hex": "0x120000",
+            "type_enum": 18,
+            "attributes": 0,
+            "type_definition_index": 2215,
+            "full_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerController"
+          }
+        ]
+      }
+    },
+    {
+      "usage_va": "0x182d5dfa8",
+      "usage_file_offset": 47563176,
+      "usage_raw_uint64": "0xc0037071",
+      "usage_raw_bytes": "71 70 03 c0 00 00 00 00",
+      "usage_kind": 6,
+      "usage_kind_name": "MethodRef",
+      "decoded_method_spec_index": 112696,
+      "method_spec": {
+        "va": "0x182695540",
+        "file_offset": 40449856,
+        "raw_hex": "e0 bf 00 00 ff ff ff ff bc 1c 00 00",
+        "method_definition_index": 49120,
+        "class_inst_index": -1,
+        "method_inst_index": 7356
+      },
+      "method_definition": {
+        "method_id": 49120,
+        "declaring_type_id": 5744,
+        "declaring_type": "UnityEngine.GameObject",
+        "name": "GetComponent",
+        "token": "0x6000960",
+        "generic_container_index": 1315,
+        "flags_hex": "0x86",
+        "return_runtime_type": {
+          "runtime_type_index": 552,
+          "pointer_entry_file_offset": 42856160,
+          "va": "0x182d72e48",
+          "file_offset": 47648840,
+          "raw_hex": "81 06 00 00 00 00 00 00 00 00 1e 00",
+          "data": 1665,
+          "bits_hex": "0x1e0000",
+          "type_enum": 30,
+          "attributes": 0,
+          "unresolved_type_reason": "Not a direct CLASS/VALUETYPE metadata type-definition reference; raw data retained."
+        },
+        "parameters": [],
+        "coordinate": {
+          "id": 49120,
+          "va": null,
+          "file_offset": null,
+          "status": "generic-or-unresolved"
+        },
+        "metadata_file_offset": 3892784,
+        "raw_hex": "60 1c 0b 00 70 16 00 00 28 02 00 00 00 00 00 08 ff ff ff ff 23 05 00 00 60 09 00 06 86 00 00 00 ff ff 00 00"
+      },
+      "class_instantiation": {
+        "index": -1,
+        "meaning": "no instantiation context"
+      },
+      "method_instantiation": {
+        "index": 7356,
+        "pointer_entry_file_offset": 39085600,
+        "va": "0x1825498c0",
+        "file_offset": 39090880,
+        "raw_hex": "01 00 00 00 00 00 00 00 08 ad d1 82 01 00 00 00",
+        "type_argc": 1,
+        "type_argv_va": "0x182d1ad08",
+        "type_argv_file_offset": 47288072,
+        "raw_argv_hex": "58 ac d7 82 01 00 00 00",
+        "arguments": [
+          {
+            "va": "0x182d7ac58",
+            "file_offset": 47681112,
+            "raw_hex": "63 09 00 00 00 00 00 00 00 00 12 00",
+            "data": 2403,
+            "bits_hex": "0x120000",
+            "type_enum": 18,
+            "attributes": 0,
+            "type_definition_index": 2403,
+            "full_name": "ExposureUnnoticed2.Object3D.DropedCoat.DroppedItemController"
+          }
+        ]
+      }
+    }
+  ],
+  "rules": {
+    "tag6": "usage kind=raw>>29 must be6; methodSpecIndex=(raw&0x1fffffff)>>1 on v31.",
+    "method_spec": "Native registration.methodSpecs + index*12; <iii = methodDefinitionIndex,classInstantiationIndex,methodInstantiationIndex. -1 means no context.",
+    "generic_inst": "genericInsts is an array of pointers; selected pointer targets two native-sized UInt64 fields on PE32+: type_argc and type_argv. type_argv points to type_argc Il2CppType pointers.",
+    "argument_type": "Il2CppType has native-sized data at+0, uint32 bits at+8. typeEnum=(bits>>16)&0xff. For enumCLASS0x12/VALUETYPE0x11, data is the original metadata type-definition index. Other kinds remain explicit unknowns here."
+  },
+  "iced_dispatch_abi_observations": {
+    "decoder_path": "E:\\SecretFlasherManakaREA\\BepInEx\\core\\Iced.dll",
+    "decoder_sha256": "f058c01321b4cdfc9b9151879e88e59571c8d0ba176fbcf95bc936a8f3d073ed",
+    "evidence_type": "bounded static x64 instruction decoding at original PE addresses",
+    "limitation": "Instruction bytes and register setup are observed statically. This is not a runtime register capture and does not independently prove the final receiver type.",
+    "observations": [
+      {
+        "unwind_begin": "0x181439090",
+        "name": "EncrypterCore.LoadAssetAsync",
+        "call_windows": [
+          {
+            "instructions": [
+              {
+                "va": "0x181439555",
+                "text": "call 0000000181478AF0h",
+                "file_offset": 21200213,
+                "flow_control": "Call",
+                "mnemonic": "Call",
+                "length": 5,
+                "raw_hex": "e8 96 f5 03 00",
+                "direct_branch_target": "0x181478af0"
+              },
+              {
+                "va": "0x18143955a",
+                "text": "mov rbx,rax",
+                "file_offset": 21200218,
+                "flow_control": "Next",
+                "mnemonic": "Mov",
+                "length": 3,
+                "raw_hex": "48 8b d8",
+                "direct_branch_target": null
+              },
+              {
+                "va": "0x18143955d",
+                "text": "test rdi,rdi",
+                "file_offset": 21200221,
+                "flow_control": "Next",
+                "mnemonic": "Test",
+                "length": 3,
+                "raw_hex": "48 85 ff",
+                "direct_branch_target": null
+              },
+              {
+                "va": "0x181439560",
+                "text": "je near ptr 000000018143971Fh",
+                "file_offset": 21200224,
+                "flow_control": "ConditionalBranch",
+                "mnemonic": "Je",
+                "length": 6,
+                "raw_hex": "0f 84 b9 01 00 00",
+                "direct_branch_target": "0x18143971f"
+              },
+              {
+                "va": "0x181439566",
+                "text": "mov r9,rbx",
+                "file_offset": 21200230,
+                "flow_control": "Next",
+                "mnemonic": "Mov",
+                "length": 3,
+                "raw_hex": "4c 8b cb",
+                "direct_branch_target": null
+              },
+              {
+                "va": "0x181439569",
+                "text": "mov r8,rdi",
+                "file_offset": 21200233,
+                "flow_control": "Next",
+                "mnemonic": "Mov",
+                "length": 3,
+                "raw_hex": "4c 8b c7",
+                "direct_branch_target": null
+              },
+              {
+                "va": "0x18143956c",
+                "text": "call 000000018001F490h",
+                "file_offset": 21200236,
+                "flow_control": "Call",
+                "mnemonic": "Call",
+                "length": 5,
+                "raw_hex": "e8 1f 5f be fe",
+                "direct_branch_target": "0x18001f490"
+              },
+              {
+                "va": "0x181439571",
+                "text": "cmp [182EB5D50h],r15d",
+                "file_offset": 21200241,
+                "flow_control": "Next",
+                "mnemonic": "Cmp",
+                "length": 7,
+                "raw_hex": "44 39 3d d8 c7 a7 01",
+                "direct_branch_target": null
+              },
+              {
+                "va": "0x181439578",
+                "text": "mov [rbp+10h],rax",
+                "file_offset": 21200248,
+                "flow_control": "Next",
+                "mnemonic": "Mov",
+                "length": 4,
+                "raw_hex": "48 89 45 10",
+                "direct_branch_target": null
+              },
+              {
+                "va": "0x18143957c",
+                "text": "je short 00000001814395C9h",
+                "file_offset": 21200252,
+                "flow_control": "ConditionalBranch",
+                "mnemonic": "Je",
+                "length": 2,
+                "raw_hex": "74 4b",
+                "direct_branch_target": "0x1814395c9"
+              },
+              {
+                "va": "0x18143957e",
+                "text": "lea r8,[rbp+10h]",
+                "file_offset": 21200254,
+                "flow_control": "Next",
+                "mnemonic": "Lea",
+                "length": 4,
+                "raw_hex": "4c 8d 45 10",
+                "direct_branch_target": null
+              },
+              {
+                "va": "0x181439582",
+                "text": "shr r8,0Ch",
+                "file_offset": 21200258,
+                "flow_control": "Next",
+                "mnemonic": "Shr",
+                "length": 4,
+                "raw_hex": "49 c1 e8 0c",
+                "direct_branch_target": null
+              }
+            ],
+            "call": {
+              "va": "0x18143956c",
+              "text": "call 000000018001F490h",
+              "file_offset": 21200236,
+              "flow_control": "Call",
+              "mnemonic": "Call",
+              "length": 5,
+              "raw_hex": "e8 1f 5f be fe",
+              "direct_branch_target": "0x18001f490"
+            }
+          }
+        ],
+        "metadata_method_id": 76301,
+        "decoded_instruction_count": 394,
+        "unwind_end": "0x18143973d"
+      },
+      {
+        "last_12_instructions": [
+          {
+            "va": "0x18001f4f6",
+            "text": "add rsp,20h",
+            "file_offset": 125174,
+            "flow_control": "Next",
+            "mnemonic": "Add",
+            "length": 4,
+            "raw_hex": "48 83 c4 20",
+            "direct_branch_target": null
+          },
+          {
+            "va": "0x18001f4fa",
+            "text": "pop rdi",
+            "file_offset": 125178,
+            "flow_control": "Next",
+            "mnemonic": "Pop",
+            "length": 1,
+            "raw_hex": "5f",
+            "direct_branch_target": null
+          },
+          {
+            "va": "0x18001f4fb",
+            "text": "jmp r9",
+            "file_offset": 125179,
+            "flow_control": "IndirectBranch",
+            "mnemonic": "Jmp",
+            "length": 3,
+            "raw_hex": "49 ff e1",
+            "direct_branch_target": null
+          },
+          {
+            "va": "0x18001f4fe",
+            "text": "movzx ecx,ax",
+            "file_offset": 125182,
+            "flow_control": "Next",
+            "mnemonic": "Movzx",
+            "length": 3,
+            "raw_hex": "0f b7 c8",
+            "direct_branch_target": null
+          },
+          {
+            "va": "0x18001f501",
+            "text": "add rcx,rcx",
+            "file_offset": 125185,
+            "flow_control": "Next",
+            "mnemonic": "Add",
+            "length": 3,
+            "raw_hex": "48 03 c9",
+            "direct_branch_target": null
+          },
+          {
+            "va": "0x18001f504",
+            "text": "mov eax,[r8+rcx*8+8]",
+            "file_offset": 125188,
+            "flow_control": "Next",
+            "mnemonic": "Mov",
+            "length": 5,
+            "raw_hex": "41 8b 44 c8 08",
+            "direct_branch_target": null
+          },
+          {
+            "va": "0x18001f509",
+            "text": "add eax,2",
+            "file_offset": 125193,
+            "flow_control": "Next",
+            "mnemonic": "Add",
+            "length": 3,
+            "raw_hex": "83 c0 02",
+            "direct_branch_target": null
+          },
+          {
+            "va": "0x18001f50c",
+            "text": "cdqe",
+            "file_offset": 125196,
+            "flow_control": "Next",
+            "mnemonic": "Cdqe",
+            "length": 2,
+            "raw_hex": "48 98",
+            "direct_branch_target": null
+          },
+          {
+            "va": "0x18001f50e",
+            "text": "shl rax,4",
+            "file_offset": 125198,
+            "flow_control": "Next",
+            "mnemonic": "Shl",
+            "length": 4,
+            "raw_hex": "48 c1 e0 04",
+            "direct_branch_target": null
+          },
+          {
+            "va": "0x18001f512",
+            "text": "add rax,138h",
+            "file_offset": 125202,
+            "flow_control": "Next",
+            "mnemonic": "Add",
+            "length": 6,
+            "raw_hex": "48 05 38 01 00 00",
+            "direct_branch_target": null
+          },
+          {
+            "va": "0x18001f518",
+            "text": "add rax,r11",
+            "file_offset": 125208,
+            "flow_control": "Next",
+            "mnemonic": "Add",
+            "length": 3,
+            "raw_hex": "49 03 c3",
+            "direct_branch_target": null
+          },
+          {
+            "va": "0x18001f51b",
+            "text": "jmp short 000000018001F4E4h",
+            "file_offset": 125211,
+            "flow_control": "UnconditionalBranch",
+            "mnemonic": "Jmp",
+            "length": 2,
+            "raw_hex": "eb c7",
+            "direct_branch_target": "0x18001f4e4"
+          }
+        ],
+        "unwind_begin": "0x18001f490",
+        "name": "interface dispatch helper",
+        "metadata_method_id": null,
+        "indirect_transfers": [
+          {
+            "va": "0x18001f4fb",
+            "text": "jmp r9",
+            "file_offset": 125179,
+            "flow_control": "IndirectBranch",
+            "mnemonic": "Jmp",
+            "length": 3,
+            "raw_hex": "49 ff e1",
+            "direct_branch_target": null
+          }
+        ],
+        "decoded_instruction_count": 39,
+        "unwind_end": "0x18001f51d",
+        "terminal_dispatch_windows": [
+          {
+            "transfer": {
+              "va": "0x18001f4fb",
+              "raw_hex": "49 ff e1",
+              "file_offset": 125179,
+              "flow_control": "IndirectBranch",
+              "text": "jmp r9"
+            },
+            "instructions": [
+              {
+                "va": "0x18001f4d4",
+                "raw_hex": "72 eb",
+                "file_offset": 125140,
+                "flow_control": "ConditionalBranch",
+                "text": "jb short 000000018001F4C1h"
+              },
+              {
+                "va": "0x18001f4d6",
+                "raw_hex": "41 b8 02 00 00 00",
+                "file_offset": 125142,
+                "flow_control": "Next",
+                "text": "mov r8d,2"
+              },
+              {
+                "va": "0x18001f4dc",
+                "raw_hex": "48 8b cb",
+                "file_offset": 125148,
+                "flow_control": "Next",
+                "text": "mov rcx,rbx"
+              },
+              {
+                "va": "0x18001f4df",
+                "raw_hex": "e8 2c 14 30 00",
+                "file_offset": 125151,
+                "flow_control": "Call",
+                "text": "call 0000000180320910h"
+              },
+              {
+                "va": "0x18001f4e4",
+                "raw_hex": "4c 8b 08",
+                "file_offset": 125156,
+                "flow_control": "Next",
+                "text": "mov r9,[rax]"
+              },
+              {
+                "va": "0x18001f4e7",
+                "raw_hex": "48 8b d7",
+                "file_offset": 125159,
+                "flow_control": "Next",
+                "text": "mov rdx,rdi"
+              },
+              {
+                "va": "0x18001f4ea",
+                "raw_hex": "4c 8b 40 08",
+                "file_offset": 125162,
+                "flow_control": "Next",
+                "text": "mov r8,[rax+8]"
+              },
+              {
+                "va": "0x18001f4ee",
+                "raw_hex": "48 8b cb",
+                "file_offset": 125166,
+                "flow_control": "Next",
+                "text": "mov rcx,rbx"
+              },
+              {
+                "va": "0x18001f4f1",
+                "raw_hex": "48 8b 5c 24 30",
+                "file_offset": 125169,
+                "flow_control": "Next",
+                "text": "mov rbx,[rsp+30h]"
+              },
+              {
+                "va": "0x18001f4f6",
+                "raw_hex": "48 83 c4 20",
+                "file_offset": 125174,
+                "flow_control": "Next",
+                "text": "add rsp,20h"
+              },
+              {
+                "va": "0x18001f4fa",
+                "raw_hex": "5f",
+                "file_offset": 125178,
+                "flow_control": "Next",
+                "text": "pop rdi"
+              },
+              {
+                "va": "0x18001f4fb",
+                "raw_hex": "49 ff e1",
+                "file_offset": 125179,
+                "flow_control": "IndirectBranch",
+                "text": "jmp r9"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "additional_field_names": {
+    "evidence_type": "Original field-definition order joined to validated registration.fieldOffsets and runtime field attributes; no offset guessed",
+    "dropped_item_manager_cache": {
+      "owner_type_id": 2583,
+      "owner_type": "ExposureUnnoticed2.Scripts.InGame.DroppedItemManager",
+      "field_id": 12528,
+      "name": "cache",
+      "token": "0x40016c2",
+      "instance_offset": 16,
+      "instance_offset_hex": "0x10",
+      "field_offset_entry_file_offset": 37839640,
+      "field_definition_file_offset": 6924732,
+      "field_definition_raw_hex": "61 03 02 00 bf 11 00 00 c2 16 00 04",
+      "runtime_type": {
+        "va": "0x182946dd0",
+        "file_offset": 43274192,
+        "raw_hex": "88 45 db 82 01 00 00 00 01 00 15 00",
+        "data": 6490375560,
+        "bits_hex": "0x150001",
+        "type_enum": 21,
+        "attributes": 1
+      },
+      "field_offset_raw_hex": "10 00 00 00"
+    },
+    "ingame_manager_referencer": {
+      "owner_type_id": 2596,
+      "owner_type": "ExposureUnnoticed2.Scripts.InGame.InGameManager",
+      "field_id": 12765,
+      "name": "<InGameReferencer>k__BackingField",
+      "token": "0x40017af",
+      "instance_offset": 40,
+      "instance_offset_hex": "0x28",
+      "field_offset_entry_file_offset": 37839384,
+      "field_definition_file_offset": 6927576,
+      "field_definition_raw_hex": "eb 0e 05 00 ac 44 00 00 af 17 00 04",
+      "runtime_type": {
+        "va": "0x182ddbeb8",
+        "file_offset": 48079032,
+        "raw_hex": "25 0a 00 00 00 00 00 00 01 00 12 00",
+        "data": 2597,
+        "bits_hex": "0x120001",
+        "type_enum": 18,
+        "attributes": 1,
+        "type_definition_index": 2597,
+        "full_name": "ExposureUnnoticed2.Scripts.InGame.InGameReferencer"
+      },
+      "field_offset_raw_hex": "28 00 00 00"
+    },
+    "referencer_player_controller": {
+      "owner_type_id": 2597,
+      "owner_type": "ExposureUnnoticed2.Scripts.InGame.InGameReferencer",
+      "field_id": 12784,
+      "name": "<Player>k__BackingField",
+      "token": "0x40017c2",
+      "instance_offset": 48,
+      "instance_offset_hex": "0x30",
+      "field_offset_entry_file_offset": 37838904,
+      "field_definition_file_offset": 6927804,
+      "field_definition_raw_hex": "e8 11 04 00 cf 4e 00 00 c2 17 00 04",
+      "runtime_type": {
+        "va": "0x182dd22d8",
+        "file_offset": 48039128,
+        "raw_hex": "a7 08 00 00 00 00 00 00 01 00 12 00",
+        "data": 2215,
+        "bits_hex": "0x120001",
+        "type_enum": 18,
+        "attributes": 1,
+        "type_definition_index": 2215,
+        "full_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerController"
+      },
+      "field_offset_raw_hex": "30 00 00 00"
+    }
+  },
+  "additional_cache_consumers": {
+    "target_usage_va": "0x182d58238",
+    "unwind_ranges": 174,
+    "unique_non_title_callback_method_field_pairs": 23,
+    "raw_rip_candidates": 306,
+    "field_counts": [
+      {
+        "method_count": 1,
+        "field": "CensorChinpo"
+      },
+      {
+        "method_count": 1,
+        "field": "CensorPussy"
+      },
+      {
+        "method_count": 1,
+        "field": "ClothesPaint"
+      },
+      {
+        "method_count": 1,
+        "field": "Fresnel"
+      },
+      {
+        "method_count": 1,
+        "field": "FutanariMaterial"
+      },
+      {
+        "method_count": 1,
+        "field": "FutanariPaint"
+      },
+      {
+        "method_count": 1,
+        "field": "FutanariRubberMaterial"
+      },
+      {
+        "method_count": 1,
+        "field": "Inmon"
+      },
+      {
+        "method_count": 1,
+        "field": "MCustomizeColor"
+      },
+      {
+        "method_count": 1,
+        "field": "MHair"
+      },
+      {
+        "method_count": 1,
+        "field": "NightSpermDecal"
+      },
+      {
+        "method_count": 1,
+        "field": "Rakugaki"
+      },
+      {
+        "method_count": 2,
+        "field": "RubberSuit"
+      },
+      {
+        "method_count": 1,
+        "field": "RubberSuitBlack"
+      },
+      {
+        "method_count": 1,
+        "field": "SweatBody"
+      },
+      {
+        "method_count": 1,
+        "field": "TattooDark"
+      },
+      {
+        "method_count": 1,
+        "field": "TattooFlower1"
+      },
+      {
+        "method_count": 1,
+        "field": "TattooFlower2"
+      },
+      {
+        "method_count": 1,
+        "field": "TattooLotus"
+      },
+      {
+        "method_count": 1,
+        "field": "TattooSatanism"
+      },
+      {
+        "method_count": 1,
+        "field": "TattooSlave"
+      },
+      {
+        "method_count": 1,
+        "field": "UiPlayer"
+      }
+    ],
+    "selected": [
+      {
+        "read": {
+          "text": "mov rbx,[rbx+308h]",
+          "file_offset": 4809590,
+          "va": "0x180497b76"
+        },
+        "unwind_begin": "0x180497a4e",
+        "unwind_end": "0x180497d35",
+        "next_distinct_metadata_va": "0x180497e90",
+        "field_offset": 776,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 16862,
+            "full_name": "ExposureUnnoticed2.Scripts.InGame.InGameManager",
+            "name": "Start",
+            "va": "0x180495dc0"
+          }
+        ],
+        "field_name": "CensorChinpo",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 4809557,
+            "va": "0x180497b55"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 4809564,
+            "va": "0x180497b5c"
+          },
+          {
+            "text": "mov rbx,[rcx]",
+            "file_offset": 4809571,
+            "va": "0x180497b63"
+          },
+          {
+            "text": "mov rbx,[rbx+308h]",
+            "file_offset": 4809590,
+            "va": "0x180497b76"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rbx,[rax+300h]",
+          "file_offset": 4809458,
+          "va": "0x180497af2"
+        },
+        "unwind_begin": "0x180497a4e",
+        "unwind_end": "0x180497d35",
+        "next_distinct_metadata_va": "0x180497e90",
+        "field_offset": 768,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 16862,
+            "full_name": "ExposureUnnoticed2.Scripts.InGame.InGameManager",
+            "name": "Start",
+            "va": "0x180495dc0"
+          }
+        ],
+        "field_name": "CensorPussy",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 4809432,
+            "va": "0x180497ad8"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 4809439,
+            "va": "0x180497adf"
+          },
+          {
+            "text": "mov rax,[rcx]",
+            "file_offset": 4809446,
+            "va": "0x180497ae6"
+          },
+          {
+            "text": "mov rbx,[rax+300h]",
+            "file_offset": 4809458,
+            "va": "0x180497af2"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rdx,[rdx+298h]",
+          "file_offset": 6514946,
+          "va": "0x180638102"
+        },
+        "unwind_begin": "0x180637cc2",
+        "unwind_end": "0x180638637",
+        "next_distinct_metadata_va": "0x180638640",
+        "field_offset": 664,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 14624,
+            "full_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController",
+            "name": "SetupBodyPaintFromGameState",
+            "va": "0x180637bc0"
+          }
+        ],
+        "field_name": "ClothesPaint",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 6514920,
+            "va": "0x1806380e8"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 6514927,
+            "va": "0x1806380ef"
+          },
+          {
+            "text": "mov rdx,[rcx]",
+            "file_offset": 6514934,
+            "va": "0x1806380f6"
+          },
+          {
+            "text": "mov rdx,[rdx+298h]",
+            "file_offset": 6514946,
+            "va": "0x180638102"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rdi,[rdi+2F8h]",
+          "file_offset": 4320902,
+          "va": "0x180420686"
+        },
+        "unwind_begin": "0x180420580",
+        "unwind_end": "0x180420c95",
+        "next_distinct_metadata_va": "0x180420ca0",
+        "field_offset": 760,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 15426,
+            "full_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcAvatarComponent",
+            "name": "ChangeFresnelMaterial",
+            "va": "0x180420580"
+          }
+        ],
+        "field_name": "Fresnel",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 4320876,
+            "va": "0x18042066c"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 4320883,
+            "va": "0x180420673"
+          },
+          {
+            "text": "mov rdi,[rcx]",
+            "file_offset": 4320890,
+            "va": "0x18042067a"
+          },
+          {
+            "text": "mov rdi,[rdi+2F8h]",
+            "file_offset": 4320902,
+            "va": "0x180420686"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rdx,[rdx+2E8h]",
+          "file_offset": 4194035,
+          "va": "0x1804016f3"
+        },
+        "unwind_begin": "0x18040144a",
+        "unwind_end": "0x180402088",
+        "next_distinct_metadata_va": "0x180402090",
+        "field_offset": 744,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 15066,
+            "full_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.FutanariController",
+            "name": "SetupPaint",
+            "va": "0x180401350"
+          }
+        ],
+        "field_name": "FutanariMaterial",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 4193994,
+            "va": "0x1804016ca"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 4194001,
+            "va": "0x1804016d1"
+          },
+          {
+            "text": "mov rdx,[rcx]",
+            "file_offset": 4194008,
+            "va": "0x1804016d8"
+          },
+          {
+            "text": "mov rdx,[rdx+2E8h]",
+            "file_offset": 4194035,
+            "va": "0x1804016f3"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rdx,[rdx+2D8h]",
+          "file_offset": 4194713,
+          "va": "0x180401999"
+        },
+        "unwind_begin": "0x18040144a",
+        "unwind_end": "0x180402088",
+        "next_distinct_metadata_va": "0x180402090",
+        "field_offset": 728,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 15066,
+            "full_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.FutanariController",
+            "name": "SetupPaint",
+            "va": "0x180401350"
+          }
+        ],
+        "field_name": "FutanariPaint",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 4194687,
+            "va": "0x18040197f"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 4194694,
+            "va": "0x180401986"
+          },
+          {
+            "text": "mov rdx,[rcx]",
+            "file_offset": 4194701,
+            "va": "0x18040198d"
+          },
+          {
+            "text": "mov rdx,[rdx+2D8h]",
+            "file_offset": 4194713,
+            "va": "0x180401999"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rdx,[rdx+2F0h]",
+          "file_offset": 4195607,
+          "va": "0x180401d17"
+        },
+        "unwind_begin": "0x18040144a",
+        "unwind_end": "0x180402088",
+        "next_distinct_metadata_va": "0x180402090",
+        "field_offset": 752,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 15066,
+            "full_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.FutanariController",
+            "name": "SetupPaint",
+            "va": "0x180401350"
+          }
+        ],
+        "field_name": "FutanariRubberMaterial",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 4195572,
+            "va": "0x180401cf4"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 4195579,
+            "va": "0x180401cfb"
+          },
+          {
+            "text": "mov rdx,[rcx]",
+            "file_offset": 4195586,
+            "va": "0x180401d02"
+          },
+          {
+            "text": "mov rdx,[rdx+2F0h]",
+            "file_offset": 4195607,
+            "va": "0x180401d17"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rax,[rax+288h]",
+          "file_offset": 6513088,
+          "va": "0x1806379c0"
+        },
+        "unwind_begin": "0x180637960",
+        "unwind_end": "0x180637b0c",
+        "next_distinct_metadata_va": "0x180637bc0",
+        "field_offset": 648,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 14623,
+            "full_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController",
+            "name": "TransToMaterialAsset",
+            "va": "0x180637960"
+          }
+        ],
+        "field_name": "Inmon",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 6513062,
+            "va": "0x1806379a6"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 6513069,
+            "va": "0x1806379ad"
+          },
+          {
+            "text": "mov rax,[rcx]",
+            "file_offset": 6513076,
+            "va": "0x1806379b4"
+          },
+          {
+            "text": "mov rax,[rax+288h]",
+            "file_offset": 6513088,
+            "va": "0x1806379c0"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rax,[rdx+30h]",
+          "file_offset": 4628667,
+          "va": "0x18046b8bb"
+        },
+        "unwind_begin": "0x18046b7b0",
+        "unwind_end": "0x18046b92e",
+        "next_distinct_metadata_va": "0x18046b930",
+        "field_offset": 48,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 16265,
+            "full_name": "ExposureUnnoticed2.Master.Common.MCustomizeColor",
+            "name": "get_Instance",
+            "va": "0x18046b7b0"
+          }
+        ],
+        "field_name": "MCustomizeColor",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 4628631,
+            "va": "0x18046b897"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 4628638,
+            "va": "0x18046b89e"
+          },
+          {
+            "text": "mov rdx,[rcx]",
+            "file_offset": 4628645,
+            "va": "0x18046b8a5"
+          },
+          {
+            "text": "mov rax,[rdx+30h]",
+            "file_offset": 4628667,
+            "va": "0x18046b8bb"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rbx,[rax+68h]",
+          "file_offset": 4618021,
+          "va": "0x180468f25"
+        },
+        "unwind_begin": "0x180468e81",
+        "unwind_end": "0x180468fb4",
+        "next_distinct_metadata_va": "0x180468fd0",
+        "field_offset": 104,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 16087,
+            "full_name": "ExposureUnnoticed2.Master.Hair.MHair",
+            "name": "CheckInitialize",
+            "va": "0x180468e00"
+          }
+        ],
+        "field_name": "MHair",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 4617985,
+            "va": "0x180468f01"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 4618002,
+            "va": "0x180468f12"
+          },
+          {
+            "text": "mov rax,[rcx]",
+            "file_offset": 4618009,
+            "va": "0x180468f19"
+          },
+          {
+            "text": "mov rbx,[rax+68h]",
+            "file_offset": 4618021,
+            "va": "0x180468f25"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rdx,[rdx+2E0h]",
+          "file_offset": 6221489,
+          "va": "0x1805f06b1"
+        },
+        "unwind_begin": "0x1805f035a",
+        "unwind_end": "0x1805f0762",
+        "next_distinct_metadata_va": "0x1805f0850",
+        "field_offset": 736,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 13885,
+            "full_name": "ExposureUnnoticed2.Object3D.SpermBullet.SpermDecalController",
+            "name": "Initialize",
+            "va": "0x1805f00e0"
+          }
+        ],
+        "field_name": "NightSpermDecal",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 6221450,
+            "va": "0x1805f068a"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 6221457,
+            "va": "0x1805f0691"
+          },
+          {
+            "text": "mov rdx,[rcx]",
+            "file_offset": 6221464,
+            "va": "0x1805f0698"
+          },
+          {
+            "text": "mov rdx,[rdx+2E0h]",
+            "file_offset": 6221489,
+            "va": "0x1805f06b1"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rax,[rax+290h]",
+          "file_offset": 6513127,
+          "va": "0x1806379e7"
+        },
+        "unwind_begin": "0x180637960",
+        "unwind_end": "0x180637b0c",
+        "next_distinct_metadata_va": "0x180637bc0",
+        "field_offset": 656,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 14623,
+            "full_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController",
+            "name": "TransToMaterialAsset",
+            "va": "0x180637960"
+          }
+        ],
+        "field_name": "Rakugaki",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 6513101,
+            "va": "0x1806379cd"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 6513108,
+            "va": "0x1806379d4"
+          },
+          {
+            "text": "mov rax,[rcx]",
+            "file_offset": 6513115,
+            "va": "0x1806379db"
+          },
+          {
+            "text": "mov rax,[rax+290h]",
+            "file_offset": 6513127,
+            "va": "0x1806379e7"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rax,[rax+2D0h]",
+          "file_offset": 6513400,
+          "va": "0x180637af8"
+        },
+        "unwind_begin": "0x180637960",
+        "unwind_end": "0x180637b0c",
+        "next_distinct_metadata_va": "0x180637bc0",
+        "field_offset": 720,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 14623,
+            "full_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController",
+            "name": "TransToMaterialAsset",
+            "va": "0x180637960"
+          }
+        ],
+        "field_name": "RubberSuit",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 6513374,
+            "va": "0x180637ade"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 6513381,
+            "va": "0x180637ae5"
+          },
+          {
+            "text": "mov rax,[rcx]",
+            "file_offset": 6513388,
+            "va": "0x180637aec"
+          },
+          {
+            "text": "mov rax,[rax+2D0h]",
+            "file_offset": 6513400,
+            "va": "0x180637af8"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rdx,[rdx+2D0h]",
+          "file_offset": 6514862,
+          "va": "0x1806380ae"
+        },
+        "unwind_begin": "0x180637cc2",
+        "unwind_end": "0x180638637",
+        "next_distinct_metadata_va": "0x180638640",
+        "field_offset": 720,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 14624,
+            "full_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController",
+            "name": "SetupBodyPaintFromGameState",
+            "va": "0x180637bc0"
+          }
+        ],
+        "field_name": "RubberSuit",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 6514836,
+            "va": "0x180638094"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 6514843,
+            "va": "0x18063809b"
+          },
+          {
+            "text": "mov rdx,[rcx]",
+            "file_offset": 6514850,
+            "va": "0x1806380a2"
+          },
+          {
+            "text": "mov rdx,[rdx+2D0h]",
+            "file_offset": 6514862,
+            "va": "0x1806380ae"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov r8,[rax+310h]",
+          "file_offset": 6516771,
+          "va": "0x180638823"
+        },
+        "unwind_begin": "0x180638791",
+        "unwind_end": "0x1806388d7",
+        "next_distinct_metadata_va": "0x180638ce0",
+        "field_offset": 784,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 14627,
+            "full_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController",
+            "name": "ApplyFromGameState",
+            "va": "0x180638680"
+          }
+        ],
+        "field_name": "RubberSuitBlack",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 6516743,
+            "va": "0x180638807"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 6516752,
+            "va": "0x180638810"
+          },
+          {
+            "text": "mov rax,[rcx]",
+            "file_offset": 6516759,
+            "va": "0x180638817"
+          },
+          {
+            "text": "mov r8,[rax+310h]",
+            "file_offset": 6516771,
+            "va": "0x180638823"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rdx,[rdx+280h]",
+          "file_offset": 6514987,
+          "va": "0x18063812b"
+        },
+        "unwind_begin": "0x180637cc2",
+        "unwind_end": "0x180638637",
+        "next_distinct_metadata_va": "0x180638640",
+        "field_offset": 640,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 14624,
+            "full_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController",
+            "name": "SetupBodyPaintFromGameState",
+            "va": "0x180637bc0"
+          }
+        ],
+        "field_name": "SweatBody",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 6514961,
+            "va": "0x180638111"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 6514968,
+            "va": "0x180638118"
+          },
+          {
+            "text": "mov rdx,[rcx]",
+            "file_offset": 6514975,
+            "va": "0x18063811f"
+          },
+          {
+            "text": "mov rdx,[rdx+280h]",
+            "file_offset": 6514987,
+            "va": "0x18063812b"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rax,[rax+2A0h]",
+          "file_offset": 6513166,
+          "va": "0x180637a0e"
+        },
+        "unwind_begin": "0x180637960",
+        "unwind_end": "0x180637b0c",
+        "next_distinct_metadata_va": "0x180637bc0",
+        "field_offset": 672,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 14623,
+            "full_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController",
+            "name": "TransToMaterialAsset",
+            "va": "0x180637960"
+          }
+        ],
+        "field_name": "TattooDark",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 6513140,
+            "va": "0x1806379f4"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 6513147,
+            "va": "0x1806379fb"
+          },
+          {
+            "text": "mov rax,[rcx]",
+            "file_offset": 6513154,
+            "va": "0x180637a02"
+          },
+          {
+            "text": "mov rax,[rax+2A0h]",
+            "file_offset": 6513166,
+            "va": "0x180637a0e"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rax,[rax+2A8h]",
+          "file_offset": 6513205,
+          "va": "0x180637a35"
+        },
+        "unwind_begin": "0x180637960",
+        "unwind_end": "0x180637b0c",
+        "next_distinct_metadata_va": "0x180637bc0",
+        "field_offset": 680,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 14623,
+            "full_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController",
+            "name": "TransToMaterialAsset",
+            "va": "0x180637960"
+          }
+        ],
+        "field_name": "TattooFlower1",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 6513179,
+            "va": "0x180637a1b"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 6513186,
+            "va": "0x180637a22"
+          },
+          {
+            "text": "mov rax,[rcx]",
+            "file_offset": 6513193,
+            "va": "0x180637a29"
+          },
+          {
+            "text": "mov rax,[rax+2A8h]",
+            "file_offset": 6513205,
+            "va": "0x180637a35"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rax,[rax+2B0h]",
+          "file_offset": 6513244,
+          "va": "0x180637a5c"
+        },
+        "unwind_begin": "0x180637960",
+        "unwind_end": "0x180637b0c",
+        "next_distinct_metadata_va": "0x180637bc0",
+        "field_offset": 688,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 14623,
+            "full_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController",
+            "name": "TransToMaterialAsset",
+            "va": "0x180637960"
+          }
+        ],
+        "field_name": "TattooFlower2",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 6513218,
+            "va": "0x180637a42"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 6513225,
+            "va": "0x180637a49"
+          },
+          {
+            "text": "mov rax,[rcx]",
+            "file_offset": 6513232,
+            "va": "0x180637a50"
+          },
+          {
+            "text": "mov rax,[rax+2B0h]",
+            "file_offset": 6513244,
+            "va": "0x180637a5c"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rax,[rax+2B8h]",
+          "file_offset": 6513283,
+          "va": "0x180637a83"
+        },
+        "unwind_begin": "0x180637960",
+        "unwind_end": "0x180637b0c",
+        "next_distinct_metadata_va": "0x180637bc0",
+        "field_offset": 696,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 14623,
+            "full_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController",
+            "name": "TransToMaterialAsset",
+            "va": "0x180637960"
+          }
+        ],
+        "field_name": "TattooLotus",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 6513257,
+            "va": "0x180637a69"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 6513264,
+            "va": "0x180637a70"
+          },
+          {
+            "text": "mov rax,[rcx]",
+            "file_offset": 6513271,
+            "va": "0x180637a77"
+          },
+          {
+            "text": "mov rax,[rax+2B8h]",
+            "file_offset": 6513283,
+            "va": "0x180637a83"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rax,[rax+2C0h]",
+          "file_offset": 6513322,
+          "va": "0x180637aaa"
+        },
+        "unwind_begin": "0x180637960",
+        "unwind_end": "0x180637b0c",
+        "next_distinct_metadata_va": "0x180637bc0",
+        "field_offset": 704,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 14623,
+            "full_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController",
+            "name": "TransToMaterialAsset",
+            "va": "0x180637960"
+          }
+        ],
+        "field_name": "TattooSatanism",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 6513296,
+            "va": "0x180637a90"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 6513303,
+            "va": "0x180637a97"
+          },
+          {
+            "text": "mov rax,[rcx]",
+            "file_offset": 6513310,
+            "va": "0x180637a9e"
+          },
+          {
+            "text": "mov rax,[rax+2C0h]",
+            "file_offset": 6513322,
+            "va": "0x180637aaa"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rax,[rax+2C8h]",
+          "file_offset": 6513361,
+          "va": "0x180637ad1"
+        },
+        "unwind_begin": "0x180637960",
+        "unwind_end": "0x180637b0c",
+        "next_distinct_metadata_va": "0x180637bc0",
+        "field_offset": 712,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 14623,
+            "full_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController",
+            "name": "TransToMaterialAsset",
+            "va": "0x180637960"
+          }
+        ],
+        "field_name": "TattooSlave",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 6513335,
+            "va": "0x180637ab7"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 6513342,
+            "va": "0x180637abe"
+          },
+          {
+            "text": "mov rax,[rcx]",
+            "file_offset": 6513349,
+            "va": "0x180637ac5"
+          },
+          {
+            "text": "mov rax,[rax+2C8h]",
+            "file_offset": 6513361,
+            "va": "0x180637ad1"
+          }
+        ]
+      },
+      {
+        "read": {
+          "text": "mov rdi,[rax+350h]",
+          "file_offset": 6201543,
+          "va": "0x1805eb8c7"
+        },
+        "unwind_begin": "0x1805eb800",
+        "unwind_end": "0x1805eba2a",
+        "next_distinct_metadata_va": "0x1805eba30",
+        "field_offset": 848,
+        "nearest_prior_metadata_methods": [
+          {
+            "id": 13846,
+            "full_name": "ExposureUnnoticed2.Object3D.UIPlayer.UiPlayerController",
+            "name": "Initialize",
+            "va": "0x1805eb800"
+          }
+        ],
+        "field_name": "UiPlayer",
+        "chain": [
+          {
+            "text": "mov rax,[182D58238h]",
+            "file_offset": 6201510,
+            "va": "0x1805eb8a6"
+          },
+          {
+            "text": "mov rcx,[rax+0B8h]",
+            "file_offset": 6201517,
+            "va": "0x1805eb8ad"
+          },
+          {
+            "text": "mov rax,[rcx]",
+            "file_offset": 6201524,
+            "va": "0x1805eb8b4"
+          },
+          {
+            "text": "mov rdi,[rax+350h]",
+            "file_offset": 6201543,
+            "va": "0x1805eb8c7"
+          }
+        ]
+      }
+    ],
+    "decoder_sha256": "f058c01321b4cdfc9b9151879e88e59571c8d0ba176fbcf95bc936a8f3d073ed",
+    "matched_field_reads": 28,
+    "selection": "Title completion callbacks omitted; one representative read per method/field; maximum12 UiPlayer methods,4 per other field",
+    "limitations": [
+      "MOV copies only, volatile register tags cleared at calls; branch merge and alias analysis not solved.",
+      "Only exact source TypeInfo usage and class+0xb8/static+0/instance field chains are retained.",
+      "Nearest prior metadata aliases remain candidates pending original native function-range/control-flow confirmation.",
+      "This boundary does not establish absence of other consumers."
+    ],
+    "evidence_type": "bounded Iced MOV provenance candidates, not a complete native call graph"
+  },
+  "validation": {
+    "selected_tag6_count": 3,
+    "all_selected_class_instantiations_absent": true,
+    "all_selected_method_instantiations_have_one_CLASS_argument": true,
+    "duplicate_usage_addresses": false,
+    "instruction_observation_windows": {
+      "core_call_windows": 1,
+      "terminal_dispatch_windows": 1
+    }
+  },
+  "get_component_return_abi": {
+    "evidence_type": "Original PE machine-code bytes decoded with installed Iced; bounded helper instruction observation",
+    "source_path": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+    "source_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+    "entry": "0x1809a08f0",
+    "unwind_begin": "0x1809a08f0",
+    "unwind_end": "0x1809a09c1",
+    "unwind_info": "0x182b68150",
+    "file_offset": 10088688,
+    "size": 209,
+    "nearby_mapped_methods": [],
+    "instruction_count": 51,
+    "fast_path_call_windows": [
+      {
+        "call": {
+          "file_offset": 10088876,
+          "flow_control": "Call",
+          "op0_register": "None",
+          "op0_kind": "NearBranch64",
+          "memory_base": "None",
+          "raw_hex": "e8 9f d7 59 01",
+          "text": "call 0000000181F3E150h",
+          "memory_displacement": "0x181f3e150",
+          "op1_kind": "Register",
+          "direct_branch_target": "0x181f3e150",
+          "mnemonic": "Call",
+          "va": "0x1809a09ac",
+          "length": 5
+        },
+        "instructions": [
+          {
+            "file_offset": 10088849,
+            "flow_control": "Next",
+            "op0_register": "RCX",
+            "op0_kind": "Register",
+            "memory_base": "RAX",
+            "raw_hex": "48 8d 48 20",
+            "text": "lea rcx,[rax+20h]",
+            "memory_displacement": "0x20",
+            "op1_kind": "Memory",
+            "direct_branch_target": null,
+            "mnemonic": "Lea",
+            "va": "0x1809a0991",
+            "length": 4
+          },
+          {
+            "file_offset": 10088853,
+            "flow_control": "Call",
+            "op0_register": "None",
+            "op0_kind": "NearBranch64",
+            "memory_base": "None",
+            "raw_hex": "e8 26 51 92 ff",
+            "text": "call 00000001802C5AC0h",
+            "memory_displacement": "0x1802c5ac0",
+            "op1_kind": "Register",
+            "direct_branch_target": "0x1802c5ac0",
+            "mnemonic": "Call",
+            "va": "0x1809a0995",
+            "length": 5
+          },
+          {
+            "file_offset": 10088858,
+            "flow_control": "UnconditionalBranch",
+            "op0_register": "None",
+            "op0_kind": "NearBranch64",
+            "memory_base": "None",
+            "raw_hex": "eb 02",
+            "text": "jmp short 00000001809A099Eh",
+            "memory_displacement": "0x1809a099e",
+            "op1_kind": "Register",
+            "direct_branch_target": "0x1809a099e",
+            "mnemonic": "Jmp",
+            "va": "0x1809a099a",
+            "length": 2
+          },
+          {
+            "file_offset": 10088860,
+            "flow_control": "Next",
+            "op0_register": "EAX",
+            "op0_kind": "Register",
+            "memory_base": "None",
+            "raw_hex": "33 c0",
+            "text": "xor eax,eax",
+            "memory_displacement": "0x0",
+            "op1_kind": "Register",
+            "direct_branch_target": null,
+            "mnemonic": "Xor",
+            "va": "0x1809a099c",
+            "length": 2
+          },
+          {
+            "file_offset": 10088862,
+            "flow_control": "Next",
+            "op0_register": "R9D",
+            "op0_kind": "Register",
+            "memory_base": "None",
+            "raw_hex": "45 33 c9",
+            "text": "xor r9d,r9d",
+            "memory_displacement": "0x0",
+            "op1_kind": "Register",
+            "direct_branch_target": null,
+            "mnemonic": "Xor",
+            "va": "0x1809a099e",
+            "length": 3
+          },
+          {
+            "file_offset": 10088865,
+            "flow_control": "Next",
+            "op0_register": "R8",
+            "op0_kind": "Register",
+            "memory_base": "RSP",
+            "raw_hex": "4c 8d 44 24 28",
+            "text": "lea r8,[rsp+28h]",
+            "memory_displacement": "0x28",
+            "op1_kind": "Memory",
+            "direct_branch_target": null,
+            "mnemonic": "Lea",
+            "va": "0x1809a09a1",
+            "length": 5
+          },
+          {
+            "file_offset": 10088870,
+            "flow_control": "Next",
+            "op0_register": "RDX",
+            "op0_kind": "Register",
+            "memory_base": "None",
+            "raw_hex": "48 8b d0",
+            "text": "mov rdx,rax",
+            "memory_displacement": "0x0",
+            "op1_kind": "Register",
+            "direct_branch_target": null,
+            "mnemonic": "Mov",
+            "va": "0x1809a09a6",
+            "length": 3
+          },
+          {
+            "file_offset": 10088873,
+            "flow_control": "Next",
+            "op0_register": "RCX",
+            "op0_kind": "Register",
+            "memory_base": "None",
+            "raw_hex": "48 8b cf",
+            "text": "mov rcx,rdi",
+            "memory_displacement": "0x0",
+            "op1_kind": "Register",
+            "direct_branch_target": null,
+            "mnemonic": "Mov",
+            "va": "0x1809a09a9",
+            "length": 3
+          },
+          {
+            "file_offset": 10088876,
+            "flow_control": "Call",
+            "op0_register": "None",
+            "op0_kind": "NearBranch64",
+            "memory_base": "None",
+            "raw_hex": "e8 9f d7 59 01",
+            "text": "call 0000000181F3E150h",
+            "memory_displacement": "0x181f3e150",
+            "op1_kind": "Register",
+            "direct_branch_target": "0x181f3e150",
+            "mnemonic": "Call",
+            "va": "0x1809a09ac",
+            "length": 5
+          },
+          {
+            "file_offset": 10088881,
+            "flow_control": "Next",
+            "op0_register": "RAX",
+            "op0_kind": "Register",
+            "memory_base": "RSP",
+            "raw_hex": "48 8b 44 24 20",
+            "text": "mov rax,[rsp+20h]",
+            "memory_displacement": "0x20",
+            "op1_kind": "Memory",
+            "direct_branch_target": null,
+            "mnemonic": "Mov",
+            "va": "0x1809a09b1",
+            "length": 5
+          },
+          {
+            "file_offset": 10088886,
+            "flow_control": "Next",
+            "op0_register": "RBX",
+            "op0_kind": "Register",
+            "memory_base": "RSP",
+            "raw_hex": "48 8b 5c 24 40",
+            "text": "mov rbx,[rsp+40h]",
+            "memory_displacement": "0x40",
+            "op1_kind": "Memory",
+            "direct_branch_target": null,
+            "mnemonic": "Mov",
+            "va": "0x1809a09b6",
+            "length": 5
+          },
+          {
+            "file_offset": 10088891,
+            "flow_control": "Next",
+            "op0_register": "RSP",
+            "op0_kind": "Register",
+            "memory_base": "None",
+            "raw_hex": "48 83 c4 30",
+            "text": "add rsp,30h",
+            "memory_displacement": "0x0",
+            "op1_kind": "Immediate8to64",
+            "direct_branch_target": null,
+            "mnemonic": "Add",
+            "va": "0x1809a09bb",
+            "length": 4
+          },
+          {
+            "file_offset": 10088895,
+            "flow_control": "Next",
+            "op0_register": "RDI",
+            "op0_kind": "Register",
+            "memory_base": "None",
+            "raw_hex": "5f",
+            "text": "pop rdi",
+            "memory_displacement": "0x0",
+            "op1_kind": "Register",
+            "direct_branch_target": null,
+            "mnemonic": "Pop",
+            "va": "0x1809a09bf",
+            "length": 1
+          },
+          {
+            "file_offset": 10088896,
+            "flow_control": "Return",
+            "op0_register": "None",
+            "op0_kind": "Register",
+            "memory_base": "None",
+            "raw_hex": "c3",
+            "text": "ret",
+            "memory_displacement": "0x0",
+            "op1_kind": "Register",
+            "direct_branch_target": null,
+            "mnemonic": "Ret",
+            "va": "0x1809a09c0",
+            "length": 1
+          }
+        ]
+      }
+    ],
+    "rax_memory_loads": [
+      {
+        "file_offset": 10088881,
+        "flow_control": "Next",
+        "op0_register": "RAX",
+        "op0_kind": "Register",
+        "memory_base": "RSP",
+        "raw_hex": "48 8b 44 24 20",
+        "text": "mov rax,[rsp+20h]",
+        "memory_displacement": "0x20",
+        "op1_kind": "Memory",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a09b1",
+        "length": 5
+      }
+    ],
+    "final_12_instructions": [
+      {
+        "file_offset": 10088858,
+        "flow_control": "UnconditionalBranch",
+        "op0_register": "None",
+        "op0_kind": "NearBranch64",
+        "memory_base": "None",
+        "raw_hex": "eb 02",
+        "text": "jmp short 00000001809A099Eh",
+        "memory_displacement": "0x1809a099e",
+        "op1_kind": "Register",
+        "direct_branch_target": "0x1809a099e",
+        "mnemonic": "Jmp",
+        "va": "0x1809a099a",
+        "length": 2
+      },
+      {
+        "file_offset": 10088860,
+        "flow_control": "Next",
+        "op0_register": "EAX",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "33 c0",
+        "text": "xor eax,eax",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Xor",
+        "va": "0x1809a099c",
+        "length": 2
+      },
+      {
+        "file_offset": 10088862,
+        "flow_control": "Next",
+        "op0_register": "R9D",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "45 33 c9",
+        "text": "xor r9d,r9d",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Xor",
+        "va": "0x1809a099e",
+        "length": 3
+      },
+      {
+        "file_offset": 10088865,
+        "flow_control": "Next",
+        "op0_register": "R8",
+        "op0_kind": "Register",
+        "memory_base": "RSP",
+        "raw_hex": "4c 8d 44 24 28",
+        "text": "lea r8,[rsp+28h]",
+        "memory_displacement": "0x28",
+        "op1_kind": "Memory",
+        "direct_branch_target": null,
+        "mnemonic": "Lea",
+        "va": "0x1809a09a1",
+        "length": 5
+      },
+      {
+        "file_offset": 10088870,
+        "flow_control": "Next",
+        "op0_register": "RDX",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "48 8b d0",
+        "text": "mov rdx,rax",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a09a6",
+        "length": 3
+      },
+      {
+        "file_offset": 10088873,
+        "flow_control": "Next",
+        "op0_register": "RCX",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "48 8b cf",
+        "text": "mov rcx,rdi",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a09a9",
+        "length": 3
+      },
+      {
+        "file_offset": 10088876,
+        "flow_control": "Call",
+        "op0_register": "None",
+        "op0_kind": "NearBranch64",
+        "memory_base": "None",
+        "raw_hex": "e8 9f d7 59 01",
+        "text": "call 0000000181F3E150h",
+        "memory_displacement": "0x181f3e150",
+        "op1_kind": "Register",
+        "direct_branch_target": "0x181f3e150",
+        "mnemonic": "Call",
+        "va": "0x1809a09ac",
+        "length": 5
+      },
+      {
+        "file_offset": 10088881,
+        "flow_control": "Next",
+        "op0_register": "RAX",
+        "op0_kind": "Register",
+        "memory_base": "RSP",
+        "raw_hex": "48 8b 44 24 20",
+        "text": "mov rax,[rsp+20h]",
+        "memory_displacement": "0x20",
+        "op1_kind": "Memory",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a09b1",
+        "length": 5
+      },
+      {
+        "file_offset": 10088886,
+        "flow_control": "Next",
+        "op0_register": "RBX",
+        "op0_kind": "Register",
+        "memory_base": "RSP",
+        "raw_hex": "48 8b 5c 24 40",
+        "text": "mov rbx,[rsp+40h]",
+        "memory_displacement": "0x40",
+        "op1_kind": "Memory",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a09b6",
+        "length": 5
+      },
+      {
+        "file_offset": 10088891,
+        "flow_control": "Next",
+        "op0_register": "RSP",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "48 83 c4 30",
+        "text": "add rsp,30h",
+        "memory_displacement": "0x0",
+        "op1_kind": "Immediate8to64",
+        "direct_branch_target": null,
+        "mnemonic": "Add",
+        "va": "0x1809a09bb",
+        "length": 4
+      },
+      {
+        "file_offset": 10088895,
+        "flow_control": "Next",
+        "op0_register": "RDI",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "5f",
+        "text": "pop rdi",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Pop",
+        "va": "0x1809a09bf",
+        "length": 1
+      },
+      {
+        "file_offset": 10088896,
+        "flow_control": "Return",
+        "op0_register": "None",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "c3",
+        "text": "ret",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Ret",
+        "va": "0x1809a09c0",
+        "length": 1
+      }
+    ],
+    "all_bounded_helper_instructions": [
+      {
+        "file_offset": 10088688,
+        "flow_control": "Next",
+        "op0_register": "None",
+        "op0_kind": "Memory",
+        "memory_base": "RSP",
+        "raw_hex": "48 89 5c 24 08",
+        "text": "mov [rsp+8],rbx",
+        "memory_displacement": "0x8",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a08f0",
+        "length": 5
+      },
+      {
+        "file_offset": 10088693,
+        "flow_control": "Next",
+        "op0_register": "RDI",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "57",
+        "text": "push rdi",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Push",
+        "va": "0x1809a08f5",
+        "length": 1
+      },
+      {
+        "file_offset": 10088694,
+        "flow_control": "Next",
+        "op0_register": "RSP",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "48 83 ec 30",
+        "text": "sub rsp,30h",
+        "memory_displacement": "0x0",
+        "op1_kind": "Immediate8to64",
+        "direct_branch_target": null,
+        "mnemonic": "Sub",
+        "va": "0x1809a08f6",
+        "length": 4
+      },
+      {
+        "file_offset": 10088698,
+        "flow_control": "Next",
+        "op0_register": "None",
+        "op0_kind": "Memory",
+        "memory_base": "RDX",
+        "raw_hex": "48 83 7a 38 00",
+        "text": "cmp qword ptr [rdx+38h],0",
+        "memory_displacement": "0x38",
+        "op1_kind": "Immediate8to64",
+        "direct_branch_target": null,
+        "mnemonic": "Cmp",
+        "va": "0x1809a08fa",
+        "length": 5
+      },
+      {
+        "file_offset": 10088703,
+        "flow_control": "Next",
+        "op0_register": "RBX",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "48 8b da",
+        "text": "mov rbx,rdx",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a08ff",
+        "length": 3
+      },
+      {
+        "file_offset": 10088706,
+        "flow_control": "Next",
+        "op0_register": "RDI",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "48 8b f9",
+        "text": "mov rdi,rcx",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a0902",
+        "length": 3
+      },
+      {
+        "file_offset": 10088709,
+        "flow_control": "ConditionalBranch",
+        "op0_register": "None",
+        "op0_kind": "NearBranch64",
+        "memory_base": "None",
+        "raw_hex": "75 20",
+        "text": "jne short 00000001809A0927h",
+        "memory_displacement": "0x1809a0927",
+        "op1_kind": "Register",
+        "direct_branch_target": "0x1809a0927",
+        "mnemonic": "Jne",
+        "va": "0x1809a0905",
+        "length": 2
+      },
+      {
+        "file_offset": 10088711,
+        "flow_control": "Next",
+        "op0_register": "RCX",
+        "op0_kind": "Register",
+        "memory_base": "RIP",
+        "raw_hex": "48 8d 0d ca 2c 3b 02",
+        "text": "lea rcx,[182D535D8h]",
+        "memory_displacement": "0x182d535d8",
+        "op1_kind": "Memory",
+        "direct_branch_target": null,
+        "mnemonic": "Lea",
+        "va": "0x1809a0907",
+        "length": 7
+      },
+      {
+        "file_offset": 10088718,
+        "flow_control": "Call",
+        "op0_register": "None",
+        "op0_kind": "NearBranch64",
+        "memory_base": "None",
+        "raw_hex": "e8 fd 1e 95 ff",
+        "text": "call 00000001802F2810h",
+        "memory_displacement": "0x1802f2810",
+        "op1_kind": "Register",
+        "direct_branch_target": "0x1802f2810",
+        "mnemonic": "Call",
+        "va": "0x1809a090e",
+        "length": 5
+      },
+      {
+        "file_offset": 10088723,
+        "flow_control": "Next",
+        "op0_register": "None",
+        "op0_kind": "Memory",
+        "memory_base": "RSP",
+        "raw_hex": "f0 83 0c 24 00",
+        "text": "lock or dword ptr [rsp],0",
+        "memory_displacement": "0x0",
+        "op1_kind": "Immediate8to32",
+        "direct_branch_target": null,
+        "mnemonic": "Or",
+        "va": "0x1809a0913",
+        "length": 5
+      },
+      {
+        "file_offset": 10088728,
+        "flow_control": "Next",
+        "op0_register": "None",
+        "op0_kind": "Memory",
+        "memory_base": "RBX",
+        "raw_hex": "48 83 7b 38 00",
+        "text": "cmp qword ptr [rbx+38h],0",
+        "memory_displacement": "0x38",
+        "op1_kind": "Immediate8to64",
+        "direct_branch_target": null,
+        "mnemonic": "Cmp",
+        "va": "0x1809a0918",
+        "length": 5
+      },
+      {
+        "file_offset": 10088733,
+        "flow_control": "ConditionalBranch",
+        "op0_register": "None",
+        "op0_kind": "NearBranch64",
+        "memory_base": "None",
+        "raw_hex": "75 08",
+        "text": "jne short 00000001809A0927h",
+        "memory_displacement": "0x1809a0927",
+        "op1_kind": "Register",
+        "direct_branch_target": "0x1809a0927",
+        "mnemonic": "Jne",
+        "va": "0x1809a091d",
+        "length": 2
+      },
+      {
+        "file_offset": 10088735,
+        "flow_control": "Next",
+        "op0_register": "RCX",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "48 8b cb",
+        "text": "mov rcx,rbx",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a091f",
+        "length": 3
+      },
+      {
+        "file_offset": 10088738,
+        "flow_control": "Call",
+        "op0_register": "None",
+        "op0_kind": "NearBranch64",
+        "memory_base": "None",
+        "raw_hex": "e8 c9 fb 97 ff",
+        "text": "call 00000001803204F0h",
+        "memory_displacement": "0x1803204f0",
+        "op1_kind": "Register",
+        "direct_branch_target": "0x1803204f0",
+        "mnemonic": "Call",
+        "va": "0x1809a0922",
+        "length": 5
+      },
+      {
+        "file_offset": 10088743,
+        "flow_control": "Next",
+        "op0_register": "RCX",
+        "op0_kind": "Register",
+        "memory_base": "RIP",
+        "raw_hex": "48 8b 0d aa 2c 3b 02",
+        "text": "mov rcx,[182D535D8h]",
+        "memory_displacement": "0x182d535d8",
+        "op1_kind": "Memory",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a0927",
+        "length": 7
+      },
+      {
+        "file_offset": 10088750,
+        "flow_control": "Next",
+        "op0_register": "XMM0",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "0f 57 c0",
+        "text": "xorps xmm0,xmm0",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Xorps",
+        "va": "0x1809a092e",
+        "length": 3
+      },
+      {
+        "file_offset": 10088753,
+        "flow_control": "Next",
+        "op0_register": "RBX",
+        "op0_kind": "Register",
+        "memory_base": "RBX",
+        "raw_hex": "48 8b 5b 38",
+        "text": "mov rbx,[rbx+38h]",
+        "memory_displacement": "0x38",
+        "op1_kind": "Memory",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a0931",
+        "length": 4
+      },
+      {
+        "file_offset": 10088757,
+        "flow_control": "Next",
+        "op0_register": "None",
+        "op0_kind": "Memory",
+        "memory_base": "RSP",
+        "raw_hex": "0f 11 44 24 20",
+        "text": "movups [rsp+20h],xmm0",
+        "memory_displacement": "0x20",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Movups",
+        "va": "0x1809a0935",
+        "length": 5
+      },
+      {
+        "file_offset": 10088762,
+        "flow_control": "Next",
+        "op0_register": "None",
+        "op0_kind": "Memory",
+        "memory_base": "RCX",
+        "raw_hex": "83 b9 e0 00 00 00 00",
+        "text": "cmp dword ptr [rcx+0E0h],0",
+        "memory_displacement": "0xe0",
+        "op1_kind": "Immediate8to32",
+        "direct_branch_target": null,
+        "mnemonic": "Cmp",
+        "va": "0x1809a093a",
+        "length": 7
+      },
+      {
+        "file_offset": 10088769,
+        "flow_control": "Next",
+        "op0_register": "RBX",
+        "op0_kind": "Register",
+        "memory_base": "RBX",
+        "raw_hex": "48 8b 5b 08",
+        "text": "mov rbx,[rbx+8]",
+        "memory_displacement": "0x8",
+        "op1_kind": "Memory",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a0941",
+        "length": 4
+      },
+      {
+        "file_offset": 10088773,
+        "flow_control": "ConditionalBranch",
+        "op0_register": "None",
+        "op0_kind": "NearBranch64",
+        "memory_base": "None",
+        "raw_hex": "75 05",
+        "text": "jne short 00000001809A094Ch",
+        "memory_displacement": "0x1809a094c",
+        "op1_kind": "Register",
+        "direct_branch_target": "0x1809a094c",
+        "mnemonic": "Jne",
+        "va": "0x1809a0945",
+        "length": 2
+      },
+      {
+        "file_offset": 10088775,
+        "flow_control": "Call",
+        "op0_register": "None",
+        "op0_kind": "NearBranch64",
+        "memory_base": "None",
+        "raw_hex": "e8 d4 be 9b ff",
+        "text": "call 000000018035C820h",
+        "memory_displacement": "0x18035c820",
+        "op1_kind": "Register",
+        "direct_branch_target": "0x18035c820",
+        "mnemonic": "Call",
+        "va": "0x1809a0947",
+        "length": 5
+      },
+      {
+        "file_offset": 10088780,
+        "flow_control": "Next",
+        "op0_register": "None",
+        "op0_kind": "Memory",
+        "memory_base": "RIP",
+        "raw_hex": "80 3d 57 b0 51 02 00",
+        "text": "cmp byte ptr [182EBB9AAh],0",
+        "memory_displacement": "0x182ebb9aa",
+        "op1_kind": "Immediate8",
+        "direct_branch_target": null,
+        "mnemonic": "Cmp",
+        "va": "0x1809a094c",
+        "length": 7
+      },
+      {
+        "file_offset": 10088787,
+        "flow_control": "ConditionalBranch",
+        "op0_register": "None",
+        "op0_kind": "NearBranch64",
+        "memory_base": "None",
+        "raw_hex": "75 18",
+        "text": "jne short 00000001809A096Dh",
+        "memory_displacement": "0x1809a096d",
+        "op1_kind": "Register",
+        "direct_branch_target": "0x1809a096d",
+        "mnemonic": "Jne",
+        "va": "0x1809a0953",
+        "length": 2
+      },
+      {
+        "file_offset": 10088789,
+        "flow_control": "Next",
+        "op0_register": "RCX",
+        "op0_kind": "Register",
+        "memory_base": "RIP",
+        "raw_hex": "48 8d 0d 7c 2c 3b 02",
+        "text": "lea rcx,[182D535D8h]",
+        "memory_displacement": "0x182d535d8",
+        "op1_kind": "Memory",
+        "direct_branch_target": null,
+        "mnemonic": "Lea",
+        "va": "0x1809a0955",
+        "length": 7
+      },
+      {
+        "file_offset": 10088796,
+        "flow_control": "Call",
+        "op0_register": "None",
+        "op0_kind": "NearBranch64",
+        "memory_base": "None",
+        "raw_hex": "e8 af 1e 95 ff",
+        "text": "call 00000001802F2810h",
+        "memory_displacement": "0x1802f2810",
+        "op1_kind": "Register",
+        "direct_branch_target": "0x1802f2810",
+        "mnemonic": "Call",
+        "va": "0x1809a095c",
+        "length": 5
+      },
+      {
+        "file_offset": 10088801,
+        "flow_control": "Next",
+        "op0_register": "None",
+        "op0_kind": "Memory",
+        "memory_base": "RSP",
+        "raw_hex": "f0 83 0c 24 00",
+        "text": "lock or dword ptr [rsp],0",
+        "memory_displacement": "0x0",
+        "op1_kind": "Immediate8to32",
+        "direct_branch_target": null,
+        "mnemonic": "Or",
+        "va": "0x1809a0961",
+        "length": 5
+      },
+      {
+        "file_offset": 10088806,
+        "flow_control": "Next",
+        "op0_register": "None",
+        "op0_kind": "Memory",
+        "memory_base": "RIP",
+        "raw_hex": "c6 05 3d b0 51 02 01",
+        "text": "mov byte ptr [182EBB9AAh],1",
+        "memory_displacement": "0x182ebb9aa",
+        "op1_kind": "Immediate8",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a0966",
+        "length": 7
+      },
+      {
+        "file_offset": 10088813,
+        "flow_control": "Next",
+        "op0_register": "RBX",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "48 85 db",
+        "text": "test rbx,rbx",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Test",
+        "va": "0x1809a096d",
+        "length": 3
+      },
+      {
+        "file_offset": 10088816,
+        "flow_control": "ConditionalBranch",
+        "op0_register": "None",
+        "op0_kind": "NearBranch64",
+        "memory_base": "None",
+        "raw_hex": "74 2a",
+        "text": "je short 00000001809A099Ch",
+        "memory_displacement": "0x1809a099c",
+        "op1_kind": "Register",
+        "direct_branch_target": "0x1809a099c",
+        "mnemonic": "Je",
+        "va": "0x1809a0970",
+        "length": 2
+      },
+      {
+        "file_offset": 10088818,
+        "flow_control": "Next",
+        "op0_register": "RCX",
+        "op0_kind": "Register",
+        "memory_base": "RIP",
+        "raw_hex": "48 8b 0d 5f 2c 3b 02",
+        "text": "mov rcx,[182D535D8h]",
+        "memory_displacement": "0x182d535d8",
+        "op1_kind": "Memory",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a0972",
+        "length": 7
+      },
+      {
+        "file_offset": 10088825,
+        "flow_control": "Next",
+        "op0_register": "None",
+        "op0_kind": "Memory",
+        "memory_base": "RCX",
+        "raw_hex": "83 b9 e0 00 00 00 00",
+        "text": "cmp dword ptr [rcx+0E0h],0",
+        "memory_displacement": "0xe0",
+        "op1_kind": "Immediate8to32",
+        "direct_branch_target": null,
+        "mnemonic": "Cmp",
+        "va": "0x1809a0979",
+        "length": 7
+      },
+      {
+        "file_offset": 10088832,
+        "flow_control": "ConditionalBranch",
+        "op0_register": "None",
+        "op0_kind": "NearBranch64",
+        "memory_base": "None",
+        "raw_hex": "75 05",
+        "text": "jne short 00000001809A0987h",
+        "memory_displacement": "0x1809a0987",
+        "op1_kind": "Register",
+        "direct_branch_target": "0x1809a0987",
+        "mnemonic": "Jne",
+        "va": "0x1809a0980",
+        "length": 2
+      },
+      {
+        "file_offset": 10088834,
+        "flow_control": "Call",
+        "op0_register": "None",
+        "op0_kind": "NearBranch64",
+        "memory_base": "None",
+        "raw_hex": "e8 99 be 9b ff",
+        "text": "call 000000018035C820h",
+        "memory_displacement": "0x18035c820",
+        "op1_kind": "Register",
+        "direct_branch_target": "0x18035c820",
+        "mnemonic": "Call",
+        "va": "0x1809a0982",
+        "length": 5
+      },
+      {
+        "file_offset": 10088839,
+        "flow_control": "Next",
+        "op0_register": "DL",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "b2 01",
+        "text": "mov dl,1",
+        "memory_displacement": "0x0",
+        "op1_kind": "Immediate8",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a0987",
+        "length": 2
+      },
+      {
+        "file_offset": 10088841,
+        "flow_control": "Next",
+        "op0_register": "RCX",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "48 8b cb",
+        "text": "mov rcx,rbx",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a0989",
+        "length": 3
+      },
+      {
+        "file_offset": 10088844,
+        "flow_control": "Call",
+        "op0_register": "None",
+        "op0_kind": "NearBranch64",
+        "memory_base": "None",
+        "raw_hex": "e8 5f 0a 9c ff",
+        "text": "call 00000001803613F0h",
+        "memory_displacement": "0x1803613f0",
+        "op1_kind": "Register",
+        "direct_branch_target": "0x1803613f0",
+        "mnemonic": "Call",
+        "va": "0x1809a098c",
+        "length": 5
+      },
+      {
+        "file_offset": 10088849,
+        "flow_control": "Next",
+        "op0_register": "RCX",
+        "op0_kind": "Register",
+        "memory_base": "RAX",
+        "raw_hex": "48 8d 48 20",
+        "text": "lea rcx,[rax+20h]",
+        "memory_displacement": "0x20",
+        "op1_kind": "Memory",
+        "direct_branch_target": null,
+        "mnemonic": "Lea",
+        "va": "0x1809a0991",
+        "length": 4
+      },
+      {
+        "file_offset": 10088853,
+        "flow_control": "Call",
+        "op0_register": "None",
+        "op0_kind": "NearBranch64",
+        "memory_base": "None",
+        "raw_hex": "e8 26 51 92 ff",
+        "text": "call 00000001802C5AC0h",
+        "memory_displacement": "0x1802c5ac0",
+        "op1_kind": "Register",
+        "direct_branch_target": "0x1802c5ac0",
+        "mnemonic": "Call",
+        "va": "0x1809a0995",
+        "length": 5
+      },
+      {
+        "file_offset": 10088858,
+        "flow_control": "UnconditionalBranch",
+        "op0_register": "None",
+        "op0_kind": "NearBranch64",
+        "memory_base": "None",
+        "raw_hex": "eb 02",
+        "text": "jmp short 00000001809A099Eh",
+        "memory_displacement": "0x1809a099e",
+        "op1_kind": "Register",
+        "direct_branch_target": "0x1809a099e",
+        "mnemonic": "Jmp",
+        "va": "0x1809a099a",
+        "length": 2
+      },
+      {
+        "file_offset": 10088860,
+        "flow_control": "Next",
+        "op0_register": "EAX",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "33 c0",
+        "text": "xor eax,eax",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Xor",
+        "va": "0x1809a099c",
+        "length": 2
+      },
+      {
+        "file_offset": 10088862,
+        "flow_control": "Next",
+        "op0_register": "R9D",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "45 33 c9",
+        "text": "xor r9d,r9d",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Xor",
+        "va": "0x1809a099e",
+        "length": 3
+      },
+      {
+        "file_offset": 10088865,
+        "flow_control": "Next",
+        "op0_register": "R8",
+        "op0_kind": "Register",
+        "memory_base": "RSP",
+        "raw_hex": "4c 8d 44 24 28",
+        "text": "lea r8,[rsp+28h]",
+        "memory_displacement": "0x28",
+        "op1_kind": "Memory",
+        "direct_branch_target": null,
+        "mnemonic": "Lea",
+        "va": "0x1809a09a1",
+        "length": 5
+      },
+      {
+        "file_offset": 10088870,
+        "flow_control": "Next",
+        "op0_register": "RDX",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "48 8b d0",
+        "text": "mov rdx,rax",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a09a6",
+        "length": 3
+      },
+      {
+        "file_offset": 10088873,
+        "flow_control": "Next",
+        "op0_register": "RCX",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "48 8b cf",
+        "text": "mov rcx,rdi",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a09a9",
+        "length": 3
+      },
+      {
+        "file_offset": 10088876,
+        "flow_control": "Call",
+        "op0_register": "None",
+        "op0_kind": "NearBranch64",
+        "memory_base": "None",
+        "raw_hex": "e8 9f d7 59 01",
+        "text": "call 0000000181F3E150h",
+        "memory_displacement": "0x181f3e150",
+        "op1_kind": "Register",
+        "direct_branch_target": "0x181f3e150",
+        "mnemonic": "Call",
+        "va": "0x1809a09ac",
+        "length": 5
+      },
+      {
+        "file_offset": 10088881,
+        "flow_control": "Next",
+        "op0_register": "RAX",
+        "op0_kind": "Register",
+        "memory_base": "RSP",
+        "raw_hex": "48 8b 44 24 20",
+        "text": "mov rax,[rsp+20h]",
+        "memory_displacement": "0x20",
+        "op1_kind": "Memory",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a09b1",
+        "length": 5
+      },
+      {
+        "file_offset": 10088886,
+        "flow_control": "Next",
+        "op0_register": "RBX",
+        "op0_kind": "Register",
+        "memory_base": "RSP",
+        "raw_hex": "48 8b 5c 24 40",
+        "text": "mov rbx,[rsp+40h]",
+        "memory_displacement": "0x40",
+        "op1_kind": "Memory",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a09b6",
+        "length": 5
+      },
+      {
+        "file_offset": 10088891,
+        "flow_control": "Next",
+        "op0_register": "RSP",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "48 83 c4 30",
+        "text": "add rsp,30h",
+        "memory_displacement": "0x0",
+        "op1_kind": "Immediate8to64",
+        "direct_branch_target": null,
+        "mnemonic": "Add",
+        "va": "0x1809a09bb",
+        "length": 4
+      },
+      {
+        "file_offset": 10088895,
+        "flow_control": "Next",
+        "op0_register": "RDI",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "5f",
+        "text": "pop rdi",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Pop",
+        "va": "0x1809a09bf",
+        "length": 1
+      },
+      {
+        "file_offset": 10088896,
+        "flow_control": "Return",
+        "op0_register": "None",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "c3",
+        "text": "ret",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Ret",
+        "va": "0x1809a09c0",
+        "length": 1
+      }
+    ],
+    "limitations": [
+      "This observes static register/stack instructions, not a live component value.",
+      "Whether GetComponentFastPath populates the pointed stack storage is established by its contract/native implementation; this helper observation alone does not record its execution.",
+      "The decompiled constant return must be assessed against the actual final RAX load and stack-address setup preserved here."
+    ],
+    "return_value_observation": {
+      "return_load": {
+        "file_offset": 10088881,
+        "flow_control": "Next",
+        "op0_register": "RAX",
+        "op0_kind": "Register",
+        "memory_base": "RSP",
+        "raw_hex": "48 8b 44 24 20",
+        "text": "mov rax,[rsp+20h]",
+        "memory_displacement": "0x20",
+        "op1_kind": "Memory",
+        "direct_branch_target": null,
+        "mnemonic": "Mov",
+        "va": "0x1809a09b1",
+        "length": 5
+      },
+      "return_instruction": {
+        "file_offset": 10088896,
+        "flow_control": "Return",
+        "op0_register": "None",
+        "op0_kind": "Register",
+        "memory_base": "None",
+        "raw_hex": "c3",
+        "text": "ret",
+        "memory_displacement": "0x0",
+        "op1_kind": "Register",
+        "direct_branch_target": null,
+        "mnemonic": "Ret",
+        "va": "0x1809a09c0",
+        "length": 1
+      },
+      "stack_address_passed_as_r8": {
+        "file_offset": 10088865,
+        "flow_control": "Next",
+        "op0_register": "R8",
+        "op0_kind": "Register",
+        "memory_base": "RSP",
+        "raw_hex": "4c 8d 44 24 28",
+        "text": "lea r8,[rsp+28h]",
+        "memory_displacement": "0x28",
+        "op1_kind": "Memory",
+        "direct_branch_target": null,
+        "mnemonic": "Lea",
+        "va": "0x1809a09a1",
+        "length": 5
+      },
+      "stack_related_instructions": [
+        {
+          "file_offset": 10088757,
+          "flow_control": "Next",
+          "op0_register": "None",
+          "op0_kind": "Memory",
+          "memory_base": "RSP",
+          "raw_hex": "0f 11 44 24 20",
+          "text": "movups [rsp+20h],xmm0",
+          "memory_displacement": "0x20",
+          "op1_kind": "Register",
+          "direct_branch_target": null,
+          "mnemonic": "Movups",
+          "va": "0x1809a0935",
+          "length": 5
+        },
+        {
+          "file_offset": 10088865,
+          "flow_control": "Next",
+          "op0_register": "R8",
+          "op0_kind": "Register",
+          "memory_base": "RSP",
+          "raw_hex": "4c 8d 44 24 28",
+          "text": "lea r8,[rsp+28h]",
+          "memory_displacement": "0x28",
+          "op1_kind": "Memory",
+          "direct_branch_target": null,
+          "mnemonic": "Lea",
+          "va": "0x1809a09a1",
+          "length": 5
+        },
+        {
+          "file_offset": 10088881,
+          "flow_control": "Next",
+          "op0_register": "RAX",
+          "op0_kind": "Register",
+          "memory_base": "RSP",
+          "raw_hex": "48 8b 44 24 20",
+          "text": "mov rax,[rsp+20h]",
+          "memory_displacement": "0x20",
+          "op1_kind": "Memory",
+          "direct_branch_target": null,
+          "mnemonic": "Mov",
+          "va": "0x1809a09b1",
+          "length": 5
+        }
+      ],
+      "conclusion": "The machine code reloads RAX from [RSP+0x20] after GetComponentFastPath and then returns. A decompiled unconditional return 0 is not faithful to this explicit return-value load.",
+      "unknown": "The actual runtime value in that stack slot and the callee write relative to the R8=[RSP+0x28] argument are not observed by this static helper decoding."
+    }
+  }
+}

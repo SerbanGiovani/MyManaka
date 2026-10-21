@@ -15,7 +15,7 @@ const { StdioClientTransport } = requireREA('@modelcontextprotocol/client/stdio'
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 if (hash(await readFile(plan.target)) !== plan.native_sha256) throw Error('Native input fingerprint differs');
 if (hash(await readFile(plan.seed_file)) !== plan.seed_sha256) throw Error('Seed file differs from the reviewed plan');
-if (plan.functions.some(f => f.operations.some(op => !['procedure_pseudo_code', 'analyze_function'].includes(op)))) {
+if (plan.functions.some(f => f.operations.some(op => !['procedure_pseudo_code', 'procedure_assembly', 'analyze_function'].includes(op)))) {
   throw Error('Only static function queries are accepted');
 }
 await mkdir(plan.output_directory, { recursive: true });
@@ -55,6 +55,9 @@ try {
   const names = new Set(catalog.tools.map(t => t.name));
   for (const tool of ['open_binary','close_binary','procedure_pseudo_code','analyze_function','export_evidence_bundle']) {
     if (!names.has(tool)) throw Error(`REA does not advertise ${tool}`);
+  }
+  for (const fn of plan.functions) for (const op of fn.operations) {
+    if (!names.has(op)) throw Error(`REA does not advertise ${op}`);
   }
   const openedResult = await call('open_binary', { path: plan.target, provider_id: 'ghidra' });
   opened = true;

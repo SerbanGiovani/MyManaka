@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "name": "asset-dispatch",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\asset-dispatch.seeds.tsv",
+  "seed_sha256": "fe8538bca8597e6453833038c0291aa602f814ae4bf42beb5aeede857a4e627a",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\asset-dispatch",
+  "seed_count": 573,
+  "functions": [
+    {
+      "metadata_id": 76225,
+      "qualified_name": "IKA9nt.Encrypter.BridgeAssetBundle::.ctor",
+      "assembly": "IKA9nt.Encrypter.dll",
+      "token": "0x6000038",
+      "va": "0x18048d520",
+      "file_offset": 4767008,
+      "label": "IKA9nt_Encrypter_BridgeAssetBundle___ctor__06000038",
+      "file_stem": "76225-06000038",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76228,
+      "qualified_name": "IKA9nt.Encrypter.BridgeAssetBundle::LoadAssetAsync",
+      "assembly": "IKA9nt.Encrypter.dll",
+      "token": "0x600003b",
+      "va": "0x181433c90",
+      "file_offset": 21177488,
+      "label": "IKA9nt_Encrypter_BridgeAssetBundle__LoadAssetAsync__0600003b",
+      "file_stem": "76228-0600003b",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76235,
+      "qualified_name": "IKA9nt.Encrypter.BridgeAssetBundleRequest::get_asset",
+      "assembly": "IKA9nt.Encrypter.dll",
+      "token": "0x6000042",
+      "va": "0x181433f50",
+      "file_offset": 21178192,
+      "label": "IKA9nt_Encrypter_BridgeAssetBundleRequest__get_asset__06000042",
+      "file_stem": "76235-06000042",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76370,
+      "qualified_name": "<>c__DisplayClass42_0::<LoadAssetAsync>b__0",
+      "assembly": "IKA9nt.Encrypter.dll",
+      "token": "0x60000c9",
+      "va": "0x181440160",
+      "file_offset": 21227872,
+      "label": "__c__DisplayClass42_0___LoadAssetAsync_b__0__060000c9",
+      "file_stem": "76370-060000c9",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76371,
+      "qualified_name": "<>c__DisplayClass42_0::<LoadAssetAsync>b__2",
+      "assembly": "IKA9nt.Encrypter.dll",
+      "token": "0x60000ca",
+      "va": "0x1814404a0",
+      "file_offset": 21228704,
+      "label": "__c__DisplayClass42_0___LoadAssetAsync_b__2__060000ca",
+      "file_stem": "76371-060000ca",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 76373,
+      "qualified_name": "<>c__DisplayClass42_1::<LoadAssetAsync>b__1",
+      "assembly": "IKA9nt.Encrypter.dll",
+      "token": "0x60000cc",
+      "va": "0x180a661e0",
+      "file_offset": 10897888,
+      "label": "__c__DisplayClass42_1___LoadAssetAsync_b__1__060000cc",
+      "file_stem": "76373-060000cc",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 78733,
+      "qualified_name": "UnityEngine.AssetBundle::LoadAssetAsync",
+      "assembly": "UnityEngine.AssetBundleModule.dll",
+      "token": "0x600000d",
+      "va": "0x181ef2610",
+      "file_offset": 32443920,
+      "label": "UnityEngine_AssetBundle__LoadAssetAsync__0600000d",
+      "file_stem": "78733-0600000d",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 78735,
+      "qualified_name": "UnityEngine.AssetBundle::LoadAssetAsync",
+      "assembly": "UnityEngine.AssetBundleModule.dll",
+      "token": "0x600000f",
+      "va": "0x181ef26f0",
+      "file_offset": 32444144,
+      "label": "UnityEngine_AssetBundle__LoadAssetAsync__0600000f",
+      "file_stem": "78735-0600000f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 78743,
+      "qualified_name": "UnityEngine.AssetBundle::LoadAssetAsync_Internal",
+      "assembly": "UnityEngine.AssetBundleModule.dll",
+      "token": "0x6000017",
+      "va": "0x181ef2d90",
+      "file_offset": 32445840,
+      "label": "UnityEngine_AssetBundle__LoadAssetAsync_Internal__06000017",
+      "file_stem": "78743-06000017",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 78750,
+      "qualified_name": "UnityEngine.AssetBundleRequest::get_asset",
+      "assembly": "UnityEngine.AssetBundleModule.dll",
+      "token": "0x600001e",
+      "va": "0x180688f90",
+      "file_offset": 6846352,
+      "label": "UnityEngine_AssetBundleRequest__get_asset__0600001e",
+      "file_stem": "78750-0600001e",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}
