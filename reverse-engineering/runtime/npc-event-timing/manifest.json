@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "scope": "controlled Unity runtime fixture, not natural gameplay",
+  "collected_utc": "2026-10-21T17:57:22.709388+00:00",
+  "pid": 44316,
+  "frida_session_id": "14617c82-adfd-4b77-95a0-b411b868ba18",
+  "session_closed": true,
+  "target_exited": true,
+  "unity": "2022.3.62f2",
+  "architecture": "x64",
+  "platform": "win32",
+  "fixture_root": "E:\\ManakaREA-RuntimeFixture",
+  "inputs": [
+    {
+      "relative_path": "GameAssembly.dll",
+      "original_path": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+      "fixture_path": "E:\\ManakaREA-RuntimeFixture\\GameAssembly.dll",
+      "sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "relative_path": "UnityPlayer.dll",
+      "original_path": "E:\\SecretFlasherManakaREA\\UnityPlayer.dll",
+      "fixture_path": "E:\\ManakaREA-RuntimeFixture\\UnityPlayer.dll",
+      "sha256": "43fb0aea1b80c74963dae88ec7fc1c3c1993d893ce94d12972000fcc9b653ad1"
+    },
+    {
+      "relative_path": "SecretFlasherManaka_Data/data.unity3d",
+      "original_path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\data.unity3d",
+      "fixture_path": "E:\\ManakaREA-RuntimeFixture\\SecretFlasherManaka_Data\\data.unity3d",
+      "sha256": "20781befb4cc42f898b65fe03f3d16c0a77b53aecac6ddc388460cfb710ae93a"
+    },
+    {
+      "relative_path": "SecretFlasherManaka_Data/il2cpp_data/Metadata/global-metadata.dat",
+      "original_path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
+      "fixture_path": "E:\\ManakaREA-RuntimeFixture\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
+      "sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8"
+    },
+    {
+      "relative_path": "BepInEx/interop/Assembly-CSharp.dll",
+      "original_path": "E:\\SecretFlasherManakaREA\\BepInEx\\interop\\Assembly-CSharp.dll",
+      "fixture_path": "E:\\ManakaREA-RuntimeFixture\\BepInEx\\interop\\Assembly-CSharp.dll",
+      "sha256": "4603f1163ae85ba6b7faafe5fba5da642a6de2d81a93e5b711f35f04663c7744"
+    },
+    {
+      "relative_path": "BepInEx/core/Il2CppInterop.Runtime.dll",
+      "original_path": "E:\\SecretFlasherManakaREA\\BepInEx\\core\\Il2CppInterop.Runtime.dll",
+      "fixture_path": "E:\\ManakaREA-RuntimeFixture\\BepInEx\\core\\Il2CppInterop.Runtime.dll",
+      "sha256": "14d2ee6cbe2af5d9448c72faa802c67dc1378192046bc348ea6709bd8909d00d"
+    }
+  ],
+  "sources": [
+    {
+      "path": "Probe.cs",
+      "sha256": "6fa8be055abf6f1ed5a067fcd3bd241436899bcaca790b83d4805bea2dece919"
+    },
+    {
+      "path": "observe.js",
+      "sha256": "88dc73e8ca10faaad4f760c7c04340ada0561de4d09d6ae75532881fbe8205b9"
+    },
+    {
+      "path": "ordering.js",
+      "sha256": "3097821d5eabd8a8a0f045519620e0fd5af68b3152a225d3310f320fcf66e737"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "fixture.jsonl.gz",
+      "sha256": "747654ad7cb9e0c593f20257b4c1a02cfb32cd59c7bdc2723e7cd29c4917864b",
+      "uncompressed_sha256": "df35d35b2287c0715c2efc28968423157198b67e27ab2800f346d870e9d3030f",
+      "uncompressed_bytes": 6545543
+    },
+    {
+      "path": "unity.log.gz",
+      "sha256": "dc612b4f838043d7b4de0717a5e48fce159148ed7e62005c03f690a110e5873f",
+      "uncompressed_sha256": "65f073209c3ba2ce6ac88b632cff41cf24f411a0405446b3d21cffb7a2cea80a",
+      "uncompressed_bytes": 16370
+    },
+    {
+      "path": "bepinex.log.gz",
+      "sha256": "f8dc186feef7f81ee5e43dec80885b8ff56829e7357e5507c998627d51c811f5",
+      "uncompressed_sha256": "3c0f4c2aed5f7fefaf270beed88eae32f1a0789f7ba892fe1c33826915d06afd",
+      "uncompressed_bytes": 1254
+    }
+  ],
+  "plugin_dll_sha256": "a9ea4c629f4ea96fc56842387fe4f15a32c3a8fbff4ee758b802c857ffcbe817",
+  "fixture_patch_count": 551,
+  "trials": 60,
+  "final_evidence_id": "ev_4da29e02d08075f58aad823d6eeedfa2594486632bcc5c12e38ef55c89f9260f",
+  "evidence_ids": [
+    "ev_4da29e02d08075f58aad823d6eeedfa2594486632bcc5c12e38ef55c89f9260f",
+    "ev_7e48c9c495fe64ceadb8e68aadd29659b8c6f8e6224c637587c69a0cf7595823",
+    "ev_a39347ad3c4958e1116646ec2f2e8c1b0dd73bd59f3eab977d7af1174a5f725a"
+  ],
+  "limits": [
+    "Original Animator, FPS and TimeStop handlers and Scheduler run with controlled minimal context.",
+    "Game MonoBehaviour lifecycle and root-motion callbacks are skipped; audio functions stubbed.",
+    "Hidden three-frame admission is reproduced by Driver, not native full NpcController.OnUpdate.",
+    "Standing female/male only; sitting, actual NPC factory, full gameplay and mods untested.",
+    "REA itself reports null artifact identity/environment; this manifest binds PID/module path and matching file hashes.",
+    "One bootstrap IntroAnimationController.OnStartFadeOut NullReference and one original missing Light script warning retained in logs. No trial-period exception was observed."
+  ]
+}

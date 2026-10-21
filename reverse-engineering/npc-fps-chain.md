@@ -1,5 +1,7 @@
 # NPC 距离调帧、手动 Animator.Update 与发现通知时钟
 
+本篇保留静态分析边界；后续已进行60次受控Unity运行验证，实际事件、广播、35/36帧延迟差异与重复停止风险见 [运行实测](npc-event-runtime.md)。
+
 已确认手动 `Animator.Update` 的浮点实参是**本次已获准调用中累计的 Time.deltaTime**，包含超过1/FPS阈值的余量；调用后才清零。距离调帧本身并非暂停动画，但上层隐藏NPC节流会减少被累计的帧，时间停止还分别影响Animator速度与发现通知计时。因此不能把目标FPS、动画事件片段时间或0.6延迟直接换算成一次确定的墙钟触发时刻。
 
 输入仍固定为 `E:\SecretFlasherManakaREA` 的原始构建，没有运行游戏。原生和metadata指纹沿用artifact-identity.json。报告区分原生/资源观察、结合Unity文档的解释与条件算例；不将算例或静态寄存器设置称为运行测量。

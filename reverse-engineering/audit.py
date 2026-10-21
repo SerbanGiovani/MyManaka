@@ -2,6 +2,8 @@
 import argparse
 from datetime import datetime, timezone
 import hashlib
+import gzip
+import runpy
 import json
 from pathlib import Path
 
@@ -31,7 +33,27 @@ def main():
     parser.add_argument("--write-index", action="store_true", help="Write the current verified artifact fingerprint index")
     args = parser.parse_args()
     identity = read(ROOT / "salt/evidence/artifact-identity.json")
+    runtime_dir = ROOT / "runtime/npc-event-timing"
+    runtime = read(runtime_dir / "manifest.json")
+    check(runtime["trials"] == 60 and runtime["session_closed"] and runtime["target_exited"], "Runtime matrix or cleanup incomplete")
+    for source in runtime["sources"]:
+        check(digest(runtime_dir / source["path"]) == source["sha256"], "Runtime instrument source differs")
+    for output in runtime["outputs"]:
+        path = runtime_dir / output["path"]
+        check(digest(path) == output["sha256"], "Runtime compressed log differs")
+        payload = gzip.decompress(path.read_bytes())
+        check(len(payload) == output["uncompressed_bytes"] and hashlib.sha256(payload).hexdigest() == output["uncompressed_sha256"], "Runtime raw log differs")
+    runtime_inputs = {r["relative_path"]: r["sha256"] for r in runtime["inputs"]}
+    check(runtime_inputs["GameAssembly.dll"] == identity["native_sha256"] and
+          runtime_inputs["SecretFlasherManaka_Data/il2cpp_data/Metadata/global-metadata.dat"] == identity["metadata_sha256"], "Runtime build identity differs")
+    runtime_analysis = runpy.run_path(str(runtime_dir / "analyze.py"))
+    measured = runtime_analysis["analyze"](runtime_analysis["read_log"](runtime_dir / "fixture.jsonl.gz"), read(runtime_dir / "rea-runtime.json"))
+    saved = read(runtime_dir / "results.json")
+    measured_inputs = saved.pop("inputs")
+    check(measured == saved, "Runtime measurement summary differs")
+    check(all(digest(runtime_dir / name) == fingerprint for name, fingerprint in measured_inputs.items()), "Runtime measurement input differs")
     asset = read(ROOT / "assets/resources-keydata.json")
+    check(runtime_inputs["SecretFlasherManaka_Data/data.unity3d"] == asset["source_sha256"], "Runtime resources differ")
     recovered = read(ROOT / "salt/evidence/recovered-crypto.json")
     decryption = read(ROOT / "salt/evidence/decryption.json")
     verification = read(ROOT / "salt/evidence/decryption-verification.json")
@@ -71,12 +93,26 @@ def main():
             key = record["evidence_id"]
             subject = record.get("subject") or {}
             subject_hash = (subject.get("digest") or {}).get("sha256")
-            check(subject_hash in allowed_subjects, f"Unexpected evidence subject in {path}")
+            if path == runtime_dir / "rea-runtime.json":
+                check(subject_hash is None and record["provider"]["id"] == "frida" and
+                      record["predicate_type"] == "rea.frida.instrumentation-observation", "Unexpected runtime Evidence provider/identity")
+                check(key in runtime["evidence_ids"] and record["parameters"]["session_id"] == runtime["frida_session_id"], "Unexpected runtime session")
+                result = record["normalized_result"]
+                check(not result["messages_truncated"], "Runtime Evidence truncated")
+                if record["operation"] == "load_frida_script":
+                    check(digest(runtime_dir / Path(result["source_path"]).name) == result["source_sha256"], "Frida source fingerprint differs")
+                else:
+                    check(record["operation"] == "frida_session_status" and result["pid"] == runtime["pid"] and result["state"] == "detached", "Runtime target/status differs")
+                    ready = next(m["payload"] for m in result["messages"] if m.get("payload", {}).get("kind") == "observer_ready")
+                    check(Path(ready["path"]) == Path(runtime["fixture_root"]) / "GameAssembly.dll", "Observed native module path differs")
+            else:
+                check(subject_hash in allowed_subjects, f"Unexpected evidence subject in {path}")
             canonical = json.dumps(record, sort_keys=True, ensure_ascii=False)
             if key in observations:
                 check(observations[key]["canonical"] == canonical, f"Conflicting copies of {key}")
             else:
                 observations[key] = {"canonical": canonical, "operation": record["operation"], "subject_sha256": subject_hash}
+    check(all(key in observations for key in runtime["evidence_ids"]), "Missing runtime observations")
     for key in ("password_map_initializer_evidence", "password_map_constructor_evidence", "password_decoder_evidence"):
         check(recovered[key] in observations, f"Missing password reconstruction evidence: {key}")
     run_paths = sorted((ROOT / "salt/evidence").glob("*/run.json"))
@@ -213,6 +249,10 @@ def main():
                 source_records.append(supplement["parser_source"])
         abi = supplements[-1]["iced_dispatch_abi_observations"]
         source_records.append({"path": abi["decoder_path"], "sha256": abi["decoder_sha256"]})
+        for entry in runtime["inputs"]:
+            for name in ("original_path", "fixture_path"):
+                source_records.append({"path": str(Path(entry[name])), "sha256": entry["sha256"]})
+        source_records.append({"path": str(Path(runtime["fixture_root"]) / "BepInEx/plugins/NpcEventFixture.dll"), "sha256": runtime["plugin_dll_sha256"]})
         for source in source_records:
             # Derived SQLite byte identity is not portable after rebuilding it;
             # reconstruction scripts validate its build identity and coordinates.
@@ -231,7 +271,7 @@ def main():
               "artifacts": artifacts, "inputs_checked": checked_inputs,
               "observations": [{"evidence_id": key, "operation": item["operation"], "subject_sha256": item["subject_sha256"]}
                                for key, item in sorted(observations.items())],
-              "scope": "File integrity and declared evidence consistency, not global source equivalence or runtime verification"}
+              "scope": "File integrity, declared evidence and bounded controlled runtime log consistency; not global source equivalence or natural gameplay verification"}
     if args.write_index:
         (ROOT / "evidence-index.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     else:

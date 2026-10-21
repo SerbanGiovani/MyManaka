@@ -21,6 +21,8 @@
 
 已继续补齐NPC距离调帧与手动Animator.Update：确认欧氏距离阈值、XMM1中的累计delta实参、近远启停/外层隐藏三倍数门，以及IsTimeStop的Animator速度缓存/归零和0.6通知剩余时间挂起。新增16次REA查询（12非空、4空Listing保留）并补充原始机器码1142条静态指令核对。见 [NPC调帧与发现通知时序](npc-fps-chain.md)、`salt/evidence/npc-fps-chain.json`、`salt/symbols/npc-fps-instructions.json`；条件算例不代表实际运行事件日志。
 
+已补充REA Frida受控运行验证：15条件×男女站立模型×2轮，共60次，原生动画事件、入队、原生回调及测试广播监听计数为56/56/56/56，无重复或已入队任务丢失。另4次事件前重复停止会把速度恢复缓存覆盖为0，观察窗口内未产生事件。还实测区分了自动动画下一帧首次扣减与手动动画同帧首次扣减，解释约0.600/0.583秒的通知间隔。见 [动画通知实测](npc-event-runtime.md) 与 `runtime/npc-event-timing/`。该夹具替代bootstrap、移动和音频上下文，完整玩法中的重复通知来源及外层调用顺序仍待验证。
+
 | 项目 | 结果 | 证据 |
 | --- | --- | --- |
 | 全局定位索引 | 76 程序集、10,508 类型、79,095 方法；70,948 个方法有原生地址 | `salt/symbols/index-summary.json` |

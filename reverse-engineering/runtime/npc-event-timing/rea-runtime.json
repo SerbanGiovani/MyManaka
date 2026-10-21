@@ -1,0 +1,4804 @@
+{
+  "schema_version": 1,
+  "selection": "Unmodified selected Evidence records; not an importable REA bundle",
+  "export_sha256": "b5ef518bc837a8f16cf29105fa38d31cc3c351310a64465589caa93918488617",
+  "session_id": "14617c82-adfd-4b77-95a0-b411b868ba18",
+  "records": [
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_4da29e02d08075f58aad823d6eeedfa2594486632bcc5c12e38ef55c89f9260f",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "device_id": "local",
+        "messages": [
+          {
+            "payload": {
+              "base": "0x7ffc05d50000",
+              "callbackRva": "0x41a870",
+              "eventRva": "0x41a730",
+              "kind": "observer_ready",
+              "module": "GameAssembly.dll",
+              "path": "E:\\ManakaREA-RuntimeFixture\\GameAssembly.dll"
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 1,
+                "receiver": "0x1d1ffebb600"
+              },
+              "frame": 109104,
+              "kind": "animation_event_native",
+              "real": 28.632211685180664,
+              "time": 24.28278160095215
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "action": "0x1d200496f30"
+              },
+              "frame": 109104,
+              "kind": "delay_scaled_native",
+              "real": 28.632299423217773,
+              "time": 24.28278160095215
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 1,
+                "receiver": "0x1d1ffebb600"
+              },
+              "frame": 109140,
+              "kind": "delayed_callback_native",
+              "real": 29.23211097717285,
+              "time": 24.882787704467773
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 2,
+                "receiver": "0x1d1ffebbe70"
+              },
+              "frame": 109411,
+              "kind": "animation_event_native",
+              "real": 33.748695373535156,
+              "time": 29.39950180053711
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 2,
+                "receiver": "0x1d1ffebbe70"
+              },
+              "frame": 109446,
+              "kind": "delayed_callback_native",
+              "real": 34.332210540771484,
+              "time": 29.982845306396484
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 3,
+                "receiver": "0x1d1ffebbb70"
+              },
+              "frame": 109866,
+              "kind": "animation_event_native",
+              "real": 41.33222198486328,
+              "time": 36.982933044433594
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 3,
+                "receiver": "0x1d1ffebbb70"
+              },
+              "frame": 109901,
+              "kind": "delayed_callback_native",
+              "real": 41.915679931640625,
+              "time": 37.5662727355957
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 4,
+                "receiver": "0x1d1ffebb360"
+              },
+              "frame": 110067,
+              "kind": "animation_event_native",
+              "real": 44.68238830566406,
+              "time": 40.33296585083008
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 4,
+                "receiver": "0x1d1ffebb360"
+              },
+              "frame": 110103,
+              "kind": "delayed_callback_native",
+              "real": 45.28227233886719,
+              "time": 40.9329719543457
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 5,
+                "receiver": "0x1d1ffebb270"
+              },
+              "frame": 110366,
+              "kind": "animation_event_native",
+              "real": 49.6656494140625,
+              "time": 45.31642150878906
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 5,
+                "receiver": "0x1d1ffebb270"
+              },
+              "frame": 110401,
+              "kind": "delayed_callback_native",
+              "real": 50.24898910522461,
+              "time": 45.89976501464844
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 6,
+                "receiver": "0x1d1ffebb180"
+              },
+              "frame": 110618,
+              "kind": "animation_event_native",
+              "real": 53.86585998535156,
+              "time": 49.5164680480957
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 6,
+                "receiver": "0x1d1ffebb180"
+              },
+              "frame": 110654,
+              "kind": "delayed_callback_native",
+              "real": 54.465816497802734,
+              "time": 50.11647415161133
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 7,
+                "receiver": "0x1d1ffebb090"
+              },
+              "frame": 110880,
+              "kind": "animation_event_native",
+              "real": 58.23267364501953,
+              "time": 53.88318634033203
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 7,
+                "receiver": "0x1d1ffebb090"
+              },
+              "frame": 110916,
+              "kind": "delayed_callback_native",
+              "real": 58.832679748535156,
+              "time": 54.48325729370117
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 8,
+                "receiver": "0x1cf8640db40"
+              },
+              "frame": 111151,
+              "kind": "animation_event_native",
+              "real": 62.749351501464844,
+              "time": 58.39997863769531
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 8,
+                "receiver": "0x1cf8640db40"
+              },
+              "frame": 111187,
+              "kind": "delayed_callback_native",
+              "real": 63.349178314208984,
+              "time": 58.99998474121094
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 9,
+                "receiver": "0x1cf8640d1e0"
+              },
+              "frame": 111482,
+              "kind": "animation_event_native",
+              "real": 68.26611328125,
+              "time": 63.91682815551758
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 9,
+                "receiver": "0x1cf8640d1e0"
+              },
+              "frame": 111518,
+              "kind": "delayed_callback_native",
+              "real": 68.86605072021484,
+              "time": 64.51683807373047
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 10,
+                "receiver": "0x1cf8640d0f0"
+              },
+              "frame": 111693,
+              "kind": "animation_event_native",
+              "real": 71.78300476074219,
+              "time": 67.43354034423828
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 10,
+                "receiver": "0x1cf8640d0f0"
+              },
+              "frame": 111790,
+              "kind": "delayed_callback_native",
+              "real": 73.39965057373047,
+              "time": 69.05022430419922
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 11,
+                "receiver": "0x1cf86461db0"
+              },
+              "frame": 111964,
+              "kind": "animation_event_native",
+              "real": 76.29983520507812,
+              "time": 71.9502944946289
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 11,
+                "receiver": "0x1cf86461db0"
+              },
+              "frame": 112061,
+              "kind": "delayed_callback_native",
+              "real": 77.91632080078125,
+              "time": 73.56697845458984
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 12,
+                "receiver": "0x1cf86461900"
+              },
+              "frame": 112301,
+              "kind": "animation_event_native",
+              "real": 81.91645812988281,
+              "time": 77.56705474853516
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 12,
+                "receiver": "0x1cf86461900"
+              },
+              "frame": 112336,
+              "kind": "delayed_callback_native",
+              "real": 82.49971008300781,
+              "time": 78.150390625
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 13,
+                "receiver": "0x1cf86461450"
+              },
+              "frame": 112506,
+              "kind": "animation_event_native",
+              "real": 85.33332824707031,
+              "time": 80.9837646484375
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 13,
+                "receiver": "0x1cf86461450"
+              },
+              "frame": 112603,
+              "kind": "delayed_callback_native",
+              "real": 86.94982147216797,
+              "time": 82.60044860839844
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 14,
+                "receiver": "0x1cf86498750"
+              },
+              "frame": 113087,
+              "kind": "animation_event_native",
+              "real": 95.01683044433594,
+              "time": 90.66736602783203
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 14,
+                "receiver": "0x1cf86498750"
+              },
+              "frame": 113123,
+              "kind": "delayed_callback_native",
+              "real": 95.61676788330078,
+              "time": 91.26737213134766
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 15,
+                "receiver": "0x1cf864982a0"
+              },
+              "frame": 113302,
+              "kind": "animation_event_native",
+              "real": 98.60017395019531,
+              "time": 94.25074005126953
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 15,
+                "receiver": "0x1cf864982a0"
+              },
+              "frame": 113338,
+              "kind": "delayed_callback_native",
+              "real": 99.20011138916016,
+              "time": 94.85074615478516
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 16,
+                "receiver": "0x1cf864aede0"
+              },
+              "frame": 113596,
+              "kind": "animation_event_native",
+              "real": 103.50006866455078,
+              "time": 99.15078735351562
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 16,
+                "receiver": "0x1cf864aede0"
+              },
+              "frame": 113631,
+              "kind": "delayed_callback_native",
+              "real": 104.08340454101562,
+              "time": 99.734130859375
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 17,
+                "receiver": "0x1cf864ae900"
+              },
+              "frame": 113991,
+              "kind": "animation_event_native",
+              "real": 110.08354949951172,
+              "time": 105.73429870605469
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 17,
+                "receiver": "0x1cf864ae900"
+              },
+              "frame": 114026,
+              "kind": "delayed_callback_native",
+              "real": 110.66686248779297,
+              "time": 106.31764221191406
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 18,
+                "receiver": "0x1cf864ae3c0"
+              },
+              "frame": 114265,
+              "kind": "animation_event_native",
+              "real": 114.65047454833984,
+              "time": 110.30101776123047
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 18,
+                "receiver": "0x1cf864ae3c0"
+              },
+              "frame": 114301,
+              "kind": "delayed_callback_native",
+              "real": 115.2503433227539,
+              "time": 110.90103149414062
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 19,
+                "receiver": "0x1cf864c1de0"
+              },
+              "frame": 114551,
+              "kind": "animation_event_native",
+              "real": 119.41698455810547,
+              "time": 115.06774139404297
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 19,
+                "receiver": "0x1cf864c1de0"
+              },
+              "frame": 114586,
+              "kind": "delayed_callback_native",
+              "real": 120.00045013427734,
+              "time": 115.65107727050781
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 20,
+                "receiver": "0x1cf864c1930"
+              },
+              "frame": 114816,
+              "kind": "animation_event_native",
+              "real": 123.83380126953125,
+              "time": 119.48448944091797
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 20,
+                "receiver": "0x1cf864c1930"
+              },
+              "frame": 114852,
+              "kind": "delayed_callback_native",
+              "real": 124.43395233154297,
+              "time": 120.08450317382812
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 21,
+                "receiver": "0x1cf864c1450"
+              },
+              "frame": 115076,
+              "kind": "animation_event_native",
+              "real": 128.18638610839844,
+              "time": 123.83702850341797
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 21,
+                "receiver": "0x1cf864c1450"
+              },
+              "frame": 115112,
+              "kind": "delayed_callback_native",
+              "real": 128.7862548828125,
+              "time": 124.4370346069336
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 115171,
+              "kind": "ordering_ready",
+              "time": 125.4203872680664
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 22,
+                "receiver": "0x1cf864d6f90"
+              },
+              "frame": 115347,
+              "kind": "animation_event_native",
+              "real": 132.7032012939453,
+              "time": 128.353759765625
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 115348,
+              "kind": "scheduler_begin",
+              "time": 128.37042236328125
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5833324193954468,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016667600721120834,
+                "model": "0x1cf864d6bd0"
+              },
+              "frame": 115348,
+              "kind": "countdown_step",
+              "time": 128.37042236328125
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 115348,
+              "kind": "scheduler_end",
+              "time": 128.37042236328125
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666664242744446,
+                "before": 0.5833324193954468,
+                "call": 2,
+                "dt": 0.016666000708937645,
+                "model": "0x1cf864d6bd0"
+              },
+              "frame": 115349,
+              "kind": "countdown_step",
+              "time": 128.3870849609375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 22,
+                "receiver": "0x1cf864d6f90"
+              },
+              "frame": 115383,
+              "kind": "delayed_callback_native",
+              "real": 133.30319213867188,
+              "time": 128.95376586914062
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -5.895271897315979e-06,
+                "before": 0.016660405322909355,
+                "call": 36,
+                "dt": 0.01666630059480667,
+                "model": "0x1cf864d6bd0"
+              },
+              "frame": 115383,
+              "kind": "countdown_step",
+              "time": 128.95376586914062
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 115383,
+              "kind": "scheduler_end",
+              "time": 128.95376586914062
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 23,
+                "receiver": "0x1cf864d6ae0"
+              },
+              "frame": 115678,
+              "kind": "animation_event_native",
+              "real": 138.22000122070312,
+              "time": 133.8704833984375
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 115679,
+              "kind": "scheduler_begin",
+              "time": 133.88714599609375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5833330154418945,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016666999086737633,
+                "model": "0x1cf864d66f0"
+              },
+              "frame": 115679,
+              "kind": "countdown_step",
+              "time": 133.88714599609375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 115679,
+              "kind": "scheduler_end",
+              "time": 133.88714599609375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666662454605103,
+                "before": 0.5833330154418945,
+                "call": 2,
+                "dt": 0.016666799783706665,
+                "model": "0x1cf864d66f0"
+              },
+              "frame": 115680,
+              "kind": "countdown_step",
+              "time": 133.90380859375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 23,
+                "receiver": "0x1cf864d6ae0"
+              },
+              "frame": 115714,
+              "kind": "delayed_callback_native",
+              "real": 138.81996154785156,
+              "time": 134.47048950195312
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -6.243586540222168e-06,
+                "before": 0.016660556197166443,
+                "call": 36,
+                "dt": 0.016666799783706665,
+                "model": "0x1cf864d66f0"
+              },
+              "frame": 115714,
+              "kind": "countdown_step",
+              "time": 134.47048950195312
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 115714,
+              "kind": "scheduler_end",
+              "time": 134.47048950195312
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 24,
+                "receiver": "0x1cf864d6600"
+              },
+              "frame": 115889,
+              "kind": "animation_event_native",
+              "real": 141.73667907714844,
+              "time": 137.38720703125
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 115890,
+              "kind": "scheduler_begin",
+              "time": 137.40386962890625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.6000000238418579,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016666699200868607,
+                "model": "0x1cf864d61b0"
+              },
+              "frame": 115890,
+              "kind": "countdown_step",
+              "time": 137.40386962890625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 115890,
+              "kind": "scheduler_end",
+              "time": 137.40386962890625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.6000000238418579,
+                "before": 0.6000000238418579,
+                "call": 2,
+                "dt": 0.016666699200868607,
+                "model": "0x1cf864d61b0"
+              },
+              "frame": 115891,
+              "kind": "countdown_step",
+              "time": 137.42054748535156
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.566666305065155,
+                "before": 0.583332896232605,
+                "call": 63,
+                "dt": 0.016666600480675697,
+                "model": "0x1cf864d61b0"
+              },
+              "frame": 115952,
+              "kind": "countdown_step",
+              "time": 138.4372100830078
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 24,
+                "receiver": "0x1cf864d6600"
+              },
+              "frame": 115986,
+              "kind": "delayed_callback_native",
+              "real": 143.353271484375,
+              "time": 139.00389099121094
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -5.681067705154419e-06,
+                "before": 0.01666111871600151,
+                "call": 97,
+                "dt": 0.016666799783706665,
+                "model": "0x1cf864d61b0"
+              },
+              "frame": 115986,
+              "kind": "countdown_step",
+              "time": 139.00389099121094
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 115986,
+              "kind": "scheduler_end",
+              "time": 139.00389099121094
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 25,
+                "receiver": "0x1cf864d6090"
+              },
+              "frame": 116160,
+              "kind": "animation_event_native",
+              "real": 146.25343322753906,
+              "time": 141.90391540527344
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 116161,
+              "kind": "scheduler_begin",
+              "time": 141.92059326171875
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.6000000238418579,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016666699200868607,
+                "model": "0x1cf864e3bd0"
+              },
+              "frame": 116161,
+              "kind": "countdown_step",
+              "time": 141.92059326171875
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 116161,
+              "kind": "scheduler_end",
+              "time": 141.92059326171875
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.6000000238418579,
+                "before": 0.6000000238418579,
+                "call": 2,
+                "dt": 0.016666999086737633,
+                "model": "0x1cf864e3bd0"
+              },
+              "frame": 116162,
+              "kind": "countdown_step",
+              "time": 141.937255859375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.566668689250946,
+                "before": 0.5833353996276855,
+                "call": 62,
+                "dt": 0.016666699200868607,
+                "model": "0x1cf864e3bd0"
+              },
+              "frame": 116222,
+              "kind": "countdown_step",
+              "time": 142.93727111816406
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 25,
+                "receiver": "0x1cf864d6090"
+              },
+              "frame": 116256,
+              "kind": "delayed_callback_native",
+              "real": 147.85336303710938,
+              "time": 143.50393676757812
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -3.0975788831710815e-06,
+                "before": 0.01666400209069252,
+                "call": 96,
+                "dt": 0.01666709966957569,
+                "model": "0x1cf864e3bd0"
+              },
+              "frame": 116256,
+              "kind": "countdown_step",
+              "time": 143.50393676757812
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 116256,
+              "kind": "scheduler_end",
+              "time": 143.50393676757812
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 26,
+                "receiver": "0x1cf864e3ae0"
+              },
+              "frame": 116484,
+              "kind": "animation_event_native",
+              "real": 151.6533203125,
+              "time": 147.30398559570312
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 116484,
+              "kind": "scheduler_begin",
+              "time": 147.30398559570312
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5833328366279602,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.01666720025241375,
+                "model": "0x1cf864e3720"
+              },
+              "frame": 116484,
+              "kind": "countdown_step",
+              "time": 147.30398559570312
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 116484,
+              "kind": "scheduler_end",
+              "time": 147.30398559570312
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 116485,
+              "kind": "scheduler_begin",
+              "time": 147.32064819335938
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666660070419312,
+                "before": 0.5833328366279602,
+                "call": 2,
+                "dt": 0.016666799783706665,
+                "model": "0x1cf864e3720"
+              },
+              "frame": 116485,
+              "kind": "countdown_step",
+              "time": 147.32064819335938
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 116485,
+              "kind": "scheduler_end",
+              "time": 147.32064819335938
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 26,
+                "receiver": "0x1cf864e3ae0"
+              },
+              "frame": 116519,
+              "kind": "delayed_callback_native",
+              "real": 152.2366943359375,
+              "time": 147.8873291015625
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -7.7076256275177e-06,
+                "before": 0.016659092158079147,
+                "call": 36,
+                "dt": 0.016666799783706665,
+                "model": "0x1cf864e3720"
+              },
+              "frame": 116519,
+              "kind": "countdown_step",
+              "time": 147.8873291015625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 116519,
+              "kind": "scheduler_end",
+              "time": 147.8873291015625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 27,
+                "receiver": "0x1cf864e3630"
+              },
+              "frame": 116702,
+              "kind": "animation_event_native",
+              "real": 155.28668212890625,
+              "time": 150.93734741210938
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 116703,
+              "kind": "scheduler_begin",
+              "time": 150.9540252685547
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.6000000238418579,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016666900366544724,
+                "model": "0x1cf864e31b0"
+              },
+              "frame": 116703,
+              "kind": "countdown_step",
+              "time": 150.9540252685547
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 116703,
+              "kind": "scheduler_end",
+              "time": 150.9540252685547
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.6000000238418579,
+                "before": 0.6000000238418579,
+                "call": 2,
+                "dt": 0.016666900366544724,
+                "model": "0x1cf864e31b0"
+              },
+              "frame": 116704,
+              "kind": "countdown_step",
+              "time": 150.97068786621094
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.566666841506958,
+                "before": 0.5833332538604736,
+                "call": 62,
+                "dt": 0.01666639931499958,
+                "model": "0x1cf864e31b0"
+              },
+              "frame": 116764,
+              "kind": "countdown_step",
+              "time": 151.97068786621094
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 27,
+                "receiver": "0x1cf864e3630"
+              },
+              "frame": 116798,
+              "kind": "delayed_callback_native",
+              "real": 156.8866729736328,
+              "time": 152.53736877441406
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -4.734843969345093e-06,
+                "before": 0.016662264242768288,
+                "call": 96,
+                "dt": 0.016666999086737633,
+                "model": "0x1cf864e31b0"
+              },
+              "frame": 116798,
+              "kind": "countdown_step",
+              "time": 152.53736877441406
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 116798,
+              "kind": "scheduler_end",
+              "time": 152.53736877441406
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 28,
+                "receiver": "0x1cf864e7c60"
+              },
+              "frame": 117265,
+              "kind": "animation_event_native",
+              "real": 164.67254638671875,
+              "time": 160.3229217529297
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 117266,
+              "kind": "scheduler_begin",
+              "time": 160.339599609375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.583333432674408,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016666600480675697,
+                "model": "0x1cf864e78a0"
+              },
+              "frame": 117266,
+              "kind": "countdown_step",
+              "time": 160.339599609375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 117266,
+              "kind": "scheduler_end",
+              "time": 160.339599609375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666659474372864,
+                "before": 0.583333432674408,
+                "call": 2,
+                "dt": 0.016667500138282776,
+                "model": "0x1cf864e78a0"
+              },
+              "frame": 117267,
+              "kind": "countdown_step",
+              "time": 160.35626220703125
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 28,
+                "receiver": "0x1cf864e7c60"
+              },
+              "frame": 117301,
+              "kind": "delayed_callback_native",
+              "real": 165.2722625732422,
+              "time": 160.92294311523438
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -7.497146725654602e-06,
+                "before": 0.01665940321981907,
+                "call": 36,
+                "dt": 0.016666900366544724,
+                "model": "0x1cf864e78a0"
+              },
+              "frame": 117301,
+              "kind": "countdown_step",
+              "time": 160.92294311523438
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 117301,
+              "kind": "scheduler_end",
+              "time": 160.92294311523438
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 29,
+                "receiver": "0x1cf864e77b0"
+              },
+              "frame": 117532,
+              "kind": "animation_event_native",
+              "real": 169.12503051757812,
+              "time": 164.77560424804688
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 117533,
+              "kind": "scheduler_begin",
+              "time": 164.7922821044922
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.583332896232605,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.01666709966957569,
+                "model": "0x1cf864e7360"
+              },
+              "frame": 117533,
+              "kind": "countdown_step",
+              "time": 164.7922821044922
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 117533,
+              "kind": "scheduler_end",
+              "time": 164.7922821044922
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666661858558655,
+                "before": 0.583332896232605,
+                "call": 2,
+                "dt": 0.016666699200868607,
+                "model": "0x1cf864e7360"
+              },
+              "frame": 117534,
+              "kind": "countdown_step",
+              "time": 164.80894470214844
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 29,
+                "receiver": "0x1cf864e77b0"
+              },
+              "frame": 117568,
+              "kind": "delayed_callback_native",
+              "real": 169.72496032714844,
+              "time": 165.3756103515625
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -5.362555384635925e-06,
+                "before": 0.016661938279867172,
+                "call": 36,
+                "dt": 0.016667300835251808,
+                "model": "0x1cf864e7360"
+              },
+              "frame": 117568,
+              "kind": "countdown_step",
+              "time": 165.3756103515625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 117568,
+              "kind": "scheduler_end",
+              "time": 165.3756103515625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 30,
+                "receiver": "0x1cf864e7210"
+              },
+              "frame": 117839,
+              "kind": "animation_event_native",
+              "real": 174.24159240722656,
+              "time": 169.892333984375
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 117839,
+              "kind": "scheduler_begin",
+              "time": 169.892333984375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5833333134651184,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016666699200868607,
+                "model": "0x1cf864eae40"
+              },
+              "frame": 117839,
+              "kind": "countdown_step",
+              "time": 169.892333984375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 117839,
+              "kind": "scheduler_end",
+              "time": 169.892333984375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 117840,
+              "kind": "scheduler_begin",
+              "time": 169.90899658203125
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666664838790894,
+                "before": 0.5833333134651184,
+                "call": 2,
+                "dt": 0.016666799783706665,
+                "model": "0x1cf864eae40"
+              },
+              "frame": 117840,
+              "kind": "countdown_step",
+              "time": 169.90899658203125
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 117840,
+              "kind": "scheduler_end",
+              "time": 169.90899658203125
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 30,
+                "receiver": "0x1cf864e7210"
+              },
+              "frame": 117874,
+              "kind": "delayed_callback_native",
+              "real": 174.8250274658203,
+              "time": 170.47567749023438
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -9.104609489440918e-06,
+                "before": 0.016657695174217224,
+                "call": 36,
+                "dt": 0.016666799783706665,
+                "model": "0x1cf864eae40"
+              },
+              "frame": 117874,
+              "kind": "countdown_step",
+              "time": 170.47567749023438
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 117874,
+              "kind": "scheduler_end",
+              "time": 170.47567749023438
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 31,
+                "receiver": "0x1cf864ead50"
+              },
+              "frame": 118296,
+              "kind": "animation_event_native",
+              "real": 181.85845947265625,
+              "time": 177.50918579101562
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 118296,
+              "kind": "scheduler_begin",
+              "time": 177.50918579101562
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5833331346511841,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016666900366544724,
+                "model": "0x1cf864ea8a0"
+              },
+              "frame": 118296,
+              "kind": "countdown_step",
+              "time": 177.50918579101562
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 118296,
+              "kind": "scheduler_end",
+              "time": 177.50918579101562
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 118297,
+              "kind": "scheduler_begin",
+              "time": 177.52586364746094
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666659474372864,
+                "before": 0.5833331346511841,
+                "call": 2,
+                "dt": 0.01666720025241375,
+                "model": "0x1cf864ea8a0"
+              },
+              "frame": 118297,
+              "kind": "countdown_step",
+              "time": 177.52586364746094
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 118297,
+              "kind": "scheduler_end",
+              "time": 177.52586364746094
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 31,
+                "receiver": "0x1cf864ead50"
+              },
+              "frame": 118331,
+              "kind": "delayed_callback_native",
+              "real": 182.44187927246094,
+              "time": 178.092529296875
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -6.534159183502197e-06,
+                "before": 0.016659066081047058,
+                "call": 36,
+                "dt": 0.01666560024023056,
+                "model": "0x1cf864ea8a0"
+              },
+              "frame": 118331,
+              "kind": "countdown_step",
+              "time": 178.092529296875
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 118331,
+              "kind": "scheduler_end",
+              "time": 178.092529296875
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 32,
+                "receiver": "0x1cf864ea7b0"
+              },
+              "frame": 118495,
+              "kind": "animation_event_native",
+              "real": 185.17539978027344,
+              "time": 180.82589721679688
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 118496,
+              "kind": "scheduler_begin",
+              "time": 180.8425750732422
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.583332896232605,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.01666709966957569,
+                "model": "0x1cf864ea3c0"
+              },
+              "frame": 118496,
+              "kind": "countdown_step",
+              "time": 180.8425750732422
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 118496,
+              "kind": "scheduler_end",
+              "time": 180.8425750732422
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666674971580505,
+                "before": 0.583332896232605,
+                "call": 2,
+                "dt": 0.016665399074554443,
+                "model": "0x1cf864ea3c0"
+              },
+              "frame": 118497,
+              "kind": "countdown_step",
+              "time": 180.85923767089844
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 32,
+                "receiver": "0x1cf864ea7b0"
+              },
+              "frame": 118531,
+              "kind": "delayed_callback_native",
+              "real": 185.77528381347656,
+              "time": 181.4259033203125
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -8.31112265586853e-06,
+                "before": 0.016658388078212738,
+                "call": 36,
+                "dt": 0.016666699200868607,
+                "model": "0x1cf864ea3c0"
+              },
+              "frame": 118531,
+              "kind": "countdown_step",
+              "time": 181.4259033203125
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 118531,
+              "kind": "scheduler_end",
+              "time": 181.4259033203125
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 33,
+                "receiver": "0x1cf864ea270"
+              },
+              "frame": 118794,
+              "kind": "animation_event_native",
+              "real": 190.15858459472656,
+              "time": 185.80929565429688
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 118794,
+              "kind": "scheduler_begin",
+              "time": 185.80929565429688
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.583332896232605,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.01666709966957569,
+                "model": "0x1cf864fae10"
+              },
+              "frame": 118794,
+              "kind": "countdown_step",
+              "time": 185.80929565429688
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 118794,
+              "kind": "scheduler_end",
+              "time": 185.80929565429688
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 118795,
+              "kind": "scheduler_begin",
+              "time": 185.82595825195312
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666643977165222,
+                "before": 0.583332896232605,
+                "call": 2,
+                "dt": 0.016668500378727913,
+                "model": "0x1cf864fae10"
+              },
+              "frame": 118795,
+              "kind": "countdown_step",
+              "time": 185.82595825195312
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 118795,
+              "kind": "scheduler_end",
+              "time": 185.82595825195312
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 33,
+                "receiver": "0x1cf864ea270"
+              },
+              "frame": 118829,
+              "kind": "delayed_callback_native",
+              "real": 190.74197387695312,
+              "time": 186.39263916015625
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -1.0855495929718018e-05,
+                "before": 0.016656143590807915,
+                "call": 36,
+                "dt": 0.016666999086737633,
+                "model": "0x1cf864fae10"
+              },
+              "frame": 118829,
+              "kind": "countdown_step",
+              "time": 186.39263916015625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 118829,
+              "kind": "scheduler_end",
+              "time": 186.39263916015625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 34,
+                "receiver": "0x1cf864fad20"
+              },
+              "frame": 119046,
+              "kind": "animation_event_native",
+              "real": 194.3592071533203,
+              "time": 190.00950622558594
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 119047,
+              "kind": "scheduler_begin",
+              "time": 190.0261688232422
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5833330154418945,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016666999086737633,
+                "model": "0x1cf864fa480"
+              },
+              "frame": 119047,
+              "kind": "countdown_step",
+              "time": 190.0261688232422
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 119047,
+              "kind": "scheduler_end",
+              "time": 190.0261688232422
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666660070419312,
+                "before": 0.5833330154418945,
+                "call": 2,
+                "dt": 0.016666999086737633,
+                "model": "0x1cf864fa480"
+              },
+              "frame": 119048,
+              "kind": "countdown_step",
+              "time": 190.0428466796875
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 34,
+                "receiver": "0x1cf864fad20"
+              },
+              "frame": 119082,
+              "kind": "delayed_callback_native",
+              "real": 194.95904541015625,
+              "time": 190.60963439941406
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -0.00013596005737781525,
+                "before": 0.01653083972632885,
+                "call": 36,
+                "dt": 0.016666799783706665,
+                "model": "0x1cf864fa480"
+              },
+              "frame": 119082,
+              "kind": "countdown_step",
+              "time": 190.60963439941406
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 119082,
+              "kind": "scheduler_end",
+              "time": 190.60963439941406
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 35,
+                "receiver": "0x1cf864fa390"
+              },
+              "frame": 119308,
+              "kind": "animation_event_native",
+              "real": 198.72621154785156,
+              "time": 194.37657165527344
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 119309,
+              "kind": "scheduler_begin",
+              "time": 194.3932342529297
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5833335518836975,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.01666649989783764,
+                "model": "0x1cf86508fc0"
+              },
+              "frame": 119309,
+              "kind": "countdown_step",
+              "time": 194.3932342529297
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 119309,
+              "kind": "scheduler_end",
+              "time": 194.3932342529297
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666666626930237,
+                "before": 0.5833335518836975,
+                "call": 2,
+                "dt": 0.016666900366544724,
+                "model": "0x1cf86508fc0"
+              },
+              "frame": 119310,
+              "kind": "countdown_step",
+              "time": 194.40989685058594
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 35,
+                "receiver": "0x1cf864fa390"
+              },
+              "frame": 119344,
+              "kind": "delayed_callback_native",
+              "real": 199.32608032226562,
+              "time": 194.97657775878906
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -1.2855976819992065e-05,
+                "before": 0.01665414310991764,
+                "call": 36,
+                "dt": 0.016666999086737633,
+                "model": "0x1cf86508fc0"
+              },
+              "frame": 119344,
+              "kind": "countdown_step",
+              "time": 194.97657775878906
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 119344,
+              "kind": "scheduler_end",
+              "time": 194.97657775878906
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 36,
+                "receiver": "0x1cf86508ed0"
+              },
+              "frame": 119579,
+              "kind": "animation_event_native",
+              "real": 203.24371337890625,
+              "time": 198.8935546875
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 119580,
+              "kind": "scheduler_begin",
+              "time": 198.91021728515625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.583332896232605,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.01666709966957569,
+                "model": "0x1cf86508b10"
+              },
+              "frame": 119580,
+              "kind": "countdown_step",
+              "time": 198.91021728515625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 119580,
+              "kind": "scheduler_end",
+              "time": 198.91021728515625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666660070419312,
+                "before": 0.583332896232605,
+                "call": 2,
+                "dt": 0.016666900366544724,
+                "model": "0x1cf86508b10"
+              },
+              "frame": 119581,
+              "kind": "countdown_step",
+              "time": 198.92689514160156
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 36,
+                "receiver": "0x1cf86508ed0"
+              },
+              "frame": 119615,
+              "kind": "delayed_callback_native",
+              "real": 203.843017578125,
+              "time": 199.49359130859375
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -3.1327828764915466e-05,
+                "before": 0.01663537137210369,
+                "call": 36,
+                "dt": 0.016666699200868607,
+                "model": "0x1cf86508b10"
+              },
+              "frame": 119615,
+              "kind": "countdown_step",
+              "time": 199.49359130859375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 119615,
+              "kind": "scheduler_end",
+              "time": 199.49359130859375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 37,
+                "receiver": "0x1cf86508a20"
+              },
+              "frame": 119910,
+              "kind": "animation_event_native",
+              "real": 208.7613067626953,
+              "time": 204.4117889404297
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 119911,
+              "kind": "scheduler_begin",
+              "time": 204.42845153808594
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5833332538604736,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016666799783706665,
+                "model": "0x1cf86508660"
+              },
+              "frame": 119911,
+              "kind": "countdown_step",
+              "time": 204.42845153808594
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 119911,
+              "kind": "scheduler_end",
+              "time": 204.42845153808594
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666665434837341,
+                "before": 0.5833332538604736,
+                "call": 2,
+                "dt": 0.016666699200868607,
+                "model": "0x1cf86508660"
+              },
+              "frame": 119912,
+              "kind": "countdown_step",
+              "time": 204.44512939453125
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 37,
+                "receiver": "0x1cf86508a20"
+              },
+              "frame": 119946,
+              "kind": "delayed_callback_native",
+              "real": 209.36111450195312,
+              "time": 205.0117950439453
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -5.934387445449829e-06,
+                "before": 0.016660865396261215,
+                "call": 36,
+                "dt": 0.016666799783706665,
+                "model": "0x1cf86508660"
+              },
+              "frame": 119946,
+              "kind": "countdown_step",
+              "time": 205.0117950439453
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 119946,
+              "kind": "scheduler_end",
+              "time": 205.0117950439453
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 38,
+                "receiver": "0x1cf86508570"
+              },
+              "frame": 120121,
+              "kind": "animation_event_native",
+              "real": 212.27798461914062,
+              "time": 207.92849731445312
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 120122,
+              "kind": "scheduler_begin",
+              "time": 207.94515991210938
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.6000000238418579,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016666699200868607,
+                "model": "0x1cf865081b0"
+              },
+              "frame": 120122,
+              "kind": "countdown_step",
+              "time": 207.94515991210938
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 120122,
+              "kind": "scheduler_end",
+              "time": 207.94515991210938
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.6000000238418579,
+                "before": 0.6000000238418579,
+                "call": 2,
+                "dt": 0.016666900366544724,
+                "model": "0x1cf865081b0"
+              },
+              "frame": 120123,
+              "kind": "countdown_step",
+              "time": 207.96182250976562
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666661262512207,
+                "before": 0.583332896232605,
+                "call": 62,
+                "dt": 0.016666799783706665,
+                "model": "0x1cf865081b0"
+              },
+              "frame": 120183,
+              "kind": "countdown_step",
+              "time": 208.9618377685547
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 38,
+                "receiver": "0x1cf86508570"
+              },
+              "frame": 120217,
+              "kind": "delayed_callback_native",
+              "real": 213.87779235839844,
+              "time": 209.52850341796875
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -6.387010216712952e-06,
+                "before": 0.016660112887620926,
+                "call": 96,
+                "dt": 0.01666649989783764,
+                "model": "0x1cf865081b0"
+              },
+              "frame": 120217,
+              "kind": "countdown_step",
+              "time": 209.52850341796875
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 120217,
+              "kind": "scheduler_end",
+              "time": 209.52850341796875
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 39,
+                "receiver": "0x1cf865080c0"
+              },
+              "frame": 120392,
+              "kind": "animation_event_native",
+              "real": 216.79457092285156,
+              "time": 212.44525146484375
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 120393,
+              "kind": "scheduler_begin",
+              "time": 212.46192932128906
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.6000000238418579,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016666699200868607,
+                "model": "0x1cf86511cf0"
+              },
+              "frame": 120393,
+              "kind": "countdown_step",
+              "time": 212.46192932128906
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 120393,
+              "kind": "scheduler_end",
+              "time": 212.46192932128906
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.6000000238418579,
+                "before": 0.6000000238418579,
+                "call": 2,
+                "dt": 0.016666900366544724,
+                "model": "0x1cf86511cf0"
+              },
+              "frame": 120394,
+              "kind": "countdown_step",
+              "time": 212.4785919189453
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666664838790894,
+                "before": 0.5833332538604736,
+                "call": 63,
+                "dt": 0.016666799783706665,
+                "model": "0x1cf86511cf0"
+              },
+              "frame": 120455,
+              "kind": "countdown_step",
+              "time": 213.49526977539062
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 39,
+                "receiver": "0x1cf865080c0"
+              },
+              "frame": 120489,
+              "kind": "delayed_callback_native",
+              "real": 218.411376953125,
+              "time": 214.0619659423828
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -3.688782453536987e-05,
+                "before": 0.01663021184504032,
+                "call": 97,
+                "dt": 0.01666709966957569,
+                "model": "0x1cf86511cf0"
+              },
+              "frame": 120489,
+              "kind": "countdown_step",
+              "time": 214.0619659423828
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 120489,
+              "kind": "scheduler_end",
+              "time": 214.0619659423828
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 40,
+                "receiver": "0x1cf86511c00"
+              },
+              "frame": 120729,
+              "kind": "animation_event_native",
+              "real": 222.41104125976562,
+              "time": 218.06201171875
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 120729,
+              "kind": "scheduler_begin",
+              "time": 218.06201171875
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5833336114883423,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.01666639931499958,
+                "model": "0x1cf86511840"
+              },
+              "frame": 120729,
+              "kind": "countdown_step",
+              "time": 218.06201171875
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 120729,
+              "kind": "scheduler_end",
+              "time": 218.06201171875
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 120730,
+              "kind": "scheduler_begin",
+              "time": 218.07867431640625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666666030883789,
+                "before": 0.5833336114883423,
+                "call": 2,
+                "dt": 0.016666999086737633,
+                "model": "0x1cf86511840"
+              },
+              "frame": 120730,
+              "kind": "countdown_step",
+              "time": 218.07867431640625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 120730,
+              "kind": "scheduler_end",
+              "time": 218.07867431640625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 40,
+                "receiver": "0x1cf86511c00"
+              },
+              "frame": 120764,
+              "kind": "delayed_callback_native",
+              "real": 222.9947509765625,
+              "time": 218.64535522460938
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -7.290393114089966e-06,
+                "before": 0.016659708693623543,
+                "call": 36,
+                "dt": 0.016666999086737633,
+                "model": "0x1cf86511840"
+              },
+              "frame": 120764,
+              "kind": "countdown_step",
+              "time": 218.64535522460938
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 120764,
+              "kind": "scheduler_end",
+              "time": 218.64535522460938
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 41,
+                "receiver": "0x1cf86511750"
+              },
+              "frame": 120934,
+              "kind": "animation_event_native",
+              "real": 225.82781982421875,
+              "time": 221.4787139892578
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 120935,
+              "kind": "scheduler_begin",
+              "time": 221.49537658691406
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.6000000238418579,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016666999086737633,
+                "model": "0x1cf86511300"
+              },
+              "frame": 120935,
+              "kind": "countdown_step",
+              "time": 221.49537658691406
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 120935,
+              "kind": "scheduler_end",
+              "time": 221.49537658691406
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.6000000238418579,
+                "before": 0.6000000238418579,
+                "call": 2,
+                "dt": 0.016666600480675697,
+                "model": "0x1cf86511300"
+              },
+              "frame": 120936,
+              "kind": "countdown_step",
+              "time": 221.5120391845703
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.566666305065155,
+                "before": 0.5833330154418945,
+                "call": 63,
+                "dt": 0.016666699200868607,
+                "model": "0x1cf86511300"
+              },
+              "frame": 120997,
+              "kind": "countdown_step",
+              "time": 222.52871704101562
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 41,
+                "receiver": "0x1cf86511750"
+              },
+              "frame": 121031,
+              "kind": "delayed_callback_native",
+              "real": 227.44459533691406,
+              "time": 223.09539794921875
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -4.604458808898926e-06,
+                "before": 0.01666189543902874,
+                "call": 97,
+                "dt": 0.01666649989783764,
+                "model": "0x1cf86511300"
+              },
+              "frame": 121031,
+              "kind": "countdown_step",
+              "time": 223.09539794921875
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 121031,
+              "kind": "scheduler_end",
+              "time": 223.09539794921875
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 42,
+                "receiver": "0x1cf8651ec90"
+              },
+              "frame": 121515,
+              "kind": "animation_event_native",
+              "real": 235.5116424560547,
+              "time": 231.1621551513672
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 121516,
+              "kind": "scheduler_begin",
+              "time": 231.17881774902344
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5833335518836975,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.01666649989783764,
+                "model": "0x1cf8651e7e0"
+              },
+              "frame": 121516,
+              "kind": "countdown_step",
+              "time": 231.17881774902344
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 121516,
+              "kind": "scheduler_end",
+              "time": 231.17881774902344
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666663646697998,
+                "before": 0.5833335518836975,
+                "call": 2,
+                "dt": 0.01666720025241375,
+                "model": "0x1cf8651e7e0"
+              },
+              "frame": 121517,
+              "kind": "countdown_step",
+              "time": 231.1954803466797
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 42,
+                "receiver": "0x1cf8651ec90"
+              },
+              "frame": 121551,
+              "kind": "delayed_callback_native",
+              "real": 236.11163330078125,
+              "time": 231.7621612548828
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -6.552785634994507e-06,
+                "before": 0.01666034758090973,
+                "call": 36,
+                "dt": 0.016666900366544724,
+                "model": "0x1cf8651e7e0"
+              },
+              "frame": 121551,
+              "kind": "countdown_step",
+              "time": 231.7621612548828
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 121551,
+              "kind": "scheduler_end",
+              "time": 231.7621612548828
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 43,
+                "receiver": "0x1cf8651e6f0"
+              },
+              "frame": 121730,
+              "kind": "animation_event_native",
+              "real": 239.0950927734375,
+              "time": 234.7455291748047
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 121731,
+              "kind": "scheduler_begin",
+              "time": 234.76219177246094
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5833328366279602,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.01666720025241375,
+                "model": "0x1cf8651e330"
+              },
+              "frame": 121731,
+              "kind": "countdown_step",
+              "time": 234.76219177246094
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 121731,
+              "kind": "scheduler_end",
+              "time": 234.76219177246094
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666661262512207,
+                "before": 0.5833328366279602,
+                "call": 2,
+                "dt": 0.016666699200868607,
+                "model": "0x1cf8651e330"
+              },
+              "frame": 121732,
+              "kind": "countdown_step",
+              "time": 234.77886962890625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 43,
+                "receiver": "0x1cf8651e6f0"
+              },
+              "frame": 121766,
+              "kind": "delayed_callback_native",
+              "real": 239.69496154785156,
+              "time": 235.3455352783203
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -1.0913237929344177e-05,
+                "before": 0.016656287014484406,
+                "call": 36,
+                "dt": 0.01666720025241375,
+                "model": "0x1cf8651e330"
+              },
+              "frame": 121766,
+              "kind": "countdown_step",
+              "time": 235.3455352783203
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 121766,
+              "kind": "scheduler_end",
+              "time": 235.3455352783203
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 44,
+                "receiver": "0x1cf8651e240"
+              },
+              "frame": 122024,
+              "kind": "animation_event_native",
+              "real": 243.99496459960938,
+              "time": 239.6455841064453
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 122024,
+              "kind": "scheduler_begin",
+              "time": 239.6455841064453
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5833316445350647,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016668399795889854,
+                "model": "0x1cf8652fe70"
+              },
+              "frame": 122024,
+              "kind": "countdown_step",
+              "time": 239.6455841064453
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 122024,
+              "kind": "scheduler_end",
+              "time": 239.6455841064453
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 122025,
+              "kind": "scheduler_begin",
+              "time": 239.66224670410156
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666665434837341,
+                "before": 0.5833316445350647,
+                "call": 2,
+                "dt": 0.016665099188685417,
+                "model": "0x1cf8652fe70"
+              },
+              "frame": 122025,
+              "kind": "countdown_step",
+              "time": 239.66224670410156
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 122025,
+              "kind": "scheduler_end",
+              "time": 239.66224670410156
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 44,
+                "receiver": "0x1cf8651e240"
+              },
+              "frame": 122059,
+              "kind": "delayed_callback_native",
+              "real": 244.57826232910156,
+              "time": 240.2289276123047
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -4.375353455543518e-06,
+                "before": 0.01666242443025112,
+                "call": 36,
+                "dt": 0.016666799783706665,
+                "model": "0x1cf8652fe70"
+              },
+              "frame": 122059,
+              "kind": "countdown_step",
+              "time": 240.2289276123047
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 122059,
+              "kind": "scheduler_end",
+              "time": 240.2289276123047
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 45,
+                "receiver": "0x1cf8652fd80"
+              },
+              "frame": 122418,
+              "kind": "animation_event_native",
+              "real": 250.56149291992188,
+              "time": 246.21231079101562
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 122418,
+              "kind": "scheduler_begin",
+              "time": 246.21231079101562
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.583333432674408,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016666600480675697,
+                "model": "0x1cf8652f8a0"
+              },
+              "frame": 122418,
+              "kind": "countdown_step",
+              "time": 246.21231079101562
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 122418,
+              "kind": "scheduler_end",
+              "time": 246.21231079101562
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 122419,
+              "kind": "scheduler_begin",
+              "time": 246.22898864746094
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666665434837341,
+                "before": 0.583333432674408,
+                "call": 2,
+                "dt": 0.016666900366544724,
+                "model": "0x1cf8652f8a0"
+              },
+              "frame": 122419,
+              "kind": "countdown_step",
+              "time": 246.22898864746094
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 122419,
+              "kind": "scheduler_end",
+              "time": 246.22898864746094
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 45,
+                "receiver": "0x1cf8652fd80"
+              },
+              "frame": 122453,
+              "kind": "delayed_callback_native",
+              "real": 251.14492797851562,
+              "time": 246.795654296875
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -6.875023245811462e-06,
+                "before": 0.016659725457429886,
+                "call": 36,
+                "dt": 0.016666600480675697,
+                "model": "0x1cf8652f8a0"
+              },
+              "frame": 122453,
+              "kind": "countdown_step",
+              "time": 246.795654296875
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 122453,
+              "kind": "scheduler_end",
+              "time": 246.795654296875
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 46,
+                "receiver": "0x1cf8652f750"
+              },
+              "frame": 122693,
+              "kind": "animation_event_native",
+              "real": 255.1451873779297,
+              "time": 250.7957000732422
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 122694,
+              "kind": "scheduler_begin",
+              "time": 250.81236267089844
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5833333134651184,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016666699200868607,
+                "model": "0x1cf8652f390"
+              },
+              "frame": 122694,
+              "kind": "countdown_step",
+              "time": 250.81236267089844
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 122694,
+              "kind": "scheduler_end",
+              "time": 250.81236267089844
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666666030883789,
+                "before": 0.5833333134651184,
+                "call": 2,
+                "dt": 0.016666699200868607,
+                "model": "0x1cf8652f390"
+              },
+              "frame": 122695,
+              "kind": "countdown_step",
+              "time": 250.8290252685547
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 46,
+                "receiver": "0x1cf8652f750"
+              },
+              "frame": 122729,
+              "kind": "delayed_callback_native",
+              "real": 255.7451171875,
+              "time": 251.3957061767578
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -4.449859261512756e-06,
+                "before": 0.016662249341607094,
+                "call": 36,
+                "dt": 0.016666699200868607,
+                "model": "0x1cf8652f390"
+              },
+              "frame": 122729,
+              "kind": "countdown_step",
+              "time": 251.3957061767578
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 122729,
+              "kind": "scheduler_end",
+              "time": 251.3957061767578
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 47,
+                "receiver": "0x1cf8652f2a0"
+              },
+              "frame": 122979,
+              "kind": "animation_event_native",
+              "real": 259.9119567871094,
+              "time": 255.5624542236328
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 122979,
+              "kind": "scheduler_begin",
+              "time": 255.5624542236328
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5833316445350647,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016668399795889854,
+                "model": "0x1cf86541db0"
+              },
+              "frame": 122979,
+              "kind": "countdown_step",
+              "time": 255.5624542236328
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 122979,
+              "kind": "scheduler_end",
+              "time": 255.5624542236328
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 122980,
+              "kind": "scheduler_begin",
+              "time": 255.57913208007812
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666653513908386,
+                "before": 0.5833316445350647,
+                "call": 2,
+                "dt": 0.01666630059480667,
+                "model": "0x1cf86541db0"
+              },
+              "frame": 122980,
+              "kind": "countdown_step",
+              "time": 255.57913208007812
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 122980,
+              "kind": "scheduler_end",
+              "time": 255.57913208007812
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 47,
+                "receiver": "0x1cf8652f2a0"
+              },
+              "frame": 123014,
+              "kind": "delayed_callback_native",
+              "real": 260.49517822265625,
+              "time": 256.14581298828125
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -2.431124448776245e-05,
+                "before": 0.016642488539218903,
+                "call": 36,
+                "dt": 0.016666799783706665,
+                "model": "0x1cf86541db0"
+              },
+              "frame": 123014,
+              "kind": "countdown_step",
+              "time": 256.14581298828125
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 123014,
+              "kind": "scheduler_end",
+              "time": 256.14581298828125
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 48,
+                "receiver": "0x1cf86541c00"
+              },
+              "frame": 123244,
+              "kind": "animation_event_native",
+              "real": 264.32879638671875,
+              "time": 259.9793701171875
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 123245,
+              "kind": "scheduler_begin",
+              "time": 259.99603271484375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5833333134651184,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016666699200868607,
+                "model": "0x1cf865417e0"
+              },
+              "frame": 123245,
+              "kind": "countdown_step",
+              "time": 259.99603271484375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 123245,
+              "kind": "scheduler_end",
+              "time": 259.99603271484375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.566666305065155,
+                "before": 0.5833333134651184,
+                "call": 2,
+                "dt": 0.016666999086737633,
+                "model": "0x1cf865417e0"
+              },
+              "frame": 123246,
+              "kind": "countdown_step",
+              "time": 260.0127258300781
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 48,
+                "receiver": "0x1cf86541c00"
+              },
+              "frame": 123280,
+              "kind": "delayed_callback_native",
+              "real": 264.9287414550781,
+              "time": 260.5793762207031
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -8.97236168384552e-06,
+                "before": 0.016658026725053787,
+                "call": 36,
+                "dt": 0.016666999086737633,
+                "model": "0x1cf865417e0"
+              },
+              "frame": 123280,
+              "kind": "countdown_step",
+              "time": 260.5793762207031
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 123280,
+              "kind": "scheduler_end",
+              "time": 260.5793762207031
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 49,
+                "receiver": "0x1cf865416f0"
+              },
+              "frame": 123506,
+              "kind": "animation_event_native",
+              "real": 268.6955261230469,
+              "time": 264.3461608886719
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 123507,
+              "kind": "scheduler_begin",
+              "time": 264.3628234863281
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.583333432674408,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016666600480675697,
+                "model": "0x1cf865411b0"
+              },
+              "frame": 123507,
+              "kind": "countdown_step",
+              "time": 264.3628234863281
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 123507,
+              "kind": "scheduler_end",
+              "time": 264.3628234863281
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666660070419312,
+                "before": 0.583333432674408,
+                "call": 2,
+                "dt": 0.016667399555444717,
+                "model": "0x1cf865411b0"
+              },
+              "frame": 123508,
+              "kind": "countdown_step",
+              "time": 264.3794860839844
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 49,
+                "receiver": "0x1cf865416f0"
+              },
+              "frame": 123542,
+              "kind": "delayed_callback_native",
+              "real": 269.2955017089844,
+              "time": 264.9461669921875
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -9.531155228614807e-06,
+                "before": 0.01665726862847805,
+                "call": 36,
+                "dt": 0.016666799783706665,
+                "model": "0x1cf865411b0"
+              },
+              "frame": 123542,
+              "kind": "countdown_step",
+              "time": 264.9461669921875
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 123542,
+              "kind": "scheduler_end",
+              "time": 264.9461669921875
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 50,
+                "receiver": "0x1cf865410c0"
+              },
+              "frame": 123777,
+              "kind": "animation_event_native",
+              "real": 273.21234130859375,
+              "time": 268.8628845214844
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 123778,
+              "kind": "scheduler_begin",
+              "time": 268.8795471191406
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5833327174186707,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016667300835251808,
+                "model": "0x1cf86551cf0"
+              },
+              "frame": 123778,
+              "kind": "countdown_step",
+              "time": 268.8795471191406
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 123778,
+              "kind": "scheduler_end",
+              "time": 268.8795471191406
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666655898094177,
+                "before": 0.5833327174186707,
+                "call": 2,
+                "dt": 0.01666709966957569,
+                "model": "0x1cf86551cf0"
+              },
+              "frame": 123779,
+              "kind": "countdown_step",
+              "time": 268.8962097167969
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 50,
+                "receiver": "0x1cf865410c0"
+              },
+              "frame": 123813,
+              "kind": "delayed_callback_native",
+              "real": 273.81219482421875,
+              "time": 269.462890625
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -8.687376976013184e-06,
+                "before": 0.016658011823892593,
+                "call": 36,
+                "dt": 0.016666699200868607,
+                "model": "0x1cf86551cf0"
+              },
+              "frame": 123813,
+              "kind": "countdown_step",
+              "time": 269.462890625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 123813,
+              "kind": "scheduler_end",
+              "time": 269.462890625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 51,
+                "receiver": "0x1cf86551c00"
+              },
+              "frame": 124108,
+              "kind": "animation_event_native",
+              "real": 278.7290954589844,
+              "time": 274.3797607421875
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 124109,
+              "kind": "scheduler_begin",
+              "time": 274.39642333984375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5833336114883423,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.01666639931499958,
+                "model": "0x1cf865517e0"
+              },
+              "frame": 124109,
+              "kind": "countdown_step",
+              "time": 274.39642333984375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 124109,
+              "kind": "scheduler_end",
+              "time": 274.39642333984375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666667222976685,
+                "before": 0.5833336114883423,
+                "call": 2,
+                "dt": 0.016666900366544724,
+                "model": "0x1cf865517e0"
+              },
+              "frame": 124110,
+              "kind": "countdown_step",
+              "time": 274.4130859375
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 51,
+                "receiver": "0x1cf86551c00"
+              },
+              "frame": 124144,
+              "kind": "delayed_callback_native",
+              "real": 279.3290100097656,
+              "time": 274.9797668457031
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -9.085983037948608e-06,
+                "before": 0.016657913103699684,
+                "call": 36,
+                "dt": 0.016666999086737633,
+                "model": "0x1cf865517e0"
+              },
+              "frame": 124144,
+              "kind": "countdown_step",
+              "time": 274.9797668457031
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 124144,
+              "kind": "scheduler_end",
+              "time": 274.9797668457031
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 52,
+                "receiver": "0x1cf865515d0"
+              },
+              "frame": 124319,
+              "kind": "animation_event_native",
+              "real": 282.2458190917969,
+              "time": 277.8964538574219
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 124320,
+              "kind": "scheduler_begin",
+              "time": 277.91314697265625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.6000000238418579,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.01666709966957569,
+                "model": "0x1cf865511b0"
+              },
+              "frame": 124320,
+              "kind": "countdown_step",
+              "time": 277.91314697265625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 124320,
+              "kind": "scheduler_end",
+              "time": 277.91314697265625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.6000000238418579,
+                "before": 0.6000000238418579,
+                "call": 2,
+                "dt": 0.016666999086737633,
+                "model": "0x1cf865511b0"
+              },
+              "frame": 124321,
+              "kind": "countdown_step",
+              "time": 277.9298095703125
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666664838790894,
+                "before": 0.5833332538604736,
+                "call": 63,
+                "dt": 0.016666799783706665,
+                "model": "0x1cf865511b0"
+              },
+              "frame": 124382,
+              "kind": "countdown_step",
+              "time": 278.94647216796875
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 52,
+                "receiver": "0x1cf865515d0"
+              },
+              "frame": 124416,
+              "kind": "delayed_callback_native",
+              "real": 283.8625183105469,
+              "time": 279.5131530761719
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -5.930662155151367e-06,
+                "before": 0.016661569476127625,
+                "call": 97,
+                "dt": 0.016667500138282776,
+                "model": "0x1cf865511b0"
+              },
+              "frame": 124416,
+              "kind": "countdown_step",
+              "time": 279.5131530761719
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 124416,
+              "kind": "scheduler_end",
+              "time": 279.5131530761719
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 53,
+                "receiver": "0x1cf865510c0"
+              },
+              "frame": 124590,
+              "kind": "animation_event_native",
+              "real": 286.76336669921875,
+              "time": 282.4138488769531
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 124591,
+              "kind": "scheduler_begin",
+              "time": 282.4305114746094
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.6000000238418579,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016666999086737633,
+                "model": "0x1cf86566c30"
+              },
+              "frame": 124591,
+              "kind": "countdown_step",
+              "time": 282.4305114746094
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 124591,
+              "kind": "scheduler_end",
+              "time": 282.4305114746094
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.6000000238418579,
+                "before": 0.6000000238418579,
+                "call": 2,
+                "dt": 0.01666709966957569,
+                "model": "0x1cf86566c30"
+              },
+              "frame": 124592,
+              "kind": "countdown_step",
+              "time": 282.4471740722656
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666653513908386,
+                "before": 0.5833331346511841,
+                "call": 63,
+                "dt": 0.016667800024151802,
+                "model": "0x1cf86566c30"
+              },
+              "frame": 124653,
+              "kind": "countdown_step",
+              "time": 283.4638671875
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 53,
+                "receiver": "0x1cf865510c0"
+              },
+              "frame": 124687,
+              "kind": "delayed_callback_native",
+              "real": 288.3800354003906,
+              "time": 284.0305480957031
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -1.1693686246871948e-05,
+                "before": 0.016655506566166878,
+                "call": 97,
+                "dt": 0.01666720025241375,
+                "model": "0x1cf86566c30"
+              },
+              "frame": 124687,
+              "kind": "countdown_step",
+              "time": 284.0305480957031
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 124687,
+              "kind": "scheduler_end",
+              "time": 284.0305480957031
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 54,
+                "receiver": "0x1cf86566b40"
+              },
+              "frame": 124914,
+              "kind": "animation_event_native",
+              "real": 292.1632080078125,
+              "time": 287.8139343261719
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 124914,
+              "kind": "scheduler_begin",
+              "time": 287.8139343261719
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.583333432674408,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016666600480675697,
+                "model": "0x1cf86566720"
+              },
+              "frame": 124914,
+              "kind": "countdown_step",
+              "time": 287.8139343261719
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 124914,
+              "kind": "scheduler_end",
+              "time": 287.8139343261719
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 124915,
+              "kind": "scheduler_begin",
+              "time": 287.8305969238281
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666666030883789,
+                "before": 0.583333432674408,
+                "call": 2,
+                "dt": 0.016666799783706665,
+                "model": "0x1cf86566720"
+              },
+              "frame": 124915,
+              "kind": "countdown_step",
+              "time": 287.8305969238281
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 124915,
+              "kind": "scheduler_end",
+              "time": 287.8305969238281
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 54,
+                "receiver": "0x1cf86566b40"
+              },
+              "frame": 124949,
+              "kind": "delayed_callback_native",
+              "real": 292.74676513671875,
+              "time": 288.39727783203125
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -1.531839370727539e-05,
+                "before": 0.016656681895256042,
+                "call": 36,
+                "dt": 0.016672000288963318,
+                "model": "0x1cf86566720"
+              },
+              "frame": 124949,
+              "kind": "countdown_step",
+              "time": 288.39727783203125
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 124949,
+              "kind": "scheduler_end",
+              "time": 288.39727783203125
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 55,
+                "receiver": "0x1cf86566600"
+              },
+              "frame": 125132,
+              "kind": "animation_event_native",
+              "real": 295.7967834472656,
+              "time": 291.4474182128906
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 125133,
+              "kind": "scheduler_begin",
+              "time": 291.4640808105469
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.6000000238418579,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.016666999086737633,
+                "model": "0x1cf86566240"
+              },
+              "frame": 125133,
+              "kind": "countdown_step",
+              "time": 291.4640808105469
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 125133,
+              "kind": "scheduler_end",
+              "time": 291.4640808105469
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.6000000238418579,
+                "before": 0.6000000238418579,
+                "call": 2,
+                "dt": 0.016666799783706665,
+                "model": "0x1cf86566240"
+              },
+              "frame": 125134,
+              "kind": "countdown_step",
+              "time": 291.4807434082031
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5666658282279968,
+                "before": 0.5833331346511841,
+                "call": 62,
+                "dt": 0.016667300835251808,
+                "model": "0x1cf86566240"
+              },
+              "frame": 125194,
+              "kind": "countdown_step",
+              "time": 292.48077392578125
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 55,
+                "receiver": "0x1cf86566600"
+              },
+              "frame": 125228,
+              "kind": "delayed_callback_native",
+              "real": 297.3968505859375,
+              "time": 293.0474548339844
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -1.056864857673645e-05,
+                "before": 0.016655731946229935,
+                "call": 96,
+                "dt": 0.01666630059480667,
+                "model": "0x1cf86566240"
+              },
+              "frame": 125228,
+              "kind": "countdown_step",
+              "time": 293.0474548339844
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 125228,
+              "kind": "scheduler_end",
+              "time": 293.0474548339844
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 56,
+                "receiver": "0x1cf86573d50"
+              },
+              "frame": 125695,
+              "kind": "animation_event_native",
+              "real": 305.180419921875,
+              "time": 300.83099365234375
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 125696,
+              "kind": "scheduler_begin",
+              "time": 300.84765625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.5833336114883423,
+                "before": 0.6000000238418579,
+                "call": 1,
+                "dt": 0.01666639931499958,
+                "model": "0x1cf86573930"
+              },
+              "frame": 125696,
+              "kind": "countdown_step",
+              "time": 300.84765625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 125696,
+              "kind": "scheduler_end",
+              "time": 300.84765625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": 0.566666841506958,
+                "before": 0.5833336114883423,
+                "call": 2,
+                "dt": 0.016666799783706665,
+                "model": "0x1cf86573930"
+              },
+              "frame": 125697,
+              "kind": "countdown_step",
+              "time": 300.86431884765625
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "count": 56,
+                "receiver": "0x1cf86573d50"
+              },
+              "frame": 125731,
+              "kind": "delayed_callback_native",
+              "real": 305.7804260253906,
+              "time": 301.4309997558594
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "after": -4.1369348764419556e-06,
+                "before": 0.016662562265992165,
+                "call": 36,
+                "dt": 0.016666699200868607,
+                "model": "0x1cf86573930"
+              },
+              "frame": 125731,
+              "kind": "countdown_step",
+              "time": 301.4309997558594
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {},
+              "frame": 125731,
+              "kind": "scheduler_end",
+              "time": 301.4309997558594
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "mode": "attach",
+        "pid": 44316,
+        "scripts": [
+          {
+            "name": "rea-8671c809-5c23-42d4-8802-5465e31d0e68",
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68"
+          },
+          {
+            "name": "rea-c9c2ff3d-180c-40de-909c-16549747f90d",
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d"
+          }
+        ],
+        "session_id": "14617c82-adfd-4b77-95a0-b411b868ba18",
+        "state": "detached",
+        "target": "SecretFlasherManaka.exe (pid 44316)"
+      },
+      "operation": "frida_session_status",
+      "parameters": {
+        "session_id": "14617c82-adfd-4b77-95a0-b411b868ba18"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    },
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_7e48c9c495fe64ceadb8e68aadd29659b8c6f8e6224c637587c69a0cf7595823",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "messages": [
+          {
+            "payload": {
+              "data": {},
+              "frame": 115171,
+              "kind": "ordering_ready",
+              "time": 125.4203872680664
+            },
+            "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "script_id": "c9c2ff3d-180c-40de-909c-16549747f90d",
+        "source_kind": "file",
+        "source_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\runtime\\npc-event-timing\\ordering.js",
+        "source_sha256": "3097821d5eabd8a8a0f045519620e0fd5af68b3152a225d3310f320fcf66e737"
+      },
+      "operation": "load_frida_script",
+      "parameters": {
+        "session_id": "14617c82-adfd-4b77-95a0-b411b868ba18"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    },
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_a39347ad3c4958e1116646ec2f2e8c1b0dd73bd59f3eab977d7af1174a5f725a",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "messages": [
+          {
+            "payload": {
+              "base": "0x7ffc05d50000",
+              "callbackRva": "0x41a870",
+              "eventRva": "0x41a730",
+              "kind": "observer_ready",
+              "module": "GameAssembly.dll",
+              "path": "E:\\ManakaREA-RuntimeFixture\\GameAssembly.dll"
+            },
+            "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "script_id": "8671c809-5c23-42d4-8802-5465e31d0e68",
+        "source_kind": "file",
+        "source_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\runtime\\npc-event-timing\\observe.js",
+        "source_sha256": "88dc73e8ca10faaad4f760c7c04340ada0561de4d09d6ae75532881fbe8205b9"
+      },
+      "operation": "load_frida_script",
+      "parameters": {
+        "session_id": "14617c82-adfd-4b77-95a0-b411b868ba18"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    }
+  ]
+}
