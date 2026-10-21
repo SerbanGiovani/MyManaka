@@ -79,7 +79,13 @@
       "id": "U013",
       "status": "answered-within-pinned-scope",
       "question": "Connect discovered-player Bareta/BaretaEscape transitions, automatic escape and restoration of normal operation",
-      "boundary": "77 nonempty REA queries across 77 addresses and 13 reused observations connect NPC animation notification, event dispatch, player skill/delay guards, ordinary 2-second reaction recovery, life/GameOver/Sad, the OnEndSad escape entry, navigation side effects and selected failed-load callbacks. Shipped Sad AnimationEvent is parsed from its full type tree; all260 models clips are consumed to EOF. NPC OnAnimBaretaSound clip wiring, complete Animator sequencing and actual runtime recovery remain unverified. See bareta-chain.md and salt/evidence/bareta-chain.json"
+      "boundary": "77 nonempty REA queries across 77 addresses and 13 reused observations connect NPC animation notification, event dispatch, player skill/delay guards, ordinary 2-second reaction recovery, life/GameOver/Sad, the OnEndSad escape entry, navigation side effects and selected failed-load callbacks. Shipped Sad AnimationEvent is parsed from its full type tree; all260 models clips are consumed to EOF. Selected NPC OnAnimBaretaSound and Player Sad/BaretaEscape controller wiring is now established in animator-wiring.md; complete Animator sequencing and actual runtime recovery remain unverified. See bareta-chain.md and salt/evidence/bareta-chain.json"
+    },
+    {
+      "id": "U014",
+      "status": "answered-within-pinned-scope",
+      "question": "Connect selected NPC discovery and Player Sad/BaretaEscape controller conditions, animation events and receivers",
+      "boundary": "13 new nonempty REA queries plus original 357-clip/48-controller/1246-Animator inventory, two fully decoded ControllerConstant graphs and 81 native static hash links connect four NPC discovery clips, OnAnimBaretaSound scheduling, Player Sad selection/OnEndSad and Upper.BaretaEscape. Six models Player Animator bindings and ten original Npc bindings are serialized references; Casual1 lacks a serialized receiver. Runtime model/override selection, all chair-state producers, culling, transition competition and actual event delivery remain unverified; see animator-wiring.md, assets/animator-wiring.json, assets/npc-animation-events.json and salt/evidence/animator-chain.json."
     }
   ]
 }

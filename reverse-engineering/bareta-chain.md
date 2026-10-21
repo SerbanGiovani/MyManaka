@@ -1,5 +1,7 @@
 # 被发现、Bareta/BaretaEscape 与普通操作恢复
 
+后续补充：[Animator接线报告](animator-wiring.md) 已解析原始资源中NPC四个OnAnimBaretaSound事件，连接选定Player/Npc控制器条件、片段、接收器与Sad/BaretaEscape图层。本文下方“本轮”及NPC接线未解析描述是上一阶段的证据边界；更新后的结论以该报告与unknowns.json为准，实际运行仍未验证。
+
 本轮已连接发现通知的原生生产者、玩家反应、延迟扣生命、GameOver、Sad 动画结束、自动逃跑和失败后加载。新增 **8 批、77 次非空 REA 查询、77 个地址**，含 2 个无 metadata 方法指针的数学辅助地址；复用 13 份既有观察。原始输入固定为 `E:\SecretFlasherManakaREA`，REA 6.5.0 / Ghidra 12.1.4，会话均已关闭，未运行游戏。
 
 核心区别：普通 Bareta 反应可以在约 2 秒后回到 Idle；本轮确认的另一条路径经 GameOver/Sad 进入 BaretaEscape，它属于失败演出中的自动移动，不能等同于逃脱成功或恢复玩家控制。恢复还涉及动作、碰撞、导航、临时状态与重新加载。

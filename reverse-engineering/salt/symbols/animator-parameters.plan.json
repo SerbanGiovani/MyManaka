@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "name": "animator-parameters",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\animator-parameters.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\animator-parameters",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 14525,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c74",
+      "va": "0x18062c9d0",
+      "file_offset": 6468048,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationManager__Initialize__06000c74",
+      "file_stem": "14525-06000c74",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14526,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c75",
+      "va": "0x18062cb20",
+      "file_offset": 6468384,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationManager__OnUpdate__06000c75",
+      "file_stem": "14526-06000c75",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14553,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::.cctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c90",
+      "va": "0x18062f360",
+      "file_offset": 6478688,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationManager___cctor__06000c90",
+      "file_stem": "14553-06000c90",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15359,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcAnimationManager::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000fb6",
+      "va": "0x18041a980",
+      "file_offset": 4297088,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcAnimationManager__Initialize__06000fb6",
+      "file_stem": "15359-06000fb6",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15360,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcAnimationManager::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000fb7",
+      "va": "0x18041b080",
+      "file_offset": 4298880,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcAnimationManager__OnUpdate__06000fb7",
+      "file_stem": "15360-06000fb7",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15382,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcAnimationManager::SetFoundStranger",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000fcd",
+      "va": "0x18041c5d0",
+      "file_offset": 4304336,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcAnimationManager__SetFoundStranger__06000fcd",
+      "file_stem": "15382-06000fcd",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15400,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcAnimationManager::.cctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000fdf",
+      "va": "0x18041d270",
+      "file_offset": 4307568,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcAnimationManager___cctor__06000fdf",
+      "file_stem": "15400-06000fdf",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

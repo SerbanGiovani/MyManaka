@@ -142,6 +142,24 @@ def main():
     check(producer["method"]["id"] == 15358 and producer["static_event_field"]["raw_offset"] == 40, "Unexpected discovery producer identity")
     check(producer["sad_animation_event"]["models_source"]["sha256"] == decryption["plaintext"]["sha256"], "Sad clip source differs")
     check(producer["bounded_animation_inventory"]["all_objects_consumed_to_eof"], "Clip event inventory is incomplete")
+    animator = read(ROOT / "salt/evidence/animator-chain.json")
+    wiring = read(ROOT / "assets/animator-wiring.json")
+    npc_animation = read(ROOT / "assets/npc-animation-events.json")
+    check(animator["native_sha256"] == identity["native_sha256"] and animator["metadata_sha256"] == identity["metadata_sha256"], "Animator native identity differs")
+    check(all(m["evidence_id"] in observations for m in animator["methods"]), "Animator chain references missing native evidence")
+    check(sum(m["new_this_round"] for m in animator["methods"]) == animator["new_observations"], "Animator observation count differs")
+    for dependency in animator["asset_dependencies"]:
+        check(digest(ROOT / dependency["path"]) == dependency["sha256"], "Animator asset dependency differs")
+    for dependency in [*wiring["parser_sources"], *npc_animation["parser_sources"], wiring["npc_event_dependency"], wiring["sad_event_dependency"]]:
+        check(digest(Path(dependency["path"])) == dependency["sha256"], "Animator parser/dependency fingerprint differs")
+    check(wiring["sources"][0]["sha256"] == npc_animation["original_bundle"]["sha256"] == asset["source_sha256"], "Animator original bundle differs")
+    check(wiring["sources"][1]["sha256"] == npc_animation["decrypted_models_source"]["sha256"] == decryption["plaintext"]["sha256"], "Animator models source differs")
+    check(npc_animation["animation_clip_count"] == 357 and npc_animation["all_clip_objects_consumed_to_eof"], "Original clip inventory differs")
+    check(len(npc_animation["target_clips"]) == 4 and len(npc_animation["linked_animators"]) == 10, "NPC serialized wiring differs")
+    check(len(wiring["player_animators"]) == 6 and len(animator["native_parameter_hash_links"]) == 81, "Player wiring/hash link count differs")
+    for controller in wiring["controllers"]:
+        check(hashlib.sha256(bytes.fromhex(controller["raw_hex"])).hexdigest() == controller["source"]["sha256"], "Controller original bytes differ")
+        check(controller["decoded"]["end_of_object_verified"] and controller["decoded"]["bytes_consumed"] == controller["source"]["object"]["size"], "Controller schema did not consume object")
     checked_inputs = []
     if args.inputs:
         original = Path(identity["original_directory"])

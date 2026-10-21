@@ -15,6 +15,8 @@
 
 已继续追踪 Bareta/BaretaEscape，新增 77 次非空 REA 查询：NPC 发现动画回调→事件广播→玩家反应/技能等待→约2秒普通恢复，以及扣生命/GameOver→Sad结束→自动逃跑→失败加载。真实 Sad AnimationEvent 已按 type tree 解析，时间约2.267秒；自动逃跑不能直接解释为逃脱成功或恢复控制。见 [被发现与逃脱状态链](bareta-chain.md)、`salt/evidence/bareta-chain.json`、`assets/bareta-config.json` 与 `salt/symbols/bareta-producer-candidates.json`。NPC 动画接线和实际运行仍有明确边界。
 
+已补齐选定 AnimatorController 与动画事件接线，新增13次非空REA查询：NPC四个发现动作的性别/坐姿条件、OnAnimBaretaSound事件与延迟广播，以及玩家Action.Sad→OnEndSad→Upper.BaretaEscape。原始357个clip、48个controller与1246个Animator完成对象边界校验，选定Player/Npc控制器图完整解析。见 [动画接线报告](animator-wiring.md)、`assets/animator-wiring.json`、`assets/npc-animation-events.json` 与 `salt/evidence/animator-chain.json`；仍未运行验证，Casual1接收器来源保留未知。
+
 | 项目 | 结果 | 证据 |
 | --- | --- | --- |
 | 全局定位索引 | 76 程序集、10,508 类型、79,095 方法；70,948 个方法有原生地址 | `salt/symbols/index-summary.json` |
@@ -85,6 +87,9 @@ python reverse-engineering/salt/player_evidence.py --check
 python reverse-engineering/assets/inspect_bareta.py --check
 python reverse-engineering/salt/bareta_producer_evidence.py --check
 python reverse-engineering/salt/bareta_evidence.py --check
+python reverse-engineering/assets/inspect_npc_animation.py --check
+python reverse-engineering/assets/inspect_animator.py --check
+python reverse-engineering/salt/animator_evidence.py --check
 
 # 按选定程序集增加元数据名称种子；选中方法的别名优先
 python reverse-engineering/salt/prepare_loading.py --name scene-example --seed-assembly Assembly-CSharp.dll --method-id 16862
