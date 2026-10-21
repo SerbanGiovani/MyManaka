@@ -19,6 +19,8 @@
 
 已继续确认NPC模型选择与初始化，新增14次非空REA查询：当前工厂克隆Npc模板，再从9个自带Receiver的模型中选择；Casual1不在其候选字段中。AvaterObject赋值、GetComponent及接收器nca初始化连接到原有发现事件；CreateController是业务对象分配，选定路径未见补Receiver或替换RuntimeAnimatorController。见 [NPC模型与接收器来源](npc-model-chain.md)、`assets/npc-model-wiring.json`、`salt/evidence/npc-model-chain.json`。保留反射/外部Mod/其他消费者和实际播放边界。
 
+已继续补齐NPC距离调帧与手动Animator.Update：确认欧氏距离阈值、XMM1中的累计delta实参、近远启停/外层隐藏三倍数门，以及IsTimeStop的Animator速度缓存/归零和0.6通知剩余时间挂起。新增16次REA查询（12非空、4空Listing保留）并补充原始机器码1142条静态指令核对。见 [NPC调帧与发现通知时序](npc-fps-chain.md)、`salt/evidence/npc-fps-chain.json`、`salt/symbols/npc-fps-instructions.json`；条件算例不代表实际运行事件日志。
+
 | 项目 | 结果 | 证据 |
 | --- | --- | --- |
 | 全局定位索引 | 76 程序集、10,508 类型、79,095 方法；70,948 个方法有原生地址 | `salt/symbols/index-summary.json` |
@@ -94,6 +96,7 @@ python reverse-engineering/assets/inspect_animator.py --check
 python reverse-engineering/salt/animator_evidence.py --check
 python reverse-engineering/assets/inspect_npc_models.py --check
 python reverse-engineering/salt/npc_model_evidence.py --check
+python reverse-engineering/salt/npc_fps_evidence.py --check
 
 # 按选定程序集增加元数据名称种子；选中方法的别名优先
 python reverse-engineering/salt/prepare_loading.py --name scene-example --seed-assembly Assembly-CSharp.dll --method-id 16862

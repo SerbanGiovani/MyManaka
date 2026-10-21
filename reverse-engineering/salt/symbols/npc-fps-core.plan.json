@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "name": "npc-fps-core",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\npc-fps-core.seeds.tsv",
+  "seed_sha256": "bfbbd448ab68a3a0de3c23ecd3d96ae13f44c6c7f84c49fe4131808a49da9f3b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\npc-fps-core",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 17263,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.ExternalMethodManager::DistSqrt",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001726",
+      "va": "0x1804b2360",
+      "file_offset": 4918112,
+      "label": "ExposureUnnoticed2_Scripts_Base_ExternalMethodManager__DistSqrt__06001726",
+      "file_stem": "17263-06001726",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17302,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.Scheduler::DelayScaledTime",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600174d",
+      "va": "0x1804b3df0",
+      "file_offset": 4924912,
+      "label": "ExposureUnnoticed2_Scripts_Base_Scheduler__DelayScaledTime__0600174d",
+      "file_stem": "17302-0600174d",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 19024,
+      "qualified_name": "Common.Scripts.Util.AnimatorFPSController::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001e07",
+      "va": "0x180426c30",
+      "file_offset": 4346928,
+      "label": "Common_Scripts_Util_AnimatorFPSController__Initialize__06001e07",
+      "file_stem": "19024-06001e07",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 19025,
+      "qualified_name": "Common.Scripts.Util.AnimatorFPSController::Active",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001e08",
+      "va": "0x18057e440",
+      "file_offset": 5753920,
+      "label": "Common_Scripts_Util_AnimatorFPSController__Active__06001e08",
+      "file_stem": "19025-06001e08",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 19026,
+      "qualified_name": "Common.Scripts.Util.AnimatorFPSController::DeActive",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001e09",
+      "va": "0x18057e500",
+      "file_offset": 5754112,
+      "label": "Common_Scripts_Util_AnimatorFPSController__DeActive__06001e09",
+      "file_stem": "19026-06001e09",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 19027,
+      "qualified_name": "Common.Scripts.Util.AnimatorFPSController::InitializeThresholdTime",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001e0a",
+      "va": "0x18057e580",
+      "file_offset": 5754240,
+      "label": "Common_Scripts_Util_AnimatorFPSController__InitializeThresholdTime__06001e0a",
+      "file_stem": "19027-06001e0a",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 19028,
+      "qualified_name": "Common.Scripts.Util.AnimatorFPSController::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001e0b",
+      "va": "0x18057e5a0",
+      "file_offset": 5754272,
+      "label": "Common_Scripts_Util_AnimatorFPSController__OnUpdate__06001e0b",
+      "file_stem": "19028-06001e0b",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

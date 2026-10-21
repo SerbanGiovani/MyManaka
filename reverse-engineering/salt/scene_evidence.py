@@ -126,6 +126,9 @@ def build(batch_prefix="scene-", reuse_method_ids=None, extra_type_names=(), dis
         new = path.parent.name.startswith(batch_prefix)
         run = read(path)
         entries = run["functions"] if new else [f for f in run["functions"] if f["metadata_id"] in reused_ids]
+        # This binder consumes pseudocode; assembly observations have their own
+        # instruction/ABI verifier and must not become duplicate body records.
+        entries = [f for f in entries if f["operation"] == "procedure_pseudo_code"]
         if not entries:
             continue
         assert run["success"] and not run.get("close_error") and not run.get("transport_close_error")

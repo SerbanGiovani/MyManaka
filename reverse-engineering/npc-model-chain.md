@@ -1,5 +1,7 @@
 # NPC 模型选择、接收器来源与控制器初始化
 
+后续补充：[NPC调帧与事件时序](npc-fps-chain.md) 已用原始指令补齐手动Update浮点实参，并连接上层隐藏调用门、IsTimeStop速度处理与通知计时挂起；下文浮点实参未恢复描述保留为上一阶段边界。
+
 当前 NPC 工厂的接线缺口已能用资源与原生代码共同解释：`Casual1` 虽有 Npc AnimatorController，却不在该工厂配置的候选模型中。实际候选9个模型都在 Animator 同物体预先挂载 `NpcAnimationEventReceiver`；模型克隆后通过 GetComponent 取得该接收器，再写入 nca。所检查路径没有通过 AddComponent 修补 Casual1 接收器，也没有替换 RuntimeAnimatorController 的观察。
 
 这是选定工厂/初始化路径的静态结论，不是“Casual1 永远不会被任何代码使用”或“整个进程没有动态添加/覆盖”的全局证明。原始输入仍为 `E:\SecretFlasherManakaREA`，没有运行游戏或改动原始资源。

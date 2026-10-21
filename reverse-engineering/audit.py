@@ -174,6 +174,20 @@ def main():
     check(model_assets["npc_manager"]["end_of_object_verified"] and model_assets["npc_component"]["end_of_object_verified"], "NPC model component schemas did not consume objects")
     component_inventory = npc_model["component_registration_inventory"]
     check(component_inventory["method_spec_count_scanned"] == 113283 and len(component_inventory["add_component_specs"]) == 61 and component_inventory["receiver_concrete_instantiation_count"] == 0, "Bounded AddComponent inventory differs")
+    npc_fps = read(ROOT / "salt/evidence/npc-fps-chain.json")
+    check(npc_fps["native_sha256"] == identity["native_sha256"] and npc_fps["metadata_sha256"] == identity["metadata_sha256"], "NPC FPS native identity differs")
+    check(all(m["evidence_id"] in observations for m in npc_fps["methods"]), "NPC FPS references missing pseudocode")
+    check(all(a["evidence_id"] in observations for a in npc_fps["rea_assembly_observations"]), "NPC FPS references missing assembly responses")
+    check(sum(m["new_this_round"] for m in npc_fps["methods"]) == npc_fps["new_pseudocode_observations"], "NPC FPS pseudocode count differs")
+    check(npc_fps["new_observations"] == npc_fps["new_pseudocode_observations"] + len(npc_fps["rea_assembly_observations"]), "NPC FPS total query count differs")
+    check(npc_fps["new_nonempty_observations"] == npc_fps["new_pseudocode_observations"] + sum(a["nonempty"] for a in npc_fps["rea_assembly_observations"]), "NPC FPS nonempty response count differs")
+    for dependency in [*npc_fps["dependencies"], npc_fps["instruction_dependency"]]:
+        check(digest(ROOT / dependency["path"]) == dependency["sha256"], "NPC FPS dependency differs")
+    fps_instructions = read(ROOT / npc_fps["instruction_dependency"]["path"])
+    for source in (fps_instructions["decoder"], fps_instructions["parser"], fps_instructions["preparer"]):
+        check(digest(Path(source["path"])) == source["sha256"], "NPC FPS instruction source fingerprint differs")
+    check(fps_instructions["native"]["sha256"] == identity["native_sha256"], "NPC FPS instruction native source differs")
+    check(npc_fps["notification_delay_constant"]["raw_hex"] == "9a99193f", "NPC discovery delay constant differs")
     checked_inputs = []
     if args.inputs:
         original = Path(identity["original_directory"])

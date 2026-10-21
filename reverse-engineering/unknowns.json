@@ -92,6 +92,12 @@
       "status": "answered-within-pinned-scope",
       "question": "Trace NPC factory/avatar choice and explain Casual1 receiver, runtime component addition and controller replacement in the selected initialization path",
       "boundary": "14 new nonempty REA queries and the original NpcManager/NpcComponent template, nine model bindings and AvatarType enum connect npcPrefabs[0], option/debug/fixed-state selection, cloning, AvaterObject assignment, GetComponent<Animator/Receiver> and receiver.nca initialization. The nine selected models already serialize receivers; Casual1 is outside these fields, while cache-shaped references remain bounded candidates. Selected avatar init/delayed/material/FPS code does not establish receiver addition or RuntimeAnimatorController replacement; CreateController allocates the ordinary NPC logic class. All113283 MethodSpecs include61 AddComponent specs and zero concrete Receiver instantiations, with unresolved generic/Type/reflection/Mod paths explicitly retained. Actual runtime model choices/event delivery and all other Casual1 consumers remain unverified. See npc-model-chain.md, assets/npc-model-wiring.json and salt/evidence/npc-model-chain.json."
+    },
+    {
+      "id": "U016",
+      "status": "answered-within-pinned-scope",
+      "question": "Recover NPC distance FPS conditions, manual Animator.Update float argument and effects on discovery callback timing",
+      "boundary": "16 new REA queries yield11 nonempty pseudocode responses,1 nonempty assembly and4 empty Listings retained as unavailable.20 PE CHAININFO-linked fragments/1142 independently byte-verified Iced instructions establish Euclidean distance, default/ShoppingMall thresholds, accumulated admitted delta in XMM1, mode resets, caller hidden a%3 gate and TimeStop cached Animator.speed zero/restore. DelayScaledTime uses a positive float32 0.6 remaining-time model, decremented by scaled delta only outside IsTimeStop; expiry check is outside the pause gate. Conditional arithmetic examples distinguish host frames, admitted evaluation and notification countdown. Actual UnityPlayer event delivery, culling/transition effects and automatic/manual/Scheduler frame ordering remain unverified; see npc-fps-chain.md, salt/evidence/npc-fps-chain.json and salt/symbols/npc-fps-instructions.json."
     }
   ]
 }

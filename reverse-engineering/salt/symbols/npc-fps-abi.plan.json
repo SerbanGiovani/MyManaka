@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "name": "npc-fps-abi",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\npc-fps-abi.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\npc-fps-abi",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 15350,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcAnimationEventReceiver::OnAnimBaretaSound",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000fad",
+      "va": "0x18041a730",
+      "file_offset": 4296496,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcAnimationEventReceiver__OnAnimBaretaSound__06000fad",
+      "file_stem": "15350-06000fad",
+      "operations": [
+        "procedure_assembly"
+      ]
+    },
+    {
+      "metadata_id": 15405,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcAnimatorFpsController::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000fe4",
+      "va": "0x18041eb80",
+      "file_offset": 4313984,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcAnimatorFpsController__OnUpdate__06000fe4",
+      "file_stem": "15405-06000fe4",
+      "operations": [
+        "procedure_assembly"
+      ]
+    },
+    {
+      "metadata_id": 17308,
+      "qualified_name": "DelayTimeModel::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001753",
+      "va": "0x1804b4f50",
+      "file_offset": 4929360,
+      "label": "DelayTimeModel___ctor__06001753",
+      "file_stem": "17308-06001753",
+      "operations": [
+        "procedure_pseudo_code",
+        "procedure_assembly"
+      ]
+    },
+    {
+      "metadata_id": 17309,
+      "qualified_name": "DelayTimeModel::InvokeIfNeed",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001754",
+      "va": "0x1804b5050",
+      "file_offset": 4929616,
+      "label": "DelayTimeModel__InvokeIfNeed__06001754",
+      "file_stem": "17309-06001754",
+      "operations": [
+        "procedure_pseudo_code",
+        "procedure_assembly"
+      ]
+    },
+    {
+      "metadata_id": 19028,
+      "qualified_name": "Common.Scripts.Util.AnimatorFPSController::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001e0b",
+      "va": "0x18057e5a0",
+      "file_offset": 5754272,
+      "label": "Common_Scripts_Util_AnimatorFPSController__OnUpdate__06001e0b",
+      "file_stem": "19028-06001e0b",
+      "operations": [
+        "procedure_assembly"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

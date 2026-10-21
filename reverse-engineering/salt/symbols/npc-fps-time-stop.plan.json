@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "name": "npc-fps-time-stop",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\npc-fps-time-stop.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\npc-fps-time-stop",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 15522,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcController::OnUpdateOnTimeStop",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001059",
+      "va": "0x1804285f0",
+      "file_offset": 4353520,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcController__OnUpdateOnTimeStop__06001059",
+      "file_stem": "15522-06001059",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15536,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcController::OnTimeStopEvent",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001067",
+      "va": "0x18042a720",
+      "file_offset": 4362016,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcController__OnTimeStopEvent__06001067",
+      "file_stem": "15536-06001067",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}
