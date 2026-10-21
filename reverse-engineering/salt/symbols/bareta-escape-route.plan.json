@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "name": "bareta-escape-route",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\bareta-escape-route.seeds.tsv",
+  "seed_sha256": "c47167aa3ecb6f5076307bcfdff1bfcc796c03eac160ba7591cc4e3ba7d0b8be",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\bareta-escape-route",
+  "seed_count": 6248,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 14398,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Portal.PortalController::OnTriggerEnter",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000bf5",
+      "va": "0x18061d780",
+      "file_offset": 6406016,
+      "label": "ExposureUnnoticed2_Object3D_Portal_PortalController__OnTriggerEnter__06000bf5",
+      "file_stem": "14398-06000bf5",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14399,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Portal.PortalController::OnTriggerExit",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000bf6",
+      "va": "0x18061de60",
+      "file_offset": 6407776,
+      "label": "ExposureUnnoticed2_Object3D_Portal_PortalController__OnTriggerExit__06000bf6",
+      "file_stem": "14399-06000bf6",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14446,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.MentalManager::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c25",
+      "va": "0x180624930",
+      "file_offset": 6435120,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_MentalManager__OnUpdate__06000c25",
+      "file_stem": "14446-06000c25",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14453,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.MentalManager::ReduceByFound",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c2c",
+      "va": "0x180624fc0",
+      "file_offset": 6436800,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_MentalManager__ReduceByFound__06000c2c",
+      "file_stem": "14453-06000c2c",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16678,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameOverController::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60014dd",
+      "va": "0x1804847a0",
+      "file_offset": 4730784,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameOverController__Initialize__060014dd",
+      "file_stem": "16678-060014dd",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16680,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameOverController::OnLateUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60014df",
+      "va": "0x180484980",
+      "file_offset": 4731264,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameOverController__OnLateUpdate__060014df",
+      "file_stem": "16680-060014df",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16681,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameOverController::OnGameOverEvent",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60014e0",
+      "va": "0x180484e00",
+      "file_offset": 4732416,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameOverController__OnGameOverEvent__060014e0",
+      "file_stem": "16681-060014e0",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16685,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameOverController::StartSadCharacter",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60014e4",
+      "va": "0x180486410",
+      "file_offset": 4738064,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameOverController__StartSadCharacter__060014e4",
+      "file_stem": "16685-060014e4",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16687,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameOverController::OpenFailedPanel",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60014e6",
+      "va": "0x1804868c0",
+      "file_offset": 4739264,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameOverController__OpenFailedPanel__060014e6",
+      "file_stem": "16687-060014e6",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16827,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.InGameEventListener::OnFoundExposureEvent",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001572",
+      "va": "0x180494bf0",
+      "file_offset": 4797424,
+      "label": "ExposureUnnoticed2_Scripts_InGame_InGameEventListener__OnFoundExposureEvent__06001572",
+      "file_stem": "16827-06001572",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16938,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.PortalManager::GetEscapeTarget",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60015e1",
+      "va": "0x18049a490",
+      "file_offset": 4820112,
+      "label": "ExposureUnnoticed2_Scripts_InGame_PortalManager__GetEscapeTarget__060015e1",
+      "file_stem": "16938-060015e1",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16941,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.PortalManager::GetNearPortal",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60015e4",
+      "va": "0x18049a5a0",
+      "file_offset": 4820384,
+      "label": "ExposureUnnoticed2_Scripts_InGame_PortalManager__GetNearPortal__060015e4",
+      "file_stem": "16941-060015e4",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17060,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.StageController::GetEscapeTarget",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600165b",
+      "va": "0x1804a5150",
+      "file_offset": 4864336,
+      "label": "ExposureUnnoticed2_Scripts_InGame_StageController__GetEscapeTarget__0600165b",
+      "file_stem": "17060-0600165b",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_1804363f0",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x1804363f0",
+      "file_offset": 4410352,
+      "label": "native_only_1804363f0__00000000",
+      "file_stem": "native-0x1804363f0",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_1803fa290",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x1803fa290",
+      "file_offset": 4164240,
+      "label": "native_only_1803fa290__00000000",
+      "file_stem": "native-0x1803fa290",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

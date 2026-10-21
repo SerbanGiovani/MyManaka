@@ -9,6 +9,7 @@
 - `inspect_resources.py` 使用 Python 标准库读取所需目录、元数据和少量块，支持本构建观察到的 UnityFS v8 / flags `0x243`、LZ4 或未压缩数据块、little-endian SerializedFile v22、IL2CPP metadata v31。运行实测约 3 秒（包括 2.44 GB 输入的流式 SHA-256），不加载或执行目标程序集。
 - `scene-inventory.json` 与 `inspect_scenes.py` 补充原始 BuildSettings 的 10 个路径、17 个场景入口组件/脚本身份/父链、SystemManager 资源 prefab→AssetReferencer→MStage、8 条关卡记录前缀与 5 个标题 Button 的完整 PersistentCall。复查：`python reverse-engineering/assets/inspect_scenes.py --check`。脚本复用标准库解析器，并通过已有 Mono.Cecil 仅读取 interop 枚举/字段声明；不会执行游戏 DLL。Animator→Controller PPtr 与事件名字节命中单独保留，未冒充完整动画事件解析。原生调用链见 `../scene-chain.md`。
 - `player-config.json` 与 `inspect_player.py` 补充实际 PlayerAction 输入资源（pathID 61593，61 actions / 88 bindings）、PlayerInput 引用、14 组原始 metadata 枚举数值、MCommon 移动参数、MAction 的 78 条记录指针及字段前缀，以及已验证解密 models 中 Player prefab/AvatarReferencer/CharacterController。复查：`python reverse-engineering/assets/inspect_player.py --check`。输入资产与 CharacterController 等已声明完整解析的对象消费至 EOF，MCommon/MActionRecord 等只解析所列前缀并保留原始尾部。默认绑定不代表运行时重绑定，原生调用证据见 `../player-chain.md`。
+- `bareta-config.json` 与 `inspect_bareta.py` 补充被发现/逃跑相关声明、7组原始枚举、精神等级/等级/关卡表及MCommon精神参数前缀。6条精神等级、8条等级、8条关卡记录及各父表均完整消费至EOF；表内PPtr与目标记录使用独立来源坐标。复查：`python reverse-engineering/assets/inspect_bareta.py --check`。字段或配置存在本身不证明某状态路径使用它；原生链与models的真实Sad事件解析见 `../bareta-chain.md`。
 
 ```powershell
 python reverse-engineering/assets/inspect_resources.py --original-directory E:\SecretFlasherManakaREA --output reverse-engineering/assets/resources-keydata.json

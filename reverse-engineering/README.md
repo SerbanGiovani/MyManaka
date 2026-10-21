@@ -13,6 +13,8 @@
 
 已继续建立 `PlayerController → InputResolver / PlayerLocomotion / PlayerAction → CharacterController.Move`，以及交互候选、事件广播与选定动作完成回调；新增 94 次非空 REA 查询。原始 PlayerAction 输入表（61 actions / 88 bindings）、14 组枚举、移动基础参数、78 条动作记录引用和玩家碰撞组件配置同步保留，见 [玩家玩法调用链](player-chain.md)、`salt/evidence/player-chain.json` 与 `assets/player-config.json`。跳跃存在未接通输入的代码分支，完整动画/交互/特殊状态与运行验证仍未完成。
 
+已继续追踪 Bareta/BaretaEscape，新增 77 次非空 REA 查询：NPC 发现动画回调→事件广播→玩家反应/技能等待→约2秒普通恢复，以及扣生命/GameOver→Sad结束→自动逃跑→失败加载。真实 Sad AnimationEvent 已按 type tree 解析，时间约2.267秒；自动逃跑不能直接解释为逃脱成功或恢复控制。见 [被发现与逃脱状态链](bareta-chain.md)、`salt/evidence/bareta-chain.json`、`assets/bareta-config.json` 与 `salt/symbols/bareta-producer-candidates.json`。NPC 动画接线和实际运行仍有明确边界。
+
 | 项目 | 结果 | 证据 |
 | --- | --- | --- |
 | 全局定位索引 | 76 程序集、10,508 类型、79,095 方法；70,948 个方法有原生地址 | `salt/symbols/index-summary.json` |
@@ -28,6 +30,8 @@
 | 原始场景配置 | BuildSettings 10 场景、MStage 8 记录、入口组件与 5 个按钮持久调用 | `assets/scene-inventory.json` |
 | 玩家移动与操作 | 输入帧语义、普通移动/跑步/蹲姿、自动移动取消、Unity 位移出口、交互广播及选定完成回调 | `player-chain.md`、`salt/evidence/player-chain.json` |
 | 原始玩家配置 | 实际输入 map、默认键位、枚举数值、速度/动作前缀与 CharacterController 字段 | `assets/player-config.json` |
+| 被发现及状态恢复 | Bareta的进入/退出与技能守卫、Sad到BaretaEscape的条件、自动导航副作用及失败加载 | `bareta-chain.md`、`salt/evidence/bareta-chain.json` |
+| 真实 Sad 动画事件 | models的260个clip完整事件区解析；Sad中OnEndSad约2.267秒，NPC回调在此范围未命中 | `salt/symbols/bareta-producer-candidates.json` |
 
 解密包主节点是 `CAB-2afa88b54ee4aa6beff98892b77cac4c`，另有 `.resS` 和 `.resource`。对象表已读通，不等于每个模型、材质或 MonoBehaviour 字段的业务含义均已恢复。
 
@@ -78,6 +82,9 @@ python reverse-engineering/assets/inspect_scenes.py --check
 python reverse-engineering/salt/scene_evidence.py --check
 python reverse-engineering/assets/inspect_player.py --check
 python reverse-engineering/salt/player_evidence.py --check
+python reverse-engineering/assets/inspect_bareta.py --check
+python reverse-engineering/salt/bareta_producer_evidence.py --check
+python reverse-engineering/salt/bareta_evidence.py --check
 
 # 按选定程序集增加元数据名称种子；选中方法的别名优先
 python reverse-engineering/salt/prepare_loading.py --name scene-example --seed-assembly Assembly-CSharp.dll --method-id 16862

@@ -124,6 +124,24 @@ def main():
         check(digest(Path(source["path"])) == source["sha256"], "Player parser fingerprint differs")
     check(len(player["direct_input_flag_assignments"]) >= 15, "Player input assignment map incomplete")
     check(player["jump_input_boundary"]["observed_store_expressions"] == ["0"], "Jump input boundary differs")
+    bareta = read(ROOT / "salt/evidence/bareta-chain.json")
+    bareta_assets = read(ROOT / "assets/bareta-config.json")
+    check(bareta["native_sha256"] == identity["native_sha256"] and bareta["metadata_sha256"] == identity["metadata_sha256"], "Bareta chain identity mismatch")
+    check(all(m["evidence_id"] in observations for m in bareta["methods"]), "Bareta chain references missing native evidence")
+    check(sum(m["new_this_round"] for m in bareta["methods"]) == bareta["new_observations"], "Bareta observation count differs")
+    for key in ("configuration_dependency", "state_configuration_dependency", "producer_and_animation_dependency"):
+        dependency = bareta[key]
+        check(digest(ROOT / dependency["path"]) == dependency["sha256"], "Bareta configuration dependency differs")
+    check(bareta_assets["source_bundle"]["sha256"] == asset["source_sha256"], "Bareta asset bundle differs")
+    for source in [bareta_assets["parser"], *bareta_assets["reused_parsers"]]:
+        check(digest(Path(source["path"])) == source["sha256"], "Bareta parser fingerprint differs")
+    for table in bareta_assets["tables"].values():
+        check(table["end_of_object_verified"] and all(e["record"]["end_of_object_verified"] for e in table["entries"]), "Bareta configuration schema boundary differs")
+    check({c["requested_player_state"] for c in bareta["literal_state_change_calls"]} == {0, 1, 2}, "Bareta selected transition excerpts differ")
+    producer = read(ROOT / bareta["producer_and_animation_dependency"]["path"])
+    check(producer["method"]["id"] == 15358 and producer["static_event_field"]["raw_offset"] == 40, "Unexpected discovery producer identity")
+    check(producer["sad_animation_event"]["models_source"]["sha256"] == decryption["plaintext"]["sha256"], "Sad clip source differs")
+    check(producer["bounded_animation_inventory"]["all_objects_consumed_to_eof"], "Clip event inventory is incomplete")
     checked_inputs = []
     if args.inputs:
         original = Path(identity["original_directory"])
@@ -139,6 +157,8 @@ def main():
         source_records = list(declarations["sources"])
         source_records.extend([scene_assets["stage_enum"]["source"], scene_assets["stage_enum"]["parser"]])
         source_records.extend(player_assets["wrapper_declarations"]["sources"])
+        source_records.extend(bareta_assets["wrapper_declarations"]["sources"])
+        source_records.extend(producer["sources"])
         for supplement in supplements:
             source_records.extend(supplement.get("sources", []))
             if supplement.get("parser_source"):

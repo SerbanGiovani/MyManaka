@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "name": "bareta-discovery-transition",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\bareta-discovery-transition.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\bareta-discovery-transition",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 14970,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerStrangenessController::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e31",
+      "va": "0x18065f810",
+      "file_offset": 6676496,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerStrangenessController__OnUpdate__06000e31",
+      "file_stem": "14970-06000e31",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14971,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerStrangenessController::CalcStrangerDegreeFrom",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e32",
+      "va": "0x18065fb90",
+      "file_offset": 6677392,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerStrangenessController__CalcStrangerDegreeFrom__06000e32",
+      "file_stem": "14971-06000e32",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15621,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcStrangenessManager::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60010bc",
+      "va": "0x180435000",
+      "file_offset": 4405248,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcStrangenessManager__Initialize__060010bc",
+      "file_stem": "15621-060010bc",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15623,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcStrangenessManager::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60010be",
+      "va": "0x180435300",
+      "file_offset": 4406016,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcStrangenessManager__OnUpdate__060010be",
+      "file_stem": "15623-060010be",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15624,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcStrangenessManager::CalcCommonAddScale",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60010bf",
+      "va": "0x180435d40",
+      "file_offset": 4408640,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcStrangenessManager__CalcCommonAddScale__060010bf",
+      "file_stem": "15624-060010bf",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15627,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcStrangenessManager::ForceSetStrangeness",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60010c2",
+      "va": "0x1804362e0",
+      "file_offset": 4410080,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcStrangenessManager__ForceSetStrangeness__060010c2",
+      "file_stem": "15627-060010c2",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

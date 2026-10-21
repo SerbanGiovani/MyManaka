@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "name": "bareta-core",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\bareta-core.seeds.tsv",
+  "seed_sha256": "339a9402412b6831864c14e55410eb02fd34934296fcac194d044b2f98421a18",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\bareta-core",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 14537,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::TransBaretaEscape",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c80",
+      "va": "0x18062e190",
+      "file_offset": 6474128,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationManager__TransBaretaEscape__06000c80",
+      "file_stem": "14537-06000c80",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14542,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::SetBareta",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c85",
+      "va": "0x18062e440",
+      "file_offset": 6474816,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationManager__SetBareta__06000c85",
+      "file_stem": "14542-06000c85",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14543,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::SetBaretaFace",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c86",
+      "va": "0x18062e4d0",
+      "file_offset": 6474960,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationManager__SetBaretaFace__06000c86",
+      "file_stem": "14543-06000c86",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14562,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBaretaEscapeState::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c99",
+      "va": "0x1803cab80",
+      "file_offset": 3969920,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBaretaEscapeState__Initialize__06000c99",
+      "file_stem": "14562-06000c99",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14563,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBaretaEscapeState::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c9a",
+      "va": "0x180630b70",
+      "file_offset": 6484848,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBaretaEscapeState__OnUpdate__06000c9a",
+      "file_stem": "14563-06000c9a",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14569,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBaretaState::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000ca0",
+      "va": "0x180407380",
+      "file_offset": 4217728,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBaretaState__Initialize__06000ca0",
+      "file_stem": "14569-06000ca0",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14570,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBaretaState::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000ca1",
+      "va": "0x1806312c0",
+      "file_offset": 6486720,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBaretaState__OnUpdate__06000ca1",
+      "file_stem": "14570-06000ca1",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14571,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBaretaState::OnEnter",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000ca2",
+      "va": "0x180631840",
+      "file_offset": 6488128,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBaretaState__OnEnter__06000ca2",
+      "file_stem": "14571-06000ca2",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14572,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBaretaState::OnExit",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000ca3",
+      "va": "0x180631a80",
+      "file_offset": 6488704,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBaretaState__OnExit__06000ca3",
+      "file_stem": "14572-06000ca3",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14806,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerFacade::IsIgnoreBaretaState",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000d8d",
+      "va": "0x180648270",
+      "file_offset": 6580848,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerFacade__IsIgnoreBaretaState__06000d8d",
+      "file_stem": "14806-06000d8d",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

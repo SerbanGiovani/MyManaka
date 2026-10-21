@@ -67,13 +67,19 @@
       "id": "U011",
       "status": "open",
       "question": "Produce a complete independently runnable game reconstruction",
-      "boundary": "No complete compilable Unity project or replacement GameAssembly exists. Selected player input, locomotion, interactions and completion paths now have static evidence, but full physics/camera/Animator reconstruction, remaining interaction consumers, player special states, NPC/mission rules, complete ES3 serialization and runtime validation remain incomplete; see player-chain.md"
+      "boundary": "No complete compilable Unity project or replacement GameAssembly exists. Selected normal player controls and Bareta/BaretaEscape discovery, reaction, failure escape and reload paths now have static evidence. Full physics/camera/Animator and NPC/mission rules, remaining interaction consumers, other external state sources, complete ES3 serialization and runtime validation remain incomplete; see player-chain.md and bareta-chain.md"
     },
     {
       "id": "U012",
       "status": "answered-within-pinned-scope",
       "question": "Connect PlayerController to movement, input resolution and selected interaction/action state paths",
       "boundary": "94 nonempty REA queries across 94 addresses plus 6 reused frame/init observations, original PlayerAction asset (61 actions/88 bindings), 14 byte-verified enum sets, MCommon/MAction prefixes and Player prefab controller fields establish the selected normal controls and Unity movement exit. Selected interaction broadcast and animation completion paths are documented in player-chain.md and salt/evidence/player-chain.json. Full special-state/animation/interaction coverage, runtime bindings and actual execution are not claimed"
+    },
+    {
+      "id": "U013",
+      "status": "answered-within-pinned-scope",
+      "question": "Connect discovered-player Bareta/BaretaEscape transitions, automatic escape and restoration of normal operation",
+      "boundary": "77 nonempty REA queries across 77 addresses and 13 reused observations connect NPC animation notification, event dispatch, player skill/delay guards, ordinary 2-second reaction recovery, life/GameOver/Sad, the OnEndSad escape entry, navigation side effects and selected failed-load callbacks. Shipped Sad AnimationEvent is parsed from its full type tree; all260 models clips are consumed to EOF. NPC OnAnimBaretaSound clip wiring, complete Animator sequencing and actual runtime recovery remain unverified. See bareta-chain.md and salt/evidence/bareta-chain.json"
     }
   ]
 }

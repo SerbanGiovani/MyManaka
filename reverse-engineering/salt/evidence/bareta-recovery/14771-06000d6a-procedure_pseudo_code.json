@@ -1,0 +1,117 @@
+{
+  "evidence_id": "ev_e1415b704953dce8bb8c180ffc5bdf11523b4851fd1d9c64678372c67002e5a6",
+  "subject": {
+    "name": "GameAssembly.dll",
+    "digest": {
+      "sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    "local_path": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+    "format": "pe",
+    "architecture": "x86_64"
+  },
+  "provider": {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "version": "12.1.4"
+  },
+  "analysis_profile": {
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "parameters": {
+      "target_kind": "executable",
+      "target_format": "pe",
+      "executable_role": "shared-library",
+      "managed": false,
+      "native_aot_metadata": {
+        "contract_revision": "rtr-9.1-x64-pe-read-only-v3",
+        "source_bytes": 134217728,
+        "work_units": 67108864,
+        "working_memory_bytes": 67108864,
+        "report_bytes": 4194304
+      },
+      "architecture": "x86_64",
+      "available_architectures": [
+        "x86_64"
+      ],
+      "import_mode": "ephemeral-source-immutable",
+      "pdb_observations": "program-info-v1",
+      "annotation_policy": "atomic-function-entry-metadata-v1",
+      "load_image_observations": "source-mappings-entry-context-v2",
+      "function_body_evidence": "complete-inclusive-ranges-v1",
+      "function_references": "complete-body-and-entry-reference-manager-v2",
+      "call_relationship_coverage": "function-body-call-coverage-v5",
+      "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+      "string_inventory_evidence": "defined-data-coverage-v1",
+      "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+      "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+      "instruction_flow_evidence": "decoded-return-pcode-v1",
+      "instruction_references": "exact-address-incoming-v1",
+      "function_boundary_observations": "ghidra-function-boundary-limitations-v3",
+      "no_return_repair": "disabled-windows-p0",
+      "process_launch": "official-headless-script-v1",
+      "jump_table_evidence": "typed-case-default-blocks-v1",
+      "decompiler_jump_loads": true,
+      "loader": "auto-from-header",
+      "language_id": "auto-from-header",
+      "compiler_spec_id": "auto-default",
+      "analyzer_preset": "ghidra-default+disabled:Disassemble Entry Points,Function Start Search,Subroutine References,Reference,Data Reference,Create Address Tables,Non-Returning Functions - Discovered,Decompiler Switch Analysis",
+      "analysis_options": {
+        "disabled_analyzers": [
+          "Disassemble Entry Points",
+          "Function Start Search",
+          "Subroutine References",
+          "Reference",
+          "Data Reference",
+          "Create Address Tables",
+          "Non-Returning Functions - Discovered",
+          "Decompiler Switch Analysis"
+        ]
+      },
+      "analysis_seeds": {
+        "format": "rea-ghidra-seeds-v1",
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\bareta-recovery.seeds.tsv",
+        "configured_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\bareta-recovery.seeds.tsv",
+        "sha256": "edb1674a4796bf1518dae44ec44255b8ff01b232332794e9e1c6c0a928b1c53e",
+        "entries": {
+          "function": 6246,
+          "code": 0,
+          "label": 0
+        }
+      }
+    },
+    "digest": "42167ab2e8d08905e89fabea66dfdd6922cd2e4c3c58dd196dcf222d9b542b5f"
+  },
+  "predicate_type": "rea.analysis",
+  "operation": "procedure_pseudo_code",
+  "parameters": {
+    "procedure": "0x1806460e0"
+  },
+  "raw_result": {
+    "value": "\r\n/* WARNING: Removing unreachable block (ram,0x00018064533a) */\r\n/* WARNING: Removing unreachable block (ram,0x00018064533f) */\r\n/* WARNING: Removing unreachable block (ram,0x000180645348) */\r\n/* WARNING: Removing unreachable block (ram,0x000180645351) */\r\n/* WARNING: Removing unreachable block (ram,0x000180645364) */\r\n/* WARNING: Removing unreachable block (ram,0x000180645370) */\r\n/* WARNING: Removing unreachable block (ram,0x000180645383) */\r\n/* WARNING: Removing unreachable block (ram,0x00018064538f) */\r\n\r\nvoid ExposureUnnoticed2_Object3D_Player_Scripts_PlayerController___OnFoundStrangerEvent_b__39_1__06000d6a\r\n               (longlong param_1)\r\n\r\n{\r\n  int iVar1;\r\n  longlong lVar2;\r\n  longlong lVar3;\r\n  ulonglong uVar4;\r\n  code *pcVar5;\r\n  undefined8 uVar6;\r\n  ulonglong uVar7;\r\n  uint uVar8;\r\n  undefined8 uVar9;\r\n  bool bVar10;\r\n  \r\n  ExposureUnnoticed2_Object3D_Player_Scripts_PlayerController___OnFoundStrangerEvent_g__Action_39_0__06000d69\r\n            (0);\r\n  if (cRam0000000182eb83e3 == '\\0') {\r\n    FUN_1802f2810(&DAT_182d58398);\r\n    LOCK();\r\n    UNLOCK();\r\n    cRam0000000182eb83e3 = '\\x01';\r\n  }\r\n  lVar2 = *(longlong *)(param_1 + 0x40);\r\n  if ((lVar2 == 0) || (*(longlong *)(lVar2 + 0x60) == 0)) goto code_r0x00018064539b;\r\n  uVar9 = 0xffffffff;\r\n  if (*(int *)(*(longlong *)(lVar2 + 0x60) + 0x5c) == 1) {\r\n    lVar2 = *(longlong *)(lVar2 + 0xe0);\r\n    if (lVar2 == 0) goto code_r0x00018064539b;\r\n    if (cRam0000000182eb83a7 == '\\0') {\r\n      FUN_1802f2810(&DAT_182d58398);\r\n      LOCK();\r\n      UNLOCK();\r\n      cRam0000000182eb83a7 = '\\x01';\r\n    }\r\n    if ((*(longlong *)(lVar2 + 0x20) == 0) ||\r\n       (lVar3 = *(longlong *)(*(longlong *)(lVar2 + 0x20) + 0x48), lVar3 == 0))\r\n    goto code_r0x00018064539b;\r\n    ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationManager__SetBareta__06000c85\r\n              (lVar3,0,0);\r\n    if ((*(longlong *)(lVar2 + 0x20) == 0) ||\r\n       (lVar3 = *(longlong *)(*(longlong *)(lVar2 + 0x20) + 0x48), lVar3 == 0))\r\n    goto code_r0x00018064539b;\r\n    ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationManager__SetBaretaFace__06000c86\r\n              (lVar3,0,0);\r\n    if ((((*(longlong *)(lVar2 + 0x20) == 0) ||\r\n         (lVar3 = *(longlong *)(*(longlong *)(lVar2 + 0x20) + 0x48), lVar3 == 0)) ||\r\n        (*(undefined4 *)(lVar3 + 0x1c) = 0x3f800000, *(longlong *)(lVar2 + 0x20) == 0)) ||\r\n       (lVar3 = *(longlong *)(*(longlong *)(DAT_182d58398 + 0xb8) + 0x48), lVar3 == 0))\r\n    goto code_r0x00018064539b;\r\n    uVar6 = 0x2725;\r\n    if (*(char *)(lVar3 + 0x1a9) == '\\0') {\r\n      uVar6 = 0xffffffff;\r\n    }\r\n    lVar3 = *(longlong *)(*(longlong *)(lVar2 + 0x20) + 0x60);\r\n    uVar6 = ExposureUnnoticed2_Master_Action_MAction__Get__06001385(uVar6,0);\r\n    if (lVar3 == 0) goto code_r0x00018064539b;\r\n    bVar10 = DAT_182eb5d50 != 0;\r\n    *(undefined8 *)(lVar3 + 0x48) = uVar6;\r\n    if (bVar10) {\r\n      uVar8 = (uint)(lVar3 + 0x48U >> 0xc);\r\n      uVar7 = (ulonglong)((uVar8 & 0x1fffff) >> 6);\r\n      do {\r\n        uVar4 = *(ulonglong *)(&DAT_182f0c920 + uVar7 * 8);\r\n        LOCK();\r\n        bVar10 = uVar4 == *(ulonglong *)(&DAT_182f0c920 + uVar7 * 8);\r\n        if (bVar10) {\r\n          *(ulonglong *)(&DAT_182f0c920 + uVar7 * 8) = uVar4 | 1L << (uVar8 & 0x3f);\r\n        }\r\n        UNLOCK();\r\n      } while (!bVar10);\r\n    }\r\n    if ((*(longlong *)(lVar2 + 0x20) == 0) ||\r\n       (lVar3 = *(longlong *)(*(longlong *)(lVar2 + 0x20) + 0x120), lVar3 == 0))\r\n    goto code_r0x00018064539b;\r\n    ExposureUnnoticed2_Object3D_Player_Scripts_LookAtController__DisableLookAt__06000c10(lVar3,7,0);\r\n    *(undefined1 *)(lVar2 + 0x18) = 0;\r\n  }\r\n  if ((*(longlong *)(param_1 + 0x40) != 0) &&\r\n     (lVar2 = *(longlong *)(*(longlong *)(param_1 + 0x40) + 0x60), lVar2 != 0)) {\r\n    *(undefined4 *)(lVar2 + 0x5c) = 1;\r\n    if (*(longlong *)(param_1 + 0x40) != 0) {\r\n      lVar2 = *(longlong *)(*(longlong *)(param_1 + 0x40) + 0xd8);\r\n      lVar3 = *(longlong *)(*(longlong *)(DAT_182d58398 + 0xb8) + 0x48);\r\n      if (lVar3 != 0) {\r\n        iVar1 = *(int *)(lVar3 + 0x10);\r\n        if ((iVar1 == 10) || (iVar1 == 0xb || iVar1 == 0xc)) {\r\n          uVar9 = 8;\r\n        }\r\n        if (lVar2 != 0) {\r\n          pcVar5 = DAT_182ebee88;\r\n          if ((DAT_182ebee88 == (code *)0x0) &&\r\n             (pcVar5 = (code *)FUN_1802cf0c0(\r\n                                            \"UnityEngine.AI.NavMeshAgent::set_areaMask(System.Int32)\"\r\n                                            ), pcVar5 == (code *)0x0)) {\r\n            uVar9 = FUN_1802ced60(\"UnityEngine.AI.NavMeshAgent::set_areaMask(System.Int32)\");\r\n                    /* WARNING: Subroutine does not return */\r\n            FUN_1802cca90(uVar9,0);\r\n          }\r\n          DAT_182ebee88 = pcVar5;\r\n          (*DAT_182ebee88)(lVar2,uVar9);\r\n          if ((*(longlong *)(param_1 + 0x40) != 0) &&\r\n             (lVar2 = *(longlong *)(*(longlong *)(param_1 + 0x40) + 0x48), lVar2 != 0)) {\r\n            ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationManager__SetEcstasy__06000c82\r\n                      (lVar2,0,0);\r\n            if ((*(longlong *)(param_1 + 0x40) != 0) &&\r\n               (lVar2 = *(longlong *)(*(longlong *)(param_1 + 0x40) + 0xe0), lVar2 != 0)) {\r\n              ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBaretaState__OnEnter__06000ca2\r\n                        (lVar2,0);\r\n              return;\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  }\r\ncode_r0x00018064539b:\r\n                    /* WARNING: Subroutine does not return */\r\n  FUN_18031dad0();\r\n}\r\n\r\n",
+    "limitations": []
+  },
+  "normalized_result": "\r\n/* WARNING: Removing unreachable block (ram,0x00018064533a) */\r\n/* WARNING: Removing unreachable block (ram,0x00018064533f) */\r\n/* WARNING: Removing unreachable block (ram,0x000180645348) */\r\n/* WARNING: Removing unreachable block (ram,0x000180645351) */\r\n/* WARNING: Removing unreachable block (ram,0x000180645364) */\r\n/* WARNING: Removing unreachable block (ram,0x000180645370) */\r\n/* WARNING: Removing unreachable block (ram,0x000180645383) */\r\n/* WARNING: Removing unreachable block (ram,0x00018064538f) */\r\n\r\nvoid ExposureUnnoticed2_Object3D_Player_Scripts_PlayerController___OnFoundStrangerEvent_b__39_1__06000d6a\r\n               (longlong param_1)\r\n\r\n{\r\n  int iVar1;\r\n  longlong lVar2;\r\n  longlong lVar3;\r\n  ulonglong uVar4;\r\n  code *pcVar5;\r\n  undefined8 uVar6;\r\n  ulonglong uVar7;\r\n  uint uVar8;\r\n  undefined8 uVar9;\r\n  bool bVar10;\r\n  \r\n  ExposureUnnoticed2_Object3D_Player_Scripts_PlayerController___OnFoundStrangerEvent_g__Action_39_0__06000d69\r\n            (0);\r\n  if (cRam0000000182eb83e3 == '\\0') {\r\n    FUN_1802f2810(&DAT_182d58398);\r\n    LOCK();\r\n    UNLOCK();\r\n    cRam0000000182eb83e3 = '\\x01';\r\n  }\r\n  lVar2 = *(longlong *)(param_1 + 0x40);\r\n  if ((lVar2 == 0) || (*(longlong *)(lVar2 + 0x60) == 0)) goto code_r0x00018064539b;\r\n  uVar9 = 0xffffffff;\r\n  if (*(int *)(*(longlong *)(lVar2 + 0x60) + 0x5c) == 1) {\r\n    lVar2 = *(longlong *)(lVar2 + 0xe0);\r\n    if (lVar2 == 0) goto code_r0x00018064539b;\r\n    if (cRam0000000182eb83a7 == '\\0') {\r\n      FUN_1802f2810(&DAT_182d58398);\r\n      LOCK();\r\n      UNLOCK();\r\n      cRam0000000182eb83a7 = '\\x01';\r\n    }\r\n    if ((*(longlong *)(lVar2 + 0x20) == 0) ||\r\n       (lVar3 = *(longlong *)(*(longlong *)(lVar2 + 0x20) + 0x48), lVar3 == 0))\r\n    goto code_r0x00018064539b;\r\n    ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationManager__SetBareta__06000c85\r\n              (lVar3,0,0);\r\n    if ((*(longlong *)(lVar2 + 0x20) == 0) ||\r\n       (lVar3 = *(longlong *)(*(longlong *)(lVar2 + 0x20) + 0x48), lVar3 == 0))\r\n    goto code_r0x00018064539b;\r\n    ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationManager__SetBaretaFace__06000c86\r\n              (lVar3,0,0);\r\n    if ((((*(longlong *)(lVar2 + 0x20) == 0) ||\r\n         (lVar3 = *(longlong *)(*(longlong *)(lVar2 + 0x20) + 0x48), lVar3 == 0)) ||\r\n        (*(undefined4 *)(lVar3 + 0x1c) = 0x3f800000, *(longlong *)(lVar2 + 0x20) == 0)) ||\r\n       (lVar3 = *(longlong *)(*(longlong *)(DAT_182d58398 + 0xb8) + 0x48), lVar3 == 0))\r\n    goto code_r0x00018064539b;\r\n    uVar6 = 0x2725;\r\n    if (*(char *)(lVar3 + 0x1a9) == '\\0') {\r\n      uVar6 = 0xffffffff;\r\n    }\r\n    lVar3 = *(longlong *)(*(longlong *)(lVar2 + 0x20) + 0x60);\r\n    uVar6 = ExposureUnnoticed2_Master_Action_MAction__Get__06001385(uVar6,0);\r\n    if (lVar3 == 0) goto code_r0x00018064539b;\r\n    bVar10 = DAT_182eb5d50 != 0;\r\n    *(undefined8 *)(lVar3 + 0x48) = uVar6;\r\n    if (bVar10) {\r\n      uVar8 = (uint)(lVar3 + 0x48U >> 0xc);\r\n      uVar7 = (ulonglong)((uVar8 & 0x1fffff) >> 6);\r\n      do {\r\n        uVar4 = *(ulonglong *)(&DAT_182f0c920 + uVar7 * 8);\r\n        LOCK();\r\n        bVar10 = uVar4 == *(ulonglong *)(&DAT_182f0c920 + uVar7 * 8);\r\n        if (bVar10) {\r\n          *(ulonglong *)(&DAT_182f0c920 + uVar7 * 8) = uVar4 | 1L << (uVar8 & 0x3f);\r\n        }\r\n        UNLOCK();\r\n      } while (!bVar10);\r\n    }\r\n    if ((*(longlong *)(lVar2 + 0x20) == 0) ||\r\n       (lVar3 = *(longlong *)(*(longlong *)(lVar2 + 0x20) + 0x120), lVar3 == 0))\r\n    goto code_r0x00018064539b;\r\n    ExposureUnnoticed2_Object3D_Player_Scripts_LookAtController__DisableLookAt__06000c10(lVar3,7,0);\r\n    *(undefined1 *)(lVar2 + 0x18) = 0;\r\n  }\r\n  if ((*(longlong *)(param_1 + 0x40) != 0) &&\r\n     (lVar2 = *(longlong *)(*(longlong *)(param_1 + 0x40) + 0x60), lVar2 != 0)) {\r\n    *(undefined4 *)(lVar2 + 0x5c) = 1;\r\n    if (*(longlong *)(param_1 + 0x40) != 0) {\r\n      lVar2 = *(longlong *)(*(longlong *)(param_1 + 0x40) + 0xd8);\r\n      lVar3 = *(longlong *)(*(longlong *)(DAT_182d58398 + 0xb8) + 0x48);\r\n      if (lVar3 != 0) {\r\n        iVar1 = *(int *)(lVar3 + 0x10);\r\n        if ((iVar1 == 10) || (iVar1 == 0xb || iVar1 == 0xc)) {\r\n          uVar9 = 8;\r\n        }\r\n        if (lVar2 != 0) {\r\n          pcVar5 = DAT_182ebee88;\r\n          if ((DAT_182ebee88 == (code *)0x0) &&\r\n             (pcVar5 = (code *)FUN_1802cf0c0(\r\n                                            \"UnityEngine.AI.NavMeshAgent::set_areaMask(System.Int32)\"\r\n                                            ), pcVar5 == (code *)0x0)) {\r\n            uVar9 = FUN_1802ced60(\"UnityEngine.AI.NavMeshAgent::set_areaMask(System.Int32)\");\r\n                    /* WARNING: Subroutine does not return */\r\n            FUN_1802cca90(uVar9,0);\r\n          }\r\n          DAT_182ebee88 = pcVar5;\r\n          (*DAT_182ebee88)(lVar2,uVar9);\r\n          if ((*(longlong *)(param_1 + 0x40) != 0) &&\r\n             (lVar2 = *(longlong *)(*(longlong *)(param_1 + 0x40) + 0x48), lVar2 != 0)) {\r\n            ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationManager__SetEcstasy__06000c82\r\n                      (lVar2,0,0);\r\n            if ((*(longlong *)(param_1 + 0x40) != 0) &&\r\n               (lVar2 = *(longlong *)(*(longlong *)(param_1 + 0x40) + 0xe0), lVar2 != 0)) {\r\n              ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBaretaState__OnEnter__06000ca2\r\n                        (lVar2,0);\r\n              return;\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  }\r\ncode_r0x00018064539b:\r\n                    /* WARNING: Subroutine does not return */\r\n  FUN_18031dad0();\r\n}\r\n\r\n",
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+    "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+    "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+    "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+    "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+    "External functions and functions without an analyzable body return null; other decompiler failures remain explicit.",
+    "Windows Ghidra P0 accepts native x86 and x86-64 PE applications and DLLs, and explicitly selected raw 6502 images; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+    "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no bearer token.",
+    "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically.",
+    "Ghidra analysis was seeded before auto-analysis from E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\bareta-recovery.seeds.tsv (sha256 edb1674a4796bf1518dae44ec44255b8ff01b232332794e9e1c6c0a928b1c53e: 6246 function, 0 code, 0 label entries). Seeded functions, code and names are caller assertions, not Ghidra discoveries.",
+    "Seed outcome: 774 functions created, 5472 already present, 0 failed; 0 code seeds decoded, 0 failed; 0 labels applied, 0 failed; 0 seeds outside initialized memory.",
+    "The target references PDB GameAssembly.pdb (GUID 9ed6a21b-e8f5-425a-9301-e52d6c440c63, age (hex) 7, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "name": "bareta-animation-exit",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\bareta-animation-exit.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\bareta-animation-exit",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 14504,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationReceiver::OnEndSad",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c5f",
+      "va": "0x18062bc50",
+      "file_offset": 6464592,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationReceiver__OnEndSad__06000c5f",
+      "file_stem": "14504-06000c5f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14968,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerStateModel::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e2f",
+      "va": "0x18065f3b0",
+      "file_offset": 6675376,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerStateModel___ctor__06000e2f",
+      "file_stem": "14968-06000e2f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17096,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.TemporaryInGameState::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600167f",
+      "va": "0x1804a8510",
+      "file_offset": 4877584,
+      "label": "ExposureUnnoticed2_Scripts_InGame_TemporaryInGameState___ctor__0600167f",
+      "file_stem": "17096-0600167f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17830,
+      "qualified_name": "<>c::<OnClickLoad>b__8_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600195d",
+      "va": "0x1804e2520",
+      "file_offset": 5115168,
+      "label": "__c___OnClickLoad_b__8_0__0600195d",
+      "file_stem": "17830-0600195d",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17832,
+      "qualified_name": "<>c::<OnClickLoad>b__8_1",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600195f",
+      "va": "0x1804e28d0",
+      "file_offset": 5116112,
+      "label": "__c___OnClickLoad_b__8_1__0600195f",
+      "file_stem": "17832-0600195f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}
