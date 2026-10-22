@@ -69,6 +69,19 @@ def main():
     check(all(digest(producer_dir / name) == fingerprint for name, fingerprint in producer_measurement_inputs.items()), "Producer measurement input differs")
     check(producer_runtime["inputs"][:4] == [{**entry, "fixture_path": str(Path(producer_runtime["fixture_root"]) / entry["relative_path"])} for entry in runtime["inputs"][:4]], "Producer native inputs differ from prior pinned build")
     runtime_records = {runtime_dir / "rea-runtime.json": runtime, producer_dir / "rea-runtime.json": producer_runtime}
+    natural_dir = ROOT / "runtime/natural-time-stop"
+    natural_runtime = read(natural_dir / "manifest.json")
+    for source in natural_runtime["sources"]:
+        check(digest(ROOT / source["path"]) == source["sha256"], "Natural checkpoint source differs")
+    for output in natural_runtime["outputs"]:
+        source = natural_dir / output["path"]
+        check(digest(source) == output["sha256"], "Natural checkpoint log differs")
+        raw = gzip.decompress(source.read_bytes())
+        check(len(raw) == output["uncompressed_bytes"] and hashlib.sha256(raw).hexdigest() == output["uncompressed_sha256"], "Natural checkpoint raw log differs")
+    natural_analysis = runpy.run_path(str(natural_dir / "analyze.py"))
+    check(natural_analysis["analyze"]() == read(natural_dir / "results.json"), "Natural checkpoint measurements differ")
+    check(natural_runtime["natural_validation_complete"] == read(natural_dir / "results.json")["natural_validation_complete"], "Natural coverage flag differs from measurements")
+    natural_sessions = {s["session_id"]: s for s in natural_runtime["sessions"]}
     asset = read(ROOT / "assets/resources-keydata.json")
     check(runtime_inputs["SecretFlasherManaka_Data/data.unity3d"] == asset["source_sha256"], "Runtime resources differ")
     recovered = read(ROOT / "salt/evidence/recovered-crypto.json")
@@ -110,7 +123,18 @@ def main():
             key = record["evidence_id"]
             subject = record.get("subject") or {}
             subject_hash = (subject.get("digest") or {}).get("sha256")
-            if path in runtime_records:
+            if path == natural_dir / "rea-runtime.json":
+                check(subject_hash is None and record["provider"]["id"] == "frida" and record["predicate_type"] == "rea.frida.instrumentation-observation", "Unexpected natural runtime provider")
+                check(key in natural_runtime["evidence_ids"] and record["parameters"]["session_id"] in natural_sessions, "Unexpected natural runtime session")
+                result = record["normalized_result"]
+                check(not result["messages_truncated"], "Natural checkpoint Evidence truncated")
+                if record["operation"] == "load_frida_script":
+                    source = Path(result["source_path"])
+                    check(digest(source) == result["source_sha256"], "Natural Frida source differs")
+                else:
+                    session = natural_sessions[record["parameters"]["session_id"]]
+                    check(record["operation"] == "frida_session_status" and result["pid"] == session["pid"] and result["state"] == session["state"], "Natural checkpoint process/session differs")
+            elif path in runtime_records:
                 selected_runtime = runtime_records[path]
                 check(subject_hash is None and record["provider"]["id"] == "frida" and
                       record["predicate_type"] == "rea.frida.instrumentation-observation", "Unexpected runtime Evidence provider/identity")
@@ -243,6 +267,9 @@ def main():
     check(fps_instructions["native"]["sha256"] == identity["native_sha256"], "NPC FPS instruction native source differs")
     check(npc_fps["notification_delay_constant"]["raw_hex"] == "9a99193f", "NPC discovery delay constant differs")
     time_stop = read(ROOT / "salt/evidence/time-stop-chain.json")
+    natural_chain = read(ROOT / "salt/evidence/natural-chain.json")
+    check(natural_chain["native_sha256"] == identity["native_sha256"] and natural_chain["metadata_sha256"] == identity["metadata_sha256"], "Natural static identity differs")
+    check(natural_chain["new_observations"] == 24 and all(m["evidence_id"] in observations for m in natural_chain["methods"]), "Natural static observations missing")
     check(time_stop["native_sha256"] == identity["native_sha256"] and time_stop["metadata_sha256"] == identity["metadata_sha256"], "TimeStop native identity differs")
     check(time_stop["new_observations"] == 16 and all(m["evidence_id"] in observations for m in time_stop["methods"]), "Missing TimeStop native observations")
     for name in ("xref_scan_dependency", "player_controller_dependency"):
@@ -285,6 +312,10 @@ def main():
                 if name in entry:
                     source_records.append({"path": str(Path(entry[name])), "sha256": entry["sha256"]})
         source_records.append({"path": str(Path(producer_runtime["fixture_root"]) / "BepInEx/plugins/TimeStopProducerFixture.dll"), "sha256": producer_runtime["plugin_dll_sha256"]})
+        for entry in natural_runtime["inputs"]:
+            for name in ("original_path", "runtime_path"):
+                source_records.append({"path": entry[name], "sha256": entry["sha256"]})
+        source_records.append({"path": str(Path(natural_runtime["game_root"]) / "BepInEx/plugins/NaturalObserver.dll"), "sha256": natural_runtime["current_plugin_sha256"]})
         for source in source_records:
             # Derived SQLite byte identity is not portable after rebuilding it;
             # reconstruction scripts validate its build identity and coordinates.

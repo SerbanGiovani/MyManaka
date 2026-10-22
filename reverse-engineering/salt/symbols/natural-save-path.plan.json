@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "name": "natural-save-path",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\natural-save-path.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\natural-save-path",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 11773,
+      "qualified_name": "ES3Settings::get_FullPath",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60001b4",
+      "va": "0x1803cc690",
+      "file_offset": 3976848,
+      "label": "ES3Settings__get_FullPath__060001b4",
+      "file_stem": "11773-060001b4",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17371,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.InputRebindSaveManager::Load",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001792",
+      "va": "0x1804b75c0",
+      "file_offset": 4939200,
+      "label": "ExposureUnnoticed2_Scripts_Base_InputRebindSaveManager__Load__06001792",
+      "file_stem": "17371-06001792",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 47060,
+      "qualified_name": "UnityEngine.Application::get_persistentDataPath",
+      "assembly": "UnityEngine.CoreModule.dll",
+      "token": "0x6000154",
+      "va": "0x181ef97a0",
+      "file_offset": 32472992,
+      "label": "UnityEngine_Application__get_persistentDataPath__06000154",
+      "file_stem": "47060-06000154",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}
