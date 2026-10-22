@@ -67,7 +67,7 @@ def main():
         original=Path('E:/SecretFlasherManakaREA')/rel;current=args.game/rel
         assert digest(original)==digest(current)
         inputs.append({'relative_path':rel,'original_path':str(original),'runtime_path':str(current),'sha256':digest(current)})
-    sources.update({(HERE/name).relative_to(RE).as_posix():digest(HERE/name) for name in ['Probe.cs','observe.js','observe-v2.js','input-state.js','runtime-state.js','npc-state.js','ui-readback.js','build.ps1','prepare.ps1','collect.py','analyze.py','test_analysis.py']})
+    sources.update({(HERE/name).relative_to(RE).as_posix():digest(HERE/name) for name in ['Probe.cs','observe.js','observe-v2.js','input-state.js','runtime-state.js','npc-state.js','post-broadcast.js','ui-readback.js','build.ps1','prepare.ps1','collect.py','analyze.py','test_analysis.py']})
     from analyze import analyze
     measured=analyze()
     (HERE/'results.json').write_text(json.dumps(measured,ensure_ascii=False,indent=2)+'\n',encoding='utf8')

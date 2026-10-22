@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "status": "awaiting-natural-stop-restore",
-  "captured_utc": "2026-10-22T08:26:12.715577+00:00",
+  "status": "observed-natural-cycles-timing-partial",
+  "captured_utc": "2026-10-22T09:28:32.528083+00:00",
   "game_root": "E:\\ManakaREA-NaturalGameplay",
   "natural_validation_complete": false,
   "evidence_ids": [
@@ -19,12 +19,13 @@
     "ev_dbe5cca8524c56e348b23b1aafdf111bbd6b2af4259f898304556abb8735a9cd",
     "ev_e011ddded3b7a228b14949f9327c82cf26c1cf942baabd683dcd098fc7d535a5",
     "ev_e2dba8b657450fbda0f5090a885f48347187a0217d428b2897c8d2f938bba388",
+    "ev_fa1e612d8d2a4f9f70412a7d5ca47a9fbdb1a1556432eef7ddef211170d13f69",
     "ev_fd3bbf2c85864196384de1b8db0bec58362c20114f6444b749d19fa3cb812fef",
     "ev_fda86163906819b945ccc9f48f0a039ca3367f7325bc9c788961e1835d11dbe6",
     "ev_6045455c4f1483a7a23bb53d714ea3ca9c69243fcbe149df681c387e8413a202",
     "ev_0d0b82862fb1ecff1582f3916f2566ebdb72c157c528a71c2ff0a3ccc376996b",
     "ev_1807835b8a11c590184b647084df02cedaa71e799f97457d75f2a1d2d98e41bd",
-    "ev_f579322e91d60c3add59c77ba9e1569e29c2d34e5098780d36046aeec565c944"
+    "ev_d5e518d18d5dfd399f98bd5b8d9e4c3041f53c911c3f45e8bbd5e9e41b8c7119"
   ],
   "sessions": [
     {
@@ -49,7 +50,7 @@
       "session_id": "e98300ef-3def-4196-b9b0-109d998a63f1",
       "pid": 45864,
       "state": "running",
-      "closed_by_operator": false
+      "closed_by_operator": true
     }
   ],
   "current_plugin_sha256": "f0a94d41c55ff09e0ea56708c9d86bace4fd6fad68a7c982518f37b2d1996da8",
@@ -60,7 +61,7 @@
     },
     {
       "path": "runtime/natural-time-stop/analyze.py",
-      "sha256": "e4cda53250e72dde3217f5c6a0a8c5e940095aa05688cad20d4c6dffd12bb08b"
+      "sha256": "899da1af2b667fef8bc8b584b50e969729204bf1372c5181af07cae9d6c14e6f"
     },
     {
       "path": "runtime/natural-time-stop/build.ps1",
@@ -68,7 +69,7 @@
     },
     {
       "path": "runtime/natural-time-stop/collect.py",
-      "sha256": "0288c3f77cfb3682c65831fc269f87edb4080ee378d44a707c391786aa954023"
+      "sha256": "72a47048b0819b3f1c3a2fddf513721a5e246889e9ecfe1f82f1af4bfb5b567e"
     },
     {
       "path": "runtime/natural-time-stop/input-state.js",
@@ -87,6 +88,10 @@
       "sha256": "43df5295fd974196f8e7a7f97b8cae5008f78e3f2b6098d76403048e9a961e99"
     },
     {
+      "path": "runtime/natural-time-stop/post-broadcast.js",
+      "sha256": "5af33efe0f5ff1f529b036ccc02fe0e80089876bf6cc31804e7f6466b48cda39"
+    },
+    {
       "path": "runtime/natural-time-stop/prepare.ps1",
       "sha256": "02fea745fe73c45be46f87adc067a5fe5ba3ce89621ae0d6515153c837c6c8e6"
     },
@@ -96,7 +101,7 @@
     },
     {
       "path": "runtime/natural-time-stop/test_analysis.py",
-      "sha256": "37d873172298f80d892cd7a927e9077e8adc96fbb43ca29609ab0143fff1f2da"
+      "sha256": "a502662548b6af023c8aed949d72f8ec9520dc6e5db52284ec4b2c2a9cdfa565"
     },
     {
       "path": "runtime/natural-time-stop/ui-readback.js",
@@ -143,9 +148,9 @@
     {
       "path": "natural.jsonl.gz",
       "source_relative_path": "natural.jsonl",
-      "sha256": "e7251a9243c89313e99ed864042c3dbddf849aa9c8eb70e9a25c40ed33f02bab",
-      "uncompressed_sha256": "b878e155a82700f5f9370c18b7f899bbf1ff3d20ec34546693ad37b2e4ed777b",
-      "uncompressed_bytes": 1605896
+      "sha256": "01200e7a16709ebe1854e155866272de946f63c8e9f6d6538836f9cf05f31cd9",
+      "uncompressed_sha256": "8fc913a1f90dcdb5c5133a3bca9d3405e65796ddc7d6d5655295bf492bbb1c2a",
+      "uncompressed_bytes": 4291770
     },
     {
       "path": "Player-natural.log.gz",
@@ -164,16 +169,16 @@
     {
       "path": "Player-natural-3.log.gz",
       "source_relative_path": "Player-natural-3.log",
-      "sha256": "62bc9fe5f5dbc1d8d1b9fd252c725d97701a830445f3346371ab90aad787d372",
-      "uncompressed_sha256": "10e49b586154741708eb44b65525d03de7cf05396779e1a51e4281452fcf618d",
-      "uncompressed_bytes": 156069
+      "sha256": "10e8b7a0c653d772dc05b0502272e095fbf9112e940490cc477b989f915fa90a",
+      "uncompressed_sha256": "23a6a5b99421e45504f8121aaadc61fc674674ee938b375a8bf00bb6caf08e28",
+      "uncompressed_bytes": 180364
     },
     {
       "path": "LogOutput.log.gz",
       "source_relative_path": "BepInEx/LogOutput.log",
-      "sha256": "73841c4dbe069ddd5b091ef64434ea2d81b74bd37fc2874fc49756d579eeb3df",
-      "uncompressed_sha256": "b17e8d6ceff1dcdfcf1b9818f2631413ac075cb5342ec753f78a95ee253fff35",
-      "uncompressed_bytes": 184108
+      "sha256": "17c378dc0f3c8044940b311b508be12dc7a7facbec5dae9e4a1c6b0f83239fde",
+      "uncompressed_sha256": "2bf54b7b30ec056048407c2e6bc608088519e31e588051bf42aa2b0fd368525e",
+      "uncompressed_bytes": 211576
     }
   ],
   "source_saves": [
