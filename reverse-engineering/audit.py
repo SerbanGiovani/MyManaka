@@ -95,7 +95,26 @@ def main():
     check(notification_analysis["analyze"]() == read(notification_dir / "results.json"), "Notification measurements differ")
     dependency = notification_runtime["previous_checkpoint"]
     check(digest(ROOT / dependency["path"]) == dependency["sha256"], "Previous natural checkpoint differs")
-    observed_runtime_records = {natural_dir / "rea-runtime.json": natural_runtime, notification_dir / "rea-runtime.json": notification_runtime}
+    generation_dir = ROOT / "runtime/natural-event-generation"
+    generation_runtime = read(generation_dir / "manifest.json")
+    for source in generation_runtime["sources"]:
+        check(digest(ROOT / source["path"]) == source["sha256"], "Generation source differs")
+    for output in generation_runtime["outputs"]:
+        path = generation_dir / output["path"]
+        check(digest(path) == output["sha256"], "Generation log differs")
+        payload = gzip.decompress(path.read_bytes())
+        check(len(payload) == output["uncompressed_bytes"] and hashlib.sha256(payload).hexdigest() == output["uncompressed_sha256"], "Generation raw log differs")
+        bounds = output["selection"]
+        check(all(bounds["min_frame"] <= json.loads(line)["frame"] <= bounds["max_frame"] for line in payload.splitlines()), "Generation log window differs")
+    generation_analysis = runpy.run_path(str(generation_dir / "analyze.py"))
+    check(generation_analysis["analyze"]() == read(generation_dir / "results.json"), "Generation measurements differ")
+    dependency = generation_runtime["previous_checkpoint"]
+    check(digest(ROOT / dependency["path"]) == dependency["sha256"], "Previous notification checkpoint differs")
+    if args.inputs:
+        abi = read(generation_dir / "abi.json")
+        check(digest(Path(abi["source_path"])) == abi["source_sha256"], "Animator binding ABI source differs")
+    observed_runtime_records = {natural_dir / "rea-runtime.json": natural_runtime, notification_dir / "rea-runtime.json": notification_runtime,
+                               generation_dir / "rea-runtime.json": generation_runtime}
     asset = read(ROOT / "assets/resources-keydata.json")
     check(runtime_inputs["SecretFlasherManaka_Data/data.unity3d"] == asset["source_sha256"], "Runtime resources differ")
     recovered = read(ROOT / "salt/evidence/recovered-crypto.json")
@@ -335,6 +354,8 @@ def main():
             for name in ("original_path", "runtime_path"):
                 source_records.append({"path": entry[name], "sha256": entry["sha256"]})
         source_records.append({"path": str(Path(natural_runtime["game_root"]) / "BepInEx/plugins/NaturalObserver.dll"), "sha256": natural_runtime["current_plugin_sha256"]})
+        generation_abi = read(generation_dir / "abi.json")
+        source_records.append({"path": generation_abi["source_path"], "sha256": generation_abi["source_sha256"]})
         for source in source_records:
             # Derived SQLite byte identity is not portable after rebuilding it;
             # reconstruction scripts validate its build identity and coordinates.

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-22T10:15:57.259419+00:00",
+  "generated_at_utc": "2026-10-22T11:06:34.971426+00:00",
   "status": "consistent",
-  "canonical_rea_observations": 555,
+  "canonical_rea_observations": 563,
   "rea_queries_completed": 501,
   "artifacts": [
     {
@@ -107,13 +107,18 @@
     },
     {
       "path": "audit.py",
-      "bytes": 32643,
-      "sha256": "a08b335a526ad4bc8a9bbe498539a2c2afe5e65297a72f8628f59e3cb8089524"
+      "bytes": 34302,
+      "sha256": "a9c079ecc49d200ad017d6d2cd68fa0792e9f2f93e9dc82c9fb807888ddb6a54"
     },
     {
       "path": "bareta-chain.md",
       "bytes": 16411,
       "sha256": "917693510419ef38f5b020256e633f46783ec096581122e14e6f5cfde63fd0f9"
+    },
+    {
+      "path": "event-generation.md",
+      "bytes": 10545,
+      "sha256": "6dbc2485c067c4202af48ec7858d862af9af857f61dd589688f56632c2cb7a1f"
     },
     {
       "path": "loading-chain.md",
@@ -127,8 +132,8 @@
     },
     {
       "path": "notification-scenarios.md",
-      "bytes": 7133,
-      "sha256": "100644d647de25134fd39c23db3e1eecdde5241380516dfae3c43c6bf7cf5eb7"
+      "bytes": 7438,
+      "sha256": "f4292ff309a35ecbd80ee877559ceb28236e9d30c946538a59b6e199291acfb6"
     },
     {
       "path": "npc-event-runtime.md",
@@ -152,8 +157,73 @@
     },
     {
       "path": "README.md",
-      "bytes": 15908,
-      "sha256": "ffe4c8923c7c0916e40adb9cc0a50fc8a28543470db37a377d23f2dce8595bd4"
+      "bytes": 16487,
+      "sha256": "9359e8cd7739137bb535c3086c60526dd7f7797d30738f293b32ad3cd205a5a8"
+    },
+    {
+      "path": "runtime/natural-event-generation/abi.json",
+      "bytes": 1634,
+      "sha256": "d7d74719e2e616b9095b1421550833a3b8c88e812b6b36016960b79a990a1b91"
+    },
+    {
+      "path": "runtime/natural-event-generation/analyze.py",
+      "bytes": 14562,
+      "sha256": "17ae3a0ec42649bb26d196afef93ec9077102186cba3591fc7128356ce026b9f"
+    },
+    {
+      "path": "runtime/natural-event-generation/collect.py",
+      "bytes": 5466,
+      "sha256": "3a5496467caaffe1639d1564d02ae22162cee82f50a3100f7cb98a5195d1b4dc"
+    },
+    {
+      "path": "runtime/natural-event-generation/control-v2.js",
+      "bytes": 8900,
+      "sha256": "cf213298804908264d8ab6ea22ab933713515b0b0aeed75ae478627ae25edd30"
+    },
+    {
+      "path": "runtime/natural-event-generation/control-v3.js",
+      "bytes": 8920,
+      "sha256": "f9b005dc3a31a7b96354560da92659dd3264bd07a0f0a78fba2814cb81b8f8d1"
+    },
+    {
+      "path": "runtime/natural-event-generation/control.js",
+      "bytes": 5964,
+      "sha256": "04f59870512925780a4699b3dcc032ee74144cb359e339ca6a55e851b9d8edeb"
+    },
+    {
+      "path": "runtime/natural-event-generation/manifest.json",
+      "bytes": 9362,
+      "sha256": "516da0cdba609ef138025f5f46882024b60aecf5d41dd748c794c01eaaba9404"
+    },
+    {
+      "path": "runtime/natural-event-generation/natural-window.jsonl.gz",
+      "bytes": 1449471,
+      "sha256": "10bb0a3d8c87ec54acaaaa3dfaa736b22233d7ef95dab161a393c003424eaf7e"
+    },
+    {
+      "path": "runtime/natural-event-generation/observe-v2.js",
+      "bytes": 9378,
+      "sha256": "d0bb4342f6470d5135fe9723f3881c2ab1db9b66f8215ecc9f744be81c197d46"
+    },
+    {
+      "path": "runtime/natural-event-generation/observe.js",
+      "bytes": 7557,
+      "sha256": "6391c870e2b6b217f01545fb19e8fd87b43e001c775e99305580b70ed7cb9d22"
+    },
+    {
+      "path": "runtime/natural-event-generation/rea-runtime.json",
+      "bytes": 4869984,
+      "sha256": "3bdb6e15527ca329e0de876357fee4e4e76f498c125b5842ff99f6223a705a1d"
+    },
+    {
+      "path": "runtime/natural-event-generation/results.json",
+      "bytes": 75804,
+      "sha256": "d958f16ea0599a2215f9968be42bd4f049993b45339425cf5e6048a2f8e1d15b"
+    },
+    {
+      "path": "runtime/natural-event-generation/test_analysis.py",
+      "bytes": 2657,
+      "sha256": "a3e21d9c6c366ee32397e15746f10fd3abfbf765601015e715f1dadbab1bbfcf"
     },
     {
       "path": "runtime/natural-notification/analyze.py",
@@ -7025,6 +7095,10 @@
     {
       "path": "E:\\ManakaREA-NaturalGameplay\\BepInEx\\plugins\\NaturalObserver.dll",
       "sha256": "f0a94d41c55ff09e0ea56708c9d86bace4fd6fad68a7c982518f37b2d1996da8"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\BepInEx\\unity-libs\\UnityEngine.AnimationModule.dll",
+      "sha256": "845df2635127c8fb14df3fef45f3c591ee619f0ec310795083469f23432692a7"
     }
   ],
   "observations": [
@@ -7564,6 +7638,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_35049935ded5e01dac44fc5355fa1f4f25c32d50a46b92f0e3a5f06121eec20c",
+      "operation": "load_frida_script",
+      "subject_sha256": null
+    },
+    {
       "evidence_id": "ev_3524e03b3145c6a8e5bf66252264f1505c305fb75c0495c6f91ba74f2b83d41f",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -7684,6 +7763,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_415d20df0cd5a0f1daf54d55396238ee657c0e81990787e7df985c2e3edce36b",
+      "operation": "load_frida_script",
+      "subject_sha256": null
+    },
+    {
       "evidence_id": "ev_41e5e3af0ac9ad8f80e4946a6dee56ac4acd3d86b11fd5a8b9649f9f99c418ed",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -7732,6 +7816,11 @@
       "evidence_id": "ev_44cafe426eabe7d97ce20f0a2c10a0d73817c6ba637f6bdff5a6fe8a3365b238",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_455dbaaf8b544197c55c359db37fa99ab0e8844733be6fd2d92e037cd33fa65a",
+      "operation": "frida_session_status",
+      "subject_sha256": null
     },
     {
       "evidence_id": "ev_45e98d0357cf584aacb8492954e493e3db696d6e04395bc43abfd2bb1e68df0d",
@@ -8122,6 +8211,11 @@
       "evidence_id": "ev_68f69535b042bdbca06d9b824f79f2f07253beec3dc12e5ce7b39c6056c0f183",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_6921d31f27a94e178e0703542747fdc6fd49cf4de7cc21886ab025174b280714",
+      "operation": "load_frida_script",
+      "subject_sha256": null
     },
     {
       "evidence_id": "ev_69f4bcefb57c507ca3af22d29d9c9be6d164fffdb00ba58f0c4ef6eb4302a199",
@@ -8585,6 +8679,11 @@
     },
     {
       "evidence_id": "ev_921a75ce56172c57063efee5ddc86695d307ecbd70535ddb554e93341ba8193c",
+      "operation": "load_frida_script",
+      "subject_sha256": null
+    },
+    {
+      "evidence_id": "ev_92358082c60fb7ce0a481f6e4444aca99d8b726acfb768a43d29e18c59a6ccd8",
       "operation": "load_frida_script",
       "subject_sha256": null
     },
@@ -9169,6 +9268,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_c5735190b5d676c5e1a91522463afa8b7e1fe98615554cc806680dd792b88d6e",
+      "operation": "load_frida_script",
+      "subject_sha256": null
+    },
+    {
       "evidence_id": "ev_c59272d613d3d1c26976416061e617a9cf739cc574b0469f234fb37440d7bff2",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -9289,6 +9393,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_d21fb72d272fe0626249b12559b47e455de97ad41786618ce4205bf0cfee89fd",
+      "operation": "frida_session_status",
+      "subject_sha256": null
+    },
+    {
       "evidence_id": "ev_d221fb85fda74857c0dc1a1c708166f05b852d66c218d138b04c70e9d4212686",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -9397,6 +9506,11 @@
       "evidence_id": "ev_d8c9ebe17f0cde9fc7a1fbb0f7ebea092ee33ee6b8e9446706eec78b5767f6e9",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_d8cb3fd47d171ccbed6ccfb674d9d35182d484394b40561d8573520984507f56",
+      "operation": "load_frida_script",
+      "subject_sha256": null
     },
     {
       "evidence_id": "ev_d902c125ec89f8da948947de3c2f2038b16ccf8d7a240f6cc215f02436a2a5f6",
