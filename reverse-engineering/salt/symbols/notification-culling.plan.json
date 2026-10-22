@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "name": "notification-culling",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\natural-menu-time.seeds.tsv",
+  "seed_sha256": "944d81f36a1888319178b91a1bc428212d48d669a3c074517ec371bacdb9f95a",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\notification-culling",
+  "seed_count": 6247,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 16926,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.ObjectCullCollider::OnTriggerEnter",
+      "token": "0x60015d5",
+      "va": "0x180499a40",
+      "file_offset": 4817472,
+      "label": "ExposureUnnoticed2_Scripts_InGame_ObjectCullCollider__OnTriggerEnter__060015d5",
+      "file_stem": "16926-060015d5",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16927,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.ObjectCullCollider::OnTriggerExit",
+      "token": "0x60015d6",
+      "va": "0x180499c40",
+      "file_offset": 4817984,
+      "label": "ExposureUnnoticed2_Scripts_InGame_ObjectCullCollider__OnTriggerExit__060015d6",
+      "file_stem": "16927-060015d6",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17166,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.ObjectCulling.NpcCullArea::Awake",
+      "token": "0x60016c5",
+      "va": "0x1804ac760",
+      "file_offset": 4894560,
+      "label": "ExposureUnnoticed2_Scripts_InGame_ObjectCulling_NpcCullArea__Awake__060016c5",
+      "file_stem": "17166-060016c5",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17167,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.ObjectCulling.NpcCullArea::OnTriggerEnter",
+      "token": "0x60016c6",
+      "va": "0x1804ac880",
+      "file_offset": 4894848,
+      "label": "ExposureUnnoticed2_Scripts_InGame_ObjectCulling_NpcCullArea__OnTriggerEnter__060016c6",
+      "file_stem": "17167-060016c6",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17168,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.ObjectCulling.NpcCullArea::OnTriggerExit",
+      "token": "0x60016c7",
+      "va": "0x1804acb60",
+      "file_offset": 4895584,
+      "label": "ExposureUnnoticed2_Scripts_InGame_ObjectCulling_NpcCullArea__OnTriggerExit__060016c7",
+      "file_stem": "17168-060016c7",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17169,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.ObjectCulling.NpcCullArea::IsInArea",
+      "token": "0x60016c8",
+      "va": "0x1804ace20",
+      "file_offset": 4896288,
+      "label": "ExposureUnnoticed2_Scripts_InGame_ObjectCulling_NpcCullArea__IsInArea__060016c8",
+      "file_stem": "17169-060016c8",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17172,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.ObjectCulling.ObjectCuller::Awake",
+      "token": "0x60016cb",
+      "va": "0x1804ad080",
+      "file_offset": 4896896,
+      "label": "ExposureUnnoticed2_Scripts_InGame_ObjectCulling_ObjectCuller__Awake__060016cb",
+      "file_stem": "17172-060016cb",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17173,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.ObjectCulling.ObjectCuller::Update",
+      "token": "0x60016cc",
+      "va": "0x1804ad330",
+      "file_offset": 4897584,
+      "label": "ExposureUnnoticed2_Scripts_InGame_ObjectCulling_ObjectCuller__Update__060016cc",
+      "file_stem": "17173-060016cc",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17174,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.ObjectCulling.ObjectCuller::IsCulling",
+      "token": "0x60016cd",
+      "va": "0x1804ad4b0",
+      "file_offset": 4897968,
+      "label": "ExposureUnnoticed2_Scripts_InGame_ObjectCulling_ObjectCuller__IsCulling__060016cd",
+      "file_stem": "17174-060016cd",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17181,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.ObjectCulling.ObjectCullerManager::IsCulling",
+      "token": "0x60016d4",
+      "va": "0x1804ad8d0",
+      "file_offset": 4899024,
+      "label": "ExposureUnnoticed2_Scripts_InGame_ObjectCulling_ObjectCullerManager__IsCulling__060016d4",
+      "file_stem": "17181-060016d4",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Metadata-derived coordinates, bounded direct pseudocode; runtime evidence is recorded separately."
+  ]
+}
