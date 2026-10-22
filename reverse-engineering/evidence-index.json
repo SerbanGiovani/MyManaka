@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-22T11:06:34.971426+00:00",
+  "generated_at_utc": "2026-10-22T11:49:24.192696+00:00",
   "status": "consistent",
-  "canonical_rea_observations": 563,
+  "canonical_rea_observations": 571,
   "rea_queries_completed": 501,
   "artifacts": [
     {
@@ -107,8 +107,8 @@
     },
     {
       "path": "audit.py",
-      "bytes": 34302,
-      "sha256": "a9c079ecc49d200ad017d6d2cd68fa0792e9f2f93e9dc82c9fb807888ddb6a54"
+      "bytes": 36096,
+      "sha256": "86128d36e8991d6fa9aa34ba15eaff8ca8adce0b6edd755fa542c0f3b417de88"
     },
     {
       "path": "bareta-chain.md",
@@ -117,13 +117,18 @@
     },
     {
       "path": "event-generation.md",
-      "bytes": 10545,
-      "sha256": "6dbc2485c067c4202af48ec7858d862af9af857f61dd589688f56632c2cb7a1f"
+      "bytes": 10868,
+      "sha256": "906f797c72615ab0dcca0cd704d41dfa16787b9ca75c8edb6e1969cec08e4133"
     },
     {
       "path": "loading-chain.md",
       "bytes": 13551,
       "sha256": "e02d74c0442d5e352096ae79580d67c06e5284a091410715fb513765801ce6fe"
+    },
+    {
+      "path": "natural-event-coverage.md",
+      "bytes": 8351,
+      "sha256": "31b262dffc14449b8a08d14249a9e1270b449ee122ce41c1085efe476e63dc71"
     },
     {
       "path": "natural-gameplay.md",
@@ -157,8 +162,73 @@
     },
     {
       "path": "README.md",
-      "bytes": 16487,
-      "sha256": "9359e8cd7739137bb535c3086c60526dd7f7797d30738f293b32ad3cd205a5a8"
+      "bytes": 17015,
+      "sha256": "0a9bf9af20fe5fc3b22112fa24ed25e938bf565798b3cd0cab4afe705d871b3e"
+    },
+    {
+      "path": "runtime/natural-event-coverage/analyze.py",
+      "bytes": 17801,
+      "sha256": "1568ef4a6c665abb74cd09ec620c541e88cd124c49065e81eb518daec519d982"
+    },
+    {
+      "path": "runtime/natural-event-coverage/collect.py",
+      "bytes": 5482,
+      "sha256": "e49e34674355d707a91edaab7277ebb9e9fe374a161fe3d435ff30e87bc27999"
+    },
+    {
+      "path": "runtime/natural-event-coverage/evaluation-v2.js",
+      "bytes": 4393,
+      "sha256": "2ec28a8e9a5f89b869ff5ec5dbeed33f93bdaafcde3212509d3a9610512e74ef"
+    },
+    {
+      "path": "runtime/natural-event-coverage/evaluation.js",
+      "bytes": 4248,
+      "sha256": "c84141ab9e0cd46f7552d86c581bbae767ee98d7bac3cc134ac70969eff0a29d"
+    },
+    {
+      "path": "runtime/natural-event-coverage/manifest.json",
+      "bytes": 7707,
+      "sha256": "b976103ef4eaa14ca5689da6e2236593cc4f336d805750b5cba2bdf68059a6e2"
+    },
+    {
+      "path": "runtime/natural-event-coverage/natural-window.jsonl.gz",
+      "bytes": 1301480,
+      "sha256": "f00a200972a3fb14c3c3ec1498352b3c04d17ee4b88d497fa97e3cc378c5879f"
+    },
+    {
+      "path": "runtime/natural-event-coverage/observe-v2.js",
+      "bytes": 11901,
+      "sha256": "8b58abf454436152cbc6eb53dce2150aa4d44cef80268291040f8b426ef64259"
+    },
+    {
+      "path": "runtime/natural-event-coverage/observe-v3.js",
+      "bytes": 12145,
+      "sha256": "6efc8278fde5aae890fc396d89a700ef5599de883c1b9555bf40442984269fbf"
+    },
+    {
+      "path": "runtime/natural-event-coverage/observe-v4.js",
+      "bytes": 12359,
+      "sha256": "f290922cf684576b2e26df5953f8cb0b2dc30292de7f5bedc4fbfda227e5d010"
+    },
+    {
+      "path": "runtime/natural-event-coverage/observe.js",
+      "bytes": 11194,
+      "sha256": "c58311a4ca36aac921ffad16684b21ef5bac18ad02c12d501a984673426b531d"
+    },
+    {
+      "path": "runtime/natural-event-coverage/rea-runtime.json",
+      "bytes": 33149517,
+      "sha256": "66ddd05db97994b242d3aa1ea08acca1c42a0cef89aa5d34b41f1f17d6a265d0"
+    },
+    {
+      "path": "runtime/natural-event-coverage/results.json",
+      "bytes": 7363106,
+      "sha256": "dc374542bdde4127e1f262ae110483845d96a63d14723989a273c0b65315bc14"
+    },
+    {
+      "path": "runtime/natural-event-coverage/test_analysis.py",
+      "bytes": 5081,
+      "sha256": "2d045a53c7659d1bc0d397a71b8f6e548434d5460abe85de842a54660d6a3bce"
     },
     {
       "path": "runtime/natural-event-generation/abi.json",
@@ -7618,6 +7688,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_328932e13e644e139cef253c371abd79951673781ad5f74cd1a1fd7f7369d12c",
+      "operation": "load_frida_script",
+      "subject_sha256": null
+    },
+    {
       "evidence_id": "ev_334cc22f5c1bc259f8a5f1d534207b4752118bb2940c577377afb84c9779d100",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -7746,6 +7821,11 @@
       "evidence_id": "ev_409b7ad287d4d1c48a8a9267e12ddaa419f659838fadc87461883c72dc19c888",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_40a8dfac3686cb39efe1a7c26f7934daed04f28ddb83651bacc1f6e63a03e51f",
+      "operation": "load_frida_script",
+      "subject_sha256": null
     },
     {
       "evidence_id": "ev_4103874920e079344c8e7c50f42e7e893c99f67bdd78b64620c83ffb1100c77e",
@@ -8288,6 +8368,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_7245f7a7935082d88acf547bd47ede6f332a8e85452f4b60095137ec30e49c51",
+      "operation": "frida_session_status",
+      "subject_sha256": null
+    },
+    {
       "evidence_id": "ev_727c552c7ce07b260fb852667310b648d10d03f3ff2a7f252dcf778e69f35a25",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -8618,6 +8703,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_8e0c87ff73221fd909e0886151c734a48a652978fc098e9b63287f12f35cc7a3",
+      "operation": "load_frida_script",
+      "subject_sha256": null
+    },
+    {
       "evidence_id": "ev_8ed82f55e9d0b43f7256df1410023b6415adb4855275ae20b18a546626458c09",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -8848,6 +8938,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_9c0782099c547305af206da785ae5aa6adc9ea2d9da7ca5eadc2c2d34c4e4e05",
+      "operation": "load_frida_script",
+      "subject_sha256": null
+    },
+    {
       "evidence_id": "ev_9d48f2a32535b75d8323271ce932d733f5eb0981c22dc22e598ca71a6aa09f77",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -9058,6 +9153,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_ac16e63f1a32dce3f83ba0a3079a5cd68890628ed428e05e3235d087591845a8",
+      "operation": "load_frida_script",
+      "subject_sha256": null
+    },
+    {
       "evidence_id": "ev_ac560907ac129605fab1451bef0b817dedac6cebb54ea4447c07b7d338250702",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -9186,6 +9286,11 @@
       "evidence_id": "ev_b9d244960e36daf9fe0118325abc7b7c29cd12e79dad89e68160fa1654394281",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_b9d4186a22f117c2c13d1affb068dcc4a96dc1fc4203a36109c0692182fd47c9",
+      "operation": "load_frida_script",
+      "subject_sha256": null
     },
     {
       "evidence_id": "ev_ba6d519892576bade2850b98bafd4fe07c8fb835bbf1880d5e55fdc75b2ecf84",
@@ -9416,6 +9521,11 @@
       "evidence_id": "ev_d3407202e6bb29b307999b48205af734bfe8e401c0af88ce73e503d3bf16a447",
       "operation": "procedure_assembly",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_d376e7ccb1f700343c42c3fe5a46edf361678f0f9c8808795e8f81c031253c09",
+      "operation": "frida_session_status",
+      "subject_sha256": null
     },
     {
       "evidence_id": "ev_d40b806fab082772b8f3a53852b397f670494b5678b8ae7ce3a4760187c63d1d",

@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "captured_utc": "2026-10-22T11:48:47.796342+00:00",
+  "game_root": "E:\\ManakaREA-NaturalGameplay",
+  "evidence_ids": [
+    "ev_328932e13e644e139cef253c371abd79951673781ad5f74cd1a1fd7f7369d12c",
+    "ev_40a8dfac3686cb39efe1a7c26f7934daed04f28ddb83651bacc1f6e63a03e51f",
+    "ev_8e0c87ff73221fd909e0886151c734a48a652978fc098e9b63287f12f35cc7a3",
+    "ev_9c0782099c547305af206da785ae5aa6adc9ea2d9da7ca5eadc2c2d34c4e4e05",
+    "ev_ac16e63f1a32dce3f83ba0a3079a5cd68890628ed428e05e3235d087591845a8",
+    "ev_b9d4186a22f117c2c13d1affb068dcc4a96dc1fc4203a36109c0692182fd47c9",
+    "ev_7245f7a7935082d88acf547bd47ede6f332a8e85452f4b60095137ec30e49c51",
+    "ev_d376e7ccb1f700343c42c3fe5a46edf361678f0f9c8808795e8f81c031253c09"
+  ],
+  "sources": [
+    {
+      "path": "runtime/natural-event-coverage/analyze.py",
+      "sha256": "1568ef4a6c665abb74cd09ec620c541e88cd124c49065e81eb518daec519d982"
+    },
+    {
+      "path": "runtime/natural-event-coverage/collect.py",
+      "sha256": "e49e34674355d707a91edaab7277ebb9e9fe374a161fe3d435ff30e87bc27999"
+    },
+    {
+      "path": "runtime/natural-event-coverage/evaluation-v2.js",
+      "sha256": "2ec28a8e9a5f89b869ff5ec5dbeed33f93bdaafcde3212509d3a9610512e74ef"
+    },
+    {
+      "path": "runtime/natural-event-coverage/evaluation.js",
+      "sha256": "c84141ab9e0cd46f7552d86c581bbae767ee98d7bac3cc134ac70969eff0a29d"
+    },
+    {
+      "path": "runtime/natural-event-coverage/observe-v2.js",
+      "sha256": "8b58abf454436152cbc6eb53dce2150aa4d44cef80268291040f8b426ef64259"
+    },
+    {
+      "path": "runtime/natural-event-coverage/observe-v3.js",
+      "sha256": "6efc8278fde5aae890fc396d89a700ef5599de883c1b9555bf40442984269fbf"
+    },
+    {
+      "path": "runtime/natural-event-coverage/observe-v4.js",
+      "sha256": "f290922cf684576b2e26df5953f8cb0b2dc30292de7f5bedc4fbfda227e5d010"
+    },
+    {
+      "path": "runtime/natural-event-coverage/observe.js",
+      "sha256": "c58311a4ca36aac921ffad16684b21ef5bac18ad02c12d501a984673426b531d"
+    },
+    {
+      "path": "runtime/natural-event-coverage/test_analysis.py",
+      "sha256": "2d045a53c7659d1bc0d397a71b8f6e548434d5460abe85de842a54660d6a3bce"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "natural-window.jsonl.gz",
+      "sha256": "f00a200972a3fb14c3c3ec1498352b3c04d17ee4b88d497fa97e3cc378c5879f",
+      "uncompressed_bytes": 7237847,
+      "uncompressed_sha256": "c34c6200262b096f0aa2d7d62c7709ac06354f615e7013beba37760667c6205d",
+      "original_path": "E:\\ManakaREA-NaturalGameplay\\natural.jsonl",
+      "original_snapshot_sha256": "afbc2c0c70fb6cbe7a620c32eb1bfc2a47593afe21715c7fdda15047dc56ff90",
+      "original_snapshot_bytes": 222899983,
+      "selection": {
+        "min_frame": 725215,
+        "max_frame": 761870,
+        "snapshot_cadence_real_seconds": 15,
+        "marker_window_seconds": 2,
+        "marker_real_times": [
+          15288.939453125,
+          15289.5625,
+          15294.181640625,
+          15294.2470703125,
+          15298.619140625,
+          15310.458984375,
+          15369.419921875,
+          15400.755859375,
+          15401.63671875,
+          15405.8798828125,
+          15450.369140625,
+          15459.5302734375,
+          15533.18359375,
+          15533.34375,
+          15713.2197265625,
+          15713.4443359375,
+          15883.58984375,
+          15884.6455078125,
+          16115.48828125,
+          16116.4619140625,
+          16126.5166015625,
+          16598.392578125,
+          16600.310546875,
+          16605.87890625,
+          16605.8984375,
+          16673.283203125,
+          16673.81640625,
+          16678.361328125,
+          16686.107421875,
+          16686.771484375,
+          16686.96484375,
+          16786.7734375,
+          16790.982421875
+        ],
+        "retained_lines": 212,
+        "complete_original_lines": true
+      }
+    }
+  ],
+  "sessions": [
+    {
+      "session_id": "fa9bf71f-fe39-4c53-b3d0-f4fba8105c29",
+      "pid": 45864,
+      "state": "running",
+      "closed_by_operator": true
+    }
+  ],
+  "inputs": [
+    {
+      "relative_path": "GameAssembly.dll",
+      "original_path": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+      "sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "relative_path": "UnityPlayer.dll",
+      "original_path": "E:\\SecretFlasherManakaREA\\UnityPlayer.dll",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\UnityPlayer.dll",
+      "sha256": "43fb0aea1b80c74963dae88ec7fc1c3c1993d893ce94d12972000fcc9b653ad1"
+    },
+    {
+      "relative_path": "SecretFlasherManaka_Data/data.unity3d",
+      "original_path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\data.unity3d",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\SecretFlasherManaka_Data\\data.unity3d",
+      "sha256": "20781befb4cc42f898b65fe03f3d16c0a77b53aecac6ddc388460cfb710ae93a"
+    },
+    {
+      "relative_path": "SecretFlasherManaka_Data/il2cpp_data/Metadata/global-metadata.dat",
+      "original_path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
+      "sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8"
+    },
+    {
+      "relative_path": "SecretFlasherManaka_Data/StreamingAssets/StandaloneWindows64/-265379604",
+      "original_path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\StreamingAssets\\StandaloneWindows64\\-265379604",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\SecretFlasherManaka_Data\\StreamingAssets\\StandaloneWindows64\\-265379604",
+      "sha256": "bb3a495d023a00ff95c110955a436e4d4dd2eea0598919401eb236d3e132ade9"
+    }
+  ],
+  "current_plugin_sha256": "f0a94d41c55ff09e0ea56708c9d86bace4fd6fad68a7c982518f37b2d1996da8",
+  "source_save_files_unchanged": 8,
+  "previous_checkpoint": {
+    "path": "runtime/natural-event-generation/manifest.json",
+    "sha256": "516da0cdba609ef138025f5f46882024b60aecf5d41dd748c794c01eaaba9404"
+  },
+  "algorithm_dependency": {
+    "path": "runtime/natural-event-generation/analyze.py",
+    "sha256": "17ae3a0ec42649bb26d196afef93ec9077102186cba3591fc7128356ce026b9f"
+  },
+  "observation_complete": true,
+  "capture_joins": [
+    {
+      "evidence_id": "ev_d376e7ccb1f700343c42c3fe5a46edf361678f0f9c8808795e8f81c031253c09",
+      "overlapping_messages": 17069,
+      "added_messages": 205,
+      "truncated_original": true
+    }
+  ],
+  "natural_only": true,
+  "limits": [
+    "Natural time-stop-assisted coverage is separately marked; it does not establish ordinary moving, unpaused coverage.",
+    "A missing event while the source is frozen or while it never reaches its marker is not a missing-event failure.",
+    "Destroyed/replaced actors are lifecycle-censored unless independent scene evidence establishes the expected removal.",
+    "Source disappearance below a marker only supports a bounded ordinary transition without observed event, not its exact sub-frame cancellation point.",
+    "A same-frame hidden event snapshot alone is weaker than a bracketed original manual Update with hidden pre-state and the event inside.",
+    "Observer overhead changes frame steps. Event/callback delivery is measured under instrumentation, not a frame-rate-independent timing guarantee.",
+    "Callback identity on the same receiver/frame uses group-level listener counts."
+  ]
+}

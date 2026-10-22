@@ -115,6 +115,26 @@ def main():
         check(digest(Path(abi["source_path"])) == abi["source_sha256"], "Animator binding ABI source differs")
     observed_runtime_records = {natural_dir / "rea-runtime.json": natural_runtime, notification_dir / "rea-runtime.json": notification_runtime,
                                generation_dir / "rea-runtime.json": generation_runtime}
+    coverage_dir = ROOT / "runtime/natural-event-coverage"
+    coverage_runtime = read(coverage_dir / "manifest.json")
+    for source in coverage_runtime["sources"]:
+        check(digest(ROOT / source["path"]) == source["sha256"], "Coverage source differs")
+    for output in coverage_runtime["outputs"]:
+        path = coverage_dir / output["path"]
+        check(digest(path) == output["sha256"], "Coverage log differs")
+        payload = gzip.decompress(path.read_bytes())
+        check(len(payload) == output["uncompressed_bytes"] and hashlib.sha256(payload).hexdigest() == output["uncompressed_sha256"], "Coverage raw log differs")
+        bounds = output["selection"]
+        check(all(bounds["min_frame"] <= json.loads(line)["frame"] <= bounds["max_frame"] for line in payload.splitlines()), "Coverage window differs")
+    coverage_result = runpy.run_path(str(coverage_dir / "analyze.py"))["analyze"]()
+    check(coverage_result == read(coverage_dir / "results.json"), "Coverage measurements differ")
+    check(coverage_result["all_sources_finished"] and coverage_runtime["observation_complete"] and coverage_runtime["natural_only"], "Coverage tail incomplete")
+    check(not coverage_result["errors"] and not coverage_result["native_script_errors"], "Coverage probe errors")
+    check(all(s["closed_by_operator"] for s in coverage_runtime["sessions"]), "Coverage session not closed")
+    for key in ["previous_checkpoint", "algorithm_dependency"]:
+        dependency = coverage_runtime[key]
+        check(digest(ROOT / dependency["path"]) == dependency["sha256"], "Coverage dependency differs")
+    observed_runtime_records[coverage_dir / "rea-runtime.json"] = coverage_runtime
     asset = read(ROOT / "assets/resources-keydata.json")
     check(runtime_inputs["SecretFlasherManaka_Data/data.unity3d"] == asset["source_sha256"], "Runtime resources differ")
     recovered = read(ROOT / "salt/evidence/recovered-crypto.json")
@@ -162,7 +182,7 @@ def main():
                 check(subject_hash is None and record["provider"]["id"] == "frida" and record["predicate_type"] == "rea.frida.instrumentation-observation", "Unexpected natural runtime provider")
                 check(key in selected_observation["evidence_ids"] and record["parameters"]["session_id"] in selected_sessions, "Unexpected natural runtime session")
                 result = record["normalized_result"]
-                check(not result["messages_truncated"], "Natural checkpoint Evidence truncated")
+                check(not result["messages_truncated"] or (path == coverage_dir / "rea-runtime.json" and coverage_result["capture_joins"]), "Natural checkpoint Evidence truncated without verified overlap")
                 if record["operation"] == "load_frida_script":
                     source = Path(result["source_path"])
                     check(digest(source) == result["source_sha256"], "Natural Frida source differs")
