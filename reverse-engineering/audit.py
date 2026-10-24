@@ -160,6 +160,49 @@ def main():
         for entry in read(cancellation_dir / save_baseline["path"])["files"]:
             check(digest(Path(entry["path"])) == entry["sha256"], "Source save/binding file changed during cancellation trial")
     observed_runtime_records[cancellation_dir / "rea-runtime.json"] = cancellation_runtime
+    noise_dir = ROOT / "runtime/noise-cancellation"
+    noise_runtime = read(noise_dir / "manifest.json")
+    for source in noise_runtime["sources"]:
+        check(digest(ROOT / source["path"]) == source["sha256"], "Noise source differs")
+    for output in noise_runtime["outputs"]:
+        path = noise_dir / output["path"]
+        check(digest(path) == output["sha256"], "Noise compressed log differs")
+        payload = gzip.decompress(path.read_bytes())
+        check(len(payload) == output["uncompressed_bytes"] and hashlib.sha256(payload).hexdigest() == output["uncompressed_sha256"], "Noise raw log differs")
+        bounds = output["selection"]
+        check(output["original_start_offset"] > 0 and all(bounds["min_frame"] <= json.loads(line)["frame"] <= bounds["max_frame"] for line in payload.splitlines()), "Noise run/window differs")
+    noise_result = runpy.run_path(str(noise_dir / "analyze.py"))["analyze"]()
+    check(noise_result == read(noise_dir / "results.json"), "Noise measurements differ")
+    check(noise_result["all_sources_finished"] and noise_runtime["observation_complete"] and not noise_runtime["natural_only"], "Noise capture tail/authority differs")
+    check(noise_runtime["inputs"] == natural_runtime["inputs"] and noise_runtime["current_plugin_sha256"] == natural_runtime["current_plugin_sha256"], "Noise build/probe identity differs")
+    for section in ["natural", "replay", "replay_additional"]:
+        measured = noise_result[section]
+        check(not measured["errors"] and not measured["native_script_errors"], "Noise probe errors")
+        if section == "natural":
+            check(not measured["noise_decode_errors"] and all(e["delivery_balanced"] for e in measured["events"]), "Natural noise delivery/decode error")
+        else:
+            check(all(t["complete"] and t["event_callback_counts_match"] and t["cleanup"]["verified_listed_fields_and_position"] for t in measured["trials"]), "Controlled noise capture/cleanup incomplete")
+    check(all(s["closed_by_operator"] for s in noise_runtime["sessions"]), "Noise session not closed")
+    for dependency in noise_runtime["dependencies"]:
+        check(digest(ROOT / dependency["path"]) == dependency["sha256"], "Noise dependency differs")
+    save_baseline = noise_runtime["source_save_baseline"]
+    check(digest(noise_dir / save_baseline["path"]) == save_baseline["sha256"], "Noise save baseline differs")
+    if args.inputs:
+        for entry in read(noise_dir / save_baseline["path"])["files"]:
+            check(digest(Path(entry["path"])) == entry["sha256"], "Source save/binding file changed during noise capture")
+        pe = runpy.run_path(str(ROOT / "salt/metadata.py"))["PE"]
+        native = (Path(noise_runtime["game_root"]) / "GameAssembly.dll").read_bytes()
+        image = pe(native)
+        for record in read(noise_dir / "rea-runtime.json")["records"]:
+            for message in record["normalized_result"]["messages"]:
+                p = message.get("payload", {})
+                if p.get("kind") != "noise_decoded_file_window":continue
+                for row in p["data"]["rows"]:
+                    pos = image.offset(0x180000000 + int(row["rva"], 16), executable=True)
+                    check(native[pos:pos+row["size"]] == bytes(row["bytes"]), "Noise original instruction bytes differ")
+    for name, sid in noise_runtime["session_files"].items():
+        check(all(r["parameters"]["session_id"] == sid for r in read(noise_dir / name)["records"]), "Noise natural/replay session contamination")
+        observed_runtime_records[noise_dir / name] = noise_runtime
     asset = read(ROOT / "assets/resources-keydata.json")
     check(runtime_inputs["SecretFlasherManaka_Data/data.unity3d"] == asset["source_sha256"], "Runtime resources differ")
     recovered = read(ROOT / "salt/evidence/recovered-crypto.json")

@@ -1,0 +1,3207 @@
+{
+  "schema_version": 1,
+  "status": "noise-cancellation-evidence-separated",
+  "natural": {
+    "schema_version": 1,
+    "status": "natural-noise-search-bounded",
+    "authority": "passive original input and original noise processing; separate from every artificial replay",
+    "natural_hidden_before_event_complete": false,
+    "natural_near_far_before_event_complete": false,
+    "natural_far_near_before_event_complete": false,
+    "hidden_before_event_lineages": [],
+    "near_far_before_event_lineages": [],
+    "far_near_before_event_lineages": [],
+    "cases": [
+      {
+        "classification": "event-generated",
+        "origin": "original-business-change-before-call",
+        "complete": true,
+        "samples": 75,
+        "frame_gaps": false,
+        "found_hashes": [
+          3664925388
+        ],
+        "stable_crossings": [
+          {
+            "before": 69121,
+            "after": 69122,
+            "full": 3664925388,
+            "eligible": true
+          }
+        ],
+        "parameter_fall_frames": [
+          69161,
+          69161
+        ],
+        "pre_event_hidden_samples": 0,
+        "pre_event_changes": [],
+        "pre_event_manual_samples": 0,
+        "event_frames": [
+          69121
+        ],
+        "last_frame": 69188,
+        "pre_event_samples": 7,
+        "pre_event_distance_crossings": [],
+        "pre_event_manual_modes": [
+          0
+        ],
+        "pre_event_manual_changes": [],
+        "skill_stop_samples": 0,
+        "ordinary_pause_samples": 0,
+        "pre_event_distance_range": [
+          1.7653588452350575,
+          2.0160221980048934
+        ],
+        "id": 1,
+        "script": "e956cafa-a50e-442a-a302-0b674a3aa0ba",
+        "entry_frame": 69114,
+        "entry_real": 2085.2841796875,
+        "end": {
+          "data": {
+            "callbacks": 1,
+            "events": 1,
+            "exitFrame": 69161,
+            "id": 1,
+            "nca": "0x16951fd7a00",
+            "reason": "completed-observation",
+            "skippedFrozenManual": 0
+          },
+          "frame": 69188,
+          "kind": "coverage_end",
+          "ordinal": 381,
+          "real": 2090.390380859375,
+          "time": 2053.31005859375,
+          "script": "e956cafa-a50e-442a-a302-0b674a3aa0ba",
+          "order": 383
+        },
+        "nca": "0x16951fd7a00",
+        "events": [
+          {
+            "id": 1,
+            "case": 1,
+            "script": "e956cafa-a50e-442a-a302-0b674a3aa0ba",
+            "frame": 69121,
+            "real": 2085.747802734375,
+            "receiver": "0x16616c98330",
+            "npc": "0x16899753bd0",
+            "at": {
+              "animator": "0x16616814e00",
+              "business": {
+                "alreadyFound": 1,
+                "fixedType": 0,
+                "foundState": "0x16616c98600",
+                "headset": 0,
+                "ignoreNoise": -209.0721893310547,
+                "justHit": 0,
+                "lastCalculation": {
+                  "frame": 69121,
+                  "values": [
+                    0.03988494351506233,
+                    0.03988494351506233,
+                    0.4000000059604645,
+                    0,
+                    0.9971235394477844
+                  ]
+                },
+                "noiseAdded": 0,
+                "noiseReduceCount": 120,
+                "noiseThreshold": 0.5466716289520264,
+                "noiseValue": 1,
+                "playerFound": 1,
+                "skipStrangeness": 0,
+                "stateBackrefsValid": true,
+                "stateTime": 0.45461583137512207
+              },
+              "businessState": 1,
+              "cachedDistance": 2.016022205352783,
+              "culling": 1,
+              "current": {
+                "full": 3664925388,
+                "length": 0.5739502310752869,
+                "loop": 0,
+                "multiplier": 1,
+                "normalized": 0.7920822501182556,
+                "short": 16503642,
+                "speed": 1
+              },
+              "display": 1,
+              "distance": 2.0160221980048934,
+              "enabled": 1,
+              "fireEvents": 1,
+              "found": 1,
+              "fps": 30,
+              "manual": 0,
+              "mesh": "0x1661680c540",
+              "meshActive": 1,
+              "next": {
+                "full": 3664925388,
+                "length": 0.5739502310752869,
+                "loop": 0,
+                "multiplier": 1,
+                "normalized": 0.7920822501182556,
+                "short": 16503642,
+                "speed": 1
+              },
+              "npc": "0x16899753bd0",
+              "npcPosition": [
+                -2.7895545959472656,
+                -8.530933380126953,
+                -23.591609954833984
+              ],
+              "playerPosition": [
+                -2.42842960357666,
+                -8.549905776977539,
+                -25.574934005737305
+              ],
+              "receiver": "0x16616c98330",
+              "skipped": 0,
+              "speed": 0.9873097538948059,
+              "stop": 0,
+              "timeScale": 1,
+              "transition": 0,
+              "weight": 1
+            },
+            "models": 1,
+            "callbacks": 1,
+            "groups": [
+              {
+                "frame": 69131,
+                "callbacks": 1,
+                "listeners": 1,
+                "balanced": true
+              }
+            ],
+            "callback_frames": [
+              69131
+            ],
+            "callback_real": [
+              2086.33251953125
+            ],
+            "callback_delay_real": 0.584716796875,
+            "delivery_balanced": true
+          }
+        ],
+        "evaluation_scopes": [],
+        "hidden_update_scopes": [],
+        "hidden_before_event": false,
+        "pause_assisted": false,
+        "delivery_balanced": true,
+        "initial_blind_spot": false,
+        "scene": "Mall",
+        "near_threshold": 10,
+        "natural_near_far_crossings": [],
+        "near_far_before_event": false,
+        "lifecycle_retired": false,
+        "noise_samples": {
+          "samples": 8,
+          "frame_gaps": [],
+          "value_range": [
+            1,
+            1
+          ],
+          "reduce_count_range": [
+            120,
+            120
+          ],
+          "threshold_range": [
+            0.5466716289520264,
+            0.5466716289520264
+          ],
+          "added_positive_samples": 0,
+          "player_not_found_samples": 0,
+          "value_below_threshold_samples": 0,
+          "fresh_continuous_noise_samples": 1,
+          "fresh_continuous_noise_range": [
+            0,
+            0
+          ],
+          "limitation": "Cached lastCalculation is counted as current only on its recorded frame; these are sampled values, not all native evaluations."
+        },
+        "ordinary_noise_business_exits": [],
+        "noise_turn_observations": [],
+        "before_entry_noise": {
+          "window_real_seconds": 5,
+          "calculations": 0,
+          "positive_continuous_calculations": 0,
+          "sounds": 0,
+          "positive_sound_readbacks": 0,
+          "limitation": "Only emitted observations in the five seconds before this entry; zero calculations and unchanged sound readbacks are not exhaustively emitted outside active cases."
+        }
+      },
+      {
+        "classification": "event-generated",
+        "origin": "original-business-change-before-call",
+        "complete": true,
+        "samples": 74,
+        "frame_gaps": false,
+        "found_hashes": [
+          3664925388
+        ],
+        "stable_crossings": [
+          {
+            "before": 69428,
+            "after": 69429,
+            "full": 3664925388,
+            "eligible": true
+          }
+        ],
+        "parameter_fall_frames": [
+          69466,
+          69466
+        ],
+        "pre_event_hidden_samples": 0,
+        "pre_event_changes": [],
+        "pre_event_manual_samples": 0,
+        "event_frames": [
+          69428
+        ],
+        "last_frame": 69495,
+        "pre_event_samples": 6,
+        "pre_event_distance_crossings": [],
+        "pre_event_manual_modes": [
+          0
+        ],
+        "pre_event_manual_changes": [],
+        "skill_stop_samples": 0,
+        "ordinary_pause_samples": 0,
+        "pre_event_distance_range": [
+          1.619680867440448,
+          1.8348883212935811
+        ],
+        "id": 2,
+        "script": "e956cafa-a50e-442a-a302-0b674a3aa0ba",
+        "entry_frame": 69422,
+        "entry_real": 2106.63037109375,
+        "end": {
+          "data": {
+            "callbacks": 1,
+            "events": 1,
+            "exitFrame": 69466,
+            "id": 2,
+            "nca": "0x1695cec98c0",
+            "reason": "completed-observation",
+            "skippedFrozenManual": 0
+          },
+          "frame": 69495,
+          "kind": "coverage_end",
+          "ordinal": 670,
+          "real": 2111.705810546875,
+          "time": 2074.620361328125,
+          "script": "e956cafa-a50e-442a-a302-0b674a3aa0ba",
+          "order": 672
+        },
+        "nca": "0x1695cec98c0",
+        "events": [
+          {
+            "id": 2,
+            "case": 2,
+            "script": "e956cafa-a50e-442a-a302-0b674a3aa0ba",
+            "frame": 69428,
+            "real": 2107.019775390625,
+            "receiver": "0x1695cf47a50",
+            "npc": "0x16922a23900",
+            "at": {
+              "animator": "0x1694dd10ba0",
+              "business": {
+                "alreadyFound": 1,
+                "fixedType": 0,
+                "foundState": "0x1695cf47cf0",
+                "headset": 0,
+                "ignoreNoise": -43.189659118652344,
+                "justHit": 0,
+                "lastCalculation": {
+                  "frame": 69428,
+                  "values": [
+                    0.07863803952932358,
+                    0,
+                    0,
+                    0,
+                    0.7863803505897522
+                  ]
+                },
+                "noiseAdded": 0,
+                "noiseReduceCount": 120,
+                "noiseThreshold": 0.6714479923248291,
+                "noiseValue": 1,
+                "playerFound": 1,
+                "skipStrangeness": 0,
+                "stateBackrefsValid": true,
+                "stateTime": 0.3767645061016083
+              },
+              "businessState": 1,
+              "cachedDistance": 1.6196810007095337,
+              "culling": 1,
+              "current": {
+                "full": 3664925388,
+                "length": 0.5545166730880737,
+                "loop": 0,
+                "multiplier": 1,
+                "normalized": 0.6794466376304626,
+                "short": 16503642,
+                "speed": 1
+              },
+              "display": 1,
+              "distance": 1.619680867440448,
+              "enabled": 1,
+              "fireEvents": 1,
+              "found": 1,
+              "fps": 30,
+              "manual": 0,
+              "mesh": "0x1694dd02560",
+              "meshActive": 1,
+              "next": {
+                "full": 3664925388,
+                "length": 0.5545166730880737,
+                "loop": 0,
+                "multiplier": 1,
+                "normalized": 0.6794466376304626,
+                "short": 16503642,
+                "speed": 1
+              },
+              "npc": "0x16922a23900",
+              "npcPosition": [
+                2.3622970581054688,
+                -8.530933380126953,
+                -43.76910400390625
+              ],
+              "playerPosition": [
+                0.8976483345031738,
+                -8.549899101257324,
+                -44.46034240722656
+              ],
+              "receiver": "0x1695cf47a50",
+              "skipped": 0,
+              "speed": 1.0219109058380127,
+              "stop": 0,
+              "timeScale": 1,
+              "transition": 0,
+              "weight": 1
+            },
+            "models": 1,
+            "callbacks": 1,
+            "groups": [
+              {
+                "frame": 69437,
+                "callbacks": 1,
+                "listeners": 1,
+                "balanced": true
+              }
+            ],
+            "callback_frames": [
+              69437
+            ],
+            "callback_real": [
+              2107.642578125
+            ],
+            "callback_delay_real": 0.622802734375,
+            "delivery_balanced": true
+          }
+        ],
+        "evaluation_scopes": [],
+        "hidden_update_scopes": [],
+        "hidden_before_event": false,
+        "pause_assisted": false,
+        "delivery_balanced": true,
+        "initial_blind_spot": false,
+        "scene": "Mall",
+        "near_threshold": 10,
+        "natural_near_far_crossings": [],
+        "near_far_before_event": false,
+        "lifecycle_retired": false,
+        "noise_samples": {
+          "samples": 7,
+          "frame_gaps": [],
+          "value_range": [
+            1,
+            1
+          ],
+          "reduce_count_range": [
+            120,
+            120
+          ],
+          "threshold_range": [
+            0.6714479923248291,
+            0.6714479923248291
+          ],
+          "added_positive_samples": 0,
+          "player_not_found_samples": 0,
+          "value_below_threshold_samples": 0,
+          "fresh_continuous_noise_samples": 1,
+          "fresh_continuous_noise_range": [
+            0,
+            0
+          ],
+          "limitation": "Cached lastCalculation is counted as current only on its recorded frame; these are sampled values, not all native evaluations."
+        },
+        "ordinary_noise_business_exits": [],
+        "noise_turn_observations": [],
+        "before_entry_noise": {
+          "window_real_seconds": 5,
+          "calculations": 0,
+          "positive_continuous_calculations": 0,
+          "sounds": 0,
+          "positive_sound_readbacks": 0,
+          "limitation": "Only emitted observations in the five seconds before this entry; zero calculations and unchanged sound readbacks are not exhaustively emitted outside active cases."
+        }
+      },
+      {
+        "classification": "event-generated",
+        "origin": "original-business-change-before-call",
+        "complete": true,
+        "samples": 73,
+        "frame_gaps": false,
+        "found_hashes": [
+          4204346965
+        ],
+        "stable_crossings": [
+          {
+            "before": 69765,
+            "after": 69766,
+            "full": 4204346965,
+            "eligible": true
+          }
+        ],
+        "parameter_fall_frames": [
+          69797,
+          69797
+        ],
+        "pre_event_hidden_samples": 0,
+        "pre_event_changes": [],
+        "pre_event_manual_samples": 0,
+        "event_frames": [
+          69765
+        ],
+        "last_frame": 69825,
+        "pre_event_samples": 12,
+        "pre_event_distance_crossings": [],
+        "pre_event_manual_modes": [
+          0
+        ],
+        "pre_event_manual_changes": [],
+        "skill_stop_samples": 0,
+        "ordinary_pause_samples": 0,
+        "pre_event_distance_range": [
+          3.961265511327614,
+          4.100194910735864
+        ],
+        "id": 3,
+        "script": "e956cafa-a50e-442a-a302-0b674a3aa0ba",
+        "entry_frame": 69753,
+        "entry_real": 2128.7958984375,
+        "end": {
+          "data": {
+            "callbacks": 1,
+            "events": 1,
+            "exitFrame": 69797,
+            "id": 3,
+            "nca": "0x16616e02c80",
+            "reason": "completed-observation",
+            "skippedFrozenManual": 0
+          },
+          "frame": 69825,
+          "kind": "coverage_end",
+          "ordinal": 934,
+          "real": 2133.875732421875,
+          "time": 2096.79052734375,
+          "script": "e956cafa-a50e-442a-a302-0b674a3aa0ba",
+          "order": 936
+        },
+        "nca": "0x16616e02c80",
+        "events": [
+          {
+            "id": 3,
+            "case": 3,
+            "script": "e956cafa-a50e-442a-a302-0b674a3aa0ba",
+            "frame": 69765,
+            "real": 2129.603759765625,
+            "receiver": "0x16616e79120",
+            "npc": "0x16896897090",
+            "at": {
+              "animator": "0x16616e61ac0",
+              "business": {
+                "alreadyFound": 1,
+                "fixedType": 0,
+                "foundState": "0x16616e796c0",
+                "headset": 0,
+                "ignoreNoise": -38.01357650756836,
+                "justHit": 0,
+                "lastCalculation": {
+                  "frame": 69765,
+                  "values": [
+                    0.06886737793684006,
+                    0,
+                    0,
+                    0,
+                    0.9838196635246277
+                  ]
+                },
+                "noiseAdded": 0,
+                "noiseReduceCount": 120,
+                "noiseThreshold": 0.4683387279510498,
+                "noiseValue": 1,
+                "playerFound": 1,
+                "skipStrangeness": 0,
+                "stateBackrefsValid": true,
+                "stateTime": 0.8016381859779358
+              },
+              "businessState": 1,
+              "cachedDistance": 3.9612655639648438,
+              "culling": 1,
+              "current": {
+                "full": 4204346965,
+                "length": 0.9147538542747498,
+                "loop": 0,
+                "multiplier": 1,
+                "normalized": 0.8763430118560791,
+                "short": 416858394,
+                "speed": 1
+              },
+              "display": 1,
+              "distance": 3.961265511327614,
+              "enabled": 1,
+              "fireEvents": 1,
+              "found": 1,
+              "fps": 30,
+              "manual": 0,
+              "mesh": "0x16616dfe780",
+              "meshActive": 1,
+              "next": {
+                "full": 4204346965,
+                "length": 0.9147538542747498,
+                "loop": 0,
+                "multiplier": 1,
+                "normalized": 0.8763430118560791,
+                "short": 416858394,
+                "speed": 1
+              },
+              "npc": "0x16896897090",
+              "npcPosition": [
+                5.889476776123047,
+                -8.530933380126953,
+                -46.8234977722168
+              ],
+              "playerPosition": [
+                2.75774884223938,
+                -8.54990005493164,
+                -44.39789581298828
+              ],
+              "receiver": "0x16616e79120",
+              "skipped": 0,
+              "speed": 0.9109918475151062,
+              "stop": 0,
+              "timeScale": 1,
+              "transition": 0,
+              "weight": 1
+            },
+            "models": 1,
+            "callbacks": 1,
+            "groups": [
+              {
+                "frame": 69774,
+                "callbacks": 1,
+                "listeners": 1,
+                "balanced": true
+              }
+            ],
+            "callback_frames": [
+              69774
+            ],
+            "callback_real": [
+              2130.22705078125
+            ],
+            "callback_delay_real": 0.623291015625,
+            "delivery_balanced": true
+          }
+        ],
+        "evaluation_scopes": [],
+        "hidden_update_scopes": [],
+        "hidden_before_event": false,
+        "pause_assisted": false,
+        "delivery_balanced": true,
+        "initial_blind_spot": false,
+        "scene": "Mall",
+        "near_threshold": 10,
+        "natural_near_far_crossings": [],
+        "near_far_before_event": false,
+        "lifecycle_retired": false,
+        "noise_samples": {
+          "samples": 13,
+          "frame_gaps": [],
+          "value_range": [
+            1,
+            1
+          ],
+          "reduce_count_range": [
+            120,
+            120
+          ],
+          "threshold_range": [
+            0.4683387279510498,
+            0.4683387279510498
+          ],
+          "added_positive_samples": 0,
+          "player_not_found_samples": 0,
+          "value_below_threshold_samples": 0,
+          "fresh_continuous_noise_samples": 1,
+          "fresh_continuous_noise_range": [
+            0,
+            0
+          ],
+          "limitation": "Cached lastCalculation is counted as current only on its recorded frame; these are sampled values, not all native evaluations."
+        },
+        "ordinary_noise_business_exits": [],
+        "noise_turn_observations": [],
+        "before_entry_noise": {
+          "window_real_seconds": 5,
+          "calculations": 0,
+          "positive_continuous_calculations": 0,
+          "sounds": 0,
+          "positive_sound_readbacks": 0,
+          "limitation": "Only emitted observations in the five seconds before this entry; zero calculations and unchanged sound readbacks are not exhaustively emitted outside active cases."
+        }
+      }
+    ],
+    "lineages": [
+      {
+        "id": 1,
+        "fragments": [
+          {
+            "script": "e956cafa-a50e-442a-a302-0b674a3aa0ba",
+            "id": 1
+          }
+        ],
+        "source_origin": "original-business-change-before-call",
+        "trusted_entry": true,
+        "entry_frame": 69114,
+        "end_frame": 69188,
+        "nca": "0x16951fd7a00",
+        "scene": "Mall",
+        "events": 1,
+        "delivery_balanced": true,
+        "hidden_before_event": false,
+        "near_far_before_event": false,
+        "directions": [],
+        "geometry_directions": [],
+        "pre_event_samples": 7,
+        "pre_event_hidden_samples": 0,
+        "pre_event_distance_crossings": [],
+        "pre_event_manual_modes": [
+          0
+        ],
+        "pre_event_manual_changes": [],
+        "skill_stop_samples": 0,
+        "ordinary_pause_samples": 0,
+        "pre_event_distance_range": [
+          1.7653588452350575,
+          2.0160221980048934
+        ]
+      },
+      {
+        "id": 2,
+        "fragments": [
+          {
+            "script": "e956cafa-a50e-442a-a302-0b674a3aa0ba",
+            "id": 2
+          }
+        ],
+        "source_origin": "original-business-change-before-call",
+        "trusted_entry": true,
+        "entry_frame": 69422,
+        "end_frame": 69495,
+        "nca": "0x1695cec98c0",
+        "scene": "Mall",
+        "events": 1,
+        "delivery_balanced": true,
+        "hidden_before_event": false,
+        "near_far_before_event": false,
+        "directions": [],
+        "geometry_directions": [],
+        "pre_event_samples": 6,
+        "pre_event_hidden_samples": 0,
+        "pre_event_distance_crossings": [],
+        "pre_event_manual_modes": [
+          0
+        ],
+        "pre_event_manual_changes": [],
+        "skill_stop_samples": 0,
+        "ordinary_pause_samples": 0,
+        "pre_event_distance_range": [
+          1.619680867440448,
+          1.8348883212935811
+        ]
+      },
+      {
+        "id": 3,
+        "fragments": [
+          {
+            "script": "e956cafa-a50e-442a-a302-0b674a3aa0ba",
+            "id": 3
+          }
+        ],
+        "source_origin": "original-business-change-before-call",
+        "trusted_entry": true,
+        "entry_frame": 69753,
+        "end_frame": 69825,
+        "nca": "0x16616e02c80",
+        "scene": "Mall",
+        "events": 1,
+        "delivery_balanced": true,
+        "hidden_before_event": false,
+        "near_far_before_event": false,
+        "directions": [],
+        "geometry_directions": [],
+        "pre_event_samples": 12,
+        "pre_event_hidden_samples": 0,
+        "pre_event_distance_crossings": [],
+        "pre_event_manual_modes": [
+          0
+        ],
+        "pre_event_manual_changes": [],
+        "skill_stop_samples": 0,
+        "ordinary_pause_samples": 0,
+        "pre_event_distance_range": [
+          3.961265511327614,
+          4.100194910735864
+        ]
+      }
+    ],
+    "continuation_links": [],
+    "capture_joins": [],
+    "reconstructed_messages": 983,
+    "events": [
+      {
+        "id": 1,
+        "case": 1,
+        "script": "e956cafa-a50e-442a-a302-0b674a3aa0ba",
+        "frame": 69121,
+        "real": 2085.747802734375,
+        "receiver": "0x16616c98330",
+        "npc": "0x16899753bd0",
+        "at": {
+          "animator": "0x16616814e00",
+          "business": {
+            "alreadyFound": 1,
+            "fixedType": 0,
+            "foundState": "0x16616c98600",
+            "headset": 0,
+            "ignoreNoise": -209.0721893310547,
+            "justHit": 0,
+            "lastCalculation": {
+              "frame": 69121,
+              "values": [
+                0.03988494351506233,
+                0.03988494351506233,
+                0.4000000059604645,
+                0,
+                0.9971235394477844
+              ]
+            },
+            "noiseAdded": 0,
+            "noiseReduceCount": 120,
+            "noiseThreshold": 0.5466716289520264,
+            "noiseValue": 1,
+            "playerFound": 1,
+            "skipStrangeness": 0,
+            "stateBackrefsValid": true,
+            "stateTime": 0.45461583137512207
+          },
+          "businessState": 1,
+          "cachedDistance": 2.016022205352783,
+          "culling": 1,
+          "current": {
+            "full": 3664925388,
+            "length": 0.5739502310752869,
+            "loop": 0,
+            "multiplier": 1,
+            "normalized": 0.7920822501182556,
+            "short": 16503642,
+            "speed": 1
+          },
+          "display": 1,
+          "distance": 2.0160221980048934,
+          "enabled": 1,
+          "fireEvents": 1,
+          "found": 1,
+          "fps": 30,
+          "manual": 0,
+          "mesh": "0x1661680c540",
+          "meshActive": 1,
+          "next": {
+            "full": 3664925388,
+            "length": 0.5739502310752869,
+            "loop": 0,
+            "multiplier": 1,
+            "normalized": 0.7920822501182556,
+            "short": 16503642,
+            "speed": 1
+          },
+          "npc": "0x16899753bd0",
+          "npcPosition": [
+            -2.7895545959472656,
+            -8.530933380126953,
+            -23.591609954833984
+          ],
+          "playerPosition": [
+            -2.42842960357666,
+            -8.549905776977539,
+            -25.574934005737305
+          ],
+          "receiver": "0x16616c98330",
+          "skipped": 0,
+          "speed": 0.9873097538948059,
+          "stop": 0,
+          "timeScale": 1,
+          "transition": 0,
+          "weight": 1
+        },
+        "models": 1,
+        "callbacks": 1,
+        "groups": [
+          {
+            "frame": 69131,
+            "callbacks": 1,
+            "listeners": 1,
+            "balanced": true
+          }
+        ],
+        "callback_frames": [
+          69131
+        ],
+        "callback_real": [
+          2086.33251953125
+        ],
+        "callback_delay_real": 0.584716796875,
+        "delivery_balanced": true
+      },
+      {
+        "id": 2,
+        "case": 2,
+        "script": "e956cafa-a50e-442a-a302-0b674a3aa0ba",
+        "frame": 69428,
+        "real": 2107.019775390625,
+        "receiver": "0x1695cf47a50",
+        "npc": "0x16922a23900",
+        "at": {
+          "animator": "0x1694dd10ba0",
+          "business": {
+            "alreadyFound": 1,
+            "fixedType": 0,
+            "foundState": "0x1695cf47cf0",
+            "headset": 0,
+            "ignoreNoise": -43.189659118652344,
+            "justHit": 0,
+            "lastCalculation": {
+              "frame": 69428,
+              "values": [
+                0.07863803952932358,
+                0,
+                0,
+                0,
+                0.7863803505897522
+              ]
+            },
+            "noiseAdded": 0,
+            "noiseReduceCount": 120,
+            "noiseThreshold": 0.6714479923248291,
+            "noiseValue": 1,
+            "playerFound": 1,
+            "skipStrangeness": 0,
+            "stateBackrefsValid": true,
+            "stateTime": 0.3767645061016083
+          },
+          "businessState": 1,
+          "cachedDistance": 1.6196810007095337,
+          "culling": 1,
+          "current": {
+            "full": 3664925388,
+            "length": 0.5545166730880737,
+            "loop": 0,
+            "multiplier": 1,
+            "normalized": 0.6794466376304626,
+            "short": 16503642,
+            "speed": 1
+          },
+          "display": 1,
+          "distance": 1.619680867440448,
+          "enabled": 1,
+          "fireEvents": 1,
+          "found": 1,
+          "fps": 30,
+          "manual": 0,
+          "mesh": "0x1694dd02560",
+          "meshActive": 1,
+          "next": {
+            "full": 3664925388,
+            "length": 0.5545166730880737,
+            "loop": 0,
+            "multiplier": 1,
+            "normalized": 0.6794466376304626,
+            "short": 16503642,
+            "speed": 1
+          },
+          "npc": "0x16922a23900",
+          "npcPosition": [
+            2.3622970581054688,
+            -8.530933380126953,
+            -43.76910400390625
+          ],
+          "playerPosition": [
+            0.8976483345031738,
+            -8.549899101257324,
+            -44.46034240722656
+          ],
+          "receiver": "0x1695cf47a50",
+          "skipped": 0,
+          "speed": 1.0219109058380127,
+          "stop": 0,
+          "timeScale": 1,
+          "transition": 0,
+          "weight": 1
+        },
+        "models": 1,
+        "callbacks": 1,
+        "groups": [
+          {
+            "frame": 69437,
+            "callbacks": 1,
+            "listeners": 1,
+            "balanced": true
+          }
+        ],
+        "callback_frames": [
+          69437
+        ],
+        "callback_real": [
+          2107.642578125
+        ],
+        "callback_delay_real": 0.622802734375,
+        "delivery_balanced": true
+      },
+      {
+        "id": 3,
+        "case": 3,
+        "script": "e956cafa-a50e-442a-a302-0b674a3aa0ba",
+        "frame": 69765,
+        "real": 2129.603759765625,
+        "receiver": "0x16616e79120",
+        "npc": "0x16896897090",
+        "at": {
+          "animator": "0x16616e61ac0",
+          "business": {
+            "alreadyFound": 1,
+            "fixedType": 0,
+            "foundState": "0x16616e796c0",
+            "headset": 0,
+            "ignoreNoise": -38.01357650756836,
+            "justHit": 0,
+            "lastCalculation": {
+              "frame": 69765,
+              "values": [
+                0.06886737793684006,
+                0,
+                0,
+                0,
+                0.9838196635246277
+              ]
+            },
+            "noiseAdded": 0,
+            "noiseReduceCount": 120,
+            "noiseThreshold": 0.4683387279510498,
+            "noiseValue": 1,
+            "playerFound": 1,
+            "skipStrangeness": 0,
+            "stateBackrefsValid": true,
+            "stateTime": 0.8016381859779358
+          },
+          "businessState": 1,
+          "cachedDistance": 3.9612655639648438,
+          "culling": 1,
+          "current": {
+            "full": 4204346965,
+            "length": 0.9147538542747498,
+            "loop": 0,
+            "multiplier": 1,
+            "normalized": 0.8763430118560791,
+            "short": 416858394,
+            "speed": 1
+          },
+          "display": 1,
+          "distance": 3.961265511327614,
+          "enabled": 1,
+          "fireEvents": 1,
+          "found": 1,
+          "fps": 30,
+          "manual": 0,
+          "mesh": "0x16616dfe780",
+          "meshActive": 1,
+          "next": {
+            "full": 4204346965,
+            "length": 0.9147538542747498,
+            "loop": 0,
+            "multiplier": 1,
+            "normalized": 0.8763430118560791,
+            "short": 416858394,
+            "speed": 1
+          },
+          "npc": "0x16896897090",
+          "npcPosition": [
+            5.889476776123047,
+            -8.530933380126953,
+            -46.8234977722168
+          ],
+          "playerPosition": [
+            2.75774884223938,
+            -8.54990005493164,
+            -44.39789581298828
+          ],
+          "receiver": "0x16616e79120",
+          "skipped": 0,
+          "speed": 0.9109918475151062,
+          "stop": 0,
+          "timeScale": 1,
+          "transition": 0,
+          "weight": 1
+        },
+        "models": 1,
+        "callbacks": 1,
+        "groups": [
+          {
+            "frame": 69774,
+            "callbacks": 1,
+            "listeners": 1,
+            "balanced": true
+          }
+        ],
+        "callback_frames": [
+          69774
+        ],
+        "callback_real": [
+          2130.22705078125
+        ],
+        "callback_delay_real": 0.623291015625,
+        "delivery_balanced": true
+      }
+    ],
+    "evaluations": [],
+    "counts": {
+      "event-generated": 3
+    },
+    "total_events": 3,
+    "total_models": 3,
+    "total_callbacks": 3,
+    "total_listeners": 3,
+    "stop_producers": [],
+    "readback_ends": [
+      {
+        "data": {
+          "cases": 3,
+          "errors": 0,
+          "events": 3,
+          "finishPath": "E:/ManakaREA-NaturalGameplay/noise-finish-20261024-A"
+        },
+        "frame": 72256,
+        "kind": "coverage_finished",
+        "ordinal": 979,
+        "real": 2312.940673828125,
+        "time": 2275.85986328125,
+        "script": "e956cafa-a50e-442a-a302-0b674a3aa0ba",
+        "order": 981
+      },
+      {
+        "data": {
+          "evaluations": 0,
+          "pending": 0,
+          "skippedFrozen": 0
+        },
+        "frame": 72264,
+        "kind": "evaluation_finished",
+        "real": 2313.331787109375,
+        "script": "8a0a7f7a-6337-4f49-a995-99dab1a7a9b4",
+        "order": 982
+      }
+    ],
+    "all_sources_finished": true,
+    "unfinished_sources": [],
+    "errors": [],
+    "native_script_errors": [],
+    "limits": [
+      "Natural time-stop-assisted coverage is separately marked; it does not establish ordinary moving, unpaused coverage.",
+      "A missing event while the source is frozen or while it never reaches its marker is not a missing-event failure.",
+      "Destroyed/replaced actors are lifecycle-censored unless independent scene evidence establishes the expected removal.",
+      "Source disappearance below a marker only supports a bounded ordinary transition without observed event, not its exact sub-frame cancellation point.",
+      "A same-frame hidden event snapshot alone is weaker than a bracketed original manual Update with hidden pre-state and the event inside.",
+      "Observer overhead changes frame steps. Event/callback delivery is measured under instrumentation, not a frame-rate-independent timing guarantee.",
+      "Callback identity on the same receiver/frame uses group-level listener counts.",
+      "Natural found entry requires value>=1; a value-lowered replay cannot establish that the natural pre-event noise threshold gate is reachable.",
+      "Positive sound readback means the added field was positive at that observation, not proof that this sound increased it or immediately caused a turn."
+    ],
+    "noise_turns": [
+      {
+        "data": {
+          "before": {
+            "added": 0.00752568244934082,
+            "headset": 0,
+            "ignore": -218.41888427734375,
+            "justHit": 0,
+            "pinpon": 0,
+            "playerFound": 0,
+            "skip": 0,
+            "state": 0,
+            "threshold": 0.5466716289520264,
+            "value": 0.5466716289520264
+          },
+          "calculation": {
+            "frame": 69252,
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "caller": "0x435abf",
+          "context": {
+            "before": {
+              "added": 0.00752568244934082,
+              "headset": 0,
+              "ignore": -218.34336853027344,
+              "justHit": 0,
+              "pinpon": 0,
+              "playerFound": 0,
+              "skip": 0,
+              "state": 0,
+              "threshold": 0.5466716289520264,
+              "value": 0.5391459465026855
+            },
+            "frame": 69252,
+            "nca": "0x16951fd7a00"
+          },
+          "nca": "0x16951fd7a00"
+        },
+        "frame": 69252,
+        "kind": "noise_turn",
+        "ordinal": 391,
+        "real": 2095.115478515625,
+        "time": 2057.991455078125,
+        "script": "e956cafa-a50e-442a-a302-0b674a3aa0ba",
+        "order": 393
+      }
+    ],
+    "ordinary_found_noise_changes": [],
+    "noise_observation_counts": {
+      "calculations": 216,
+      "positive_continuous_calculations": 0,
+      "sound_readbacks": 56,
+      "positive_sound_readbacks": 35,
+      "sound_increases": 35,
+      "ordinary_branch_turns": 1,
+      "ordinary_branch_turns_from_found": 0
+    },
+    "additional_finish_markers": [
+      {
+        "data": {
+          "scope": "Read-only original file bytes copied to private memory for disassembly; not game execution."
+        },
+        "kind": "noise_decode_finished",
+        "script": "00026ecb-6984-44f4-ae7e-df05f215d5af",
+        "order": 18
+      }
+    ],
+    "noise_decode_errors": []
+  },
+  "replay": {
+    "authority": "controlled replay with artificial state, geometry and numeric/visibility preconditions; never natural cancellation evidence",
+    "trials": [
+      {
+        "classification": "event-generated",
+        "complete": true,
+        "sample_count": 27,
+        "frame_gaps": [],
+        "passive_frame_gaps": [],
+        "trigger_count": 1,
+        "sound_added_positive": true,
+        "after_business_state_two": true,
+        "receiver_replay_turn_readback": true,
+        "original_ordinary_turn_confirmed": false,
+        "original_ordinary_changes": [],
+        "trigger_below_marker": true,
+        "trigger_from_stable_current": false,
+        "event_observed_before_or_during_trigger": false,
+        "pre_event_turn_confirmed": false,
+        "trigger_snapshot": {
+          "after": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -1.1345622539520264,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.2122805416584015,
+              "reduceCount": 120,
+              "state": 2,
+              "threshold": 0.5592780709266663,
+              "value": 0
+            },
+            "current": {
+              "full": 1443423907,
+              "normalized": 251.47930908203125
+            },
+            "distance": 1,
+            "found": 0,
+            "frame": 78989,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.15505115687847137
+            },
+            "real": 2640.64599609375,
+            "speed": 0.7573185563087463,
+            "transition": 1,
+            "weight": 1
+          },
+          "afterSound": {
+            "added": 1.0132789611816406e-06,
+            "alreadyFound": 1,
+            "ignore": -1,
+            "justHit": 0,
+            "playerFound": 0,
+            "rate": 0.2122805416584015,
+            "reduceCount": 118,
+            "state": 1,
+            "threshold": 0.5592780709266663,
+            "value": 0.5592770576477051
+          },
+          "artificial": [
+            "state entry",
+            "near geometry",
+            "value lowered below threshold",
+            "PlayerFound=false",
+            "IgnoreNoise=-1"
+          ],
+          "before": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -330.0766296386719,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.2122805416584015,
+              "reduceCount": 118,
+              "state": 1,
+              "threshold": 0.5592780709266663,
+              "value": 1
+            },
+            "current": {
+              "full": 1443423907,
+              "normalized": 251.47930908203125
+            },
+            "distance": 1,
+            "found": 1,
+            "frame": 78989,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.15505115687847137
+            },
+            "real": 2640.64599609375,
+            "speed": 0.7573185563087463,
+            "transition": 1,
+            "weight": 1
+          },
+          "source": "original OnPlayerSound SeType2 then original noise OnUpdate",
+          "targetProgress": 0.04,
+          "trial": 1
+        },
+        "source_gone_on_consecutive_frames": true,
+        "last_observed_source": {
+          "full": 4204346965,
+          "normalized": 0.7383716702461243
+        },
+        "sampled_source_stayed_below_marker": true,
+        "stable_crossings": [],
+        "events": 1,
+        "callbacks": 1,
+        "event_callback_counts_match": true,
+        "cleanup": {
+          "verified_listed_fields_and_position": true,
+          "readback": {
+            "errors": [],
+            "fieldsMatch": true,
+            "foundMatches": true,
+            "positionError": 0,
+            "stateMatches": true
+          },
+          "limitation": "Only the enumerated fields, requested business state, found parameter and player position are checked; this does not establish restoration of the world or interaction side effects."
+        },
+        "limitation": "A parameter false or business 1->2 alone is not clip cancellation. Receiver replay readback does not prove that a nested native callsite hook executed. Source disappearance below marker with no observed event is a bounded transition observation, not proof of the exact sub-frame cancellation mechanism. Missing snapshots and blend-only crossings remain unknown.",
+        "script": "a829cec8-9d3b-4284-bfde-87aeb660013c",
+        "id": 1,
+        "plan": "early",
+        "nca": "0x1695cba5b40",
+        "receiver": "0x1695d35a6c0",
+        "begin": {
+          "data": {
+            "authority": "controlled receiver replay; artificial numeric/visibility preconditions; real Unity animation events",
+            "baseline": {
+              "added": 0,
+              "alreadyFound": 0,
+              "ignore": -328.9233703613281,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.2122805416584015,
+              "reduceCount": -6102,
+              "state": 0,
+              "threshold": 0.5592780709266663,
+              "value": 0
+            },
+            "nca": "0x1695cba5b40",
+            "oldState": 0,
+            "origin": [
+              16.874080657958984,
+              -8.55004596710205,
+              -50.07205581665039
+            ],
+            "plan": "early",
+            "receiver": "0x1695d35a6c0",
+            "trial": 1
+          },
+          "frame": 78981,
+          "kind": "noise_control_begin",
+          "real": 2639.43310546875,
+          "script": "a829cec8-9d3b-4284-bfde-87aeb660013c",
+          "order": 5
+        },
+        "end": {
+          "data": {
+            "callbacks": 1,
+            "cleanup": {
+              "errors": [],
+              "fieldsMatch": true,
+              "foundMatches": true,
+              "positionError": 0,
+              "stateMatches": true
+            },
+            "events": 1,
+            "plan": "early",
+            "reason": "completed",
+            "trial": 1
+          },
+          "frame": 79008,
+          "kind": "noise_control_end",
+          "real": 2643.270751953125,
+          "script": "a829cec8-9d3b-4284-bfde-87aeb660013c",
+          "order": 16
+        },
+        "passive_corroboration": {
+          "events": 1,
+          "models": 1,
+          "callbacks": 1,
+          "listeners": 1,
+          "event_frames": [
+            78994
+          ],
+          "counts_match": true,
+          "limitation": "Passive listener/model counts belong to this receiver/NPC and trial window; they corroborate control observations and are not added to their event totals."
+        }
+      },
+      {
+        "classification": "event-generated",
+        "complete": true,
+        "sample_count": 24,
+        "frame_gaps": [],
+        "passive_frame_gaps": [],
+        "trigger_count": 1,
+        "sound_added_positive": true,
+        "after_business_state_two": true,
+        "receiver_replay_turn_readback": true,
+        "original_ordinary_turn_confirmed": false,
+        "original_ordinary_changes": [],
+        "trigger_below_marker": true,
+        "trigger_from_stable_current": true,
+        "event_observed_before_or_during_trigger": false,
+        "pre_event_turn_confirmed": false,
+        "trigger_snapshot": {
+          "after": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -1.1934295892715454,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.1099976971745491,
+              "reduceCount": 120,
+              "state": 2,
+              "threshold": 0.687053382396698,
+              "value": 0
+            },
+            "current": {
+              "full": 4204346965,
+              "normalized": 0.6113729476928711
+            },
+            "distance": 1,
+            "found": 0,
+            "frame": 79022,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.6113729476928711
+            },
+            "real": 2645.943603515625,
+            "speed": 0.8980574011802673,
+            "transition": 0,
+            "weight": 1
+          },
+          "afterSound": {
+            "added": 1.0132789611816406e-06,
+            "alreadyFound": 1,
+            "ignore": -1,
+            "justHit": 0,
+            "playerFound": 0,
+            "rate": 0.1099976971745491,
+            "reduceCount": 116,
+            "state": 1,
+            "threshold": 0.687053382396698,
+            "value": 0.6870523691177368
+          },
+          "artificial": [
+            "state entry",
+            "near geometry",
+            "value lowered below threshold",
+            "PlayerFound=false",
+            "IgnoreNoise=-1"
+          ],
+          "before": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -184.70188903808594,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.1099976971745491,
+              "reduceCount": 116,
+              "state": 1,
+              "threshold": 0.687053382396698,
+              "value": 1
+            },
+            "current": {
+              "full": 4204346965,
+              "normalized": 0.6113729476928711
+            },
+            "distance": 1,
+            "found": 1,
+            "frame": 79022,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.6113729476928711
+            },
+            "real": 2645.943603515625,
+            "speed": 0.8980574011802673,
+            "transition": 0,
+            "weight": 1
+          },
+          "source": "original OnPlayerSound SeType2 then original noise OnUpdate",
+          "targetProgress": 0.6,
+          "trial": 2
+        },
+        "source_gone_on_consecutive_frames": true,
+        "last_observed_source": {
+          "full": 4204346965,
+          "normalized": 1.0600790977478027
+        },
+        "sampled_source_stayed_below_marker": false,
+        "stable_crossings": [],
+        "events": 1,
+        "callbacks": 1,
+        "event_callback_counts_match": true,
+        "cleanup": {
+          "verified_listed_fields_and_position": true,
+          "readback": {
+            "errors": [],
+            "fieldsMatch": true,
+            "foundMatches": true,
+            "positionError": 0,
+            "stateMatches": true
+          },
+          "limitation": "Only the enumerated fields, requested business state, found parameter and player position are checked; this does not establish restoration of the world or interaction side effects."
+        },
+        "limitation": "A parameter false or business 1->2 alone is not clip cancellation. Receiver replay readback does not prove that a nested native callsite hook executed. Source disappearance below marker with no observed event is a bounded transition observation, not proof of the exact sub-frame cancellation mechanism. Missing snapshots and blend-only crossings remain unknown.",
+        "script": "a829cec8-9d3b-4284-bfde-87aeb660013c",
+        "id": 2,
+        "plan": "near-marker",
+        "nca": "0x16899865a00",
+        "receiver": "0x16616e26c60",
+        "begin": {
+          "data": {
+            "authority": "controlled receiver replay; artificial numeric/visibility preconditions; real Unity animation events",
+            "baseline": {
+              "added": 0,
+              "alreadyFound": 0,
+              "ignore": -183.1428985595703,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.1099976971745491,
+              "reduceCount": -3592,
+              "state": 0,
+              "threshold": 0.687053382396698,
+              "value": 0
+            },
+            "nca": "0x16899865a00",
+            "oldState": 0,
+            "origin": [
+              33.344947814941406,
+              -8.549903869628906,
+              -42.417396545410156
+            ],
+            "plan": "near-marker",
+            "receiver": "0x16616e26c60",
+            "trial": 2
+          },
+          "frame": 79014,
+          "kind": "noise_control_begin",
+          "real": 2644.380126953125,
+          "script": "a829cec8-9d3b-4284-bfde-87aeb660013c",
+          "order": 17
+        },
+        "end": {
+          "data": {
+            "callbacks": 1,
+            "cleanup": {
+              "errors": [],
+              "fieldsMatch": true,
+              "foundMatches": true,
+              "positionError": 0,
+              "stateMatches": true
+            },
+            "events": 1,
+            "plan": "near-marker",
+            "reason": "completed",
+            "trial": 2
+          },
+          "frame": 79038,
+          "kind": "noise_control_end",
+          "real": 2648.538330078125,
+          "script": "a829cec8-9d3b-4284-bfde-87aeb660013c",
+          "order": 80
+        },
+        "passive_corroboration": {
+          "events": 1,
+          "models": 1,
+          "callbacks": 1,
+          "listeners": 1,
+          "event_frames": [
+            79022
+          ],
+          "counts_match": true,
+          "limitation": "Passive listener/model counts belong to this receiver/NPC and trial window; they corroborate control observations and are not added to their event totals."
+        }
+      },
+      {
+        "classification": "bounded-clip-exit-without-event-after-receiver-replay",
+        "complete": true,
+        "sample_count": 33,
+        "frame_gaps": [],
+        "passive_frame_gaps": [],
+        "trigger_count": 1,
+        "sound_added_positive": true,
+        "after_business_state_two": true,
+        "receiver_replay_turn_readback": true,
+        "original_ordinary_turn_confirmed": false,
+        "original_ordinary_changes": [],
+        "trigger_below_marker": true,
+        "trigger_from_stable_current": false,
+        "event_observed_before_or_during_trigger": false,
+        "pre_event_turn_confirmed": false,
+        "trigger_snapshot": {
+          "after": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -1.0899211168289185,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.3393529951572418,
+              "reduceCount": 120,
+              "state": 2,
+              "threshold": 0.6325041651725769,
+              "value": 0
+            },
+            "current": {
+              "full": 1443423907,
+              "normalized": 126.33355712890625
+            },
+            "distance": 1,
+            "found": 0,
+            "frame": 79054,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.10300972312688828
+            },
+            "real": 2650.582763671875,
+            "speed": 0.7545637488365173,
+            "transition": 1,
+            "weight": 1
+          },
+          "afterSound": {
+            "added": 1.0132789611816406e-06,
+            "alreadyFound": 1,
+            "ignore": -1,
+            "justHit": 0,
+            "playerFound": 0,
+            "rate": 0.3393529951572418,
+            "reduceCount": 118,
+            "state": 1,
+            "threshold": 0.6325041651725769,
+            "value": 0.6325031518936157
+          },
+          "artificial": [
+            "state entry",
+            "near geometry",
+            "value lowered below threshold",
+            "PlayerFound=false",
+            "IgnoreNoise=-1"
+          ],
+          "before": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -165.0579376220703,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.3393529951572418,
+              "reduceCount": 118,
+              "state": 1,
+              "threshold": 0.6325041651725769,
+              "value": 1
+            },
+            "current": {
+              "full": 1443423907,
+              "normalized": 126.33355712890625
+            },
+            "distance": 1,
+            "found": 1,
+            "frame": 79054,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.10300972312688828
+            },
+            "real": 2650.58251953125,
+            "speed": 0.7545637488365173,
+            "transition": 1,
+            "weight": 1
+          },
+          "source": "original OnPlayerSound SeType2 then original noise OnUpdate",
+          "targetProgress": 0.04,
+          "trial": 3
+        },
+        "source_gone_on_consecutive_frames": true,
+        "last_observed_source": {
+          "full": 4204346965,
+          "normalized": 0.648530900478363
+        },
+        "sampled_source_stayed_below_marker": true,
+        "stable_crossings": [],
+        "events": 0,
+        "callbacks": 0,
+        "event_callback_counts_match": true,
+        "cleanup": {
+          "verified_listed_fields_and_position": true,
+          "readback": {
+            "errors": [],
+            "fieldsMatch": true,
+            "foundMatches": true,
+            "positionError": 0,
+            "stateMatches": true
+          },
+          "limitation": "Only the enumerated fields, requested business state, found parameter and player position are checked; this does not establish restoration of the world or interaction side effects."
+        },
+        "limitation": "A parameter false or business 1->2 alone is not clip cancellation. Receiver replay readback does not prove that a nested native callsite hook executed. Source disappearance below marker with no observed event is a bounded transition observation, not proof of the exact sub-frame cancellation mechanism. Missing snapshots and blend-only crossings remain unknown.",
+        "script": "a829cec8-9d3b-4284-bfde-87aeb660013c",
+        "id": 3,
+        "plan": "early",
+        "nca": "0x1695cc5f280",
+        "receiver": "0x16616813150",
+        "begin": {
+          "data": {
+            "authority": "controlled receiver replay; artificial numeric/visibility preconditions; real Unity animation events",
+            "baseline": {
+              "added": 0,
+              "alreadyFound": 0,
+              "ignore": -163.97584533691406,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.3393529951572418,
+              "reduceCount": -3038,
+              "state": 0,
+              "threshold": 0.6325041651725769,
+              "value": 0
+            },
+            "nca": "0x1695cc5f280",
+            "oldState": 0,
+            "origin": [
+              33.344947814941406,
+              -8.549906730651855,
+              -42.417396545410156
+            ],
+            "plan": "early",
+            "receiver": "0x16616813150",
+            "trial": 3
+          },
+          "frame": 79045,
+          "kind": "noise_control_begin",
+          "real": 2649.573974609375,
+          "script": "a829cec8-9d3b-4284-bfde-87aeb660013c",
+          "order": 81
+        },
+        "end": {
+          "data": {
+            "callbacks": 0,
+            "cleanup": {
+              "errors": [],
+              "fieldsMatch": true,
+              "foundMatches": true,
+              "positionError": 0,
+              "stateMatches": true
+            },
+            "events": 0,
+            "plan": "early",
+            "reason": "completed",
+            "trial": 3
+          },
+          "frame": 79078,
+          "kind": "noise_control_end",
+          "real": 2653.150146484375,
+          "script": "a829cec8-9d3b-4284-bfde-87aeb660013c",
+          "order": 86
+        },
+        "passive_corroboration": {
+          "events": 0,
+          "models": 0,
+          "callbacks": 0,
+          "listeners": 0,
+          "event_frames": [],
+          "counts_match": true,
+          "limitation": "Passive listener/model counts belong to this receiver/NPC and trial window; they corroborate control observations and are not added to their event totals."
+        }
+      },
+      {
+        "classification": "event-generated",
+        "complete": true,
+        "sample_count": 29,
+        "frame_gaps": [],
+        "passive_frame_gaps": [],
+        "trigger_count": 1,
+        "sound_added_positive": true,
+        "after_business_state_two": true,
+        "receiver_replay_turn_readback": true,
+        "original_ordinary_turn_confirmed": false,
+        "original_ordinary_changes": [],
+        "trigger_below_marker": true,
+        "trigger_from_stable_current": true,
+        "event_observed_before_or_during_trigger": false,
+        "pre_event_turn_confirmed": false,
+        "trigger_snapshot": {
+          "after": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -1.1482410430908203,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.25583136081695557,
+              "reduceCount": 120,
+              "state": 2,
+              "threshold": 0.5796863436698914,
+              "value": 0
+            },
+            "current": {
+              "full": 4204346965,
+              "normalized": 0.6516716480255127
+            },
+            "distance": 1,
+            "found": 0,
+            "frame": 79096,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.6516716480255127
+            },
+            "real": 2655.895263671875,
+            "speed": 0.9516600966453552,
+            "transition": 0,
+            "weight": 1
+          },
+          "afterSound": {
+            "added": 1.0132789611816406e-06,
+            "alreadyFound": 1,
+            "ignore": -1,
+            "justHit": 0,
+            "playerFound": 0,
+            "rate": 0.25583136081695557,
+            "reduceCount": 115,
+            "state": 1,
+            "threshold": 0.5796863436698914,
+            "value": 0.5796853303909302
+          },
+          "artificial": [
+            "state entry",
+            "near geometry",
+            "value lowered below threshold",
+            "PlayerFound=false",
+            "IgnoreNoise=-1"
+          ],
+          "before": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -142.66490173339844,
+              "justHit": 0,
+              "playerFound": 1,
+              "rate": 0.25583136081695557,
+              "reduceCount": 115,
+              "state": 1,
+              "threshold": 0.5796863436698914,
+              "value": 1
+            },
+            "current": {
+              "full": 4204346965,
+              "normalized": 0.6516716480255127
+            },
+            "distance": 1,
+            "found": 1,
+            "frame": 79096,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.6516716480255127
+            },
+            "real": 2655.895263671875,
+            "speed": 0.9516600966453552,
+            "transition": 0,
+            "weight": 1
+          },
+          "source": "original OnPlayerSound SeType2 then original noise OnUpdate",
+          "targetProgress": 0.6,
+          "trial": 4
+        },
+        "source_gone_on_consecutive_frames": true,
+        "last_observed_source": {
+          "full": 4204346965,
+          "normalized": 0.9843515753746033
+        },
+        "sampled_source_stayed_below_marker": false,
+        "stable_crossings": [],
+        "events": 1,
+        "callbacks": 1,
+        "event_callback_counts_match": true,
+        "cleanup": {
+          "verified_listed_fields_and_position": true,
+          "readback": {
+            "errors": [],
+            "fieldsMatch": true,
+            "foundMatches": true,
+            "positionError": 0,
+            "stateMatches": true
+          },
+          "limitation": "Only the enumerated fields, requested business state, found parameter and player position are checked; this does not establish restoration of the world or interaction side effects."
+        },
+        "limitation": "A parameter false or business 1->2 alone is not clip cancellation. Receiver replay readback does not prove that a nested native callsite hook executed. Source disappearance below marker with no observed event is a bounded transition observation, not proof of the exact sub-frame cancellation mechanism. Missing snapshots and blend-only crossings remain unknown.",
+        "script": "a829cec8-9d3b-4284-bfde-87aeb660013c",
+        "id": 4,
+        "plan": "near-marker",
+        "nca": "0x166166ac000",
+        "receiver": "0x166167543c0",
+        "begin": {
+          "data": {
+            "authority": "controlled receiver replay; artificial numeric/visibility preconditions; real Unity animation events",
+            "baseline": {
+              "added": 0,
+              "alreadyFound": 0,
+              "ignore": -141.02508544921875,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.25583136081695557,
+              "reduceCount": -2644,
+              "state": 0,
+              "threshold": 0.5796863436698914,
+              "value": 0
+            },
+            "nca": "0x166166ac000",
+            "oldState": 0,
+            "origin": [
+              33.344947814941406,
+              -8.549921035766602,
+              -42.417396545410156
+            ],
+            "plan": "near-marker",
+            "receiver": "0x166167543c0",
+            "trial": 4
+          },
+          "frame": 79085,
+          "kind": "noise_control_begin",
+          "real": 2654.259033203125,
+          "script": "a829cec8-9d3b-4284-bfde-87aeb660013c",
+          "order": 87
+        },
+        "end": {
+          "data": {
+            "callbacks": 1,
+            "cleanup": {
+              "errors": [],
+              "fieldsMatch": true,
+              "foundMatches": true,
+              "positionError": 0,
+              "stateMatches": true
+            },
+            "events": 1,
+            "plan": "near-marker",
+            "reason": "completed",
+            "trial": 4
+          },
+          "frame": 79114,
+          "kind": "noise_control_end",
+          "real": 2658.457763671875,
+          "script": "a829cec8-9d3b-4284-bfde-87aeb660013c",
+          "order": 159
+        },
+        "passive_corroboration": {
+          "events": 1,
+          "models": 1,
+          "callbacks": 1,
+          "listeners": 1,
+          "event_frames": [
+            79096
+          ],
+          "counts_match": true,
+          "limitation": "Passive listener/model counts belong to this receiver/NPC and trial window; they corroborate control observations and are not added to their event totals."
+        }
+      },
+      {
+        "classification": "bounded-clip-exit-without-event-after-receiver-replay",
+        "complete": true,
+        "sample_count": 29,
+        "frame_gaps": [],
+        "passive_frame_gaps": [],
+        "trigger_count": 1,
+        "sound_added_positive": true,
+        "after_business_state_two": true,
+        "receiver_replay_turn_readback": true,
+        "original_ordinary_turn_confirmed": false,
+        "original_ordinary_changes": [],
+        "trigger_below_marker": true,
+        "trigger_from_stable_current": true,
+        "event_observed_before_or_during_trigger": false,
+        "pre_event_turn_confirmed": false,
+        "trigger_snapshot": {
+          "after": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -1.1651043891906738,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.3688812553882599,
+              "reduceCount": 120,
+              "state": 2,
+              "threshold": 0.5760082006454468,
+              "value": 0
+            },
+            "current": {
+              "full": 4204346965,
+              "normalized": 0.311232328414917
+            },
+            "distance": 1,
+            "found": 0,
+            "frame": 79449,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.311232328414917
+            },
+            "real": 2708.493896484375,
+            "speed": 0.8105915188789368,
+            "transition": 0,
+            "weight": 1
+          },
+          "afterSound": {
+            "added": 1.0132789611816406e-06,
+            "alreadyFound": 1,
+            "ignore": -1,
+            "justHit": 0,
+            "playerFound": 0,
+            "rate": 0.3688812553882599,
+            "reduceCount": 117,
+            "state": 1,
+            "threshold": 0.5760082006454468,
+            "value": 0.5760071873664856
+          },
+          "artificial": [
+            "state entry",
+            "near geometry",
+            "value lowered below threshold",
+            "PlayerFound=false",
+            "IgnoreNoise=-1"
+          ],
+          "before": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -63.7234992980957,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.3688812553882599,
+              "reduceCount": 117,
+              "state": 1,
+              "threshold": 0.5760082006454468,
+              "value": 1
+            },
+            "current": {
+              "full": 4204346965,
+              "normalized": 0.311232328414917
+            },
+            "distance": 1,
+            "found": 1,
+            "frame": 79449,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.311232328414917
+            },
+            "real": 2708.493896484375,
+            "speed": 0.8105915188789368,
+            "transition": 0,
+            "weight": 1
+          },
+          "source": "original OnPlayerSound SeType2 then original noise OnUpdate",
+          "targetProgress": 0.25,
+          "trial": 1
+        },
+        "source_gone_on_consecutive_frames": true,
+        "last_observed_source": {
+          "full": 4204346965,
+          "normalized": 0.646430492401123
+        },
+        "sampled_source_stayed_below_marker": true,
+        "stable_crossings": [],
+        "events": 0,
+        "callbacks": 0,
+        "event_callback_counts_match": true,
+        "cleanup": {
+          "verified_listed_fields_and_position": true,
+          "readback": {
+            "errors": [],
+            "fieldsMatch": true,
+            "foundMatches": true,
+            "positionError": 0,
+            "stateMatches": true
+          },
+          "limitation": "Only the enumerated fields, requested business state, found parameter and player position are checked; this does not establish restoration of the world or interaction side effects."
+        },
+        "limitation": "A parameter false or business 1->2 alone is not clip cancellation. Receiver replay readback does not prove that a nested native callsite hook executed. Source disappearance below marker with no observed event is a bounded transition observation, not proof of the exact sub-frame cancellation mechanism. Missing snapshots and blend-only crossings remain unknown.",
+        "script": "083722d1-f2e8-49bc-bb91-a90dc000f731",
+        "id": 1,
+        "plan": "stable-early",
+        "nca": "0x1695d0388c0",
+        "receiver": "0x169bb2afd80",
+        "begin": {
+          "data": {
+            "authority": "controlled receiver replay; artificial numeric/visibility preconditions; real Unity animation events",
+            "baseline": {
+              "added": 0,
+              "alreadyFound": 0,
+              "ignore": -62.34054183959961,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.3688812553882599,
+              "reduceCount": -424,
+              "state": 0,
+              "threshold": 0.5760082006454468,
+              "value": 0
+            },
+            "nca": "0x1695d0388c0",
+            "oldState": 0,
+            "origin": [
+              33.344947814941406,
+              -8.55012035369873,
+              -42.417396545410156
+            ],
+            "plan": "stable-early",
+            "receiver": "0x169bb2afd80",
+            "trial": 1
+          },
+          "frame": 79440,
+          "kind": "noise_control_begin",
+          "real": 2707.084228515625,
+          "script": "083722d1-f2e8-49bc-bb91-a90dc000f731",
+          "order": 171
+        },
+        "end": {
+          "data": {
+            "callbacks": 0,
+            "cleanup": {
+              "errors": [],
+              "fieldsMatch": true,
+              "foundMatches": true,
+              "positionError": 0,
+              "stateMatches": true
+            },
+            "events": 0,
+            "plan": "stable-early",
+            "reason": "completed",
+            "trial": 1
+          },
+          "frame": 79469,
+          "kind": "noise_control_end",
+          "real": 2711.070556640625,
+          "script": "083722d1-f2e8-49bc-bb91-a90dc000f731",
+          "order": 176
+        },
+        "passive_corroboration": {
+          "events": 0,
+          "models": 0,
+          "callbacks": 0,
+          "listeners": 0,
+          "event_frames": [],
+          "counts_match": true,
+          "limitation": "Passive listener/model counts belong to this receiver/NPC and trial window; they corroborate control observations and are not added to their event totals."
+        }
+      },
+      {
+        "classification": "bounded-clip-exit-without-event-after-receiver-replay",
+        "complete": true,
+        "sample_count": 55,
+        "frame_gaps": [],
+        "passive_frame_gaps": [],
+        "trigger_count": 1,
+        "sound_added_positive": true,
+        "after_business_state_two": true,
+        "receiver_replay_turn_readback": true,
+        "original_ordinary_turn_confirmed": false,
+        "original_ordinary_changes": [],
+        "trigger_below_marker": true,
+        "trigger_from_stable_current": true,
+        "event_observed_before_or_during_trigger": false,
+        "pre_event_turn_confirmed": false,
+        "trigger_snapshot": {
+          "after": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -1.0596020221710205,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.1522677093744278,
+              "reduceCount": 120,
+              "state": 2,
+              "threshold": 0.6188996434211731,
+              "value": 0
+            },
+            "current": {
+              "full": 4204346965,
+              "normalized": 0.3047677278518677
+            },
+            "distance": 1,
+            "found": 0,
+            "frame": 79488,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.3047677278518677
+            },
+            "real": 2713.358154296875,
+            "speed": 0.9995537400245667,
+            "transition": 0,
+            "weight": 1
+          },
+          "afterSound": {
+            "added": 1.0132789611816406e-06,
+            "alreadyFound": 1,
+            "ignore": -1,
+            "justHit": 0,
+            "playerFound": 0,
+            "rate": 0.1522677093744278,
+            "reduceCount": 116,
+            "state": 1,
+            "threshold": 0.6188996434211731,
+            "value": 0.6188986301422119
+          },
+          "artificial": [
+            "state entry",
+            "near geometry",
+            "value lowered below threshold",
+            "PlayerFound=false",
+            "IgnoreNoise=-1"
+          ],
+          "before": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -68.21415710449219,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.1522677093744278,
+              "reduceCount": 116,
+              "state": 1,
+              "threshold": 0.6188996434211731,
+              "value": 1
+            },
+            "current": {
+              "full": 4204346965,
+              "normalized": 0.3047677278518677
+            },
+            "distance": 1,
+            "found": 1,
+            "frame": 79488,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.3047677278518677
+            },
+            "real": 2713.358154296875,
+            "speed": 0.9995537400245667,
+            "transition": 0,
+            "weight": 1
+          },
+          "source": "original OnPlayerSound SeType2 then original noise OnUpdate",
+          "targetProgress": 0.25,
+          "trial": 2
+        },
+        "source_gone_on_consecutive_frames": true,
+        "last_observed_source": {
+          "full": 4204346965,
+          "normalized": 0.6439934968948364
+        },
+        "sampled_source_stayed_below_marker": true,
+        "stable_crossings": [],
+        "events": 0,
+        "callbacks": 0,
+        "event_callback_counts_match": true,
+        "cleanup": {
+          "verified_listed_fields_and_position": true,
+          "readback": {
+            "errors": [],
+            "fieldsMatch": true,
+            "foundMatches": true,
+            "positionError": 0,
+            "stateMatches": true
+          },
+          "limitation": "Only the enumerated fields, requested business state, found parameter and player position are checked; this does not establish restoration of the world or interaction side effects."
+        },
+        "limitation": "A parameter false or business 1->2 alone is not clip cancellation. Receiver replay readback does not prove that a nested native callsite hook executed. Source disappearance below marker with no observed event is a bounded transition observation, not proof of the exact sub-frame cancellation mechanism. Missing snapshots and blend-only crossings remain unknown.",
+        "script": "083722d1-f2e8-49bc-bb91-a90dc000f731",
+        "id": 2,
+        "plan": "stable-early",
+        "nca": "0x1695d038780",
+        "receiver": "0x169bb3403f0",
+        "begin": {
+          "data": {
+            "authority": "controlled receiver replay; artificial numeric/visibility preconditions; real Unity animation events",
+            "baseline": {
+              "added": 0,
+              "alreadyFound": 0,
+              "ignore": -66.87540435791016,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.1522677093744278,
+              "reduceCount": -457,
+              "state": 0,
+              "threshold": 0.6188996434211731,
+              "value": 0
+            },
+            "nca": "0x1695d038780",
+            "oldState": 0,
+            "origin": [
+              33.344947814941406,
+              -8.550129890441895,
+              -42.417396545410156
+            ],
+            "plan": "stable-early",
+            "receiver": "0x169bb3403f0",
+            "trial": 2
+          },
+          "frame": 79476,
+          "kind": "noise_control_begin",
+          "real": 2712.173583984375,
+          "script": "083722d1-f2e8-49bc-bb91-a90dc000f731",
+          "order": 177
+        },
+        "end": {
+          "data": {
+            "callbacks": 0,
+            "cleanup": {
+              "errors": [],
+              "fieldsMatch": true,
+              "foundMatches": true,
+              "positionError": 0,
+              "stateMatches": true
+            },
+            "events": 0,
+            "plan": "stable-early",
+            "reason": "completed",
+            "trial": 2
+          },
+          "frame": 79531,
+          "kind": "noise_control_end",
+          "real": 2715.877197265625,
+          "script": "083722d1-f2e8-49bc-bb91-a90dc000f731",
+          "order": 294
+        },
+        "passive_corroboration": {
+          "events": 0,
+          "models": 0,
+          "callbacks": 0,
+          "listeners": 0,
+          "event_frames": [],
+          "counts_match": true,
+          "limitation": "Passive listener/model counts belong to this receiver/NPC and trial window; they corroborate control observations and are not added to their event totals."
+        }
+      }
+    ],
+    "counts": {
+      "event-generated": 3,
+      "bounded-clip-exit-without-event-after-receiver-replay": 3
+    },
+    "total_events": 3,
+    "total_callbacks": 3,
+    "ordinary_pre_event_turn_trials": [],
+    "finished": [
+      {
+        "data": {
+          "reason": "completed",
+          "trials": 4
+        },
+        "frame": 79115,
+        "kind": "noise_control_finished",
+        "real": 2658.597900390625,
+        "script": "a829cec8-9d3b-4284-bfde-87aeb660013c",
+        "order": 160
+      },
+      {
+        "data": {
+          "reason": "completed",
+          "trials": 2
+        },
+        "frame": 79532,
+        "kind": "noise_control_finished",
+        "real": 2715.94580078125,
+        "script": "083722d1-f2e8-49bc-bb91-a90dc000f731",
+        "order": 295
+      }
+    ],
+    "all_control_sources_finished": true,
+    "all_sources_finished": true,
+    "unfinished_sources": [],
+    "errors": [],
+    "native_script_errors": [],
+    "capture_joins": [],
+    "limits": [
+      "An artificial lowered value bypasses a natural threshold guard; replay success does not establish natural reachability.",
+      "Event counters remain independent of expected cancellation and of passive duplicate observations.",
+      "Entering and exiting transitions may continue advancing the source after found becomes false.",
+      "Cleanup checks cover only the explicitly saved fields and position."
+    ]
+  },
+  "replay_additional": {
+    "authority": "controlled replay with artificial state, geometry and numeric/visibility preconditions; never natural cancellation evidence",
+    "trials": [
+      {
+        "classification": "bounded-clip-exit-without-event-after-receiver-replay",
+        "complete": true,
+        "sample_count": 54,
+        "frame_gaps": [],
+        "passive_frame_gaps": [],
+        "trigger_count": 1,
+        "sound_added_positive": true,
+        "after_business_state_two": true,
+        "receiver_replay_turn_readback": true,
+        "original_ordinary_turn_confirmed": false,
+        "original_ordinary_changes": [],
+        "trigger_below_marker": true,
+        "trigger_from_stable_current": true,
+        "event_observed_before_or_during_trigger": false,
+        "pre_event_turn_confirmed": false,
+        "trigger_snapshot": {
+          "after": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -1.0700812339782715,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.13855063915252686,
+              "reduceCount": 120,
+              "state": 2,
+              "threshold": 0.5708985328674316,
+              "value": 0
+            },
+            "current": {
+              "full": 4204346965,
+              "normalized": 0.3632962107658386
+            },
+            "distance": 1,
+            "found": 0,
+            "frame": 80866,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.3632962107658386
+            },
+            "real": 2853.57080078125,
+            "speed": 0.9955260157585144,
+            "transition": 0,
+            "weight": 1
+          },
+          "afterSound": {
+            "added": 1.0132789611816406e-06,
+            "alreadyFound": 1,
+            "ignore": -1,
+            "justHit": 0,
+            "playerFound": 0,
+            "rate": 0.13855063915252686,
+            "reduceCount": 115,
+            "state": 1,
+            "threshold": 0.5708985328674316,
+            "value": 0.5708975195884705
+          },
+          "artificial": [
+            "state entry",
+            "near geometry",
+            "value lowered below threshold",
+            "PlayerFound=false",
+            "IgnoreNoise=-1"
+          ],
+          "before": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -738.102783203125,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.13855063915252686,
+              "reduceCount": 115,
+              "state": 1,
+              "threshold": 0.5708985328674316,
+              "value": 1
+            },
+            "current": {
+              "full": 4204346965,
+              "normalized": 0.3632962107658386
+            },
+            "distance": 1,
+            "found": 1,
+            "frame": 80866,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.3632962107658386
+            },
+            "real": 2853.57080078125,
+            "speed": 0.9955260157585144,
+            "transition": 0,
+            "weight": 1
+          },
+          "source": "original OnPlayerSound SeType2 then original noise OnUpdate",
+          "targetProgress": 0.25,
+          "trial": 1
+        },
+        "source_gone_on_consecutive_frames": true,
+        "last_observed_source": {
+          "full": 4204346965,
+          "normalized": 0.689811110496521
+        },
+        "sampled_source_stayed_below_marker": true,
+        "stable_crossings": [],
+        "events": 0,
+        "callbacks": 0,
+        "event_callback_counts_match": true,
+        "cleanup": {
+          "verified_listed_fields_and_position": true,
+          "readback": {
+            "errors": [],
+            "fieldsMatch": true,
+            "foundMatches": true,
+            "positionError": 0,
+            "stateMatches": true
+          },
+          "limitation": "Only the enumerated fields, requested business state, found parameter and player position are checked; this does not establish restoration of the world or interaction side effects."
+        },
+        "limitation": "A parameter false or business 1->2 alone is not clip cancellation. Receiver replay readback does not prove that a nested native callsite hook executed. Source disappearance below marker with no observed event is a bounded transition observation, not proof of the exact sub-frame cancellation mechanism. Missing snapshots and blend-only crossings remain unknown.",
+        "script": "378096a2-9d68-4734-8668-68de38f0e321",
+        "id": 1,
+        "plan": "stable-early",
+        "nca": "0x16951e1ab40",
+        "receiver": "0x169520c3d50",
+        "begin": {
+          "data": {
+            "authority": "controlled receiver replay; artificial numeric/visibility preconditions; real Unity animation events",
+            "baseline": {
+              "added": 0,
+              "alreadyFound": 0,
+              "ignore": -736.892333984375,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.13855063915252686,
+              "reduceCount": -17520,
+              "state": 0,
+              "threshold": 0.5708985328674316,
+              "value": 0
+            },
+            "nca": "0x16951e1ab40",
+            "oldState": 0,
+            "origin": [
+              32.61547088623047,
+              -8.550649642944336,
+              -42.222320556640625
+            ],
+            "plan": "stable-early",
+            "receiver": "0x169520c3d50",
+            "trial": 1
+          },
+          "frame": 80851,
+          "kind": "noise_control_begin",
+          "real": 2852.395263671875,
+          "script": "378096a2-9d68-4734-8668-68de38f0e321",
+          "order": 1
+        },
+        "end": {
+          "data": {
+            "callbacks": 0,
+            "cleanup": {
+              "errors": [],
+              "fieldsMatch": true,
+              "foundMatches": true,
+              "positionError": 0,
+              "stateMatches": true
+            },
+            "events": 0,
+            "plan": "stable-early",
+            "reason": "completed",
+            "trial": 1
+          },
+          "frame": 80905,
+          "kind": "noise_control_end",
+          "real": 2856.12890625,
+          "script": "378096a2-9d68-4734-8668-68de38f0e321",
+          "order": 5
+        },
+        "passive_corroboration": {
+          "events": 0,
+          "models": 0,
+          "callbacks": 0,
+          "listeners": 0,
+          "event_frames": [],
+          "counts_match": true,
+          "limitation": "Passive listener/model counts belong to this receiver/NPC and trial window; they corroborate control observations and are not added to their event totals."
+        }
+      },
+      {
+        "classification": "event-generated",
+        "complete": true,
+        "sample_count": 60,
+        "frame_gaps": [],
+        "passive_frame_gaps": [],
+        "trigger_count": 1,
+        "sound_added_positive": true,
+        "after_business_state_two": true,
+        "receiver_replay_turn_readback": true,
+        "original_ordinary_turn_confirmed": false,
+        "original_ordinary_changes": [],
+        "trigger_below_marker": true,
+        "trigger_from_stable_current": true,
+        "event_observed_before_or_during_trigger": false,
+        "pre_event_turn_confirmed": false,
+        "trigger_snapshot": {
+          "after": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -1.0918365716934204,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.3512975871562958,
+              "reduceCount": 120,
+              "state": 2,
+              "threshold": 0.5950685739517212,
+              "value": 0
+            },
+            "current": {
+              "full": 4204346965,
+              "normalized": 0.6409382224082947
+            },
+            "distance": 1,
+            "found": 0,
+            "frame": 80944,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.6409382224082947
+            },
+            "real": 2858.69873046875,
+            "speed": 0.8394303917884827,
+            "transition": 0,
+            "weight": 1
+          },
+          "afterSound": {
+            "added": 1.0132789611816406e-06,
+            "alreadyFound": 1,
+            "ignore": -1,
+            "justHit": 0,
+            "playerFound": 0,
+            "rate": 0.3512975871562958,
+            "reduceCount": 109,
+            "state": 1,
+            "threshold": 0.5950685739517212,
+            "value": 0.59506756067276
+          },
+          "artificial": [
+            "state entry",
+            "near geometry",
+            "value lowered below threshold",
+            "PlayerFound=false",
+            "IgnoreNoise=-1"
+          ],
+          "before": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -743.7101440429688,
+              "justHit": 0,
+              "playerFound": 1,
+              "rate": 0.3512975871562958,
+              "reduceCount": 109,
+              "state": 1,
+              "threshold": 0.5950685739517212,
+              "value": 1
+            },
+            "current": {
+              "full": 4204346965,
+              "normalized": 0.6409382224082947
+            },
+            "distance": 1,
+            "found": 1,
+            "frame": 80944,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.6409382224082947
+            },
+            "real": 2858.698486328125,
+            "speed": 0.8394303917884827,
+            "transition": 0,
+            "weight": 1
+          },
+          "source": "original OnPlayerSound SeType2 then original noise OnUpdate",
+          "targetProgress": 0.6,
+          "trial": 2
+        },
+        "source_gone_on_consecutive_frames": true,
+        "last_observed_source": {
+          "full": 4204346965,
+          "normalized": 1.0265212059020996
+        },
+        "sampled_source_stayed_below_marker": false,
+        "stable_crossings": [],
+        "events": 1,
+        "callbacks": 1,
+        "event_callback_counts_match": true,
+        "cleanup": {
+          "verified_listed_fields_and_position": true,
+          "readback": {
+            "errors": [],
+            "fieldsMatch": true,
+            "foundMatches": true,
+            "positionError": 0,
+            "stateMatches": true
+          },
+          "limitation": "Only the enumerated fields, requested business state, found parameter and player position are checked; this does not establish restoration of the world or interaction side effects."
+        },
+        "limitation": "A parameter false or business 1->2 alone is not clip cancellation. Receiver replay readback does not prove that a nested native callsite hook executed. Source disappearance below marker with no observed event is a bounded transition observation, not proof of the exact sub-frame cancellation mechanism. Missing snapshots and blend-only crossings remain unknown.",
+        "script": "378096a2-9d68-4734-8668-68de38f0e321",
+        "id": 2,
+        "plan": "near-marker",
+        "nca": "0x16951e1aa00",
+        "receiver": "0x16616823870",
+        "begin": {
+          "data": {
+            "authority": "controlled receiver replay; artificial numeric/visibility preconditions; real Unity animation events",
+            "baseline": {
+              "added": 0,
+              "alreadyFound": 0,
+              "ignore": -742.2256469726562,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.3512975871562958,
+              "reduceCount": 104,
+              "state": 0,
+              "threshold": 0.5950685739517212,
+              "value": 0.02828817255795002
+            },
+            "nca": "0x16951e1aa00",
+            "oldState": 0,
+            "origin": [
+              32.61547088623047,
+              -8.550665855407715,
+              -42.222320556640625
+            ],
+            "plan": "near-marker",
+            "receiver": "0x16616823870",
+            "trial": 2
+          },
+          "frame": 80921,
+          "kind": "noise_control_begin",
+          "real": 2857.164794921875,
+          "script": "378096a2-9d68-4734-8668-68de38f0e321",
+          "order": 6
+        },
+        "end": {
+          "data": {
+            "callbacks": 1,
+            "cleanup": {
+              "errors": [],
+              "fieldsMatch": true,
+              "foundMatches": true,
+              "positionError": 0,
+              "stateMatches": true
+            },
+            "events": 1,
+            "plan": "near-marker",
+            "reason": "completed",
+            "trial": 2
+          },
+          "frame": 80981,
+          "kind": "noise_control_end",
+          "real": 2861.2109375,
+          "script": "378096a2-9d68-4734-8668-68de38f0e321",
+          "order": 12
+        },
+        "passive_corroboration": {
+          "events": 0,
+          "models": 0,
+          "callbacks": 0,
+          "listeners": 0,
+          "event_frames": [],
+          "counts_match": false,
+          "limitation": "Passive listener/model counts belong to this receiver/NPC and trial window; they corroborate control observations and are not added to their event totals."
+        }
+      },
+      {
+        "classification": "bounded-clip-exit-without-event-after-receiver-replay",
+        "complete": true,
+        "sample_count": 64,
+        "frame_gaps": [],
+        "passive_frame_gaps": [],
+        "trigger_count": 1,
+        "sound_added_positive": true,
+        "after_business_state_two": true,
+        "receiver_replay_turn_readback": true,
+        "original_ordinary_turn_confirmed": false,
+        "original_ordinary_changes": [],
+        "trigger_below_marker": true,
+        "trigger_from_stable_current": true,
+        "event_observed_before_or_during_trigger": false,
+        "pre_event_turn_confirmed": false,
+        "trigger_snapshot": {
+          "after": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -1.0539604425430298,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.14437171816825867,
+              "reduceCount": 120,
+              "state": 2,
+              "threshold": 0.6894825100898743,
+              "value": 0
+            },
+            "current": {
+              "full": 4204346965,
+              "normalized": 0.3039064407348633
+            },
+            "distance": 1,
+            "found": 0,
+            "frame": 81017,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.3039064407348633
+            },
+            "real": 2863.376953125,
+            "speed": 0.965202271938324,
+            "transition": 0,
+            "weight": 1
+          },
+          "afterSound": {
+            "added": 1.0132789611816406e-06,
+            "alreadyFound": 1,
+            "ignore": -1,
+            "justHit": 0,
+            "playerFound": 0,
+            "rate": 0.14437171816825867,
+            "reduceCount": 114,
+            "state": 1,
+            "threshold": 0.6894825100898743,
+            "value": 0.6894814968109131
+          },
+          "artificial": [
+            "state entry",
+            "near geometry",
+            "value lowered below threshold",
+            "PlayerFound=false",
+            "IgnoreNoise=-1"
+          ],
+          "before": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -1129.4130859375,
+              "justHit": 0,
+              "playerFound": 1,
+              "rate": 0.14437171816825867,
+              "reduceCount": 114,
+              "state": 1,
+              "threshold": 0.6894825100898743,
+              "value": 1
+            },
+            "current": {
+              "full": 4204346965,
+              "normalized": 0.3039064407348633
+            },
+            "distance": 1,
+            "found": 1,
+            "frame": 81017,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.3039064407348633
+            },
+            "real": 2863.376708984375,
+            "speed": 0.965202271938324,
+            "transition": 0,
+            "weight": 1
+          },
+          "source": "original OnPlayerSound SeType2 then original noise OnUpdate",
+          "targetProgress": 0.25,
+          "trial": 3
+        },
+        "source_gone_on_consecutive_frames": true,
+        "last_observed_source": {
+          "full": 4204346965,
+          "normalized": 0.6466208696365356
+        },
+        "sampled_source_stayed_below_marker": true,
+        "stable_crossings": [],
+        "events": 0,
+        "callbacks": 0,
+        "event_callback_counts_match": true,
+        "cleanup": {
+          "verified_listed_fields_and_position": true,
+          "readback": {
+            "errors": [],
+            "fieldsMatch": true,
+            "foundMatches": true,
+            "positionError": 0,
+            "stateMatches": true
+          },
+          "limitation": "Only the enumerated fields, requested business state, found parameter and player position are checked; this does not establish restoration of the world or interaction side effects."
+        },
+        "limitation": "A parameter false or business 1->2 alone is not clip cancellation. Receiver replay readback does not prove that a nested native callsite hook executed. Source disappearance below marker with no observed event is a bounded transition observation, not proof of the exact sub-frame cancellation mechanism. Missing snapshots and blend-only crossings remain unknown.",
+        "script": "378096a2-9d68-4734-8668-68de38f0e321",
+        "id": 3,
+        "plan": "stable-early",
+        "nca": "0x16951e1a3c0",
+        "receiver": "0x1661663dfc0",
+        "begin": {
+          "data": {
+            "authority": "controlled receiver replay; artificial numeric/visibility preconditions; real Unity animation events",
+            "baseline": {
+              "added": 0,
+              "alreadyFound": 0,
+              "ignore": -1128.276611328125,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.14437171816825867,
+              "reduceCount": -24368,
+              "state": 0,
+              "threshold": 0.6894825100898743,
+              "value": 0
+            },
+            "nca": "0x16951e1a3c0",
+            "oldState": 0,
+            "origin": [
+              32.61547088623047,
+              -8.550675392150879,
+              -42.222320556640625
+            ],
+            "plan": "stable-early",
+            "receiver": "0x1661663dfc0",
+            "trial": 3
+          },
+          "frame": 80997,
+          "kind": "noise_control_begin",
+          "real": 2862.24609375,
+          "script": "378096a2-9d68-4734-8668-68de38f0e321",
+          "order": 13
+        },
+        "end": {
+          "data": {
+            "callbacks": 0,
+            "cleanup": {
+              "errors": [],
+              "fieldsMatch": true,
+              "foundMatches": true,
+              "positionError": 0,
+              "stateMatches": true
+            },
+            "events": 0,
+            "plan": "stable-early",
+            "reason": "completed",
+            "trial": 3
+          },
+          "frame": 81061,
+          "kind": "noise_control_end",
+          "real": 2865.92822265625,
+          "script": "378096a2-9d68-4734-8668-68de38f0e321",
+          "order": 18
+        },
+        "passive_corroboration": {
+          "events": 0,
+          "models": 0,
+          "callbacks": 0,
+          "listeners": 0,
+          "event_frames": [],
+          "counts_match": true,
+          "limitation": "Passive listener/model counts belong to this receiver/NPC and trial window; they corroborate control observations and are not added to their event totals."
+        }
+      },
+      {
+        "classification": "event-generated",
+        "complete": true,
+        "sample_count": 63,
+        "frame_gaps": [],
+        "passive_frame_gaps": [],
+        "trigger_count": 1,
+        "sound_added_positive": true,
+        "after_business_state_two": true,
+        "receiver_replay_turn_readback": true,
+        "original_ordinary_turn_confirmed": false,
+        "original_ordinary_changes": [],
+        "trigger_below_marker": true,
+        "trigger_from_stable_current": true,
+        "event_observed_before_or_during_trigger": false,
+        "pre_event_turn_confirmed": false,
+        "trigger_snapshot": {
+          "after": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -1.0711734294891357,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.2825561463832855,
+              "reduceCount": 120,
+              "state": 2,
+              "threshold": 0.6964166164398193,
+              "value": 0
+            },
+            "current": {
+              "full": 4204346965,
+              "normalized": 0.6206542253494263
+            },
+            "distance": 1,
+            "found": 0,
+            "frame": 81099,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.6206542253494263
+            },
+            "real": 2868.406982421875,
+            "speed": 0.941608726978302,
+            "transition": 0,
+            "weight": 1
+          },
+          "afterSound": {
+            "added": 1.0132789611816406e-06,
+            "alreadyFound": 1,
+            "ignore": -1,
+            "justHit": 0,
+            "playerFound": 0,
+            "rate": 0.2825561463832855,
+            "reduceCount": 112,
+            "state": 1,
+            "threshold": 0.6964166164398193,
+            "value": 0.6964156031608582
+          },
+          "artificial": [
+            "state entry",
+            "near geometry",
+            "value lowered below threshold",
+            "PlayerFound=false",
+            "IgnoreNoise=-1"
+          ],
+          "before": {
+            "business": {
+              "added": 0,
+              "alreadyFound": 1,
+              "ignore": -1101.8502197265625,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.2825561463832855,
+              "reduceCount": 112,
+              "state": 1,
+              "threshold": 0.6964166164398193,
+              "value": 1
+            },
+            "current": {
+              "full": 4204346965,
+              "normalized": 0.6206542253494263
+            },
+            "distance": 1,
+            "found": 1,
+            "frame": 81099,
+            "meshActive": 1,
+            "next": {
+              "full": 4204346965,
+              "normalized": 0.6206542253494263
+            },
+            "real": 2868.406982421875,
+            "speed": 0.941608726978302,
+            "transition": 0,
+            "weight": 1
+          },
+          "source": "original OnPlayerSound SeType2 then original noise OnUpdate",
+          "targetProgress": 0.6,
+          "trial": 4
+        },
+        "source_gone_on_consecutive_frames": true,
+        "last_observed_source": {
+          "full": 4204346965,
+          "normalized": 0.9808907508850098
+        },
+        "sampled_source_stayed_below_marker": false,
+        "stable_crossings": [],
+        "events": 1,
+        "callbacks": 1,
+        "event_callback_counts_match": true,
+        "cleanup": {
+          "verified_listed_fields_and_position": true,
+          "readback": {
+            "errors": [],
+            "fieldsMatch": true,
+            "foundMatches": true,
+            "positionError": 0,
+            "stateMatches": true
+          },
+          "limitation": "Only the enumerated fields, requested business state, found parameter and player position are checked; this does not establish restoration of the world or interaction side effects."
+        },
+        "limitation": "A parameter false or business 1->2 alone is not clip cancellation. Receiver replay readback does not prove that a nested native callsite hook executed. Source disappearance below marker with no observed event is a bounded transition observation, not proof of the exact sub-frame cancellation mechanism. Missing snapshots and blend-only crossings remain unknown.",
+        "script": "378096a2-9d68-4734-8668-68de38f0e321",
+        "id": 4,
+        "plan": "near-marker",
+        "nca": "0x16951e1a000",
+        "receiver": "0x16616644ae0",
+        "begin": {
+          "data": {
+            "authority": "controlled receiver replay; artificial numeric/visibility preconditions; real Unity animation events",
+            "baseline": {
+              "added": 0,
+              "alreadyFound": 0,
+              "ignore": -1100.3809814453125,
+              "justHit": 0,
+              "playerFound": 0,
+              "rate": 0.2825561463832855,
+              "reduceCount": 25,
+              "state": 0,
+              "threshold": 0.6964166164398193,
+              "value": 1.935637072847385e-08
+            },
+            "nca": "0x16951e1a000",
+            "oldState": 0,
+            "origin": [
+              32.61547088623047,
+              -8.55068302154541,
+              -42.222320556640625
+            ],
+            "plan": "near-marker",
+            "receiver": "0x16616644ae0",
+            "trial": 4
+          },
+          "frame": 81076,
+          "kind": "noise_control_begin",
+          "real": 2866.955078125,
+          "script": "378096a2-9d68-4734-8668-68de38f0e321",
+          "order": 19
+        },
+        "end": {
+          "data": {
+            "callbacks": 1,
+            "cleanup": {
+              "errors": [],
+              "fieldsMatch": true,
+              "foundMatches": true,
+              "positionError": 0,
+              "stateMatches": true
+            },
+            "events": 1,
+            "plan": "near-marker",
+            "reason": "completed",
+            "trial": 4
+          },
+          "frame": 81139,
+          "kind": "noise_control_end",
+          "real": 2870.94287109375,
+          "script": "378096a2-9d68-4734-8668-68de38f0e321",
+          "order": 26
+        },
+        "passive_corroboration": {
+          "events": 0,
+          "models": 0,
+          "callbacks": 0,
+          "listeners": 0,
+          "event_frames": [],
+          "counts_match": false,
+          "limitation": "Passive listener/model counts belong to this receiver/NPC and trial window; they corroborate control observations and are not added to their event totals."
+        }
+      }
+    ],
+    "counts": {
+      "bounded-clip-exit-without-event-after-receiver-replay": 2,
+      "event-generated": 2
+    },
+    "total_events": 2,
+    "total_callbacks": 2,
+    "ordinary_pre_event_turn_trials": [],
+    "finished": [
+      {
+        "data": {
+          "reason": "completed",
+          "trials": 4
+        },
+        "frame": 81140,
+        "kind": "noise_control_finished",
+        "real": 2871.0546875,
+        "script": "378096a2-9d68-4734-8668-68de38f0e321",
+        "order": 27
+      }
+    ],
+    "all_control_sources_finished": true,
+    "all_sources_finished": true,
+    "unfinished_sources": [],
+    "errors": [],
+    "native_script_errors": [],
+    "capture_joins": [],
+    "limits": [
+      "An artificial lowered value bypasses a natural threshold guard; replay success does not establish natural reachability.",
+      "Event counters remain independent of expected cancellation and of passive duplicate observations.",
+      "Entering and exiting transitions may continue advancing the source after found becomes false.",
+      "Cleanup checks cover only the explicitly saved fields and position."
+    ]
+  },
+  "all_sources_finished": true,
+  "unavailable": [],
+  "scope": "Natural and controlled counts are never combined. A bounded absence after source exit is distinct from a stable-source threshold crossing candidate."
+}

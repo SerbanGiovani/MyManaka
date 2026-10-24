@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "name": "noise-cancel",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\noise-cancel.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\noise-cancel",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 14856,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerFootStepController::OnFootStep",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000dbf",
+      "va": "0x18064ddc0",
+      "file_offset": 6604224,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerFootStepController__OnFootStep__06000dbf",
+      "file_stem": "14856-06000dbf",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14954,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerSoundManager::PlaySe",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e21",
+      "va": "0x18065e1a0",
+      "file_offset": 6670752,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerSoundManager__PlaySe__06000e21",
+      "file_stem": "14954-06000e21",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14955,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerSoundManager::PlayFootSeIfInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e22",
+      "va": "0x18065e460",
+      "file_offset": 6671456,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerSoundManager__PlayFootSeIfInCondition__06000e22",
+      "file_stem": "14955-06000e22",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14973,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerStrangenessController::CalcNoisy",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e34",
+      "va": "0x18065ff40",
+      "file_offset": 6678336,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerStrangenessController__CalcNoisy__06000e34",
+      "file_stem": "14973-06000e34",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15626,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcStrangenessManager::OnPlayerSound",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60010c1",
+      "va": "0x180435fb0",
+      "file_offset": 4409264,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcStrangenessManager__OnPlayerSound__060010c1",
+      "file_stem": "15626-060010c1",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

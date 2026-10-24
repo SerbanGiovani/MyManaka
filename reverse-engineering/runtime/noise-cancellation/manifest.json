@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "captured_utc": "2026-10-24T16:00:59.144738+00:00",
+  "game_root": "E:\\ManakaREA-NaturalGameplay",
+  "evidence_ids": [
+    "ev_57789e689244b390d034ea2e34bf867e7fa2609d727e2a1d4b8853034ff4f169",
+    "ev_6a700a856b3783444915d24a6c046e830ad5b1848640f454dd58a6f6d3efe8ac",
+    "ev_eac03fca25dce04cfd7a3940371cdbee1c4e5e4f852d9e73221b919fcaddd062",
+    "ev_0d3474899b0b5239bae6551b11b1862264027a17a2a7601813e491067204dae2",
+    "ev_5f032bac79d721ed63ca0fb01b8b20ffdec5253e5db20bba879c4b270965a1b0",
+    "ev_9caa1ae15cbba8fce912239376e030e0325e91184242675e4cc8960eccc7e9ae",
+    "ev_d8eaf1f1ea823317a78c52bc78fab4dfdc04b002658a7879f5cf9aa6202dd4c5",
+    "ev_25773effb8020bdfc900a8d9a04dd76b179c57714095a252842fb681ba95eae0",
+    "ev_881845e194624f57e9481c8f7e968f523854c477bb94810670c2333cc18c00b3",
+    "ev_bed1a1085fe24fb936c48a5cb0c1128ed764fadedb48f2c0fc2dd1898143aa7e"
+  ],
+  "sources": [
+    {
+      "path": "runtime/noise-cancellation/analyze.py",
+      "sha256": "9de37f5d18b9226cb769b66d7c2c2de507d44c45d0d9505c555e5efb5c16bb44"
+    },
+    {
+      "path": "runtime/noise-cancellation/collect.py",
+      "sha256": "32d5a074a006ff111afd14f2cbad5c9113797ea4b82e555dc265b07eed816473"
+    },
+    {
+      "path": "runtime/noise-cancellation/control-v2.js",
+      "sha256": "4bd02631ce2cb4a98ecebf239d173b025e44ef749955dcee1cbf7bdf05eae033"
+    },
+    {
+      "path": "runtime/noise-cancellation/control-v3.js",
+      "sha256": "5c230591c2b97bb39433a62c76d417bad2dec85963e5ab45570c06fdfc78a52e"
+    },
+    {
+      "path": "runtime/noise-cancellation/control.js",
+      "sha256": "e4cf8d4de9abd26bb72fd81f2881de8171afe726d38a1d0a1e4647f7bdb7913c"
+    },
+    {
+      "path": "runtime/noise-cancellation/decode.js",
+      "sha256": "d0d45e03816abdd00bd0b096c87e082ec81e6fbf533d6a2897dba9506e762bcb"
+    },
+    {
+      "path": "runtime/noise-cancellation/evaluation.js",
+      "sha256": "51162540435b551de3be6a99b015df58e8abd75439b6bd3086138e1a27bb471c"
+    },
+    {
+      "path": "runtime/noise-cancellation/observe-replay.js",
+      "sha256": "2e599348100aed1b32cdbb71442f7c5a69bc2b1556e47f5feb24a1e33d24b11d"
+    },
+    {
+      "path": "runtime/noise-cancellation/observe.js",
+      "sha256": "560f5ded025e71bdb7fe67c089b38a344096788612f9f3679dd37c5baa213437"
+    },
+    {
+      "path": "runtime/noise-cancellation/test_analysis.py",
+      "sha256": "51a8d6490a5ffb7f605f91a9e24f3ce471234c238c79c857244e5a2c2c875b67"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "natural-window.jsonl.gz",
+      "sha256": "d931d43f79679a11c7e06afea0fdfede06f8b02f94bf8a0eb869ef13761b27c1",
+      "uncompressed_bytes": 1785381,
+      "uncompressed_sha256": "d6f3807a5b7ec85704a9c9cce7e6fa049fd4c0c1ef357c8463add5fbaacb75c2",
+      "original_path": "E:\\ManakaREA-NaturalGameplay\\natural.jsonl",
+      "original_start_offset": 309394079,
+      "original_snapshot_bytes": 46299884,
+      "original_snapshot_sha256": "9f6cc4906f791e0102f282201a24108e0b6e849a0702ad8a35e2bbb7a4f12b82",
+      "selection": {
+        "min_frame": 65500,
+        "max_frame": 72264,
+        "snapshot_cadence_real_seconds": 15,
+        "marker_window_seconds": 2,
+        "marker_real_times": [
+          2085.2841796875,
+          2085.747802734375,
+          2090.390380859375,
+          2106.63037109375,
+          2107.019775390625,
+          2111.705810546875,
+          2128.7958984375,
+          2129.603759765625,
+          2133.875732421875
+        ],
+        "retained_lines": 48,
+        "complete_original_lines": true
+      }
+    },
+    {
+      "path": "replay-window.jsonl.gz",
+      "sha256": "6d6a5bdce1711c3b2b1830b6f867b1d9db2ec660ceff61feea76eccd85ecd9ff",
+      "uncompressed_bytes": 1293240,
+      "uncompressed_sha256": "9f8c5fbd4e51ae50b3ce5f58a4a7cb21c0f91ee0ea324f7df4e7264b52c540d9",
+      "original_path": "E:\\ManakaREA-NaturalGameplay\\natural.jsonl",
+      "original_start_offset": 309394079,
+      "original_snapshot_bytes": 46299884,
+      "original_snapshot_sha256": "9f6cc4906f791e0102f282201a24108e0b6e849a0702ad8a35e2bbb7a4f12b82",
+      "selection": {
+        "min_frame": 78835,
+        "max_frame": 79918,
+        "snapshot_cadence_real_seconds": 15,
+        "marker_window_seconds": 2,
+        "marker_real_times": [
+          2640.64599609375,
+          2641.29736328125,
+          2645.551025390625,
+          2645.943603515625,
+          2646.01708984375,
+          2648.238037109375,
+          2650.582763671875,
+          2655.283447265625,
+          2655.895263671875,
+          2655.954345703125,
+          2658.078369140625,
+          2708.494140625,
+          2713.357421875,
+          2713.358154296875,
+          2715.426025390625
+        ],
+        "retained_lines": 35,
+        "complete_original_lines": true
+      }
+    },
+    {
+      "path": "v3-window.jsonl.gz",
+      "sha256": "7ba3dfb28226165e9d973c05742f194bdfcbcbf53ce763fae32a15243909b474",
+      "uncompressed_bytes": 627713,
+      "uncompressed_sha256": "85f5af3124b53df84ea6d80352caab11be63906e9babb2f518cef6e93c3c5528",
+      "original_path": "E:\\ManakaREA-NaturalGameplay\\natural.jsonl",
+      "original_start_offset": 309394079,
+      "original_snapshot_bytes": 46299884,
+      "original_snapshot_sha256": "9f6cc4906f791e0102f282201a24108e0b6e849a0702ad8a35e2bbb7a4f12b82",
+      "selection": {
+        "min_frame": 80829,
+        "max_frame": 81140,
+        "snapshot_cadence_real_seconds": 15,
+        "marker_window_seconds": 2,
+        "marker_real_times": [
+          2853.571044921875,
+          2858.69873046875,
+          2863.376953125,
+          2868.4072265625
+        ],
+        "retained_lines": 17,
+        "complete_original_lines": true
+      }
+    }
+  ],
+  "sessions": [
+    {
+      "session_id": "d914503b-8a84-41ee-99a6-32237c1c0eef",
+      "pid": 46272,
+      "state": "running",
+      "closed_by_operator": true,
+      "authority": "natural-input-passive"
+    },
+    {
+      "session_id": "f141a81a-dbe1-4977-a75e-4ab198c2db3e",
+      "pid": 46272,
+      "state": "running",
+      "closed_by_operator": true,
+      "authority": "controlled-receiver-replay"
+    },
+    {
+      "session_id": "503ab689-8cea-46e5-b3d8-57b54e84a302",
+      "pid": 46272,
+      "state": "running",
+      "closed_by_operator": true,
+      "authority": "controlled-receiver-replay-native-hook-attempt-not-captured"
+    }
+  ],
+  "natural_only": false,
+  "session_files": {
+    "rea-runtime.json": "d914503b-8a84-41ee-99a6-32237c1c0eef",
+    "replay-runtime.json": "f141a81a-dbe1-4977-a75e-4ab198c2db3e",
+    "v3-runtime.json": "503ab689-8cea-46e5-b3d8-57b54e84a302"
+  },
+  "observation_complete": true,
+  "inputs": [
+    {
+      "relative_path": "GameAssembly.dll",
+      "original_path": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+      "sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "relative_path": "UnityPlayer.dll",
+      "original_path": "E:\\SecretFlasherManakaREA\\UnityPlayer.dll",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\UnityPlayer.dll",
+      "sha256": "43fb0aea1b80c74963dae88ec7fc1c3c1993d893ce94d12972000fcc9b653ad1"
+    },
+    {
+      "relative_path": "SecretFlasherManaka_Data/data.unity3d",
+      "original_path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\data.unity3d",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\SecretFlasherManaka_Data\\data.unity3d",
+      "sha256": "20781befb4cc42f898b65fe03f3d16c0a77b53aecac6ddc388460cfb710ae93a"
+    },
+    {
+      "relative_path": "SecretFlasherManaka_Data/il2cpp_data/Metadata/global-metadata.dat",
+      "original_path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
+      "sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8"
+    },
+    {
+      "relative_path": "SecretFlasherManaka_Data/StreamingAssets/StandaloneWindows64/-265379604",
+      "original_path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\StreamingAssets\\StandaloneWindows64\\-265379604",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\SecretFlasherManaka_Data\\StreamingAssets\\StandaloneWindows64\\-265379604",
+      "sha256": "bb3a495d023a00ff95c110955a436e4d4dd2eea0598919401eb236d3e132ade9"
+    }
+  ],
+  "current_plugin_sha256": "f0a94d41c55ff09e0ea56708c9d86bace4fd6fad68a7c982518f37b2d1996da8",
+  "source_save_files_unchanged": 8,
+  "source_save_baseline": {
+    "path": "source-save-baseline.json",
+    "sha256": "2a2ca018d33c88ca8677477701e78b49826464b2ec5a0870280205f1f08198e4"
+  },
+  "dependencies": [
+    {
+      "path": "runtime/natural-event-coverage/analyze.py",
+      "sha256": "1568ef4a6c665abb74cd09ec620c541e88cd124c49065e81eb518daec519d982"
+    },
+    {
+      "path": "runtime/natural-event-generation/analyze.py",
+      "sha256": "17ae3a0ec42649bb26d196afef93ec9077102186cba3591fc7128356ce026b9f"
+    },
+    {
+      "path": "runtime/natural-cancellation/manifest.json",
+      "sha256": "4c1b356c09a17e5ee72b8fc99c4ef15901b58c0ae6733713a8dac7238b7a971b"
+    },
+    {
+      "path": "salt/evidence/noise-cancel/run.json",
+      "sha256": "1ac8d121386cb3587988704479b9b24f0f2a5c5d946eff37389b7b18c68f4835"
+    },
+    {
+      "path": "salt/evidence/noise-value-guard/run.json",
+      "sha256": "88edaed6e9face5ec4ae4e8a4bf7de7f074b4a19af26d12789eaea427fcd94a2"
+    }
+  ],
+  "decoded_instruction_verification": [
+    {
+      "start": 4412160,
+      "end": 4414784,
+      "instructions": 592
+    }
+  ],
+  "limits": [
+    "Natural and artificial receiver replay are separate sessions and result sections.",
+    "Cleanup verifies the named scalar fields, prior business state, Found bool and player position; it does not roll back the whole game world.",
+    "Frida reports provider authority external-service; local manifest adds analyst context without rewriting Evidence."
+  ]
+}
