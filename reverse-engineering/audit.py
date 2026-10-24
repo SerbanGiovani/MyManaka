@@ -135,6 +135,31 @@ def main():
         dependency = coverage_runtime[key]
         check(digest(ROOT / dependency["path"]) == dependency["sha256"], "Coverage dependency differs")
     observed_runtime_records[coverage_dir / "rea-runtime.json"] = coverage_runtime
+    cancellation_dir = ROOT / "runtime/natural-cancellation"
+    cancellation_runtime = read(cancellation_dir / "manifest.json")
+    for source in cancellation_runtime["sources"]:
+        check(digest(ROOT / source["path"]) == source["sha256"], "Cancellation source differs")
+    for output in cancellation_runtime["outputs"]:
+        path = cancellation_dir / output["path"]
+        check(digest(path) == output["sha256"], "Cancellation log differs")
+        payload = gzip.decompress(path.read_bytes())
+        check(len(payload) == output["uncompressed_bytes"] and hashlib.sha256(payload).hexdigest() == output["uncompressed_sha256"], "Cancellation raw log differs")
+        bounds = output["selection"]
+        check(output["original_start_offset"] > 0 and all(bounds["min_frame"] <= json.loads(line)["frame"] <= bounds["max_frame"] for line in payload.splitlines()), "Cancellation run/window differs")
+    cancellation_result = runpy.run_path(str(cancellation_dir / "analyze.py"))["analyze"]()
+    check(cancellation_result == read(cancellation_dir / "results.json"), "Cancellation measurements differ")
+    check(cancellation_result["all_sources_finished"] and cancellation_runtime["observation_complete"] and cancellation_runtime["natural_only"], "Cancellation tail incomplete")
+    check(not cancellation_result["errors"] and not cancellation_result["native_script_errors"] and not cancellation_result["guard_errors"], "Cancellation probe errors")
+    check(all(s["closed_by_operator"] for s in cancellation_runtime["sessions"]), "Cancellation session not closed")
+    for key in ["previous_checkpoint", "algorithm_dependency", "static_guard_queries"]:
+        dependency = cancellation_runtime[key]
+        check(digest(ROOT / dependency["path"]) == dependency["sha256"], "Cancellation dependency differs")
+    save_baseline = cancellation_runtime["source_save_baseline"]
+    check(digest(cancellation_dir / save_baseline["path"]) == save_baseline["sha256"], "Cancellation save baseline differs")
+    if args.inputs:
+        for entry in read(cancellation_dir / save_baseline["path"])["files"]:
+            check(digest(Path(entry["path"])) == entry["sha256"], "Source save/binding file changed during cancellation trial")
+    observed_runtime_records[cancellation_dir / "rea-runtime.json"] = cancellation_runtime
     asset = read(ROOT / "assets/resources-keydata.json")
     check(runtime_inputs["SecretFlasherManaka_Data/data.unity3d"] == asset["source_sha256"], "Runtime resources differ")
     recovered = read(ROOT / "salt/evidence/recovered-crypto.json")

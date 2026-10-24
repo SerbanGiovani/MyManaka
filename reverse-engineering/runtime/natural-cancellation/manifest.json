@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "captured_utc": "2026-10-24T15:27:48.017199+00:00",
+  "game_root": "E:\\ManakaREA-NaturalGameplay",
+  "evidence_ids": [
+    "ev_440fbca05300c87cafa0aefb8068df0f6e70b701ba5ecac68d3ca329abe2ace6",
+    "ev_c5e5240b1c3c015b5c24d6bc35a407cc45cc33581e851eb722f2b7bb34042034",
+    "ev_c98252d9a6789f065c9ae7ce196ee2052ad5546374c05ba78e8eb487379953b5",
+    "ev_d03ac07003d7010b7849c70722d64ffe62ce0ee0ff3dd86f32858c4d11782c17",
+    "ev_f57df7206643be9e27d55fdae3e5fa8b2236dde3f3118f2a1a2c2722c4da4e6d",
+    "ev_657b084735df53cf45242cffcd0655df32a8098ea30fbff01207db404881a637"
+  ],
+  "sources": [
+    {
+      "path": "runtime/natural-cancellation/analyze.py",
+      "sha256": "3b6c0badaa0e7de6ec72d69de6860db30eb72f59e038a75bc0cd2435bbfdc7c4"
+    },
+    {
+      "path": "runtime/natural-cancellation/collect.py",
+      "sha256": "250da8056fc385847437564f0874839a39818641506f4df548af38fa65b07b46"
+    },
+    {
+      "path": "runtime/natural-cancellation/decode-guards.js",
+      "sha256": "b89c1dfbcd07d42144a8535e0bd48635c6dbe9cf590b217c18301b231c3e84f5"
+    },
+    {
+      "path": "runtime/natural-cancellation/evaluation.js",
+      "sha256": "a7ef2d1a76e7091917c3f8ccc087637c0a8e08532de5fa3ddacf4a5d10fa8142"
+    },
+    {
+      "path": "runtime/natural-cancellation/guards.js",
+      "sha256": "8b618c72adbb20daf0843f55400de2109b44c2ea9b29369fdb14d5719ca3d97e"
+    },
+    {
+      "path": "runtime/natural-cancellation/inventory.js",
+      "sha256": "813081e4a92515c3c6a496aac9e7a49cb94166967fac5fcfb90943b0251c7ebc"
+    },
+    {
+      "path": "runtime/natural-cancellation/observe.js",
+      "sha256": "44417c6ea5de09531c78765bcff8c7e76956b867586f883c00e64cadb6377f51"
+    },
+    {
+      "path": "runtime/natural-cancellation/test_analysis.py",
+      "sha256": "87a6bed7b6991b4af4d4a88a26cf82489a91e17516c67058bd7d60a45e5ba68f"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "natural-window.jsonl.gz",
+      "sha256": "622afb6f9fee4f0b68520f506a2fa5eeb3b3b9a00af57f5c8b5c88319b6caa3a",
+      "uncompressed_bytes": 5803040,
+      "uncompressed_sha256": "60bc48e194d8ac753cf34cadff0ce087871b01c65089d3281da8bf80543f4417",
+      "original_path": "E:\\ManakaREA-NaturalGameplay\\natural.jsonl",
+      "original_snapshot_sha256": "a922a364dd2a3a5c218351b2f13d53e58cc43277fa55de9295231ad698965bb4",
+      "original_snapshot_bytes": 36319458,
+      "original_start_offset": 247207131,
+      "selection": {
+        "min_frame": 3835,
+        "max_frame": 32458,
+        "snapshot_cadence_real_seconds": 15,
+        "marker_window_seconds": 2,
+        "marker_real_times": [
+          129.3572998046875,
+          130.30255126953125,
+          134.38253784179688,
+          471.3422546386719,
+          472.0004577636719,
+          476.3734130859375,
+          479.7939758300781,
+          480.5353088378906,
+          480.73199462890625,
+          481.0340881347656,
+          482.5267333984375,
+          483.40350341796875,
+          484.81927490234375,
+          485.5585021972656,
+          487.5455017089844,
+          490.9329528808594,
+          491.8650817871094,
+          495.9607238769531,
+          513.814208984375,
+          514.1874389648438,
+          516.2479858398438,
+          516.7035522460938,
+          518.8544921875,
+          521.2970581054688,
+          680.0103759765625,
+          680.4722290039062,
+          680.9155883789062,
+          681.0581665039062,
+          685.0759887695312,
+          685.478515625,
+          699.3003540039062,
+          699.8344116210938,
+          704.3557739257812,
+          711.5120849609375,
+          712.33837890625,
+          716.5462036132812,
+          724.6410522460938,
+          725.343017578125,
+          729.6827392578125,
+          733.4820556640625,
+          737.1353759765625,
+          763.598388671875,
+          766.972900390625,
+          775.5051879882812,
+          775.99658203125,
+          776.1553344726562,
+          776.670654296875,
+          780.5846557617188,
+          781.256103515625,
+          787.4017944335938,
+          787.786865234375,
+          788.6133422851562,
+          789.5189208984375,
+          792.4248657226562,
+          793.6609497070312,
+          947.7637939453125,
+          965.0549926757812
+        ],
+        "retained_lines": 173,
+        "complete_original_lines": true
+      }
+    }
+  ],
+  "sessions": [
+    {
+      "session_id": "9d3e7344-dff8-404d-9057-ad0ddc993a95",
+      "pid": 46272,
+      "state": "running",
+      "closed_by_operator": true
+    }
+  ],
+  "inputs": [
+    {
+      "relative_path": "GameAssembly.dll",
+      "original_path": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+      "sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "relative_path": "UnityPlayer.dll",
+      "original_path": "E:\\SecretFlasherManakaREA\\UnityPlayer.dll",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\UnityPlayer.dll",
+      "sha256": "43fb0aea1b80c74963dae88ec7fc1c3c1993d893ce94d12972000fcc9b653ad1"
+    },
+    {
+      "relative_path": "SecretFlasherManaka_Data/data.unity3d",
+      "original_path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\data.unity3d",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\SecretFlasherManaka_Data\\data.unity3d",
+      "sha256": "20781befb4cc42f898b65fe03f3d16c0a77b53aecac6ddc388460cfb710ae93a"
+    },
+    {
+      "relative_path": "SecretFlasherManaka_Data/il2cpp_data/Metadata/global-metadata.dat",
+      "original_path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
+      "sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8"
+    },
+    {
+      "relative_path": "SecretFlasherManaka_Data/StreamingAssets/StandaloneWindows64/-265379604",
+      "original_path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\StreamingAssets\\StandaloneWindows64\\-265379604",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\SecretFlasherManaka_Data\\StreamingAssets\\StandaloneWindows64\\-265379604",
+      "sha256": "bb3a495d023a00ff95c110955a436e4d4dd2eea0598919401eb236d3e132ade9"
+    }
+  ],
+  "current_plugin_sha256": "f0a94d41c55ff09e0ea56708c9d86bace4fd6fad68a7c982518f37b2d1996da8",
+  "source_save_files_unchanged": 8,
+  "previous_checkpoint": {
+    "path": "runtime/natural-event-coverage/manifest.json",
+    "sha256": "b976103ef4eaa14ca5689da6e2236593cc4f336d805750b5cba2bdf68059a6e2"
+  },
+  "algorithm_dependency": {
+    "path": "runtime/natural-event-coverage/analyze.py",
+    "sha256": "1568ef4a6c665abb74cd09ec620c541e88cd124c49065e81eb518daec519d982"
+  },
+  "observation_complete": true,
+  "capture_joins": [],
+  "natural_only": true,
+  "limits": [
+    "Natural time-stop-assisted coverage is separately marked; it does not establish ordinary moving, unpaused coverage.",
+    "A missing event while the source is frozen or while it never reaches its marker is not a missing-event failure.",
+    "Destroyed/replaced actors are lifecycle-censored unless independent scene evidence establishes the expected removal.",
+    "Source disappearance below a marker only supports a bounded ordinary transition without observed event, not its exact sub-frame cancellation point.",
+    "A same-frame hidden event snapshot alone is weaker than a bracketed original manual Update with hidden pre-state and the event inside.",
+    "Observer overhead changes frame steps. Event/callback delivery is measured under instrumentation, not a frame-rate-independent timing guarantee.",
+    "Callback identity on the same receiver/frame uses group-level listener counts.",
+    "Parsed Move is not an independent physical keyboard capture; zero parsed input cannot establish no key was pressed.",
+    "A true CanMove field is only one motion guard; dash additionally requires action None. Collision and upstream input gates are separate.",
+    "Entry timer zero and no repeated same object only bound the observed population; they do not prove natural reentry impossible.",
+    "Noise branch reachability and a state change do not establish an actual event-before-marker cancellation without observed clip exit."
+  ],
+  "source_save_baseline": {
+    "path": "source-save-baseline.json",
+    "sha256": "c3cef99b4adf1734db043304d8414b6a3df0843badfc5aae200d77ed478420a4"
+  },
+  "decoded_instruction_verification": [
+    {
+      "name": "menu",
+      "instructions": 285,
+      "start": 5220080,
+      "end": 5221440
+    },
+    {
+      "name": "portal",
+      "instructions": 384,
+      "start": 6412160,
+      "end": 6413920
+    }
+  ],
+  "static_guard_queries": {
+    "path": "salt/evidence/natural-cancel-guards/run.json",
+    "sha256": "5618c395daf2e6f1a6b5b2be46f62caa9f0c14a0ef5418dad0326c97c4f0357a"
+  }
+}

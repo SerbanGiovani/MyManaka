@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "name": "natural-cancel-guards",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\natural-cancel-guards.seeds.tsv",
+  "seed_sha256": "2336cab15fcc1bbbd4c5ed0e8e17d0a235e6a286f2fe1dd10863fa9759d3cf84",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\natural-cancel-guards",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 14398,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Portal.PortalController::OnTriggerEnter",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000bf5",
+      "va": "0x18061d780",
+      "file_offset": 6406016,
+      "label": "ExposureUnnoticed2_Object3D_Portal_PortalController__OnTriggerEnter__06000bf5",
+      "file_stem": "14398-06000bf5",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14400,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Portal.PortalController::Update",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000bf7",
+      "va": "0x18061e050",
+      "file_offset": 6408272,
+      "label": "ExposureUnnoticed2_Object3D_Portal_PortalController__Update__06000bf7",
+      "file_stem": "14400-06000bf7",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14403,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Portal.PortalController::<Start>b__20_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000bfa",
+      "va": "0x18061e3a0",
+      "file_offset": 6409120,
+      "label": "ExposureUnnoticed2_Object3D_Portal_PortalController___Start_b__20_0__06000bfa",
+      "file_stem": "14403-06000bfa",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15529,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcController::FirePinponAction",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001060",
+      "va": "0x180429d20",
+      "file_offset": 4359456,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcController__FirePinponAction__06001060",
+      "file_stem": "15529-06001060",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15530,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcController::OnGameOver",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001061",
+      "va": "0x180429f30",
+      "file_offset": 4359984,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcController__OnGameOver__06001061",
+      "file_stem": "15530-06001061",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15533,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcController::Push",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001064",
+      "va": "0x18042a300",
+      "file_offset": 4360960,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcController__Push__06001064",
+      "file_stem": "15533-06001064",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15535,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcController::HitSpermOnSkin",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001066",
+      "va": "0x18042a5a0",
+      "file_offset": 4361632,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcController__HitSpermOnSkin__06001066",
+      "file_stem": "15535-06001066",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15547,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcFoundStrangerState::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001072",
+      "va": "0x18042c090",
+      "file_offset": 4368528,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcFoundStrangerState__Initialize__06001072",
+      "file_stem": "15547-06001072",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15551,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcFoundStrangerState::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001076",
+      "va": "0x1803b65e0",
+      "file_offset": 3886560,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcFoundStrangerState___ctor__06001076",
+      "file_stem": "15551-06001076",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15619,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcStateModel::OnUpdateReset",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60010ba",
+      "va": "0x180434dc0",
+      "file_offset": 4404672,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcStateModel__OnUpdateReset__060010ba",
+      "file_stem": "15619-060010ba",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15620,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcStateModel::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60010bb",
+      "va": "0x180434dd0",
+      "file_offset": 4404688,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcStateModel___ctor__060010bb",
+      "file_stem": "15620-060010bb",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18072,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.InGameMenu.InGameMenuView::OnClickFastTravel",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001a4f",
+      "va": "0x1804fa6f0",
+      "file_offset": 5213936,
+      "label": "ExposureUnnoticed2_ObjectUI_InGameMenu_InGameMenuView__OnClickFastTravel__06001a4f",
+      "file_stem": "18072-06001a4f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18083,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.InGameMenu.InGameMenuView::<OnClickFastTravel>b__30_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001a5a",
+      "va": "0x1804fb410",
+      "file_offset": 5217296,
+      "label": "ExposureUnnoticed2_ObjectUI_InGameMenu_InGameMenuView___OnClickFastTravel_b__30_0__06001a5a",
+      "file_stem": "18083-06001a5a",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18309,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.FastTravelPanel.FastTravelPanelView::OnClickFastTravel",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001b3c",
+      "va": "0x180512820",
+      "file_offset": 5312544,
+      "label": "ExposureUnnoticed2_ObjectUI_FastTravelPanel_FastTravelPanelView__OnClickFastTravel__06001b3c",
+      "file_stem": "18309-06001b3c",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18312,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.FastTravelPanel.FastTravelPanelView::<OnClickFastTravel>b__14_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001b3f",
+      "va": "0x180512d00",
+      "file_offset": 5313792,
+      "label": "ExposureUnnoticed2_ObjectUI_FastTravelPanel_FastTravelPanelView___OnClickFastTravel_b__14_0__06001b3f",
+      "file_stem": "18312-06001b3f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}
