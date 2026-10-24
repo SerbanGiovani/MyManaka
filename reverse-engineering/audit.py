@@ -203,6 +203,49 @@ def main():
     for name, sid in noise_runtime["session_files"].items():
         check(all(r["parameters"]["session_id"] == sid for r in read(noise_dir / name)["records"]), "Noise natural/replay session contamination")
         observed_runtime_records[noise_dir / name] = noise_runtime
+    callsite_dir = ROOT / "runtime/noise-callsite"
+    callsite_runtime = read(callsite_dir / "manifest.json")
+    for source in callsite_runtime["sources"]:
+        check(digest(ROOT / source["path"]) == source["sha256"], "Callsite source differs")
+    for output in callsite_runtime["outputs"]:
+        path = callsite_dir / output["path"]
+        check(digest(path) == output["sha256"], "Callsite compressed log differs")
+        payload = gzip.decompress(path.read_bytes())
+        check(len(payload) == output["uncompressed_bytes"] and hashlib.sha256(payload).hexdigest() == output["uncompressed_sha256"], "Callsite raw log differs")
+        bounds = output["selection"]
+        check(output["original_start_offset"] > 0 and all(bounds["min_frame"] <= json.loads(line)["frame"] <= bounds["max_frame"] for line in payload.splitlines()), "Callsite log run/window differs")
+    callsite_result = runpy.run_path(str(callsite_dir / "analyze.py"))["analyze"]()
+    check(callsite_result == read(callsite_dir / "results.json"), "Callsite measurements differ")
+    check(callsite_result["all_sources_finished"] and callsite_runtime["observation_complete"] and not callsite_runtime["natural_only"], "Callsite capture/authority differs")
+    check(callsite_runtime["inputs"] == natural_runtime["inputs"] and callsite_runtime["current_plugin_sha256"] == natural_runtime["current_plugin_sha256"], "Callsite build/probe identity differs")
+    check(all(s["closed_by_operator"] for s in callsite_runtime["sessions"]), "Callsite session not closed")
+    for dependency in callsite_runtime["dependencies"]:
+        check(digest(ROOT / dependency["path"]) == dependency["sha256"], "Callsite dependency differs")
+    for section in ["natural", "replay"]:
+        measured_callsite = callsite_result[section]
+        check(not measured_callsite["errors"] and not measured_callsite["native_script_errors"], "Callsite script errors")
+    check(not callsite_result["natural"]["eligibility_errors"] and all(e["delivery_balanced"] for e in callsite_result["natural"]["events"]), "Natural callsite delivery/eligibility errors")
+    check(all(t["complete"] and t["native_scope_chain_valid"] and t["end_counts_match"] and t["all_four_counts_equal"] and t["cleanup"]["verified_listed_fields_and_position"] for t in callsite_result["replay"]["trials"]), "Deferred native scope/delivery/cleanup incomplete")
+    save_baseline = callsite_runtime["source_save_baseline"]
+    check(digest(callsite_dir / save_baseline["path"]) == save_baseline["sha256"], "Callsite save baseline differs")
+    window_entry = callsite_runtime["static_window"]
+    check(digest(callsite_dir / window_entry["path"]) == window_entry["sha256"], "Callsite instruction window differs")
+    window = read(callsite_dir / window_entry["path"])
+    parent = next(r for r in read(ROOT / window["parent_path"])["records"] if r["evidence_id"] == window["parent_evidence"])
+    original_rows = next(m["payload"]["data"]["rows"] for m in parent["normalized_result"]["messages"] if m.get("payload", {}).get("kind") == "noise_decoded_file_window")
+    check(all(row in original_rows for row in window["rows"]) and len(window["rows"]) == window_entry["instructions_verified"], "Callsite rows differ from original REA Evidence")
+    check(window["source_sha256"] == identity["native_sha256"] and any(row["rva"] == window["call_rva"] and row["relativeCallTarget"] == window["target_rva"] for row in window["rows"]), "Callsite static target differs")
+    if args.inputs:
+        for entry in read(callsite_dir / save_baseline["path"])["files"]:
+            check(digest(Path(entry["path"])) == entry["sha256"], "Source save/binding changed during deferred replay")
+        native = Path(window["source"]).read_bytes()
+        image = runpy.run_path(str(ROOT / "salt/metadata.py"))["PE"](native)
+        for row in window["rows"]:
+            pos = image.offset(0x180000000 + int(row["rva"], 16), executable=True)
+            check(native[pos:pos+row["size"]] == bytes(row["bytes"]), "Callsite original machine code differs")
+    for name, sid in callsite_runtime["session_files"].items():
+        check(all(r["parameters"]["session_id"] == sid for r in read(callsite_dir / name)["records"]), "Callsite natural/replay contamination")
+        observed_runtime_records[callsite_dir / name] = callsite_runtime
     asset = read(ROOT / "assets/resources-keydata.json")
     check(runtime_inputs["SecretFlasherManaka_Data/data.unity3d"] == asset["source_sha256"], "Runtime resources differ")
     recovered = read(ROOT / "salt/evidence/recovered-crypto.json")

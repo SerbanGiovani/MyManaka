@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-24T16:02:50.229119+00:00",
+  "generated_at_utc": "2026-10-24T16:21:38.005577+00:00",
   "status": "consistent",
-  "canonical_rea_observations": 610,
+  "canonical_rea_observations": 615,
   "rea_queries_completed": 524,
   "artifacts": [
     {
@@ -107,8 +107,8 @@
     },
     {
       "path": "audit.py",
-      "bytes": 42011,
-      "sha256": "9120c3cf49b238554921e3abe15d84cef2c29ec509b24043b5b8b23dd7549e16"
+      "bytes": 46350,
+      "sha256": "7a3883c320dd0c0b219bf0c8ecf2e52ed6b8e946b31e2375eccb7429dae41938"
     },
     {
       "path": "bareta-chain.md",
@@ -139,6 +139,11 @@
       "path": "natural-gameplay.md",
       "bytes": 10436,
       "sha256": "50c67e3dbb0c4f86926be094a27bcbe3bc44c0d5b19e52bcf1487b1200911ba9"
+    },
+    {
+      "path": "noise-callsite.md",
+      "bytes": 7201,
+      "sha256": "51fcb42293b5abfc7e84859bdfe142c2f99d7794e04b7dee0b937608dc82cbfc"
     },
     {
       "path": "noise-cancellation.md",
@@ -172,8 +177,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 18186,
-      "sha256": "053b521080232c7d72d3241ae4c5b8cefe7dc98919e4423be4ef402d023f8147"
+      "bytes": 18747,
+      "sha256": "b4f4130e35c399480076997a152a1bc8fafae42664c8c025dba41826f818b082"
     },
     {
       "path": "runtime/natural-cancellation/analyze.py",
@@ -579,6 +584,76 @@
       "path": "runtime/natural-time-stop/ui-readback.js",
       "bytes": 2825,
       "sha256": "483d3bf28eac931f57cef33c12f8793805607426a6b3dc78b3908e0109cb690d"
+    },
+    {
+      "path": "runtime/noise-callsite/analyze.py",
+      "bytes": 21158,
+      "sha256": "e214b379bd48050cfbfbabd9691959cb36ab2cd2db87d0406fb8e8fdd630489f"
+    },
+    {
+      "path": "runtime/noise-callsite/callsite-window.json",
+      "bytes": 2754,
+      "sha256": "dfaec62aeb8314ba9374fa1ef78a55245b2abb4dc14a22330ca54527f90604e1"
+    },
+    {
+      "path": "runtime/noise-callsite/collect.py",
+      "bytes": 6595,
+      "sha256": "549bd41cf74d90d6c466e11b5572694588e275db1fae22ca438872e154a4364a"
+    },
+    {
+      "path": "runtime/noise-callsite/eligibility.js",
+      "bytes": 3379,
+      "sha256": "94d7e4ba114c63b3b2b6a61297240b19252c3f5a3795a2e133e9f7b4a30fb810"
+    },
+    {
+      "path": "runtime/noise-callsite/manifest.json",
+      "bytes": 8429,
+      "sha256": "dc9d512ebff7b25459cda93d569ecf8c64c7c115d1e7231fb91f5a5dd26999f7"
+    },
+    {
+      "path": "runtime/noise-callsite/natural-window.jsonl.gz",
+      "bytes": 324501,
+      "sha256": "c101384e8d3200cdc9e86110614f0b1aea2c8d86024c140e5b096b9bafc192d2"
+    },
+    {
+      "path": "runtime/noise-callsite/observe-natural.js",
+      "bytes": 16747,
+      "sha256": "565c29dcef4ed4c706424c0e1096f27c8261ec4d95738fd71aeb228414d751bb"
+    },
+    {
+      "path": "runtime/noise-callsite/rea-runtime.json",
+      "bytes": 1373581,
+      "sha256": "837a7b67012d3d0688732053430f3ac88b8037b4c8c749b6973d00e09d965b02"
+    },
+    {
+      "path": "runtime/noise-callsite/replay-deferred.js",
+      "bytes": 12840,
+      "sha256": "451f0c477c9c6b20052c1a66e98dea0a0c80aae129976a279904f3bfa9f1b4b5"
+    },
+    {
+      "path": "runtime/noise-callsite/replay-runtime.json",
+      "bytes": 142863,
+      "sha256": "d8810546d79e9633c830fd0e8fc882c9a87a317c87ebba874c8721eb8a6ba4e3"
+    },
+    {
+      "path": "runtime/noise-callsite/replay-window.jsonl.gz",
+      "bytes": 103638,
+      "sha256": "2f6b962f3b35be17433f0604708fc98d08cd3056f8d6ad819e754fbc405a6fe1"
+    },
+    {
+      "path": "runtime/noise-callsite/results.json",
+      "bytes": 239915,
+      "sha256": "06f4905040649aa875db20b8df1a22f2a6c68fa718c193283e4301379901d5fa"
+    },
+    {
+      "path": "runtime/noise-callsite/source-save-baseline.json",
+      "bytes": 1708,
+      "sha256": "8fb940c76a4ec5236f6b5a6eb6e3a07eb462d3e4dae9dc2cf4a0eea64ab4302d"
+    },
+    {
+      "path": "runtime/noise-callsite/test_analysis.py",
+      "bytes": 3338,
+      "sha256": "24dd2395b4e9aa40663315d356ec7d2be532851fe85f6d7c89be5fd011e8ea9c"
     },
     {
       "path": "runtime/noise-cancellation/analyze.py",
@@ -8248,6 +8323,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_38ca4bb0b25f6caa5c7fd7b64b658dce6447776c297774aa12b86e93637c8517",
+      "operation": "frida_session_status",
+      "subject_sha256": null
+    },
+    {
       "evidence_id": "ev_396c4c8dbfc23dc797818eb5008c920606dc5b0cbcf5ffc4a725e38c5b5c0cff",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -9788,6 +9868,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_b062772e59fa6b1ccde881e2b16a223b51a8446c6d55627db80a4583c3701098",
+      "operation": "load_frida_script",
+      "subject_sha256": null
+    },
+    {
       "evidence_id": "ev_b0fe757ce7e459d59d17030c228b36664eb06b56fbbcea2f4a46165ba881c2c4",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -9816,6 +9901,11 @@
       "evidence_id": "ev_b36db89b142619d20a17ee87d6c4a7cc98183fe6b1494561e592636fbd086f12",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_b3917e9f6eb01e732b070e369797f5f95a235ce0daeba45a619915d812c03cfc",
+      "operation": "load_frida_script",
+      "subject_sha256": null
     },
     {
       "evidence_id": "ev_b3e9f80780e303591df45e3ece8afe0f1514a7b45f1136f58be8b9e38cebcc1b",
@@ -9918,6 +10008,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_bc87a5b15a6410c4412f0114a73f9ed68fba3b1a43431af75143d6b27dbf9df8",
+      "operation": "frida_session_status",
+      "subject_sha256": null
+    },
+    {
       "evidence_id": "ev_bd981db2a0e88f4c52163571f06b129e65b7c9d2a419de828a3f64d6c69a5649",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -9986,6 +10081,11 @@
       "evidence_id": "ev_c59272d613d3d1c26976416061e617a9cf739cc574b0469f234fb37440d7bff2",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_c5d9a0e3df0c861a38f5588bc30f5c77c825e2c586597c67db8dc72d97894e3f",
+      "operation": "load_frida_script",
+      "subject_sha256": null
     },
     {
       "evidence_id": "ev_c5e5240b1c3c015b5c24d6bc35a407cc45cc33581e851eb722f2b7bb34042034",
