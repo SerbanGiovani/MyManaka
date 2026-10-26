@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "name": "save-schema-tail",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\save-schema-tail.seeds.tsv",
+  "seed_sha256": "e0133717d20517fd3c96c4d9303a50c7b58819bcafd7bd442bc0e761e33abaaa",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\save-schema-tail",
+  "seed_count": 6259,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 11779,
+      "qualified_name": "ES3Settings::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60001ba",
+      "va": "0x1803ccff0",
+      "file_offset": 3979248,
+      "label": "ES3Settings___ctor__060001ba",
+      "file_stem": "11779-060001ba",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 11783,
+      "qualified_name": "ES3Settings::.cctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60001be",
+      "va": "0x1803cd580",
+      "file_offset": 3980672,
+      "label": "ES3Settings___cctor__060001be",
+      "file_stem": "11783-060001be",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12999,
+      "qualified_name": "ES3Internal.ES3Reflection::.cctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600067e",
+      "va": "0x18059ec20",
+      "file_offset": 5887008,
+      "label": "ES3Internal_ES3Reflection___cctor__0600067e",
+      "file_stem": "12999-0600067e",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 13103,
+      "qualified_name": "ES3Internal.ES3Stream::CreateStream",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60006e6",
+      "va": "0x1805a3e80",
+      "file_offset": 5908096,
+      "label": "ES3Internal_ES3Stream__CreateStream__060006e6",
+      "file_stem": "13103-060006e6",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16781,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameStateFacade::GetDefaultHairCustomDataDict",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001544",
+      "va": "0x18048ff20",
+      "file_offset": 4777760,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameStateFacade__GetDefaultHairCustomDataDict__06001544",
+      "file_stem": "16781-06001544",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17472,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.TutorialPanel.TutorialData::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017f7",
+      "va": "0x1804bf270",
+      "file_offset": 4971120,
+      "label": "ExposureUnnoticed2_ObjectUI_TutorialPanel_TutorialData___ctor__060017f7",
+      "file_stem": "17472-060017f7",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17970,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.InventoryPanel.LoadoutData::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60019e9",
+      "va": "0x1804efa60",
+      "file_offset": 5169760,
+      "label": "ExposureUnnoticed2_ObjectUI_InventoryPanel_LoadoutData___ctor__060019e9",
+      "file_stem": "17970-060019e9",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18515,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.OptionMenu.OptionData::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001c0a",
+      "va": "0x180521d20",
+      "file_offset": 5375264,
+      "label": "ExposureUnnoticed2_ObjectUI_OptionMenu_OptionData___ctor__06001c0a",
+      "file_stem": "18515-06001c0a",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18687,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.ClosetMenu.CustomizeMenu.LoadoutCustomizeData::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001cb6",
+      "va": "0x180530680",
+      "file_offset": 5435008,
+      "label": "ExposureUnnoticed2_ObjectUI_ClosetMenu_CustomizeMenu_LoadoutCustomizeData___ctor__06001cb6",
+      "file_stem": "18687-06001cb6",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_1807525e0",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x1807525e0",
+      "file_offset": 7671264,
+      "label": "native_only_1807525e0__00000000",
+      "file_stem": "native-0x1807525e0",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_1807527d0",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x1807527d0",
+      "file_offset": 7671760,
+      "label": "native_only_1807527d0__00000000",
+      "file_stem": "native-0x1807527d0",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_1807537f0",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x1807537f0",
+      "file_offset": 7675888,
+      "label": "native_only_1807537f0__00000000",
+      "file_stem": "native-0x1807537f0",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_180755660",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x180755660",
+      "file_offset": 7683680,
+      "label": "native_only_180755660__00000000",
+      "file_stem": "native-0x180755660",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_180755940",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x180755940",
+      "file_offset": 7684416,
+      "label": "native_only_180755940__00000000",
+      "file_stem": "native-0x180755940",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_180757180",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x180757180",
+      "file_offset": 7690624,
+      "label": "native_only_180757180__00000000",
+      "file_stem": "native-0x180757180",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_180757730",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x180757730",
+      "file_offset": 7692080,
+      "label": "native_only_180757730__00000000",
+      "file_stem": "native-0x180757730",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_180758260",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x180758260",
+      "file_offset": 7694944,
+      "label": "native_only_180758260__00000000",
+      "file_stem": "native-0x180758260",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_180758b30",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x180758b30",
+      "file_offset": 7697200,
+      "label": "native_only_180758b30__00000000",
+      "file_stem": "native-0x180758b30",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_180759550",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x180759550",
+      "file_offset": 7699792,
+      "label": "native_only_180759550__00000000",
+      "file_stem": "native-0x180759550",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_1807598d0",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x1807598d0",
+      "file_offset": 7700688,
+      "label": "native_only_1807598d0__00000000",
+      "file_stem": "native-0x1807598d0",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_1807599d0",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x1807599d0",
+      "file_offset": 7700944,
+      "label": "native_only_1807599d0__00000000",
+      "file_stem": "native-0x1807599d0",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_180759d30",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x180759d30",
+      "file_offset": 7701808,
+      "label": "native_only_180759d30__00000000",
+      "file_stem": "native-0x180759d30",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

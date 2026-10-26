@@ -1,0 +1,3553 @@
+{
+  "schema_version": 1,
+  "evidence_type": "Cecil read-only parser declaration/IL corroboration; no parser or game methods executed",
+  "sources": [
+    {
+      "path": "E:\\SecretFlasherManakaREA\\BepInEx\\core\\Mono.Cecil.dll",
+      "sha256": "769a59793d4b8885bbbfbc5aee8f57a0d4e34d275c56c60c03994309b87f67e9"
+    },
+    {
+      "path": "E:\\SecretFlasherManakaREA\\BepInEx\\core\\LibCpp2IL.dll",
+      "sha256": "f9bf8e432e9a914469a89c4827a4beb4672076b7d8ff504708241b4dcc295ef6"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\inspect_save_layouts.ps1",
+      "sha256": "ed27ac79350fd0ec4d263293a33af413a11debd776494f7e9cbd90dc9618cf7a"
+    }
+  ],
+  "types": [
+    {
+      "name": "LibCpp2IL.Metadata.Il2CppCustomAttributeDataRange",
+      "fields": [
+        {
+          "name": "token",
+          "type": "System.UInt32",
+          "attributes": []
+        },
+        {
+          "name": "startOffset",
+          "type": "System.UInt32",
+          "attributes": []
+        }
+      ],
+      "read_il": [
+        {
+          "offset": 0,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 1,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 2,
+          "opcode": "callvirt",
+          "operand": "System.UInt32 System.IO.BinaryReader::ReadUInt32()"
+        },
+        {
+          "offset": 7,
+          "opcode": "stfld",
+          "operand": "System.UInt32 LibCpp2IL.Metadata.Il2CppCustomAttributeDataRange::token"
+        },
+        {
+          "offset": 12,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 13,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 14,
+          "opcode": "callvirt",
+          "operand": "System.UInt32 System.IO.BinaryReader::ReadUInt32()"
+        },
+        {
+          "offset": 19,
+          "opcode": "stfld",
+          "operand": "System.UInt32 LibCpp2IL.Metadata.Il2CppCustomAttributeDataRange::startOffset"
+        },
+        {
+          "offset": 24,
+          "opcode": "ret",
+          "operand": null
+        }
+      ]
+    },
+    {
+      "name": "LibCpp2IL.Metadata.Il2CppCustomAttributeTypeRange",
+      "fields": [
+        {
+          "name": "token",
+          "type": "System.UInt32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=24.1"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "start",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "count",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Max=27.9"
+              ]
+            }
+          ]
+        }
+      ],
+      "read_il": [
+        {
+          "offset": 0,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 1,
+          "opcode": "ldc.r4",
+          "operand": "24.1"
+        },
+        {
+          "offset": 6,
+          "opcode": "call",
+          "operand": "System.Boolean LibCpp2IL.ReadableClass::IsAtLeast(System.Single)"
+        },
+        {
+          "offset": 11,
+          "opcode": "brfalse.s",
+          "operand": "IL_0019: ldarg.0"
+        },
+        {
+          "offset": 13,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 14,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 15,
+          "opcode": "callvirt",
+          "operand": "System.UInt32 System.IO.BinaryReader::ReadUInt32()"
+        },
+        {
+          "offset": 20,
+          "opcode": "stfld",
+          "operand": "System.UInt32 LibCpp2IL.Metadata.Il2CppCustomAttributeTypeRange::token"
+        },
+        {
+          "offset": 25,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 26,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 27,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 32,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppCustomAttributeTypeRange::start"
+        },
+        {
+          "offset": 37,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 38,
+          "opcode": "ldc.r4",
+          "operand": "29"
+        },
+        {
+          "offset": 43,
+          "opcode": "call",
+          "operand": "System.Boolean LibCpp2IL.ReadableClass::IsLessThan(System.Single)"
+        },
+        {
+          "offset": 48,
+          "opcode": "brfalse.s",
+          "operand": "IL_003e: ret"
+        },
+        {
+          "offset": 50,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 51,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 52,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 57,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppCustomAttributeTypeRange::count"
+        },
+        {
+          "offset": 62,
+          "opcode": "ret",
+          "operand": null
+        }
+      ]
+    },
+    {
+      "name": "LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader",
+      "fields": [
+        {
+          "name": "magicNumber",
+          "type": "System.UInt32",
+          "attributes": []
+        },
+        {
+          "name": "version",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "stringLiteralOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "stringLiteralCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "stringLiteralDataOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "stringLiteralDataCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "stringOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "stringCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "eventsOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "eventsCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "propertiesOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "propertiesCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "methodsOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "methodsCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "parameterDefaultValuesOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "parameterDefaultValuesCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "fieldDefaultValuesOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "fieldDefaultValuesCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "fieldAndParameterDefaultValueDataOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "fieldAndParameterDefaultValueDataCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "fieldMarshaledSizesOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "fieldMarshaledSizesCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "parametersOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "parametersCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "fieldsOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "fieldsCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "genericParametersOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "genericParametersCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "genericParameterConstraintsOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "genericParameterConstraintsCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "genericContainersOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "genericContainersCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "nestedTypesOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "nestedTypesCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "interfacesOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "interfacesCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "vtableMethodsOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "vtableMethodsCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "interfaceOffsetsOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "interfaceOffsetsCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "typeDefinitionsOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "typeDefinitionsCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "rgctxEntriesOffset",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Max=24.15"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "rgctxEntriesCount",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Max=24.15"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "imagesOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "imagesCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "assembliesOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "assembliesCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "metadataUsageListsOffset",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Max=24.5"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "metadataUsageListsCount",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Max=24.5"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "metadataUsagePairsOffset",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Max=24.5"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "metadataUsagePairsCount",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Max=24.5"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "fieldRefsOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "fieldRefsCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "referencedAssembliesOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "referencedAssembliesCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "attributesInfoOffset",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Max=27.9"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "attributesInfoCount",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Max=27.9"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "attributeTypesOffset",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Max=27.9"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "attributeTypesCount",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Max=27.9"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "attributeDataOffset",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=27.9"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "attributeDataCount",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=27.9"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "attributeDataRangeOffset",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=27.9"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "attributeDataRangeCount",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=27.9"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "unresolvedVirtualCallParameterTypesOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "unresolvedVirtualCallParameterTypesCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "unresolvedVirtualCallParameterRangesOffset",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "unresolvedVirtualCallParameterRangesCount",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "windowsRuntimeTypeNamesOffset",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=23"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "windowsRuntimeTypeNamesSize",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=23"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "windowsRuntimeStringsOffset",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=27"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "windowsRuntimeStringsSize",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=27"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "exportedTypeDefinitionsOffset",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=24"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "exportedTypeDefinitionsCount",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=24"
+              ]
+            }
+          ]
+        }
+      ],
+      "read_il": [
+        {
+          "offset": 0,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 1,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 2,
+          "opcode": "callvirt",
+          "operand": "System.UInt32 System.IO.BinaryReader::ReadUInt32()"
+        },
+        {
+          "offset": 7,
+          "opcode": "stfld",
+          "operand": "System.UInt32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::magicNumber"
+        },
+        {
+          "offset": 12,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 13,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 14,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 19,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::version"
+        },
+        {
+          "offset": 24,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 25,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 26,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 31,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::stringLiteralOffset"
+        },
+        {
+          "offset": 36,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 37,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 38,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 43,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::stringLiteralCount"
+        },
+        {
+          "offset": 48,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 49,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 50,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 55,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::stringLiteralDataOffset"
+        },
+        {
+          "offset": 60,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 61,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 62,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 67,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::stringLiteralDataCount"
+        },
+        {
+          "offset": 72,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 73,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 74,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 79,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::stringOffset"
+        },
+        {
+          "offset": 84,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 85,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 86,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 91,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::stringCount"
+        },
+        {
+          "offset": 96,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 97,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 98,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 103,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::eventsOffset"
+        },
+        {
+          "offset": 108,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 109,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 110,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 115,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::eventsCount"
+        },
+        {
+          "offset": 120,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 121,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 122,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 127,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::propertiesOffset"
+        },
+        {
+          "offset": 132,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 133,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 134,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 139,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::propertiesCount"
+        },
+        {
+          "offset": 144,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 145,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 146,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 151,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::methodsOffset"
+        },
+        {
+          "offset": 156,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 157,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 158,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 163,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::methodsCount"
+        },
+        {
+          "offset": 168,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 169,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 170,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 175,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::parameterDefaultValuesOffset"
+        },
+        {
+          "offset": 180,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 181,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 182,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 187,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::parameterDefaultValuesCount"
+        },
+        {
+          "offset": 192,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 193,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 194,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 199,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::fieldDefaultValuesOffset"
+        },
+        {
+          "offset": 204,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 205,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 206,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 211,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::fieldDefaultValuesCount"
+        },
+        {
+          "offset": 216,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 217,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 218,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 223,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::fieldAndParameterDefaultValueDataOffset"
+        },
+        {
+          "offset": 228,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 229,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 230,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 235,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::fieldAndParameterDefaultValueDataCount"
+        },
+        {
+          "offset": 240,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 241,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 242,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 247,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::fieldMarshaledSizesOffset"
+        },
+        {
+          "offset": 252,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 253,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 254,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 259,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::fieldMarshaledSizesCount"
+        },
+        {
+          "offset": 264,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 265,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 266,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 271,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::parametersOffset"
+        },
+        {
+          "offset": 276,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 277,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 278,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 283,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::parametersCount"
+        },
+        {
+          "offset": 288,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 289,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 290,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 295,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::fieldsOffset"
+        },
+        {
+          "offset": 300,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 301,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 302,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 307,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::fieldsCount"
+        },
+        {
+          "offset": 312,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 313,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 314,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 319,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::genericParametersOffset"
+        },
+        {
+          "offset": 324,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 325,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 326,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 331,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::genericParametersCount"
+        },
+        {
+          "offset": 336,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 337,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 338,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 343,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::genericParameterConstraintsOffset"
+        },
+        {
+          "offset": 348,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 349,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 350,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 355,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::genericParameterConstraintsCount"
+        },
+        {
+          "offset": 360,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 361,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 362,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 367,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::genericContainersOffset"
+        },
+        {
+          "offset": 372,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 373,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 374,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 379,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::genericContainersCount"
+        },
+        {
+          "offset": 384,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 385,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 386,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 391,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::nestedTypesOffset"
+        },
+        {
+          "offset": 396,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 397,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 398,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 403,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::nestedTypesCount"
+        },
+        {
+          "offset": 408,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 409,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 410,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 415,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::interfacesOffset"
+        },
+        {
+          "offset": 420,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 421,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 422,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 427,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::interfacesCount"
+        },
+        {
+          "offset": 432,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 433,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 434,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 439,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::vtableMethodsOffset"
+        },
+        {
+          "offset": 444,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 445,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 446,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 451,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::vtableMethodsCount"
+        },
+        {
+          "offset": 456,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 457,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 458,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 463,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::interfaceOffsetsOffset"
+        },
+        {
+          "offset": 468,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 469,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 470,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 475,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::interfaceOffsetsCount"
+        },
+        {
+          "offset": 480,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 481,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 482,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 487,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::typeDefinitionsOffset"
+        },
+        {
+          "offset": 492,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 493,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 494,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 499,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::typeDefinitionsCount"
+        },
+        {
+          "offset": 504,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 505,
+          "opcode": "ldc.r4",
+          "operand": "24.15"
+        },
+        {
+          "offset": 510,
+          "opcode": "call",
+          "operand": "System.Boolean LibCpp2IL.ReadableClass::IsAtMost(System.Single)"
+        },
+        {
+          "offset": 515,
+          "opcode": "brfalse.s",
+          "operand": "IL_021d: ldarg.0"
+        },
+        {
+          "offset": 517,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 518,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 519,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 524,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::rgctxEntriesOffset"
+        },
+        {
+          "offset": 529,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 530,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 531,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 536,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::rgctxEntriesCount"
+        },
+        {
+          "offset": 541,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 542,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 543,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 548,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::imagesOffset"
+        },
+        {
+          "offset": 553,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 554,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 555,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 560,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::imagesCount"
+        },
+        {
+          "offset": 565,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 566,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 567,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 572,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::assembliesOffset"
+        },
+        {
+          "offset": 577,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 578,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 579,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 584,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::assembliesCount"
+        },
+        {
+          "offset": 589,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 590,
+          "opcode": "ldc.r4",
+          "operand": "27"
+        },
+        {
+          "offset": 595,
+          "opcode": "call",
+          "operand": "System.Boolean LibCpp2IL.ReadableClass::IsLessThan(System.Single)"
+        },
+        {
+          "offset": 600,
+          "opcode": "brfalse.s",
+          "operand": "IL_028a: ldarg.0"
+        },
+        {
+          "offset": 602,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 603,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 604,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 609,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::metadataUsageListsOffset"
+        },
+        {
+          "offset": 614,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 615,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 616,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 621,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::metadataUsageListsCount"
+        },
+        {
+          "offset": 626,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 627,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 628,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 633,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::metadataUsagePairsOffset"
+        },
+        {
+          "offset": 638,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 639,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 640,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 645,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::metadataUsagePairsCount"
+        },
+        {
+          "offset": 650,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 651,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 652,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 657,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::fieldRefsOffset"
+        },
+        {
+          "offset": 662,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 663,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 664,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 669,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::fieldRefsCount"
+        },
+        {
+          "offset": 674,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 675,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 676,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 681,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::referencedAssembliesOffset"
+        },
+        {
+          "offset": 686,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 687,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 688,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 693,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::referencedAssembliesCount"
+        },
+        {
+          "offset": 698,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 699,
+          "opcode": "ldc.r4",
+          "operand": "29"
+        },
+        {
+          "offset": 704,
+          "opcode": "call",
+          "operand": "System.Boolean LibCpp2IL.ReadableClass::IsLessThan(System.Single)"
+        },
+        {
+          "offset": 709,
+          "opcode": "brfalse.s",
+          "operand": "IL_02f9: ldarg.0"
+        },
+        {
+          "offset": 711,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 712,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 713,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 718,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::attributesInfoOffset"
+        },
+        {
+          "offset": 723,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 724,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 725,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 730,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::attributesInfoCount"
+        },
+        {
+          "offset": 735,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 736,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 737,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 742,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::attributeTypesOffset"
+        },
+        {
+          "offset": 747,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 748,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 749,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 754,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::attributeTypesCount"
+        },
+        {
+          "offset": 759,
+          "opcode": "br.s",
+          "operand": "IL_0329: ldarg.0"
+        },
+        {
+          "offset": 761,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 762,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 763,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 768,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::attributeDataOffset"
+        },
+        {
+          "offset": 773,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 774,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 775,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 780,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::attributeDataCount"
+        },
+        {
+          "offset": 785,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 786,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 787,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 792,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::attributeDataRangeOffset"
+        },
+        {
+          "offset": 797,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 798,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 799,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 804,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::attributeDataRangeCount"
+        },
+        {
+          "offset": 809,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 810,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 811,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 816,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::unresolvedVirtualCallParameterTypesOffset"
+        },
+        {
+          "offset": 821,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 822,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 823,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 828,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::unresolvedVirtualCallParameterTypesCount"
+        },
+        {
+          "offset": 833,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 834,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 835,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 840,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::unresolvedVirtualCallParameterRangesOffset"
+        },
+        {
+          "offset": 845,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 846,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 847,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 852,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::unresolvedVirtualCallParameterRangesCount"
+        },
+        {
+          "offset": 857,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 858,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 859,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 864,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::windowsRuntimeTypeNamesOffset"
+        },
+        {
+          "offset": 869,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 870,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 871,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 876,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::windowsRuntimeTypeNamesSize"
+        },
+        {
+          "offset": 881,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 882,
+          "opcode": "ldc.r4",
+          "operand": "27"
+        },
+        {
+          "offset": 887,
+          "opcode": "call",
+          "operand": "System.Boolean LibCpp2IL.ReadableClass::IsAtLeast(System.Single)"
+        },
+        {
+          "offset": 892,
+          "opcode": "brfalse.s",
+          "operand": "IL_0396: ldarg.0"
+        },
+        {
+          "offset": 894,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 895,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 896,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 901,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::windowsRuntimeStringsOffset"
+        },
+        {
+          "offset": 906,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 907,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 908,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 913,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::windowsRuntimeStringsSize"
+        },
+        {
+          "offset": 918,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 919,
+          "opcode": "ldc.r4",
+          "operand": "24"
+        },
+        {
+          "offset": 924,
+          "opcode": "call",
+          "operand": "System.Boolean LibCpp2IL.ReadableClass::IsAtLeast(System.Single)"
+        },
+        {
+          "offset": 929,
+          "opcode": "brfalse.s",
+          "operand": "IL_03bb: ret"
+        },
+        {
+          "offset": 931,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 932,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 933,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 938,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::exportedTypeDefinitionsOffset"
+        },
+        {
+          "offset": 943,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 944,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 945,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 950,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.Metadata.Il2CppGlobalMetadataHeader::exportedTypeDefinitionsCount"
+        },
+        {
+          "offset": 955,
+          "opcode": "ret",
+          "operand": null
+        }
+      ]
+    },
+    {
+      "name": "LibCpp2IL.BinaryStructures.Il2CppCodeRegistration",
+      "fields": [
+        {
+          "name": "methodPointersCount",
+          "type": "System.UInt64",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Max=24.15"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "methodPointers",
+          "type": "System.UInt64",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Max=24.15"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "reversePInvokeWrapperCount",
+          "type": "System.UInt64",
+          "attributes": []
+        },
+        {
+          "name": "reversePInvokeWrappers",
+          "type": "System.UInt64",
+          "attributes": []
+        },
+        {
+          "name": "genericMethodPointersCount",
+          "type": "System.UInt64",
+          "attributes": []
+        },
+        {
+          "name": "genericMethodPointers",
+          "type": "System.UInt64",
+          "attributes": []
+        },
+        {
+          "name": "genericAdjustorThunks",
+          "type": "System.UInt64",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=27.1"
+              ]
+            },
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=24.5",
+                "Max=24.5"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "invokerPointersCount",
+          "type": "System.UInt64",
+          "attributes": []
+        },
+        {
+          "name": "invokerPointers",
+          "type": "System.UInt64",
+          "attributes": []
+        },
+        {
+          "name": "customAttributeCount",
+          "type": "System.UInt64",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Max=24.5"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "customAttributeGeneratorListAddress",
+          "type": "System.UInt64",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Max=24.5"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "unresolvedVirtualCallCount",
+          "type": "System.UInt64",
+          "attributes": []
+        },
+        {
+          "name": "unresolvedVirtualCallPointers",
+          "type": "System.UInt64",
+          "attributes": []
+        },
+        {
+          "name": "unresolvedInstanceCallPointers",
+          "type": "System.UInt64",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=29.1"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "unresolvedStaticCallPointers",
+          "type": "System.UInt64",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=29.1"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "interopDataCount",
+          "type": "System.UInt64",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=23"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "interopData",
+          "type": "System.UInt64",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=23"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "windowsRuntimeFactoryCount",
+          "type": "System.UInt64",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=24.3"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "windowsRuntimeFactoryTable",
+          "type": "System.UInt64",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=24.3"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "codeGenModulesCount",
+          "type": "System.UInt64",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=24.2"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "addrCodeGenModulePtrs",
+          "type": "System.UInt64",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=24.2"
+              ]
+            }
+          ]
+        }
+      ],
+      "read_il": [
+        {
+          "offset": 0,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 1,
+          "opcode": "ldc.r4",
+          "operand": "24.15"
+        },
+        {
+          "offset": 6,
+          "opcode": "call",
+          "operand": "System.Boolean LibCpp2IL.ReadableClass::IsAtMost(System.Single)"
+        },
+        {
+          "offset": 11,
+          "opcode": "brfalse.s",
+          "operand": "IL_0025: ldarg.0"
+        },
+        {
+          "offset": 13,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 14,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 15,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 20,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::methodPointersCount"
+        },
+        {
+          "offset": 25,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 26,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 27,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 32,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::methodPointers"
+        },
+        {
+          "offset": 37,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 38,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 39,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 44,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::reversePInvokeWrapperCount"
+        },
+        {
+          "offset": 49,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 50,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 51,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 56,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::reversePInvokeWrappers"
+        },
+        {
+          "offset": 61,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 62,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 63,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 68,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::genericMethodPointersCount"
+        },
+        {
+          "offset": 73,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 74,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 75,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 80,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::genericMethodPointers"
+        },
+        {
+          "offset": 85,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 86,
+          "opcode": "ldc.r4",
+          "operand": "24.5"
+        },
+        {
+          "offset": 91,
+          "opcode": "call",
+          "operand": "System.Boolean LibCpp2IL.ReadableClass::IsAtLeast(System.Single)"
+        },
+        {
+          "offset": 96,
+          "opcode": "brfalse.s",
+          "operand": "IL_007b: ldarg.0"
+        },
+        {
+          "offset": 98,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 99,
+          "opcode": "ldc.r4",
+          "operand": "27"
+        },
+        {
+          "offset": 104,
+          "opcode": "call",
+          "operand": "System.Boolean LibCpp2IL.ReadableClass::IsNot(System.Single)"
+        },
+        {
+          "offset": 109,
+          "opcode": "brfalse.s",
+          "operand": "IL_007b: ldarg.0"
+        },
+        {
+          "offset": 111,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 112,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 113,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 118,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::genericAdjustorThunks"
+        },
+        {
+          "offset": 123,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 124,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 125,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 130,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::invokerPointersCount"
+        },
+        {
+          "offset": 135,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 136,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 137,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 142,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::invokerPointers"
+        },
+        {
+          "offset": 147,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 148,
+          "opcode": "ldc.r4",
+          "operand": "24.5"
+        },
+        {
+          "offset": 153,
+          "opcode": "call",
+          "operand": "System.Boolean LibCpp2IL.ReadableClass::IsAtMost(System.Single)"
+        },
+        {
+          "offset": 158,
+          "opcode": "brfalse.s",
+          "operand": "IL_00b8: ldarg.0"
+        },
+        {
+          "offset": 160,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 161,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 162,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 167,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::customAttributeCount"
+        },
+        {
+          "offset": 172,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 173,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 174,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 179,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::customAttributeGeneratorListAddress"
+        },
+        {
+          "offset": 184,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 185,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 186,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 191,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::unresolvedVirtualCallCount"
+        },
+        {
+          "offset": 196,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 197,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 198,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 203,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::unresolvedVirtualCallPointers"
+        },
+        {
+          "offset": 208,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 209,
+          "opcode": "ldc.r4",
+          "operand": "29.1"
+        },
+        {
+          "offset": 214,
+          "opcode": "call",
+          "operand": "System.Boolean LibCpp2IL.ReadableClass::IsAtLeast(System.Single)"
+        },
+        {
+          "offset": 219,
+          "opcode": "brfalse.s",
+          "operand": "IL_00f5: ldarg.0"
+        },
+        {
+          "offset": 221,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 222,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 223,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 228,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::unresolvedInstanceCallPointers"
+        },
+        {
+          "offset": 233,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 234,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 235,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 240,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::unresolvedStaticCallPointers"
+        },
+        {
+          "offset": 245,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 246,
+          "opcode": "ldc.r4",
+          "operand": "23"
+        },
+        {
+          "offset": 251,
+          "opcode": "call",
+          "operand": "System.Boolean LibCpp2IL.ReadableClass::IsAtLeast(System.Single)"
+        },
+        {
+          "offset": 256,
+          "opcode": "brfalse.s",
+          "operand": "IL_011a: ldarg.0"
+        },
+        {
+          "offset": 258,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 259,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 260,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 265,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::interopDataCount"
+        },
+        {
+          "offset": 270,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 271,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 272,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 277,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::interopData"
+        },
+        {
+          "offset": 282,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 283,
+          "opcode": "ldc.r4",
+          "operand": "24.2"
+        },
+        {
+          "offset": 288,
+          "opcode": "call",
+          "operand": "System.Boolean LibCpp2IL.ReadableClass::IsAtLeast(System.Single)"
+        },
+        {
+          "offset": 293,
+          "opcode": "brfalse.s",
+          "operand": "IL_0164: ret"
+        },
+        {
+          "offset": 295,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 296,
+          "opcode": "ldc.r4",
+          "operand": "24.3"
+        },
+        {
+          "offset": 301,
+          "opcode": "call",
+          "operand": "System.Boolean LibCpp2IL.ReadableClass::IsAtLeast(System.Single)"
+        },
+        {
+          "offset": 306,
+          "opcode": "brfalse.s",
+          "operand": "IL_014c: ldarg.0"
+        },
+        {
+          "offset": 308,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 309,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 310,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 315,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::windowsRuntimeFactoryCount"
+        },
+        {
+          "offset": 320,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 321,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 322,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 327,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::windowsRuntimeFactoryTable"
+        },
+        {
+          "offset": 332,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 333,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 334,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 339,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::codeGenModulesCount"
+        },
+        {
+          "offset": 344,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 345,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 346,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 351,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppCodeRegistration::addrCodeGenModulePtrs"
+        },
+        {
+          "offset": 356,
+          "opcode": "ret",
+          "operand": null
+        }
+      ]
+    },
+    {
+      "name": "LibCpp2IL.BinaryStructures.Il2CppGenericClass",
+      "fields": [
+        {
+          "name": "TypeDefinitionIndex",
+          "type": "System.Int64",
+          "attributes": []
+        },
+        {
+          "name": "Context",
+          "type": "LibCpp2IL.BinaryStructures.Il2CppGenericContext",
+          "attributes": []
+        },
+        {
+          "name": "CachedClass",
+          "type": "System.UInt64",
+          "attributes": []
+        }
+      ],
+      "read_il": [
+        {
+          "offset": 0,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 1,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 2,
+          "opcode": "callvirt",
+          "operand": "System.Int64 LibCpp2IL.ClassReadingBinaryReader::ReadNInt()"
+        },
+        {
+          "offset": 7,
+          "opcode": "stfld",
+          "operand": "System.Int64 LibCpp2IL.BinaryStructures.Il2CppGenericClass::TypeDefinitionIndex"
+        },
+        {
+          "offset": 12,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 13,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 14,
+          "opcode": "callvirt",
+          "operand": "T LibCpp2IL.ClassReadingBinaryReader::ReadReadableHereNoLock<LibCpp2IL.BinaryStructures.Il2CppGenericContext>()"
+        },
+        {
+          "offset": 19,
+          "opcode": "stfld",
+          "operand": "LibCpp2IL.BinaryStructures.Il2CppGenericContext LibCpp2IL.BinaryStructures.Il2CppGenericClass::Context"
+        },
+        {
+          "offset": 24,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 25,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 26,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 31,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppGenericClass::CachedClass"
+        },
+        {
+          "offset": 36,
+          "opcode": "ret",
+          "operand": null
+        }
+      ]
+    },
+    {
+      "name": "LibCpp2IL.BinaryStructures.Il2CppGenericContext",
+      "fields": [
+        {
+          "name": "class_inst",
+          "type": "System.UInt64",
+          "attributes": []
+        },
+        {
+          "name": "method_inst",
+          "type": "System.UInt64",
+          "attributes": []
+        }
+      ],
+      "read_il": [
+        {
+          "offset": 0,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 1,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 2,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 7,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppGenericContext::class_inst"
+        },
+        {
+          "offset": 12,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 13,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 14,
+          "opcode": "callvirt",
+          "operand": "System.UInt64 LibCpp2IL.ClassReadingBinaryReader::ReadNUint()"
+        },
+        {
+          "offset": 19,
+          "opcode": "stfld",
+          "operand": "System.UInt64 LibCpp2IL.BinaryStructures.Il2CppGenericContext::method_inst"
+        },
+        {
+          "offset": 24,
+          "opcode": "ret",
+          "operand": null
+        }
+      ]
+    },
+    {
+      "name": "LibCpp2IL.BinaryStructures.Il2CppGenericMethodFunctionsDefinitions",
+      "fields": [
+        {
+          "name": "GenericMethodIndex",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "Indices",
+          "type": "LibCpp2IL.BinaryStructures.Il2CppGenericMethodIndices",
+          "attributes": []
+        }
+      ],
+      "read_il": [
+        {
+          "offset": 0,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 1,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 2,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 7,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.BinaryStructures.Il2CppGenericMethodFunctionsDefinitions::GenericMethodIndex"
+        },
+        {
+          "offset": 12,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 13,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 14,
+          "opcode": "callvirt",
+          "operand": "T LibCpp2IL.ClassReadingBinaryReader::ReadReadableHereNoLock<LibCpp2IL.BinaryStructures.Il2CppGenericMethodIndices>()"
+        },
+        {
+          "offset": 19,
+          "opcode": "stfld",
+          "operand": "LibCpp2IL.BinaryStructures.Il2CppGenericMethodIndices LibCpp2IL.BinaryStructures.Il2CppGenericMethodFunctionsDefinitions::Indices"
+        },
+        {
+          "offset": 24,
+          "opcode": "ret",
+          "operand": null
+        }
+      ]
+    },
+    {
+      "name": "LibCpp2IL.BinaryStructures.Il2CppGenericMethodIndices",
+      "fields": [
+        {
+          "name": "methodIndex",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "invokerIndex",
+          "type": "System.Int32",
+          "attributes": []
+        },
+        {
+          "name": "adjustorThunk",
+          "type": "System.Int32",
+          "attributes": [
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=27.1"
+              ]
+            },
+            {
+              "type": "LibCpp2IL.VersionAttribute",
+              "arguments": [],
+              "named_fields": [],
+              "named_properties": [
+                "Min=24.5",
+                "Max=24.5"
+              ]
+            }
+          ]
+        }
+      ],
+      "read_il": [
+        {
+          "offset": 0,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 1,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 2,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 7,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.BinaryStructures.Il2CppGenericMethodIndices::methodIndex"
+        },
+        {
+          "offset": 12,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 13,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 14,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 19,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.BinaryStructures.Il2CppGenericMethodIndices::invokerIndex"
+        },
+        {
+          "offset": 24,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 25,
+          "opcode": "ldc.r4",
+          "operand": "24.5"
+        },
+        {
+          "offset": 30,
+          "opcode": "call",
+          "operand": "System.Boolean LibCpp2IL.ReadableClass::IsAtLeast(System.Single)"
+        },
+        {
+          "offset": 35,
+          "opcode": "brfalse.s",
+          "operand": "IL_003e: ret"
+        },
+        {
+          "offset": 37,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 38,
+          "opcode": "ldc.r4",
+          "operand": "27"
+        },
+        {
+          "offset": 43,
+          "opcode": "call",
+          "operand": "System.Boolean LibCpp2IL.ReadableClass::IsNot(System.Single)"
+        },
+        {
+          "offset": 48,
+          "opcode": "brfalse.s",
+          "operand": "IL_003e: ret"
+        },
+        {
+          "offset": 50,
+          "opcode": "ldarg.0",
+          "operand": null
+        },
+        {
+          "offset": 51,
+          "opcode": "ldarg.1",
+          "operand": null
+        },
+        {
+          "offset": 52,
+          "opcode": "callvirt",
+          "operand": "System.Int32 System.IO.BinaryReader::ReadInt32()"
+        },
+        {
+          "offset": 57,
+          "opcode": "stfld",
+          "operand": "System.Int32 LibCpp2IL.BinaryStructures.Il2CppGenericMethodIndices::adjustorThunk"
+        },
+        {
+          "offset": 62,
+          "opcode": "ret",
+          "operand": null
+        }
+      ]
+    }
+  ]
+}

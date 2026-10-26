@@ -1,0 +1,565 @@
+{
+  "schema_version": 1,
+  "name": "save-schema-core",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\save-schema-core.seeds.tsv",
+  "seed_sha256": "152b7cdeeec856fd6d2312a35de25a5e227de5b4253ac35cd9721112b49e992d",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\save-schema-core",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 11725,
+      "qualified_name": "ES3Reader::Skip",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000184",
+      "va": "0x1803cad00",
+      "file_offset": 3970304,
+      "label": "ES3Reader__Skip__06000184",
+      "file_stem": "11725-06000184",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 11731,
+      "qualified_name": "ES3Reader::ReadType",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600018a",
+      "va": "0x1803cad60",
+      "file_offset": 3970400,
+      "label": "ES3Reader__ReadType__0600018a",
+      "file_stem": "11731-0600018a",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 11959,
+      "qualified_name": "ES3Writer::Write",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600026e",
+      "va": "0x1803d61a0",
+      "file_offset": 4016544,
+      "label": "ES3Writer__Write__0600026e",
+      "file_stem": "11959-0600026e",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 11961,
+      "qualified_name": "ES3Writer::WriteProperty",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000270",
+      "va": "0x1803d6bd0",
+      "file_offset": 4019152,
+      "label": "ES3Writer__WriteProperty__06000270",
+      "file_stem": "11961-06000270",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 11962,
+      "qualified_name": "ES3Writer::WriteProperty",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000271",
+      "va": "0x1803d6c10",
+      "file_offset": 4019216,
+      "label": "ES3Writer__WriteProperty__06000271",
+      "file_stem": "11962-06000271",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 11973,
+      "qualified_name": "ES3Writer::WriteType",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600027c",
+      "va": "0x1803d7e70",
+      "file_offset": 4023920,
+      "label": "ES3Writer__WriteType__0600027c",
+      "file_stem": "11973-0600027c",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12412,
+      "qualified_name": "ES3Types.ES3ObjectType::Write",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000433",
+      "va": "0x180551c80",
+      "file_offset": 5571712,
+      "label": "ES3Types_ES3ObjectType__Write__06000433",
+      "file_stem": "12412-06000433",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12426,
+      "qualified_name": "ES3Types.ES3Type::WriteUsingDerivedType",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000441",
+      "va": "0x180552140",
+      "file_offset": 5572928,
+      "label": "ES3Types_ES3Type__WriteUsingDerivedType__06000441",
+      "file_stem": "12426-06000441",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12429,
+      "qualified_name": "ES3Types.ES3Type::WriteProperties",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000444",
+      "va": "0x1805522d0",
+      "file_offset": 5573328,
+      "label": "ES3Types_ES3Type__WriteProperties__06000444",
+      "file_stem": "12429-06000444",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12430,
+      "qualified_name": "ES3Types.ES3Type::ReadProperties",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000445",
+      "va": "0x180552490",
+      "file_offset": 5573776,
+      "label": "ES3Types_ES3Type__ReadProperties__06000445",
+      "file_stem": "12430-06000445",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12431,
+      "qualified_name": "ES3Types.ES3Type::GetMembers",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000446",
+      "va": "0x180553650",
+      "file_offset": 5578320,
+      "label": "ES3Types_ES3Type__GetMembers__06000446",
+      "file_stem": "12431-06000446",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12432,
+      "qualified_name": "ES3Types.ES3Type::GetMembers",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000447",
+      "va": "0x180553660",
+      "file_offset": 5578336,
+      "label": "ES3Types_ES3Type__GetMembers__06000447",
+      "file_stem": "12432-06000447",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12534,
+      "qualified_name": "ES3Types.ES3ReflectedObjectType::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60004ad",
+      "va": "0x1805594d0",
+      "file_offset": 5602512,
+      "label": "ES3Types_ES3ReflectedObjectType___ctor__060004ad",
+      "file_stem": "12534-060004ad",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12535,
+      "qualified_name": "ES3Types.ES3ReflectedObjectType::WriteObject",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60004ae",
+      "va": "0x1805594c0",
+      "file_offset": 5602496,
+      "label": "ES3Types_ES3ReflectedObjectType__WriteObject__060004ae",
+      "file_stem": "12535-060004ae",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12541,
+      "qualified_name": "ES3Types.ES3ReflectedType::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60004b4",
+      "va": "0x180559500",
+      "file_offset": 5602560,
+      "label": "ES3Types_ES3ReflectedType___ctor__060004b4",
+      "file_stem": "12541-060004b4",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12542,
+      "qualified_name": "ES3Types.ES3ReflectedType::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60004b5",
+      "va": "0x180559520",
+      "file_offset": 5602592,
+      "label": "ES3Types_ES3ReflectedType___ctor__060004b5",
+      "file_stem": "12542-060004b5",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12543,
+      "qualified_name": "ES3Types.ES3ReflectedType::Write",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60004b6",
+      "va": "0x180559560",
+      "file_offset": 5602656,
+      "label": "ES3Types_ES3ReflectedType__Write__060004b6",
+      "file_stem": "12543-060004b6",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12959,
+      "qualified_name": "ES3Internal.ES3Reflection::GetElementTypes",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000656",
+      "va": "0x18059a160",
+      "file_offset": 5867872,
+      "label": "ES3Internal_ES3Reflection__GetElementTypes__06000656",
+      "file_stem": "12959-06000656",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12960,
+      "qualified_name": "ES3Internal.ES3Reflection::GetSerializableFields",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000657",
+      "va": "0x18059a2d0",
+      "file_offset": 5868240,
+      "label": "ES3Internal_ES3Reflection__GetSerializableFields__06000657",
+      "file_stem": "12960-06000657",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12961,
+      "qualified_name": "ES3Internal.ES3Reflection::GetSerializableProperties",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000658",
+      "va": "0x18059aa20",
+      "file_offset": 5870112,
+      "label": "ES3Internal_ES3Reflection__GetSerializableProperties__06000658",
+      "file_stem": "12961-06000658",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12962,
+      "qualified_name": "ES3Internal.ES3Reflection::TypeIsSerializable",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000659",
+      "va": "0x18059b1c0",
+      "file_offset": 5872064,
+      "label": "ES3Internal_ES3Reflection__TypeIsSerializable__06000659",
+      "file_stem": "12962-06000659",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12963,
+      "qualified_name": "ES3Internal.ES3Reflection::CreateInstance",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600065a",
+      "va": "0x18059b500",
+      "file_offset": 5872896,
+      "label": "ES3Internal_ES3Reflection__CreateInstance__0600065a",
+      "file_stem": "12963-0600065a",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12964,
+      "qualified_name": "ES3Internal.ES3Reflection::CreateInstance",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600065b",
+      "va": "0x18059b750",
+      "file_offset": 5873488,
+      "label": "ES3Internal_ES3Reflection__CreateInstance__0600065b",
+      "file_stem": "12964-0600065b",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12968,
+      "qualified_name": "ES3Internal.ES3Reflection::GetSerializableMembers",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600065f",
+      "va": "0x18059bad0",
+      "file_offset": 5874384,
+      "label": "ES3Internal_ES3Reflection__GetSerializableMembers__0600065f",
+      "file_stem": "12968-0600065f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12969,
+      "qualified_name": "ES3Internal.ES3Reflection::GetES3ReflectedProperty",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000660",
+      "va": "0x18059bf00",
+      "file_offset": 5875456,
+      "label": "ES3Internal_ES3Reflection__GetES3ReflectedProperty__06000660",
+      "file_stem": "12969-06000660",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12970,
+      "qualified_name": "ES3Internal.ES3Reflection::GetES3ReflectedMember",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000661",
+      "va": "0x18059bf90",
+      "file_offset": 5875600,
+      "label": "ES3Internal_ES3Reflection__GetES3ReflectedMember__06000661",
+      "file_stem": "12970-06000661",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12986,
+      "qualified_name": "ES3Internal.ES3Reflection::HasParameterlessConstructor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000671",
+      "va": "0x18059c8f0",
+      "file_offset": 5878000,
+      "label": "ES3Internal_ES3Reflection__HasParameterlessConstructor__06000671",
+      "file_stem": "12986-06000671",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12987,
+      "qualified_name": "ES3Internal.ES3Reflection::GetParameterlessConstructor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000672",
+      "va": "0x18059ca80",
+      "file_offset": 5878400,
+      "label": "ES3Internal_ES3Reflection__GetParameterlessConstructor__06000672",
+      "file_stem": "12987-06000672",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12993,
+      "qualified_name": "ES3Internal.ES3Reflection::AttributeIsDefined",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000678",
+      "va": "0x18059d210",
+      "file_offset": 5880336,
+      "label": "ES3Internal_ES3Reflection__AttributeIsDefined__06000678",
+      "file_stem": "12993-06000678",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12994,
+      "qualified_name": "ES3Internal.ES3Reflection::AttributeIsDefined",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000679",
+      "va": "0x18059d220",
+      "file_offset": 5880352,
+      "label": "ES3Internal_ES3Reflection__AttributeIsDefined__06000679",
+      "file_stem": "12994-06000679",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 13006,
+      "qualified_name": "ES3ReflectedMember::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000685",
+      "va": "0x18059f670",
+      "file_offset": 5889648,
+      "label": "ES3ReflectedMember___ctor__06000685",
+      "file_stem": "13006-06000685",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 13007,
+      "qualified_name": "ES3ReflectedMember::SetValue",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000686",
+      "va": "0x18059fa90",
+      "file_offset": 5890704,
+      "label": "ES3ReflectedMember__SetValue__06000686",
+      "file_stem": "13007-06000686",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 13008,
+      "qualified_name": "ES3ReflectedMember::GetValue",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000687",
+      "va": "0x18059fae0",
+      "file_offset": 5890784,
+      "label": "ES3ReflectedMember__GetValue__06000687",
+      "file_stem": "13008-06000687",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 13102,
+      "qualified_name": "ES3Internal.ES3Stream::CreateStream",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60006e5",
+      "va": "0x1805a3880",
+      "file_offset": 5906560,
+      "label": "ES3Internal_ES3Stream__CreateStream__060006e5",
+      "file_stem": "13102-060006e5",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 13107,
+      "qualified_name": "ES3Internal.ES3TypeMgr::GetOrCreateES3Type",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60006ea",
+      "va": "0x1805a4620",
+      "file_offset": 5910048,
+      "label": "ES3Internal_ES3TypeMgr__GetOrCreateES3Type__060006ea",
+      "file_stem": "13107-060006ea",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 13108,
+      "qualified_name": "ES3Internal.ES3TypeMgr::GetES3Type",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60006eb",
+      "va": "0x1805a4940",
+      "file_offset": 5910848,
+      "label": "ES3Internal_ES3TypeMgr__GetES3Type__060006eb",
+      "file_stem": "13108-060006eb",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 13109,
+      "qualified_name": "ES3Internal.ES3TypeMgr::Add",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60006ec",
+      "va": "0x1805a4a50",
+      "file_offset": 5911120,
+      "label": "ES3Internal_ES3TypeMgr__Add__060006ec",
+      "file_stem": "13109-060006ec",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 13110,
+      "qualified_name": "ES3Internal.ES3TypeMgr::CreateES3Type",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60006ed",
+      "va": "0x1805a4c90",
+      "file_offset": 5911696,
+      "label": "ES3Internal_ES3TypeMgr__CreateES3Type__060006ed",
+      "file_stem": "13110-060006ed",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 13111,
+      "qualified_name": "ES3Internal.ES3TypeMgr::Init",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60006ee",
+      "va": "0x1805a5950",
+      "file_offset": 5914960,
+      "label": "ES3Internal_ES3TypeMgr__Init__060006ee",
+      "file_stem": "13111-060006ee",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16741,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameStateData::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600151c",
+      "va": "0x18048bbd0",
+      "file_offset": 4760528,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameStateData___ctor__0600151c",
+      "file_stem": "16741-0600151c",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16742,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.PlayerCustomData::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600151d",
+      "va": "0x18048d3e0",
+      "file_offset": 4766688,
+      "label": "ExposureUnnoticed2_Scripts_InGame_PlayerCustomData___ctor__0600151d",
+      "file_stem": "16742-0600151d",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

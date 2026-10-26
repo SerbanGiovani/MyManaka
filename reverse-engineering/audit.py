@@ -491,6 +491,37 @@ def main():
         check(digest(Path(source["path"])) == source["sha256"], "Priority instruction tool differs")
     condition_targets = [s for t in priority["mission_virtual_dispatch"] for s in t["slots"] if s.get("method_name") == "IsInCondition" and not s.get("declaring_type", "").endswith("MissionBase")]
     check(len(condition_targets) == 34 and all(s["queried"] for s in condition_targets), "Concrete mission condition queries missing")
+    save_schema = read(ROOT / "salt/evidence/save-schema-chain.json")
+    check(save_schema["native_sha256"] == identity["native_sha256"] and save_schema["metadata_sha256"] == identity["metadata_sha256"], "Save schema native identity differs")
+    check(save_schema["new_observations"] == save_schema["new_unique_evidence_ids"] == save_schema["new_unique_procedure_addresses"] == 71, "Save schema query count differs")
+    check(all(m["evidence_id"] in observations for m in save_schema["methods"]), "Save schema observations missing")
+    for dependency in save_schema["dependencies"]:
+        check(digest(ROOT / dependency["path"]) == dependency["sha256"], "Save schema dependency differs")
+    for batch in save_schema["batches"]:
+        if batch["new_this_round"]:
+            run = read(ROOT / "salt/evidence" / batch["name"] / "run.json")
+            check(run["success"] and not run.get("close_error") and not run.get("transport_close_error"), "Save schema REA session not closed successfully")
+    save_declarations = read(ROOT / "salt/symbols/save-declarations.json")
+    save_generics = read(ROOT / "salt/symbols/save-generic-methods.json")
+    save_layouts = read(ROOT / "salt/symbols/save-parser-layouts.json")
+    for item in (save_declarations, save_generics):
+        check(item["native_sha256"] == identity["native_sha256"] and item["metadata_sha256"] == identity["metadata_sha256"], "Save declaration/registration identity differs")
+        for source in item["sources"]:
+            check(digest(ROOT / source["path"]) == source["sha256"], "Save declaration/registration source differs")
+    for source in save_layouts["sources"]:
+        check(digest(Path(source["path"])) == source["sha256"], "Save layout declaration source differs")
+    roots = [t for t in save_declarations["types"] if t["type_id"] in save_declarations["root_type_ids"]]
+    check(len(roots) == 4 and sum(len(t["fields"]) for t in roots) == 256, "Save root declarations differ")
+    check(all(any(c["parameter_count"] == 0 for c in t["constructors"]) for t in roots), "Save root default constructor differs")
+    check(all('ES3Serializable' in f["custom_attributes"]["constructor_types"] for t in roots for f in t["fields"]), "Explicit save root attributes differ")
+    check(len(save_declarations["types"]) == 27 and len(save_declarations["runtime_types"]) == 100 and not any(t.get("unresolved") for t in save_declarations["runtime_types"]), "Save declared type closure differs")
+    no_default = [t for t in save_declarations["types"] if t["type_id"] in (2453, 2472, 2582)]
+    check(len(no_default) == 3 and all(t["constructors"] and all(c["parameter_count"] > 0 for c in t["constructors"]) for t in no_default), "Save no-default-constructor branch differs")
+    private = save_schema["private_customize_fields"]
+    check(private["count"] == 65 and private["all_nonpublic"] and private["all_explicit_es3_serializable"], "Save private customize fields differ")
+    check(len(save_generics["selected_instantiations"]) == 220 and len(save_generics["unique_native_addresses"]) == 57, "Save closed generic registration differs")
+    check(len(save_schema["generic_body_links"]) == 13 and all(r["evidence_id"] in observations for r in save_schema["generic_body_links"]), "Save generic body observations missing")
+    check(all(r["representative"] in save_generics["selected_instantiations"] and r["representative"]["native_va"] == r["va"] for r in save_schema["generic_body_links"]), "Save shared generic identity differs")
     time_stop = read(ROOT / "salt/evidence/time-stop-chain.json")
     natural_chain = read(ROOT / "salt/evidence/natural-chain.json")
     notification_chain = read(ROOT / "salt/evidence/notification-chain.json")
@@ -519,6 +550,7 @@ def main():
         supplements = [read(ROOT / "salt/symbols" / name) for name in
                       ("dispatch-metadata.json", "field-offsets.json", "instantiation-generics.json")]
         source_records = list(declarations["sources"])
+        source_records.extend(save_layouts["sources"])
         source_records.extend([scene_assets["stage_enum"]["source"], scene_assets["stage_enum"]["parser"]])
         source_records.extend(player_assets["wrapper_declarations"]["sources"])
         source_records.extend(bareta_assets["wrapper_declarations"]["sources"])

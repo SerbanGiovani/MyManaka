@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "name": "save-schema-defaults",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\save-schema-defaults.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\save-schema-defaults",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 18688,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.ClosetMenu.CustomizeMenu.LoadoutCustomizeData::ApplyToGameState",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001cb7",
+      "va": "0x180530690",
+      "file_offset": 5435024,
+      "label": "ExposureUnnoticed2_ObjectUI_ClosetMenu_CustomizeMenu_LoadoutCustomizeData__ApplyToGameState__06001cb7",
+      "file_stem": "18688-06001cb7",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18689,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.ClosetMenu.CustomizeMenu.LoadoutCustomizeData::SaveCurrentCustomize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001cb8",
+      "va": "0x180531510",
+      "file_offset": 5438736,
+      "label": "ExposureUnnoticed2_ObjectUI_ClosetMenu_CustomizeMenu_LoadoutCustomizeData__SaveCurrentCustomize__06001cb8",
+      "file_stem": "18689-06001cb8",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "name": "save-schema-nested",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\save-schema-nested.seeds.tsv",
+  "seed_sha256": "000a490f8b91d9946aa9dbf41d8ef6ef2e33bb0099f257d5cdbd8c4dbf00ce08",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\save-schema-nested",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 16100,
+      "qualified_name": "HairCustomizeData::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600129b",
+      "va": "0x1803cb800",
+      "file_offset": 3973120,
+      "label": "HairCustomizeData___ctor__0600129b",
+      "file_stem": "16100-0600129b",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16101,
+      "qualified_name": "HairCustomizeData::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600129c",
+      "va": "0x180469260",
+      "file_offset": 4618848,
+      "label": "HairCustomizeData___ctor__0600129c",
+      "file_stem": "16101-0600129c",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16241,
+      "qualified_name": "ExposureUnnoticed2.Master.Cosplay.CosplayPartsOptionData::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001328",
+      "va": "0x18046aeb0",
+      "file_offset": 4626096,
+      "label": "ExposureUnnoticed2_Master_Cosplay_CosplayPartsOptionData___ctor__06001328",
+      "file_stem": "16241-06001328",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16242,
+      "qualified_name": "ExposureUnnoticed2.Master.Cosplay.CosplayPartsOptionData::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001329",
+      "va": "0x18046aed0",
+      "file_offset": 4626128,
+      "label": "ExposureUnnoticed2_Master_Cosplay_CosplayPartsOptionData___ctor__06001329",
+      "file_stem": "16242-06001329",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16733,
+      "qualified_name": "DropData::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001514",
+      "va": "0x1803b85f0",
+      "file_offset": 3894768,
+      "label": "DropData___ctor__06001514",
+      "file_stem": "16733-06001514",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17405,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.NpcSaveData::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017b4",
+      "va": "0x1803b65e0",
+      "file_offset": 3886560,
+      "label": "ExposureUnnoticed2_Scripts_Base_NpcSaveData___ctor__060017b4",
+      "file_stem": "17405-060017b4",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

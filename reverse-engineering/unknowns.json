@@ -67,7 +67,7 @@
       "id": "U011",
       "status": "open",
       "question": "Produce a complete independently runnable game reconstruction",
-      "boundary": "No complete compilable Unity project or replacement GameAssembly exists. Selected normal player controls and Bareta/BaretaEscape discovery, reaction, failure escape and reload paths now have static evidence. Full physics/camera/Animator and NPC/mission rules, remaining interaction consumers, other external state sources, complete ES3 serialization and runtime validation remain incomplete; see player-chain.md and bareta-chain.md Follow-up priority-chain.md adds 171 nonempty queries covering the six agreed critical groups, 34 concrete mission condition targets, and selected Save/Load overloads. Full ES3 schemas, remaining NPC/interaction states, resource event wiring and an independently compilable project remain open."
+      "boundary": "No complete compilable Unity project or replacement GameAssembly exists. Selected normal player controls and Bareta/BaretaEscape discovery, reaction, failure escape and reload paths now have static evidence. Full physics/camera/Animator and NPC/mission rules, remaining interaction consumers, other external state sources, complete ES3 serialization and runtime validation remain incomplete; see player-chain.md and bareta-chain.md Follow-up priority-chain.md adds 171 nonempty queries covering the six agreed critical groups, 34 concrete mission condition targets, and selected Save/Load overloads. Full ES3 schemas, remaining NPC/interaction states, resource event wiring and an independently compilable project remain open. Follow-up save-schema.md binds 71 further static queries, four roots/256 explicitly marked fields, a 27-type declared closure and 13 registered shared generic read bodies. Actual save settings/password, remaining system keys, historical migration and independent roundtrip remain open."
     },
     {
       "id": "U012",
@@ -116,6 +116,12 @@
       "status": "answered-within-selected-static-method-scope",
       "question": "Fill the six prioritized critical method groups: state snapshots, NPC locomotion/turn, cameras, selected saves, mission rules and concrete door/washer interactions",
       "boundary": "171 new nonempty REA queries in priority-core and priority-tail; 165 core declarations retain six shared native aliases. Fields/signatures/usages and 36 mission vtables are bound in salt/evidence/priority-chain.json. All34 concrete IsInCondition targets have queries. The NPC fixed guard is additionally checked against50 original instructions and float constants20/30. Runtime equivalence, complete save schemas, all interaction assets and independent reconstruction remain unverified; see priority-chain.md."
+    },
+    {
+      "id": "U020",
+      "status": "answered-within-selected-static-save-schema-scope",
+      "question": "Recover selected ES3 reflected save schema, generic read dispatch and constructor defaults",
+      "boundary": "71 nonempty REA queries plus original CodeRegistration/genericMethodTable/methodSpecs resolve 220 selected instantiations to 57 addresses, with 13 shared System.Object bodies queried. Four roots contain 256 explicitly ES3Serializable fields; declared closure 27 types/100 runtime-type records includes namespace-free game types, and 65 private LoadoutCustomizeData fields are explicitly marked. Reflection guards, eager member caching, create-before-member-assignment and no-parameterless-constructor allocation, absent-key overload behavior, width-preserved constructor literal stores and current-customization constructor side effects are bound in salt/evidence/save-schema-chain.json. No actual save settings/password, decrypted .sd, all-system-key schema, independent codec, historical migration or save/load roundtrip is claimed. See save-schema.md."
     }
   ]
 }
