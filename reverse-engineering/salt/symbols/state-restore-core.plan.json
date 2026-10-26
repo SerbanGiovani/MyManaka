@@ -1,0 +1,435 @@
+{
+  "schema_version": 1,
+  "name": "state-restore-core",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\state-restore-core.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\state-restore-core",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 14760,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerController::Dispose",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000d5f",
+      "va": "0x1806453c0",
+      "file_offset": 6568896,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerController__Dispose__06000d5f",
+      "file_stem": "14760-06000d5f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14766,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerController::OnLateUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000d65",
+      "va": "0x180645d30",
+      "file_offset": 6571312,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerController__OnLateUpdate__06000d65",
+      "file_stem": "14766-06000d65",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14769,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerController::<Initialize>b__30_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000d68",
+      "va": "0x180645ed0",
+      "file_offset": 6571728,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerController___Initialize_b__30_0__06000d68",
+      "file_stem": "14769-06000d68",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15519,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcController::AdditionalInitializeForFixAction",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001056",
+      "va": "0x180427fb0",
+      "file_offset": 4351920,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcController__AdditionalInitializeForFixAction__06001056",
+      "file_stem": "15519-06001056",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15521,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcController::OnFixedUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001058",
+      "va": "0x180428560",
+      "file_offset": 4353376,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcController__OnFixedUpdate__06001058",
+      "file_stem": "15521-06001058",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15525,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcController::OnAnimatorMove",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600105c",
+      "va": "0x180429520",
+      "file_offset": 4357408,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcController__OnAnimatorMove__0600105c",
+      "file_stem": "15525-0600105c",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15531,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcController::Warp",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001062",
+      "va": "0x180429fa0",
+      "file_offset": 4360096,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcController__Warp__06001062",
+      "file_stem": "15531-06001062",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15537,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcController::<Initialize>b__50_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001068",
+      "va": "0x18042ac70",
+      "file_offset": 4363376,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcController___Initialize_b__50_0__06001068",
+      "file_stem": "15537-06001068",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15580,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcManager::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001093",
+      "va": "0x18042f130",
+      "file_offset": 4380976,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcManager__Initialize__06001093",
+      "file_stem": "15580-06001093",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15581,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcManager::OnDestroy",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001094",
+      "va": "0x18042f1a0",
+      "file_offset": 4381088,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcManager__OnDestroy__06001094",
+      "file_stem": "15581-06001094",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15582,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcManager::OnLoadStage",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001095",
+      "va": "0x18042f300",
+      "file_offset": 4381440,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcManager__OnLoadStage__06001095",
+      "file_stem": "15582-06001095",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15583,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcManager::OnLoadData",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001096",
+      "va": "0x18042f310",
+      "file_offset": 4381456,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcManager__OnLoadData__06001096",
+      "file_stem": "15583-06001096",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15584,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcManager::RemoveNpc",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001097",
+      "va": "0x18042f760",
+      "file_offset": 4382560,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcManager__RemoveNpc__06001097",
+      "file_stem": "15584-06001097",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15585,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcManager::RepopNpc",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001098",
+      "va": "0x18042f810",
+      "file_offset": 4382736,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcManager__RepopNpc__06001098",
+      "file_stem": "15585-06001098",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15586,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcManager::RegisterDestroy",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001099",
+      "va": "0x18042fe10",
+      "file_offset": 4384272,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcManager__RegisterDestroy__06001099",
+      "file_stem": "15586-06001099",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15589,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcManager::OnFixedUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600109c",
+      "va": "0x1804301f0",
+      "file_offset": 4385264,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcManager__OnFixedUpdate__0600109c",
+      "file_stem": "15589-0600109c",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15597,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcManager::SearchNpcController",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60010a4",
+      "va": "0x180432040",
+      "file_offset": 4393024,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcManager__SearchNpcController__060010a4",
+      "file_stem": "15597-060010a4",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16707,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.DroppedItemManager::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60014fa",
+      "va": "0x180488870",
+      "file_offset": 4747376,
+      "label": "ExposureUnnoticed2_Scripts_InGame_DroppedItemManager___ctor__060014fa",
+      "file_stem": "16707-060014fa",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16708,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.DroppedItemManager::Dispose",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60014fb",
+      "va": "0x1804889e0",
+      "file_offset": 4747744,
+      "label": "ExposureUnnoticed2_Scripts_InGame_DroppedItemManager__Dispose__060014fb",
+      "file_stem": "16708-060014fb",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16711,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.DroppedItemManager::ApplyReserveDropIfNeed",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60014fe",
+      "va": "0x180488de0",
+      "file_offset": 4748768,
+      "label": "ExposureUnnoticed2_Scripts_InGame_DroppedItemManager__ApplyReserveDropIfNeed__060014fe",
+      "file_stem": "16711-060014fe",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16712,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.DroppedItemManager::Drop",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60014ff",
+      "va": "0x180488f70",
+      "file_offset": 4749168,
+      "label": "ExposureUnnoticed2_Scripts_InGame_DroppedItemManager__Drop__060014ff",
+      "file_stem": "16712-060014ff",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16715,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.DroppedItemManager::ReserveDrop",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001502",
+      "va": "0x180489550",
+      "file_offset": 4750672,
+      "label": "ExposureUnnoticed2_Scripts_InGame_DroppedItemManager__ReserveDrop__06001502",
+      "file_stem": "16715-06001502",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16716,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.DroppedItemManager::SendToHome",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001503",
+      "va": "0x180489660",
+      "file_offset": 4750944,
+      "label": "ExposureUnnoticed2_Scripts_InGame_DroppedItemManager__SendToHome__06001503",
+      "file_stem": "16716-06001503",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16717,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.DroppedItemManager::Hide",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001504",
+      "va": "0x1804897a0",
+      "file_offset": 4751264,
+      "label": "ExposureUnnoticed2_Scripts_InGame_DroppedItemManager__Hide__06001504",
+      "file_stem": "16717-06001504",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16720,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.DroppedItemManager::Collect",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001507",
+      "va": "0x18048a0e0",
+      "file_offset": 4753632,
+      "label": "ExposureUnnoticed2_Scripts_InGame_DroppedItemManager__Collect__06001507",
+      "file_stem": "16720-06001507",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16727,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.DroppedItemManager::ActiveDroppedItemIfNeed",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600150e",
+      "va": "0x18048aa90",
+      "file_offset": 4756112,
+      "label": "ExposureUnnoticed2_Scripts_InGame_DroppedItemManager__ActiveDroppedItemIfNeed__0600150e",
+      "file_stem": "16727-0600150e",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16732,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.DroppedItemManager::<ApplyReserveDropIfNeed>b__12_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001513",
+      "va": "0x18048ad30",
+      "file_offset": 4756784,
+      "label": "ExposureUnnoticed2_Scripts_InGame_DroppedItemManager___ApplyReserveDropIfNeed_b__12_0__06001513",
+      "file_stem": "16732-06001513",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16780,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameStateFacade::GetDefaultDropDataDict",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001543",
+      "va": "0x18048fb20",
+      "file_offset": 4776736,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameStateFacade__GetDefaultDropDataDict__06001543",
+      "file_stem": "16780-06001543",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16813,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameStateFacade::CreateDefaultLoadoutData",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001564",
+      "va": "0x1804935e0",
+      "file_offset": 4791776,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameStateFacade__CreateDefaultLoadoutData__06001564",
+      "file_stem": "16813-06001564",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16814,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameStateFacade::CreateDefaultLoadoutCustomizeData",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001565",
+      "va": "0x1804936f0",
+      "file_offset": 4792048,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameStateFacade__CreateDefaultLoadoutCustomizeData__06001565",
+      "file_stem": "16814-06001565",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17059,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.StageController::GetSpawnPoint",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600165a",
+      "va": "0x1804a5080",
+      "file_offset": 4864128,
+      "label": "ExposureUnnoticed2_Scripts_InGame_StageController__GetSpawnPoint__0600165a",
+      "file_stem": "17059-0600165a",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

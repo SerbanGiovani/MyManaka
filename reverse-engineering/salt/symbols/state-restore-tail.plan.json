@@ -1,0 +1,279 @@
+{
+  "schema_version": 1,
+  "name": "state-restore-tail",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\state-restore-tail.seeds.tsv",
+  "seed_sha256": "876f960a89024dc5d5eab4f0683a748301777e3f290207816ecbe2bfcbd9a108",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\state-restore-tail",
+  "seed_count": 6247,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 14598,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyCustomizeAdjuster::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000cbd",
+      "va": "0x180631c30",
+      "file_offset": 6489136,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBodyCustomizeAdjuster__Initialize__06000cbd",
+      "file_stem": "14598-06000cbd",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14602,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyCustomizeAdjuster::OnChangeBody",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000cc1",
+      "va": "0x180632dc0",
+      "file_offset": 6493632,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBodyCustomizeAdjuster__OnChangeBody__06000cc1",
+      "file_stem": "14602-06000cc1",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14620,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000cd3",
+      "va": "0x180637590",
+      "file_offset": 6512016,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBodyMaterialController__Initialize__06000cd3",
+      "file_stem": "14620-06000cd3",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14624,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController::SetupBodyPaintFromGameState",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000cd7",
+      "va": "0x180637bc0",
+      "file_offset": 6513600,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBodyMaterialController__SetupBodyPaintFromGameState__06000cd7",
+      "file_stem": "14624-06000cd7",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14625,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController::OnChangeBody",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000cd8",
+      "va": "0x180638640",
+      "file_offset": 6516288,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBodyMaterialController__OnChangeBody__06000cd8",
+      "file_stem": "14625-06000cd8",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14630,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBoneScaleAdjuster::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000cdd",
+      "va": "0x180639070",
+      "file_offset": 6518896,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBoneScaleAdjuster__Initialize__06000cdd",
+      "file_stem": "14630-06000cdd",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14632,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBoneScaleAdjuster::OnChangeBody",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000cdf",
+      "va": "0x180639840",
+      "file_offset": 6520896,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBoneScaleAdjuster__OnChangeBody__06000cdf",
+      "file_stem": "14632-06000cdf",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14636,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBoneScaleAdjuster::<OnChangeBody>b__4_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000ce3",
+      "va": "0x180639bc0",
+      "file_offset": 6521792,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBoneScaleAdjuster___OnChangeBody_b__4_0__06000ce3",
+      "file_stem": "14636-06000ce3",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14840,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerFaceController::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000daf",
+      "va": "0x180649ac0",
+      "file_offset": 6587072,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerFaceController__Initialize__06000daf",
+      "file_stem": "14840-06000daf",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14847,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerFaceController::OnChangeBody",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000db6",
+      "va": "0x18064b380",
+      "file_offset": 6593408,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerFaceController__OnChangeBody__06000db6",
+      "file_stem": "14847-06000db6",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15074,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.HairCustomAdjuster::InitializeIfNeed",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e99",
+      "va": "0x180403790",
+      "file_offset": 4202384,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_Other_HairCustomAdjuster__InitializeIfNeed__06000e99",
+      "file_stem": "15074-06000e99",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15075,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.HairCustomAdjuster::OnChangeBody",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e9a",
+      "va": "0x180403a60",
+      "file_offset": 4203104,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_Other_HairCustomAdjuster__OnChangeBody__06000e9a",
+      "file_stem": "15075-06000e9a",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15079,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.HairCustomAdjuster::<OnChangeBody>b__14_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e9e",
+      "va": "0x1804042f0",
+      "file_offset": 4205296,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_Other_HairCustomAdjuster___OnChangeBody_b__14_0__06000e9e",
+      "file_stem": "15079-06000e9e",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15539,
+      "qualified_name": "<>c__DisplayClass51_0::<AdditionalInitializeForFixAction>b__0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600106a",
+      "va": "0x18042acb0",
+      "file_offset": 4363440,
+      "label": "__c__DisplayClass51_0___AdditionalInitializeForFixAction_b__0__0600106a",
+      "file_stem": "15539-0600106a",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15603,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcManager::<RepopNpc>b__57_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60010aa",
+      "va": "0x180432dd0",
+      "file_offset": 4396496,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcManager___RepopNpc_b__57_0__060010aa",
+      "file_stem": "15603-060010aa",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15605,
+      "qualified_name": "<>c__DisplayClass55_0::<OnLoadData>b__0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60010ac",
+      "va": "0x180432df0",
+      "file_offset": 4396528,
+      "label": "__c__DisplayClass55_0___OnLoadData_b__0__060010ac",
+      "file_stem": "15605-060010ac",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17067,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.StageRandomPositionManager::GetRandomPosition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001662",
+      "va": "0x1804a6600",
+      "file_offset": 4869632,
+      "label": "ExposureUnnoticed2_Scripts_InGame_StageRandomPositionManager__GetRandomPosition__06001662",
+      "file_stem": "17067-06001662",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18301,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.InGame.Compass.CompassView::RegisterTarget",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001b34",
+      "va": "0x180511910",
+      "file_offset": 5308688,
+      "label": "ExposureUnnoticed2_ObjectUI_InGame_Compass_CompassView__RegisterTarget__06001b34",
+      "file_stem": "18301-06001b34",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_180436630",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x180436630",
+      "file_offset": 4410928,
+      "label": "native_only_180436630__00000000",
+      "file_stem": "native-0x180436630",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

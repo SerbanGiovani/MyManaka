@@ -544,12 +544,37 @@ def main():
     check(all(r["encrypted_sha256"] == r["sample"]["captured_sha256"] and r["sample"]["source_unchanged_during_capture"] and r["reencryption_matches_original"] for r in save_validation["samples"]), "Save captured envelope validation differs")
     save_roots = [k for r in save_validation["samples"] for k in r["keys"] if "declared_type_id" in k]
     check(len(save_roots) == 16 and all(k["stored_type_matches_declaration"] and k["all_declared_fields_present"] and not k["missing_fields"] and not k["additional_fields"] for k in save_roots), "Stored save root schema differs")
+    restore = read(ROOT / "salt/evidence/state-restore-chain.json")
+    restore_inputs = read(ROOT / "salt/evidence/state-restore-inputs.json")
+    check(restore["native_sha256"] == identity["native_sha256"] and restore["metadata_sha256"] == identity["metadata_sha256"], "Restore native identity differs")
+    check(restore["new_observations"] == restore["new_unique_evidence_ids"] == restore["new_unique_procedure_addresses"] == 50, "Restore queries differ")
+    check(all(m["evidence_id"] in observations for m in restore["methods"]), "Restore observations missing")
+    for dependency in restore["dependencies"] + restore_inputs["sources"]:
+        check(digest(ROOT / dependency["path"]) == dependency["sha256"], "Restore source/input differs")
+    for batch in restore["batches"]:
+        if batch["new_this_round"]:
+            run = read(ROOT / "salt/evidence" / batch["name"] / "run.json")
+            check(run["success"] and not run.get("close_error") and not run.get("transport_close_error"), "Restore REA session not closed successfully")
+    body_event = restore["body_restore_event"]
+    check(body_event["static_event_field"]["offset"] == 0x60 and len(body_event["listeners"]) == 5, "Restore body event binding differs")
+    check(body_event["listener_method_spec"]["method_spec"]["method_instantiation"]["arguments"][0]["type_id"] == 2687, "Restore typed listener differs")
+    check(restore["npc_restore_delegate"]["delegate_usage"]["method_id"] == 15605 and restore["npc_repop_delegate"]["delegate_usage"]["method_id"] == 15603, "Restore NPC callback differs")
+    check(restore["npc_restore_delegate"]["arguments"]["isRandomPathSpawn"] is False and restore["npc_repop_delegate"]["arguments"]["isRandomPathSpawn"] is True, "Restore/repop argument distinction differs")
+    restore_abi = restore["restore_delay_abi"]
+    check(restore_abi["instructions_verified"] == 557 and len(restore_abi["sites"]) == 2, "Restore float argument evidence differs")
+    for source in restore_abi["instruction_sources"]:
+        check(digest(Path(source["path"])) == source["sha256"], "Restore instruction tool differs")
+    check(restore_inputs["summary"] == dict(game_snapshots=7,npc_records=0,reserve_records=0,
+        drop_activation_guards=dict(records=196,not_dropped_untouched=193,current_stage_drop_calls=0,other_stage_hide_calls=3),
+        all_loadout_lists_have21=True), "Restore stored coverage differs")
     if args.inputs:
         sys.path.insert(0, str(ROOT / "salt"))
         try:
             save_analyzer = runpy.run_path(str(ROOT / "salt/validate_saves.py"))
             measured_save = save_analyzer["build"]([r["sample"] for r in save_validation["samples"]])
             check(measured_save == save_validation, "Independent save decoding differs")
+            restore_analyzer = runpy.run_path(str(ROOT / "salt/restore_inputs.py"))
+            check(restore_analyzer["build"]() == restore_inputs, "Stored restore input projection differs")
         finally:
             sys.path.pop(0)
     time_stop = read(ROOT / "salt/evidence/time-stop-chain.json")
