@@ -1,0 +1,561 @@
+{
+  "schema_version": 1,
+  "evidence_type": "Independent offline AES envelope and selected ES3 structural read of encrypted clone snapshots",
+  "sources": [
+    {
+      "path": "salt/save_codec.py",
+      "sha256": "4891ae09d49378b64b1ff6795ac6c4aa8eba73f61e9e3f7bc9e01befb96bb843"
+    },
+    {
+      "path": "salt/validate_saves.py",
+      "sha256": "451e3b647b90fbe03dece030e66d9d64511995c670d2576239f98dce75383abf"
+    },
+    {
+      "path": "assets/save-settings.json",
+      "sha256": "fbe92772a2ae4ec2dc5df397f78d21fc1a0032d4068a77b2d13c7ebde9982f6c"
+    },
+    {
+      "path": "salt/symbols/save-declarations.json",
+      "sha256": "f31e800be89d3b823d773a58aff2b1e86f347c3ee68a8c47ea556c4e0c5b8029"
+    }
+  ],
+  "implementation": {
+    "python": "3.11.2",
+    "cryptography": "46.0.2"
+  },
+  "samples": [
+    {
+      "sample": {
+        "original_path": "E:\\ManakaREA-NaturalGameplay\\UserData\\SaveData\\0.sd",
+        "snapshot_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\.cache\\save-codec\\89b72b82f054c1da3755478d9b54aa6f2daab80ef67f18c457166dc048e2e17f.sd",
+        "captured_sha256": "89b72b82f054c1da3755478d9b54aa6f2daab80ef67f18c457166dc048e2e17f",
+        "source_unchanged_during_capture": true
+      },
+      "encrypted_bytes": 157904,
+      "encrypted_sha256": "89b72b82f054c1da3755478d9b54aa6f2daab80ef67f18c457166dc048e2e17f",
+      "iv_hex": "80308e8aeb250c66523d36059eb8aec0",
+      "plaintext_bytes": 157886,
+      "plaintext_sha256": "90459d8c3fff1d16c4af6cb4741c61bd03889eea132cc625c7b24a28d198192a",
+      "utf8_bom": false,
+      "text_consumed": 157614,
+      "numeric_dictionary_keys": 2251,
+      "strict_json_accepted": false,
+      "shapes": {
+        "ObjectPairs": 475,
+        "bool": 2689,
+        "float": 115,
+        "int": 7233,
+        "list": 798,
+        "str": 4100
+      },
+      "keys": [
+        {
+          "key": "PlayerCustomData",
+          "stored_type": "ExposureUnnoticed2.Scripts.InGame.PlayerCustomData,Assembly-CSharp",
+          "value_kind": "ObjectPairs",
+          "declared_type_id": 2587,
+          "stored_fields": 66,
+          "declared_fields": 66,
+          "missing_fields": [],
+          "additional_fields": [],
+          "all_declared_fields_present": true,
+          "stored_type_matches_declaration": true
+        },
+        {
+          "key": "IsTrial",
+          "stored_type": "bool",
+          "value_kind": "bool"
+        },
+        {
+          "key": "GameStateData",
+          "stored_type": "ExposureUnnoticed2.Scripts.InGame.GameStateData,Assembly-CSharp",
+          "value_kind": "ObjectPairs",
+          "declared_type_id": 2586,
+          "stored_fields": 107,
+          "declared_fields": 107,
+          "missing_fields": [],
+          "additional_fields": [],
+          "all_declared_fields_present": true,
+          "stored_type_matches_declaration": true
+        },
+        {
+          "key": "SaveDataSlotIndex",
+          "stored_type": "int",
+          "value_kind": "int"
+        }
+      ],
+      "reencryption_matches_original": true
+    },
+    {
+      "sample": {
+        "original_path": "E:\\ManakaREA-NaturalGameplay\\UserData\\SaveData\\1.sd",
+        "snapshot_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\.cache\\save-codec\\d69bcd2a1ff6f229c2698eedfa895416a4f5b3f87dbb9d8357e40dc1c6f803f6.sd",
+        "captured_sha256": "d69bcd2a1ff6f229c2698eedfa895416a4f5b3f87dbb9d8357e40dc1c6f803f6",
+        "source_unchanged_during_capture": true
+      },
+      "encrypted_bytes": 122160,
+      "encrypted_sha256": "d69bcd2a1ff6f229c2698eedfa895416a4f5b3f87dbb9d8357e40dc1c6f803f6",
+      "iv_hex": "a7c901833a9f202c91460c4ee5d0be71",
+      "plaintext_bytes": 122141,
+      "plaintext_sha256": "a55bb9bf3fa7c9627a88ae183865798abfcb37dff3c7296296be457394e882f6",
+      "utf8_bom": false,
+      "text_consumed": 122141,
+      "numeric_dictionary_keys": 1531,
+      "strict_json_accepted": false,
+      "shapes": {
+        "ObjectPairs": 384,
+        "bool": 1462,
+        "float": 51,
+        "int": 5552,
+        "list": 458,
+        "str": 3388
+      },
+      "keys": [
+        {
+          "key": "PlayerCustomData",
+          "stored_type": "ExposureUnnoticed2.Scripts.InGame.PlayerCustomData,Assembly-CSharp",
+          "value_kind": "ObjectPairs",
+          "declared_type_id": 2587,
+          "stored_fields": 66,
+          "declared_fields": 66,
+          "missing_fields": [],
+          "additional_fields": [],
+          "all_declared_fields_present": true,
+          "stored_type_matches_declaration": true
+        },
+        {
+          "key": "IsTrial",
+          "stored_type": "bool",
+          "value_kind": "bool"
+        },
+        {
+          "key": "GameStateData",
+          "stored_type": "ExposureUnnoticed2.Scripts.InGame.GameStateData,Assembly-CSharp",
+          "value_kind": "ObjectPairs",
+          "declared_type_id": 2586,
+          "stored_fields": 107,
+          "declared_fields": 107,
+          "missing_fields": [],
+          "additional_fields": [],
+          "all_declared_fields_present": true,
+          "stored_type_matches_declaration": true
+        },
+        {
+          "key": "SaveDataSlotIndex",
+          "stored_type": "int",
+          "value_kind": "int"
+        }
+      ],
+      "reencryption_matches_original": true
+    },
+    {
+      "sample": {
+        "original_path": "E:\\ManakaREA-NaturalGameplay\\UserData\\SaveData\\2.sd",
+        "snapshot_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\.cache\\save-codec\\b592b3a4cbab9ca35827de64d9508f8a55f570d88be0e2548eb1be690ef61162.sd",
+        "captured_sha256": "b592b3a4cbab9ca35827de64d9508f8a55f570d88be0e2548eb1be690ef61162",
+        "source_unchanged_during_capture": true
+      },
+      "encrypted_bytes": 91264,
+      "encrypted_sha256": "b592b3a4cbab9ca35827de64d9508f8a55f570d88be0e2548eb1be690ef61162",
+      "iv_hex": "b6c7afcb453188bfa447ce1753951f17",
+      "plaintext_bytes": 91238,
+      "plaintext_sha256": "1535aa13f35a05e0bf8876446cc4e1bbfd9776b9f263a2dff9f1412655c023dd",
+      "utf8_bom": false,
+      "text_consumed": 90918,
+      "numeric_dictionary_keys": 1103,
+      "strict_json_accepted": false,
+      "shapes": {
+        "ObjectPairs": 245,
+        "bool": 998,
+        "float": 6,
+        "int": 4221,
+        "list": 458,
+        "str": 2308
+      },
+      "keys": [
+        {
+          "key": "PlayerCustomData",
+          "stored_type": "ExposureUnnoticed2.Scripts.InGame.PlayerCustomData,Assembly-CSharp",
+          "value_kind": "ObjectPairs",
+          "declared_type_id": 2587,
+          "stored_fields": 66,
+          "declared_fields": 66,
+          "missing_fields": [],
+          "additional_fields": [],
+          "all_declared_fields_present": true,
+          "stored_type_matches_declaration": true
+        },
+        {
+          "key": "IsTrial",
+          "stored_type": "bool",
+          "value_kind": "bool"
+        },
+        {
+          "key": "GameStateData",
+          "stored_type": "ExposureUnnoticed2.Scripts.InGame.GameStateData,Assembly-CSharp",
+          "value_kind": "ObjectPairs",
+          "declared_type_id": 2586,
+          "stored_fields": 107,
+          "declared_fields": 107,
+          "missing_fields": [],
+          "additional_fields": [],
+          "all_declared_fields_present": true,
+          "stored_type_matches_declaration": true
+        },
+        {
+          "key": "SaveDataSlotIndex",
+          "stored_type": "int",
+          "value_kind": "int"
+        }
+      ],
+      "reencryption_matches_original": true
+    },
+    {
+      "sample": {
+        "original_path": "E:\\ManakaREA-NaturalGameplay\\UserData\\SaveData\\3.sd",
+        "snapshot_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\.cache\\save-codec\\f2ab75e4e23da566a3b4f8b7faece5f58da8c1fc53a53f72c8cf09f8c471b599.sd",
+        "captured_sha256": "f2ab75e4e23da566a3b4f8b7faece5f58da8c1fc53a53f72c8cf09f8c471b599",
+        "source_unchanged_during_capture": true
+      },
+      "encrypted_bytes": 139600,
+      "encrypted_sha256": "f2ab75e4e23da566a3b4f8b7faece5f58da8c1fc53a53f72c8cf09f8c471b599",
+      "iv_hex": "75023768cb37ef96938a4439b5a22e8e",
+      "plaintext_bytes": 139573,
+      "plaintext_sha256": "52d125a018f9ba2662e9dc7dbaf2c15c7411ba0097467d9afc442259a01d856a",
+      "utf8_bom": false,
+      "text_consumed": 139259,
+      "numeric_dictionary_keys": 2114,
+      "strict_json_accepted": false,
+      "shapes": {
+        "ObjectPairs": 372,
+        "bool": 2600,
+        "float": 64,
+        "int": 6704,
+        "list": 942,
+        "str": 3308
+      },
+      "keys": [
+        {
+          "key": "PlayerCustomData",
+          "stored_type": "ExposureUnnoticed2.Scripts.InGame.PlayerCustomData,Assembly-CSharp",
+          "value_kind": "ObjectPairs",
+          "declared_type_id": 2587,
+          "stored_fields": 66,
+          "declared_fields": 66,
+          "missing_fields": [],
+          "additional_fields": [],
+          "all_declared_fields_present": true,
+          "stored_type_matches_declaration": true
+        },
+        {
+          "key": "IsTrial",
+          "stored_type": "bool",
+          "value_kind": "bool"
+        },
+        {
+          "key": "GameStateData",
+          "stored_type": "ExposureUnnoticed2.Scripts.InGame.GameStateData,Assembly-CSharp",
+          "value_kind": "ObjectPairs",
+          "declared_type_id": 2586,
+          "stored_fields": 107,
+          "declared_fields": 107,
+          "missing_fields": [],
+          "additional_fields": [],
+          "all_declared_fields_present": true,
+          "stored_type_matches_declaration": true
+        },
+        {
+          "key": "SaveDataSlotIndex",
+          "stored_type": "int",
+          "value_kind": "int"
+        }
+      ],
+      "reencryption_matches_original": true
+    },
+    {
+      "sample": {
+        "original_path": "E:\\ManakaREA-NaturalGameplay\\UserData\\SaveData\\s.sd",
+        "snapshot_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\.cache\\save-codec\\86f624b5478a8ef7f41ea79bafe87f4c97890cf895171d29d3d98fb9dc551b76.sd",
+        "captured_sha256": "86f624b5478a8ef7f41ea79bafe87f4c97890cf895171d29d3d98fb9dc551b76",
+        "source_unchanged_during_capture": true
+      },
+      "encrypted_bytes": 4160,
+      "encrypted_sha256": "86f624b5478a8ef7f41ea79bafe87f4c97890cf895171d29d3d98fb9dc551b76",
+      "iv_hex": "1c79c4c7bfa871877b4fa773d8520b1b",
+      "plaintext_bytes": 4141,
+      "plaintext_sha256": "95b9e5326241a53bfc07a38ac60ed3455c2d004efd1702e8c901e4836e8cf5d4",
+      "utf8_bom": false,
+      "text_consumed": 4141,
+      "numeric_dictionary_keys": 0,
+      "strict_json_accepted": true,
+      "shapes": {
+        "ObjectPairs": 37,
+        "bool": 51,
+        "int": 135,
+        "list": 6,
+        "str": 144
+      },
+      "keys": [
+        {
+          "key": "OptionData",
+          "stored_type": "ExposureUnnoticed2.ObjectUI.OptionMenu.OptionData,Assembly-CSharp",
+          "value_kind": "ObjectPairs",
+          "declared_type_id": 2896,
+          "stored_fields": 68,
+          "declared_fields": 68,
+          "missing_fields": [],
+          "additional_fields": [],
+          "all_declared_fields_present": true,
+          "stored_type_matches_declaration": true
+        },
+        {
+          "key": "TutorialData",
+          "stored_type": "ExposureUnnoticed2.ObjectUI.TutorialPanel.TutorialData,Assembly-CSharp",
+          "value_kind": "ObjectPairs",
+          "declared_type_id": 2715,
+          "stored_fields": 15,
+          "declared_fields": 15,
+          "missing_fields": [],
+          "additional_fields": [],
+          "all_declared_fields_present": true,
+          "stored_type_matches_declaration": true
+        },
+        {
+          "key": "HomeSaveTime",
+          "stored_type": "System.DateTime,mscorlib",
+          "value_kind": "ObjectPairs"
+        },
+        {
+          "key": "InterruptSaveTime",
+          "stored_type": "System.DateTime,mscorlib",
+          "value_kind": "ObjectPairs"
+        },
+        {
+          "key": "TotalPlayTimeData",
+          "stored_type": "System.UInt32[],mscorlib",
+          "value_kind": "list"
+        },
+        {
+          "key": "RankData",
+          "stored_type": "System.Int32[],mscorlib",
+          "value_kind": "list"
+        },
+        {
+          "key": "DifficultData",
+          "stored_type": "ExposureUnnoticed2.ObjectUI.SelectDifficultyPanel.DifficultType[],Assembly-CSharp",
+          "value_kind": "list"
+        },
+        {
+          "key": "ManualSaveTime",
+          "stored_type": "System.DateTime[],mscorlib",
+          "value_kind": "list"
+        },
+        {
+          "key": "AutoSaveTime",
+          "stored_type": "System.DateTime[],mscorlib",
+          "value_kind": "list"
+        }
+      ],
+      "reencryption_matches_original": true
+    },
+    {
+      "sample": {
+        "original_path": "E:\\ManakaREA-NaturalGameplay\\UserData\\SaveDataBackup\\0.sd",
+        "snapshot_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\.cache\\save-codec\\8cadedf6a94198079170322277c90bdfea23187d6964b2ff62918e4bea1bee28.sd",
+        "captured_sha256": "8cadedf6a94198079170322277c90bdfea23187d6964b2ff62918e4bea1bee28",
+        "source_unchanged_during_capture": true
+      },
+      "encrypted_bytes": 157888,
+      "encrypted_sha256": "8cadedf6a94198079170322277c90bdfea23187d6964b2ff62918e4bea1bee28",
+      "iv_hex": "aba5aa331118e9f7424da8cc63a16c6f",
+      "plaintext_bytes": 157861,
+      "plaintext_sha256": "f2f455e4cf675eb83d5825b80ebdac61adf7f4bd6f06e969f9e299e651071cb6",
+      "utf8_bom": false,
+      "text_consumed": 157589,
+      "numeric_dictionary_keys": 2251,
+      "strict_json_accepted": false,
+      "shapes": {
+        "ObjectPairs": 475,
+        "bool": 2689,
+        "float": 114,
+        "int": 7234,
+        "list": 798,
+        "str": 4100
+      },
+      "keys": [
+        {
+          "key": "PlayerCustomData",
+          "stored_type": "ExposureUnnoticed2.Scripts.InGame.PlayerCustomData,Assembly-CSharp",
+          "value_kind": "ObjectPairs",
+          "declared_type_id": 2587,
+          "stored_fields": 66,
+          "declared_fields": 66,
+          "missing_fields": [],
+          "additional_fields": [],
+          "all_declared_fields_present": true,
+          "stored_type_matches_declaration": true
+        },
+        {
+          "key": "IsTrial",
+          "stored_type": "bool",
+          "value_kind": "bool"
+        },
+        {
+          "key": "GameStateData",
+          "stored_type": "ExposureUnnoticed2.Scripts.InGame.GameStateData,Assembly-CSharp",
+          "value_kind": "ObjectPairs",
+          "declared_type_id": 2586,
+          "stored_fields": 107,
+          "declared_fields": 107,
+          "missing_fields": [],
+          "additional_fields": [],
+          "all_declared_fields_present": true,
+          "stored_type_matches_declaration": true
+        },
+        {
+          "key": "SaveDataSlotIndex",
+          "stored_type": "int",
+          "value_kind": "int"
+        }
+      ],
+      "reencryption_matches_original": true
+    },
+    {
+      "sample": {
+        "original_path": "E:\\ManakaREA-NaturalGameplay\\UserData\\SaveDataBackup\\1.sd",
+        "snapshot_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\.cache\\save-codec\\008d2bb85f0176d38919d9c477179856d7554d6855e246c3949caeb4ef304e69.sd",
+        "captured_sha256": "008d2bb85f0176d38919d9c477179856d7554d6855e246c3949caeb4ef304e69",
+        "source_unchanged_during_capture": true
+      },
+      "encrypted_bytes": 122160,
+      "encrypted_sha256": "008d2bb85f0176d38919d9c477179856d7554d6855e246c3949caeb4ef304e69",
+      "iv_hex": "18a5e1365f20b76b54bd288dc0410a5e",
+      "plaintext_bytes": 122141,
+      "plaintext_sha256": "18c2f9db0a566c3d80141abb9a163ec91f29dbadc1fca4949324d47c244616c4",
+      "utf8_bom": false,
+      "text_consumed": 122141,
+      "numeric_dictionary_keys": 1531,
+      "strict_json_accepted": false,
+      "shapes": {
+        "ObjectPairs": 384,
+        "bool": 1462,
+        "float": 51,
+        "int": 5552,
+        "list": 458,
+        "str": 3388
+      },
+      "keys": [
+        {
+          "key": "PlayerCustomData",
+          "stored_type": "ExposureUnnoticed2.Scripts.InGame.PlayerCustomData,Assembly-CSharp",
+          "value_kind": "ObjectPairs",
+          "declared_type_id": 2587,
+          "stored_fields": 66,
+          "declared_fields": 66,
+          "missing_fields": [],
+          "additional_fields": [],
+          "all_declared_fields_present": true,
+          "stored_type_matches_declaration": true
+        },
+        {
+          "key": "IsTrial",
+          "stored_type": "bool",
+          "value_kind": "bool"
+        },
+        {
+          "key": "GameStateData",
+          "stored_type": "ExposureUnnoticed2.Scripts.InGame.GameStateData,Assembly-CSharp",
+          "value_kind": "ObjectPairs",
+          "declared_type_id": 2586,
+          "stored_fields": 107,
+          "declared_fields": 107,
+          "missing_fields": [],
+          "additional_fields": [],
+          "all_declared_fields_present": true,
+          "stored_type_matches_declaration": true
+        },
+        {
+          "key": "SaveDataSlotIndex",
+          "stored_type": "int",
+          "value_kind": "int"
+        }
+      ],
+      "reencryption_matches_original": true
+    },
+    {
+      "sample": {
+        "original_path": "E:\\ManakaREA-NaturalGameplay\\UserData\\SaveDataBackup\\3.sd",
+        "snapshot_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\.cache\\save-codec\\35508884f14d1f96c9a81de83116b4493c8916e93dbb734c17111d32c13b51f1.sd",
+        "captured_sha256": "35508884f14d1f96c9a81de83116b4493c8916e93dbb734c17111d32c13b51f1",
+        "source_unchanged_during_capture": true
+      },
+      "encrypted_bytes": 139616,
+      "encrypted_sha256": "35508884f14d1f96c9a81de83116b4493c8916e93dbb734c17111d32c13b51f1",
+      "iv_hex": "2d545f55d07b5ab2080e69c911c22136",
+      "plaintext_bytes": 139593,
+      "plaintext_sha256": "0bf9c8b55bee27751c21e1e3ecde3ef7c85ea951ec307849322fee26e6f58278",
+      "utf8_bom": false,
+      "text_consumed": 139279,
+      "numeric_dictionary_keys": 2114,
+      "strict_json_accepted": false,
+      "shapes": {
+        "ObjectPairs": 372,
+        "bool": 2600,
+        "float": 66,
+        "int": 6702,
+        "list": 942,
+        "str": 3308
+      },
+      "keys": [
+        {
+          "key": "PlayerCustomData",
+          "stored_type": "ExposureUnnoticed2.Scripts.InGame.PlayerCustomData,Assembly-CSharp",
+          "value_kind": "ObjectPairs",
+          "declared_type_id": 2587,
+          "stored_fields": 66,
+          "declared_fields": 66,
+          "missing_fields": [],
+          "additional_fields": [],
+          "all_declared_fields_present": true,
+          "stored_type_matches_declaration": true
+        },
+        {
+          "key": "IsTrial",
+          "stored_type": "bool",
+          "value_kind": "bool"
+        },
+        {
+          "key": "GameStateData",
+          "stored_type": "ExposureUnnoticed2.Scripts.InGame.GameStateData,Assembly-CSharp",
+          "value_kind": "ObjectPairs",
+          "declared_type_id": 2586,
+          "stored_fields": 107,
+          "declared_fields": 107,
+          "missing_fields": [],
+          "additional_fields": [],
+          "all_declared_fields_present": true,
+          "stored_type_matches_declaration": true
+        },
+        {
+          "key": "SaveDataSlotIndex",
+          "stored_type": "int",
+          "value_kind": "int"
+        }
+      ],
+      "reencryption_matches_original": true
+    }
+  ],
+  "summary": {
+    "samples": 8,
+    "root_entries": 37,
+    "numeric_dictionary_keys": 12895,
+    "reencryption_matches": 8,
+    "roots_with_all_declared_fields": 16
+  },
+  "limitations": [
+    "Encrypted samples and all plaintext remain outside tracked artifacts; only hashes, type names, keys and schema coverage are retained.",
+    "Captured source hashes were checked before/after reading; future runs use immutable cache snapshots, not changing game files.",
+    "Re-encryption is in-memory with the original IV; it is not a game-object save/load roundtrip or a fresh-IV writer.",
+    "Structural parsing covers the observed string/numeric-key grammar; references, object constructors, defaults, migrations and arbitrary ES3 features are not restored."
+  ]
+}

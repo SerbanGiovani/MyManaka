@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "name": "save-codec-tail",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\save-codec-tail.seeds.tsv",
+  "seed_sha256": "d0c2d3c3a3c739ad91a8ea4c0bb14cdaf91bd881bd8ef04962cdbde25b528e28",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\save-codec-tail",
+  "seed_count": 6260,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 5374,
+      "qualified_name": "System.Text.Encoding::get_UTF8",
+      "assembly": "mscorlib.dll",
+      "token": "0x60014ff",
+      "va": "0x1816df430",
+      "file_offset": 23977008,
+      "label": "System_Text_Encoding__get_UTF8__060014ff",
+      "file_stem": "5374-060014ff",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 5471,
+      "qualified_name": "System.Security.Cryptography.Rfc2898DeriveBytes::.ctor",
+      "assembly": "mscorlib.dll",
+      "token": "0x6001560",
+      "va": "0x1814951c0",
+      "file_offset": 21576128,
+      "label": "System_Security_Cryptography_Rfc2898DeriveBytes___ctor__06001560",
+      "file_stem": "5471-06001560",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 5473,
+      "qualified_name": "System.Security.Cryptography.Rfc2898DeriveBytes::.ctor",
+      "assembly": "mscorlib.dll",
+      "token": "0x6001562",
+      "va": "0x181495490",
+      "file_offset": 21576848,
+      "label": "System_Security_Cryptography_Rfc2898DeriveBytes___ctor__06001562",
+      "file_stem": "5473-06001562",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 5474,
+      "qualified_name": "System.Security.Cryptography.Rfc2898DeriveBytes::.ctor",
+      "assembly": "mscorlib.dll",
+      "token": "0x6001563",
+      "va": "0x181495530",
+      "file_offset": 21577008,
+      "label": "System_Security_Cryptography_Rfc2898DeriveBytes___ctor__06001563",
+      "file_stem": "5474-06001563",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 5476,
+      "qualified_name": "System.Security.Cryptography.Rfc2898DeriveBytes::GetBytes",
+      "assembly": "mscorlib.dll",
+      "token": "0x6001565",
+      "va": "0x1814956e0",
+      "file_offset": 21577440,
+      "label": "System_Security_Cryptography_Rfc2898DeriveBytes__GetBytes__06001565",
+      "file_stem": "5476-06001565",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 5477,
+      "qualified_name": "System.Security.Cryptography.Rfc2898DeriveBytes::OpenHmac",
+      "assembly": "mscorlib.dll",
+      "token": "0x6001566",
+      "va": "0x181495890",
+      "file_offset": 21577872,
+      "label": "System_Security_Cryptography_Rfc2898DeriveBytes__OpenHmac__06001566",
+      "file_stem": "5477-06001566",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 5478,
+      "qualified_name": "System.Security.Cryptography.Rfc2898DeriveBytes::Initialize",
+      "assembly": "mscorlib.dll",
+      "token": "0x6001567",
+      "va": "0x181495cf0",
+      "file_offset": 21578992,
+      "label": "System_Security_Cryptography_Rfc2898DeriveBytes__Initialize__06001567",
+      "file_stem": "5478-06001567",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 5479,
+      "qualified_name": "System.Security.Cryptography.Rfc2898DeriveBytes::Func",
+      "assembly": "mscorlib.dll",
+      "token": "0x6001568",
+      "va": "0x181495db0",
+      "file_offset": 21579184,
+      "label": "System_Security_Cryptography_Rfc2898DeriveBytes__Func__06001568",
+      "file_stem": "5479-06001568",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 5555,
+      "qualified_name": "System.Security.Cryptography.Aes::.ctor",
+      "assembly": "mscorlib.dll",
+      "token": "0x60015b4",
+      "va": "0x18149cfd0",
+      "file_offset": 21608400,
+      "label": "System_Security_Cryptography_Aes___ctor__060015b4",
+      "file_stem": "5555-060015b4",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 5556,
+      "qualified_name": "System.Security.Cryptography.Aes::Create",
+      "assembly": "mscorlib.dll",
+      "token": "0x60015b5",
+      "va": "0x18149d110",
+      "file_offset": 21608720,
+      "label": "System_Security_Cryptography_Aes__Create__060015b5",
+      "file_stem": "5556-060015b5",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 5812,
+      "qualified_name": "System.Security.Cryptography.SymmetricAlgorithm::.ctor",
+      "assembly": "mscorlib.dll",
+      "token": "0x60016b5",
+      "va": "0x1814b2b50",
+      "file_offset": 21697360,
+      "label": "System_Security_Cryptography_SymmetricAlgorithm___ctor__060016b5",
+      "file_stem": "5812-060016b5",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 60023,
+      "qualified_name": "System.Security.Cryptography.AesManaged::.ctor",
+      "assembly": "System.Core.dll",
+      "token": "0x6000025",
+      "va": "0x1816e1be0",
+      "file_offset": 23987168,
+      "label": "System_Security_Cryptography_AesManaged___ctor__06000025",
+      "file_stem": "60023-06000025",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 60042,
+      "qualified_name": "System.Security.Cryptography.AesCryptoServiceProvider::.ctor",
+      "assembly": "System.Core.dll",
+      "token": "0x6000038",
+      "va": "0x1816e24b0",
+      "file_offset": 23989424,
+      "label": "System_Security_Cryptography_AesCryptoServiceProvider___ctor__06000038",
+      "file_stem": "60042-06000038",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "native_only_1809fce30",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x1809fce30",
+      "file_offset": 10466864,
+      "label": "native_only_1809fce30__00000000",
+      "file_stem": "native-0x1809fce30",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 import hashlib
 import gzip
 import runpy
+import sys
 import json
 from pathlib import Path
 
@@ -522,6 +523,35 @@ def main():
     check(len(save_generics["selected_instantiations"]) == 220 and len(save_generics["unique_native_addresses"]) == 57, "Save closed generic registration differs")
     check(len(save_schema["generic_body_links"]) == 13 and all(r["evidence_id"] in observations for r in save_schema["generic_body_links"]), "Save generic body observations missing")
     check(all(r["representative"] in save_generics["selected_instantiations"] and r["representative"]["native_va"] == r["va"] for r in save_schema["generic_body_links"]), "Save shared generic identity differs")
+    save_codec = read(ROOT / "salt/evidence/save-codec-chain.json")
+    save_settings = read(ROOT / "assets/save-settings.json")
+    save_validation = read(ROOT / "salt/evidence/save-codec-validation.json")
+    check(save_codec["native_sha256"] == identity["native_sha256"] and save_codec["metadata_sha256"] == identity["metadata_sha256"], "Save codec native identity differs")
+    check(save_codec["new_observations"] == save_codec["new_unique_evidence_ids"] == save_codec["new_unique_procedure_addresses"] == 56, "Save codec queries differ")
+    check(all(m["evidence_id"] in observations for m in save_codec["methods"]), "Save codec observations missing")
+    for source in save_codec["sources"] + save_validation["sources"]:
+        check(digest(ROOT / source["path"]) == source["sha256"], "Save codec source differs")
+    for source in save_settings["sources"]:
+        check(digest(Path(source["path"])) == source["sha256"], "Save settings parser differs")
+    for batch in save_codec["batches"]:
+        if batch["new_this_round"]:
+            run = read(ROOT / "salt/evidence" / batch["name"] / "run.json")
+            check(run["success"] and not run.get("close_error") and not run.get("transport_close_error"), "Save codec REA session not closed successfully")
+    settings = save_settings["defaults_object"]
+    check(settings["end_of_object_verified"] and settings["bytes_consumed"] == 576, "Save default resource extent differs")
+    check(settings["settings"]["encryptionType"]["enum_name"] == "AES" and settings["settings"]["compressionType"]["enum_name"] == "None" and settings["settings"]["format"]["enum_name"] == "JSON", "Save effective serialized modes differ")
+    check(save_validation["summary"] == dict(samples=8, root_entries=37, numeric_dictionary_keys=12895, reencryption_matches=8, roots_with_all_declared_fields=16), "Save sample coverage differs")
+    check(all(r["encrypted_sha256"] == r["sample"]["captured_sha256"] and r["sample"]["source_unchanged_during_capture"] and r["reencryption_matches_original"] for r in save_validation["samples"]), "Save captured envelope validation differs")
+    save_roots = [k for r in save_validation["samples"] for k in r["keys"] if "declared_type_id" in k]
+    check(len(save_roots) == 16 and all(k["stored_type_matches_declaration"] and k["all_declared_fields_present"] and not k["missing_fields"] and not k["additional_fields"] for k in save_roots), "Stored save root schema differs")
+    if args.inputs:
+        sys.path.insert(0, str(ROOT / "salt"))
+        try:
+            save_analyzer = runpy.run_path(str(ROOT / "salt/validate_saves.py"))
+            measured_save = save_analyzer["build"]([r["sample"] for r in save_validation["samples"]])
+            check(measured_save == save_validation, "Independent save decoding differs")
+        finally:
+            sys.path.pop(0)
     time_stop = read(ROOT / "salt/evidence/time-stop-chain.json")
     natural_chain = read(ROOT / "salt/evidence/natural-chain.json")
     notification_chain = read(ROOT / "salt/evidence/notification-chain.json")
@@ -547,10 +577,17 @@ def main():
                  (Path(decryption["source"]), decryption["source_sha256"]),
                  (Path(decryption["plaintext"]["path"]), decryption["plaintext"]["sha256"])]
         known = {str(path).casefold() for path, _ in paths}
+        for sample in save_validation["samples"]:
+            path = Path(sample["sample"]["snapshot_path"])
+            if str(path).casefold() not in known:
+                paths.append((path, sample["encrypted_sha256"]))
+                known.add(str(path).casefold())
         supplements = [read(ROOT / "salt/symbols" / name) for name in
                       ("dispatch-metadata.json", "field-offsets.json", "instantiation-generics.json")]
         source_records = list(declarations["sources"])
         source_records.extend(save_layouts["sources"])
+        source_records.extend(save_settings["wrapper_declarations"]["sources"])
+        source_records.append(save_settings["wrapper_declarations"]["parser"])
         source_records.extend([scene_assets["stage_enum"]["source"], scene_assets["stage_enum"]["parser"]])
         source_records.extend(player_assets["wrapper_declarations"]["sources"])
         source_records.extend(bareta_assets["wrapper_declarations"]["sources"])

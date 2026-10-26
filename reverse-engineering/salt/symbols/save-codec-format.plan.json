@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "name": "save-codec-format",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\save-codec-format.seeds.tsv",
+  "seed_sha256": "3c3b4e75a0dc7d90c3dbf737670a1f89a0659a271efbb61a3128d505970438fd",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\save-codec-format",
+  "seed_count": 6247,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 5544,
+      "qualified_name": "System.Security.Cryptography.HashAlgorithmName::get_SHA1",
+      "assembly": "mscorlib.dll",
+      "token": "0x60015a9",
+      "va": "0x18149cc20",
+      "file_offset": 21607456,
+      "label": "System_Security_Cryptography_HashAlgorithmName__get_SHA1__060015a9",
+      "file_stem": "5544-060015a9",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 12904,
+      "qualified_name": "ES3Internal.ES3IO::.cctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600061f",
+      "va": "0x180593410",
+      "file_offset": 5839888,
+      "label": "ES3Internal_ES3IO___cctor__0600061f",
+      "file_stem": "12904-0600061f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 13038,
+      "qualified_name": "ES3Internal.ES3JSONReader::StartReadDictionary",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60006a5",
+      "va": "0x1805a0700",
+      "file_offset": 5893888,
+      "label": "ES3Internal_ES3JSONReader__StartReadDictionary__060006a5",
+      "file_stem": "13038-060006a5",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 13040,
+      "qualified_name": "ES3Internal.ES3JSONReader::StartReadDictionaryKey",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60006a7",
+      "va": "0x1805a0720",
+      "file_offset": 5893920,
+      "label": "ES3Internal_ES3JSONReader__StartReadDictionaryKey__060006a7",
+      "file_stem": "13040-060006a7",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 13041,
+      "qualified_name": "ES3Internal.ES3JSONReader::EndReadDictionaryKey",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60006a8",
+      "va": "0x1805a0760",
+      "file_offset": 5893984,
+      "label": "ES3Internal_ES3JSONReader__EndReadDictionaryKey__060006a8",
+      "file_stem": "13041-060006a8",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 13206,
+      "qualified_name": "ES3Internal.ES3JSONWriter::StartWriteDictionary",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600074d",
+      "va": "0x1805a9620",
+      "file_offset": 5930528,
+      "label": "ES3Internal_ES3JSONWriter__StartWriteDictionary__0600074d",
+      "file_stem": "13206-0600074d",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 13208,
+      "qualified_name": "ES3Internal.ES3JSONWriter::StartWriteDictionaryKey",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600074f",
+      "va": "0x1805a95e0",
+      "file_offset": 5930464,
+      "label": "ES3Internal_ES3JSONWriter__StartWriteDictionaryKey__0600074f",
+      "file_stem": "13208-0600074f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 13209,
+      "qualified_name": "ES3Internal.ES3JSONWriter::EndWriteDictionaryKey",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000750",
+      "va": "0x1805a9660",
+      "file_offset": 5930592,
+      "label": "ES3Internal_ES3JSONWriter__EndWriteDictionaryKey__06000750",
+      "file_stem": "13209-06000750",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}
