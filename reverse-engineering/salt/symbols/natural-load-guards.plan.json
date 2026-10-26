@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "name": "natural-load-guards",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\natural-load-guards.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\natural-load-guards",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 16690,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.DebugController::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60014e9",
+      "va": "0x1804869f0",
+      "file_offset": 4739568,
+      "label": "ExposureUnnoticed2_Scripts_InGame_DebugController__Initialize__060014e9",
+      "file_stem": "16690-060014e9",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16693,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.DebugController::.cctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60014ec",
+      "va": "0x1804879f0",
+      "file_offset": 4743664,
+      "label": "ExposureUnnoticed2_Scripts_InGame_DebugController___cctor__060014ec",
+      "file_stem": "16693-060014ec",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

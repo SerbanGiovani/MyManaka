@@ -137,9 +137,15 @@
     },
     {
       "id": "U023",
-      "status": "open-natural-load-lifecycle-and-negative-runtime-coverage",
+      "status": "answered-for-default-guards-and-passive-entry-scope-with-readback-pending",
       "question": "Verify natural title load, scene normalization and NPC snapshot eligibility, then absent/fixed/elevator NPCs, cold-cache drops and interrupted restoration",
-      "boundary": "The controlled restore trial explicitly enters the native consumers in an already initialized Mall, reconciles loaded stage0 to actual stage11, and primes isLoadedData with OnLoadData. This establishes selected native object reconstruction, not natural entry reachability. Current-item activation reuses its hidden fixture cache. Earlier instrumentation/path/bootstrap and cleanup failures remain archived and are excluded from the clean-trial count. See state-restore-runtime.md and runtime/state-restore/results.json."
+      "boundary": "Follow-up natural-load.md adds10 static queries, a139898-fragment/8534275-instruction original-byte scan, and passive original-input observation. DebugController cctor sets force=true independently of IsDebug=false. Both title/new-game startups take forced RepopNpc; no OnLoadData call is observed. Three imported records from a controlled-origin file are read but not instantiated. A naturally started game reaches Residence with25 live NPCs/fixed count20 while loaded=false and saved NPC count0; four original snapshot entry/return pairs remain0. A real natural save is independently decoded from SaveDataBackup/1.sd, stage0 and empty NPC list. It is not SaveData/1.sd, and no fresh main-slot title readback was performed before the user requested suspension. Wider/indirect writes, reflection/modification, fixed/elevator/cold-cache/interruption cases remain open. The separate controlled positive replay remains scoped in state-restore-runtime.md."
+    },
+    {
+      "id": "U024",
+      "status": "pending-next-user-run-after-explicit-suspension",
+      "question": "Complete naturally produced main-slot or native backup recovery from the title, then compare player pose and scene readiness",
+      "boundary": "User requested suspension after saving and returning to Title. PID49736 was successfully suspended, then a later Windows AppHang closure was observed and the process was absent at final check; in-memory resume is unavailable. REA is detached and saved files remain. Only SaveDataBackup/1.sd exists for slot1, not SaveData/1.sd. Relaunch the isolated copy and follow runtime/natural-load/next-run.md; reconnect passive REA before original UI actions. Do not claim a fresh title readback or modify the default guard to manufacture natural reachability."
     }
   ]
 }

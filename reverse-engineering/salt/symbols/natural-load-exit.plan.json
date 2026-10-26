@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "name": "natural-load-exit",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\natural-load-exit.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\natural-load-exit",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 17513,
+      "qualified_name": "<>c::<OnClickSaveAndGoToTitle>b__18_1",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001820",
+      "va": "0x1804c27f0",
+      "file_offset": 4984816,
+      "label": "__c___OnClickSaveAndGoToTitle_b__18_1__06001820",
+      "file_stem": "17513-06001820",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17514,
+      "qualified_name": "<>c::<OnClickSaveAndGoToTitle>b__18_2",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001821",
+      "va": "0x1804c2a10",
+      "file_offset": 4985360,
+      "label": "__c___OnClickSaveAndGoToTitle_b__18_2__06001821",
+      "file_stem": "17514-06001821",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

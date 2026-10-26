@@ -2,6 +2,8 @@
 
 2026-10-27，在完整独立副本 `E:\ManakaREA-NaturalGameplay` 中完成 **1 轮干净的受控原生往返**。原生 `SaveManager.Save/Load` 写入、读取真实加密文件；独立 Python 解码器核对磁盘字段；REA/Frida 记录恢复入口、闭包、Warp、Drop、Hide 和预留谓词返回；Unity 主线程读取最终对象。
 
+后续 [自然标题与默认守卫验证](natural-load.md) 确认出厂force=true绕过OnLoadData，loaded保持false；本页的受控正例不能据此推广为自然非空NPC保存已可达。自然新档备份已生成，再次标题读回按用户要求留待下次。
+
 结果覆盖 **3 名动态 NPC、1 项当前场景掉落物、1 项异场景掉落物、2 项不同场景的预留记录**。这是选定原生消费者的受控重放，**自然输入测试为 0 轮**。没有证明完整标题读档后自动回到商场，也没有生成替代游戏。
 
 可复查结果：[results.json](runtime/state-restore/results.json)、[原生文件投影](runtime/state-restore/native-save.json)、[REA 原始记录](runtime/state-restore/rea-runtime.json)、[运行清单](runtime/state-restore/manifest.json)。本轮保留 **4 份完成轮的 canonical REA observations**；另以压缩档保存全部 36 份诊断/准备记录，失败或受污染的轮次不计入完成轮。

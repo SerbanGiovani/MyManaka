@@ -307,6 +307,30 @@ def main():
         for row in restore_post["inputs"]:
             check(digest(Path(row["path"])) == digest(Path(row["original_path"])) == row["before"], "Restore engine/assets differ")
     observed_runtime_records[restore_dir / "rea-runtime.json"] = restore_runtime
+    load_dir = ROOT / "runtime/natural-load"
+    load_runtime = read(load_dir / "manifest.json")
+    check(load_runtime["observation_complete"] and load_runtime["passive_only"] and load_runtime["user_input_driven"] and
+          not load_runtime["natural_only"], "Natural-load capture/input authority differs")
+    for source in load_runtime["sources"]:
+        check(digest(load_dir / source["path"]) == source["sha256"], "Natural-load source differs")
+    for output in load_runtime["outputs"]:
+        path = load_dir / output["path"]
+        raw = gzip.decompress(path.read_bytes())
+        check(digest(path) == output["sha256"] and len(raw) == output["uncompressed_bytes"] and
+              hashlib.sha256(raw).hexdigest() == output["uncompressed_sha256"], "Natural-load capture differs")
+    load_analysis = runpy.run_path(str(load_dir / "analyze.py"))
+    check(load_analysis["build"](inputs=args.inputs) == read(load_dir / "results.json"), "Natural-load result joins differ")
+    load_bindings = runpy.run_path(str(ROOT / "salt/natural_load_evidence.py"))
+    check(load_bindings["build"]() == read(ROOT / "salt/evidence/natural-load-chain.json"), "Natural-load static bindings differ")
+    load_scan = read(load_dir / "guard-scan.json")
+    load_selection = runpy.run_path(str(load_dir / "prepare_guard_scan.py"))["build"]()
+    check(load_selection["methods"] == load_scan["methods"] and load_selection["npc_ranges"] == load_scan["npc_ranges"], "Natural-load nested-type scan selection differs")
+    load_post = read(load_dir / "post-state.json")
+    check(load_post["process"]["status"] == "suspended" and load_post["process"]["ntstatus"] == 0 and
+          load_post["frida_closed"], "Requested natural-load suspension receipt missing")
+    check(not load_post["process"]["present_at_final_check"] and not load_post["process"]["in_memory_resume_available"] and
+          load_runtime["resume_requires_relaunch"], "Natural-load final process state differs")
+    observed_runtime_records[load_dir / "rea-runtime.json"] = load_runtime
     verification = read(ROOT / "salt/evidence/decryption-verification.json")
     summary = read(ROOT / "salt/symbols/index-summary.json")
     object_record = asset["guid_object"]
@@ -665,6 +689,11 @@ def main():
             for name in ("path", "original_path"):
                 source_records.append({"path": entry[name], "sha256": entry["before"]})
         source_records.append({"path": restore_post["temporary_plugin"]["archived_path"], "sha256": restore_runtime["plugin"]["sha256"]})
+        for entry in load_post["inputs"]:
+            for name in ("path", "original_path"):
+                source_records.append({"path": entry[name], "sha256": entry["sha256"]})
+        source_records.append({"path": load_post["plugin"]["path"], "sha256": load_post["plugin"]["sha256"]})
+        source_records.append(load_scan["decoder"])
         for source in source_records:
             # Derived SQLite byte identity is not portable after rebuilding it;
             # reconstruction scripts validate its build identity and coordinates.

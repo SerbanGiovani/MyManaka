@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "observation_complete": true,
+  "natural_only": false,
+  "passive_only": true,
+  "user_input_driven": true,
+  "input_boundary": "Natural UI/actions and passive game-state observation; initial three-NPC input comes from the prior controlled trial, new-game and backup are naturally produced.",
+  "sessions": [
+    {
+      "session_id": "2ba79344-527b-49ba-9722-4bf2501d20f4",
+      "pid": 49736,
+      "state": "running",
+      "closed_by_operator": true,
+      "authority": "passive-natural"
+    }
+  ],
+  "evidence_ids": [
+    "ev_90ac045e5de0d71707fe29cb3c1f409922cbb7e65c434ffcd91861fc0e2a3912",
+    "ev_d260d525b543d5b58bcad6f3d140e4f5bef7709e5e1053a8164c7b7639f11508",
+    "ev_d1e86837c37f4fdac64d3a6f8b63ba6bb52afecf15611200a223dd5d87dd2615"
+  ],
+  "sources": [
+    {
+      "path": "Observe.cs",
+      "sha256": "bf01f7c7f2fb5ddfd148ee0964ed4d4f542dd5ad3113b7ce9d363e23823c2a38"
+    },
+    {
+      "path": "build.ps1",
+      "sha256": "de2417c698b4147372f91ffc86b365da6181d6f80ee5967c7801702b9adfb7b8"
+    },
+    {
+      "path": "observe.js",
+      "sha256": "0c1f64c17a53dd420e6bf9e8dd3c2d4e53754a9a336316e218a7dc65859d654d"
+    },
+    {
+      "path": "observe-v2.js",
+      "sha256": "52c360ee8b5521685799929c4d033ce674c12b12a18bdcfff7d1bcd99df99f0f"
+    },
+    {
+      "path": "scan-guards.ps1",
+      "sha256": "ee11c7031538bae9e37042fbe4564ea4e29733f138b11a93aef5b458497a7f8d"
+    },
+    {
+      "path": "prepare_guard_scan.py",
+      "sha256": "3b966ef5d2701b12f0953e36e21d12492321c5f784a9aa231297f798c053492e"
+    },
+    {
+      "path": "hold-process.ps1",
+      "sha256": "c938e76303132ca6751cb27a714e780992c70939079e4c9deb31333ddbf1015a"
+    },
+    {
+      "path": "analyze.py",
+      "sha256": "9cb0adcb34b60fff277d917df8ce30a49b1217310b551a61925e248ed11b35ac"
+    },
+    {
+      "path": "collect.py",
+      "sha256": "c319295cda9be8e2443401b34cbc24752e4409f6c3fecc59d65e61af84366e09"
+    },
+    {
+      "path": "test_analysis.py",
+      "sha256": "c007c7959b9bec4ed1a891e3ec137502ebaa56420be0b556a808d3dac2c375bf"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "state.jsonl.gz",
+      "sha256": "f96073d270544768700740b462c8346c5b8b70467f597d0584d97a7bad99b389",
+      "uncompressed_bytes": 797653,
+      "uncompressed_sha256": "003e6bcbcc56fac7f4feaced400e1c141fea9fafde7a7c1b6eac3928d3c06326"
+    },
+    {
+      "path": "native-paths.jsonl.gz",
+      "sha256": "d985115c1b85f3263abfc3898e8effb35374bb36e7cdcf8152591224196e3ee1",
+      "uncompressed_bytes": 1407083,
+      "uncompressed_sha256": "74655b4210c9017fa57ce5f3763ea4b9a89fa96e940bc8c4db6e373299979f53"
+    },
+    {
+      "path": "engine.log.gz",
+      "sha256": "4b28c2882075c6149e4f6646bf8a472a5dcf6da6615bb7053a6a9ee85fc9bb7e",
+      "uncompressed_bytes": 76817,
+      "uncompressed_sha256": "581ec50e5907e1b1572705130386fa7185a7d1b7e593c6474aa79b553b772627"
+    }
+  ],
+  "process_suspend_receipt_success": true,
+  "process_retained_suspended": false,
+  "resume_requires_relaunch": true
+}

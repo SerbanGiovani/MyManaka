@@ -1,0 +1,23 @@
+{
+  "pid": 49736,
+  "process_present": false,
+  "observed_utc": "2026-10-26T20:10:48.4329600Z",
+  "observation": "Get-Process and Win32_Process found no matching process",
+  "events": [
+    {
+      "id": 1002,
+      "record_id": 972444,
+      "time_utc": "2026-10-26T20:06:23.9964044Z",
+      "provider": "Application Hang",
+      "kind": "Application stopped interacting and was closed; event names PID c248 (49736) and isolated executable"
+    },
+    {
+      "id": 1001,
+      "record_id": 972443,
+      "time_utc": "2026-10-26T20:06:23.8803855Z",
+      "provider": "Windows Error Reporting",
+      "kind": "AppHangB1 for SecretFlasherManaka.exe"
+    }
+  ],
+  "scope": "Suspension succeeded earlier; later application-hang closure was observed. Initiator/cause not established."
+}
