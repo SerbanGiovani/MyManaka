@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-24T16:21:38.005577+00:00",
+  "generated_at_utc": "2026-10-26T16:14:50.261047+00:00",
   "status": "consistent",
-  "canonical_rea_observations": 615,
+  "canonical_rea_observations": 617,
   "rea_queries_completed": 524,
   "artifacts": [
     {
@@ -107,8 +107,8 @@
     },
     {
       "path": "audit.py",
-      "bytes": 46350,
-      "sha256": "7a3883c320dd0c0b219bf0c8ecf2e52ed6b8e946b31e2375eccb7429dae41938"
+      "bytes": 49994,
+      "sha256": "c2bad5ac4c30ff180b85038c06d533a71f79086c7b898fa98400ec0853fafbf5"
     },
     {
       "path": "bareta-chain.md",
@@ -151,6 +151,11 @@
       "sha256": "ca1289a72e34b699897a402d64a18304ef57af9dc18ddd2e653e6f3502880195"
     },
     {
+      "path": "noise-return.md",
+      "bytes": 4174,
+      "sha256": "82116f6eaf3a4771c095f292cc0aefef8bac813ab0f732f0d1d62caf3ee2a3f9"
+    },
+    {
       "path": "notification-scenarios.md",
       "bytes": 7438,
       "sha256": "f4292ff309a35ecbd80ee877559ceb28236e9d30c946538a59b6e199291acfb6"
@@ -177,8 +182,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 18747,
-      "sha256": "b4f4130e35c399480076997a152a1bc8fafae42664c8c025dba41826f818b082"
+      "bytes": 19199,
+      "sha256": "a89a6c9523c3fa963d043af49b82b2eccc00a7096f26176343afe85312dff48c"
     },
     {
       "path": "runtime/natural-cancellation/analyze.py",
@@ -749,6 +754,56 @@
       "path": "runtime/noise-cancellation/v3-window.jsonl.gz",
       "bytes": 111136,
       "sha256": "7ba3dfb28226165e9d973c05742f194bdfcbcbf53ce763fae32a15243909b474"
+    },
+    {
+      "path": "runtime/noise-return/analyze.py",
+      "bytes": 6255,
+      "sha256": "829f7263f31d93bd3b6a1d6ed7f64bde29567710dff407560717cea43b233b0b"
+    },
+    {
+      "path": "runtime/noise-return/build_probe.py",
+      "bytes": 5665,
+      "sha256": "3862727b3a987a77509de850acbefcad2bde110787fa4718227260d42741e066"
+    },
+    {
+      "path": "runtime/noise-return/collect.py",
+      "bytes": 6235,
+      "sha256": "79c13b55595285398db54e93a6654019cc9c424da4baa97bbcfb4827136f881d"
+    },
+    {
+      "path": "runtime/noise-return/manifest.json",
+      "bytes": 6091,
+      "sha256": "824eb172f98529c319034f1a06bda38b59294e462f78edfe6cbd044aa3ec7bb8"
+    },
+    {
+      "path": "runtime/noise-return/natural-window.jsonl.gz",
+      "bytes": 202603,
+      "sha256": "c572fd28bac4a11dac3f3f195cbcbab8c9e47df859d4b6835ab33935c51b83a4"
+    },
+    {
+      "path": "runtime/noise-return/observe.js",
+      "bytes": 19605,
+      "sha256": "13ae229ddff691142de32531a885ee1849e72e142db3041a01686ea945cf3470"
+    },
+    {
+      "path": "runtime/noise-return/rea-runtime.json",
+      "bytes": 2369915,
+      "sha256": "0d5188a5f6cea6d474e84bf9adc051bdfbd36a41e68cdbf795ca993dc4a3fc62"
+    },
+    {
+      "path": "runtime/noise-return/results.json",
+      "bytes": 2522331,
+      "sha256": "dd0f60b19f18939b0bc1fec6fcb5c1a4b6aa88cfb3c0ca416e4467a732ffc2b7"
+    },
+    {
+      "path": "runtime/noise-return/source-save-baseline.json",
+      "bytes": 1720,
+      "sha256": "a2cd78355a566fb2fca09deb8bdfcb316c6310e8a69a6a47b5475baed6497a68"
+    },
+    {
+      "path": "runtime/noise-return/test_analysis.py",
+      "bytes": 3118,
+      "sha256": "3f7b87bbf0c70a40f806a87ba90a08928c30c20806206730353133ddffb124f7"
     },
     {
       "path": "runtime/npc-event-timing/analyze.py",
@@ -7536,176 +7591,7 @@
       "sha256": "066172e40d9b48cbf93cb64a4213d20269916f4f183f099aca12286a395af801"
     }
   ],
-  "inputs_checked": [
-    {
-      "path": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
-      "sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
-    },
-    {
-      "path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
-      "sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8"
-    },
-    {
-      "path": "E:\\SecretFlasherManakaREA\\BepInEx\\interop\\IKA9nt.Encrypter.dll",
-      "sha256": "60efe344e94846b5d340b0ec0258b9c84e7b5108c447d35ef67f6247b0e51222"
-    },
-    {
-      "path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\data.unity3d",
-      "sha256": "20781befb4cc42f898b65fe03f3d16c0a77b53aecac6ddc388460cfb710ae93a"
-    },
-    {
-      "path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\StreamingAssets\\StandaloneWindows64\\-265379604",
-      "sha256": "bb3a495d023a00ff95c110955a436e4d4dd2eea0598919401eb236d3e132ade9"
-    },
-    {
-      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\.cache\\decrypted\\models.unity3d",
-      "sha256": "98621b2c4fa4f9de80f355fae5776ab17efc016bcc81c581bcd0917af4308367"
-    },
-    {
-      "path": "E:\\SecretFlasherManakaREA\\BepInEx\\interop\\Assembly-CSharp.dll",
-      "sha256": "4603f1163ae85ba6b7faafe5fba5da642a6de2d81a93e5b711f35f04663c7744"
-    },
-    {
-      "path": "E:\\SecretFlasherManakaREA\\BepInEx\\interop\\UnityEngine.CoreModule.dll",
-      "sha256": "1caf2bf4d1ea83d88a376e49a367dce6fb5ebfc3c5c27f159605cc781b371514"
-    },
-    {
-      "path": "E:\\SecretFlasherManakaREA\\BepInEx\\interop\\UnityEngine.AssetBundleModule.dll",
-      "sha256": "3771df5075222a33fad4904e32158a702e46ff3dadd17fbd529b90bd46e61818"
-    },
-    {
-      "path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\RuntimeInitializeOnLoads.json",
-      "sha256": "ed4da1e20cfae78b9a2bf75d54342148e3177ae574b0036e226f2aa2022ee7d1"
-    },
-    {
-      "path": "E:\\SecretFlasherManakaREA\\BepInEx\\interop\\IKA9nt.Encrypter.Demo.dll",
-      "sha256": "a00fafe1553cfd162eee7a6c5c3970df97cd7ae3eab1b901fab0891fc5cb8ae4"
-    },
-    {
-      "path": "E:\\SecretFlasherManakaREA\\BepInEx\\interop\\IKA9nt.Encrypter.Demo2.dll",
-      "sha256": "d268dc4185c603200cdea6c80f9bdecd5be4700b391417f79087ffe007c1e5ae"
-    },
-    {
-      "path": "E:\\SecretFlasherManakaREA\\BepInEx\\interop\\IKA9nt.Encrypter.Demo3.dll",
-      "sha256": "2d07cb26462bb8a64d58dc94b29e37a8fae1465eb8ea0dc9decd883c69e78f37"
-    },
-    {
-      "path": "E:\\SecretFlasherManakaREA\\BepInEx\\core\\Mono.Cecil.dll",
-      "sha256": "769a59793d4b8885bbbfbc5aee8f57a0d4e34d275c56c60c03994309b87f67e9"
-    },
-    {
-      "path": "E:\\SecretFlasherManakaREA\\BepInEx\\interop\\Unity.InputSystem.dll",
-      "sha256": "95b59c3f09f94ea48c0b608fa92cd20f140b6dc14f0b20ff559c502cfcba1239"
-    },
-    {
-      "path": "E:\\SecretFlasherManakaREA\\BepInEx\\interop\\UnityEngine.PhysicsModule.dll",
-      "sha256": "e7483a21e29eec4ae033625de32b4e08c41d1d7e03eecd453dd74ffd4020a994"
-    },
-    {
-      "path": "E:\\SecretFlasherManakaREA\\BepInEx\\core\\Iced.dll",
-      "sha256": "f058c01321b4cdfc9b9151879e88e59571c8d0ba176fbcf95bc936a8f3d073ed"
-    },
-    {
-      "path": "E:\\SecretFlasherManakaREA\\BepInEx\\core\\LibCpp2IL.dll",
-      "sha256": "f9bf8e432e9a914469a89c4827a4beb4672076b7d8ff504708241b4dcc295ef6"
-    },
-    {
-      "path": "E:\\ManakaREA-RuntimeFixture\\GameAssembly.dll",
-      "sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
-    },
-    {
-      "path": "E:\\SecretFlasherManakaREA\\UnityPlayer.dll",
-      "sha256": "43fb0aea1b80c74963dae88ec7fc1c3c1993d893ce94d12972000fcc9b653ad1"
-    },
-    {
-      "path": "E:\\ManakaREA-RuntimeFixture\\UnityPlayer.dll",
-      "sha256": "43fb0aea1b80c74963dae88ec7fc1c3c1993d893ce94d12972000fcc9b653ad1"
-    },
-    {
-      "path": "E:\\ManakaREA-RuntimeFixture\\SecretFlasherManaka_Data\\data.unity3d",
-      "sha256": "20781befb4cc42f898b65fe03f3d16c0a77b53aecac6ddc388460cfb710ae93a"
-    },
-    {
-      "path": "E:\\ManakaREA-RuntimeFixture\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
-      "sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8"
-    },
-    {
-      "path": "E:\\ManakaREA-RuntimeFixture\\BepInEx\\interop\\Assembly-CSharp.dll",
-      "sha256": "4603f1163ae85ba6b7faafe5fba5da642a6de2d81a93e5b711f35f04663c7744"
-    },
-    {
-      "path": "E:\\SecretFlasherManakaREA\\BepInEx\\core\\Il2CppInterop.Runtime.dll",
-      "sha256": "14d2ee6cbe2af5d9448c72faa802c67dc1378192046bc348ea6709bd8909d00d"
-    },
-    {
-      "path": "E:\\ManakaREA-RuntimeFixture\\BepInEx\\core\\Il2CppInterop.Runtime.dll",
-      "sha256": "14d2ee6cbe2af5d9448c72faa802c67dc1378192046bc348ea6709bd8909d00d"
-    },
-    {
-      "path": "E:\\ManakaREA-RuntimeFixture\\BepInEx\\plugins\\NpcEventFixture.dll",
-      "sha256": "a9ea4c629f4ea96fc56842387fe4f15a32c3a8fbff4ee758b802c857ffcbe817"
-    },
-    {
-      "path": "E:\\ManakaREA-TimeStopFixture\\GameAssembly.dll",
-      "sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
-    },
-    {
-      "path": "E:\\ManakaREA-TimeStopFixture\\UnityPlayer.dll",
-      "sha256": "43fb0aea1b80c74963dae88ec7fc1c3c1993d893ce94d12972000fcc9b653ad1"
-    },
-    {
-      "path": "E:\\ManakaREA-TimeStopFixture\\SecretFlasherManaka_Data\\data.unity3d",
-      "sha256": "20781befb4cc42f898b65fe03f3d16c0a77b53aecac6ddc388460cfb710ae93a"
-    },
-    {
-      "path": "E:\\ManakaREA-TimeStopFixture\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
-      "sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8"
-    },
-    {
-      "path": "E:\\ManakaREA-TimeStopFixture\\BepInEx\\interop\\Assembly-CSharp.dll",
-      "sha256": "4603f1163ae85ba6b7faafe5fba5da642a6de2d81a93e5b711f35f04663c7744"
-    },
-    {
-      "path": "E:\\ManakaREA-TimeStopFixture\\BepInEx\\core\\Il2CppInterop.Runtime.dll",
-      "sha256": "14d2ee6cbe2af5d9448c72faa802c67dc1378192046bc348ea6709bd8909d00d"
-    },
-    {
-      "path": "E:\\ManakaREA-TimeStopFixture\\models.unity3d",
-      "sha256": "98621b2c4fa4f9de80f355fae5776ab17efc016bcc81c581bcd0917af4308367"
-    },
-    {
-      "path": "E:\\ManakaREA-TimeStopFixture\\BepInEx\\plugins\\TimeStopProducerFixture.dll",
-      "sha256": "de87be02255ed9550181454f4b80dd2a1a732e497cfb0257459b9b69f7ec204e"
-    },
-    {
-      "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
-      "sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
-    },
-    {
-      "path": "E:\\ManakaREA-NaturalGameplay\\UnityPlayer.dll",
-      "sha256": "43fb0aea1b80c74963dae88ec7fc1c3c1993d893ce94d12972000fcc9b653ad1"
-    },
-    {
-      "path": "E:\\ManakaREA-NaturalGameplay\\SecretFlasherManaka_Data\\data.unity3d",
-      "sha256": "20781befb4cc42f898b65fe03f3d16c0a77b53aecac6ddc388460cfb710ae93a"
-    },
-    {
-      "path": "E:\\ManakaREA-NaturalGameplay\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
-      "sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8"
-    },
-    {
-      "path": "E:\\ManakaREA-NaturalGameplay\\SecretFlasherManaka_Data\\StreamingAssets\\StandaloneWindows64\\-265379604",
-      "sha256": "bb3a495d023a00ff95c110955a436e4d4dd2eea0598919401eb236d3e132ade9"
-    },
-    {
-      "path": "E:\\ManakaREA-NaturalGameplay\\BepInEx\\plugins\\NaturalObserver.dll",
-      "sha256": "f0a94d41c55ff09e0ea56708c9d86bace4fd6fad68a7c982518f37b2d1996da8"
-    },
-    {
-      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\BepInEx\\unity-libs\\UnityEngine.AnimationModule.dll",
-      "sha256": "845df2635127c8fb14df3fef45f3c591ee619f0ec310795083469f23432692a7"
-    }
-  ],
+  "inputs_checked": [],
   "observations": [
     {
       "evidence_id": "ev_0097023450f5eb109828df9bef98aa93c0c37fac530cf1b273a996c1aa3e0eaf",
@@ -9238,6 +9124,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_83da57d949b5aed2a8ef12e73ad904c92492780fdb7433a020510127861e1b71",
+      "operation": "load_frida_script",
+      "subject_sha256": null
+    },
+    {
       "evidence_id": "ev_846f3796064a0e98eaa3e1a2e3e3f6ecbaf340d07eb324637129aba2bbeb94e3",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -10546,6 +10437,11 @@
       "evidence_id": "ev_e91a883ad635171e34f258aae8721c1fa620cecf80c2f9a1b7bfb4b624c5960c",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_e97c9ce82d6a66d9351b00030267c3e4e2718c03f43727c66ccb555691ccd6e9",
+      "operation": "frida_session_status",
+      "subject_sha256": null
     },
     {
       "evidence_id": "ev_ea503825f2a33ef36989836d7bd89b59bf9aabd18c5ea3cf3358eb826b98887d",

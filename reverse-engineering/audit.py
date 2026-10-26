@@ -250,6 +250,41 @@ def main():
     check(runtime_inputs["SecretFlasherManaka_Data/data.unity3d"] == asset["source_sha256"], "Runtime resources differ")
     recovered = read(ROOT / "salt/evidence/recovered-crypto.json")
     decryption = read(ROOT / "salt/evidence/decryption.json")
+    return_dir = ROOT / "runtime/noise-return"
+    return_runtime = read(return_dir / "manifest.json")
+    for item in return_runtime["sources"] + return_runtime["dependencies"]:
+        check(digest(ROOT / item["path"]) == item["sha256"], "Noise return source/dependency differs")
+    return_result = runpy.run_path(str(return_dir / "analyze.py"))["analyze"]()
+    check(return_result == read(return_dir / "results.json"), "Noise return measurements differ")
+    check(return_result["finished"] and return_runtime["observation_complete"] and return_runtime["natural_only"], "Noise return capture incomplete/mixed")
+    check(not return_result["script_errors"] and not return_result["natural"]["errors"], "Noise return script errors")
+    check(return_result["native_pairing"]["valid_calls"] == 458 and not return_result["native_pairing"]["invalid_calls"], "Noise return selected call pairing differs")
+    pre_return = [c["native_pre_event"] for c in return_result["natural"]["cases"]]
+    check(sum(c["calls"] for c in pre_return) == sum(c["decrement_pairs"] for c in pre_return) == sum(c["within_call_count_increases"] for c in pre_return) == 54, "Noise return pre-event decrement/reset pairs differ")
+    check(len(return_result["natural"]["cases"]) == 4 and all(return_result["counts"][k] == 4 for k in ["coverage_animation", "coverage_model", "coverage_callback", "coverage_listener"]), "Noise return natural event counts differ")
+    counters = return_result["counter_finishes"][0]["data"]
+    check(counters["entry"] == counters["leave"] == counters["continuation"] == 378432, "Noise return aggregate counters differ")
+    check(return_runtime["inputs"] == natural_runtime["inputs"] and return_runtime["current_plugin_sha256"] == natural_runtime["current_plugin_sha256"], "Noise return native/bootstrap identity differs")
+    check(all(s["closed_by_operator"] for s in return_runtime["sessions"]), "Noise return session not closed")
+    baseline = return_runtime["source_save_baseline"]
+    check(digest(return_dir / baseline["path"]) == baseline["sha256"], "Noise return baseline differs")
+    for output in return_runtime["outputs"]:
+        p = return_dir / output["path"]
+        check(digest(p) == output["sha256"], "Noise return compressed log differs")
+        payload = gzip.decompress(p.read_bytes())
+        check(len(payload) == output["uncompressed_bytes"] and hashlib.sha256(payload).hexdigest() == output["uncompressed_sha256"], "Noise return raw log differs")
+        bounds = output["selection"]
+        check(all(bounds["min_frame"] <= json.loads(line)["frame"] <= bounds["max_frame"] for line in payload.splitlines()), "Noise return log window differs")
+    return_raw = read(return_dir / "rea-runtime.json")
+    return_status = next(r for r in return_raw["records"] if r["operation"] == "frida_session_status")
+    decode = next(m["payload"]["data"] for m in return_status["normalized_result"]["messages"] if m.get("payload", {}).get("kind") == "return_decode")
+    check(len(decode["rows"]) == 8 and return_runtime["static_continuation"]["source_sha256"] == identity["native_sha256"], "Noise return instruction source differs")
+    native_data = (Path(identity["original_directory"]) / "GameAssembly.dll").read_bytes()
+    image = runpy.run_path(str(ROOT / "salt/metadata.py"))["PE"](native_data)
+    for row in decode["rows"]:
+        offset = image.offset(0x180000000 + int(row["rva"], 16), executable=True)
+        check(native_data[offset:offset+row["size"]] == bytes(row["bytes"]), "Noise return original instruction bytes differ")
+    observed_runtime_records[return_dir / "rea-runtime.json"] = return_runtime
     verification = read(ROOT / "salt/evidence/decryption-verification.json")
     summary = read(ROOT / "salt/symbols/index-summary.json")
     object_record = asset["guid_object"]

@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "observation_complete": true,
+  "natural_only": true,
+  "game_root": "E:\\ManakaREA-NaturalGameplay",
+  "evidence_ids": [
+    "ev_83da57d949b5aed2a8ef12e73ad904c92492780fdb7433a020510127861e1b71",
+    "ev_e97c9ce82d6a66d9351b00030267c3e4e2718c03f43727c66ccb555691ccd6e9"
+  ],
+  "sessions": [
+    {
+      "session_id": "b02441c3-66f6-4f64-aa4e-d44e26c641d8",
+      "pid": 2712,
+      "state": "running",
+      "closed_by_operator": true,
+      "authority": "passive-natural"
+    }
+  ],
+  "sources": [
+    {
+      "path": "runtime/noise-return/observe.js",
+      "sha256": "13ae229ddff691142de32531a885ee1849e72e142db3041a01686ea945cf3470"
+    },
+    {
+      "path": "runtime/noise-return/build_probe.py",
+      "sha256": "3862727b3a987a77509de850acbefcad2bde110787fa4718227260d42741e066"
+    },
+    {
+      "path": "runtime/noise-return/analyze.py",
+      "sha256": "829f7263f31d93bd3b6a1d6ed7f64bde29567710dff407560717cea43b233b0b"
+    },
+    {
+      "path": "runtime/noise-return/test_analysis.py",
+      "sha256": "3f7b87bbf0c70a40f806a87ba90a08928c30c20806206730353133ddffb124f7"
+    },
+    {
+      "path": "runtime/noise-return/collect.py",
+      "sha256": "79c13b55595285398db54e93a6654019cc9c424da4baa97bbcfb4827136f881d"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "runtime/noise-callsite/observe-natural.js",
+      "sha256": "565c29dcef4ed4c706424c0e1096f27c8261ec4d95738fd71aeb228414d751bb"
+    },
+    {
+      "path": "runtime/noise-cancellation/analyze.py",
+      "sha256": "9de37f5d18b9226cb769b66d7c2c2de507d44c45d0d9505c555e5efb5c16bb44"
+    },
+    {
+      "path": "runtime/natural-event-coverage/analyze.py",
+      "sha256": "1568ef4a6c665abb74cd09ec620c541e88cd124c49065e81eb518daec519d982"
+    },
+    {
+      "path": "runtime/natural-event-generation/analyze.py",
+      "sha256": "17ae3a0ec42649bb26d196afef93ec9077102186cba3591fc7128356ce026b9f"
+    }
+  ],
+  "source_save_baseline": {
+    "path": "source-save-baseline.json",
+    "sha256": "a2cd78355a566fb2fca09deb8bdfcb316c6310e8a69a6a47b5475baed6497a68"
+  },
+  "source_save_files_unchanged": 8,
+  "inputs": [
+    {
+      "relative_path": "GameAssembly.dll",
+      "original_path": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+      "sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "relative_path": "UnityPlayer.dll",
+      "original_path": "E:\\SecretFlasherManakaREA\\UnityPlayer.dll",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\UnityPlayer.dll",
+      "sha256": "43fb0aea1b80c74963dae88ec7fc1c3c1993d893ce94d12972000fcc9b653ad1"
+    },
+    {
+      "relative_path": "SecretFlasherManaka_Data/data.unity3d",
+      "original_path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\data.unity3d",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\SecretFlasherManaka_Data\\data.unity3d",
+      "sha256": "20781befb4cc42f898b65fe03f3d16c0a77b53aecac6ddc388460cfb710ae93a"
+    },
+    {
+      "relative_path": "SecretFlasherManaka_Data/il2cpp_data/Metadata/global-metadata.dat",
+      "original_path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
+      "sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8"
+    },
+    {
+      "relative_path": "SecretFlasherManaka_Data/StreamingAssets/StandaloneWindows64/-265379604",
+      "original_path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\StreamingAssets\\StandaloneWindows64\\-265379604",
+      "runtime_path": "E:\\ManakaREA-NaturalGameplay\\SecretFlasherManaka_Data\\StreamingAssets\\StandaloneWindows64\\-265379604",
+      "sha256": "bb3a495d023a00ff95c110955a436e4d4dd2eea0598919401eb236d3e132ade9"
+    }
+  ],
+  "current_plugin_sha256": "f0a94d41c55ff09e0ea56708c9d86bace4fd6fad68a7c982518f37b2d1996da8",
+  "outputs": [
+    {
+      "path": "natural-window.jsonl.gz",
+      "sha256": "c572fd28bac4a11dac3f3f195cbcbab8c9e47df859d4b6835ab33935c51b83a4",
+      "uncompressed_bytes": 1180808,
+      "uncompressed_sha256": "7dff686dc94676e151fda5959cd7e64674861e101beb743e442767b9bbdb76dc",
+      "original_path": "E:\\ManakaREA-NaturalGameplay\\natural.jsonl",
+      "original_start_offset": 400353681,
+      "original_snapshot_bytes": 22059351,
+      "original_snapshot_sha256": "da43c4b3198e3795601c3d399715ccad362651034818df8333f438fe7cbc1c83",
+      "selection": {
+        "min_frame": 3866,
+        "max_frame": 6883,
+        "retained_lines": 32,
+        "marker_real_times": [
+          129.72476196289062,
+          130.48114013671875,
+          134.80966186523438,
+          137.8448486328125,
+          138.36944580078125,
+          139.483642578125,
+          139.96292114257812,
+          142.9193572998047,
+          144.52896118164062,
+          176.53843688964844,
+          177.05194091796875,
+          181.62652587890625
+        ],
+        "snapshot_cadence_real_seconds": 15,
+        "marker_window_seconds": 2,
+        "complete_original_lines": true
+      }
+    }
+  ],
+  "static_continuation": {
+    "rea_decode_in_final_status": true,
+    "instructions_verified": 8,
+    "source_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+    "call_rva": "0x428bee",
+    "return_rva": "0x428bf3"
+  },
+  "limits": [
+    "Single-script capture repairs current return coverage; it does not identify the cause of earlier multi-script loss.",
+    "Only first 12 baseline calls and active discovery calls emit individual return records; total counters are a separate aggregate.",
+    "Native continuation identity and strict order are required; no event absence alone establishes a bug.",
+    "Count increases inside or between calls are net changes bounded by readbacks, not exact write-PC attribution."
+  ]
+}
