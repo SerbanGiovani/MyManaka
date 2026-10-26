@@ -467,6 +467,30 @@ def main():
         check(digest(Path(source["path"])) == source["sha256"], "NPC FPS instruction source fingerprint differs")
     check(fps_instructions["native"]["sha256"] == identity["native_sha256"], "NPC FPS instruction native source differs")
     check(npc_fps["notification_delay_constant"]["raw_hex"] == "9a99193f", "NPC discovery delay constant differs")
+    priority = read(ROOT / "salt/evidence/priority-chain.json")
+    check(priority["native_sha256"] == identity["native_sha256"] and priority["metadata_sha256"] == identity["metadata_sha256"], "Priority native identity differs")
+    check(priority["new_observations"] == priority["new_unique_procedure_addresses"] == priority["new_unique_evidence_ids"] == 171, "Priority query count differs")
+    check(all(m["evidence_id"] in observations for m in priority["methods"]), "Priority observations missing")
+    check(len(priority["priority_groups"]) == 6 and len(priority["requested_methods"]) == 165, "Priority checklist differs")
+    check(all(r["evidence_ids"] and all(e in observations for e in r["evidence_ids"]) for r in priority["requested_methods"]), "Priority declaration has no bound query")
+    check(len(priority["shared_virtual_declarations"]) == 6, "Priority shared aliases differ")
+    for dep in priority["dependencies"]:
+        check(digest(ROOT / dep["path"]) == dep["sha256"], "Priority source/dependency differs")
+    for batch in priority["batches"]:
+        if batch["new_this_round"]:
+            run = read(ROOT / "salt/evidence" / batch["name"] / "run.json")
+            check(run["success"] and not run.get("close_error") and not run.get("transport_close_error"), "Priority REA session not closed successfully")
+    core_plan = read(ROOT / "salt/symbols/priority-core.plan.json")
+    check(core_plan["preparer_sha256"] == digest(ROOT / "salt/prepare_priority.py"), "Priority preparer fingerprint differs")
+    check(all(a["priority"] <= b["priority"] for a,b in zip(core_plan["functions"], core_plan["functions"][1:])), "Priority order differs")
+    guard = priority["npc_fixed_guard"]
+    check(guard["instructions_verified"] == 50 and [c["float32"] for c in guard["constants"]] == [20.0, 30.0], "NPC fixed distance guard differs")
+    check(digest(ROOT / guard["path"]) == guard["sha256"], "Priority instructions differ")
+    guard_input = read(ROOT / guard["path"])
+    for source in (guard_input["decoder"], guard_input["preparer"], guard_input["parser"]):
+        check(digest(Path(source["path"])) == source["sha256"], "Priority instruction tool differs")
+    condition_targets = [s for t in priority["mission_virtual_dispatch"] for s in t["slots"] if s.get("method_name") == "IsInCondition" and not s.get("declaring_type", "").endswith("MissionBase")]
+    check(len(condition_targets) == 34 and all(s["queried"] for s in condition_targets), "Concrete mission condition queries missing")
     time_stop = read(ROOT / "salt/evidence/time-stop-chain.json")
     natural_chain = read(ROOT / "salt/evidence/natural-chain.json")
     notification_chain = read(ROOT / "salt/evidence/notification-chain.json")

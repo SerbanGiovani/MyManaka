@@ -1,0 +1,3790 @@
+{
+  "schema_version": 1,
+  "name": "priority-core",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\priority-core.seeds.tsv",
+  "seed_sha256": "d6993ac2f18024d992b569dae0084c9ba2a43418f8f1684c20cd61378d6520f1",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\priority-core",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 16744,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameStateApplier::OnLateUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600151f",
+      "va": "0x18048d5d0",
+      "file_offset": 4767184,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameStateApplier__OnLateUpdate__0600151f",
+      "file_stem": "16744-0600151f",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 1,
+      "group": "state-application"
+    },
+    {
+      "metadata_id": 16745,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameStateApplier::UpdateIgnoreWaitTime",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001520",
+      "va": "0x18048d8f0",
+      "file_offset": 4767984,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameStateApplier__UpdateIgnoreWaitTime__06001520",
+      "file_stem": "16745-06001520",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 1,
+      "group": "state-application"
+    },
+    {
+      "metadata_id": 15553,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcLocomotion::OnEnter",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001078",
+      "va": "0x18042c880",
+      "file_offset": 4370560,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcLocomotion__OnEnter__06001078",
+      "file_stem": "15553-06001078",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 2,
+      "group": "npc-movement-turn"
+    },
+    {
+      "metadata_id": 15554,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcLocomotion::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001079",
+      "va": "0x18042c8e0",
+      "file_offset": 4370656,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcLocomotion__OnUpdate__06001079",
+      "file_stem": "15554-06001079",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 2,
+      "group": "npc-movement-turn"
+    },
+    {
+      "metadata_id": 15555,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcLocomotion::SimpleUpdateFromOtherState",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600107a",
+      "va": "0x18042dcd0",
+      "file_offset": 4375760,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcLocomotion__SimpleUpdateFromOtherState__0600107a",
+      "file_stem": "15555-0600107a",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 2,
+      "group": "npc-movement-turn"
+    },
+    {
+      "metadata_id": 15556,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcLocomotion::SetMoveZero",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600107b",
+      "va": "0x18042e610",
+      "file_offset": 4378128,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcLocomotion__SetMoveZero__0600107b",
+      "file_stem": "15556-0600107b",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 2,
+      "group": "npc-movement-turn"
+    },
+    {
+      "metadata_id": 15557,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcLocomotion::OnFixedUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600107c",
+      "va": "0x18042e660",
+      "file_offset": 4378208,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcLocomotion__OnFixedUpdate__0600107c",
+      "file_stem": "15557-0600107c",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 2,
+      "group": "npc-movement-turn"
+    },
+    {
+      "metadata_id": 15558,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcLocomotion::SetActiveNavAgent",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600107d",
+      "va": "0x18042eb60",
+      "file_offset": 4379488,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcLocomotion__SetActiveNavAgent__0600107d",
+      "file_stem": "15558-0600107d",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 2,
+      "group": "npc-movement-turn"
+    },
+    {
+      "metadata_id": 15559,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcLocomotion::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600107e",
+      "va": "0x18042ef50",
+      "file_offset": 4380496,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcLocomotion___ctor__0600107e",
+      "file_stem": "15559-0600107e",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 2,
+      "group": "npc-movement-turn"
+    },
+    {
+      "metadata_id": 15685,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcTurnAroundState::OnEnter",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60010fc",
+      "va": "0x18043ebb0",
+      "file_offset": 4445104,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcTurnAroundState__OnEnter__060010fc",
+      "file_stem": "15685-060010fc",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 2,
+      "group": "npc-movement-turn"
+    },
+    {
+      "metadata_id": 15686,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcTurnAroundState::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60010fd",
+      "va": "0x18043ed80",
+      "file_offset": 4445568,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcTurnAroundState__OnUpdate__060010fd",
+      "file_stem": "15686-060010fd",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 2,
+      "group": "npc-movement-turn"
+    },
+    {
+      "metadata_id": 15687,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcTurnAroundState::OnExit",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60010fe",
+      "va": "0x18043f470",
+      "file_offset": 4447344,
+      "label": "ExposureUnnoticed2_Object3D_NPC_Script_NpcTurnAroundState__OnExit__060010fe",
+      "file_stem": "15687-060010fe",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 2,
+      "group": "npc-movement-turn"
+    },
+    {
+      "metadata_id": 15918,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.BaseCameraController::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60011e5",
+      "va": "0x18045ae80",
+      "file_offset": 4560512,
+      "label": "ExposureUnnoticed2_Object3D_Camera_BaseCameraController__Initialize__060011e5",
+      "file_stem": "15918-060011e5",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15919,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.BaseCameraController::IsStrafe",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60011e6",
+      "va": "0x18045b270",
+      "file_offset": 4561520,
+      "label": "ExposureUnnoticed2_Object3D_Camera_BaseCameraController__IsStrafe__060011e6",
+      "file_stem": "15919-060011e6",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15920,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.BaseCameraController::OnLateUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60011e7",
+      "va": "0x18045b290",
+      "file_offset": 4561552,
+      "label": "ExposureUnnoticed2_Object3D_Camera_BaseCameraController__OnLateUpdate__060011e7",
+      "file_stem": "15920-060011e7",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15921,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.BaseCameraController::SetDirectCameraFOV",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60011e8",
+      "va": "0x18045b970",
+      "file_offset": 4563312,
+      "label": "ExposureUnnoticed2_Object3D_Camera_BaseCameraController__SetDirectCameraFOV__060011e8",
+      "file_stem": "15921-060011e8",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15922,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.BaseCameraController::SetTpsCullingMask",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60011e9",
+      "va": "0x18045b9e0",
+      "file_offset": 4563424,
+      "label": "ExposureUnnoticed2_Object3D_Camera_BaseCameraController__SetTpsCullingMask__060011e9",
+      "file_stem": "15922-060011e9",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15923,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.BaseCameraController::TransStrafe",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60011ea",
+      "va": "0x18045ba50",
+      "file_offset": 4563536,
+      "label": "ExposureUnnoticed2_Object3D_Camera_BaseCameraController__TransStrafe__060011ea",
+      "file_stem": "15923-060011ea",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15924,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.BaseCameraController::TransNotStrafe",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60011eb",
+      "va": "0x18045bba0",
+      "file_offset": 4563872,
+      "label": "ExposureUnnoticed2_Object3D_Camera_BaseCameraController__TransNotStrafe__060011eb",
+      "file_stem": "15924-060011eb",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15925,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.BaseCameraController::SetInventoryCamera",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60011ec",
+      "va": "0x18045bcd0",
+      "file_offset": 4564176,
+      "label": "ExposureUnnoticed2_Object3D_Camera_BaseCameraController__SetInventoryCamera__060011ec",
+      "file_stem": "15925-060011ec",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15926,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.BaseCameraController::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60011ed",
+      "va": "0x1803b8e50",
+      "file_offset": 3896912,
+      "label": "ExposureUnnoticed2_Object3D_Camera_BaseCameraController___ctor__060011ed",
+      "file_stem": "15926-060011ed",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15962,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001211",
+      "va": "0x180460ad0",
+      "file_offset": 4584144,
+      "label": "ExposureUnnoticed2_Object3D_Camera_TPCameraController__Initialize__06001211",
+      "file_stem": "15962-06001211",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15963,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::OnStart",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001212",
+      "va": "0x180460fc0",
+      "file_offset": 4585408,
+      "label": "ExposureUnnoticed2_Object3D_Camera_TPCameraController__OnStart__06001212",
+      "file_stem": "15963-06001212",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15964,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::OnDestroy",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001213",
+      "va": "0x180461080",
+      "file_offset": 4585600,
+      "label": "ExposureUnnoticed2_Object3D_Camera_TPCameraController__OnDestroy__06001213",
+      "file_stem": "15964-06001213",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15966,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::OnLateUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001215",
+      "va": "0x180461140",
+      "file_offset": 4585792,
+      "label": "ExposureUnnoticed2_Object3D_Camera_TPCameraController__OnLateUpdate__06001215",
+      "file_stem": "15966-06001215",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15967,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::CalcCameraDistance",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001216",
+      "va": "0x1804620e0",
+      "file_offset": 4589792,
+      "label": "ExposureUnnoticed2_Object3D_Camera_TPCameraController__CalcCameraDistance__06001216",
+      "file_stem": "15967-06001216",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15968,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::OnChangeThirdPersonView",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001217",
+      "va": "0x180462500",
+      "file_offset": 4590848,
+      "label": "ExposureUnnoticed2_Object3D_Camera_TPCameraController__OnChangeThirdPersonView__06001217",
+      "file_stem": "15968-06001217",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15969,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::OnCompleteTransitionStageEvent",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001218",
+      "va": "0x1804625f0",
+      "file_offset": 4591088,
+      "label": "ExposureUnnoticed2_Object3D_Camera_TPCameraController__OnCompleteTransitionStageEvent__06001218",
+      "file_stem": "15969-06001218",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15970,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::ResetToPlayerDirect",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001219",
+      "va": "0x180462600",
+      "file_offset": 4591104,
+      "label": "ExposureUnnoticed2_Object3D_Camera_TPCameraController__ResetToPlayerDirect__06001219",
+      "file_stem": "15970-06001219",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15971,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600121a",
+      "va": "0x180462680",
+      "file_offset": 4591232,
+      "label": "ExposureUnnoticed2_Object3D_Camera_TPCameraController___ctor__0600121a",
+      "file_stem": "15971-0600121a",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15972,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::<ResetToPlayerDirect>b__23_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600121b",
+      "va": "0x1804626d0",
+      "file_offset": 4591312,
+      "label": "ExposureUnnoticed2_Object3D_Camera_TPCameraController___ResetToPlayerDirect_b__23_0__0600121b",
+      "file_stem": "15972-0600121b",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15943,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.FPCameraController::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60011fe",
+      "va": "0x18045dbe0",
+      "file_offset": 4572128,
+      "label": "ExposureUnnoticed2_Object3D_Camera_FPCameraController__Initialize__060011fe",
+      "file_stem": "15943-060011fe",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15944,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.FPCameraController::OnLateUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60011ff",
+      "va": "0x18045dc90",
+      "file_offset": 4572304,
+      "label": "ExposureUnnoticed2_Object3D_Camera_FPCameraController__OnLateUpdate__060011ff",
+      "file_stem": "15944-060011ff",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15945,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.FPCameraController::OnChangeFirstPersonView",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001200",
+      "va": "0x18045f460",
+      "file_offset": 4578400,
+      "label": "ExposureUnnoticed2_Object3D_Camera_FPCameraController__OnChangeFirstPersonView__06001200",
+      "file_stem": "15945-06001200",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 15946,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.FPCameraController::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001201",
+      "va": "0x18045f470",
+      "file_offset": 4578416,
+      "label": "ExposureUnnoticed2_Object3D_Camera_FPCameraController___ctor__06001201",
+      "file_stem": "15946-06001201",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 3,
+      "group": "camera"
+    },
+    {
+      "metadata_id": 16968,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.SaveManager::SaveSystem",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60015ff",
+      "va": "0x18049c0a0",
+      "file_offset": 4827296,
+      "label": "ExposureUnnoticed2_Scripts_InGame_SaveManager__SaveSystem__060015ff",
+      "file_stem": "16968-060015ff",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 4,
+      "group": "save-roundtrip"
+    },
+    {
+      "metadata_id": 16970,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.SaveManager::Save",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001601",
+      "va": "0x18049cdf0",
+      "file_offset": 4830704,
+      "label": "ExposureUnnoticed2_Scripts_InGame_SaveManager__Save__06001601",
+      "file_stem": "16970-06001601",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 4,
+      "group": "save-roundtrip"
+    },
+    {
+      "metadata_id": 17410,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::AfterProcess",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017b9",
+      "va": "0x1804ba220",
+      "file_offset": 4950560,
+      "label": "ExposureUnnoticed2_Scripts_Base_SaveRapper__AfterProcess__060017b9",
+      "file_stem": "17410-060017b9",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 4,
+      "group": "save-roundtrip"
+    },
+    {
+      "metadata_id": 17411,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Copy",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017ba",
+      "va": "0x1804ba280",
+      "file_offset": 4950656,
+      "label": "ExposureUnnoticed2_Scripts_Base_SaveRapper__Copy__060017ba",
+      "file_stem": "17411-060017ba",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 4,
+      "group": "save-roundtrip"
+    },
+    {
+      "metadata_id": 17413,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Save",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017bc",
+      "va": "0x1804ba290",
+      "file_offset": 4950672,
+      "label": "ExposureUnnoticed2_Scripts_Base_SaveRapper__Save__060017bc",
+      "file_stem": "17413-060017bc",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 4,
+      "group": "save-roundtrip"
+    },
+    {
+      "metadata_id": 17414,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Save",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017bd",
+      "va": "0x1804ba3d0",
+      "file_offset": 4950992,
+      "label": "ExposureUnnoticed2_Scripts_Base_SaveRapper__Save__060017bd",
+      "file_stem": "17414-060017bd",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 4,
+      "group": "save-roundtrip"
+    },
+    {
+      "metadata_id": 17415,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Save",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017be",
+      "va": "0x1804ba460",
+      "file_offset": 4951136,
+      "label": "ExposureUnnoticed2_Scripts_Base_SaveRapper__Save__060017be",
+      "file_stem": "17415-060017be",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 4,
+      "group": "save-roundtrip"
+    },
+    {
+      "metadata_id": 17416,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Save",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017bf",
+      "va": "0x1804ba5b0",
+      "file_offset": 4951472,
+      "label": "ExposureUnnoticed2_Scripts_Base_SaveRapper__Save__060017bf",
+      "file_stem": "17416-060017bf",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 4,
+      "group": "save-roundtrip"
+    },
+    {
+      "metadata_id": 17417,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Save",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017c0",
+      "va": "0x1804ba700",
+      "file_offset": 4951808,
+      "label": "ExposureUnnoticed2_Scripts_Base_SaveRapper__Save__060017c0",
+      "file_stem": "17417-060017c0",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 4,
+      "group": "save-roundtrip"
+    },
+    {
+      "metadata_id": 17418,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Save",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017c1",
+      "va": "0x1804ba860",
+      "file_offset": 4952160,
+      "label": "ExposureUnnoticed2_Scripts_Base_SaveRapper__Save__060017c1",
+      "file_stem": "17418-060017c1",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 4,
+      "group": "save-roundtrip"
+    },
+    {
+      "metadata_id": 17423,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Load",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017c6",
+      "va": "0x1804baaf0",
+      "file_offset": 4952816,
+      "label": "ExposureUnnoticed2_Scripts_Base_SaveRapper__Load__060017c6",
+      "file_stem": "17423-060017c6",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 4,
+      "group": "save-roundtrip"
+    },
+    {
+      "metadata_id": 17424,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Load",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017c7",
+      "va": "0x1804bac40",
+      "file_offset": 4953152,
+      "label": "ExposureUnnoticed2_Scripts_Base_SaveRapper__Load__060017c7",
+      "file_stem": "17424-060017c7",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 4,
+      "group": "save-roundtrip"
+    },
+    {
+      "metadata_id": 17425,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Load",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017c8",
+      "va": "0x1804bacd0",
+      "file_offset": 4953296,
+      "label": "ExposureUnnoticed2_Scripts_Base_SaveRapper__Load__060017c8",
+      "file_stem": "17425-060017c8",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 4,
+      "group": "save-roundtrip"
+    },
+    {
+      "metadata_id": 17426,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Load",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017c9",
+      "va": "0x1804bae20",
+      "file_offset": 4953632,
+      "label": "ExposureUnnoticed2_Scripts_Base_SaveRapper__Load__060017c9",
+      "file_stem": "17426-060017c9",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 4,
+      "group": "save-roundtrip"
+    },
+    {
+      "metadata_id": 17427,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Load",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60017ca",
+      "va": "0x1804bafa0",
+      "file_offset": 4954016,
+      "label": "ExposureUnnoticed2_Scripts_Base_SaveRapper__Load__060017ca",
+      "file_stem": "17427-060017ca",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 4,
+      "group": "save-roundtrip"
+    },
+    {
+      "metadata_id": 16560,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionManager::IsSuccessMission",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001467",
+      "va": "0x18047db60",
+      "file_offset": 4703072,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionManager__IsSuccessMission__06001467",
+      "file_stem": "16560-06001467",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16561,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionManager::Dispose",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001468",
+      "va": "0x18047ddd0",
+      "file_offset": 4703696,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionManager__Dispose__06001468",
+      "file_stem": "16561-06001468",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16562,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionManager::OnLateUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001469",
+      "va": "0x18047dfc0",
+      "file_offset": 4704192,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionManager__OnLateUpdate__06001469",
+      "file_stem": "16562-06001469",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16563,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionManager::ResetMission",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600146a",
+      "va": "0x18047e110",
+      "file_offset": 4704528,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionManager__ResetMission__0600146a",
+      "file_stem": "16563-0600146a",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16564,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionManager::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600146b",
+      "va": "0x18047e270",
+      "file_offset": 4704880,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionManager___ctor__0600146b",
+      "file_stem": "16564-0600146b",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16496,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001427",
+      "va": "0x180478460",
+      "file_offset": 4680800,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionBase___ctor__06001427",
+      "file_stem": "16496-06001427",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16469,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionAreaExpose::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600140c",
+      "va": "0x180478240",
+      "file_offset": 4680256,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionAreaExpose__IsInCondition__0600140c",
+      "file_stem": "16469-0600140c",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16487,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::GetAddSatisfy",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600141e",
+      "va": "0x180478700",
+      "file_offset": 4681472,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionBase__GetAddSatisfy__0600141e",
+      "file_stem": "16487-0600141e",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16488,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600141f",
+      "va": "0x180478710",
+      "file_offset": 4681488,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionBase__Initialize__0600141f",
+      "file_stem": "16488-0600141f",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16490,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::IsVisiblePanel",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001421",
+      "va": "0x1804788c0",
+      "file_offset": 4681920,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionBase__IsVisiblePanel__06001421",
+      "file_stem": "16490-06001421",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16491,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::Update",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001422",
+      "va": "0x180478b40",
+      "file_offset": 4682560,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionBase__Update__06001422",
+      "file_stem": "16491-06001422",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16492,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::RiseRp",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001423",
+      "va": "0x1804796f0",
+      "file_offset": 4685552,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionBase__RiseRp__06001423",
+      "file_stem": "16492-06001423",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16493,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::IsRpPerSecCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001424",
+      "va": "0x1804797e0",
+      "file_offset": 4685792,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionBase__IsRpPerSecCondition__06001424",
+      "file_stem": "16493-06001424",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16494,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::IsRpPerSecScale",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001425",
+      "va": "0x1804797f0",
+      "file_offset": 4685808,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionBase__IsRpPerSecScale__06001425",
+      "file_stem": "16494-06001425",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16495,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::Reset",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001426",
+      "va": "0x180479800",
+      "file_offset": 4685824,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionBase__Reset__06001426",
+      "file_stem": "16495-06001426",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16497,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBukkake::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001428",
+      "va": "0x180479940",
+      "file_offset": 4686144,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionBukkake__IsInCondition__06001428",
+      "file_stem": "16497-06001428",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16499,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBuyMachineExpose::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600142a",
+      "va": "0x180479a00",
+      "file_offset": 4686336,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionBuyMachineExpose__IsInCondition__0600142a",
+      "file_stem": "16499-0600142a",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16501,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionConbiniRegiExpose::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600142c",
+      "va": "0x180479b30",
+      "file_offset": 4686640,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionConbiniRegiExpose__IsInCondition__0600142c",
+      "file_stem": "16501-0600142c",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16503,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionCountEcstasy::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600142e",
+      "va": "0x180479d80",
+      "file_offset": 4687232,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionCountEcstasy__Initialize__0600142e",
+      "file_stem": "16503-0600142e",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16505,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionCountEcstasy::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001430",
+      "va": "0x180479f10",
+      "file_offset": 4687632,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionCountEcstasy__IsInCondition__06001430",
+      "file_stem": "16505-06001430",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16506,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionCountEcstasy::OnCount",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001431",
+      "va": "0x1803b65e0",
+      "file_offset": 3886560,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionCountEcstasy__OnCount__06001431",
+      "file_stem": "16506-06001431",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16508,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionCrouchMoveNaked::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001433",
+      "va": "0x18047a130",
+      "file_offset": 4688176,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionCrouchMoveNaked__IsInCondition__06001433",
+      "file_stem": "16508-06001433",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16509,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionCrouchMoveNaked::GetAddSatisfy",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001434",
+      "va": "0x18047a300",
+      "file_offset": 4688640,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionCrouchMoveNaked__GetAddSatisfy__06001434",
+      "file_stem": "16509-06001434",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16510,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionCrouchMoveNaked::IsRpPerSecCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001435",
+      "va": "0x18047a3d0",
+      "file_offset": 4688848,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionCrouchMoveNaked__IsRpPerSecCondition__06001435",
+      "file_stem": "16510-06001435",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16511,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionCrouchMoveNaked::Reset",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001436",
+      "va": "0x18047a460",
+      "file_offset": 4688992,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionCrouchMoveNaked__Reset__06001436",
+      "file_stem": "16511-06001436",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16513,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionEcstasyByNearNpc::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001438",
+      "va": "0x18047a490",
+      "file_offset": 4689040,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionEcstasyByNearNpc__IsInCondition__06001438",
+      "file_stem": "16513-06001438",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16515,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionElevatorMoveWithOutsideClothes::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600143a",
+      "va": "0x18047a590",
+      "file_offset": 4689296,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionElevatorMoveWithOutsideClothes__IsInCondition__0600143a",
+      "file_stem": "16515-0600143a",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16516,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionElevatorMoveWithOutsideClothes::GetAddSatisfy",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600143b",
+      "va": "0x18047aa50",
+      "file_offset": 4690512,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionElevatorMoveWithOutsideClothes__GetAddSatisfy__0600143b",
+      "file_stem": "16516-0600143b",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16517,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionElevatorMoveWithOutsideClothes::IsRpPerSecCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600143c",
+      "va": "0x18047ab70",
+      "file_offset": 4690800,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionElevatorMoveWithOutsideClothes__IsRpPerSecCondition__0600143c",
+      "file_stem": "16517-0600143c",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16518,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionElevatorMoveWithOutsideClothes::Reset",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600143d",
+      "va": "0x18047acb0",
+      "file_offset": 4691120,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionElevatorMoveWithOutsideClothes__Reset__0600143d",
+      "file_stem": "16518-0600143d",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16520,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionEscalatorMove::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600143f",
+      "va": "0x18047ace0",
+      "file_offset": 4691168,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionEscalatorMove__IsInCondition__0600143f",
+      "file_stem": "16520-0600143f",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16521,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionEscalatorMove::GetAddSatisfy",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001440",
+      "va": "0x18047afd0",
+      "file_offset": 4691920,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionEscalatorMove__GetAddSatisfy__06001440",
+      "file_stem": "16521-06001440",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16524,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeBlindMove::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001443",
+      "va": "0x18047b130",
+      "file_offset": 4692272,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionExposeBlindMove__IsInCondition__06001443",
+      "file_stem": "16524-06001443",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16525,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeBlindMove::GetAddSatisfy",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001444",
+      "va": "0x18047b310",
+      "file_offset": 4692752,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionExposeBlindMove__GetAddSatisfy__06001444",
+      "file_stem": "16525-06001444",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16526,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeBlindMove::IsRpPerSecCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001445",
+      "va": "0x18047b3e0",
+      "file_offset": 4692960,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionExposeBlindMove__IsRpPerSecCondition__06001445",
+      "file_stem": "16526-06001445",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16529,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeByNearNpc::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001448",
+      "va": "0x18047b470",
+      "file_offset": 4693104,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionExposeByNearNpc__IsInCondition__06001448",
+      "file_stem": "16529-06001448",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16531,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeHandcuffs::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600144a",
+      "va": "0x18047b590",
+      "file_offset": 4693392,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionExposeHandcuffs__IsInCondition__0600144a",
+      "file_stem": "16531-0600144a",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16533,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeHandcuffsByNearNpc::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600144c",
+      "va": "0x18047b6a0",
+      "file_offset": 4693664,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionExposeHandcuffsByNearNpc__IsInCondition__0600144c",
+      "file_stem": "16533-0600144c",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16534,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeHandcuffsByNearNpc::GetAddSatisfy",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600144d",
+      "va": "0x18047b7e0",
+      "file_offset": 4693984,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionExposeHandcuffsByNearNpc__GetAddSatisfy__0600144d",
+      "file_stem": "16534-0600144d",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16535,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeHandcuffsByNearNpc::IsRpPerSecCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600144e",
+      "va": "0x18047b9e0",
+      "file_offset": 4694496,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionExposeHandcuffsByNearNpc__IsRpPerSecCondition__0600144e",
+      "file_stem": "16535-0600144e",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16536,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeHandcuffsByNearNpc::IsRpPerSecScale",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600144f",
+      "va": "0x18047ba80",
+      "file_offset": 4694656,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionExposeHandcuffsByNearNpc__IsRpPerSecScale__0600144f",
+      "file_stem": "16536-0600144f",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16538,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeInSight::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001451",
+      "va": "0x18047bb00",
+      "file_offset": 4694784,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionExposeInSight__IsInCondition__06001451",
+      "file_stem": "16538-06001451",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16540,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeIntercom::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001453",
+      "va": "0x18047bc50",
+      "file_offset": 4695120,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionExposeIntercom__IsInCondition__06001453",
+      "file_stem": "16540-06001453",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16542,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeRiseStrangeness::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001455",
+      "va": "0x18047be50",
+      "file_offset": 4695632,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionExposeRiseStrangeness__IsInCondition__06001455",
+      "file_stem": "16542-06001455",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16544,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionHandcuffsMapExpose::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001457",
+      "va": "0x18047bfb0",
+      "file_offset": 4695984,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionHandcuffsMapExpose__IsInCondition__06001457",
+      "file_stem": "16544-06001457",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16545,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionHandcuffsMapExpose::GetAddSatisfy",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001458",
+      "va": "0x18047c1d0",
+      "file_offset": 4696528,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionHandcuffsMapExpose__GetAddSatisfy__06001458",
+      "file_stem": "16545-06001458",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16546,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionHandcuffsMapExpose::IsRpPerSecCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001459",
+      "va": "0x18047c3d0",
+      "file_offset": 4697040,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionHandcuffsMapExpose__IsRpPerSecCondition__06001459",
+      "file_stem": "16546-06001459",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16547,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionHandcuffsMapExpose::IsRpPerSecScale",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600145a",
+      "va": "0x18047c470",
+      "file_offset": 4697200,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionHandcuffsMapExpose__IsRpPerSecScale__0600145a",
+      "file_stem": "16547-0600145a",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16549,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionHandcuffsMoveExpose::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600145c",
+      "va": "0x18047c4f0",
+      "file_offset": 4697328,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionHandcuffsMoveExpose__IsInCondition__0600145c",
+      "file_stem": "16549-0600145c",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16550,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionHandcuffsMoveExpose::GetAddSatisfy",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600145d",
+      "va": "0x18047c6c0",
+      "file_offset": 4697792,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionHandcuffsMoveExpose__GetAddSatisfy__0600145d",
+      "file_stem": "16550-0600145d",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16553,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionInElevatorWithNpc::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001460",
+      "va": "0x18047c790",
+      "file_offset": 4698000,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionInElevatorWithNpc__IsInCondition__06001460",
+      "file_stem": "16553-06001460",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16555,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionLightingExpose::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001462",
+      "va": "0x18047cc60",
+      "file_offset": 4699232,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionLightingExpose__IsInCondition__06001462",
+      "file_stem": "16555-06001462",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16557,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMallFloorDistByClothes::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001464",
+      "va": "0x18047cdd0",
+      "file_offset": 4699600,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionMallFloorDistByClothes__IsInCondition__06001464",
+      "file_stem": "16557-06001464",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16559,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionManager::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001466",
+      "va": "0x18047d430",
+      "file_offset": 4701232,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionManager__Initialize__06001466",
+      "file_stem": "16559-06001466",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16565,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveFromClothes::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600146c",
+      "va": "0x18047e3d0",
+      "file_offset": 4705232,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionMoveFromClothes__IsInCondition__0600146c",
+      "file_stem": "16565-0600146c",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16566,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveFromClothes::GetAddSatisfy",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600146d",
+      "va": "0x18047e5f0",
+      "file_offset": 4705776,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionMoveFromClothes__GetAddSatisfy__0600146d",
+      "file_stem": "16566-0600146d",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16567,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveFromClothes::IsRpPerSecCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600146e",
+      "va": "0x18047e890",
+      "file_offset": 4706448,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionMoveFromClothes__IsRpPerSecCondition__0600146e",
+      "file_stem": "16567-0600146e",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16570,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveFromClothesInArea::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001471",
+      "va": "0x18047ea90",
+      "file_offset": 4706960,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionMoveFromClothesInArea__IsInCondition__06001471",
+      "file_stem": "16570-06001471",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16571,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveFromClothesInArea::GetAddSatisfy",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001472",
+      "va": "0x18047edb0",
+      "file_offset": 4707760,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionMoveFromClothesInArea__GetAddSatisfy__06001472",
+      "file_stem": "16571-06001472",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16572,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveFromClothesInArea::IsRpPerSecCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001473",
+      "va": "0x18047efc0",
+      "file_offset": 4708288,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionMoveFromClothesInArea__IsRpPerSecCondition__06001473",
+      "file_stem": "16572-06001473",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16575,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveVerticalFromClothes::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001476",
+      "va": "0x18047f1c0",
+      "file_offset": 4708800,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionMoveVerticalFromClothes__IsInCondition__06001476",
+      "file_stem": "16575-06001476",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16576,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveVerticalFromClothes::GetAddSatisfy",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001477",
+      "va": "0x18047f390",
+      "file_offset": 4709264,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionMoveVerticalFromClothes__GetAddSatisfy__06001477",
+      "file_stem": "16576-06001477",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16577,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveVerticalFromClothes::Reset",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001478",
+      "va": "0x18047f620",
+      "file_offset": 4709920,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionMoveVerticalFromClothes__Reset__06001478",
+      "file_stem": "16577-06001478",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16579,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionPee::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600147a",
+      "va": "0x18047f640",
+      "file_offset": 4709952,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionPee__IsInCondition__0600147a",
+      "file_stem": "16579-0600147a",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16581,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionPoseExpose::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600147c",
+      "va": "0x18047f810",
+      "file_offset": 4710416,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionPoseExpose__IsInCondition__0600147c",
+      "file_stem": "16581-0600147c",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16583,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionPutClothesAndInArea::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600147e",
+      "va": "0x18047fa50",
+      "file_offset": 4710992,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionPutClothesAndInArea__IsInCondition__0600147e",
+      "file_stem": "16583-0600147e",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16585,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionSimpleBodyExpose::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001480",
+      "va": "0x18047fde0",
+      "file_offset": 4711904,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionSimpleBodyExpose__IsInCondition__06001480",
+      "file_stem": "16585-06001480",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16587,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionSitExpose::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001482",
+      "va": "0x18047fff0",
+      "file_offset": 4712432,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionSitExpose__IsInCondition__06001482",
+      "file_stem": "16587-06001482",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16593,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionStopElevatorNaked::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001488",
+      "va": "0x180480240",
+      "file_offset": 4713024,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionStopElevatorNaked__Initialize__06001488",
+      "file_stem": "16593-06001488",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16595,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionStopElevatorNaked::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600148a",
+      "va": "0x180480390",
+      "file_offset": 4713360,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionStopElevatorNaked__IsInCondition__0600148a",
+      "file_stem": "16595-0600148a",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16596,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionStopElevatorNaked::GetAddSatisfy",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600148b",
+      "va": "0x180480a60",
+      "file_offset": 4715104,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionStopElevatorNaked__GetAddSatisfy__0600148b",
+      "file_stem": "16596-0600148b",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16597,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionStopElevatorNaked::Reset",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600148c",
+      "va": "0x180480b80",
+      "file_offset": 4715392,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionStopElevatorNaked__Reset__0600148c",
+      "file_stem": "16597-0600148c",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16599,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionToiletOpenNaked::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600148e",
+      "va": "0x180480bf0",
+      "file_offset": 4715504,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionToiletOpenNaked__IsInCondition__0600148e",
+      "file_stem": "16599-0600148e",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16601,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionUsingDildo::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001490",
+      "va": "0x180480e90",
+      "file_offset": 4716176,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionUsingDildo__IsInCondition__06001490",
+      "file_stem": "16601-06001490",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16603,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionUsingWasher::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001492",
+      "va": "0x1804810f0",
+      "file_offset": 4716784,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionUsingWasher__IsInCondition__06001492",
+      "file_stem": "16603-06001492",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16605,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionVibeExposeMove::IsInCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001494",
+      "va": "0x180481310",
+      "file_offset": 4717328,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionVibeExposeMove__IsInCondition__06001494",
+      "file_stem": "16605-06001494",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16606,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionVibeExposeMove::GetAddSatisfy",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001495",
+      "va": "0x180481530",
+      "file_offset": 4717872,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionVibeExposeMove__GetAddSatisfy__06001495",
+      "file_stem": "16606-06001495",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16607,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionVibeExposeMove::IsRpPerSecCondition",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001496",
+      "va": "0x180481600",
+      "file_offset": 4718080,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionVibeExposeMove__IsRpPerSecCondition__06001496",
+      "file_stem": "16607-06001496",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16950,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.RandomMissionManager::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60015ed",
+      "va": "0x18049a7d0",
+      "file_offset": 4820944,
+      "label": "ExposureUnnoticed2_Scripts_InGame_RandomMissionManager__Initialize__060015ed",
+      "file_stem": "16950-060015ed",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16951,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.RandomMissionManager::StartMission",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60015ee",
+      "va": "0x18049a870",
+      "file_offset": 4821104,
+      "label": "ExposureUnnoticed2_Scripts_InGame_RandomMissionManager__StartMission__060015ee",
+      "file_stem": "16951-060015ee",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16954,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.RandomMissionManager::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60015f1",
+      "va": "0x18049b220",
+      "file_offset": 4823584,
+      "label": "ExposureUnnoticed2_Scripts_InGame_RandomMissionManager__OnUpdate__060015f1",
+      "file_stem": "16954-060015f1",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 16955,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.RandomMissionManager::InterruptMission",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60015f2",
+      "va": "0x18049b540",
+      "file_offset": 4824384,
+      "label": "ExposureUnnoticed2_Scripts_InGame_RandomMissionManager__InterruptMission__060015f2",
+      "file_stem": "16955-060015f2",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 5,
+      "group": "mission-rules"
+    },
+    {
+      "metadata_id": 14192,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.CommonDoor.CommonDoorController::Awake",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000b27",
+      "va": "0x180607ef0",
+      "file_offset": 6317808,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_CommonDoor_CommonDoorController__Awake__06000b27",
+      "file_stem": "14192-06000b27",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 14193,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.CommonDoor.CommonDoorController::OnInteract",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000b28",
+      "va": "0x180608260",
+      "file_offset": 6318688,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_CommonDoor_CommonDoorController__OnInteract__06000b28",
+      "file_stem": "14193-06000b28",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 14194,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.CommonDoor.CommonDoorController::CanInteract",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000b29",
+      "va": "0x180608650",
+      "file_offset": 6319696,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_CommonDoor_CommonDoorController__CanInteract__06000b29",
+      "file_stem": "14194-06000b29",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 14197,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.CommonDoor.CommonDoorController::OpenClose",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000b2c",
+      "va": "0x180608770",
+      "file_offset": 6319984,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_CommonDoor_CommonDoorController__OpenClose__06000b2c",
+      "file_stem": "14197-06000b2c",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 14198,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.CommonDoor.CommonDoorController::OnEndDoorAnim",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000b2d",
+      "va": "0x180608a00",
+      "file_offset": 6320640,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_CommonDoor_CommonDoorController__OnEndDoorAnim__06000b2d",
+      "file_stem": "14198-06000b2d",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 14201,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.CommonDoor.CommonDoorController::<Awake>b__20_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000b30",
+      "va": "0x180608b00",
+      "file_offset": 6320896,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_CommonDoor_CommonDoorController___Awake_b__20_0__06000b30",
+      "file_stem": "14201-06000b30",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 14202,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.CommonDoor.CommonDoorController::<Awake>b__20_1",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000b31",
+      "va": "0x180608b10",
+      "file_offset": 6320912,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_CommonDoor_CommonDoorController___Awake_b__20_1__06000b31",
+      "file_stem": "14202-06000b31",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 14203,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.CommonDoor.CommonDoorController::<OpenClose>b__25_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000b32",
+      "va": "0x180608bb0",
+      "file_offset": 6321072,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_CommonDoor_CommonDoorController___OpenClose_b__25_0__06000b32",
+      "file_stem": "14203-06000b32",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 14204,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.CommonDoor.CommonDoorController::<OpenClose>b__25_1",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000b33",
+      "va": "0x180608c10",
+      "file_offset": 6321168,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_CommonDoor_CommonDoorController___OpenClose_b__25_1__06000b33",
+      "file_stem": "14204-06000b33",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 13953,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::Start",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000a38",
+      "va": "0x1805f54d0",
+      "file_offset": 6241488,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_WasherMachine_WasherMachineController__Start__06000a38",
+      "file_stem": "13953-06000a38",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 13954,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::OnDestroy",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000a39",
+      "va": "0x1805f5ba0",
+      "file_offset": 6243232,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_WasherMachine_WasherMachineController__OnDestroy__06000a39",
+      "file_stem": "13954-06000a39",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 13955,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::OnChangeTime",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000a3a",
+      "va": "0x1805f5cc0",
+      "file_offset": 6243520,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_WasherMachine_WasherMachineController__OnChangeTime__06000a3a",
+      "file_stem": "13955-06000a3a",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 13956,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::OnLoadUsing",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000a3b",
+      "va": "0x1805f5e80",
+      "file_offset": 6243968,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_WasherMachine_WasherMachineController__OnLoadUsing__06000a3b",
+      "file_stem": "13956-06000a3b",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 13957,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::Update",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000a3c",
+      "va": "0x1805f5e90",
+      "file_offset": 6243984,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_WasherMachine_WasherMachineController__Update__06000a3c",
+      "file_stem": "13957-06000a3c",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 13958,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::StartWash",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000a3d",
+      "va": "0x1805f6320",
+      "file_offset": 6245152,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_WasherMachine_WasherMachineController__StartWash__06000a3d",
+      "file_stem": "13958-06000a3d",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 13959,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::TakeClothes",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000a3e",
+      "va": "0x1805f6760",
+      "file_offset": 6246240,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_WasherMachine_WasherMachineController__TakeClothes__06000a3e",
+      "file_stem": "13959-06000a3e",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 13960,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::OnInteract",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000a3f",
+      "va": "0x1805f6900",
+      "file_offset": 6246656,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_WasherMachine_WasherMachineController__OnInteract__06000a3f",
+      "file_stem": "13960-06000a3f",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 13961,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::OnPlaySe",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000a40",
+      "va": "0x1805f6d30",
+      "file_offset": 6247728,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_WasherMachine_WasherMachineController__OnPlaySe__06000a40",
+      "file_stem": "13961-06000a40",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 13962,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::UseByNpc",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000a41",
+      "va": "0x1805f6f40",
+      "file_offset": 6248256,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_WasherMachine_WasherMachineController__UseByNpc__06000a41",
+      "file_stem": "13962-06000a41",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 13963,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::ReleaseByNpc",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000a42",
+      "va": "0x1805f6f50",
+      "file_offset": 6248272,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_WasherMachine_WasherMachineController__ReleaseByNpc__06000a42",
+      "file_stem": "13963-06000a42",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 13964,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::OnAnimEndTake",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000a43",
+      "va": "0x1805f6f60",
+      "file_offset": 6248288,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_WasherMachine_WasherMachineController__OnAnimEndTake__06000a43",
+      "file_stem": "13964-06000a43",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 13965,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::OnTimeStopEvent",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000a44",
+      "va": "0x1805f6f70",
+      "file_offset": 6248304,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_WasherMachine_WasherMachineController__OnTimeStopEvent__06000a44",
+      "file_stem": "13965-06000a44",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 13966,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000a45",
+      "va": "0x1805f7150",
+      "file_offset": 6248784,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_WasherMachine_WasherMachineController___ctor__06000a45",
+      "file_stem": "13966-06000a45",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 13967,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::.cctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000a46",
+      "va": "0x1805f7310",
+      "file_offset": 6249232,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_WasherMachine_WasherMachineController___cctor__06000a46",
+      "file_stem": "13967-06000a46",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 13968,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::<Start>b__32_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000a47",
+      "va": "0x1805f7480",
+      "file_offset": 6249600,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_WasherMachine_WasherMachineController___Start_b__32_0__06000a47",
+      "file_stem": "13968-06000a47",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 13969,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::<Start>b__32_1",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000a48",
+      "va": "0x1805f7490",
+      "file_offset": 6249616,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_WasherMachine_WasherMachineController___Start_b__32_1__06000a48",
+      "file_stem": "13969-06000a48",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    },
+    {
+      "metadata_id": 13970,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::<Start>b__32_2",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000a49",
+      "va": "0x1805f74a0",
+      "file_offset": 6249632,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_WasherMachine_WasherMachineController___Start_b__32_2__06000a49",
+      "file_stem": "13970-06000a49",
+      "operations": [
+        "procedure_pseudo_code"
+      ],
+      "priority": 6,
+      "group": "concrete-interactions"
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ],
+  "requested_methods": [
+    {
+      "priority": 1,
+      "group": "state-application",
+      "metadata_id": 16744,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameStateApplier::OnLateUpdate",
+      "va": "0x18048d5d0",
+      "query_method_id": 16744
+    },
+    {
+      "priority": 1,
+      "group": "state-application",
+      "metadata_id": 16745,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameStateApplier::UpdateIgnoreWaitTime",
+      "va": "0x18048d8f0",
+      "query_method_id": 16745
+    },
+    {
+      "priority": 2,
+      "group": "npc-movement-turn",
+      "metadata_id": 15553,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcLocomotion::OnEnter",
+      "va": "0x18042c880",
+      "query_method_id": 15553
+    },
+    {
+      "priority": 2,
+      "group": "npc-movement-turn",
+      "metadata_id": 15554,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcLocomotion::OnUpdate",
+      "va": "0x18042c8e0",
+      "query_method_id": 15554
+    },
+    {
+      "priority": 2,
+      "group": "npc-movement-turn",
+      "metadata_id": 15555,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcLocomotion::SimpleUpdateFromOtherState",
+      "va": "0x18042dcd0",
+      "query_method_id": 15555
+    },
+    {
+      "priority": 2,
+      "group": "npc-movement-turn",
+      "metadata_id": 15556,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcLocomotion::SetMoveZero",
+      "va": "0x18042e610",
+      "query_method_id": 15556
+    },
+    {
+      "priority": 2,
+      "group": "npc-movement-turn",
+      "metadata_id": 15557,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcLocomotion::OnFixedUpdate",
+      "va": "0x18042e660",
+      "query_method_id": 15557
+    },
+    {
+      "priority": 2,
+      "group": "npc-movement-turn",
+      "metadata_id": 15558,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcLocomotion::SetActiveNavAgent",
+      "va": "0x18042eb60",
+      "query_method_id": 15558
+    },
+    {
+      "priority": 2,
+      "group": "npc-movement-turn",
+      "metadata_id": 15559,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcLocomotion::.ctor",
+      "va": "0x18042ef50",
+      "query_method_id": 15559
+    },
+    {
+      "priority": 2,
+      "group": "npc-movement-turn",
+      "metadata_id": 15685,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcTurnAroundState::OnEnter",
+      "va": "0x18043ebb0",
+      "query_method_id": 15685
+    },
+    {
+      "priority": 2,
+      "group": "npc-movement-turn",
+      "metadata_id": 15686,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcTurnAroundState::OnUpdate",
+      "va": "0x18043ed80",
+      "query_method_id": 15686
+    },
+    {
+      "priority": 2,
+      "group": "npc-movement-turn",
+      "metadata_id": 15687,
+      "qualified_name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcTurnAroundState::OnExit",
+      "va": "0x18043f470",
+      "query_method_id": 15687
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15918,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.BaseCameraController::Initialize",
+      "va": "0x18045ae80",
+      "query_method_id": 15918
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15919,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.BaseCameraController::IsStrafe",
+      "va": "0x18045b270",
+      "query_method_id": 15919
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15920,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.BaseCameraController::OnLateUpdate",
+      "va": "0x18045b290",
+      "query_method_id": 15920
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15921,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.BaseCameraController::SetDirectCameraFOV",
+      "va": "0x18045b970",
+      "query_method_id": 15921
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15922,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.BaseCameraController::SetTpsCullingMask",
+      "va": "0x18045b9e0",
+      "query_method_id": 15922
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15923,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.BaseCameraController::TransStrafe",
+      "va": "0x18045ba50",
+      "query_method_id": 15923
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15924,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.BaseCameraController::TransNotStrafe",
+      "va": "0x18045bba0",
+      "query_method_id": 15924
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15925,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.BaseCameraController::SetInventoryCamera",
+      "va": "0x18045bcd0",
+      "query_method_id": 15925
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15926,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.BaseCameraController::.ctor",
+      "va": "0x1803b8e50",
+      "query_method_id": 15926
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15962,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::Initialize",
+      "va": "0x180460ad0",
+      "query_method_id": 15962
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15963,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::OnStart",
+      "va": "0x180460fc0",
+      "query_method_id": 15963
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15964,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::OnDestroy",
+      "va": "0x180461080",
+      "query_method_id": 15964
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15966,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::OnLateUpdate",
+      "va": "0x180461140",
+      "query_method_id": 15966
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15967,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::CalcCameraDistance",
+      "va": "0x1804620e0",
+      "query_method_id": 15967
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15968,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::OnChangeThirdPersonView",
+      "va": "0x180462500",
+      "query_method_id": 15968
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15969,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::OnCompleteTransitionStageEvent",
+      "va": "0x1804625f0",
+      "query_method_id": 15969
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15970,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::ResetToPlayerDirect",
+      "va": "0x180462600",
+      "query_method_id": 15970
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15971,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::.ctor",
+      "va": "0x180462680",
+      "query_method_id": 15971
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15972,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.TPCameraController::<ResetToPlayerDirect>b__23_0",
+      "va": "0x1804626d0",
+      "query_method_id": 15972
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15943,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.FPCameraController::Initialize",
+      "va": "0x18045dbe0",
+      "query_method_id": 15943
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15944,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.FPCameraController::OnLateUpdate",
+      "va": "0x18045dc90",
+      "query_method_id": 15944
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15945,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.FPCameraController::OnChangeFirstPersonView",
+      "va": "0x18045f460",
+      "query_method_id": 15945
+    },
+    {
+      "priority": 3,
+      "group": "camera",
+      "metadata_id": 15946,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Camera.FPCameraController::.ctor",
+      "va": "0x18045f470",
+      "query_method_id": 15946
+    },
+    {
+      "priority": 4,
+      "group": "save-roundtrip",
+      "metadata_id": 16968,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.SaveManager::SaveSystem",
+      "va": "0x18049c0a0",
+      "query_method_id": 16968
+    },
+    {
+      "priority": 4,
+      "group": "save-roundtrip",
+      "metadata_id": 16970,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.SaveManager::Save",
+      "va": "0x18049cdf0",
+      "query_method_id": 16970
+    },
+    {
+      "priority": 4,
+      "group": "save-roundtrip",
+      "metadata_id": 17410,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::AfterProcess",
+      "va": "0x1804ba220",
+      "query_method_id": 17410
+    },
+    {
+      "priority": 4,
+      "group": "save-roundtrip",
+      "metadata_id": 17411,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Copy",
+      "va": "0x1804ba280",
+      "query_method_id": 17411
+    },
+    {
+      "priority": 4,
+      "group": "save-roundtrip",
+      "metadata_id": 17413,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Save",
+      "va": "0x1804ba290",
+      "query_method_id": 17413
+    },
+    {
+      "priority": 4,
+      "group": "save-roundtrip",
+      "metadata_id": 17414,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Save",
+      "va": "0x1804ba3d0",
+      "query_method_id": 17414
+    },
+    {
+      "priority": 4,
+      "group": "save-roundtrip",
+      "metadata_id": 17415,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Save",
+      "va": "0x1804ba460",
+      "query_method_id": 17415
+    },
+    {
+      "priority": 4,
+      "group": "save-roundtrip",
+      "metadata_id": 17416,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Save",
+      "va": "0x1804ba5b0",
+      "query_method_id": 17416
+    },
+    {
+      "priority": 4,
+      "group": "save-roundtrip",
+      "metadata_id": 17417,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Save",
+      "va": "0x1804ba700",
+      "query_method_id": 17417
+    },
+    {
+      "priority": 4,
+      "group": "save-roundtrip",
+      "metadata_id": 17418,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Save",
+      "va": "0x1804ba860",
+      "query_method_id": 17418
+    },
+    {
+      "priority": 4,
+      "group": "save-roundtrip",
+      "metadata_id": 17423,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Load",
+      "va": "0x1804baaf0",
+      "query_method_id": 17423
+    },
+    {
+      "priority": 4,
+      "group": "save-roundtrip",
+      "metadata_id": 17424,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Load",
+      "va": "0x1804bac40",
+      "query_method_id": 17424
+    },
+    {
+      "priority": 4,
+      "group": "save-roundtrip",
+      "metadata_id": 17425,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Load",
+      "va": "0x1804bacd0",
+      "query_method_id": 17425
+    },
+    {
+      "priority": 4,
+      "group": "save-roundtrip",
+      "metadata_id": 17426,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Load",
+      "va": "0x1804bae20",
+      "query_method_id": 17426
+    },
+    {
+      "priority": 4,
+      "group": "save-roundtrip",
+      "metadata_id": 17427,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SaveRapper::Load",
+      "va": "0x1804bafa0",
+      "query_method_id": 17427
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16560,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionManager::IsSuccessMission",
+      "va": "0x18047db60",
+      "query_method_id": 16560
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16561,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionManager::Dispose",
+      "va": "0x18047ddd0",
+      "query_method_id": 16561
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16562,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionManager::OnLateUpdate",
+      "va": "0x18047dfc0",
+      "query_method_id": 16562
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16563,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionManager::ResetMission",
+      "va": "0x18047e110",
+      "query_method_id": 16563
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16564,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionManager::.ctor",
+      "va": "0x18047e270",
+      "query_method_id": 16564
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16496,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::.ctor",
+      "va": "0x180478460",
+      "query_method_id": 16496
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16469,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionAreaExpose::IsInCondition",
+      "va": "0x180478240",
+      "query_method_id": 16469
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16487,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::GetAddSatisfy",
+      "va": "0x180478700",
+      "query_method_id": 16487
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16488,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::Initialize",
+      "va": "0x180478710",
+      "query_method_id": 16488
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16490,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::IsVisiblePanel",
+      "va": "0x1804788c0",
+      "query_method_id": 16490
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16491,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::Update",
+      "va": "0x180478b40",
+      "query_method_id": 16491
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16492,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::RiseRp",
+      "va": "0x1804796f0",
+      "query_method_id": 16492
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16493,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::IsRpPerSecCondition",
+      "va": "0x1804797e0",
+      "query_method_id": 16493
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16494,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::IsRpPerSecScale",
+      "va": "0x1804797f0",
+      "query_method_id": 16494
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16495,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::Reset",
+      "va": "0x180479800",
+      "query_method_id": 16495
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16497,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBukkake::IsInCondition",
+      "va": "0x180479940",
+      "query_method_id": 16497
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16499,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBuyMachineExpose::IsInCondition",
+      "va": "0x180479a00",
+      "query_method_id": 16499
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16501,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionConbiniRegiExpose::IsInCondition",
+      "va": "0x180479b30",
+      "query_method_id": 16501
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16503,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionCountEcstasy::Initialize",
+      "va": "0x180479d80",
+      "query_method_id": 16503
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16505,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionCountEcstasy::IsInCondition",
+      "va": "0x180479f10",
+      "query_method_id": 16505
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16506,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionCountEcstasy::OnCount",
+      "va": "0x1803b65e0",
+      "query_method_id": 16506
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16508,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionCrouchMoveNaked::IsInCondition",
+      "va": "0x18047a130",
+      "query_method_id": 16508
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16509,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionCrouchMoveNaked::GetAddSatisfy",
+      "va": "0x18047a300",
+      "query_method_id": 16509
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16510,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionCrouchMoveNaked::IsRpPerSecCondition",
+      "va": "0x18047a3d0",
+      "query_method_id": 16510
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16511,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionCrouchMoveNaked::Reset",
+      "va": "0x18047a460",
+      "query_method_id": 16511
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16513,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionEcstasyByNearNpc::IsInCondition",
+      "va": "0x18047a490",
+      "query_method_id": 16513
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16515,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionElevatorMoveWithOutsideClothes::IsInCondition",
+      "va": "0x18047a590",
+      "query_method_id": 16515
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16516,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionElevatorMoveWithOutsideClothes::GetAddSatisfy",
+      "va": "0x18047aa50",
+      "query_method_id": 16516
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16517,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionElevatorMoveWithOutsideClothes::IsRpPerSecCondition",
+      "va": "0x18047ab70",
+      "query_method_id": 16517
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16518,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionElevatorMoveWithOutsideClothes::Reset",
+      "va": "0x18047acb0",
+      "query_method_id": 16518
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16520,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionEscalatorMove::IsInCondition",
+      "va": "0x18047ace0",
+      "query_method_id": 16520
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16521,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionEscalatorMove::GetAddSatisfy",
+      "va": "0x18047afd0",
+      "query_method_id": 16521
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16522,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionEscalatorMove::Reset",
+      "va": "0x18047acb0",
+      "query_method_id": 16518
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16524,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeBlindMove::IsInCondition",
+      "va": "0x18047b130",
+      "query_method_id": 16524
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16525,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeBlindMove::GetAddSatisfy",
+      "va": "0x18047b310",
+      "query_method_id": 16525
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16526,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeBlindMove::IsRpPerSecCondition",
+      "va": "0x18047b3e0",
+      "query_method_id": 16526
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16527,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeBlindMove::Reset",
+      "va": "0x18047a460",
+      "query_method_id": 16511
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16529,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeByNearNpc::IsInCondition",
+      "va": "0x18047b470",
+      "query_method_id": 16529
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16531,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeHandcuffs::IsInCondition",
+      "va": "0x18047b590",
+      "query_method_id": 16531
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16533,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeHandcuffsByNearNpc::IsInCondition",
+      "va": "0x18047b6a0",
+      "query_method_id": 16533
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16534,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeHandcuffsByNearNpc::GetAddSatisfy",
+      "va": "0x18047b7e0",
+      "query_method_id": 16534
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16535,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeHandcuffsByNearNpc::IsRpPerSecCondition",
+      "va": "0x18047b9e0",
+      "query_method_id": 16535
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16536,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeHandcuffsByNearNpc::IsRpPerSecScale",
+      "va": "0x18047ba80",
+      "query_method_id": 16536
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16538,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeInSight::IsInCondition",
+      "va": "0x18047bb00",
+      "query_method_id": 16538
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16540,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeIntercom::IsInCondition",
+      "va": "0x18047bc50",
+      "query_method_id": 16540
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16542,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeRiseStrangeness::IsInCondition",
+      "va": "0x18047be50",
+      "query_method_id": 16542
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16544,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionHandcuffsMapExpose::IsInCondition",
+      "va": "0x18047bfb0",
+      "query_method_id": 16544
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16545,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionHandcuffsMapExpose::GetAddSatisfy",
+      "va": "0x18047c1d0",
+      "query_method_id": 16545
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16546,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionHandcuffsMapExpose::IsRpPerSecCondition",
+      "va": "0x18047c3d0",
+      "query_method_id": 16546
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16547,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionHandcuffsMapExpose::IsRpPerSecScale",
+      "va": "0x18047c470",
+      "query_method_id": 16547
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16549,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionHandcuffsMoveExpose::IsInCondition",
+      "va": "0x18047c4f0",
+      "query_method_id": 16549
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16550,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionHandcuffsMoveExpose::GetAddSatisfy",
+      "va": "0x18047c6c0",
+      "query_method_id": 16550
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16551,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionHandcuffsMoveExpose::Reset",
+      "va": "0x18047a460",
+      "query_method_id": 16511
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16553,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionInElevatorWithNpc::IsInCondition",
+      "va": "0x18047c790",
+      "query_method_id": 16553
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16555,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionLightingExpose::IsInCondition",
+      "va": "0x18047cc60",
+      "query_method_id": 16555
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16557,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMallFloorDistByClothes::IsInCondition",
+      "va": "0x18047cdd0",
+      "query_method_id": 16557
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16559,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionManager::Initialize",
+      "va": "0x18047d430",
+      "query_method_id": 16559
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16565,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveFromClothes::IsInCondition",
+      "va": "0x18047e3d0",
+      "query_method_id": 16565
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16566,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveFromClothes::GetAddSatisfy",
+      "va": "0x18047e5f0",
+      "query_method_id": 16566
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16567,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveFromClothes::IsRpPerSecCondition",
+      "va": "0x18047e890",
+      "query_method_id": 16567
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16568,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveFromClothes::Reset",
+      "va": "0x18047a460",
+      "query_method_id": 16511
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16570,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveFromClothesInArea::IsInCondition",
+      "va": "0x18047ea90",
+      "query_method_id": 16570
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16571,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveFromClothesInArea::GetAddSatisfy",
+      "va": "0x18047edb0",
+      "query_method_id": 16571
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16572,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveFromClothesInArea::IsRpPerSecCondition",
+      "va": "0x18047efc0",
+      "query_method_id": 16572
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16573,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveFromClothesInArea::Reset",
+      "va": "0x18047a460",
+      "query_method_id": 16511
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16575,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveVerticalFromClothes::IsInCondition",
+      "va": "0x18047f1c0",
+      "query_method_id": 16575
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16576,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveVerticalFromClothes::GetAddSatisfy",
+      "va": "0x18047f390",
+      "query_method_id": 16576
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16577,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveVerticalFromClothes::Reset",
+      "va": "0x18047f620",
+      "query_method_id": 16577
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16579,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionPee::IsInCondition",
+      "va": "0x18047f640",
+      "query_method_id": 16579
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16581,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionPoseExpose::IsInCondition",
+      "va": "0x18047f810",
+      "query_method_id": 16581
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16583,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionPutClothesAndInArea::IsInCondition",
+      "va": "0x18047fa50",
+      "query_method_id": 16583
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16585,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionSimpleBodyExpose::IsInCondition",
+      "va": "0x18047fde0",
+      "query_method_id": 16585
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16587,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionSitExpose::IsInCondition",
+      "va": "0x18047fff0",
+      "query_method_id": 16587
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16593,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionStopElevatorNaked::Initialize",
+      "va": "0x180480240",
+      "query_method_id": 16593
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16595,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionStopElevatorNaked::IsInCondition",
+      "va": "0x180480390",
+      "query_method_id": 16595
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16596,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionStopElevatorNaked::GetAddSatisfy",
+      "va": "0x180480a60",
+      "query_method_id": 16596
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16597,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionStopElevatorNaked::Reset",
+      "va": "0x180480b80",
+      "query_method_id": 16597
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16599,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionToiletOpenNaked::IsInCondition",
+      "va": "0x180480bf0",
+      "query_method_id": 16599
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16601,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionUsingDildo::IsInCondition",
+      "va": "0x180480e90",
+      "query_method_id": 16601
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16603,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionUsingWasher::IsInCondition",
+      "va": "0x1804810f0",
+      "query_method_id": 16603
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16605,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionVibeExposeMove::IsInCondition",
+      "va": "0x180481310",
+      "query_method_id": 16605
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16606,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionVibeExposeMove::GetAddSatisfy",
+      "va": "0x180481530",
+      "query_method_id": 16606
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16607,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionVibeExposeMove::IsRpPerSecCondition",
+      "va": "0x180481600",
+      "query_method_id": 16607
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16608,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionVibeExposeMove::Reset",
+      "va": "0x18047a460",
+      "query_method_id": 16511
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16950,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.RandomMissionManager::Initialize",
+      "va": "0x18049a7d0",
+      "query_method_id": 16950
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16951,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.RandomMissionManager::StartMission",
+      "va": "0x18049a870",
+      "query_method_id": 16951
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16954,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.RandomMissionManager::OnUpdate",
+      "va": "0x18049b220",
+      "query_method_id": 16954
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16955,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.RandomMissionManager::InterruptMission",
+      "va": "0x18049b540",
+      "query_method_id": 16955
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 14192,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.CommonDoor.CommonDoorController::Awake",
+      "va": "0x180607ef0",
+      "query_method_id": 14192
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 14193,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.CommonDoor.CommonDoorController::OnInteract",
+      "va": "0x180608260",
+      "query_method_id": 14193
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 14194,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.CommonDoor.CommonDoorController::CanInteract",
+      "va": "0x180608650",
+      "query_method_id": 14194
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 14197,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.CommonDoor.CommonDoorController::OpenClose",
+      "va": "0x180608770",
+      "query_method_id": 14197
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 14198,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.CommonDoor.CommonDoorController::OnEndDoorAnim",
+      "va": "0x180608a00",
+      "query_method_id": 14198
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 14201,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.CommonDoor.CommonDoorController::<Awake>b__20_0",
+      "va": "0x180608b00",
+      "query_method_id": 14201
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 14202,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.CommonDoor.CommonDoorController::<Awake>b__20_1",
+      "va": "0x180608b10",
+      "query_method_id": 14202
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 14203,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.CommonDoor.CommonDoorController::<OpenClose>b__25_0",
+      "va": "0x180608bb0",
+      "query_method_id": 14203
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 14204,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.CommonDoor.CommonDoorController::<OpenClose>b__25_1",
+      "va": "0x180608c10",
+      "query_method_id": 14204
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 13953,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::Start",
+      "va": "0x1805f54d0",
+      "query_method_id": 13953
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 13954,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::OnDestroy",
+      "va": "0x1805f5ba0",
+      "query_method_id": 13954
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 13955,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::OnChangeTime",
+      "va": "0x1805f5cc0",
+      "query_method_id": 13955
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 13956,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::OnLoadUsing",
+      "va": "0x1805f5e80",
+      "query_method_id": 13956
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 13957,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::Update",
+      "va": "0x1805f5e90",
+      "query_method_id": 13957
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 13958,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::StartWash",
+      "va": "0x1805f6320",
+      "query_method_id": 13958
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 13959,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::TakeClothes",
+      "va": "0x1805f6760",
+      "query_method_id": 13959
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 13960,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::OnInteract",
+      "va": "0x1805f6900",
+      "query_method_id": 13960
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 13961,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::OnPlaySe",
+      "va": "0x1805f6d30",
+      "query_method_id": 13961
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 13962,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::UseByNpc",
+      "va": "0x1805f6f40",
+      "query_method_id": 13962
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 13963,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::ReleaseByNpc",
+      "va": "0x1805f6f50",
+      "query_method_id": 13963
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 13964,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::OnAnimEndTake",
+      "va": "0x1805f6f60",
+      "query_method_id": 13964
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 13965,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::OnTimeStopEvent",
+      "va": "0x1805f6f70",
+      "query_method_id": 13965
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 13966,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::.ctor",
+      "va": "0x1805f7150",
+      "query_method_id": 13966
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 13967,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::.cctor",
+      "va": "0x1805f7310",
+      "query_method_id": 13967
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 13968,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::<Start>b__32_0",
+      "va": "0x1805f7480",
+      "query_method_id": 13968
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 13969,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::<Start>b__32_1",
+      "va": "0x1805f7490",
+      "query_method_id": 13969
+    },
+    {
+      "priority": 6,
+      "group": "concrete-interactions",
+      "metadata_id": 13970,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.WasherMachine.WasherMachineController::<Start>b__32_2",
+      "va": "0x1805f74a0",
+      "query_method_id": 13970
+    }
+  ],
+  "shared_address_aliases": [
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16522,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionEscalatorMove::Reset",
+      "va": "0x18047acb0",
+      "query_method_id": 16518
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16527,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionExposeBlindMove::Reset",
+      "va": "0x18047a460",
+      "query_method_id": 16511
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16551,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionHandcuffsMoveExpose::Reset",
+      "va": "0x18047a460",
+      "query_method_id": 16511
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16568,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveFromClothes::Reset",
+      "va": "0x18047a460",
+      "query_method_id": 16511
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16573,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionMoveFromClothesInArea::Reset",
+      "va": "0x18047a460",
+      "query_method_id": 16511
+    },
+    {
+      "priority": 5,
+      "group": "mission-rules",
+      "metadata_id": 16608,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionVibeExposeMove::Reset",
+      "va": "0x18047a460",
+      "query_method_id": 16511
+    }
+  ],
+  "preparer_sha256": "0034550588fa6ababde394f76327de8c50ac1293edb572e2c75890afc7e2ca18"
+}
