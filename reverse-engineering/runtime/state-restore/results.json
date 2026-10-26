@@ -1,0 +1,53 @@
+{
+  "authority": "controlled-native-entry-replay-in-full-game",
+  "natural_trials": 0,
+  "completed_trials": 1,
+  "frame_range": [
+    4984,
+    5168
+  ],
+  "wait_seconds": 3.0570459999999997,
+  "native_save_load_pairs": 1,
+  "root_identity_changed": true,
+  "npc": {
+    "stored": 3,
+    "instantiated": 3,
+    "warped": 3,
+    "active_runtime_objects": 3,
+    "max_warp_position_delta": 0,
+    "max_warp_quaternion_delta": 0,
+    "moved_after_spawn": 3
+  },
+  "drops": {
+    "current_stage_activated": 1,
+    "other_stage_hidden": 1,
+    "hide_keeps_dropped": true
+  },
+  "reserve": {
+    "stored": 2,
+    "matching_consumed": 1,
+    "other_stage_retained": 1,
+    "matching_drop_calls_including_replay": 1,
+    "other_stage_false_predicates": 2
+  },
+  "stage": {
+    "stored": 11,
+    "native_load": 0,
+    "controlled_consumer_scene": 11
+  },
+  "cleanup": {
+    "original_live_npcs": 30,
+    "references_and_spawn_counter_restored": true,
+    "applier_reenabled": true
+  },
+  "limitations": [
+    "Consumers are explicitly replayed after setting the loaded stage to the actual Mall; this is not a natural title-to-Mall load lifecycle.",
+    "Three valid dynamic NPC records and selected drop/reserve branches only; fixed NPCs, IsExist=false, elevator exclusion and interrupted callbacks remain untested.",
+    "GetCache reactivates the existing hidden current-item cache in this trial; cold-cache reconstruction of that item is not established.",
+    "Warp return is compared immediately; subsequent normal NPC movement is not a serialization error.",
+    "No replacement executable, all-fields equality, navigation-path equivalence or cross-version migration is claimed."
+  ],
+  "profile_files_unchanged": 9,
+  "pinned_inputs_unchanged": 5,
+  "engine_error_lines": 0
+}

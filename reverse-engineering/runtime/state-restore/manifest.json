@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "observation_complete": true,
+  "natural_only": false,
+  "authority": "controlled-native-entry-replay",
+  "game_root": "E:\\ManakaREA-NaturalGameplay",
+  "sessions": [
+    {
+      "session_id": "00a0e0e2-f820-4f2f-8910-6c4a3ebf1d0c",
+      "pid": 62136,
+      "state": "running",
+      "closed_by_operator": true,
+      "authority": "controlled-replay"
+    }
+  ],
+  "evidence_ids": [
+    "ev_0e2fa0e1cb59bf590bde8b3d34c54bdd427cd6704b1c16a7acde43edfad74b8b",
+    "ev_af25611053581f13d79d33fc07d6a536245294456d454a7501cd65f84b6c4368",
+    "ev_c7aa0c762382b0511ee0b477df7f989740216cbb6885f114fec5d7a62da387a5",
+    "ev_f3b0be9525e5fccb89837d0b1c672d534f8e7dd9964353be67d6afa36791308c"
+  ],
+  "sources": [
+    {
+      "path": "RestoreProbe.cs",
+      "sha256": "e87708d2760509066a103dcdbb910062cd67b69ca64f17fb74590cf98ae13af5"
+    },
+    {
+      "path": "RestoreProbe-v1.cs",
+      "sha256": "da40f12ceebc9c9e62009f45b5e4b6f619210afd0d085b00fa08a78c43547f41"
+    },
+    {
+      "path": "build.ps1",
+      "sha256": "43496fa922370d6e2908221728f264ea0f8a3a9b5590f0cad648cc1b6ea52549"
+    },
+    {
+      "path": "observe.js",
+      "sha256": "7ec279d054b5d79a0d353938edf872e48ebb4e9b37724b0300f19ad0b4f2c9aa"
+    },
+    {
+      "path": "reserve-witness.js",
+      "sha256": "281e1bcaa18142c61fbe83ab0c12d9b3a224cead2de0f9e76da66ecf3b86b0aa"
+    },
+    {
+      "path": "hide-witness.js",
+      "sha256": "d6f8cdcf4163d7cd17645d64f8aedb8a023c2f582d472577e2da083f8c4f566a"
+    },
+    {
+      "path": "prepare.js",
+      "sha256": "53ce3f7a53e3c19f7676564a4527d338ec6784df207e62583f88aece152d755a"
+    },
+    {
+      "path": "inventory.js",
+      "sha256": "0d01a3a97363580a356980eb7d1635aed8f3836b0f5bfe757f51ef93917bdbb9"
+    },
+    {
+      "path": "inventory-v2.js",
+      "sha256": "ee507db0c82396b3e9ea96a743839a33e9c0495077b922d70757fd076766a2f3"
+    },
+    {
+      "path": "api.js",
+      "sha256": "706d692c4d5e514bf826c7eaf103f59cd25839e6a978810f9031517157c30917"
+    },
+    {
+      "path": "proof.js",
+      "sha256": "53afd6b122c2eb7bdca3b9b14f84f2d73eee1b476ff15b877dd91342588d6d4d"
+    },
+    {
+      "path": "proof-v1.js",
+      "sha256": "aaf629673f3503127b4413c289fe4045c022aafd7625dccf7459713df1b9407c"
+    },
+    {
+      "path": "proof-v2.js",
+      "sha256": "882b0898c87c45856a8ba23ea474aadba0b43167a74dea3997134e849d051dd4"
+    },
+    {
+      "path": "build_probe.py",
+      "sha256": "047d3b74d1a288873dee80ee08d4a09161cb093947d6baa10f2224dd9e4ab838"
+    },
+    {
+      "path": "analyze.py",
+      "sha256": "41f30612a222a8285e7868c46afacccd2d0cd52705eec98d627e5da31e2aa292"
+    },
+    {
+      "path": "collect.py",
+      "sha256": "ead964cb8afef688b85a6d14af97df8808d4866355d2ef977c397cd87b7fb617"
+    },
+    {
+      "path": "test_analysis.py",
+      "sha256": "8355df4b9727d3eb270a389b26b7761cdc2503bd515a56463d3ff36c7984bc97"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "managed.jsonl.gz",
+      "sha256": "720de8a8a01915d4d9fb446f17a2ba9286115ca750dd9c38c06bab79045d1471",
+      "uncompressed_bytes": 6571,
+      "uncompressed_sha256": "1d516df1f3126637aed8abb22083139cf16940e0745b3b91094d678c01336350"
+    },
+    {
+      "path": "managed-diagnostics.jsonl.gz",
+      "sha256": "23300f571e2671d270ebb047654651e91a9d9b021ed10a60f99b3eb2c2401534",
+      "uncompressed_bytes": 174175,
+      "uncompressed_sha256": "f63fcd5730fc6457f6d23c30e8f97994d9b0c56629ff1286194b290fae0c6934"
+    },
+    {
+      "path": "engine.log.gz",
+      "sha256": "136478acb80480f3a5decfe111f1c3a7ed812ca6b018ab7e7abb0f121be5e5d0",
+      "uncompressed_bytes": 20824,
+      "uncompressed_sha256": "ecd6ba8a5629f9cc27f5e4dd0c661239c3e13c952afd147f90b87c27f4bb8f20"
+    },
+    {
+      "path": "rea-diagnostics.json.gz",
+      "sha256": "d0fd2e55a8051f094050ce6cb17665a57ab97c0c5d168719b2d022630686cace",
+      "uncompressed_bytes": 5178183,
+      "uncompressed_sha256": "fab4b571ab92e6ca682fd649408371759da159ba50675f760c7e94bcf3c1701a"
+    }
+  ],
+  "native_snapshot": {
+    "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\runtime\\state-restore\\.cache\\native-roundtrip.sd",
+    "sha256": "7b572855d33725a6b2e9d45df63c051175c0ebb5de72ea32593485882c94f40d"
+  },
+  "diagnostic_archive": {
+    "path": "rea-diagnostics.json.gz",
+    "rea_records": 36,
+    "selected_clean_records": 4,
+    "counted_as_completed_trials": false
+  },
+  "plugin": {
+    "sha256": "4b974a940ce23ed744e032772636fe2b0a294662550e6ba32d25f0ba81e3e79a",
+    "source": "RestoreProbe.cs"
+  },
+  "process_subject_boundary": "REA subject is null; disk inputs are hash-pinned and module paths are observed, not process-memory hash attestation."
+}

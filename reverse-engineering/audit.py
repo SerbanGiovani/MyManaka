@@ -286,6 +286,27 @@ def main():
         offset = image.offset(0x180000000 + int(row["rva"], 16), executable=True)
         check(native_data[offset:offset+row["size"]] == bytes(row["bytes"]), "Noise return original instruction bytes differ")
     observed_runtime_records[return_dir / "rea-runtime.json"] = return_runtime
+    restore_dir = ROOT / "runtime/state-restore"
+    restore_runtime = read(restore_dir / "manifest.json")
+    check(restore_runtime["observation_complete"] and not restore_runtime["natural_only"], "Restore replay authority differs")
+    for source in restore_runtime["sources"]:
+        check(digest(restore_dir / source["path"]) == source["sha256"], "Restore probe/analyzer source differs")
+    for output in restore_runtime["outputs"]:
+        path = restore_dir / output["path"]
+        raw = gzip.decompress(path.read_bytes())
+        check(digest(path) == output["sha256"] and len(raw) == output["uncompressed_bytes"] and
+              hashlib.sha256(raw).hexdigest() == output["uncompressed_sha256"], "Restore capture differs")
+    restore_analysis = runpy.run_path(str(restore_dir / "analyze.py"))
+    check(restore_analysis["build"](inputs=args.inputs) == read(restore_dir / "results.json"), "Restore object/file joins differ")
+    restore_post = read(restore_dir / "post-state.json")
+    check(restore_post["process"]["exited"] and restore_post["frida"]["closed_by_operator"] and
+          restore_post["temporary_plugin"]["removed_from_plugin_directory"], "Restore instrumentation cleanup incomplete")
+    if args.inputs:
+        for row in restore_post["profile"]:
+            check(digest(Path(row["path"])) == row["before"] == row["after"], "Restore clone profile differs")
+        for row in restore_post["inputs"]:
+            check(digest(Path(row["path"])) == digest(Path(row["original_path"])) == row["before"], "Restore engine/assets differ")
+    observed_runtime_records[restore_dir / "rea-runtime.json"] = restore_runtime
     verification = read(ROOT / "salt/evidence/decryption-verification.json")
     summary = read(ROOT / "salt/symbols/index-summary.json")
     object_record = asset["guid_object"]
@@ -640,6 +661,10 @@ def main():
         source_records.append({"path": str(Path(natural_runtime["game_root"]) / "BepInEx/plugins/NaturalObserver.dll"), "sha256": natural_runtime["current_plugin_sha256"]})
         generation_abi = read(generation_dir / "abi.json")
         source_records.append({"path": generation_abi["source_path"], "sha256": generation_abi["source_sha256"]})
+        for entry in restore_post["inputs"]:
+            for name in ("path", "original_path"):
+                source_records.append({"path": entry[name], "sha256": entry["before"]})
+        source_records.append({"path": restore_post["temporary_plugin"]["archived_path"], "sha256": restore_runtime["plugin"]["sha256"]})
         for source in source_records:
             # Derived SQLite byte identity is not portable after rebuilding it;
             # reconstruction scripts validate its build identity and coordinates.

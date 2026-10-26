@@ -4,6 +4,8 @@
 
 结果是选定恢复链及输入覆盖，不是原生对象保存/加载往返，也没有生成独立游戏。
 
+后续 [原生运行对照](state-restore-runtime.md) 已在独立副本完成一轮受控保存/加载：3 名 NPC、当前及异场景掉落、匹配及异场景预留。该补充含实际原生调用与 Unity 对象对照；仍保留场景字段受控协调和自然生命周期尚未验证的边界。本页以下数据描述前一轮静态与旧样本范围。
+
 ## 1. 玩家位置恢复与场景转移
 
 复用 `SaveManager.Load`（16971）、`InGameManager.Start`（16862）、玩家初始化和Warp：Load首先得到状态数据，Start随后将实际 StageController 的关卡与 `GameStateData.CurrentStageType +0x10` 比较。相同时，通过 `PlayerController.Warp` 使用保存的 `PlayerPosition +0x180` 和 `PlayerRotation +0x18c`；不匹配时更新状态中的关卡，而不是把另一关的存档坐标无条件套入当前场景。

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-26T18:14:03.089228+00:00",
+  "generated_at_utc": "2026-10-26T19:18:35.816251+00:00",
   "status": "consistent",
-  "canonical_rea_observations": 965,
+  "canonical_rea_observations": 969,
   "rea_queries_completed": 872,
   "artifacts": [
     {
@@ -117,8 +117,8 @@
     },
     {
       "path": "audit.py",
-      "bytes": 61984,
-      "sha256": "99050101b0820516a0762ce6ae5648e33858e7797fd8424b50a4079e1959f5ae"
+      "bytes": 63950,
+      "sha256": "002cc75bcee4ef381907007623c4bc166900045469fcdbe9e077db111e88429b"
     },
     {
       "path": "bareta-chain.md",
@@ -197,8 +197,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 21268,
-      "sha256": "2f2de5d0e28867e58d13c745888c7c7b2c09db07bc34885e7c1f609c652cbbeb"
+      "bytes": 21888,
+      "sha256": "4c505a3526d1897d70e12fc8f35ebbd225abb03c9993a4fc77715e8f95f15b9a"
     },
     {
       "path": "runtime/natural-cancellation/analyze.py",
@@ -894,6 +894,141 @@
       "path": "runtime/npc-event-timing/unity.log.gz",
       "bytes": 2031,
       "sha256": "dc612b4f838043d7b4de0717a5e48fce159148ed7e62005c03f690a110e5873f"
+    },
+    {
+      "path": "runtime/state-restore/analyze.py",
+      "bytes": 12287,
+      "sha256": "41f30612a222a8285e7868c46afacccd2d0cd52705eec98d627e5da31e2aa292"
+    },
+    {
+      "path": "runtime/state-restore/api.js",
+      "bytes": 6944,
+      "sha256": "706d692c4d5e514bf826c7eaf103f59cd25839e6a978810f9031517157c30917"
+    },
+    {
+      "path": "runtime/state-restore/baseline.json",
+      "bytes": 3598,
+      "sha256": "8542aa2bdc170f57258df152868d73d33d3831169b0d81dc288798f17af1f733"
+    },
+    {
+      "path": "runtime/state-restore/build.ps1",
+      "bytes": 1843,
+      "sha256": "43496fa922370d6e2908221728f264ea0f8a3a9b5590f0cad648cc1b6ea52549"
+    },
+    {
+      "path": "runtime/state-restore/build_probe.py",
+      "bytes": 1037,
+      "sha256": "047d3b74d1a288873dee80ee08d4a09161cb093947d6baa10f2224dd9e4ab838"
+    },
+    {
+      "path": "runtime/state-restore/collect.py",
+      "bytes": 4583,
+      "sha256": "ead964cb8afef688b85a6d14af97df8808d4866355d2ef977c397cd87b7fb617"
+    },
+    {
+      "path": "runtime/state-restore/engine.log.gz",
+      "bytes": 888,
+      "sha256": "136478acb80480f3a5decfe111f1c3a7ed812ca6b018ab7e7abb0f121be5e5d0"
+    },
+    {
+      "path": "runtime/state-restore/hide-witness.js",
+      "bytes": 574,
+      "sha256": "d6f8cdcf4163d7cd17645d64f8aedb8a023c2f582d472577e2da083f8c4f566a"
+    },
+    {
+      "path": "runtime/state-restore/inventory-v2.js",
+      "bytes": 2512,
+      "sha256": "ee507db0c82396b3e9ea96a743839a33e9c0495077b922d70757fd076766a2f3"
+    },
+    {
+      "path": "runtime/state-restore/inventory.js",
+      "bytes": 2391,
+      "sha256": "0d01a3a97363580a356980eb7d1635aed8f3836b0f5bfe757f51ef93917bdbb9"
+    },
+    {
+      "path": "runtime/state-restore/managed-diagnostics.jsonl.gz",
+      "bytes": 12888,
+      "sha256": "23300f571e2671d270ebb047654651e91a9d9b021ed10a60f99b3eb2c2401534"
+    },
+    {
+      "path": "runtime/state-restore/managed.jsonl.gz",
+      "bytes": 1202,
+      "sha256": "720de8a8a01915d4d9fb446f17a2ba9286115ca750dd9c38c06bab79045d1471"
+    },
+    {
+      "path": "runtime/state-restore/manifest.json",
+      "bytes": 4789,
+      "sha256": "974c9ae8498b009e0227b138e731d24231ce0fba6822872eed5441012f5f725a"
+    },
+    {
+      "path": "runtime/state-restore/native-save.json",
+      "bytes": 2369,
+      "sha256": "48d54083d79bb8783804d1b32a8553b94ebc33f8737b7598d36c3a8c9e5af3df"
+    },
+    {
+      "path": "runtime/state-restore/observe.js",
+      "bytes": 3221,
+      "sha256": "7ec279d054b5d79a0d353938edf872e48ebb4e9b37724b0300f19ad0b4f2c9aa"
+    },
+    {
+      "path": "runtime/state-restore/post-state.json",
+      "bytes": 6043,
+      "sha256": "91f9d751bdcaa618b1c887cd7f4ef8e811bc699025ddf27710992d02eea446eb"
+    },
+    {
+      "path": "runtime/state-restore/prepare.js",
+      "bytes": 1177,
+      "sha256": "53ce3f7a53e3c19f7676564a4527d338ec6784df207e62583f88aece152d755a"
+    },
+    {
+      "path": "runtime/state-restore/proof-v1.js",
+      "bytes": 9058,
+      "sha256": "aaf629673f3503127b4413c289fe4045c022aafd7625dccf7459713df1b9407c"
+    },
+    {
+      "path": "runtime/state-restore/proof-v2.js",
+      "bytes": 9054,
+      "sha256": "882b0898c87c45856a8ba23ea474aadba0b43167a74dea3997134e849d051dd4"
+    },
+    {
+      "path": "runtime/state-restore/proof.js",
+      "bytes": 1988,
+      "sha256": "53afd6b122c2eb7bdca3b9b14f84f2d73eee1b476ff15b877dd91342588d6d4d"
+    },
+    {
+      "path": "runtime/state-restore/rea-diagnostics.json.gz",
+      "bytes": 374663,
+      "sha256": "d0fd2e55a8051f094050ce6cb17665a57ab97c0c5d168719b2d022630686cace"
+    },
+    {
+      "path": "runtime/state-restore/rea-runtime.json",
+      "bytes": 208566,
+      "sha256": "f2f2cff4c289c1fdeaa3e649be6d7136bfd28f681ad6a2198fe4fc643b96c58e"
+    },
+    {
+      "path": "runtime/state-restore/reserve-witness.js",
+      "bytes": 873,
+      "sha256": "281e1bcaa18142c61fbe83ab0c12d9b3a224cead2de0f9e76da66ecf3b86b0aa"
+    },
+    {
+      "path": "runtime/state-restore/RestoreProbe-v1.cs",
+      "bytes": 11294,
+      "sha256": "da40f12ceebc9c9e62009f45b5e4b6f619210afd0d085b00fa08a78c43547f41"
+    },
+    {
+      "path": "runtime/state-restore/RestoreProbe.cs",
+      "bytes": 12657,
+      "sha256": "e87708d2760509066a103dcdbb910062cd67b69ca64f17fb74590cf98ae13af5"
+    },
+    {
+      "path": "runtime/state-restore/results.json",
+      "bytes": 1827,
+      "sha256": "4528a391c8f6357a44b4f894a47bdec5117084680c4f9b5e4d2538621fab41af"
+    },
+    {
+      "path": "runtime/state-restore/test_analysis.py",
+      "bytes": 2743,
+      "sha256": "8355df4b9727d3eb270a389b26b7761cdc2503bd515a56463d3ff36c7984bc97"
     },
     {
       "path": "runtime/time-stop-producer/analyze.py",
@@ -11436,9 +11571,14 @@
       "sha256": "fbd64dc7397696225e14159db9bc6490d24f333c4f81b20a841aa05526728395"
     },
     {
+      "path": "state-restore-runtime.md",
+      "bytes": 7779,
+      "sha256": "ced0786c4abaf86a3cbffbe8374384be7c34bb797141620a283de8e5b45e3e30"
+    },
+    {
       "path": "state-restore.md",
-      "bytes": 9249,
-      "sha256": "a0ad71f4e198530a056d276da419c0e344e8b9dc0c9d3cd534f37422d57bd011"
+      "bytes": 9616,
+      "sha256": "25b0dee7644453bef4188027eb29384ecadaff3a09757ab3bc7d8c7e3b753ab1"
     },
     {
       "path": "time-stop-chain.md",
@@ -11447,8 +11587,8 @@
     },
     {
       "path": "unknowns.json",
-      "bytes": 17597,
-      "sha256": "ccc9511af82f6794324521fb6adabdbbf30e83fe65c3b8dd504cbb0134a427f7"
+      "bytes": 19342,
+      "sha256": "12c420dd9cafa7ddc2f5d603b490b67f818c8ef4990c857acfd5c48b19ee359d"
     }
   ],
   "inputs_checked": [
@@ -11655,6 +11795,10 @@
     {
       "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\BepInEx\\unity-libs\\UnityEngine.AnimationModule.dll",
       "sha256": "845df2635127c8fb14df3fef45f3c591ee619f0ec310795083469f23432692a7"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\RestoreRoundtrip\\20261027-1\\RestoreProbe-completed.dll",
+      "sha256": "4b974a940ce23ed744e032772636fe2b0a294662550e6ba32d25f0ba81e3e79a"
     }
   ],
   "observations": [
@@ -11892,6 +12036,11 @@
       "evidence_id": "ev_0e256d8a6ad93171eff112cf0c97d2a10b93822e664a16919253eecf6268196c",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_0e2fa0e1cb59bf590bde8b3d34c54bdd427cd6704b1c16a7acde43edfad74b8b",
+      "operation": "load_frida_script",
+      "subject_sha256": null
     },
     {
       "evidence_id": "ev_0e48932100d4a276d61e62a1a9f4798af32fb9c4dae206072c968ed67e6572fa",
@@ -15019,6 +15168,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_af25611053581f13d79d33fc07d6a536245294456d454a7501cd65f84b6c4368",
+      "operation": "frida_session_status",
+      "subject_sha256": null
+    },
+    {
       "evidence_id": "ev_af3ef93a5e1c920cd2fcacace01d3d85bdd861bb070ed6fa74fc21e9d4ac6117",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -15432,6 +15586,11 @@
       "evidence_id": "ev_c78b364b2f5e0c28a018de09f0e7503567cfca27814d847ebb23267e6e8f037c",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_c7aa0c762382b0511ee0b477df7f989740216cbb6885f114fec5d7a62da387a5",
+      "operation": "load_frida_script",
+      "subject_sha256": null
     },
     {
       "evidence_id": "ev_c86f6bfe7215741fe5c394dc7b7d7d3f5b016adc622c7e516eb7c35a294bea42",
@@ -16272,6 +16431,11 @@
       "evidence_id": "ev_f388a56bdd03f4c2f3ef644123897c27151ba1dce0faef319011158c19d08ce6",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_f3b0be9525e5fccb89837d0b1c672d534f8e7dd9964353be67d6afa36791308c",
+      "operation": "load_frida_script",
+      "subject_sha256": null
     },
     {
       "evidence_id": "ev_f4098fb744d7be46c10aad4c84784908c9af1b4feb54a7e07da5544932e7cf0b",
