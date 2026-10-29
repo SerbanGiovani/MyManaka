@@ -1,0 +1,98 @@
+{
+  "authority": "controlled-native-save-load-and-initialize-callback",
+  "natural_only": false,
+  "selected_custom_fields": [
+    "CustomIsSkinColorFree",
+    "CustomizeSkinColorR",
+    "CustomizeSkinColorG",
+    "CustomizeSkinColorB",
+    "CustomizeEyeBlowColorR",
+    "CustomizeEyeBlowColorG",
+    "CustomizeEyeBlowColorB",
+    "CustomizeEyeLashColorR",
+    "CustomizeEyeLashColorG",
+    "CustomizeEyeLashColorB",
+    "CustomizeEyeSize",
+    "CustomizeEyeDist",
+    "CustomizeCheekFat",
+    "CustomizeEarElf",
+    "CustomizeArm",
+    "CustomizeShoulder",
+    "CustomizeNeckThick"
+  ],
+  "cases": [
+    {
+      "name": "profile-a",
+      "fields": 17,
+      "file_sha256": "902c42474e057daff1028dd63524dd6c6c4ab27dbfb7c40a690e9be3fdcde0e8",
+      "material_pairs": 4,
+      "face_channels": 40,
+      "changed_face_channels": [
+        380,
+        392,
+        388
+      ],
+      "nonunit_bone_targets": 5,
+      "material_rgb_max_error": 8.704719545171713e-08,
+      "bone_inverse_max_error": 4.391021724003963e-08,
+      "reference_dispatch_phase": "Update",
+      "reference_callback_offset": 1,
+      "restore_dispatch_phase": "LateUpdate",
+      "restore_frame": 2179,
+      "bone_callback_frame": 2181,
+      "restore_callback_offset": 2
+    },
+    {
+      "name": "profile-b",
+      "fields": 17,
+      "file_sha256": "6776ca2ae8afddcaa6fbd935fae806a3585d3c24721686775c6cfb677709dcaa",
+      "material_pairs": 4,
+      "face_channels": 40,
+      "changed_face_channels": [
+        376,
+        388
+      ],
+      "nonunit_bone_targets": 5,
+      "material_rgb_max_error": 7.047195438314446e-08,
+      "bone_inverse_max_error": 3.590698249844593e-08,
+      "reference_dispatch_phase": "Update",
+      "reference_callback_offset": 1,
+      "restore_dispatch_phase": "LateUpdate",
+      "restore_frame": 2196,
+      "bone_callback_frame": 2198,
+      "restore_callback_offset": 2
+    },
+    {
+      "name": "nonunit-bones",
+      "fields": 17,
+      "file_sha256": "f13c37bc7f874f7ecac950bb39fafdd2118204180199c01878d180d11bb668e3",
+      "material_pairs": 4,
+      "face_channels": 40,
+      "changed_face_channels": [
+        380,
+        392,
+        388
+      ],
+      "nonunit_bone_targets": 12,
+      "material_rgb_max_error": 8.704719545171713e-08,
+      "bone_inverse_max_error": 1.3465118353650496e-08,
+      "reference_dispatch_phase": "Update",
+      "reference_callback_offset": 1,
+      "restore_dispatch_phase": "LateUpdate",
+      "restore_frame": 2218,
+      "bone_callback_frame": 2220,
+      "restore_callback_offset": 2
+    }
+  ],
+  "native_messages": 337,
+  "engine_error_events": 0,
+  "all_custom_fields_visual_equivalence": false,
+  "limitations": [
+    "17 of66 custom fields are deliberately changed; field persistence is checked independently, not all appearance features.",
+    "Four material slots and40 face channels are compared to original native application before disturbance.",
+    "Unchanged face channels are covered for roundtrip consistency, not claimed as independent parameter-response tests.",
+    "The twelve-target case explicitly assigns nonunit Transform scales after dispatch; these scales are not claimed to be stored fields.",
+    "Callback phase offsets are measured for this fixture; frame-internal Scheduler position is an inference, not a new instrumented fact.",
+    "Original initialization callback is deliberately invoked after Load; natural UI dispatch, hair customization/paint/textures and collision results remain outside this batch."
+  ]
+}

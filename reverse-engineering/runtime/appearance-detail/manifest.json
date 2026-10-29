@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "natural_only": false,
+  "authority": "controlled-original-save-load-initialize-callback",
+  "sessions": [
+    {
+      "session_id": "fbe1931e-fd5d-4f6f-a8f0-05d55cf3651c",
+      "pid": 69516,
+      "state": "running",
+      "closed_by_operator": true
+    }
+  ],
+  "evidence_ids": [
+    "ev_fe5ff3ed8540297660c74a1c2f8e39c604ad8fa393c3eb51c0e3eb6687f3df61",
+    "ev_534232a825d88d2a4892bd0695cef9daee8c98cbc69374558f360eeaab3a5a46"
+  ],
+  "plugin": {
+    "archived_path": "E:\\ManakaREA-NaturalGameplay\\AppearanceDetail\\20261030-1\\AppearanceDetailProbe-completed.dll",
+    "sha256": "049ff1cb2c2b84ab412352cba4b0f5a279ec65df11db68a281621d266ab76d3d"
+  },
+  "sources": [
+    {
+      "path": "Probe.cs",
+      "sha256": "a22980bd11e29f1593aea41fbaf08e21e23b0be8000c4fa8cbd5aa0710eb1c30"
+    },
+    {
+      "path": "build.ps1",
+      "sha256": "5cdf210dfe28c295ae98d1cbde923a8ce47ead799a0009ebe7b13963bc09b22a"
+    },
+    {
+      "path": "observe.js",
+      "sha256": "37db58c1170335fa79c1e66dbd7ee112688bbc83503e55dce12990ff9c95b8e9"
+    },
+    {
+      "path": "run_cases.py",
+      "sha256": "784a7a9a3a11315658b125e80e402347cf7e42fa999e725f1d7522153f567009"
+    },
+    {
+      "path": "analyze.py",
+      "sha256": "7184bb9018eb998be49014db2c9281d1ff084686a2adfe0a3315cc1ecc4edf0c"
+    },
+    {
+      "path": "collect.py",
+      "sha256": "eea7893b0eaae16cdfc7d5d10b48f4613505a7903d5fee154e1a4af22b66940a"
+    },
+    {
+      "path": "test_analysis.py",
+      "sha256": "0d1de46ddd3d679aedbaed9bf21cfca17f451e1746c1ee0fa1f01212ec43d64d"
+    },
+    {
+      "path": "shape-indices.json",
+      "sha256": "52a53478ed43b33d523e15d1d9b33fbb2b7fcefe0b8185b68aa1679fa0806a1e"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "managed.jsonl.gz",
+      "sha256": "84839c5283da5a4853552b459b5dda8d575f9d4ae7d9f7d22141725dea3638ca",
+      "uncompressed_bytes": 89096,
+      "uncompressed_sha256": "ca77f725e75bc156d174ec69b554865ab9c1a193cfd4c8d8d06441ed0da36d74"
+    },
+    {
+      "path": "paths.jsonl.gz",
+      "sha256": "40eb141de9007c512b0211e1f462e6ded9afc3b6807ff5eb1e68d42d33d1e97c",
+      "uncompressed_bytes": 28285,
+      "uncompressed_sha256": "1fc919ccccfcc9f1b27be473946bdcaca7ab04df6a8045cb8ed9309ff73bd414"
+    },
+    {
+      "path": "engine.log.gz",
+      "sha256": "dcb0a5b68720377472fe0141c3081f1c5431c9f54a234e1e8271a37827f06d96",
+      "uncompressed_bytes": 20291,
+      "uncompressed_sha256": "e7f68f753b92a6b37dc1be6d822c3d27288e7c0bf17dc184bab636ae1d84d199"
+    }
+  ],
+  "scope": "17 saved color/face/body fields, native reference/disturb/recovery and nonunit bone targets; not all custom-field equivalence."
+}

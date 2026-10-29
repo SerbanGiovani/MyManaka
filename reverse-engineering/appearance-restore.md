@@ -23,3 +23,6 @@ python reverse-engineering/runtime/appearance-restore/test_analysis.py
 python reverse-engineering/runtime/appearance-restore/analyze.py --check --inputs
 python reverse-engineering/audit.py --inputs --write-index
 ```
+
+
+后续[外观细项报告](appearance-detail.md)补齐了选定颜色/脸部与非单位骨骼目标，并实测LateUpdate发出时DelayFlame(1)可在F+2执行；本报告的F+1结论仍限于原Update阶段夹具。

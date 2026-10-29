@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-29T18:27:39.603436+00:00",
+  "generated_at_utc": "2026-10-29T18:40:14.301612+00:00",
   "status": "consistent",
-  "canonical_rea_observations": 1009,
+  "canonical_rea_observations": 1011,
   "rea_queries_completed": 888,
   "artifacts": [
     {
@@ -16,9 +16,14 @@
       "sha256": "ff78fd3cf210607179a57ec478bb1ee9040475f848210a5a5103863161156e25"
     },
     {
+      "path": "appearance-detail.md",
+      "bytes": 3090,
+      "sha256": "c8d362cdd7d71ccdf6bc66feb872c3db2773e280f12df646cd71e8b7c77a9dd1"
+    },
+    {
       "path": "appearance-restore.md",
-      "bytes": 2638,
-      "sha256": "a9aca07cac0dacf79c415bda49e70b2a335fc25483080aa6f9d1be526bcb44f9"
+      "bytes": 2885,
+      "sha256": "7c9652ab15a52be5c4c5df947aa88d3a0260c6b16d214b9e93db032df41a6600"
     },
     {
       "path": "asset-followup.md",
@@ -122,8 +127,8 @@
     },
     {
       "path": "audit.py",
-      "bytes": 75917,
-      "sha256": "65a71e42d5c17e953a576bfa199d2c27f06bdeb0c05e25759c7a405941627123"
+      "bytes": 77330,
+      "sha256": "119fd9cf6951d76541b5cd09dbb9516a98e26e52e86baf9b2cbcadeb1a097f28"
     },
     {
       "path": "bareta-chain.md",
@@ -232,8 +237,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 26420,
-      "sha256": "12ffe1feb316e3e51e07369b8510b21ace035619ce114d494686a7ba0440ae8c"
+      "bytes": 26977,
+      "sha256": "52d3492f37d9311d63ae23944184f2521217011eac774b679df388eaa636ee62"
     },
     {
       "path": "reconstruction/build-smoke.ps1",
@@ -279,6 +284,96 @@
       "path": "restore-interruption.md",
       "bytes": 3049,
       "sha256": "3be852c48736b2245efe2c19e2a3e4505c5bc385d99bca2a1b6b442ace07dcbb"
+    },
+    {
+      "path": "runtime/appearance-detail/analyze.py",
+      "bytes": 10590,
+      "sha256": "7184bb9018eb998be49014db2c9281d1ff084686a2adfe0a3315cc1ecc4edf0c"
+    },
+    {
+      "path": "runtime/appearance-detail/baseline.json",
+      "bytes": 4927,
+      "sha256": "529315fab76f8116b42541a0a9ab09a67f2b04f3d4dcaee32152ea51c8077c69"
+    },
+    {
+      "path": "runtime/appearance-detail/build.ps1",
+      "bytes": 1894,
+      "sha256": "5cdf210dfe28c295ae98d1cbde923a8ce47ead799a0009ebe7b13963bc09b22a"
+    },
+    {
+      "path": "runtime/appearance-detail/close-receipt.json",
+      "bytes": 245,
+      "sha256": "d7572089d6ff4ced5c8eb31b6377a0e58399556e71bafb11661c5a5b22261870"
+    },
+    {
+      "path": "runtime/appearance-detail/collect.py",
+      "bytes": 2938,
+      "sha256": "eea7893b0eaae16cdfc7d5d10b48f4613505a7903d5fee154e1a4af22b66940a"
+    },
+    {
+      "path": "runtime/appearance-detail/engine.log.gz",
+      "bytes": 951,
+      "sha256": "dcb0a5b68720377472fe0141c3081f1c5431c9f54a234e1e8271a37827f06d96"
+    },
+    {
+      "path": "runtime/appearance-detail/managed.jsonl.gz",
+      "bytes": 3236,
+      "sha256": "84839c5283da5a4853552b459b5dda8d575f9d4ae7d9f7d22141725dea3638ca"
+    },
+    {
+      "path": "runtime/appearance-detail/manifest.json",
+      "bytes": 2727,
+      "sha256": "d6de2c07677a71fe27feaa9ffef0ccf63e077c08413e365080d1d89624d0e3d8"
+    },
+    {
+      "path": "runtime/appearance-detail/observe.js",
+      "bytes": 2136,
+      "sha256": "37db58c1170335fa79c1e66dbd7ee112688bbc83503e55dce12990ff9c95b8e9"
+    },
+    {
+      "path": "runtime/appearance-detail/paths.jsonl.gz",
+      "bytes": 2270,
+      "sha256": "40eb141de9007c512b0211e1f462e6ded9afc3b6807ff5eb1e68d42d33d1e97c"
+    },
+    {
+      "path": "runtime/appearance-detail/post-state.json",
+      "bytes": 6347,
+      "sha256": "f70c580c19bf59ed8c81bc81a561727583d8d924369285bd19b228926f300485"
+    },
+    {
+      "path": "runtime/appearance-detail/Probe.cs",
+      "bytes": 11908,
+      "sha256": "a22980bd11e29f1593aea41fbaf08e21e23b0be8000c4fa8cbd5aa0710eb1c30"
+    },
+    {
+      "path": "runtime/appearance-detail/rea-runtime.json",
+      "bytes": 163657,
+      "sha256": "608039e7c4267e9406b0ee46055d1acb4f6ca7de40312b9d7c3366d1ba8f4531"
+    },
+    {
+      "path": "runtime/appearance-detail/results.json",
+      "bytes": 3605,
+      "sha256": "5c51c56509035baa2ce996fe7eb8f4a7f4f65a4f04294bbedffb0f835fe2dd95"
+    },
+    {
+      "path": "runtime/appearance-detail/run_cases.py",
+      "bytes": 1102,
+      "sha256": "784a7a9a3a11315658b125e80e402347cf7e42fa999e725f1d7522153f567009"
+    },
+    {
+      "path": "runtime/appearance-detail/saved-files.json",
+      "bytes": 2726,
+      "sha256": "3ca03e640f12a5c3ad566b4975b5362d9e3545be8e7cf5d5805387ed47ffaa7c"
+    },
+    {
+      "path": "runtime/appearance-detail/shape-indices.json",
+      "bytes": 523,
+      "sha256": "52a53478ed43b33d523e15d1d9b33fbb2b7fcefe0b8185b68aa1679fa0806a1e"
+    },
+    {
+      "path": "runtime/appearance-detail/test_analysis.py",
+      "bytes": 2398,
+      "sha256": "0d1de46ddd3d679aedbaed9bf21cfca17f451e1746c1ee0fa1f01212ec43d64d"
     },
     {
       "path": "runtime/appearance-restore/analyze.py",
@@ -2021,6 +2116,11 @@
       "sha256": "05865e11471916f4769404f6e4ed5e17fe6a7e3df61dbbb4c7bb810972c1b5fe"
     },
     {
+      "path": "salt/appearance_detail_evidence.py",
+      "bytes": 1846,
+      "sha256": "1b3f91b6b36ec1afeb65168130d3cdacafbbd7e4d7ba2b7f4dbf694fd051d518"
+    },
+    {
       "path": "salt/asset_evidence.py",
       "bytes": 15229,
       "sha256": "e7b97571b5224752f9f87620b2d7cca406c67a9bcbcb53fd68be046862bb1aed"
@@ -2224,6 +2324,11 @@
       "path": "salt/evidence/animator-parameters/run.json",
       "bytes": 4957,
       "sha256": "30a7be97c040f26f13a437a15cf6aed4d02bae2c95b79649cc649b7c1830a87d"
+    },
+    {
+      "path": "salt/evidence/appearance-detail-chain.json",
+      "bytes": 637387,
+      "sha256": "340f21f10b6d8bb58b4f529827056f10490a1a4dac30e76d75787d2c68963d8a"
     },
     {
       "path": "salt/evidence/artifact-identity.json",
@@ -12872,8 +12977,8 @@
     },
     {
       "path": "work-queue.json",
-      "bytes": 2360,
-      "sha256": "11f5ad3dd2c227bf162bb892c003304aab0dba5637428630a57bfe8680b7afe4"
+      "bytes": 2520,
+      "sha256": "9aebf8edf7250fade09a2bfcffd4a49211a3898457bfbb3b8a1e55f8a5538b84"
     }
   ],
   "inputs_checked": [
@@ -13124,6 +13229,10 @@
     {
       "path": "E:\\ManakaREA-NaturalGameplay\\AppearanceRestore\\20261030-1\\AppearanceProbe-completed.dll",
       "sha256": "d0ab681aae3f33735002ce7b0ff2db2ba2ae9b42c8787ee3dbff2c77951b6f3b"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\AppearanceDetail\\20261030-1\\AppearanceDetailProbe-completed.dll",
+      "sha256": "049ff1cb2c2b84ab412352cba4b0f5a279ec65df11db68a281621d266ab76d3d"
     },
     {
       "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\authorized-20261030-1-build\\ToolchainSmoke.exe",
@@ -14782,6 +14891,11 @@
       "evidence_id": "ev_531c7587aa92856c377d999eda30aa308dc3ef0ec9a9bf91f1a0afc331dd33ea",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_534232a825d88d2a4892bd0695cef9daee8c98cbc69374558f360eeaab3a5a46",
+      "operation": "frida_session_status",
+      "subject_sha256": null
     },
     {
       "evidence_id": "ev_5380698d2d505bef27b600992f3bcf0fb54f10db9762fb3f0875a8af853a72c7",
@@ -18172,6 +18286,11 @@
       "evidence_id": "ev_fe5d6c70d1b7dbe4d8a2e064ee8777d45fec76a7fcb735ddf80c427608c7f04f",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_fe5ff3ed8540297660c74a1c2f8e39c604ad8fa393c3eb51c0e3eb6687f3df61",
+      "operation": "load_frida_script",
+      "subject_sha256": null
     },
     {
       "evidence_id": "ev_ffb72c9b788c7000bf9b2e4d83d1475a3ce7d679be5e1350d552f909619bb296",
