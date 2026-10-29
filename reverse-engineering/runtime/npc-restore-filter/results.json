@@ -1,0 +1,110 @@
+{
+  "authority": "controlled-native-replay-with-passive-REA-witness",
+  "natural_positive_restore": false,
+  "fixed_snapshot": {
+    "actual_fixed_types": [
+      "Pinpon",
+      "Pinpon"
+    ],
+    "live_input": 4,
+    "fixed_count": 2,
+    "records_after_full": 2,
+    "records_after_removal": 2,
+    "exists_after_removal": [
+      true,
+      false
+    ]
+  },
+  "native_save": {
+    "stage": 10,
+    "npc_records": 2,
+    "exists": [
+      true,
+      false
+    ],
+    "sha256": "bc3aa64c790ce2c1ea4ab3767dc8986aaf4cf383acfe9da99193f6c71398b0ba",
+    "bytes": 91776,
+    "load_stage": "Apart",
+    "explicit_consumer_stage": "Residence"
+  },
+  "elevator": {
+    "bounds": {
+      "center": [
+        49.29,
+        -6.045,
+        -18.448
+      ],
+      "extents": [
+        0.6627575,
+        13.044352,
+        1.2208333
+      ]
+    },
+    "record_exists": [
+      true,
+      true,
+      false,
+      false
+    ],
+    "contains": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "native_bounds_calls": 2,
+    "queued_records": 1,
+    "absent_records_queued": 0,
+    "inside_records_queued": 0
+  },
+  "trials": [
+    {
+      "trial": "snapshot-fixed-absent",
+      "begin_frame": 4836,
+      "restore_frame": 4836,
+      "queue_frame": 4836,
+      "callback_frame": 4839,
+      "callback_delay_seconds": 0.04265594482421875,
+      "queued": 1,
+      "callbacks": 1,
+      "instantiated": 1,
+      "warp_position_max_error": 0.0,
+      "warp_rotation_max_error": 0.0,
+      "live_after_wait": 1,
+      "wait_seconds": 4.04359425634766,
+      "restored_original_live": 22,
+      "restored_fixed_count": 19
+    },
+    {
+      "trial": "elevator-existence",
+      "begin_frame": 10495,
+      "restore_frame": 10495,
+      "queue_frame": 10495,
+      "callback_frame": 10498,
+      "callback_delay_seconds": 0.039581298828125,
+      "queued": 1,
+      "callbacks": 1,
+      "instantiated": 1,
+      "warp_position_max_error": 0.0,
+      "warp_rotation_max_error": 0.0,
+      "live_after_wait": 1,
+      "wait_seconds": 4.006027407226554,
+      "restored_original_live": 21,
+      "restored_fixed_count": 0
+    }
+  ],
+  "limits": [
+    "Explicit empty OnLoadData priming and temporary containers are controlled preconditions.",
+    "Fixed NPCs are excluded at snapshot production; no claim of a fixed-type field in NpcSaveData.",
+    "Elevator Bounds use the actual Mall singleton; boundary faces, invalid positions, destroyed elevator and scheduler interruption are not covered.",
+    "Only the producer/IsExist case uses native Save/Load; the elevator matrix is constructed in memory and directly consumed.",
+    "Natural default force=true reachability remains unchanged."
+  ],
+  "engine_error_lines": 0,
+  "protected_files": {
+    "user_data": 9,
+    "prior_natural_profile": 4,
+    "engine_assets": 5,
+    "unchanged": true
+  }
+}

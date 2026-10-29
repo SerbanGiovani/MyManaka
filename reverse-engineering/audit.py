@@ -347,6 +347,22 @@ def main():
     title_bindings = runpy.run_path(str(ROOT / "salt/natural_title_evidence.py"))
     check(title_bindings["build"]() == read(ROOT / "salt/evidence/natural-title-chain.json"), "Natural-title static bindings differ")
     observed_runtime_records[title_dir / "rea-runtime.json"] = title_runtime
+    npc_filter_dir = ROOT / "runtime/npc-restore-filter"
+    npc_filter_runtime = read(npc_filter_dir / "manifest.json")
+    check(npc_filter_runtime["observation_complete"] and not npc_filter_runtime["natural_only"] and
+          npc_filter_runtime["authority"] == "controlled-native-entry-replay", "NPC filter authority differs")
+    for source in npc_filter_runtime["sources"]:
+        check(digest(npc_filter_dir / source["path"]) == source["sha256"], "NPC filter source differs")
+    for output in npc_filter_runtime["outputs"]:
+        path = npc_filter_dir / output["path"]
+        raw = gzip.decompress(path.read_bytes())
+        check(digest(path) == output["sha256"] and len(raw) == output["uncompressed_bytes"] and
+              hashlib.sha256(raw).hexdigest() == output["uncompressed_sha256"], "NPC filter capture differs")
+    npc_filter_analysis = runpy.run_path(str(npc_filter_dir / "analyze.py"))
+    check(npc_filter_analysis["build"](inputs=args.inputs) == read(npc_filter_dir / "results.json"), "NPC filter file/queue/callback/object joins differ")
+    npc_filter_bindings = runpy.run_path(str(ROOT / "salt/npc_restore_filter_evidence.py"))
+    check(npc_filter_bindings["build"]() == read(ROOT / "salt/evidence/npc-restore-filter-chain.json"), "NPC filter static binding differs")
+    observed_runtime_records[npc_filter_dir / "rea-runtime.json"] = npc_filter_runtime
     verification = read(ROOT / "salt/evidence/decryption-verification.json")
     summary = read(ROOT / "salt/symbols/index-summary.json")
     object_record = asset["guid_object"]
@@ -710,6 +726,7 @@ def main():
                 source_records.append({"path": entry[name], "sha256": entry["sha256"]})
         source_records.append({"path": load_post["plugin"]["path"], "sha256": load_post["plugin"]["sha256"]})
         source_records.append(load_scan["decoder"])
+        source_records.append({"path": npc_filter_runtime["plugin"]["archived_path"], "sha256": npc_filter_runtime["plugin"]["sha256"]})
         for source in source_records:
             # Derived SQLite byte identity is not portable after rebuilding it;
             # reconstruction scripts validate its build identity and coordinates.

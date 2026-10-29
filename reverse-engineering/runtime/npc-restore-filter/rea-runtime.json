@@ -1,0 +1,1352 @@
+{
+  "records": [
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_9b4c3b3decdae411842ec938360f3d3b82a81a7661f8605f5981ee978aa78779",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "device_id": "local",
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "base": "0x7ffc1ad10000",
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 40460,
+                "scope": "passive original methods, queue, callbacks and Bounds.Contains; separate managed controlled replay"
+              },
+              "frame": 513,
+              "kind": "npc_filter_ready",
+              "real": 17.597684860229492
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x35bd19",
+                "manager": {
+                  "fixed": 19,
+                  "loaded": 0,
+                  "npcs": [
+                    {
+                      "fixedType": 0,
+                      "pointer": "0x23b25b27f30"
+                    },
+                    {
+                      "fixedType": 0,
+                      "pointer": "0x23b25a427e0"
+                    },
+                    {
+                      "fixedType": 0,
+                      "pointer": "0x23b25aea000"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23d7f283d80"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b261d1630"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b262d5d80"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b25b22510"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23e05d44d80"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b2625b630"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b25a48ea0"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23e05d4af30"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23e05d4d7e0"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b261f8090"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b261fe7e0"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23d7f40d870"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b22e87900"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b22e8b1b0"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b261c8a20"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b25bf8ab0"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b25bfe360"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b2594d3f0"
+                    },
+                    {
+                      "fixedType": 1,
+                      "pointer": "0x23b25a346c0"
+                    }
+                  ],
+                  "pointer": "0x23d7f33a510"
+                },
+                "records": [],
+                "sequence": 1
+              },
+              "frame": 4836,
+              "kind": "npc_load_enter",
+              "real": 93.13117980957031
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "manager": {
+                  "fixed": 19,
+                  "loaded": 1,
+                  "npcs": [
+                    {
+                      "fixedType": 0,
+                      "pointer": "0x23b25b27f30"
+                    },
+                    {
+                      "fixedType": 0,
+                      "pointer": "0x23b25a427e0"
+                    },
+                    {
+                      "fixedType": 0,
+                      "pointer": "0x23b25aea000"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23d7f283d80"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b261d1630"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b262d5d80"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b25b22510"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23e05d44d80"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b2625b630"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b25a48ea0"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23e05d4af30"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23e05d4d7e0"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b261f8090"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b261fe7e0"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23d7f40d870"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b22e87900"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b22e8b1b0"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b261c8a20"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b25bf8ab0"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b25bfe360"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b2594d3f0"
+                    },
+                    {
+                      "fixedType": 1,
+                      "pointer": "0x23b25a346c0"
+                    }
+                  ],
+                  "pointer": "0x23d7f33a510"
+                },
+                "records": [],
+                "sequence": 1
+              },
+              "frame": 4836,
+              "kind": "npc_load_leave",
+              "real": 93.13155364990234
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x35bd19",
+                "manager": {
+                  "fixed": 2,
+                  "loaded": 1,
+                  "npcs": [
+                    {
+                      "fixedType": 0,
+                      "pointer": "0x23b25b27f30"
+                    },
+                    {
+                      "fixedType": 0,
+                      "pointer": "0x23b25a427e0"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23d7f283d80"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b261d1630"
+                    }
+                  ],
+                  "pointer": "0x23d7f33a510"
+                },
+                "records": [],
+                "sequence": 1
+              },
+              "frame": 4836,
+              "kind": "npc_apply_enter",
+              "real": 93.1332015991211
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "manager": {
+                  "fixed": 2,
+                  "loaded": 1,
+                  "npcs": [
+                    {
+                      "fixedType": 0,
+                      "pointer": "0x23b25b27f30"
+                    },
+                    {
+                      "fixedType": 0,
+                      "pointer": "0x23b25a427e0"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23d7f283d80"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b261d1630"
+                    }
+                  ],
+                  "pointer": "0x23d7f33a510"
+                },
+                "records": [
+                  {
+                    "exists": 1,
+                    "pointer": "0x23b22e9b200",
+                    "position": [
+                      -4.5248284339904785,
+                      -0.08004438877105713,
+                      -77.10987854003906
+                    ],
+                    "rotation": [
+                      0,
+                      -0.4370189905166626,
+                      0,
+                      0.8994523286819458
+                    ]
+                  },
+                  {
+                    "exists": 1,
+                    "pointer": "0x23b22e9b1c0",
+                    "position": [
+                      -13.47989273071289,
+                      -0.08004438877105713,
+                      -74.41077423095703
+                    ],
+                    "rotation": [
+                      0,
+                      0.7370463609695435,
+                      0,
+                      0.6758421659469604
+                    ]
+                  }
+                ],
+                "sequence": 1
+              },
+              "frame": 4836,
+              "kind": "npc_apply_leave",
+              "real": 93.13330078125
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x35bd19",
+                "manager": {
+                  "fixed": 2,
+                  "loaded": 1,
+                  "npcs": [
+                    {
+                      "fixedType": 0,
+                      "pointer": "0x23b25b27f30"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23d7f283d80"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b261d1630"
+                    }
+                  ],
+                  "pointer": "0x23d7f33a510"
+                },
+                "records": [
+                  {
+                    "exists": 1,
+                    "pointer": "0x23b22e9b200",
+                    "position": [
+                      -4.5248284339904785,
+                      -0.08004438877105713,
+                      -77.10987854003906
+                    ],
+                    "rotation": [
+                      0,
+                      -0.4370189905166626,
+                      0,
+                      0.8994523286819458
+                    ]
+                  },
+                  {
+                    "exists": 1,
+                    "pointer": "0x23b22e9b1c0",
+                    "position": [
+                      -13.47989273071289,
+                      -0.08004438877105713,
+                      -74.41077423095703
+                    ],
+                    "rotation": [
+                      0,
+                      0.7370463609695435,
+                      0,
+                      0.6758421659469604
+                    ]
+                  }
+                ],
+                "sequence": 2
+              },
+              "frame": 4836,
+              "kind": "npc_apply_enter",
+              "real": 93.1353988647461
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "manager": {
+                  "fixed": 2,
+                  "loaded": 1,
+                  "npcs": [
+                    {
+                      "fixedType": 0,
+                      "pointer": "0x23b25b27f30"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23d7f283d80"
+                    },
+                    {
+                      "fixedType": 9,
+                      "pointer": "0x23b261d1630"
+                    }
+                  ],
+                  "pointer": "0x23d7f33a510"
+                },
+                "records": [
+                  {
+                    "exists": 1,
+                    "pointer": "0x23b22e9b200",
+                    "position": [
+                      -4.5248284339904785,
+                      -0.08004438877105713,
+                      -77.10987854003906
+                    ],
+                    "rotation": [
+                      0,
+                      -0.4370189905166626,
+                      0,
+                      0.8994523286819458
+                    ]
+                  },
+                  {
+                    "exists": 0,
+                    "pointer": "0x23b22e9b1c0",
+                    "position": [
+                      -13.47989273071289,
+                      -0.08004438877105713,
+                      -74.41077423095703
+                    ],
+                    "rotation": [
+                      0,
+                      0.7370463609695435,
+                      0,
+                      0.6758421659469604
+                    ]
+                  }
+                ],
+                "sequence": 2
+              },
+              "frame": 4836,
+              "kind": "npc_apply_leave",
+              "real": 93.13553619384766
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "isBackup": false,
+                "records": [
+                  {
+                    "exists": 1,
+                    "pointer": "0x23b22e9b200",
+                    "position": [
+                      -4.5248284339904785,
+                      -0.08004438877105713,
+                      -77.10987854003906
+                    ],
+                    "rotation": [
+                      0,
+                      -0.4370189905166626,
+                      0,
+                      0.8994523286819458
+                    ]
+                  },
+                  {
+                    "exists": 0,
+                    "pointer": "0x23b22e9b1c0",
+                    "position": [
+                      -13.47989273071289,
+                      -0.08004438877105713,
+                      -74.41077423095703
+                    ],
+                    "rotation": [
+                      0,
+                      0.7370463609695435,
+                      0,
+                      0.6758421659469604
+                    ]
+                  }
+                ],
+                "sequence": 1,
+                "slot": 1,
+                "type": 3
+              },
+              "frame": 4836,
+              "kind": "save_enter",
+              "real": 93.13640594482422
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "records": [
+                  {
+                    "exists": 1,
+                    "pointer": "0x23b22e9b200",
+                    "position": [
+                      -4.5248284339904785,
+                      -0.08004438877105713,
+                      -77.10987854003906
+                    ],
+                    "rotation": [
+                      0,
+                      -0.4370189905166626,
+                      0,
+                      0.8994523286819458
+                    ]
+                  },
+                  {
+                    "exists": 0,
+                    "pointer": "0x23b22e9b1c0",
+                    "position": [
+                      -13.47989273071289,
+                      -0.08004438877105713,
+                      -74.41077423095703
+                    ],
+                    "rotation": [
+                      0,
+                      0.7370463609695435,
+                      0,
+                      0.6758421659469604
+                    ]
+                  }
+                ],
+                "sequence": 1
+              },
+              "frame": 4836,
+              "kind": "save_leave",
+              "real": 93.21435546875
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "isBackup": null,
+                "records": [
+                  {
+                    "exists": 1,
+                    "pointer": "0x23b22e9b200",
+                    "position": [
+                      -4.5248284339904785,
+                      -0.08004438877105713,
+                      -77.10987854003906
+                    ],
+                    "rotation": [
+                      0,
+                      -0.4370189905166626,
+                      0,
+                      0.8994523286819458
+                    ]
+                  },
+                  {
+                    "exists": 0,
+                    "pointer": "0x23b22e9b1c0",
+                    "position": [
+                      -13.47989273071289,
+                      -0.08004438877105713,
+                      -74.41077423095703
+                    ],
+                    "rotation": [
+                      0,
+                      0.7370463609695435,
+                      0,
+                      0.6758421659469604
+                    ]
+                  }
+                ],
+                "sequence": 1,
+                "slot": 1,
+                "type": 3
+              },
+              "frame": 4836,
+              "kind": "load_enter",
+              "real": 93.21546173095703
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "records": [
+                  {
+                    "exists": 1,
+                    "pointer": "0x23b230257c0",
+                    "position": [
+                      -4.5248284339904785,
+                      -0.08004438877105713,
+                      -77.10987854003906
+                    ],
+                    "rotation": [
+                      0,
+                      -0.4370189905166626,
+                      0,
+                      0.8994523286819458
+                    ]
+                  },
+                  {
+                    "exists": 0,
+                    "pointer": "0x23b23025700",
+                    "position": [
+                      -13.47989273071289,
+                      -0.08004438877105713,
+                      -74.41077423095703
+                    ],
+                    "rotation": [
+                      0,
+                      0.7370463609695435,
+                      0,
+                      0.6758421659469604
+                    ]
+                  }
+                ],
+                "sequence": 1
+              },
+              "frame": 4836,
+              "kind": "load_leave",
+              "real": 93.24256896972656
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x35bd19",
+                "manager": {
+                  "fixed": 19,
+                  "loaded": 1,
+                  "npcs": [],
+                  "pointer": "0x23d7f33a510"
+                },
+                "records": [
+                  {
+                    "exists": 1,
+                    "pointer": "0x23b230257c0",
+                    "position": [
+                      -4.5248284339904785,
+                      -0.08004438877105713,
+                      -77.10987854003906
+                    ],
+                    "rotation": [
+                      0,
+                      -0.4370189905166626,
+                      0,
+                      0.8994523286819458
+                    ]
+                  },
+                  {
+                    "exists": 0,
+                    "pointer": "0x23b23025700",
+                    "position": [
+                      -13.47989273071289,
+                      -0.08004438877105713,
+                      -74.41077423095703
+                    ],
+                    "rotation": [
+                      0,
+                      0.7370463609695435,
+                      0,
+                      0.6758421659469604
+                    ]
+                  }
+                ],
+                "sequence": 2
+              },
+              "frame": 4836,
+              "kind": "npc_load_enter",
+              "real": 93.24604034423828
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "action": "0x23e05d44ea0",
+                "caller": "0x42f6f7",
+                "closure": "0x23e83a5f9c0",
+                "record": {
+                  "exists": 1,
+                  "pointer": "0x23b230257c0",
+                  "position": [
+                    -4.5248284339904785,
+                    -0.08004438877105713,
+                    -77.10987854003906
+                  ],
+                  "rotation": [
+                    0,
+                    -0.4370189905166626,
+                    0,
+                    0.8994523286819458
+                  ]
+                }
+              },
+              "frame": 4836,
+              "kind": "restore_queued",
+              "real": 93.24618530273438
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "manager": {
+                  "fixed": 19,
+                  "loaded": 1,
+                  "npcs": [],
+                  "pointer": "0x23d7f33a510"
+                },
+                "records": [
+                  {
+                    "exists": 1,
+                    "pointer": "0x23b230257c0",
+                    "position": [
+                      -4.5248284339904785,
+                      -0.08004438877105713,
+                      -77.10987854003906
+                    ],
+                    "rotation": [
+                      0,
+                      -0.4370189905166626,
+                      0,
+                      0.8994523286819458
+                    ]
+                  },
+                  {
+                    "exists": 0,
+                    "pointer": "0x23b23025700",
+                    "position": [
+                      -13.47989273071289,
+                      -0.08004438877105713,
+                      -74.41077423095703
+                    ],
+                    "rotation": [
+                      0,
+                      0.7370463609695435,
+                      0,
+                      0.6758421659469604
+                    ]
+                  }
+                ],
+                "sequence": 2
+              },
+              "frame": 4836,
+              "kind": "npc_load_leave",
+              "real": 93.24629974365234
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "closure": "0x23e83a5f9c0",
+                "record": {
+                  "exists": 1,
+                  "pointer": "0x23b230257c0",
+                  "position": [
+                    -4.5248284339904785,
+                    -0.08004438877105713,
+                    -77.10987854003906
+                  ],
+                  "rotation": [
+                    0,
+                    -0.4370189905166626,
+                    0,
+                    0.8994523286819458
+                  ]
+                }
+              },
+              "frame": 4839,
+              "kind": "restore_callback",
+              "real": 93.2888412475586
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x432e18",
+                "fixed": 0,
+                "id": 1,
+                "random": 0,
+                "record": {
+                  "exists": 1,
+                  "pointer": "0x23b230257c0",
+                  "position": [
+                    -4.5248284339904785,
+                    -0.08004438877105713,
+                    -77.10987854003906
+                  ],
+                  "rotation": [
+                    0,
+                    -0.4370189905166626,
+                    0,
+                    0.8994523286819458
+                  ]
+                }
+              },
+              "frame": 4839,
+              "kind": "npc_instantiate_enter",
+              "real": 93.28893280029297
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x427c18",
+                "id": 1,
+                "pointer": "0x23e05d44c60",
+                "position": [
+                  -4.5248284339904785,
+                  -0.08004438877105713,
+                  -77.10987854003906
+                ],
+                "rotation": [
+                  0,
+                  -0.4370189905166626,
+                  0,
+                  0.8994523286819458
+                ]
+              },
+              "frame": 4839,
+              "kind": "npc_warp_enter",
+              "real": 93.29100799560547
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 1,
+                "pointer": "0x23e05d44c60",
+                "position": [
+                  -4.5248284339904785,
+                  -0.08004438877105713,
+                  -77.10987854003906
+                ],
+                "rotation": [
+                  0,
+                  -0.4370189905166626,
+                  0,
+                  0.8994523286819458
+                ]
+              },
+              "frame": 4839,
+              "kind": "npc_warp_leave",
+              "real": 93.29110717773438
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 1,
+                "result": "0x23e05d44c60"
+              },
+              "frame": 4839,
+              "kind": "npc_instantiate_leave",
+              "real": 93.29137420654297
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x35bd19",
+                "manager": {
+                  "fixed": 0,
+                  "loaded": 0,
+                  "npcs": [],
+                  "pointer": "0x23d7f33a510"
+                },
+                "records": [
+                  {
+                    "exists": 1,
+                    "pointer": "0x23b25b299c0",
+                    "position": [
+                      -1.2016677856445312,
+                      -8.530933380126953,
+                      9.288070678710938
+                    ],
+                    "rotation": [
+                      -1.3153311485829003e-22,
+                      0.32886651158332825,
+                      -3.7771180159090767e-22,
+                      0.9443764686584473
+                    ]
+                  },
+                  {
+                    "exists": 1,
+                    "pointer": "0x23b25b29940",
+                    "position": [
+                      49.290000915527344,
+                      -6.045000076293945,
+                      -18.447999954223633
+                    ],
+                    "rotation": [
+                      -1.3153311485829003e-22,
+                      0.32886651158332825,
+                      -3.7771180159090767e-22,
+                      0.9443764686584473
+                    ]
+                  },
+                  {
+                    "exists": 0,
+                    "pointer": "0x23b25b29740",
+                    "position": [
+                      -1.2016677856445312,
+                      -8.530933380126953,
+                      9.288070678710938
+                    ],
+                    "rotation": [
+                      -1.3153311485829003e-22,
+                      0.32886651158332825,
+                      -3.7771180159090767e-22,
+                      0.9443764686584473
+                    ]
+                  },
+                  {
+                    "exists": 0,
+                    "pointer": "0x23b25b29580",
+                    "position": [
+                      49.290000915527344,
+                      -6.045000076293945,
+                      -18.447999954223633
+                    ],
+                    "rotation": [
+                      -1.3153311485829003e-22,
+                      0.32886651158332825,
+                      -3.7771180159090767e-22,
+                      0.9443764686584473
+                    ]
+                  }
+                ],
+                "sequence": 3
+              },
+              "frame": 10495,
+              "kind": "npc_load_enter",
+              "real": 189.24217224121094
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "bounds": [
+                  49.290000915527344,
+                  -6.045000076293945,
+                  -18.447999954223633,
+                  0.6627575159072876,
+                  13.044351577758789,
+                  1.2208333015441895
+                ],
+                "caller": "0x42f6b6",
+                "inside": false,
+                "position": [
+                  -1.2016677856445312,
+                  -8.530933380126953,
+                  9.288070678710938
+                ]
+              },
+              "frame": 10495,
+              "kind": "restore_bounds",
+              "real": 189.24237060546875
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "action": "0x23e059ec360",
+                "caller": "0x42f6f7",
+                "closure": "0x23b22fb5c90",
+                "record": {
+                  "exists": 1,
+                  "pointer": "0x23b25b299c0",
+                  "position": [
+                    -1.2016677856445312,
+                    -8.530933380126953,
+                    9.288070678710938
+                  ],
+                  "rotation": [
+                    -1.3153311485829003e-22,
+                    0.32886651158332825,
+                    -3.7771180159090767e-22,
+                    0.9443764686584473
+                  ]
+                }
+              },
+              "frame": 10495,
+              "kind": "restore_queued",
+              "real": 189.24244689941406
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "bounds": [
+                  49.290000915527344,
+                  -6.045000076293945,
+                  -18.447999954223633,
+                  0.6627575159072876,
+                  13.044351577758789,
+                  1.2208333015441895
+                ],
+                "caller": "0x42f6b6",
+                "inside": true,
+                "position": [
+                  49.290000915527344,
+                  -6.045000076293945,
+                  -18.447999954223633
+                ]
+              },
+              "frame": 10495,
+              "kind": "restore_bounds",
+              "real": 189.2425994873047
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "manager": {
+                  "fixed": 0,
+                  "loaded": 1,
+                  "npcs": [],
+                  "pointer": "0x23d7f33a510"
+                },
+                "records": [
+                  {
+                    "exists": 1,
+                    "pointer": "0x23b25b299c0",
+                    "position": [
+                      -1.2016677856445312,
+                      -8.530933380126953,
+                      9.288070678710938
+                    ],
+                    "rotation": [
+                      -1.3153311485829003e-22,
+                      0.32886651158332825,
+                      -3.7771180159090767e-22,
+                      0.9443764686584473
+                    ]
+                  },
+                  {
+                    "exists": 1,
+                    "pointer": "0x23b25b29940",
+                    "position": [
+                      49.290000915527344,
+                      -6.045000076293945,
+                      -18.447999954223633
+                    ],
+                    "rotation": [
+                      -1.3153311485829003e-22,
+                      0.32886651158332825,
+                      -3.7771180159090767e-22,
+                      0.9443764686584473
+                    ]
+                  },
+                  {
+                    "exists": 0,
+                    "pointer": "0x23b25b29740",
+                    "position": [
+                      -1.2016677856445312,
+                      -8.530933380126953,
+                      9.288070678710938
+                    ],
+                    "rotation": [
+                      -1.3153311485829003e-22,
+                      0.32886651158332825,
+                      -3.7771180159090767e-22,
+                      0.9443764686584473
+                    ]
+                  },
+                  {
+                    "exists": 0,
+                    "pointer": "0x23b25b29580",
+                    "position": [
+                      49.290000915527344,
+                      -6.045000076293945,
+                      -18.447999954223633
+                    ],
+                    "rotation": [
+                      -1.3153311485829003e-22,
+                      0.32886651158332825,
+                      -3.7771180159090767e-22,
+                      0.9443764686584473
+                    ]
+                  }
+                ],
+                "sequence": 3
+              },
+              "frame": 10495,
+              "kind": "npc_load_leave",
+              "real": 189.24278259277344
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "closure": "0x23b22fb5c90",
+                "record": {
+                  "exists": 1,
+                  "pointer": "0x23b25b299c0",
+                  "position": [
+                    -1.2016677856445312,
+                    -8.530933380126953,
+                    9.288070678710938
+                  ],
+                  "rotation": [
+                    -1.3153311485829003e-22,
+                    0.32886651158332825,
+                    -3.7771180159090767e-22,
+                    0.9443764686584473
+                  ]
+                }
+              },
+              "frame": 10498,
+              "kind": "restore_callback",
+              "real": 189.2820281982422
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x432e18",
+                "fixed": 0,
+                "id": 2,
+                "random": 0,
+                "record": {
+                  "exists": 1,
+                  "pointer": "0x23b25b299c0",
+                  "position": [
+                    -1.2016677856445312,
+                    -8.530933380126953,
+                    9.288070678710938
+                  ],
+                  "rotation": [
+                    -1.3153311485829003e-22,
+                    0.32886651158332825,
+                    -3.7771180159090767e-22,
+                    0.9443764686584473
+                  ]
+                }
+              },
+              "frame": 10498,
+              "kind": "npc_instantiate_enter",
+              "real": 189.28213500976562
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x427c18",
+                "id": 2,
+                "pointer": "0x23e059ec240",
+                "position": [
+                  -1.2016677856445312,
+                  -8.530933380126953,
+                  9.288070678710938
+                ],
+                "rotation": [
+                  -1.3153311485829003e-22,
+                  0.32886651158332825,
+                  -3.7771180159090767e-22,
+                  0.9443764686584473
+                ]
+              },
+              "frame": 10498,
+              "kind": "npc_warp_enter",
+              "real": 189.2842254638672
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 2,
+                "pointer": "0x23e059ec240",
+                "position": [
+                  -1.2016677856445312,
+                  -8.530933380126953,
+                  9.288070678710938
+                ],
+                "rotation": [
+                  -1.3153311485829003e-22,
+                  0.32886651158332825,
+                  -3.7771180159090767e-22,
+                  0.9443764686584473
+                ]
+              },
+              "frame": 10498,
+              "kind": "npc_warp_leave",
+              "real": 189.28433227539062
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 2,
+                "result": "0x23e059ec240"
+              },
+              "frame": 10498,
+              "kind": "npc_instantiate_leave",
+              "real": 189.28457641601562
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "mode": "attach",
+        "pid": 40460,
+        "scripts": [
+          {
+            "name": "rea-c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd"
+          }
+        ],
+        "session_id": "e2ca3c7c-d18f-46cd-8536-a5eb6f30974c",
+        "state": "running",
+        "target": "SecretFlasherManaka.exe (pid 40460)"
+      },
+      "operation": "frida_session_status",
+      "parameters": {
+        "session_id": "e2ca3c7c-d18f-46cd-8536-a5eb6f30974c"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    },
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_cd95af868b62478fa170201298a87e020a2c342151d05d8d055956e4f060bed1",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "base": "0x7ffc1ad10000",
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 40460,
+                "scope": "passive original methods, queue, callbacks and Bounds.Contains; separate managed controlled replay"
+              },
+              "frame": 513,
+              "kind": "npc_filter_ready",
+              "real": 17.597684860229492
+            },
+            "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "script_id": "c520cad3-9caf-4818-900d-b9f374ee72dd",
+        "source_kind": "file",
+        "source_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\runtime\\npc-restore-filter\\observe.js",
+        "source_sha256": "d1dc02fe6cc1a9e72ba5758f6d2367c6f0dcbacb055e67e11ba35c3261938f97"
+      },
+      "operation": "load_frida_script",
+      "parameters": {
+        "session_id": "e2ca3c7c-d18f-46cd-8536-a5eb6f30974c"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    }
+  ]
+}

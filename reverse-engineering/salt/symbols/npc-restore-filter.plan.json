@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "name": "npc-restore-filter",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\npc-restore-filter.seeds.tsv",
+  "seed_sha256": "86b161d956c2d03130a413e020fcc4c85b8e6ba7fe88669f97fe70835451d604",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\npc-restore-filter",
+  "seed_count": 6247,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 14108,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.Elevator.ElevatorController::Awake",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000ad3",
+      "va": "0x180600610",
+      "file_offset": 6286864,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_Elevator_ElevatorController__Awake__06000ad3",
+      "file_stem": "14108-06000ad3",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14102,
+      "qualified_name": "ExposureUnnoticed2.Object3D.ScenePlops.Elevator.ElevatorController::get_PushBounds",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000acd",
+      "va": "0x180600550",
+      "file_offset": 6286672,
+      "label": "ExposureUnnoticed2_Object3D_ScenePlops_Elevator_ElevatorController__get_PushBounds__06000acd",
+      "file_stem": "14102-06000acd",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": null,
+      "qualified_name": "Native_NpcRestore_FindElevator",
+      "assembly": null,
+      "token": "0x0",
+      "va": "0x180436630",
+      "file_offset": 4410928,
+      "label": "Native_NpcRestore_FindElevator",
+      "file_stem": "native-436630",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

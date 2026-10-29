@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "observation_complete": true,
+  "natural_only": false,
+  "authority": "controlled-native-entry-replay",
+  "sessions": [
+    {
+      "session_id": "e2ca3c7c-d18f-46cd-8536-a5eb6f30974c",
+      "pid": 40460,
+      "state": "running",
+      "closed_by_operator": true
+    }
+  ],
+  "evidence_ids": [
+    "ev_9b4c3b3decdae411842ec938360f3d3b82a81a7661f8605f5981ee978aa78779",
+    "ev_cd95af868b62478fa170201298a87e020a2c342151d05d8d055956e4f060bed1"
+  ],
+  "sources": [
+    {
+      "path": "Probe.cs",
+      "sha256": "34456470418577d2515223be3a25b90cb5cb720d6ffa1486756cb0c8c825d018"
+    },
+    {
+      "path": "build.ps1",
+      "sha256": "dae2e204f32ee79cec001d5a80fe4fbed7c0a1a0623bd1155129d19d9d17d89a"
+    },
+    {
+      "path": "observe.js",
+      "sha256": "d1dc02fe6cc1a9e72ba5758f6d2367c6f0dcbacb055e67e11ba35c3261938f97"
+    },
+    {
+      "path": "analyze.py",
+      "sha256": "fed46ec9209565d1ce88cb4c2aaaccd0707dff440b239d5842089c9c2ffe9e70"
+    },
+    {
+      "path": "collect.py",
+      "sha256": "5bbd12a6be60ff225d609a4c1892e2ac13dd3b35391a221a63494380aa6a94d1"
+    },
+    {
+      "path": "test_analysis.py",
+      "sha256": "4a899854cc428523cd31b012032bb2e037f43e28b6deb93a38062c7038ee6568"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "managed.jsonl.gz",
+      "sha256": "8d9028cd4b16d62af708c42d9fb3a9895c0c06a37a6300c4e207947e4dff4305",
+      "uncompressed_bytes": 12770,
+      "uncompressed_sha256": "2c5c8434de0e5e7b3f6059b1795392c6b7e02cd05970aae44cf22aebbc042086"
+    },
+    {
+      "path": "paths.jsonl.gz",
+      "sha256": "c609e478af65f18bbb099f186e882a36ddf2d78faeae2fea79206b3513c32fd4",
+      "uncompressed_bytes": 848103,
+      "uncompressed_sha256": "07beb0f97aafa44c81ad9a63178d87ad5e064338256a320305242fb2420a2ac2"
+    },
+    {
+      "path": "engine.log.gz",
+      "sha256": "560c78c516180afa876d9e50100945a2663b4c768d228463fdbf9e1ca599694e",
+      "uncompressed_bytes": 33444,
+      "uncompressed_sha256": "0d9b3c1dc71bbbb3536c9c8384046ecfdce43acc1001bacf522744652096201a"
+    }
+  ],
+  "capture_scope": "Only explicit fixtures with the snapshot applier frozen; natural bootstrap NPC creation is intentionally outside native hook capture.",
+  "input_boundary": "Copy of natural slot1 in a new disposable profile; original UserData and prior natural profile remain unchanged.",
+  "native_snapshot": {
+    "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\runtime\\npc-restore-filter\\.cache\\native-snapshot.sd",
+    "sha256": "bc3aa64c790ce2c1ea4ab3767dc8986aaf4cf383acfe9da99193f6c71398b0ba"
+  },
+  "plugin": {
+    "archived_path": "E:\\ManakaREA-NaturalGameplay\\NpcRestoreFilter\\20261030-1\\NpcFilterProbe-completed.dll",
+    "sha256": "a98df4c8fbf717de207b1197fb692f1869db2a8b7f54923801c4ce16cb91dd31"
+  },
+  "process_subject_boundary": "REA Frida subject remains null; module path, PID and pinned disk identities are supplementary evidence, not process-memory attestation."
+}

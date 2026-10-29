@@ -1,5 +1,7 @@
 # 继续入口（2026-10-30）
 
+后续更新：固定/失效/电梯范围NPC原生过滤已补齐受控对照。当前继续入口见[下一轮说明](../npc-restore-filter/next-run.md)，本页保留自然读档轮次的状态与边界。
+
 本轮已完成自然电脑保存→标题继续→自宅位置对照，U024在该范围内闭合。PID4276已正常退出，REA会话已关闭，不复用PID/session，不执行旧Suspend/Resume。
 
 - 独立游戏：`E:\ManakaREA-NaturalGameplay\SecretFlasherManaka.exe`。
