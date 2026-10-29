@@ -803,12 +803,12 @@ def main():
         source_records.append({"path": full_save_runtime["plugin"]["archived_path"], "sha256": full_save_runtime["plugin"]["sha256"]})
         source_records.extend({"path": p["archived_path"], "sha256": p["sha256"]} for p in recovery_runtime["plugins"])
         source_records.append({"path": appearance_runtime["plugin"]["archived_path"], "sha256": appearance_runtime["plugin"]["sha256"]})
-        source_records.extend(toolchain["build_outputs"])
+        source_records.extend({**output, "verify_cache_output": True} for output in toolchain["build_outputs"])
         source_records.append({"path": toolchain["editor_path"], "sha256": toolchain["editor_sha256"]})
         for source in source_records:
             # Derived SQLite byte identity is not portable after rebuilding it;
             # reconstruction scripts validate its build identity and coordinates.
-            if ".cache" in Path(source["path"]).parts:
+            if ".cache" in Path(source["path"]).parts and not source.get("verify_cache_output"):
                 continue
             if source["path"].casefold() not in known:
                 paths.append((Path(source["path"]), source["sha256"]))
