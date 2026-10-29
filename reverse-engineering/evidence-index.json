@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-29T18:40:14.301612+00:00",
+  "generated_at_utc": "2026-10-29T18:57:41.415316+00:00",
   "status": "consistent",
-  "canonical_rea_observations": 1011,
-  "rea_queries_completed": 888,
+  "canonical_rea_observations": 1018,
+  "rea_queries_completed": 893,
   "artifacts": [
     {
       "path": ".gitattributes",
@@ -19,6 +19,11 @@
       "path": "appearance-detail.md",
       "bytes": 3090,
       "sha256": "c8d362cdd7d71ccdf6bc66feb872c3db2773e280f12df646cd71e8b7c77a9dd1"
+    },
+    {
+      "path": "appearance-hair.md",
+      "bytes": 3995,
+      "sha256": "d3e51eecd57621a4e6b918fc35cf3deb555b946d2d39a1911595e53caa3bccd8"
     },
     {
       "path": "appearance-restore.md",
@@ -127,8 +132,8 @@
     },
     {
       "path": "audit.py",
-      "bytes": 77330,
-      "sha256": "119fd9cf6951d76541b5cd09dbb9516a98e26e52e86baf9b2cbcadeb1a097f28"
+      "bytes": 78676,
+      "sha256": "39e986b231eeb3c16878021b2a08c8a926cb408dcc307d4e623576dfe7e1830b"
     },
     {
       "path": "bareta-chain.md",
@@ -237,8 +242,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 26977,
-      "sha256": "52d3492f37d9311d63ae23944184f2521217011eac774b679df388eaa636ee62"
+      "bytes": 27436,
+      "sha256": "201b7eba3eaff32148cea5dead52938fa47793264e759d295ffd89277afa355a"
     },
     {
       "path": "reconstruction/build-smoke.ps1",
@@ -374,6 +379,91 @@
       "path": "runtime/appearance-detail/test_analysis.py",
       "bytes": 2398,
       "sha256": "0d1de46ddd3d679aedbaed9bf21cfca17f451e1746c1ee0fa1f01212ec43d64d"
+    },
+    {
+      "path": "runtime/appearance-hair/analyze.py",
+      "bytes": 9878,
+      "sha256": "25723dc4a8ed30f29a7439c2a02a385d1dc852fd92feaae12f0c1aee4a9fa5b6"
+    },
+    {
+      "path": "runtime/appearance-hair/baseline.json",
+      "bytes": 4925,
+      "sha256": "f06dd8e672c1325dc329dead27163415b47554e370060789ea8b88a30c3379d4"
+    },
+    {
+      "path": "runtime/appearance-hair/build.ps1",
+      "bytes": 1886,
+      "sha256": "4972f7852233ecaa14f7b6ac78b29ef9d640d041f14309b1bb9af66999b42b7d"
+    },
+    {
+      "path": "runtime/appearance-hair/close-receipt.json",
+      "bytes": 245,
+      "sha256": "d76f83bd4c5b1e27c66cd78ef3c3aad25d2c3a835bd8ed4dd506f1769b5d2f48"
+    },
+    {
+      "path": "runtime/appearance-hair/collect.py",
+      "bytes": 2932,
+      "sha256": "b79bf8c9d4e5b4af0a482ee3c73c06cf022b80902174b0bea52b72610ce208b8"
+    },
+    {
+      "path": "runtime/appearance-hair/engine.log.gz",
+      "bytes": 1002,
+      "sha256": "537601343cfff9b5bbfc3b2c55389436e6514c27ab8f468fbf4ecbbbf0ddae5a"
+    },
+    {
+      "path": "runtime/appearance-hair/managed.jsonl.gz",
+      "bytes": 3364,
+      "sha256": "58cfc92dacd29f48bc843a90eba027501aa7f1708a4b0160b81c94c102abc6da"
+    },
+    {
+      "path": "runtime/appearance-hair/manifest.json",
+      "bytes": 2603,
+      "sha256": "a215fc2ee50be97022f59fa3c87860b49e3a1ff442ebca119cbd37a9705b3095"
+    },
+    {
+      "path": "runtime/appearance-hair/observe.js",
+      "bytes": 2018,
+      "sha256": "7fd9fda23aaee41bcca8bcd9fda6d87edc14edbfe1faba5c0b112adadeb12095"
+    },
+    {
+      "path": "runtime/appearance-hair/paths.jsonl.gz",
+      "bytes": 2873,
+      "sha256": "10cfe0021ed94d831c9f225e543f9347c6b47e5043f3c15a73432d35d7ad2530"
+    },
+    {
+      "path": "runtime/appearance-hair/post-state.json",
+      "bytes": 6347,
+      "sha256": "8f1cea9172a0e323a23b504aa53f2e6d8f490c51ebee6aea5c4332811dc83936"
+    },
+    {
+      "path": "runtime/appearance-hair/Probe.cs",
+      "bytes": 12867,
+      "sha256": "6205adbaf5f9839f9a3b1189b051f756e6e1f83556e4eb921c6e6ff499a14802"
+    },
+    {
+      "path": "runtime/appearance-hair/rea-runtime.json",
+      "bytes": 87221,
+      "sha256": "0c3e74fafff1c063360abfbfa467877b3754b23604080f38dc07258ed4deb5d6"
+    },
+    {
+      "path": "runtime/appearance-hair/results.json",
+      "bytes": 2812,
+      "sha256": "8b4b563e93a31410ee6fc6107221773d2e5b7f3932c012d61f6b7f7e73b2c8a0"
+    },
+    {
+      "path": "runtime/appearance-hair/run_cases.py",
+      "bytes": 1122,
+      "sha256": "34d8584d4222a3345f313da0b877b5cbac6e16d6b27689e3717c653b7e4dcd19"
+    },
+    {
+      "path": "runtime/appearance-hair/saved-files.json",
+      "bytes": 1997,
+      "sha256": "67b9f71b2e3543bd39078d3391f07fb78a04afb7e24bec8950eaf7aac0586427"
+    },
+    {
+      "path": "runtime/appearance-hair/test_analysis.py",
+      "bytes": 2316,
+      "sha256": "1b5e2b16c26b2086a215730ae1bd51c87d05e0775ff2f9baeaf0fb0b28613d58"
     },
     {
       "path": "runtime/appearance-restore/analyze.py",
@@ -2121,6 +2211,11 @@
       "sha256": "1b3f91b6b36ec1afeb65168130d3cdacafbbd7e4d7ba2b7f4dbf694fd051d518"
     },
     {
+      "path": "salt/appearance_hair_evidence.py",
+      "bytes": 2170,
+      "sha256": "6f726e5992776faa3b793dffd1cde0a3016facb5b30b56e6b821d2a984d05de4"
+    },
+    {
       "path": "salt/asset_evidence.py",
       "bytes": 15229,
       "sha256": "e7b97571b5224752f9f87620b2d7cca406c67a9bcbcb53fd68be046862bb1aed"
@@ -2329,6 +2424,81 @@
       "path": "salt/evidence/appearance-detail-chain.json",
       "bytes": 637387,
       "sha256": "340f21f10b6d8bb58b4f529827056f10490a1a4dac30e76d75787d2c68963d8a"
+    },
+    {
+      "path": "salt/evidence/appearance-hair/14818-06000d99-procedure_pseudo_code.json",
+      "bytes": 12633,
+      "sha256": "f1ac11f8b54c01097490029df5d282de394fb6b4f7700e4671fafff93d7fa1f0"
+    },
+    {
+      "path": "salt/evidence/appearance-hair/14818-06000d99-procedure_pseudo_code.pseudocode.c",
+      "bytes": 3004,
+      "sha256": "0a9f465d0f472bef3ea41ccb3033e0e9ceb9330af186a7821505d9d7cc450564"
+    },
+    {
+      "path": "salt/evidence/appearance-hair/14859-06000dc2-procedure_pseudo_code.json",
+      "bytes": 14367,
+      "sha256": "7f0078cb92de3329f92b6e4c60a4dc473202cf3ff3581ecc1370606ba620ccdd"
+    },
+    {
+      "path": "salt/evidence/appearance-hair/14859-06000dc2-procedure_pseudo_code.pseudocode.c",
+      "bytes": 2713,
+      "sha256": "0661074491d75d46605e283fa393610ca4726b2dbeba163e6272442f013a5020"
+    },
+    {
+      "path": "salt/evidence/appearance-hair/15074-06000e99-procedure_pseudo_code.json",
+      "bytes": 15401,
+      "sha256": "a7cf04b25cb5b73869769569e1f1c61186fc161a91a19f2e4d4c9349350163ba"
+    },
+    {
+      "path": "salt/evidence/appearance-hair/15074-06000e99-procedure_pseudo_code.pseudocode.c",
+      "bytes": 3657,
+      "sha256": "e80bd5a0f8ec8fd08ecc150316e813522b8d13b51e09ebef1165f74bad88a5bf"
+    },
+    {
+      "path": "salt/evidence/appearance-hair/18703-06001cc6-procedure_pseudo_code.json",
+      "bytes": 20435,
+      "sha256": "cb801166613844c205735ff57b8a883bc9cbe8a0d9dd683b7229fd9574670168"
+    },
+    {
+      "path": "salt/evidence/appearance-hair/18703-06001cc6-procedure_pseudo_code.pseudocode.c",
+      "bytes": 6685,
+      "sha256": "1b8c19ca05fd6e5971a57c76a4fc23982cbbd7073da0815ace5686c77d118033"
+    },
+    {
+      "path": "salt/evidence/appearance-hair/rea-evidence.json",
+      "bytes": 59790,
+      "sha256": "74802b3fbb74bd1240d82919c2e928d08932ee1ad6845dd3af9b7cca387d0869"
+    },
+    {
+      "path": "salt/evidence/appearance-hair/run.json",
+      "bytes": 3100,
+      "sha256": "0fe5dfa407303aee9756c1493e043e2034d6973807e6eeaa30fbd4dfd81c9895"
+    },
+    {
+      "path": "salt/evidence/appearance-hair-chain.json",
+      "bytes": 703586,
+      "sha256": "40ee035f81fc4a372c81f38aa8dd83fdd4d804b09cb6abb2aa5c1d192426bed9"
+    },
+    {
+      "path": "salt/evidence/appearance-hair-init/14858-06000dc1-procedure_pseudo_code.json",
+      "bytes": 11263,
+      "sha256": "aa028bf9fc0e10657ad27a6b62a0c5bdc7475608b30a560cc2a1c084d0796b65"
+    },
+    {
+      "path": "salt/evidence/appearance-hair-init/14858-06000dc1-procedure_pseudo_code.pseudocode.c",
+      "bytes": 2347,
+      "sha256": "e0a9a7af7ed7f256aa2634539f995c9ca2f656e5aca4c8b1e978da7503e756fb"
+    },
+    {
+      "path": "salt/evidence/appearance-hair-init/rea-evidence.json",
+      "bytes": 10732,
+      "sha256": "6cbee40015f868dd86b470c970bb9df95e335179e8bd9adc9617ddce4091f24d"
+    },
+    {
+      "path": "salt/evidence/appearance-hair-init/run.json",
+      "bytes": 1153,
+      "sha256": "78e7200c376b88f92a7dde10b937b5a1a562df7e1b1b422defcfa5b48de77a29"
     },
     {
       "path": "salt/evidence/artifact-identity.json",
@@ -12126,6 +12296,16 @@
       "sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b"
     },
     {
+      "path": "salt/symbols/appearance-hair-init.plan.json",
+      "bytes": 1773,
+      "sha256": "6ad9779a573ef5b1c9f7deead8d52a8ef27e21443e188719fccb64b21f6aee75"
+    },
+    {
+      "path": "salt/symbols/appearance-hair.plan.json",
+      "bytes": 3251,
+      "sha256": "e5700d6b4157fef7d9ee4eca824546df625be58c311c3e2f832b0b788f38d64e"
+    },
+    {
       "path": "salt/symbols/asset-callbacks.plan.json",
       "bytes": 12636,
       "sha256": "518eb358eb09a4f920d5413c9c90e3bf3d944bddb2c9184961f5a1cc82763a10"
@@ -12972,13 +13152,13 @@
     },
     {
       "path": "unknowns.json",
-      "bytes": 26166,
-      "sha256": "b797b8628f1f5465535201a608b3e18633a0eb484ac25d54cadc8711817d9f00"
+      "bytes": 26244,
+      "sha256": "af544da229c212db41e55207a073bdbc6336ee4c3dae3e88aa8c09747eb7d8fa"
     },
     {
       "path": "work-queue.json",
-      "bytes": 2520,
-      "sha256": "9aebf8edf7250fade09a2bfcffd4a49211a3898457bfbb3b8a1e55f8a5538b84"
+      "bytes": 2702,
+      "sha256": "f918aa7c2d78b1b06042689c4c4a042f3ddf6431f24f15e1f00ac9491b363c1f"
     }
   ],
   "inputs_checked": [
@@ -13233,6 +13413,10 @@
     {
       "path": "E:\\ManakaREA-NaturalGameplay\\AppearanceDetail\\20261030-1\\AppearanceDetailProbe-completed.dll",
       "sha256": "049ff1cb2c2b84ab412352cba4b0f5a279ec65df11db68a281621d266ab76d3d"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\AppearanceHair\\20261030-1\\AppearanceHairProbe-completed.dll",
+      "sha256": "cf39a18d5ace701f70bfcd2e3aa0d485eaa0ba3636c01efd9258c3c40c13088a"
     },
     {
       "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\authorized-20261030-1-build\\ToolchainSmoke.exe",
@@ -14093,6 +14277,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_2c7264f6293e7d4f47c98b88ba01bdc01dd28880acfe869da32747b977074de8",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_2cc125c970fe6b41fd702c67a1d7e64fe1a0a51d463a345713ffa0b9a539876f",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -14868,6 +15057,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_517cda307fd48f07be7b05bc8fa10e055ce1ccbe50165a7b3423f724e76a8993",
+      "operation": "frida_session_status",
+      "subject_sha256": null
+    },
+    {
       "evidence_id": "ev_52863a917bf4c1262f80554a46a146dba515082728e03824bec841b4372f1dbe",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -15408,6 +15602,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_7099dc8c16757a3fd36270657d80e2f160c260ec696286604fe7734928e547d1",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_709b979a970885f66d76cd7eba174db569aef1e9fb4ac12a8e8f57e088a01e64",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -15659,6 +15858,11 @@
     },
     {
       "evidence_id": "ev_7d90a68b9c02946d506c9ab555f09fbb12d63d3e67515627d0c7cd6ade37019b",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_7de8068eeb6663b651f08320ce0c9babfc2b98b70f3310aa4d68f28ac2b4d264",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
@@ -16019,6 +16223,11 @@
     },
     {
       "evidence_id": "ev_90480b41a5afb97fd591fb2140103a9dab9a09375a75f8653899ada99461ef5b",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_904a9ace53839a75cecba04cdfa90fa9ac869cea2aa1a6cfbdb09a8fddebd042",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
@@ -16569,6 +16778,11 @@
     },
     {
       "evidence_id": "ev_a6b27fd067394b5c681217e54c6f2fa8b9802ff46eb301fa7d3b8d983b88b209",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_a6bba6e76b7ab437251f1bd49b7c158218ad665c99f753f47f7f1bc0e2b35603",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
@@ -17634,6 +17848,11 @@
     },
     {
       "evidence_id": "ev_dbe5cca8524c56e348b23b1aafdf111bbd6b2af4259f898304556abb8735a9cd",
+      "operation": "load_frida_script",
+      "subject_sha256": null
+    },
+    {
+      "evidence_id": "ev_dc31f0e398854cfe790631166f138858b9ab35e508661f180c024753a8fba70a",
       "operation": "load_frida_script",
       "subject_sha256": null
     },

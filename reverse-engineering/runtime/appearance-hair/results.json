@@ -1,0 +1,92 @@
+{
+  "authority": "controlled-native-save-load-hair-consumers",
+  "natural_only": false,
+  "cases": [
+    {
+      "name": "negative-shade",
+      "saved_hair": 0,
+      "file_sha256": "1e19ccd42345711449ed66955176862a3275bc31f615a681cf6ab32c0c5c671b",
+      "texture_id": 1,
+      "rgb": [
+        32,
+        96,
+        224
+      ],
+      "shade": -100,
+      "warm_active": [
+        1
+      ],
+      "warm_model_matches": false,
+      "reconciled_active": [
+        0
+      ],
+      "materials": 2,
+      "rgb_max_error": 4.3499794016854665e-08,
+      "shade_max_error": 4.1815567120018216e-08,
+      "restore_frame": 3364,
+      "result_frame": 3374,
+      "material_calls": 5
+    },
+    {
+      "name": "positive-shade",
+      "saved_hair": 0,
+      "file_sha256": "be1d6b9f629e5b10dca7ea213a2a90954f0b2286ff59288eae855aeec994e2aa",
+      "texture_id": 1,
+      "rgb": [
+        210,
+        60,
+        100
+      ],
+      "shade": 100,
+      "warm_active": [
+        1
+      ],
+      "warm_model_matches": false,
+      "reconciled_active": [
+        0
+      ],
+      "materials": 2,
+      "rgb_max_error": 4.8523597723226786e-08,
+      "shade_max_error": 1.171454182824494e-07,
+      "restore_frame": 3411,
+      "result_frame": 3421,
+      "material_calls": 5
+    },
+    {
+      "name": "alternate-hair",
+      "saved_hair": 1,
+      "file_sha256": "a3cc1f55e2f18ee34a842b8a6a1dc4cf9c86076073e60ffe77ea549a4df2c586",
+      "texture_id": 1,
+      "rgb": [
+        32,
+        96,
+        224
+      ],
+      "shade": -35,
+      "warm_active": [
+        1
+      ],
+      "warm_model_matches": true,
+      "reconciled_active": [
+        1
+      ],
+      "materials": 2,
+      "rgb_max_error": 4.3499794016854665e-08,
+      "shade_max_error": 8.79648160978519e-08,
+      "restore_frame": 3453,
+      "result_frame": 3463,
+      "material_calls": 4
+    }
+  ],
+  "native_messages": 178,
+  "engine_error_events": 0,
+  "default_cold_initialization_assumption_verified_statically": true,
+  "natural_title_defect_claimed": false,
+  "limits": [
+    "Selected hair types0/1 and two initialized materials each; other hair models/add-ons are not covered.",
+    "Warm default-hair reinitialization fails to switch the model in two controlled cases; it is not presented as a successful native-only restoration.",
+    "The final positive model result includes explicit saved-current coordination to the actual active object before original ChangeHair.",
+    "Native cold-title/player recreation is not replayed in this batch; no natural title-load defect is claimed.",
+    "OnEnable deferred work and explicit original broadcast can both reapply materials; repeated consumer entry is not by itself duplicate event dispatch."
+  ]
+}

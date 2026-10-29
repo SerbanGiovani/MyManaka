@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "name": "appearance-hair",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\natural-load-saveui.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\appearance-hair",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 14818,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerFacade::ChangeHair",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000d99",
+      "va": "0x180648e60",
+      "file_offset": 6583904,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerFacade__ChangeHair__06000d99",
+      "file_stem": "14818-06000d99",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14859,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerHairController::ChangeHair",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000dc2",
+      "va": "0x18064e260",
+      "file_offset": 6605408,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerHairController__ChangeHair__06000dc2",
+      "file_stem": "14859-06000dc2",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15074,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.HairCustomAdjuster::InitializeIfNeed",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e99",
+      "va": "0x180403790",
+      "file_offset": 4202384,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_Other_HairCustomAdjuster__InitializeIfNeed__06000e99",
+      "file_stem": "15074-06000e99",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18703,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.ClosetMenu.CustomizeMenu.CustomizeMenuView::OnChangeHairType",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001cc6",
+      "va": "0x180537410",
+      "file_offset": 5463056,
+      "label": "ExposureUnnoticed2_ObjectUI_ClosetMenu_CustomizeMenu_CustomizeMenuView__OnChangeHairType__06001cc6",
+      "file_stem": "18703-06001cc6",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}
