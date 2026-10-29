@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-29T18:57:41.415316+00:00",
+  "generated_at_utc": "2026-10-29T19:16:43.209524+00:00",
   "status": "consistent",
-  "canonical_rea_observations": 1018,
-  "rea_queries_completed": 893,
+  "canonical_rea_observations": 1039,
+  "rea_queries_completed": 912,
   "artifacts": [
     {
       "path": ".gitattributes",
@@ -132,8 +132,8 @@
     },
     {
       "path": "audit.py",
-      "bytes": 78676,
-      "sha256": "39e986b231eeb3c16878021b2a08c8a926cb408dcc307d4e623576dfe7e1830b"
+      "bytes": 80807,
+      "sha256": "d6d6db820610b4680962938b614c9ccb58cc0ed188d13173647ac9ce8e695bcc"
     },
     {
       "path": "bareta-chain.md",
@@ -242,8 +242,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 27436,
-      "sha256": "201b7eba3eaff32148cea5dead52938fa47793264e759d295ffd89277afa355a"
+      "bytes": 27918,
+      "sha256": "368c1bf352fe004df4d44042644c59b93c1710387a3b1b0089ae71f1e00f093d"
     },
     {
       "path": "reconstruction/build-smoke.ps1",
@@ -1994,6 +1994,121 @@
       "path": "runtime/restore-interruption/title-close-receipt.json",
       "bytes": 245,
       "sha256": "6845845aab4ff6a04f88b94bcd09ad31c1eed9a07693bb17df9708f417b05f2b"
+    },
+    {
+      "path": "runtime/state-consumers/analyze.py",
+      "bytes": 9911,
+      "sha256": "88a24897e9fe260b6134a367776a40450440cf1d068a3a047040d40e7598952d"
+    },
+    {
+      "path": "runtime/state-consumers/baseline.json",
+      "bytes": 5004,
+      "sha256": "38ad2c7e53e0a820e0f3e6f18e5e29bff0f3b599f365e8741ed1776e6cf99dc5"
+    },
+    {
+      "path": "runtime/state-consumers/build.ps1",
+      "bytes": 1886,
+      "sha256": "ed5c2173ede9e18e3d56c450862470b40ba6a2902424c087b3886aeb662ebadb"
+    },
+    {
+      "path": "runtime/state-consumers/close-receipt.json",
+      "bytes": 208,
+      "sha256": "2c6979cfb6506b36311a214e070f334fea637c31d1e3c2ccf85cdabd492cbca9"
+    },
+    {
+      "path": "runtime/state-consumers/collect.py",
+      "bytes": 2980,
+      "sha256": "9ae64e9e5885fd9e1494dc2ff50d501fdeaf131b18b9df3ff337c9e032731335"
+    },
+    {
+      "path": "runtime/state-consumers/diagnostics/1/engine.log.gz",
+      "bytes": 937,
+      "sha256": "fd7837ad6e2b4b6b269f81a5a8ea40ab7cc4a9c01c974945449824f0c6fe4f64"
+    },
+    {
+      "path": "runtime/state-consumers/diagnostics/1/managed.jsonl.gz",
+      "bytes": 7299,
+      "sha256": "37522bd6c43a3129d0119e5a444a6f12607bdc791483f7e2ff25bb290f80c712"
+    },
+    {
+      "path": "runtime/state-consumers/diagnostics/2/engine.log.gz",
+      "bytes": 982,
+      "sha256": "eadd338dc5919c4537fc05a691bdb31f39085df7d9dff17d9da3f8b5958fef12"
+    },
+    {
+      "path": "runtime/state-consumers/diagnostics/2/managed.jsonl.gz",
+      "bytes": 7676,
+      "sha256": "780d96c5389a6ce69824c4cc3e21504825a99e8eebebfc28f3e193baff7a95c7"
+    },
+    {
+      "path": "runtime/state-consumers/diagnostics.json",
+      "bytes": 3064,
+      "sha256": "313a44d7e4c8be9492bc7fa470ff50b9f121abbc4bd59ec10e93a88dacb6ef0d"
+    },
+    {
+      "path": "runtime/state-consumers/engine.log.gz",
+      "bytes": 1969,
+      "sha256": "db1a3d10778970cbbd901595405b91fef52e27c54e1eb8890a33330019d46e3c"
+    },
+    {
+      "path": "runtime/state-consumers/managed.jsonl.gz",
+      "bytes": 1444,
+      "sha256": "42cde224a89f1cc37670e2e17359a51a86bdcddd9bf815e6f8bf32b29d06e7ba"
+    },
+    {
+      "path": "runtime/state-consumers/manifest.json",
+      "bytes": 2886,
+      "sha256": "0f65d01d3c966337755625293bc9fab7ae82eae01b3ec14677f9a7b7819a589e"
+    },
+    {
+      "path": "runtime/state-consumers/observe-bootstrap.js",
+      "bytes": 2184,
+      "sha256": "a53607aa17dbbc7085e9a449bd6db9a688985973f4a3d7d19794c776eda7aac6"
+    },
+    {
+      "path": "runtime/state-consumers/observe.js",
+      "bytes": 2235,
+      "sha256": "8f61129b9ba31b0f4ba2fb50695a4da920d26fa618b80de27ba9263208d86af7"
+    },
+    {
+      "path": "runtime/state-consumers/paths.jsonl.gz",
+      "bytes": 3066,
+      "sha256": "ab5e2f7c56967721f985e9a673509adbacb75db67085e50c024838a0b44b7fda"
+    },
+    {
+      "path": "runtime/state-consumers/post-state.json",
+      "bytes": 6310,
+      "sha256": "27d5450c6fbba6560c3ade0df56977e04fee52b3d242480fcb01d27672fe6fd8"
+    },
+    {
+      "path": "runtime/state-consumers/Probe.cs",
+      "bytes": 13293,
+      "sha256": "7e31bc39af00bc3fe1695ade47adcde67d5f592a8ebfab09065dcee87c7c0654"
+    },
+    {
+      "path": "runtime/state-consumers/rea-runtime.json",
+      "bytes": 33916,
+      "sha256": "0e17ff3898ed1ceaa04f191827dd5b8fc6e97c44da7902e7f60c0c035d8770ec"
+    },
+    {
+      "path": "runtime/state-consumers/results.json",
+      "bytes": 3072,
+      "sha256": "1403165c82ee9e3cc99867d2220df13eb3d77c8dabaee330c37d5b0815aeed16"
+    },
+    {
+      "path": "runtime/state-consumers/run_cases.py",
+      "bytes": 1532,
+      "sha256": "27435f752a6828e2e96ce80ed4ded5347c9f0e5f6a72141744780fa493c5a84e"
+    },
+    {
+      "path": "runtime/state-consumers/saved-files.json",
+      "bytes": 3963,
+      "sha256": "85b6e8b7c41656ed1701c1543dc25c0dbe28b97d3e7a29656c9f52c86cddd988"
+    },
+    {
+      "path": "runtime/state-consumers/test_analysis.py",
+      "bytes": 1801,
+      "sha256": "3e3133cc568b5f6ed3b00cfefab9221a88edcce69ce550ce1f90cf6f4628e47a"
     },
     {
       "path": "runtime/state-restore/analyze.py",
@@ -11331,6 +11446,221 @@
       "sha256": "e2f4f0206429a81f399f00f34f344d2936467a7fa9b809efb8db69aae54f0954"
     },
     {
+      "path": "salt/evidence/state-consumers/16071-0600127e-procedure_pseudo_code.json",
+      "bytes": 53221,
+      "sha256": "8966cc5a9f4538c6800c9c7a4f28625f234e07b921aec6d45b2bc759804e2ca0"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16071-0600127e-procedure_pseudo_code.pseudocode.c",
+      "bytes": 21876,
+      "sha256": "b05ec646c4108f3414391f8130036d06e9e0fd673ce8dd4ae24e1a4c665e261b"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16075-06001282-procedure_pseudo_code.json",
+      "bytes": 10435,
+      "sha256": "c2359fee0aa3417ebad310e78e64fd4887ecad981d203ec6364d9b4309f04093"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16075-06001282-procedure_pseudo_code.pseudocode.c",
+      "bytes": 1980,
+      "sha256": "6c21e08ff7191011dd9212fb6efbae2ec5cf785f28382772d4a75f7708131f39"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16076-06001283-procedure_pseudo_code.json",
+      "bytes": 10435,
+      "sha256": "a3e2539d92c3f173d2edfde24727c243fea0ef4953e3de8319e19353f13b4b71"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16076-06001283-procedure_pseudo_code.pseudocode.c",
+      "bytes": 1980,
+      "sha256": "b2c9106fe34b0dc53fe808c657709a7ff8a92d6e49faf2163f1b8f102f7ad571"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16077-06001284-procedure_pseudo_code.json",
+      "bytes": 8291,
+      "sha256": "0896727800ef27e2449423e0fc17dba96f04aff18542e8b8e3c1f39fa3bf94fa"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16077-06001284-procedure_pseudo_code.pseudocode.c",
+      "bytes": 980,
+      "sha256": "d8531f2920223d6cc16369f16105af262520b9a971b7f2f258ca4d5196dfecd9"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16751-06001526-procedure_pseudo_code.json",
+      "bytes": 14165,
+      "sha256": "e8e81dd505db9359aacc0c9334f4f9c344da7a50c0cebb287c5c5f51dce78053"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16751-06001526-procedure_pseudo_code.pseudocode.c",
+      "bytes": 3728,
+      "sha256": "5eeb5ef6df23abb2fe5503a425b25c483d351f4681615ade83f86e30987d006e"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16755-0600152a-procedure_pseudo_code.json",
+      "bytes": 10185,
+      "sha256": "d278ef102b1092c32f906f5b70d34db6e920e6db33dc2cc8fcf085e06021abbf"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16755-0600152a-procedure_pseudo_code.pseudocode.c",
+      "bytes": 1871,
+      "sha256": "3ed913a9f28387e2ec070bff8f0a8f76a3e488c87b09642b498acbbb15e0f132"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16760-0600152f-procedure_pseudo_code.json",
+      "bytes": 7949,
+      "sha256": "2e6cf59e65004b734139038443b4203d96287a020c117cce7cc51a4541c38d50"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16760-0600152f-procedure_pseudo_code.pseudocode.c",
+      "bytes": 832,
+      "sha256": "476cfad4188f5c9b6f330c0ddb59109025e6f3bf0103f86fc3f7eddf5b8b1c25"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16762-06001531-procedure_pseudo_code.json",
+      "bytes": 8811,
+      "sha256": "e5294116a1405dbc8c9f76cc6a9f5070e0ae9e9986b04c24020bf86aab41178e"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16762-06001531-procedure_pseudo_code.pseudocode.c",
+      "bytes": 1227,
+      "sha256": "72fce392d52b8671463177ccdb1f2ac45fb74c3d486eca7af04450ad3f37f068"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16794-06001551-procedure_pseudo_code.json",
+      "bytes": 12235,
+      "sha256": "95df030d30cc8160617d81c52666df2fdd39f4baa6a435455c927f2ac2e56102"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16794-06001551-procedure_pseudo_code.pseudocode.c",
+      "bytes": 2833,
+      "sha256": "e1b59dd0e14c6c6b0ad1bd105bbc073a4214de8678c878bbeb527fc2d0e1da8e"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16802-06001559-procedure_pseudo_code.json",
+      "bytes": 10233,
+      "sha256": "e4935999332da2da300aff36f9da27bec4eba595fb826a8f3e22b6e041dd61c8"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16802-06001559-procedure_pseudo_code.pseudocode.c",
+      "bytes": 1893,
+      "sha256": "7a1adc68b0edc2152c003cf13fdca07f84e7c910f3dfe09224af18cad89b8e69"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16803-0600155a-procedure_pseudo_code.json",
+      "bytes": 10287,
+      "sha256": "a1b4e79ef8adc43ec09e55c50eff874fe3d9e30882708c6a912e49da74afbb7f"
+    },
+    {
+      "path": "salt/evidence/state-consumers/16803-0600155a-procedure_pseudo_code.pseudocode.c",
+      "bytes": 1917,
+      "sha256": "22d22f8f5bbb25275de1ed802d485b17d309b6e4b17e78c6e159d900c82f2069"
+    },
+    {
+      "path": "salt/evidence/state-consumers/17925-060019bc-procedure_pseudo_code.json",
+      "bytes": 7625,
+      "sha256": "504908a467a249b6e3504e30e2c4cac249798ec3eb3d118fee03ef96c5421476"
+    },
+    {
+      "path": "salt/evidence/state-consumers/17925-060019bc-procedure_pseudo_code.pseudocode.c",
+      "bytes": 690,
+      "sha256": "cab05b9a5ce808651ee02b2025be68abe470b877c610a2d248a7551d3a464e38"
+    },
+    {
+      "path": "salt/evidence/state-consumers/18007-06001a0e-procedure_pseudo_code.json",
+      "bytes": 22495,
+      "sha256": "6629f898f6cd792c335deec63b0de6e1402d461eb691b2e645f4d4d127b12ac9"
+    },
+    {
+      "path": "salt/evidence/state-consumers/18007-06001a0e-procedure_pseudo_code.pseudocode.c",
+      "bytes": 7547,
+      "sha256": "ed8cb276c3ebcb439c109fdcd283f4bdbe597651be07368a050b86c1a8ed7141"
+    },
+    {
+      "path": "salt/evidence/state-consumers/rea-evidence.json",
+      "bytes": 176104,
+      "sha256": "44c606bf5c80af1889ff1621f101ed0e3a86e7751300c14d7fde4dc5a6068b75"
+    },
+    {
+      "path": "salt/evidence/state-consumers/run.json",
+      "bytes": 8334,
+      "sha256": "258b73f32a94c4e2572d3affdfcb7beabc48bc38c71fe76aba91d89c0e97613e"
+    },
+    {
+      "path": "salt/evidence/state-consumers-chain.json",
+      "bytes": 1176676,
+      "sha256": "27e0a1993c4dfa66e29dee0996cf8ec8402387c18c88bd5ff34e00733148b1d3"
+    },
+    {
+      "path": "salt/evidence/state-consumers-ui/17530-06001831-procedure_pseudo_code.json",
+      "bytes": 35631,
+      "sha256": "dfcef1f13cd626181a921f6f95dce87f28563b442c76c85458947c70d0f08171"
+    },
+    {
+      "path": "salt/evidence/state-consumers-ui/17530-06001831-procedure_pseudo_code.pseudocode.c",
+      "bytes": 13787,
+      "sha256": "7226a4113f3f3b77b36f5f7b85a9f3e6957286d6b4c9745eeb526178ba4d105a"
+    },
+    {
+      "path": "salt/evidence/state-consumers-ui/17648-060018a7-procedure_pseudo_code.json",
+      "bytes": 10631,
+      "sha256": "05c57007b63851cd47bfcd087351b272e6889b6ef18cf3aba26446af29f82593"
+    },
+    {
+      "path": "salt/evidence/state-consumers-ui/17648-060018a7-procedure_pseudo_code.pseudocode.c",
+      "bytes": 2083,
+      "sha256": "2aeccf4a86fb7780c4970acb6a3dcd21dc50364ed9b09a2886921f75c315b7af"
+    },
+    {
+      "path": "salt/evidence/state-consumers-ui/17878-0600198d-procedure_pseudo_code.json",
+      "bytes": 12163,
+      "sha256": "dd23e2423e5ca7d7d9e0e77ad7aa1ab39115af5775a60e40ee62523ae9d45d43"
+    },
+    {
+      "path": "salt/evidence/state-consumers-ui/17878-0600198d-procedure_pseudo_code.pseudocode.c",
+      "bytes": 2749,
+      "sha256": "9e87d8b59ddc1d29c845ff4e5ff3e4a1ba0f53e4bc5740fce448a20e42f5d40a"
+    },
+    {
+      "path": "salt/evidence/state-consumers-ui/17971-060019ea-procedure_pseudo_code.json",
+      "bytes": 22295,
+      "sha256": "f2b7e23c7bcabc0c3ae9444a46898584fe55a448643bfa85c48ff8533c3aeb8c"
+    },
+    {
+      "path": "salt/evidence/state-consumers-ui/17971-060019ea-procedure_pseudo_code.pseudocode.c",
+      "bytes": 7456,
+      "sha256": "cd8ab19aaeef502e73ba4f8e3fd79dc7809df2204e5a9a05371c6eaeaa766010"
+    },
+    {
+      "path": "salt/evidence/state-consumers-ui/17981-060019f4-procedure_pseudo_code.json",
+      "bytes": 19851,
+      "sha256": "7b03292d2e0b777da331ee98edd6b9cdf879d88497b89c7aaef15c9576dd7dce"
+    },
+    {
+      "path": "salt/evidence/state-consumers-ui/17981-060019f4-procedure_pseudo_code.pseudocode.c",
+      "bytes": 6278,
+      "sha256": "03d134602a0d663e6e32e8736aaa784f7de0d877fc56bfa69acb19074b44b683"
+    },
+    {
+      "path": "salt/evidence/state-consumers-ui/17987-060019fa-procedure_pseudo_code.json",
+      "bytes": 26171,
+      "sha256": "77d2962df495629cd277ea56656dc4c67fa952ce24da9e1cb9198bacb0e3f913"
+    },
+    {
+      "path": "salt/evidence/state-consumers-ui/17987-060019fa-procedure_pseudo_code.pseudocode.c",
+      "bytes": 9287,
+      "sha256": "dce5d07fddaee3f471c7414f77f92cf471f83c08314b832db42d57cdb1174e0f"
+    },
+    {
+      "path": "salt/evidence/state-consumers-ui/rea-evidence.json",
+      "bytes": 122156,
+      "sha256": "8ae113a52ab79c0273e399cf676c974842a8362d4d1cf9ea5940d13bc1dbddbe"
+    },
+    {
+      "path": "salt/evidence/state-consumers-ui/run.json",
+      "bytes": 4380,
+      "sha256": "f2cf3e264655ce48c4ecd6bcb059e7ec8c8541ebe7249b44d8c6748f6071f5e7"
+    },
+    {
       "path": "salt/evidence/state-restore-chain.json",
       "bytes": 1859193,
       "sha256": "2cc134bbcebf6e395e7c5fd2b485eb1e92d071952a47ab9222e857e9c883c4a5"
@@ -12266,6 +12596,11 @@
       "sha256": "d2d9c0e95cc1f245b282aaccc413f4cdbac4e44e575274d985fc4565961ff0dd"
     },
     {
+      "path": "salt/state_consumers_evidence.py",
+      "bytes": 2337,
+      "sha256": "a2fde26973dc09e11c221c0e4885f29891a649d338eb69de6e7e4d47e50f29d4"
+    },
+    {
       "path": "salt/symbols/animator-component-wiring.plan.json",
       "bytes": 2713,
       "sha256": "ef3baeff14a8290cae940990ca26d65f06f8e627baf45606f02673d01f24a591"
@@ -12574,6 +12909,11 @@
       "path": "salt/symbols/loading.seeds.tsv",
       "bytes": 39461,
       "sha256": "ea98d9ef291794af93a9fd9e29694710ab71dd0940190200757edbd068505160"
+    },
+    {
+      "path": "salt/symbols/mission-consumers.plan.json",
+      "bytes": 4127,
+      "sha256": "50d72e8b6440965ec57554846f2e90a97d9d878887876b5bd58dddfa0e2cbca4"
     },
     {
       "path": "salt/symbols/natural-cancel-guards.plan.json",
@@ -13021,6 +13361,16 @@
       "sha256": "81177067522f83080e1fc01a20bc44e19eb2175860743e616362f1234303f25d"
     },
     {
+      "path": "salt/symbols/state-consumers-ui.plan.json",
+      "bytes": 4223,
+      "sha256": "4bb0430717aa0f7374ce5986b76a280c5333fbaf141c1c3016f19e9f684fe914"
+    },
+    {
+      "path": "salt/symbols/state-consumers.plan.json",
+      "bytes": 7091,
+      "sha256": "abd9c768a9b7e4fe83904dbdddc50489fbd9d0ddc88d7ecef3d2a67cee07f839"
+    },
+    {
       "path": "salt/symbols/state-restore-core.plan.json",
       "bytes": 15890,
       "sha256": "926ce8a396052532d97edbe7eadeff61117058f88340f9c1226b0dcdb439cb28"
@@ -13136,6 +13486,11 @@
       "sha256": "fbd64dc7397696225e14159db9bc6490d24f333c4f81b20a841aa05526728395"
     },
     {
+      "path": "state-consumers.md",
+      "bytes": 4081,
+      "sha256": "7cfd6cb3f61393055eaeb02ced1f23aeaa4fe76bf7a032018cb8d2ca4c29226e"
+    },
+    {
       "path": "state-restore-runtime.md",
       "bytes": 8055,
       "sha256": "38e59e95165eb7d700d0dd9fc00203d4663096f18accc09a865a8b785edfdef2"
@@ -13157,8 +13512,8 @@
     },
     {
       "path": "work-queue.json",
-      "bytes": 2702,
-      "sha256": "f918aa7c2d78b1b06042689c4c4a042f3ddf6431f24f15e1f00ac9491b363c1f"
+      "bytes": 2978,
+      "sha256": "8b0428d24645ab9c08c7d5594e2ba0d55aac395d2b0986eb505c67a13eb329f4"
     }
   ],
   "inputs_checked": [
@@ -13419,6 +13774,10 @@
       "sha256": "cf39a18d5ace701f70bfcd2e3aa0d485eaa0ba3636c01efd9258c3c40c13088a"
     },
     {
+      "path": "E:\\ManakaREA-NaturalGameplay\\StateConsumers\\20261030-3\\StateConsumersProbe-completed.dll",
+      "sha256": "ef9e5310212241a15e8f9b6b828fb288471ba493ecad359c4550400a81acd453"
+    },
+    {
       "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\authorized-20261030-1-build\\ToolchainSmoke.exe",
       "sha256": "1a1a0368abaced7b7679a48c0ca4cd080e391fe03ee4c27df30366136dddf479"
     },
@@ -13436,6 +13795,11 @@
     }
   ],
   "observations": [
+    {
+      "evidence_id": "ev_0012a10bbf9d8d3c72e3206d483055dac65a0c6b17cc28b20c6a26a59fcd1cff",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
     {
       "evidence_id": "ev_0097023450f5eb109828df9bef98aa93c0c37fac530cf1b273a996c1aa3e0eaf",
       "operation": "procedure_pseudo_code",
@@ -13458,6 +13822,11 @@
     },
     {
       "evidence_id": "ev_016b6e3fd9a5ce288bb58125ccd4883cd208bb1e4e5c9c0fe19b70ea10d2922a",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_019a293d9e1d207872b5d53b239f95976eb0ea1d8d73eee38fb0a6c66ff70cf3",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
@@ -13552,6 +13921,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_07fa422b39dc9e2221bccc56e20f2ce62408b2119c2f003d89d751e138913a39",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_083e3d77709dadfa8c51f14503dc56b8e21d7ef854f9e6503071687e59aae08a",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -13608,6 +13982,11 @@
     },
     {
       "evidence_id": "ev_0abd5321e0baffbb595bbecda84cd9ca10a35b08711f53bb0b647e6096ccc601",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_0b0f65da953d5f86a9aedac71be6243eceb3ca749e74f21bc6e1ee2c641ef627",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
@@ -13670,6 +14049,11 @@
       "evidence_id": "ev_0d3474899b0b5239bae6551b11b1862264027a17a2a7601813e491067204dae2",
       "operation": "frida_session_status",
       "subject_sha256": null
+    },
+    {
+      "evidence_id": "ev_0dd2dd972582a2a38af72afa17a970ec9db27624c4bdc46293b381bdaf6eaf49",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
       "evidence_id": "ev_0de50211f8792ad20120f0bb048a988bf3809aabca61c73b9834f01650cfb3bf",
@@ -14098,6 +14482,11 @@
     },
     {
       "evidence_id": "ev_216df7c2a3d71c8db7082997c99134c0383581266c80bd46a522fbd0fa3bee21",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_21f36581441e374f0efbecb1760995a8f74f251ba0ef40835690c1ec635f0a73",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
@@ -14692,6 +15081,11 @@
       "subject_sha256": null
     },
     {
+      "evidence_id": "ev_40d0c47b90b9f870170d03195589cd1d32d56b2280b6ad89a8bc9a4175d10ea1",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_4103874920e079344c8e7c50f42e7e893c99f67bdd78b64620c83ffb1100c77e",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -15053,6 +15447,11 @@
     },
     {
       "evidence_id": "ev_502f25c461b54db0a03d1c243e0b713908aee98acb560a44a66f73433902c3ee",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_517b8e827f1b539d60177e8e1f7366953b6cfde1e9fe14de7e4804dcacfd8e50",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
@@ -15602,6 +16001,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_705aa774b5b8e70072b454e4e93cb7b0e3716985c6095cfebdd2aaf608587193",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_7099dc8c16757a3fd36270657d80e2f160c260ec696286604fe7734928e547d1",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -15623,6 +16027,11 @@
     },
     {
       "evidence_id": "ev_7245f7a7935082d88acf547bd47ede6f332a8e85452f4b60095137ec30e49c51",
+      "operation": "frida_session_status",
+      "subject_sha256": null
+    },
+    {
+      "evidence_id": "ev_72545f6c857e03ae8b92f1dfe24f7604321dfe33a9b81dea5a07a86361d071f3",
       "operation": "frida_session_status",
       "subject_sha256": null
     },
@@ -15737,6 +16146,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_78851c658677518c28ffb72f2a06404c3f9a2f76e96801e7c9c14c55c46a19e8",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_78b2d07b6fa16e3f28c058d79e0ba80da002476357add01a5d7db2ac4ce5cf4b",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -15812,6 +16226,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_7b9bf0ad1aeec3e5e36d04c1aed324684db390f349cea19faa19eb92086c22a2",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_7beb1ce465b84cf16727992efdb5a5de5f4c1ed5ba0245715b45aad10ec9354c",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -15838,6 +16257,11 @@
     },
     {
       "evidence_id": "ev_7c6252c749a9ab1e3d93007a12ce67c551dc0c8838edb04bad2a8a9982580455",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_7c66becc85d715e7a5fcc2bd0e6a5d7dc260a2d2f0bb2fb85f322a3634750487",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
@@ -15908,6 +16332,11 @@
     },
     {
       "evidence_id": "ev_813b3285759c7f133cd5fc117b5828b581adfb95c07f4d16bca357868aaec98e",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_814d27e7a9109e55cd957a9a0b88af3cb292e15c8493d14cfe0e0d51b745ac26",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
@@ -16477,6 +16906,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_9943a83bd7a4b4b32e98540b15f0ab77889a360fbd53a5c59e66a0b8361b20e7",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_996a5756620c9def27e39dc139480995c5b1548b5f77278132df09cdf3be6db4",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -16877,6 +17311,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_abdca8586e6468bf4c612f01b06b236b507c95c46833ee0e4a0480e23f0976ff",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_abe7db29a0e8d2901cc09291dc59e79f5c8997816b841a26442bf9ff82a6cbf7",
       "operation": "frida_session_status",
       "subject_sha256": null
@@ -17112,6 +17551,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_b863c177aadd3a5b36e782a5b690ebe1e09a8bc661d04d583706bfe085f70896",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_b8b107d48b0bdb5fde7bde6c171086aed4b8961b46d25ef3c78ad53e15d1c7d3",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -17183,6 +17627,11 @@
     },
     {
       "evidence_id": "ev_bbec1ecb55fe7c8fcfbf8fb82d3cbcb6da6fb61e09f6c858c4207670d2e1111b",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_bc0160f7e5339a921d5feba580154d2a6038ff8488a8107c2f2d4e7882eb2dfd",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
@@ -17472,6 +17921,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_cbc145c04ebb49c93edca2a681d95353651e7dd1d90d1a9484709099b2c1b7ce",
+      "operation": "load_frida_script",
+      "subject_sha256": null
+    },
+    {
       "evidence_id": "ev_cbecc1dd855b03d0b6c384903c214538eb25b167605e99b909ab3e52b958f79b",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -17538,6 +17992,11 @@
     },
     {
       "evidence_id": "ev_cf9999edb99bf6bbf62d64628a95d948e02102a728b9998813749a9c02359b44",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_cfdf922fa741e8a9b2cd9388d04db7e38e0c594f0480de84bc4f871f9dd28674",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
@@ -18088,6 +18547,11 @@
     },
     {
       "evidence_id": "ev_e7f295c4d768b9cfcbbe22e77bf93a90f1dd7af208afc0d93a16d49ef29e32bc",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_e80d6dd92acf2bfe7eec760523c5e164b595558843203114d5ee6ce498ef94b7",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },

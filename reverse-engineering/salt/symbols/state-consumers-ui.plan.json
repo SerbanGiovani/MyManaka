@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "name": "state-consumers-ui",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\natural-load-saveui.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\state-consumers-ui",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 17987,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.InventoryPanel.InventoryPanelView::Open",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60019fa",
+      "va": "0x1804f3070",
+      "file_offset": 5183600,
+      "label": "ExposureUnnoticed2_ObjectUI_InventoryPanel_InventoryPanelView__Open__060019fa",
+      "file_stem": "17987-060019fa",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17971,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.InventoryPanel.InventoryPanelView::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60019ea",
+      "va": "0x1804efc50",
+      "file_offset": 5170256,
+      "label": "ExposureUnnoticed2_ObjectUI_InventoryPanel_InventoryPanelView__Initialize__060019ea",
+      "file_stem": "17971-060019ea",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17981,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.InventoryPanel.InventoryPanelView::RefreshItemCategory",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60019f4",
+      "va": "0x1804f1d60",
+      "file_offset": 5178720,
+      "label": "ExposureUnnoticed2_ObjectUI_InventoryPanel_InventoryPanelView__RefreshItemCategory__060019f4",
+      "file_stem": "17981-060019f4",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17878,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.SaveDataSelectPanel.SkillPanelView::OnClickReinforce",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600198d",
+      "va": "0x1804e7490",
+      "file_offset": 5135504,
+      "label": "ExposureUnnoticed2_ObjectUI_SaveDataSelectPanel_SkillPanelView__OnClickReinforce__0600198d",
+      "file_stem": "17878-0600198d",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17530,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.SkillPanel.SkillItemView::OnClickReinforce",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001831",
+      "va": "0x1804c4740",
+      "file_offset": 4992832,
+      "label": "ExposureUnnoticed2_ObjectUI_SkillPanel_SkillItemView__OnClickReinforce__06001831",
+      "file_stem": "17530-06001831",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17648,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.PcMenuPanel.SkillSwitchPanel.SkillSwitchPanelView::OnClickItem",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60018a7",
+      "va": "0x1804cfac0",
+      "file_offset": 5038784,
+      "label": "ExposureUnnoticed2_ObjectUI_PcMenuPanel_SkillSwitchPanel_SkillSwitchPanelView__OnClickItem__060018a7",
+      "file_stem": "17648-060018a7",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

@@ -451,6 +451,18 @@ def main():
     check(runpy.run_path(str(appearance_hair_dir / "analyze.py"))["build"](inputs=args.inputs) == read(appearance_hair_dir / "results.json"), "Hair data/material/model joins differ")
     check(runpy.run_path(str(ROOT / "salt/appearance_hair_evidence.py"))["build"]() == read(ROOT / "salt/evidence/appearance-hair-chain.json"), "Hair restore static binding differs")
     observed_runtime_records[appearance_hair_dir / "rea-runtime.json"] = appearance_hair_runtime
+    consumers_dir = ROOT / "runtime/state-consumers"
+    consumers_runtime = read(consumers_dir / "manifest.json")
+    check(not consumers_runtime["natural_only"], "Consumer replay authority differs")
+    for source in consumers_runtime["sources"]:
+        check(digest(consumers_dir / source["path"]) == source["sha256"], "Consumer source differs")
+    for output in consumers_runtime["outputs"]:
+        path = consumers_dir / output["path"]
+        raw = gzip.decompress(path.read_bytes())
+        check(digest(path) == output["sha256"] and len(raw) == output["uncompressed_bytes"] and hashlib.sha256(raw).hexdigest() == output["uncompressed_sha256"], "Consumer capture differs")
+    check(runpy.run_path(str(consumers_dir / "analyze.py"))["build"](inputs=args.inputs) == read(consumers_dir / "results.json"), "Inventory/skill consumer joins differ")
+    check(runpy.run_path(str(ROOT / "salt/state_consumers_evidence.py"))["build"]() == read(ROOT / "salt/evidence/state-consumers-chain.json"), "Consumer static binding differs")
+    observed_runtime_records[consumers_dir / "rea-runtime.json"] = consumers_runtime
     toolchain_dir = ROOT / "reconstruction"
     toolchain = read(toolchain_dir / "editor-toolchain.json")
     check(toolchain["status"] == "editor-build-and-player-smoke-verified" and toolchain["compilation_verified"] and toolchain["build_verified"] and toolchain["player_startup_verified"], "Editor smoke did not succeed")
@@ -829,6 +841,7 @@ def main():
         source_records.append({"path": appearance_runtime["plugin"]["archived_path"], "sha256": appearance_runtime["plugin"]["sha256"]})
         source_records.append({"path": appearance_detail_runtime["plugin"]["archived_path"], "sha256": appearance_detail_runtime["plugin"]["sha256"]})
         source_records.append({"path": appearance_hair_runtime["plugin"]["archived_path"], "sha256": appearance_hair_runtime["plugin"]["sha256"]})
+        source_records.append({"path": consumers_runtime["plugin"]["archived_path"], "sha256": consumers_runtime["plugin"]["sha256"]})
         source_records.extend({**output, "verify_cache_output": True} for output in toolchain["build_outputs"])
         source_records.append({"path": toolchain["editor_path"], "sha256": toolchain["editor_sha256"]})
         for source in source_records:

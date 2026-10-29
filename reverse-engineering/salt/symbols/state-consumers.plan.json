@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "name": "state-consumers",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\natural-load-saveui.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\state-consumers",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 16071,
+      "qualified_name": "ExposureUnnoticed2.Master.Item.MItem::UseItemProcess",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600127e",
+      "va": "0x1804679f0",
+      "file_offset": 4612592,
+      "label": "ExposureUnnoticed2_Master_Item_MItem__UseItemProcess__0600127e",
+      "file_stem": "16071-0600127e",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16075,
+      "qualified_name": "<>c::<UseItemProcess>b__5_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001282",
+      "va": "0x180468c40",
+      "file_offset": 4617280,
+      "label": "<>c__<UseItemProcess>b__5_0__06001282",
+      "file_stem": "16075-06001282",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16076,
+      "qualified_name": "<>c::<UseItemProcess>b__5_1",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001283",
+      "va": "0x180468cb0",
+      "file_offset": 4617392,
+      "label": "<>c__<UseItemProcess>b__5_1__06001283",
+      "file_stem": "16076-06001283",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16077,
+      "qualified_name": "<>c::<UseItemProcess>b__5_2",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001284",
+      "va": "0x180468d20",
+      "file_offset": 4617504,
+      "label": "<>c__<UseItemProcess>b__5_2__06001284",
+      "file_stem": "16077-06001284",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16794,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameStateFacade::ChangeItemNum",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001551",
+      "va": "0x180491360",
+      "file_offset": 4782944,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameStateFacade__ChangeItemNum__06001551",
+      "file_stem": "16794-06001551",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16755,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameStateFacade::RiseSkillLevel",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600152a",
+      "va": "0x18048e1f0",
+      "file_offset": 4770288,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameStateFacade__RiseSkillLevel__0600152a",
+      "file_stem": "16755-0600152a",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16751,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameStateFacade::ChangeActivePassiveSkill",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001526",
+      "va": "0x18048dae0",
+      "file_offset": 4768480,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameStateFacade__ChangeActivePassiveSkill__06001526",
+      "file_stem": "16751-06001526",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16760,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameStateFacade::ConsumeRp",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600152f",
+      "va": "0x18048ea20",
+      "file_offset": 4772384,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameStateFacade__ConsumeRp__0600152f",
+      "file_stem": "16760-0600152f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16762,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameStateFacade::RiseRp",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001531",
+      "va": "0x18048eb60",
+      "file_offset": 4772704,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameStateFacade__RiseRp__06001531",
+      "file_stem": "16762-06001531",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16802,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameStateFacade::AchieveMission",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001559",
+      "va": "0x180491be0",
+      "file_offset": 4785120,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameStateFacade__AchieveMission__06001559",
+      "file_stem": "16802-06001559",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16803,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameStateFacade::AchieveContinueMission",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600155a",
+      "va": "0x180491d70",
+      "file_offset": 4785520,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameStateFacade__AchieveContinueMission__0600155a",
+      "file_stem": "16803-0600155a",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17925,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.InventoryPanel.InventoryItemView::OnClickUse",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60019bc",
+      "va": "0x1804ea4e0",
+      "file_offset": 5147872,
+      "label": "ExposureUnnoticed2_ObjectUI_InventoryPanel_InventoryItemView__OnClickUse__060019bc",
+      "file_stem": "17925-060019bc",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18007,
+      "qualified_name": "<>c__DisplayClass39_0::<RefreshItemCategory>g__UseProcess|4",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001a0e",
+      "va": "0x1804f4350",
+      "file_offset": 5188432,
+      "label": "<>c__DisplayClass39_0__<RefreshItemCategory>g__UseProcess|4__06001a0e",
+      "file_stem": "18007-06001a0e",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

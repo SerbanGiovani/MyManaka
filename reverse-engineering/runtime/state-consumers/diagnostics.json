@@ -1,0 +1,48 @@
+[
+  {
+    "run": 1,
+    "pid": 79028,
+    "plugin_path": "E:\\ManakaREA-NaturalGameplay\\StateConsumers\\20261030-1\\StateConsumersProbe-scout.dll",
+    "plugin_sha256": "b768ecb0306880b9c23633433f927470f2f3983d1a09ddb1494adc62fc6424f5",
+    "errors": [
+      {
+        "action": "inspect",
+        "current": "idle",
+        "error": "System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.\r\n ---> Il2CppInterop.Runtime.Il2CppException: System.Collections.Generic.KeyNotFoundException: The given key '10' was not present in the dictionary.\n--- BEGIN IL2CPP STACK TRACE ---\nSystem.Collections.Generic.KeyNotFoundException: The given key '10' was not present in the dictionary.\r\n  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x00000] in <00000000000000000000000000000000>:0 \n--- END IL2CPP STACK TRACE ---\n\r\n   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException) in /home/runner/work/Il2CppInterop/Il2CppInterop/Il2CppInterop.Runtime/Il2CppException.cs:line 36\r\n   at Il2CppSystem.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   --- End of inner exception stack trace ---\r\n   at System.RuntimeMethodHandle.InvokeMethod(Object target, Span`1& arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)\r\n   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)\r\n   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)\r\n   at REAStateConsumers.Runner.M(Object o, String name, Object[] args)\r\n   at REAStateConsumers.Runner.At(Object o, Int32 i)\r\n   at REAStateConsumers.Runner.<>c__DisplayClass46_0.<Items>b__0(Int32 i)\r\n   at System.Linq.Enumerable.SelectRangeIterator`1.ToArray()\r\n   at REAStateConsumers.Runner.Items(Object o)\r\n   at REAStateConsumers.Runner.Handle(String action)\r\n   at REAStateConsumers.Runner.Update()"
+      }
+    ],
+    "cleanup": [
+      {
+        "rootsRestored": true
+      }
+    ],
+    "close": {
+      "pid": 79028,
+      "closed": true,
+      "exited": true
+    }
+  },
+  {
+    "run": 2,
+    "pid": 68168,
+    "plugin_path": "E:\\ManakaREA-NaturalGameplay\\StateConsumers\\20261030-2\\StateConsumersProbe-scout.dll",
+    "plugin_sha256": "4d346533a9dd4e003c1e4fe0daf1fe13a86506401dcf1dc07702ad195c9ce581",
+    "errors": [
+      {
+        "action": "inventory 100002",
+        "current": "inventory-100002",
+        "error": "System.MissingMemberException: Member 'ExposureUnnoticed2.Master.Rank.MRankRecord.Level' not found.\r\n   at REAStateConsumers.Runner.G(Object o, String name)\r\n   at REAStateConsumers.Runner.InventoryState()\r\n   at REAStateConsumers.Runner.Handle(String action)\r\n   at REAStateConsumers.Runner.Update()"
+      }
+    ],
+    "cleanup": [
+      {
+        "rootsRestored": true
+      }
+    ],
+    "close": {
+      "pid": 68168,
+      "closed": true,
+      "exited": true
+    }
+  }
+]

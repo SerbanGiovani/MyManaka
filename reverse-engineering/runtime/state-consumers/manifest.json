@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "natural_only": false,
+  "authority": "controlled-native-inventory-callback-and-skill-input",
+  "sessions": [
+    {
+      "session_id": "52ab9776-c9ce-43ea-94ec-a5d70b411133",
+      "pid": 51012,
+      "state": "running",
+      "closed_by_operator": true
+    }
+  ],
+  "evidence_ids": [
+    "ev_cbc145c04ebb49c93edca2a681d95353651e7dd1d90d1a9484709099b2c1b7ce",
+    "ev_72545f6c857e03ae8b92f1dfe24f7604321dfe33a9b81dea5a07a86361d071f3"
+  ],
+  "plugin": {
+    "archived_path": "E:\\ManakaREA-NaturalGameplay\\StateConsumers\\20261030-3\\StateConsumersProbe-completed.dll",
+    "sha256": "ef9e5310212241a15e8f9b6b828fb288471ba493ecad359c4550400a81acd453"
+  },
+  "sources": [
+    {
+      "path": "Probe.cs",
+      "sha256": "7e31bc39af00bc3fe1695ade47adcde67d5f592a8ebfab09065dcee87c7c0654"
+    },
+    {
+      "path": "build.ps1",
+      "sha256": "ed5c2173ede9e18e3d56c450862470b40ba6a2902424c087b3886aeb662ebadb"
+    },
+    {
+      "path": "observe.js",
+      "sha256": "8f61129b9ba31b0f4ba2fb50695a4da920d26fa618b80de27ba9263208d86af7"
+    },
+    {
+      "path": "run_cases.py",
+      "sha256": "27435f752a6828e2e96ce80ed4ded5347c9f0e5f6a72141744780fa493c5a84e"
+    },
+    {
+      "path": "analyze.py",
+      "sha256": "88a24897e9fe260b6134a367776a40450440cf1d068a3a047040d40e7598952d"
+    },
+    {
+      "path": "collect.py",
+      "sha256": "9ae64e9e5885fd9e1494dc2ff50d501fdeaf131b18b9df3ff337c9e032731335"
+    },
+    {
+      "path": "test_analysis.py",
+      "sha256": "3e3133cc568b5f6ed3b00cfefab9221a88edcce69ce550ce1f90cf6f4628e47a"
+    },
+    {
+      "path": "observe-bootstrap.js",
+      "sha256": "a53607aa17dbbc7085e9a449bd6db9a688985973f4a3d7d19794c776eda7aac6"
+    },
+    {
+      "path": "diagnostics.json",
+      "sha256": "313a44d7e4c8be9492bc7fa470ff50b9f121abbc4bd59ec10e93a88dacb6ef0d"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "managed.jsonl.gz",
+      "sha256": "42cde224a89f1cc37670e2e17359a51a86bdcddd9bf815e6f8bf32b29d06e7ba",
+      "uncompressed_bytes": 8474,
+      "uncompressed_sha256": "b75ac1524a80fa9d1d5654d45469d5c063a81a0b1e8870f72009d450e21b09a0"
+    },
+    {
+      "path": "paths.jsonl.gz",
+      "sha256": "ab5e2f7c56967721f985e9a673509adbacb75db67085e50c024838a0b44b7fda",
+      "uncompressed_bytes": 43460,
+      "uncompressed_sha256": "387b3f5ffa9577bd208d93a6928c02625f042a24c7f218fb839f4ad97cb35cb3"
+    },
+    {
+      "path": "engine.log.gz",
+      "sha256": "db1a3d10778970cbbd901595405b91fef52e27c54e1eb8890a33330019d46e3c",
+      "uncompressed_bytes": 142016,
+      "uncompressed_sha256": "fc0ca4abacc1c1dba98c4b72deabddec1ba3980d48e2f3420c8c9d403adaccff"
+    }
+  ],
+  "scope": "Inactive inventory view callbacks and controlled skill17 input after original Save/Load. Natural clicks, paid learning and mission runtime not tested."
+}

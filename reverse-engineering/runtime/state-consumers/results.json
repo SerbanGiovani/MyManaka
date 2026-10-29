@@ -1,0 +1,95 @@
+{
+  "authority": "controlled-native-inventory-callback-and-skill-input",
+  "natural_only": false,
+  "inventory": [
+    {
+      "item": 100002,
+      "reusable": true,
+      "delayed_consume": false,
+      "before": 2,
+      "after": 2,
+      "exp_before": 0,
+      "exp_after": 1000,
+      "runtime_rank_after": 2,
+      "native_count_changes": 0,
+      "inactive_ui_callback": true,
+      "post_use_file_sha256": "2a038741728dea2ad9b5962e0c68f105c4f981a78f7663318b918e3ba85e62e2"
+    },
+    {
+      "item": 100003,
+      "reusable": true,
+      "delayed_consume": false,
+      "before": 2,
+      "after": 2,
+      "exp_before": 0,
+      "exp_after": 100,
+      "runtime_rank_after": 0,
+      "native_count_changes": 0,
+      "inactive_ui_callback": true,
+      "post_use_file_sha256": "89614d97b69008f7e11e1d885c12f05e3c12d408e424c9347abb9df1c47e9528"
+    },
+    {
+      "item": 0,
+      "reusable": false,
+      "delayed_consume": true,
+      "before": 2,
+      "after": 1,
+      "exp_before": 0,
+      "exp_after": 0,
+      "runtime_rank_after": 0,
+      "native_count_changes": 1,
+      "inactive_ui_callback": true,
+      "post_use_file_sha256": "58fde67a99b5f8e7194c6475ee1fdbdd4879f59313f0738c7ab1712e59c86d8a"
+    }
+  ],
+  "skills": [
+    {
+      "mode": "unlearned",
+      "level": 0,
+      "active": false,
+      "controlled_input_requests": 1,
+      "animation_events": 0,
+      "event_delays_frames": [],
+      "event_delays_seconds": [],
+      "restored_time_stop": false,
+      "rp_cost_tested": false
+    },
+    {
+      "mode": "disabled",
+      "level": 1,
+      "active": false,
+      "controlled_input_requests": 1,
+      "animation_events": 0,
+      "event_delays_frames": [],
+      "event_delays_seconds": [],
+      "restored_time_stop": false,
+      "rp_cost_tested": false
+    },
+    {
+      "mode": "enabled",
+      "level": 1,
+      "active": true,
+      "controlled_input_requests": 2,
+      "animation_events": 2,
+      "event_delays_frames": [
+        28,
+        35
+      ],
+      "event_delays_seconds": [
+        0.455291748046875,
+        0.5817108154296875
+      ],
+      "restored_time_stop": false,
+      "rp_cost_tested": false
+    }
+  ],
+  "native_messages": 63,
+  "engine_error_events": 0,
+  "limits": [
+    "Item callbacks were invoked from Unity LateUpdate on a constructed but inactive item view; natural UI availability, confirmation and user clicks are not verified.",
+    "Water covers native delayed-consume count once; debug experience items cover reusable effects and runtime rank recalculation.",
+    "Skill17 learning uses the level helper, not the UI: cost and rank unlock were not bypassed in a claimed natural test; they are outside this controlled scope.",
+    "InputData.JustTimeStop is a controlled request; normal keyboard and ring-menu reachability are established only by prior separate evidence.",
+    "Mission queries in state-consumers are static preparation; mission progress/reward consumers remain pending."
+  ]
+}
