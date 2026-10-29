@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "natural_only": false,
+  "authority": "controlled-original-mission-consumers-and-result-settlement",
+  "sessions": [
+    {
+      "session_id": "588dd000-6ec3-427a-81bb-2d0d275ecff0",
+      "pid": 75008,
+      "state": "running",
+      "closed_by_operator": true
+    }
+  ],
+  "evidence_ids": [
+    "ev_5e3f3a27fb9da50ed8de0fd3ec8991b4ea74a261483333be6dce9ac1ddf4ebcb",
+    "ev_1b75b4499445bacf6e2e126c5c0ceba80ff9035b703dd03b2111417f702cb2aa"
+  ],
+  "plugin": {
+    "archived_path": "E:\\ManakaREA-NaturalGameplay\\MissionConsumers\\20261030-7\\MissionConsumersProbe-completed.dll",
+    "sha256": "1ddb1df5949c9bfc176147c9d0d3f096ec8ff4f9db69b5b1dd82e55f9bde01d0"
+  },
+  "sources": [
+    {
+      "path": "Probe.cs",
+      "sha256": "853103e882ad974f1189ee3215f6d67e23f6fc6a30738982f4f504d7bafaf855"
+    },
+    {
+      "path": "build.ps1",
+      "sha256": "eb39afe978806e790fceefb68abb7d80d9b197e226ddc0c84c3e7ae447e94422"
+    },
+    {
+      "path": "observe.js",
+      "sha256": "1366798695aabd426d2f12e7c92e0b9e30d19d8b874f288bc6639422f1b10841"
+    },
+    {
+      "path": "run_cases.py",
+      "sha256": "6fc5f37263f4e4d2d6db64929ee0e7b1bb9bfd199c482a682539ad3130ebf8ef"
+    },
+    {
+      "path": "analyze.py",
+      "sha256": "39387956b0d05f7f7695906802282b3c5317ff48ba06a88b20adcc41bbca7334"
+    },
+    {
+      "path": "collect.py",
+      "sha256": "f29fccd95f90de26a2d409dac88ec32653e459a0edbb2703a0b4ec523a71f5a3"
+    },
+    {
+      "path": "test_analysis.py",
+      "sha256": "3b21fb8143ce72735eefd73ea1c490811a27c417dac888bd1fc70eb3688e0119"
+    },
+    {
+      "path": "diagnostics.json",
+      "sha256": "c2eac663916ddc5828911fa87075f36ae259884bc1b14785d4bb0655d84edda3"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "managed.jsonl.gz",
+      "sha256": "527f687f2ec9c366fd935b8179f5565f59386d9597ad41a60a57568db7f1d348",
+      "uncompressed_bytes": 17435,
+      "uncompressed_sha256": "6345516d79474b0e55d5d969666e93bc199e0de38889ec27fb41b8bfca0ec327"
+    },
+    {
+      "path": "paths.jsonl.gz",
+      "sha256": "132d2c96654ed49812fd3e4191c2440256f3ca8d632ad253e08af320345b87d8",
+      "uncompressed_bytes": 21619,
+      "uncompressed_sha256": "9c4a13ce9d9ea2018fdfa7686e8c6b905aa9cbe8b3def9b42079df283f07a1a7"
+    },
+    {
+      "path": "engine.log.gz",
+      "sha256": "43bd6329a4ce627fd6061ef9738443e47f2eea03505ebbbb73406a190aafe0f6",
+      "uncompressed_bytes": 23820,
+      "uncompressed_sha256": "5df5fb0867f704fd92963f8ba88862b02c66f0c242193f0faf544f7fba4e5df9"
+    },
+    {
+      "path": "diagnostics/clone-uninitialized/engine.log.gz",
+      "sha256": "c1098d7f582ce4b0b58710061543e5f9e032091581c3926f1ae7e923afc72aef",
+      "uncompressed_bytes": 20372,
+      "uncompressed_sha256": "d965e962f4f38faa3d8251bb3aec430622fcb1ca197109d17a893e44c151bef6"
+    },
+    {
+      "path": "diagnostics/clone-uninitialized/managed.jsonl.gz",
+      "sha256": "9c3fc48165aca2e3f3840826f784ae160f581f6df3374da8019711205eed8f09",
+      "uncompressed_bytes": 7369,
+      "uncompressed_sha256": "793416bd66d177663157b32dbfbb745bfd6f609986814ce08d806377950d2a2e"
+    },
+    {
+      "path": "diagnostics/early-load-noisy/engine.log.gz",
+      "sha256": "062e97ba6a2cdfb38dc34291338900d9fed2b5b0491a96ee369cba04e775bf0b",
+      "uncompressed_bytes": 673520,
+      "uncompressed_sha256": "b014371acec6b87777d2ce7ebbe63f0057340dc385d5b287107ec5aedb01c602"
+    },
+    {
+      "path": "diagnostics/early-load-noisy/managed.jsonl.gz",
+      "sha256": "87fe26ee578cba9472d07069ee1c0614fd8b8f01d1907c7223931f19160773df",
+      "uncompressed_bytes": 19970,
+      "uncompressed_sha256": "a0b2b1698160d54493a52ec445b61a5f66be5313f596f21e29559a89cb85a0e2"
+    },
+    {
+      "path": "diagnostics/engine.log.gz",
+      "sha256": "c1098d7f582ce4b0b58710061543e5f9e032091581c3926f1ae7e923afc72aef",
+      "uncompressed_bytes": 20372,
+      "uncompressed_sha256": "d965e962f4f38faa3d8251bb3aec430622fcb1ca197109d17a893e44c151bef6"
+    },
+    {
+      "path": "diagnostics/managed.jsonl.gz",
+      "sha256": "b47991e0e0232af1b5186fc9b2dd4ed30ab771532e39e2ee6417c3c66892c224",
+      "uncompressed_bytes": 2249,
+      "uncompressed_sha256": "9f07cc6e841a1c44dc4aeb7b0f5cfd5ebf488322c8348308f5f196fe8459d0e3"
+    },
+    {
+      "path": "diagnostics/nullable/engine.log.gz",
+      "sha256": "039c193dcf8f64024131222d196c8c838286a09f322cedf5df8af96a92dd4637",
+      "uncompressed_bytes": 20543,
+      "uncompressed_sha256": "80f632eab012b7fe09bd2984256737e7e136ec06d9222302b9cc1186e5aa5c75"
+    },
+    {
+      "path": "diagnostics/nullable/managed.jsonl.gz",
+      "sha256": "b641b6d3163e43c3b545724c315ed9788bd93cb406b430578bb1f1f6c8b126fd",
+      "uncompressed_bytes": 2375,
+      "uncompressed_sha256": "db7e0e6ebac01b838b66180aac3eeab0a1c3a19142b661bb7af2f4d7d6253da8"
+    },
+    {
+      "path": "diagnostics/preflight/engine.log.gz",
+      "sha256": "c1098d7f582ce4b0b58710061543e5f9e032091581c3926f1ae7e923afc72aef",
+      "uncompressed_bytes": 20372,
+      "uncompressed_sha256": "d965e962f4f38faa3d8251bb3aec430622fcb1ca197109d17a893e44c151bef6"
+    },
+    {
+      "path": "diagnostics/preflight/managed.jsonl.gz",
+      "sha256": "256f28fc44ae05af835fed0364caae7ea3454a4c0a585e5463161816fbc68a10",
+      "uncompressed_bytes": 7981,
+      "uncompressed_sha256": "647b9fe30d3e853357ab6b384aa58de12d12ac56627211a79ab5fe2e9b5806b9"
+    },
+    {
+      "path": "diagnostics/settlement-crash/engine.log.gz",
+      "sha256": "5488170fab4d64bc1fea85317ed3421631913e5ec54be1e450c4f1e01a0907c2",
+      "uncompressed_bytes": 20542,
+      "uncompressed_sha256": "218b93e72663c8a53d110d9f5e9f6d3cb52d62bdd9384add9c7cecc39afcdc20"
+    },
+    {
+      "path": "diagnostics/settlement-crash/managed.jsonl.gz",
+      "sha256": "fbe89e7e08bb8b68c85a92d139c2f8c59ad45d106aad83c1835f6d5ca366ddaf",
+      "uncompressed_bytes": 16368,
+      "uncompressed_sha256": "891e1e0b576f1eca6535e5a6f094bb61837da9f0ddc887fc2306cefa414b2981"
+    }
+  ],
+  "scope": "Four controlled mission eligibility/progress/recreated-completion conditions plus native settlement; cloned required mask and temporary stage/stop coordination explicit; no natural mission/scene claim."
+}

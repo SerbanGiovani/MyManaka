@@ -463,6 +463,18 @@ def main():
     check(runpy.run_path(str(consumers_dir / "analyze.py"))["build"](inputs=args.inputs) == read(consumers_dir / "results.json"), "Inventory/skill consumer joins differ")
     check(runpy.run_path(str(ROOT / "salt/state_consumers_evidence.py"))["build"]() == read(ROOT / "salt/evidence/state-consumers-chain.json"), "Consumer static binding differs")
     observed_runtime_records[consumers_dir / "rea-runtime.json"] = consumers_runtime
+    mission_consumers_dir = ROOT / "runtime/mission-consumers"
+    mission_consumers_runtime = read(mission_consumers_dir / "manifest.json")
+    check(not mission_consumers_runtime["natural_only"], "Mission consumer authority differs")
+    for source in mission_consumers_runtime["sources"]:
+        check(digest(mission_consumers_dir / source["path"]) == source["sha256"], "Mission consumer source differs")
+    for output in mission_consumers_runtime["outputs"]:
+        path = mission_consumers_dir / output["path"]
+        raw = gzip.decompress(path.read_bytes())
+        check(digest(path) == output["sha256"] and len(raw) == output["uncompressed_bytes"] and hashlib.sha256(raw).hexdigest() == output["uncompressed_sha256"], "Mission consumer capture differs")
+    check(runpy.run_path(str(mission_consumers_dir / "analyze.py"))["build"](inputs=args.inputs) == read(mission_consumers_dir / "results.json"), "Mission progress/reward/settlement joins differ")
+    check(runpy.run_path(str(ROOT / "salt/mission_consumers_evidence.py"))["build"]() == read(ROOT / "salt/evidence/mission-consumers-chain.json"), "Mission consumer static binding differs")
+    observed_runtime_records[mission_consumers_dir / "rea-runtime.json"] = mission_consumers_runtime
     toolchain_dir = ROOT / "reconstruction"
     toolchain = read(toolchain_dir / "editor-toolchain.json")
     check(toolchain["status"] == "editor-build-and-player-smoke-verified" and toolchain["compilation_verified"] and toolchain["build_verified"] and toolchain["player_startup_verified"], "Editor smoke did not succeed")
@@ -842,6 +854,7 @@ def main():
         source_records.append({"path": appearance_detail_runtime["plugin"]["archived_path"], "sha256": appearance_detail_runtime["plugin"]["sha256"]})
         source_records.append({"path": appearance_hair_runtime["plugin"]["archived_path"], "sha256": appearance_hair_runtime["plugin"]["sha256"]})
         source_records.append({"path": consumers_runtime["plugin"]["archived_path"], "sha256": consumers_runtime["plugin"]["sha256"]})
+        source_records.append({"path": mission_consumers_runtime["plugin"]["archived_path"], "sha256": mission_consumers_runtime["plugin"]["sha256"]})
         source_records.extend({**output, "verify_cache_output": True} for output in toolchain["build_outputs"])
         source_records.append({"path": toolchain["editor_path"], "sha256": toolchain["editor_sha256"]})
         for source in source_records:

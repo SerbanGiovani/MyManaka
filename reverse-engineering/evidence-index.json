@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-29T19:16:43.209524+00:00",
+  "generated_at_utc": "2026-10-29T19:40:03.015756+00:00",
   "status": "consistent",
-  "canonical_rea_observations": 1039,
-  "rea_queries_completed": 912,
+  "canonical_rea_observations": 1055,
+  "rea_queries_completed": 926,
   "artifacts": [
     {
       "path": ".gitattributes",
@@ -132,8 +132,8 @@
     },
     {
       "path": "audit.py",
-      "bytes": 80807,
-      "sha256": "d6d6db820610b4680962938b614c9ccb58cc0ed188d13173647ac9ce8e695bcc"
+      "bytes": 81335,
+      "sha256": "ffdcba7de7fb0e7c1fe0bd9a51d2b03ed5a364a0757a110389f6c673eddf2c55"
     },
     {
       "path": "bareta-chain.md",
@@ -164,6 +164,11 @@
       "path": "loading-chain.md",
       "bytes": 13551,
       "sha256": "e02d74c0442d5e352096ae79580d67c06e5284a091410715fb513765801ce6fe"
+    },
+    {
+      "path": "mission-consumers.md",
+      "bytes": 5397,
+      "sha256": "bab335f9a2c739474539c43a8a8d130c5c6d03583a4525fc9385f57809d3ad4a"
     },
     {
       "path": "natural-cancellation.md",
@@ -242,8 +247,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 27918,
-      "sha256": "368c1bf352fe004df4d44042644c59b93c1710387a3b1b0089ae71f1e00f093d"
+      "bytes": 28440,
+      "sha256": "f633d3fa61237b9a674e9908c616b194ec4a90d1b98257c40c1077c73dfa1b92"
     },
     {
       "path": "reconstruction/build-smoke.ps1",
@@ -854,6 +859,161 @@
       "path": "runtime/full-save-restore/variants.json",
       "bytes": 4360,
       "sha256": "fb73078a489ae401bcab6b3abc1da88b83626b7434179f2c8a41e70f98489477"
+    },
+    {
+      "path": "runtime/mission-consumers/analyze.py",
+      "bytes": 11367,
+      "sha256": "39387956b0d05f7f7695906802282b3c5317ff48ba06a88b20adcc41bbca7334"
+    },
+    {
+      "path": "runtime/mission-consumers/baseline.json",
+      "bytes": 5021,
+      "sha256": "d565c77160f7ce5874d7c5508bbe391993456bd56a0bd5d34d1f8d2d7fc03be7"
+    },
+    {
+      "path": "runtime/mission-consumers/build.ps1",
+      "bytes": 1894,
+      "sha256": "eb39afe978806e790fceefb68abb7d80d9b197e226ddc0c84c3e7ae447e94422"
+    },
+    {
+      "path": "runtime/mission-consumers/close-receipt.json",
+      "bytes": 208,
+      "sha256": "decaf4e23a635c22237f9bb433e71529860c198b451030e83109d9056c0525dd"
+    },
+    {
+      "path": "runtime/mission-consumers/collect.py",
+      "bytes": 3118,
+      "sha256": "f29fccd95f90de26a2d409dac88ec32653e459a0edbb2703a0b4ec523a71f5a3"
+    },
+    {
+      "path": "runtime/mission-consumers/diagnostics/clone-uninitialized/engine.log.gz",
+      "bytes": 938,
+      "sha256": "c1098d7f582ce4b0b58710061543e5f9e032091581c3926f1ae7e923afc72aef"
+    },
+    {
+      "path": "runtime/mission-consumers/diagnostics/clone-uninitialized/managed.jsonl.gz",
+      "bytes": 1015,
+      "sha256": "9c3fc48165aca2e3f3840826f784ae160f581f6df3374da8019711205eed8f09"
+    },
+    {
+      "path": "runtime/mission-consumers/diagnostics/early-load-noisy/engine.log.gz",
+      "bytes": 3389,
+      "sha256": "062e97ba6a2cdfb38dc34291338900d9fed2b5b0491a96ee369cba04e775bf0b"
+    },
+    {
+      "path": "runtime/mission-consumers/diagnostics/early-load-noisy/managed.jsonl.gz",
+      "bytes": 2565,
+      "sha256": "87fe26ee578cba9472d07069ee1c0614fd8b8f01d1907c7223931f19160773df"
+    },
+    {
+      "path": "runtime/mission-consumers/diagnostics/engine.log.gz",
+      "bytes": 938,
+      "sha256": "c1098d7f582ce4b0b58710061543e5f9e032091581c3926f1ae7e923afc72aef"
+    },
+    {
+      "path": "runtime/mission-consumers/diagnostics/managed.jsonl.gz",
+      "bytes": 499,
+      "sha256": "b47991e0e0232af1b5186fc9b2dd4ed30ab771532e39e2ee6417c3c66892c224"
+    },
+    {
+      "path": "runtime/mission-consumers/diagnostics/nullable/engine.log.gz",
+      "bytes": 968,
+      "sha256": "039c193dcf8f64024131222d196c8c838286a09f322cedf5df8af96a92dd4637"
+    },
+    {
+      "path": "runtime/mission-consumers/diagnostics/nullable/managed.jsonl.gz",
+      "bytes": 891,
+      "sha256": "b641b6d3163e43c3b545724c315ed9788bd93cb406b430578bb1f1f6c8b126fd"
+    },
+    {
+      "path": "runtime/mission-consumers/diagnostics/preflight/engine.log.gz",
+      "bytes": 938,
+      "sha256": "c1098d7f582ce4b0b58710061543e5f9e032091581c3926f1ae7e923afc72aef"
+    },
+    {
+      "path": "runtime/mission-consumers/diagnostics/preflight/managed.jsonl.gz",
+      "bytes": 1246,
+      "sha256": "256f28fc44ae05af835fed0364caae7ea3454a4c0a585e5463161816fbc68a10"
+    },
+    {
+      "path": "runtime/mission-consumers/diagnostics/settlement-crash/engine.log.gz",
+      "bytes": 967,
+      "sha256": "5488170fab4d64bc1fea85317ed3421631913e5ec54be1e450c4f1e01a0907c2"
+    },
+    {
+      "path": "runtime/mission-consumers/diagnostics/settlement-crash/managed.jsonl.gz",
+      "bytes": 1715,
+      "sha256": "fbe89e7e08bb8b68c85a92d139c2f8c59ad45d106aad83c1835f6d5ca366ddaf"
+    },
+    {
+      "path": "runtime/mission-consumers/diagnostics/settlement-crash/windows-crash.json",
+      "bytes": 702,
+      "sha256": "b091ae048fe3600c6bd8f83dc80e8833e90a8f5f704a776c2665cbbb1d2c3fd8"
+    },
+    {
+      "path": "runtime/mission-consumers/diagnostics.json",
+      "bytes": 2592,
+      "sha256": "c2eac663916ddc5828911fa87075f36ae259884bc1b14785d4bb0655d84edda3"
+    },
+    {
+      "path": "runtime/mission-consumers/engine.log.gz",
+      "bytes": 984,
+      "sha256": "43bd6329a4ce627fd6061ef9738443e47f2eea03505ebbbb73406a190aafe0f6"
+    },
+    {
+      "path": "runtime/mission-consumers/managed.jsonl.gz",
+      "bytes": 1873,
+      "sha256": "527f687f2ec9c366fd935b8179f5565f59386d9597ad41a60a57568db7f1d348"
+    },
+    {
+      "path": "runtime/mission-consumers/manifest.json",
+      "bytes": 6295,
+      "sha256": "046da8195d1fe93428324cb4c7f25b2a43fa3c58600a662041b34190c2775cd1"
+    },
+    {
+      "path": "runtime/mission-consumers/observe.js",
+      "bytes": 2079,
+      "sha256": "1366798695aabd426d2f12e7c92e0b9e30d19d8b874f288bc6639422f1b10841"
+    },
+    {
+      "path": "runtime/mission-consumers/paths.jsonl.gz",
+      "bytes": 1490,
+      "sha256": "132d2c96654ed49812fd3e4191c2440256f3ca8d632ad253e08af320345b87d8"
+    },
+    {
+      "path": "runtime/mission-consumers/post-state.json",
+      "bytes": 6310,
+      "sha256": "527579122714fb0717c1fd0bb96b412a7d6a5cf3c61f783d0974acebc8126f21"
+    },
+    {
+      "path": "runtime/mission-consumers/Probe.cs",
+      "bytes": 15126,
+      "sha256": "853103e882ad974f1189ee3215f6d67e23f6fc6a30738982f4f504d7bafaf855"
+    },
+    {
+      "path": "runtime/mission-consumers/rea-runtime.json",
+      "bytes": 48679,
+      "sha256": "ca2c417a0cd2b1c6e64df024e73a71a2afbe84a84b6a66f34183345f1a538c3f"
+    },
+    {
+      "path": "runtime/mission-consumers/results.json",
+      "bytes": 2999,
+      "sha256": "2edcdc1aeb20c29bf1d0d823a917e5e64dfb4034492bb0472708978fbb8740f1"
+    },
+    {
+      "path": "runtime/mission-consumers/run_cases.py",
+      "bytes": 997,
+      "sha256": "6fc5f37263f4e4d2d6db64929ee0e7b1bb9bfd199c482a682539ad3130ebf8ef"
+    },
+    {
+      "path": "runtime/mission-consumers/saved-files.json",
+      "bytes": 5047,
+      "sha256": "cf8e9c5279ff89ae840b822bd61a509bf66ada0a3f8d992cc04e6f7ed5e48384"
+    },
+    {
+      "path": "runtime/mission-consumers/test_analysis.py",
+      "bytes": 2116,
+      "sha256": "3b21fb8143ce72735eefd73ea1c490811a27c417dac888bd1fc70eb3688e0119"
     },
     {
       "path": "runtime/natural-cancellation/analyze.py",
@@ -4904,6 +5064,181 @@
       "path": "salt/evidence/loading-thunks/run.json",
       "bytes": 2045,
       "sha256": "e8af3727f95412a17e7d545c32bcf6a894140cf02041042b3854b6b5e6444a04"
+    },
+    {
+      "path": "salt/evidence/mission-consumers/16492-06001423-procedure_pseudo_code.json",
+      "bytes": 8817,
+      "sha256": "9ebbc4fd990262699895aefc62f1a9b572e458291d0a40dd12c95ef10e40a8b0"
+    },
+    {
+      "path": "salt/evidence/mission-consumers/16492-06001423-procedure_pseudo_code.pseudocode.c",
+      "bytes": 1233,
+      "sha256": "1ba555bd1efda75df1bda756364573ef7269caffffeda86a664129c2f0ffbae0"
+    },
+    {
+      "path": "salt/evidence/mission-consumers/16495-06001426-procedure_pseudo_code.json",
+      "bytes": 9861,
+      "sha256": "2f6ff12069107be0ac00ea444bec6515896f2280021b8367d74a302c8c2096f1"
+    },
+    {
+      "path": "salt/evidence/mission-consumers/16495-06001426-procedure_pseudo_code.pseudocode.c",
+      "bytes": 1737,
+      "sha256": "1653e52da850e64719724c85f571eb2a01f091ea8dcee75cb40c759f7e900f53"
+    },
+    {
+      "path": "salt/evidence/mission-consumers/16562-06001469-procedure_pseudo_code.json",
+      "bytes": 10535,
+      "sha256": "e1321dd4fcefbd7d4f88c51c2807da5dc115ed34dbf87d95a8f6de2fd1046fd1"
+    },
+    {
+      "path": "salt/evidence/mission-consumers/16562-06001469-procedure_pseudo_code.pseudocode.c",
+      "bytes": 1977,
+      "sha256": "27dead486dbaf43c4bbff701ad5894eb7cc8ad2c9fc1db259a568b3d00c4beca"
+    },
+    {
+      "path": "salt/evidence/mission-consumers/18244-06001afb-procedure_pseudo_code.json",
+      "bytes": 22013,
+      "sha256": "8598288707b9a83052f02f8ab8beca347e0a4fbb27251ccf14b8dddd3da2a80e"
+    },
+    {
+      "path": "salt/evidence/mission-consumers/18244-06001afb-procedure_pseudo_code.pseudocode.c",
+      "bytes": 7372,
+      "sha256": "3f6c84f2148c9a46ad5bbe8546f16e8e05be7d2ce27ab5e2fd7c3c20feb17fdc"
+    },
+    {
+      "path": "salt/evidence/mission-consumers/18247-06001afe-procedure_pseudo_code.json",
+      "bytes": 11523,
+      "sha256": "19c3c98bb9145067c53cf6945c13ead88fc5ac2f564d16afe65757fd8154bd0b"
+    },
+    {
+      "path": "salt/evidence/mission-consumers/18247-06001afe-procedure_pseudo_code.pseudocode.c",
+      "bytes": 2473,
+      "sha256": "db8df33eea8c878d62638e774db39d2d8b44e19810226233d0f466b460c3bd82"
+    },
+    {
+      "path": "salt/evidence/mission-consumers/18253-06001b04-procedure_pseudo_code.json",
+      "bytes": 57157,
+      "sha256": "f0d78b3cb130f0245b48a93d4961be9872f81e0881189b940eaf0932d46d32d7"
+    },
+    {
+      "path": "salt/evidence/mission-consumers/18253-06001b04-procedure_pseudo_code.pseudocode.c",
+      "bytes": 23495,
+      "sha256": "974159d6c617162255a996d003f9f3521a2c03e0536a4d8d55c070545d68dca9"
+    },
+    {
+      "path": "salt/evidence/mission-consumers/rea-evidence.json",
+      "bytes": 115320,
+      "sha256": "7cde0c27dbab89a03bb58293d9a583623e9c524fd6b06cda87976a57927d2409"
+    },
+    {
+      "path": "salt/evidence/mission-consumers/run.json",
+      "bytes": 4285,
+      "sha256": "2fb1713250b84f7b15739cdf09ac80ab7010c972f7a603c882f610e4908dc11e"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-chain.json",
+      "bytes": 909152,
+      "sha256": "5e048fd6a46bec2936736e70cc8f43bd6cdb2547aa7819cb2036f9b68f220a14"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-lifecycle/16471-0600140e-procedure_pseudo_code.json",
+      "bytes": 9015,
+      "sha256": "59a72cf752b9ee229acca7c645f8b2c2cec16244e4724dd1326fac72ad0796bf"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-lifecycle/16471-0600140e-procedure_pseudo_code.pseudocode.c",
+      "bytes": 1312,
+      "sha256": "0bcfe3d5c1ecbe3257419494a14e550c95ecb61f9d216d5695c7430acc22ec3c"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-lifecycle/16472-0600140f-procedure_pseudo_code.json",
+      "bytes": 9553,
+      "sha256": "9cd9a57b81c7da330e3bdb53c00ee1e02dc04def2fa7419c065d400648a4d2f4"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-lifecycle/16472-0600140f-procedure_pseudo_code.pseudocode.c",
+      "bytes": 1567,
+      "sha256": "2a415abe9be96df3e201c72a40dc1945cd85b10aa4b759c562283b486e16ca62"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-lifecycle/16559-06001466-procedure_pseudo_code.json",
+      "bytes": 24941,
+      "sha256": "5a6417ec5ca289f9dcdb2f77171471561d1b12e71c1e73cf9a881e9b29efbeaf"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-lifecycle/16559-06001466-procedure_pseudo_code.pseudocode.c",
+      "bytes": 8538,
+      "sha256": "8c5fdbafbb0e04bee6e3830138958a50120bb8bb4f6faad9bd2a8bd5d2c6b258"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-lifecycle/16761-06001530-procedure_pseudo_code.json",
+      "bytes": 7955,
+      "sha256": "0018c323e7b271ab3544b012dfaeb9f801bbb7a152ddb069465811f6c801b97b"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-lifecycle/16761-06001530-procedure_pseudo_code.pseudocode.c",
+      "bytes": 835,
+      "sha256": "68b2f6f8ff24e51af81713dcdf0ab113854cd0f47746b3fb56ba77c613036a17"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-lifecycle/rea-evidence.json",
+      "bytes": 48500,
+      "sha256": "2e87cf6be723a72b4919d946b4ccf2dde0b1221f0307b802ea5f65f7682b370c"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-lifecycle/run.json",
+      "bytes": 2995,
+      "sha256": "d8ee0e47b01c2cd510017edef9cdbd9bb4a950747cf3a08c87eefa6f2d59d128"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-settlement/16063-06001276-procedure_pseudo_code.json",
+      "bytes": 6957,
+      "sha256": "3d3d66feef56f24d7c4095ec0fa5e298bf00f84a342f87c1b2e2f12d1fd663e2"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-settlement/16063-06001276-procedure_pseudo_code.pseudocode.c",
+      "bytes": 383,
+      "sha256": "a24b317e9b5af3be02bb9332dd98139aa48fd0a2a279a95aa41ef18b3d034976"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-settlement/16745-06001520-procedure_pseudo_code.json",
+      "bytes": 7559,
+      "sha256": "3fbe2b776e9647b4a85d0afb844b53033cdc96258fab187bec015b9ce347d194"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-settlement/16745-06001520-procedure_pseudo_code.pseudocode.c",
+      "bytes": 362,
+      "sha256": "cf7df055c19195f4e02c45beac1ef265a5778b52cc7158172fca1c154e409dd0"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-settlement/17559-0600184e-procedure_pseudo_code.json",
+      "bytes": 186589,
+      "sha256": "4ebd342a421ca2e4d29bafebd606a916c989a51523544bbbcb3e191078ff105c"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-settlement/17559-0600184e-procedure_pseudo_code.pseudocode.c",
+      "bytes": 86219,
+      "sha256": "7875ae09b52c48a8bf8a9132b8a490c0a8062a33a1778d231cd4067c625b27c2"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-settlement/17566-06001855-procedure_pseudo_code.json",
+      "bytes": 188583,
+      "sha256": "f9aefe7dad6785c1a4790e7ba778345e45f6f679e652a711f81091fdacb3af43"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-settlement/17566-06001855-procedure_pseudo_code.pseudocode.c",
+      "bytes": 87078,
+      "sha256": "f83e799e833888dff9215ecc49e5d7692a5baef5c41ef85f8a2a61d14ae83e28"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-settlement/rea-evidence.json",
+      "bytes": 386707,
+      "sha256": "9a913488f96e7b2dfe2113b631653165fd5db1e7385dca577557f10184ff8a5b"
+    },
+    {
+      "path": "salt/evidence/mission-consumers-settlement/run.json",
+      "bytes": 3032,
+      "sha256": "a1d08b27e50c5929ef9f2864c0e6790a140b0e2ace9f1c856ac8d81064739380"
     },
     {
       "path": "salt/evidence/native-getsalt-focused.json",
@@ -12441,6 +12776,11 @@
       "sha256": "3b31ca7b06cf4fcfca880172df9d8bcc83440ae14d266554735e0950cdba5c29"
     },
     {
+      "path": "salt/mission_consumers_evidence.py",
+      "bytes": 1884,
+      "sha256": "63507fa34a732a16115d5c66ef5c52bf3afb66edd6f80dd2ed412c63b59a4af8"
+    },
+    {
       "path": "salt/native-getsalt.seeds.tsv",
       "bytes": 130,
       "sha256": "217503a7e48aca14380b7fb55b6464145f1402f902fc8e5429f29e14c2b474f7"
@@ -12909,6 +13249,16 @@
       "path": "salt/symbols/loading.seeds.tsv",
       "bytes": 39461,
       "sha256": "ea98d9ef291794af93a9fd9e29694710ab71dd0940190200757edbd068505160"
+    },
+    {
+      "path": "salt/symbols/mission-consumers-lifecycle.plan.json",
+      "bytes": 3157,
+      "sha256": "ee4e587545836ab03c92dae35052a4128968002512b6ef60f64193bb803b20fe"
+    },
+    {
+      "path": "salt/symbols/mission-consumers-settlement.plan.json",
+      "bytes": 3195,
+      "sha256": "1af0b9d312f789a788e477e4e07a6187b9565a4f1dc5edc71b70c8ec1e08a705"
     },
     {
       "path": "salt/symbols/mission-consumers.plan.json",
@@ -13512,8 +13862,8 @@
     },
     {
       "path": "work-queue.json",
-      "bytes": 2978,
-      "sha256": "8b0428d24645ab9c08c7d5594e2ba0d55aac395d2b0986eb505c67a13eb329f4"
+      "bytes": 3323,
+      "sha256": "3eb60a6665cc47179fb08cdc5377a44b9aafe55fa6ec75beb790298d15175a8e"
     }
   ],
   "inputs_checked": [
@@ -13778,6 +14128,10 @@
       "sha256": "ef9e5310212241a15e8f9b6b828fb288471ba493ecad359c4550400a81acd453"
     },
     {
+      "path": "E:\\ManakaREA-NaturalGameplay\\MissionConsumers\\20261030-7\\MissionConsumersProbe-completed.dll",
+      "sha256": "1ddb1df5949c9bfc176147c9d0d3f096ec8ff4f9db69b5b1dd82e55f9bde01d0"
+    },
+    {
       "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\authorized-20261030-1-build\\ToolchainSmoke.exe",
       "sha256": "1a1a0368abaced7b7679a48c0ca4cd080e391fe03ee4c27df30366136dddf479"
     },
@@ -13802,6 +14156,11 @@
     },
     {
       "evidence_id": "ev_0097023450f5eb109828df9bef98aa93c0c37fac530cf1b273a996c1aa3e0eaf",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_00be6ad13efbe301d20329a7a75c9d0ed2ad10e6f1fb29a28d92c4ef64c4d184",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
@@ -13842,6 +14201,16 @@
     },
     {
       "evidence_id": "ev_028198e28017472aa46279968088544be9167a408823b76cb8cce9434614e92f",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_02ba04e940aa7f86dc2e281fbdb5a75fef3c22abe54310135f2cd3ae11b90441",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_03351fb1b36fce832c814901ca2e5476e435e71e62ec502d601156c99eb4fe24",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
@@ -13971,6 +14340,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_098841d00777038c4611f015ca00e53cfdfb37865d8c93227e12cb1ae460019f",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_09faf63e2443e2182106cea77ccd417fcaacb8be1feb4d32d14c23d93c822105",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -14082,6 +14456,11 @@
     },
     {
       "evidence_id": "ev_0ee03035211c02d1637fba5c8515ce81ecf6701a640ebf72c51b756741575b96",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_0f704b248a794c3492664478d3d3d481a5d6a77360358d95f0cd63f8eb9c739d",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
@@ -14331,6 +14710,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_1b75b4499445bacf6e2e126c5c0ceba80ff9035b703dd03b2111417f702cb2aa",
+      "operation": "frida_session_status",
+      "subject_sha256": null
+    },
+    {
       "evidence_id": "ev_1b96044c1569076ca92a0619948310b0376620674d5d1492329597401cfc3530",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -14536,6 +14920,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_245b5ca13f26c102e8186822d28044d9bf73dda76a8483fdf2731e403d575dfa",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_24736516f54bba1b73006cd3c241d124ed7a60b0ee4eccaa08a7bdcc9af2f58a",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -14682,6 +15071,11 @@
     },
     {
       "evidence_id": "ev_2d3917fc97e66856206ef17d196c998af5454c6d3acb258679b2f08dcae1adc9",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_2daf6c539c9116567ad2241f1ba585c96f816060bd7d40088a2e820d97ffdf06",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
@@ -15506,6 +15900,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_54b3d68b89c66a7d8c1c43dcaf389eae655183f21af76d006672dc7edda99ef1",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_5539594bd72be40dd76d8b51714109715cdbdd3466aafda9948653a8e4c25e31",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -15659,6 +16058,11 @@
       "evidence_id": "ev_5db9c7cef4489c0de9bc3c079a027abebfcc696f17a3b31c29d7b8aa7e599c33",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_5e3f3a27fb9da50ed8de0fd3ec8991b4ea74a261483333be6dce9ac1ddf4ebcb",
+      "operation": "load_frida_script",
+      "subject_sha256": null
     },
     {
       "evidence_id": "ev_5e42e111819b12c1785c75100b0219a2edaea4a164d34a90bcb98878ebd6c6c5",
@@ -16087,6 +16491,11 @@
     },
     {
       "evidence_id": "ev_7433b40fb513e18f8a7a4c618c19c1b06b10bc29b4f47c5beb30e699df0dfb6f",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_7443fe56f7c2b7d60096fe31118dcab58915cef563289ab35d049f6c520ee031",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
@@ -16606,6 +17015,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_8c71c293a3a6c77a47c54f48bf8215f21f2542ab10c2c91bf7f135d12950c8c0",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_8cfb69e443bfd844c858d26e58bb41f8be68203df21a3c1691830fd55bc12298",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -16852,6 +17266,11 @@
     },
     {
       "evidence_id": "ev_96c414eda063ebda227e8e4b580aee660122021a9b70661224229ebaa8046505",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_96dfba8083e4cfafc521ea02728f6c4ff186682dd8aa020aaee538690a064dbf",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
@@ -17157,6 +17576,11 @@
     },
     {
       "evidence_id": "ev_a3cb1697e2b97a5d0d5e231e06b4337837933a18c05949cc68627e05dfbf500a",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_a3cbc9ab49728c8952bd077d4afd33442956e2a57b84f995f6013d6dc52c13c0",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
@@ -17836,6 +18260,11 @@
       "subject_sha256": null
     },
     {
+      "evidence_id": "ev_c7c5f573d8c2bafbc3219dde8fa051e0c43481c6ca5e9729aa371d78ce55745e",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_c86f6bfe7215741fe5c394dc7b7d7d3f5b016adc622c7e516eb7c35a294bea42",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -17962,6 +18391,11 @@
     },
     {
       "evidence_id": "ev_cdc1c75d28b281a209ad4187747b443349359bbee15682ee236cf9abf71ff10c",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_cdd4ea751e456f720027b606e7614ddd30ca2503ff31dd13ad0c2f03ca3bd757",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },

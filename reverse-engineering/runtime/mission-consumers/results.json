@@ -1,0 +1,73 @@
+{
+  "authority": "controlled-original-mission-consumers-and-result-settlement",
+  "natural_only": false,
+  "cases": [
+    {
+      "name": "unmet",
+      "progress_before": 0.9999,
+      "progress_after": 0.9999,
+      "native_updates": 5,
+      "one_time_calls": 0,
+      "per_second_calls": 0,
+      "pending_before_reinitialize": 0,
+      "pending_after_reinitialize": 0,
+      "warm_recreated_done_flag": false,
+      "natural_eligibility_verified": false
+    },
+    {
+      "name": "paused",
+      "progress_before": 0.9999,
+      "progress_after": 0.9999,
+      "native_updates": 5,
+      "one_time_calls": 0,
+      "per_second_calls": 0,
+      "pending_before_reinitialize": 0,
+      "pending_after_reinitialize": 0,
+      "warm_recreated_done_flag": false,
+      "natural_eligibility_verified": false
+    },
+    {
+      "name": "near-complete",
+      "progress_before": 0.9999,
+      "progress_after": 1,
+      "native_updates": 5,
+      "one_time_calls": 2,
+      "per_second_calls": 4,
+      "pending_before_reinitialize": 8.002906483132392,
+      "pending_after_reinitialize": 16.005812966264784,
+      "warm_recreated_done_flag": false,
+      "natural_eligibility_verified": false
+    },
+    {
+      "name": "completed",
+      "progress_before": 1,
+      "progress_after": 1,
+      "native_updates": 5,
+      "one_time_calls": 2,
+      "per_second_calls": 5,
+      "pending_before_reinitialize": 8.004258539294824,
+      "pending_after_reinitialize": 16.007097406545654,
+      "warm_recreated_done_flag": false,
+      "natural_eligibility_verified": false
+    }
+  ],
+  "settlement": {
+    "pending_before": 16.007097406545654,
+    "wallet_after": 16,
+    "exp_after": 16,
+    "achieved_after": 1,
+    "progress_after": 0,
+    "earned_after": 0,
+    "original_manager_reused": true
+  },
+  "native_messages": 98,
+  "engine_error_events": 0,
+  "limits": [
+    "The cloned original mission record changes required exposure to zero for positive cases; native Residence stage is coordinated only during explicit updates while actual scene remains Apartment. Natural eligibility and scene transitions are unverified.",
+    "Paused is an explicit temporary flag, not a natural input/time-stop producer test.",
+    "Several Update calls execute within one frame. Small increments are native per-second reward per call, not proof of duplicate one-time rewards.",
+    "Recreating a complete task clears its runtime completion flag and repeats the one-time reward only in this controlled warm reconstruction. Natural lifecycle and scene-reset reachability are unverified.",
+    "Settlement uses native UI initialization and the original manager. Player clicks, result animations and repeated result opening are outside this batch.",
+    "Six prior runs include unmet eligibility, clone-init errors, a coreclr crash, nullable preparation failure and early-load HatOffset errors. Full diagnostics are retained separately."
+  ]
+}

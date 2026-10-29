@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "name": "mission-consumers-lifecycle",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\natural-load-saveui.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\mission-consumers-lifecycle",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 16471,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::get_IsOverDestroyTime",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600140e",
+      "va": "0x180478490",
+      "file_offset": 4680848,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionBase__get_IsOverDestroyTime__0600140e",
+      "file_stem": "16471-0600140e",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16472,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionBase::get_IsCreatePanel",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600140f",
+      "va": "0x180478550",
+      "file_offset": 4681040,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionBase__get_IsCreatePanel__0600140f",
+      "file_stem": "16472-0600140f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16559,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Mission.MissionManager::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001466",
+      "va": "0x18047d430",
+      "file_offset": 4701232,
+      "label": "ExposureUnnoticed2_Scripts_Mission_MissionManager__Initialize__06001466",
+      "file_stem": "16559-06001466",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16761,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameStateFacade::RiseEarnRp",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001530",
+      "va": "0x18048eac0",
+      "file_offset": 4772544,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameStateFacade__RiseEarnRp__06001530",
+      "file_stem": "16761-06001530",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}
