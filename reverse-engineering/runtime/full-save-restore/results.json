@@ -1,0 +1,143 @@
+{
+  "authority": "controlled-native-two-pass-save-load",
+  "cases": [
+    {
+      "name": "full",
+      "outcome": "two-native-load-save-passes",
+      "input_to_first_changed_leaves": 0,
+      "second_game_changed_leaves": 0,
+      "system_changed_paths": [
+        "/str:ManualSaveTime/str:value/1/str:ticks"
+      ]
+    },
+    {
+      "name": "advanced",
+      "outcome": "two-native-load-save-passes",
+      "input_to_first_changed_leaves": 1,
+      "second_game_changed_leaves": 0,
+      "system_changed_paths": [
+        "/str:ManualSaveTime/str:value/1/str:ticks"
+      ]
+    },
+    {
+      "name": "missing-root-GameStateData",
+      "outcome": "two-native-load-save-passes",
+      "input_to_first_changed_leaves": 3678,
+      "second_game_changed_leaves": 0,
+      "system_changed_paths": [
+        "/str:ManualSaveTime/str:value/1/str:ticks"
+      ]
+    },
+    {
+      "name": "missing-root-PlayerCustomData",
+      "outcome": "two-native-load-save-passes",
+      "input_to_first_changed_leaves": 192,
+      "second_game_changed_leaves": 0,
+      "system_changed_paths": [
+        "/str:ManualSaveTime/str:value/1/str:ticks"
+      ]
+    },
+    {
+      "name": "missing-field-ItemDict",
+      "outcome": "two-native-load-save-passes",
+      "input_to_first_changed_leaves": 1,
+      "second_game_changed_leaves": 0,
+      "system_changed_paths": [
+        "/str:ManualSaveTime/str:value/1/str:ticks"
+      ]
+    },
+    {
+      "name": "missing-field-SkillLevel",
+      "outcome": "two-native-load-save-passes",
+      "input_to_first_changed_leaves": 49,
+      "second_game_changed_leaves": 0,
+      "system_changed_paths": [
+        "/str:ManualSaveTime/str:value/1/str:ticks"
+      ]
+    },
+    {
+      "name": "missing-field-PlayerPassiveSkillActiveDict",
+      "outcome": "two-native-load-save-passes",
+      "input_to_first_changed_leaves": 1,
+      "second_game_changed_leaves": 0,
+      "system_changed_paths": [
+        "/str:ManualSaveTime/str:value/1/str:ticks"
+      ]
+    },
+    {
+      "name": "missing-field-MissionAchieveCountDict",
+      "outcome": "two-native-load-save-passes",
+      "input_to_first_changed_leaves": 1,
+      "second_game_changed_leaves": 0,
+      "system_changed_paths": [
+        "/str:ManualSaveTime/str:value/1/str:ticks"
+      ]
+    },
+    {
+      "name": "missing-field-CurrentStageType",
+      "outcome": "two-native-load-save-passes",
+      "input_to_first_changed_leaves": 1,
+      "second_game_changed_leaves": 0,
+      "system_changed_paths": [
+        "/str:ManualSaveTime/str:value/1/str:ticks"
+      ]
+    },
+    {
+      "name": "truncated",
+      "outcome": "native-load-exception-with-valid-backup-present",
+      "exception": "System.ArgumentException",
+      "automatic_backup_fallback_observed": false
+    },
+    {
+      "name": "corrupt-block",
+      "outcome": "native-load-exception-with-valid-backup-present",
+      "exception": "System.FormatException",
+      "automatic_backup_fallback_observed": false
+    },
+    {
+      "name": "invalid-text",
+      "outcome": "native-load-exception-with-valid-backup-present",
+      "exception": "System.FormatException",
+      "automatic_backup_fallback_observed": false
+    }
+  ],
+  "serialized_declared_fields": {
+    "PlayerCustomData": 66,
+    "GameStateData": 107,
+    "OptionData": 68,
+    "TutorialData": 15
+  },
+  "total_serialized_declared_fields": 256,
+  "game_root_keys": [
+    "GameStateData",
+    "IsTrial",
+    "PlayerCustomData",
+    "SaveDataSlotIndex"
+  ],
+  "system_root_keys": [
+    "AutoSaveTime",
+    "DifficultData",
+    "HomeSaveTime",
+    "InterruptSaveTime",
+    "ManualSaveTime",
+    "OptionData",
+    "RankData",
+    "TotalPlayTimeData",
+    "TutorialData"
+  ],
+  "native_load_entries": 22,
+  "native_save_entries": 19,
+  "retained_native_messages": 42,
+  "retained_encrypted_captures": 38,
+  "engine_error_events": 0,
+  "frida_detach_confirmed": false,
+  "normal_process_exit": true,
+  "natural_only": false,
+  "all_runtime_consumers_verified": false,
+  "remaining": [
+    "Explicit native backup copy/recovery; no UI recovery claim",
+    "Missing/corrupt system file and absent whole game file",
+    "Inventory/appearance/mission/skill runtime consumers and actual gameplay equivalence",
+    "Object-reference alias restoration, migration and arbitrary missing fields are not exhaustively covered"
+  ]
+}

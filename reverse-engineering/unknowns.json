@@ -164,6 +164,12 @@
       "question": "Verify NPC restoration queue lifetime across destruction and scene exit",
       "status": "selected-controlled-cases-verified",
       "boundary": "restore-interruption.md adds four controlled cases and seven canonical REA records. Live control creates once; destroyed temporary owners and initialized original Title-exit owner retain the task until expiry, then attempt once without clone and dequeue. Entry-only capture does not identify the exact early-exit branch. Early partial crash e06d7363 and20 unrelated scene-reload errors remain separate; natural timing, arbitrary callbacks and full-state equivalence remain open."
+    },
+    {
+      "id": "U028",
+      "question": "Verify full stored state, missing/corrupt files, backup recovery and runtime consumers",
+      "status": "in-progress",
+      "boundary": "full-save-restore.md first batch: twelve controlled conditions,42 untruncated native messages,38 encrypted captures.256 declared fields fingerprinted; nine two-pass game-state roundtrips stabilize, system differences only ManualSaveTime slot1 ticks. Three corrupt-main inputs throw with a valid backup present. Explicit copy/recovery, missing/corrupt system and absent files, all runtime consumers, aliasing and migration remain open. Frida close request did not return; normal process exit and plugin restoration independently confirmed. Second batch full-save-recovery.md adds12 clean selected conditions,315 native messages and42 captures. Whole game/system absence and five system missing-key cases default successfully; two damaged systems throw. Explicit native backup Copy followed by Load matches baseline.180 selected getter scalar values agree with independent decoding. Invalid key48 fixture diagnostics retained separately. Actual appearance, inventory consumption, skills effects, mission updates, aliases/migration and UI recovery remain open."
     }
   ]
 }

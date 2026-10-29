@@ -1,0 +1,93 @@
+{
+  "baseline_sha256": "84133731ddde80a5f8f81f22322d04681791a83ad81c713acf0a748a0f6d0841",
+  "advanced_source": {
+    "path": "E:\\ManakaREA-NaturalGameplay\\UserData\\SaveData\\0.sd",
+    "sha256": "89b72b82f054c1da3755478d9b54aa6f2daab80ef67f18c457166dc048e2e17f"
+  },
+  "variants": [
+    {
+      "name": "full",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRestore\\20261030-1\\variants\\full.sd",
+      "sha256": "84133731ddde80a5f8f81f22322d04681791a83ad81c713acf0a748a0f6d0841",
+      "bytes": 91280,
+      "change": "unmodified native baseline"
+    },
+    {
+      "name": "advanced",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRestore\\20261030-1\\variants\\advanced.sd",
+      "sha256": "89b72b82f054c1da3755478d9b54aa6f2daab80ef67f18c457166dc048e2e17f",
+      "bytes": 157904,
+      "change": "unmodified advanced clone slot0; no natural origin claim"
+    },
+    {
+      "name": "missing-root-GameStateData",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRestore\\20261030-1\\variants\\missing-root-GameStateData.sd",
+      "sha256": "5a822634c2a8bbffc4af6f67b06fbcd989277f9cfc075b49d99f43000f5a5976",
+      "bytes": 3360,
+      "change": "remove only top-level GameStateData"
+    },
+    {
+      "name": "missing-root-PlayerCustomData",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRestore\\20261030-1\\variants\\missing-root-PlayerCustomData.sd",
+      "sha256": "b66b2f73456237858c46d9d91515793e87dc437bdccc9a12c3e6605abbd98a40",
+      "bytes": 60176,
+      "change": "remove only top-level PlayerCustomData"
+    },
+    {
+      "name": "missing-field-ItemDict",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRestore\\20261030-1\\variants\\missing-field-ItemDict.sd",
+      "sha256": "002451cc6a0e3d9671152548ef172e63cc3ea609e46fcf94c2e4061563d3f195",
+      "bytes": 63408,
+      "change": "remove only GameStateData.ItemDict"
+    },
+    {
+      "name": "missing-field-SkillLevel",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRestore\\20261030-1\\variants\\missing-field-SkillLevel.sd",
+      "sha256": "62ce867555937a078db14f5ede3b2090eb35d01c15001695ab92d1f2e0c61737",
+      "bytes": 63104,
+      "change": "remove only GameStateData.SkillLevel"
+    },
+    {
+      "name": "missing-field-PlayerPassiveSkillActiveDict",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRestore\\20261030-1\\variants\\missing-field-PlayerPassiveSkillActiveDict.sd",
+      "sha256": "3d12d159c9fc588fa096bdc6f5e54943d711554568c2b9d37eaed9e79211080a",
+      "bytes": 63392,
+      "change": "remove only GameStateData.PlayerPassiveSkillActiveDict"
+    },
+    {
+      "name": "missing-field-MissionAchieveCountDict",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRestore\\20261030-1\\variants\\missing-field-MissionAchieveCountDict.sd",
+      "sha256": "9700f1f8a9e3733e852ea2f60e7e56e418afbfdd9c108b0fec390a569d0b21e0",
+      "bytes": 63392,
+      "change": "remove only GameStateData.MissionAchieveCountDict"
+    },
+    {
+      "name": "missing-field-CurrentStageType",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRestore\\20261030-1\\variants\\missing-field-CurrentStageType.sd",
+      "sha256": "ee98b57cd6d10afe5b819d9771afcfe1d84bcdb1c6eb698d8b31a57c12e755f1",
+      "bytes": 63392,
+      "change": "remove only GameStateData.CurrentStageType"
+    },
+    {
+      "name": "truncated",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRestore\\20261030-1\\variants\\truncated.sd",
+      "sha256": "df81e1a41eb25c44298e4dd4aa8d9c3d69903ee163387e3edab52649a487fbe5",
+      "bytes": 91273,
+      "change": "remove final7 ciphertext bytes"
+    },
+    {
+      "name": "corrupt-block",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRestore\\20261030-1\\variants\\corrupt-block.sd",
+      "sha256": "15768dab30a305ac07a7a5ad44e988e88a65b68266104cd07935ba70c392022c",
+      "bytes": 91280,
+      "change": "xor first ciphertext block, retaining envelope length"
+    },
+    {
+      "name": "invalid-text",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRestore\\20261030-1\\variants\\invalid-text.sd",
+      "sha256": "f95ac16708753442d7e467ef47142241ba25fcb5ec1066ffb3c23ba814217cd8",
+      "bytes": 32,
+      "change": "valid encryption with incomplete plaintext syntax"
+    }
+  ]
+}

@@ -19,13 +19,25 @@
     {
       "order": 3,
       "name": "完整存档状态恢复及缺键/损坏/备份",
-      "status": "in-progress"
+      "status": "in-progress-runtime-consumers",
+      "report": "full-save-restore.md",
+      "completed_batches": [
+        "12 controlled full-state/missing-key/corrupt-main conditions",
+        "12 controlled absent-file/system-default/backup-copy/getter conditions"
+      ],
+      "remaining": [
+        "appearance rendering and asynchronous application",
+        "inventory consumption and skill effects",
+        "mission updates/rewards",
+        "natural UI recovery and reference/migration boundaries"
+      ]
     },
     {
       "order": 4,
       "name": "最小独立运行工程",
       "status": "pending",
-      "known_dependency": "H:/Unity Editor/2022.3.62t7/Editor/Tuanjie.exe verified; original game 2022.3.62f2, compatibility/license not yet validated"
+      "known_dependency": "H:/Unity Editor/2022.3.62t7/Editor/Tuanjie.exe; isolated batch project creation returned No valid Unity Editor license found; compilation/build/2022.3.62f2 compatibility unverified",
+      "toolchain_report": "reconstruction/editor-toolchain.json"
     },
     {
       "order": 5,

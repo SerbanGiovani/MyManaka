@@ -389,6 +389,34 @@ def main():
     check(runpy.run_path(str(interruption_dir / "analyze.py"))["build"](inputs=args.inputs) == read(interruption_dir / "results.json"), "Interruption queue joins differ")
     check(runpy.run_path(str(ROOT / "salt/restore_interruption_evidence.py"))["build"]() == read(ROOT / "salt/evidence/restore-interruption-chain.json"), "Interruption static bindings differ")
     observed_runtime_records[interruption_dir / "rea-runtime.json"] = interruption_runtime
+    full_save_dir = ROOT / "runtime/full-save-restore"
+    full_save_runtime = read(full_save_dir / "manifest.json")
+    for source in full_save_runtime["sources"]:
+        check(digest(full_save_dir / source["path"]) == source["sha256"], "Full-save source differs")
+    for output in full_save_runtime["outputs"]:
+        path = full_save_dir / output["path"]
+        raw = gzip.decompress(path.read_bytes())
+        check(digest(path) == output["sha256"] and len(raw) == output["uncompressed_bytes"] and hashlib.sha256(raw).hexdigest() == output["uncompressed_sha256"], "Full-save log differs")
+    sys.path.insert(0, str(full_save_dir))
+    try:
+        check(runpy.run_path(str(full_save_dir / "analyze.py"))["build"](inputs=args.inputs) == read(full_save_dir / "results.json"), "Full-save observations differ")
+    finally:
+        sys.path.remove(str(full_save_dir))
+    observed_runtime_records[full_save_dir / "rea-runtime.json"] = full_save_runtime
+    recovery_dir = ROOT / "runtime/full-save-recovery"
+    recovery_runtime = read(recovery_dir / "manifest.json")
+    for source in recovery_runtime["sources"]:
+        check(digest(recovery_dir / source["path"]) == source["sha256"], "Recovery source differs")
+    for output in recovery_runtime["outputs"]:
+        path = recovery_dir / output["path"]
+        raw = gzip.decompress(path.read_bytes())
+        check(digest(path) == output["sha256"] and len(raw) == output["uncompressed_bytes"] and hashlib.sha256(raw).hexdigest() == output["uncompressed_sha256"], "Recovery log differs")
+    sys.path.insert(0, str(recovery_dir))
+    try:
+        check(runpy.run_path(str(recovery_dir / "analyze_recovery.py"))["build"](inputs=args.inputs) == read(recovery_dir / "results.json"), "Recovery observations differ")
+    finally:
+        sys.path.remove(str(recovery_dir))
+    observed_runtime_records[recovery_dir / "rea-runtime.json"] = recovery_runtime
     verification = read(ROOT / "salt/evidence/decryption-verification.json")
     summary = read(ROOT / "salt/symbols/index-summary.json")
     object_record = asset["guid_object"]
@@ -755,6 +783,8 @@ def main():
         source_records.append({"path": npc_filter_runtime["plugin"]["archived_path"], "sha256": npc_filter_runtime["plugin"]["sha256"]})
         source_records.append({"path": cold_runtime["plugin"]["archived_path"], "sha256": cold_runtime["plugin"]["sha256"]})
         source_records.extend({"path": p["archived_path"], "sha256": p["sha256"]} for p in interruption_runtime["plugins"])
+        source_records.append({"path": full_save_runtime["plugin"]["archived_path"], "sha256": full_save_runtime["plugin"]["sha256"]})
+        source_records.extend({"path": p["archived_path"], "sha256": p["sha256"]} for p in recovery_runtime["plugins"])
         for source in source_records:
             # Derived SQLite byte identity is not portable after rebuilding it;
             # reconstruction scripts validate its build identity and coordinates.

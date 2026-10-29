@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "natural_only": false,
+  "authority": "controlled-native-load-save-two-pass",
+  "sessions": [
+    {
+      "session_id": "4928c304-2328-4187-a2a7-589b4b4ac86a",
+      "pid": 77664,
+      "state": "running",
+      "closed_by_operator": false
+    }
+  ],
+  "frida_close_attempted": true,
+  "frida_detach_confirmed": false,
+  "process_exited_normally": true,
+  "evidence_ids": [
+    "ev_88782676cc81af20af27bd03d1820243cc349d36a54afb7eac6c00e97aead85c",
+    "ev_2801710849b6110d035fdb3135cf6fd947a0c78e82633a2f4c284f5bb7f3f791"
+  ],
+  "plugin": {
+    "archived_path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRestore\\20261030-1\\FullSaveProbe-completed.dll",
+    "sha256": "9c54a821abbdf77e0ba17a45eaeac288b1535d56d9594a990d191e217dad2464"
+  },
+  "sources": [
+    {
+      "path": "Probe.cs",
+      "sha256": "6fe1500ed3f60c96de70f12db3821da93f996994319c2bb6e9c54e670c5e1e85"
+    },
+    {
+      "path": "build.ps1",
+      "sha256": "9df617fd9dc53d8f182ed9ee445cf4538ac4cc33f7a336611666a1fcaadd9b47"
+    },
+    {
+      "path": "observe.js",
+      "sha256": "b3cb0f4d5181f859f33da59c7be41e4de1de68ec1b757bc46ebd18cfa5a3754a"
+    },
+    {
+      "path": "prepare.py",
+      "sha256": "79c166368de1cc06b0c9592b69658d40e615c4d2bfaba6d16ca03e89a91982a5"
+    },
+    {
+      "path": "run_cases.py",
+      "sha256": "3b1f59effebc8d21a033e27160bb64ee2f277bbdad27550596dbbfefdba97210"
+    },
+    {
+      "path": "project.py",
+      "sha256": "b9e570a44b20c45805e142fbc46b11ee32ad4cf83f1d9139af1c82ad4d0636e1"
+    },
+    {
+      "path": "collect.py",
+      "sha256": "8110104f4c1c6de1f5f31ff553ee48b0e811a2b6645ef315d3bfa5c85b8d8e9f"
+    },
+    {
+      "path": "analyze.py",
+      "sha256": "23b888d0142ae4d1b7b17159dbdfe04a79f579a19cb6e6531f45555734400ca1"
+    },
+    {
+      "path": "test_analysis.py",
+      "sha256": "b5f4a53f13f55cc57bd95bc3844a9a44d329338e31524808324b729c8cd861ea"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "managed.jsonl.gz",
+      "sha256": "3b29d08a5702fe93492b691fab04b0c090a947b7dd73346778db696963faa7b9",
+      "uncompressed_bytes": 219133,
+      "uncompressed_sha256": "32f8ebeb18887879b854c273a5173edb674b55aeed2cd18b453c2a41fceb0870"
+    },
+    {
+      "path": "paths.jsonl.gz",
+      "sha256": "ded377b33223713627eafd403011581e3fc5b70a96bf7123aec7448da0da1204",
+      "uncompressed_bytes": 106973,
+      "uncompressed_sha256": "9c83c31701d9d164d4cd6ae01710ee4c97086594e02de7367384cc2c65af5b39"
+    },
+    {
+      "path": "engine.log.gz",
+      "sha256": "ebc4c24001cea1cc145195838e7737c123e5d06700cea77d88c786616b916538",
+      "uncompressed_bytes": 19432,
+      "uncompressed_sha256": "b450d0a8878bd4c5ee49af9590840d66a33a8a36430da81ca853d8a376e25d19"
+    }
+  ],
+  "scope": "Two serialized game roots and nine system keys; selected missing-key and corrupt-main cases. No all-consumer runtime equivalence or UI recovery claim."
+}

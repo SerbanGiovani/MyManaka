@@ -1,0 +1,88 @@
+{
+  "variants": [
+    {
+      "name": "full",
+      "scope": "game",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRecovery\\20261030-1\\variants\\full.sd",
+      "sha256": "3c774661df806ea4945df8443359f1140a7ece3dd629de42f20964eb8aa38cca",
+      "change": "unmodified baseline"
+    },
+    {
+      "name": "missing-game",
+      "scope": "game",
+      "path": null,
+      "sha256": null,
+      "change": "remove main game file"
+    },
+    {
+      "name": "missing-system",
+      "scope": "system",
+      "path": null,
+      "sha256": null,
+      "change": "remove system file"
+    },
+    {
+      "name": "system-missing-OptionData",
+      "scope": "system",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRecovery\\20261030-1\\variants\\system-missing-OptionData.sd",
+      "sha256": "bdb40eedc4e895e39cce467bd81c953642409f022b3509e1d4c79fc8311be5fe",
+      "change": "remove root OptionData"
+    },
+    {
+      "name": "system-missing-TutorialData",
+      "scope": "system",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRecovery\\20261030-1\\variants\\system-missing-TutorialData.sd",
+      "sha256": "4eddcb3af5e3a9d40d9fb23383447de3221665fc15335fa835896c67f2b2a18d",
+      "change": "remove root TutorialData"
+    },
+    {
+      "name": "system-missing-RankData",
+      "scope": "system",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRecovery\\20261030-1\\variants\\system-missing-RankData.sd",
+      "sha256": "909b44a58e8cf78b11c77e25c88869e1a65d87b55b137b862e2828460e6dbc43",
+      "change": "remove root RankData"
+    },
+    {
+      "name": "system-missing-ManualSaveTime",
+      "scope": "system",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRecovery\\20261030-1\\variants\\system-missing-ManualSaveTime.sd",
+      "sha256": "666810cf35b467039ea8443a407244652dd676b74e413f7d7d22ab6415b2940d",
+      "change": "remove root ManualSaveTime"
+    },
+    {
+      "name": "system-missing-field-Language",
+      "scope": "system",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRecovery\\20261030-1\\variants\\system-missing-field-Language.sd",
+      "sha256": "12a667d18887f9fdf43ac769c207e610bbbd991a9a6da9ddee1f36ed3bf66658",
+      "change": "remove OptionData.Language"
+    },
+    {
+      "name": "system-truncated",
+      "scope": "system",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRecovery\\20261030-1\\variants\\system-truncated.sd",
+      "sha256": "1807b4426fc6dba04a2cd39d5679dbfd6663031f678991449c21b2ed61be9e21",
+      "change": "truncate7 ciphertext bytes"
+    },
+    {
+      "name": "system-invalid-text",
+      "scope": "system",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRecovery\\20261030-1\\variants\\system-invalid-text.sd",
+      "sha256": "c731e60042e4c30b80b3145351b80560008f3619440c60954feba439192ca837",
+      "change": "valid encryption with malformed plaintext"
+    },
+    {
+      "name": "backup-copy",
+      "scope": "game",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRecovery\\20261030-1\\variants\\backup-copy.sd",
+      "sha256": "cc7ec3c94dee1dc5a94228f5a6f754a17765a763932d0a8291bd68684b1eb8eb",
+      "change": "first fail original Load, then original SaveRapper.Copy from valid backup and retry"
+    },
+    {
+      "name": "consumer-advanced",
+      "scope": "game",
+      "path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRecovery\\20261030-1\\variants\\consumer-advanced.sd",
+      "sha256": "89b72b82f054c1da3755478d9b54aa6f2daab80ef67f18c457166dc048e2e17f",
+      "change": "unmodified advanced clone input for original getters"
+    }
+  ]
+}

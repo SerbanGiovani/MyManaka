@@ -1,0 +1,122 @@
+{
+  "authority": "controlled-native-recovery-and-selected-getters",
+  "cases": [
+    {
+      "name": "full",
+      "outcome": "two-native-load-save-passes",
+      "second_game_changed_leaves": 0,
+      "selected_getter_result_rows_verified": 12,
+      "selected_getter_scalar_values_verified": 18,
+      "game_baseline_to_first_changes": 0,
+      "explicit_original_backup_copy": false
+    },
+    {
+      "name": "missing-game",
+      "outcome": "two-native-load-save-passes",
+      "second_game_changed_leaves": 0,
+      "selected_getter_result_rows_verified": 12,
+      "selected_getter_scalar_values_verified": 18,
+      "game_baseline_to_first_changes": 406,
+      "explicit_original_backup_copy": false
+    },
+    {
+      "name": "missing-system",
+      "outcome": "two-native-load-save-passes",
+      "second_game_changed_leaves": 0,
+      "selected_getter_result_rows_verified": 12,
+      "selected_getter_scalar_values_verified": 18,
+      "game_baseline_to_first_changes": 0,
+      "explicit_original_backup_copy": false
+    },
+    {
+      "name": "system-missing-OptionData",
+      "outcome": "two-native-load-save-passes",
+      "second_game_changed_leaves": 0,
+      "selected_getter_result_rows_verified": 12,
+      "selected_getter_scalar_values_verified": 18,
+      "game_baseline_to_first_changes": 0,
+      "explicit_original_backup_copy": false
+    },
+    {
+      "name": "system-missing-TutorialData",
+      "outcome": "two-native-load-save-passes",
+      "second_game_changed_leaves": 0,
+      "selected_getter_result_rows_verified": 12,
+      "selected_getter_scalar_values_verified": 18,
+      "game_baseline_to_first_changes": 0,
+      "explicit_original_backup_copy": false
+    },
+    {
+      "name": "system-missing-RankData",
+      "outcome": "two-native-load-save-passes",
+      "second_game_changed_leaves": 0,
+      "selected_getter_result_rows_verified": 12,
+      "selected_getter_scalar_values_verified": 18,
+      "game_baseline_to_first_changes": 0,
+      "explicit_original_backup_copy": false
+    },
+    {
+      "name": "system-missing-ManualSaveTime",
+      "outcome": "two-native-load-save-passes",
+      "second_game_changed_leaves": 0,
+      "selected_getter_result_rows_verified": 12,
+      "selected_getter_scalar_values_verified": 18,
+      "game_baseline_to_first_changes": 0,
+      "explicit_original_backup_copy": false
+    },
+    {
+      "name": "system-missing-field-Language",
+      "outcome": "two-native-load-save-passes",
+      "second_game_changed_leaves": 0,
+      "selected_getter_result_rows_verified": 12,
+      "selected_getter_scalar_values_verified": 18,
+      "game_baseline_to_first_changes": 0,
+      "explicit_original_backup_copy": false
+    },
+    {
+      "name": "system-truncated",
+      "outcome": "native-system-load-exception",
+      "exception": "System.ArgumentException"
+    },
+    {
+      "name": "system-invalid-text",
+      "outcome": "native-system-load-exception",
+      "exception": "System.FormatException"
+    },
+    {
+      "name": "backup-copy",
+      "outcome": "two-native-load-save-passes",
+      "second_game_changed_leaves": 0,
+      "selected_getter_result_rows_verified": 12,
+      "selected_getter_scalar_values_verified": 18,
+      "game_baseline_to_first_changes": 0,
+      "explicit_original_backup_copy": true
+    },
+    {
+      "name": "consumer-advanced",
+      "outcome": "two-native-load-save-passes",
+      "second_game_changed_leaves": 0,
+      "selected_getter_result_rows_verified": 12,
+      "selected_getter_scalar_values_verified": 18,
+      "game_baseline_to_first_changes": 1,
+      "explicit_original_backup_copy": false
+    }
+  ],
+  "clean_cases": 12,
+  "successful_two_pass_cases": 10,
+  "system_failure_cases": 2,
+  "native_messages": 315,
+  "encrypted_captures": 42,
+  "verified_getter_result_rows": 120,
+  "verified_getter_scalar_values": 180,
+  "diagnostic_invalid_key48_cases": 10,
+  "explicit_native_backup_copy_verified": true,
+  "all_runtime_consumers_verified": false,
+  "remaining": [
+    "Appearance renderer/animator and asynchronous application",
+    "Active mission updates/rewards, inventory consumption and skill effects",
+    "Natural UI recovery, aliases, migration and arbitrary field combinations"
+  ],
+  "protected_files_unchanged": true,
+  "process_exited_and_plugins_restored": true
+}

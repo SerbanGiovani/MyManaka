@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "natural_only": false,
+  "authority": "controlled-native-save-recovery-and-selected-getters",
+  "sessions": [
+    {
+      "session_id": "5939c667-9655-4dcd-bdbd-4f1225ddb112",
+      "pid": 71664,
+      "state": "running",
+      "closed_by_operator": true,
+      "scope": "invalid-key-fixture-diagnostic"
+    },
+    {
+      "session_id": "d68adea8-479a-4e6b-93f3-3cc63412b82a",
+      "pid": 47188,
+      "state": "running",
+      "closed_by_operator": true,
+      "scope": "clean-selected-cases"
+    }
+  ],
+  "evidence_ids": [
+    "ev_fc545e015820d2d606af6c398abf5cfc680313c76778fee1613fafaf25ee53fe",
+    "ev_b23120f66f2128eb5c87d89d40767984bb7ae66df7f7b481c2300d546d2889b7",
+    "ev_8664294ececcc95e29a7180dc96047256de8c58fd54789be2d9af16f9483092d",
+    "ev_d38ff3cddf35aaa3ac78ab647659803534b799e1e5759e12e1241d1b5fc26ddf"
+  ],
+  "plugins": [
+    {
+      "archived_path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRecovery\\20261030-1\\RecoveryProbe-diagnostic.dll",
+      "sha256": "e02a87f8b8070f74ea6c4134da05ebe49d925d709bf6e7ef9f66d5670f974dcc"
+    },
+    {
+      "archived_path": "E:\\ManakaREA-NaturalGameplay\\FullSaveRecovery\\20261030-2\\RecoveryProbe-completed.dll",
+      "sha256": "7facd59a6ec32ba7af72b1de8323587ed76628fdbca740b37b5ac42b48f9940b"
+    }
+  ],
+  "sources": [
+    {
+      "path": "Probe.cs",
+      "sha256": "b50151abe6acc526d83d54f5ccdb2f2aa133b03cc1e973470bc9a38134c230a9"
+    },
+    {
+      "path": "Probe-v1.cs",
+      "sha256": "09c5e1cdd13a3f7e658c4a89185c5132d9a6a266082878e5854896c2192e0aae"
+    },
+    {
+      "path": "build.ps1",
+      "sha256": "089c4d2b578aa7c07648444f70a6fb3e243fa4819cb580309c4f79531f1224f6"
+    },
+    {
+      "path": "observe.js",
+      "sha256": "9424ab63aed0408594c5dc8b2201faa1a068c441127fef79a54df77614399fc1"
+    },
+    {
+      "path": "prepare.py",
+      "sha256": "cd60acdccbb4cc50eb614137366b1d4da160236378e75cf5f00d271ba05085b7"
+    },
+    {
+      "path": "run_cases.py",
+      "sha256": "0ef7ddbe1ac5374590a23f706ce465880ef35423f2f952fbeeae65073aa01163"
+    },
+    {
+      "path": "project_recovery.py",
+      "sha256": "0400672eeeeabdecce533374b05a0fa3dbee46a989a4169422f06e852d75a3e7"
+    },
+    {
+      "path": "collect_recovery.py",
+      "sha256": "cc6440fd875f58c2f7efe51ec3870dd583df6efca8d19c974f8ef49637197b43"
+    },
+    {
+      "path": "analyze_recovery.py",
+      "sha256": "2869578431ea509bf05a241ec90555c982aa50015d6ea5b838f531cf043f4767"
+    },
+    {
+      "path": "test_recovery.py",
+      "sha256": "d439fab1efbc922de3b42ab2b4f29af5bb940f86bac1dca542696a204e6d598c"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "managed.jsonl.gz",
+      "sha256": "44c2efa581be1c6605fe80c916776701624982c50c1152d50eea5ecb64f5b306",
+      "uncompressed_bytes": 231904,
+      "uncompressed_sha256": "87bb15def9bfb0e45fc9bb3587eca12fdf7290bd1cbf6b3590f8137929777505"
+    },
+    {
+      "path": "paths.jsonl.gz",
+      "sha256": "4db534246ca18626066ec930284363341a75fecdff6d6ff626f04feda5edba98",
+      "uncompressed_bytes": 38430,
+      "uncompressed_sha256": "148b38151151a16a00518887276effa74abc5f2b470b00c44396f45c5a772fe8"
+    },
+    {
+      "path": "engine.log.gz",
+      "sha256": "747873fb1f71815ee70c805dfa4fafa0845ed0956086a76abc73cfd913f24804",
+      "uncompressed_bytes": 19432,
+      "uncompressed_sha256": "6c0b07202243ae98afe5db2b040a22445c63528b2b24e09a0c387583a8169fcb"
+    },
+    {
+      "path": "diagnostic-managed.jsonl.gz",
+      "sha256": "6b54ed78fbebe8afdf75138d25d395d65e27cc76390361ee545259116753f2f1",
+      "uncompressed_bytes": 205409,
+      "uncompressed_sha256": "99b3f94b8f6af30d3e5f8d63de9a92030a4e818e332714c7b195c50d7c7e1856"
+    },
+    {
+      "path": "diagnostic-paths.jsonl.gz",
+      "sha256": "0e79f51214ceb191103ebacf23646f4e717e589b380c98d2135da33df3c424da",
+      "uncompressed_bytes": 49620,
+      "uncompressed_sha256": "364791c105335b477d415056a0f30f2b7e561b62e4ecf301b68773d383fa5c7a"
+    },
+    {
+      "path": "diagnostic-engine.log.gz",
+      "sha256": "747873fb1f71815ee70c805dfa4fafa0845ed0956086a76abc73cfd913f24804",
+      "uncompressed_bytes": 19432,
+      "uncompressed_sha256": "6c0b07202243ae98afe5db2b040a22445c63528b2b24e09a0c387583a8169fcb"
+    }
+  ],
+  "getter_scope": "six real skill keys, three item ids and three mission ids; read outputs independently compared to decoded pass1 data; no rendering/active mission update equivalence",
+  "diagnostic_boundary": "Version1 incorrectly selected absent skill key48. Ten cases stopped at that getter; two system-damage exceptions were separate. None counted as complete clean two-pass cases."
+}
