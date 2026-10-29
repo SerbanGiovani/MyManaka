@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "observation_complete": true,
+  "natural_only": true,
+  "passive_only": true,
+  "user_input_driven": true,
+  "input_boundary": "Only slot1 is selected: initially absent main file; original NewGame then PC main save then title Continue. Controlled-origin slot0 exists in the directory but is never loaded.",
+  "sessions": [
+    {
+      "session_id": "31b7857c-f690-4b31-b674-c3fa568bcd8f",
+      "pid": 4276,
+      "state": "running",
+      "closed_by_operator": true
+    }
+  ],
+  "evidence_ids": [
+    "ev_06a36b7fbb27a6a89daf34587f31da1d3759ec10a5da4a87185349e2f7068db4",
+    "ev_296597d5063ca4e2ba419a26cf96a23d1d23d61e473fa71c21016a413f03e969"
+  ],
+  "sources": [
+    {
+      "path": "Observe.cs",
+      "sha256": "8e5b18bac8323cfc430646ac2c1a2f94a7befe1247fa4ebe2f19cbf9ca5afcfb"
+    },
+    {
+      "path": "build.ps1",
+      "sha256": "8817f03869ef6040810cacfbade1a6eceba232b00732739d2c81c4158856cdba"
+    },
+    {
+      "path": "observe.js",
+      "sha256": "2274c93536ae0038f0b2a37594507ce621ae88e509a2920955858bee72846d99"
+    },
+    {
+      "path": "analyze.py",
+      "sha256": "f45a7e478429195b83ea616ef662a89816cbe9a22a52670e88745b739377ffe0"
+    },
+    {
+      "path": "collect.py",
+      "sha256": "09c14f66f991b14af27b47514ce389e484acc0d73b8a61fc26c75896dee35244"
+    },
+    {
+      "path": "test_analysis.py",
+      "sha256": "ab67f85ab9f80c60d3cdcd0b79427da7a2712ccb1f67538bd73825254d6e5f35"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "state.jsonl.gz",
+      "sha256": "fd306334ca77df6c2c6c79ba53f946dd466b081781a7fd66489c40d137d54be9",
+      "uncompressed_bytes": 168299,
+      "uncompressed_sha256": "ec269d676033a94ca8ccf4da24430de06eed5e56d432727c2e11b88309994a5b"
+    },
+    {
+      "path": "paths.jsonl.gz",
+      "sha256": "ca14dbc466799bed5aa1fd6f0a2a45496819cd0cc6be7ccb22d6cd956d8c6243",
+      "uncompressed_bytes": 64386,
+      "uncompressed_sha256": "677f94d183e3945df3584bbcc06fa06a42f13ab1a86ca46d91f5a10055efa864"
+    },
+    {
+      "path": "engine.log.gz",
+      "sha256": "19188fb80b7c1e9a8fe58ee7ef2a5f1c4d101c604d54b1c68acdc637aaf8327e",
+      "uncompressed_bytes": 44033,
+      "uncompressed_sha256": "2fdc86859f44647d60334af30b469a3962a88f7e19e70b42ba3af07d844bd93b"
+    }
+  ]
+}

@@ -1,0 +1,2954 @@
+{
+  "records": [
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_06a36b7fbb27a6a89daf34587f31da1d3759ec10a5da4a87185349e2f7068db4",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "base": "0x7ffc19430000",
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 4276,
+                "scope": "passive original native entry/return; first snapshot per manager/stage/list-count context; no setters or replay"
+              },
+              "frame": 561,
+              "kind": "natural_title_ready",
+              "real": 14.66455364227295
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+        "source_kind": "file",
+        "source_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\runtime\\natural-title\\observe.js",
+        "source_sha256": "2274c93536ae0038f0b2a37594507ce621ae88e509a2920955858bee72846d99"
+      },
+      "operation": "load_frida_script",
+      "parameters": {
+        "session_id": "31b7857c-f690-4b31-b674-c3fa568bcd8f"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    },
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_296597d5063ca4e2ba419a26cf96a23d1d23d61e473fa71c21016a413f03e969",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "device_id": "local",
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "base": "0x7ffc19430000",
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 4276,
+                "scope": "passive original native entry/return; first snapshot per manager/stage/list-count context; no setters or replay"
+              },
+              "frame": 561,
+              "kind": "natural_title_ready",
+              "real": 14.66455364227295
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x1f57c34",
+                "debug": null,
+                "managers": [],
+                "sequence": 1,
+                "state": null
+              },
+              "frame": 3451,
+              "kind": "title_manual_category_enter",
+              "real": 62.854618072509766
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": null,
+                "managers": [],
+                "sequence": 1,
+                "state": null
+              },
+              "frame": 3451,
+              "kind": "title_manual_category_leave",
+              "real": 62.86483383178711
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x1f57c34",
+                "debug": null,
+                "managers": [],
+                "sequence": 1,
+                "slot": 1,
+                "state": null,
+                "type": 3
+              },
+              "frame": 3502,
+              "kind": "title_slot_enter",
+              "real": 63.713478088378906
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": null,
+                "managers": [],
+                "sequence": 1,
+                "state": null
+              },
+              "frame": 3502,
+              "kind": "title_slot_leave",
+              "real": 63.713775634765625
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x4e4331",
+                "debug": null,
+                "managers": [],
+                "sequence": 1,
+                "slot": 1,
+                "state": null,
+                "type": 5
+              },
+              "frame": 6307,
+              "kind": "save_load_enter",
+              "real": 110.48351287841797
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x49c777",
+                "debug": null,
+                "isBackup": false,
+                "isSystem": true,
+                "managers": [],
+                "sequence": 1,
+                "slot": -1,
+                "state": null
+              },
+              "frame": 6307,
+              "kind": "save_preprocess_enter",
+              "real": 110.4836654663086
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": null,
+                "managers": [],
+                "sequence": 1,
+                "state": null
+              },
+              "frame": 6307,
+              "kind": "save_preprocess_leave",
+              "real": 110.4837646484375
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x49d979",
+                "debug": null,
+                "isBackup": false,
+                "isSystem": false,
+                "managers": [],
+                "sequence": 2,
+                "slot": 1,
+                "state": null
+              },
+              "frame": 6307,
+              "kind": "save_preprocess_enter",
+              "real": 110.48981475830078
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": null,
+                "managers": [],
+                "sequence": 2,
+                "state": null
+              },
+              "frame": 6307,
+              "kind": "save_preprocess_leave",
+              "real": 110.48995971679688
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": null,
+                "managers": [],
+                "sequence": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "playerRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6307,
+              "kind": "save_load_leave",
+              "real": 110.49667358398438
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x35bd19",
+                "debug": null,
+                "managers": [],
+                "sequence": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "playerRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6318,
+              "kind": "springboard_enter",
+              "real": 110.84485626220703
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": null,
+                "managers": [],
+                "sequence": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "playerRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6318,
+              "kind": "springboard_leave",
+              "real": 110.84507751464844
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x35bd19",
+                "debug": null,
+                "managers": [],
+                "sequence": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "playerRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6319,
+              "kind": "ingame_start_enter",
+              "real": 111.23726654052734
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x35bd19",
+                "debug": {
+                  "force": 0,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [],
+                "sequence": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "playerRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6319,
+              "kind": "debug_cctor_enter",
+              "real": 111.2374496459961
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [],
+                "sequence": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "playerRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6319,
+              "kind": "debug_cctor_leave",
+              "real": 111.2375259399414
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x4979ff",
+                "player": "0x2d29586b3c0",
+                "position": [
+                  0,
+                  0,
+                  0
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              },
+              "frame": 6319,
+              "kind": "player_warp",
+              "real": 111.28484344482422
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x497ad8",
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [],
+                "sequence": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "playerRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6319,
+              "kind": "debug_initialize_enter",
+              "real": 111.2884750366211
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [],
+                "sequence": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "playerRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6319,
+              "kind": "debug_initialize_leave",
+              "real": 111.28858184814453
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [],
+                "sequence": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "playerRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6319,
+              "kind": "ingame_start_leave",
+              "real": 111.28870391845703
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "applyByManager": {},
+                "counters": {
+                  "debug_cctor": 1,
+                  "debug_initialize": 1,
+                  "ingame_start": 1,
+                  "npc_apply": 0,
+                  "save_load": 1,
+                  "save_preprocess": 2,
+                  "springboard": 1,
+                  "title_manual_category": 1,
+                  "title_slot": 1
+                },
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [],
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "playerRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6319,
+              "kind": "guard_poll",
+              "real": 111.29354095458984
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "manager": {
+                  "fixed": 0,
+                  "initialized": 1,
+                  "live": 0,
+                  "loaded": 0,
+                  "pointer": "0x2d295c7dcf0",
+                  "spawn": 0
+                },
+                "sequence": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "playerRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6319,
+              "kind": "npc_apply_enter",
+              "real": 111.29885864257812
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "manager": {
+                  "fixed": 0,
+                  "initialized": 1,
+                  "live": 0,
+                  "loaded": 0,
+                  "pointer": "0x2d295c7dcf0",
+                  "spawn": 0
+                },
+                "sequence": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "playerRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6319,
+              "kind": "npc_apply_leave",
+              "real": 111.29899597167969
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x4b4f0b",
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "playerRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6321,
+              "kind": "startup_delayed_enter",
+              "real": 111.88935089111328
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x498bb3",
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "manager": {
+                  "fixed": 0,
+                  "initialized": 1,
+                  "live": 0,
+                  "loaded": 0,
+                  "pointer": "0x2d295c7dcf0",
+                  "spawn": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "playerRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6321,
+              "kind": "npc_repop_enter",
+              "real": 111.88951110839844
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "playerRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6321,
+              "kind": "npc_repop_leave",
+              "real": 111.88978576660156
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "playerRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6321,
+              "kind": "startup_delayed_leave",
+              "real": 111.89024353027344
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "manager": {
+                  "fixed": 0,
+                  "initialized": 1,
+                  "live": 0,
+                  "loaded": 0,
+                  "pointer": "0x2d295c7dcf0",
+                  "spawn": 0
+                },
+                "sequence": 2,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    -3.9108272176235914e-11,
+                    -2.5033950805664062e-06,
+                    -4.774847184307873e-12
+                  ],
+                  "playerRotation": [
+                    1.5916157281026244e-12,
+                    -2.9802322387695312e-08,
+                    -2.546585164964199e-11,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6322,
+              "kind": "npc_apply_enter",
+              "real": 111.94731140136719
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "manager": {
+                  "fixed": 0,
+                  "initialized": 1,
+                  "live": 0,
+                  "loaded": 0,
+                  "pointer": "0x2d295c7dcf0",
+                  "spawn": 0
+                },
+                "sequence": 2,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    -3.9108272176235914e-11,
+                    -2.5033950805664062e-06,
+                    -4.774847184307873e-12
+                  ],
+                  "playerRotation": [
+                    1.5916157281026244e-12,
+                    -2.9802322387695312e-08,
+                    -2.546585164964199e-11,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6322,
+              "kind": "npc_apply_leave",
+              "real": 111.94744110107422
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "manager": {
+                  "fixed": 0,
+                  "initialized": 1,
+                  "live": 0,
+                  "loaded": 0,
+                  "pointer": "0x2d295c7dcf0",
+                  "spawn": 0
+                },
+                "sequence": 3,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    -9.00399754755199e-11,
+                    -1.2278556823730469e-05,
+                    3.979039320256561e-12
+                  ],
+                  "playerRotation": [
+                    2.501110646715987e-12,
+                    -4.470348713425665e-08,
+                    -3.211298241212468e-11,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6383,
+              "kind": "npc_apply_enter",
+              "real": 112.95362091064453
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "manager": {
+                  "fixed": 0,
+                  "initialized": 1,
+                  "live": 0,
+                  "loaded": 0,
+                  "pointer": "0x2d295c7dcf0",
+                  "spawn": 0
+                },
+                "sequence": 3,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    -9.00399754755199e-11,
+                    -1.2278556823730469e-05,
+                    3.979039320256561e-12
+                  ],
+                  "playerRotation": [
+                    2.501110646715987e-12,
+                    -4.470348713425665e-08,
+                    -3.211298241212468e-11,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6383,
+              "kind": "npc_apply_leave",
+              "real": 112.95376586914062
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "manager": {
+                  "fixed": 0,
+                  "initialized": 1,
+                  "live": 0,
+                  "loaded": 0,
+                  "pointer": "0x2d295c7dcf0",
+                  "spawn": 0
+                },
+                "sequence": 4,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    -4.001776687800884e-11,
+                    -2.866983413696289e-05,
+                    2.319211489520967e-11
+                  ],
+                  "playerRotation": [
+                    3.126388037344441e-12,
+                    -1.0356307029724121e-06,
+                    7.295852810784709e-11,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6443,
+              "kind": "npc_apply_enter",
+              "real": 113.95362854003906
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "manager": {
+                  "fixed": 0,
+                  "initialized": 1,
+                  "live": 0,
+                  "loaded": 0,
+                  "pointer": "0x2d295c7dcf0",
+                  "spawn": 0
+                },
+                "sequence": 4,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    -4.001776687800884e-11,
+                    -2.866983413696289e-05,
+                    2.319211489520967e-11
+                  ],
+                  "playerRotation": [
+                    3.126388037344441e-12,
+                    -1.0356307029724121e-06,
+                    7.295852810784709e-11,
+                    1
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6443,
+              "kind": "npc_apply_leave",
+              "real": 113.9537353515625
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x1f57c34",
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6755,
+              "kind": "pc_manual_save_enter",
+              "real": 119.16718292236328
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x4caf20",
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "isBackup": false,
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 1,
+                "slot": -1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                },
+                "type": 3
+              },
+              "frame": 6755,
+              "kind": "save_write_enter",
+              "real": 119.16732788085938
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x49c435",
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "isBackup": false,
+                "isSystem": true,
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 3,
+                "slot": -1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6755,
+              "kind": "save_preprocess_enter",
+              "real": 119.16766357421875
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 3,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6755,
+              "kind": "save_preprocess_leave",
+              "real": 119.16783142089844
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x49cf27",
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "isBackup": false,
+                "isSystem": false,
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 4,
+                "slot": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6755,
+              "kind": "save_preprocess_enter",
+              "real": 119.2304458618164
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 4,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6755,
+              "kind": "save_preprocess_leave",
+              "real": 119.23064422607422
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6755,
+              "kind": "save_write_leave",
+              "real": 119.26233673095703
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 6755,
+              "kind": "pc_manual_save_leave",
+              "real": 119.26505279541016
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "applyByManager": {
+                  "0x2d295c7dcf0": 31
+                },
+                "counters": {
+                  "debug_cctor": 1,
+                  "debug_initialize": 1,
+                  "ingame_start": 1,
+                  "npc_apply": 31,
+                  "npc_repop": 1,
+                  "pc_manual_save": 1,
+                  "save_load": 1,
+                  "save_preprocess": 4,
+                  "save_write": 1,
+                  "springboard": 1,
+                  "startup_delayed": 1,
+                  "title_manual_category": 1,
+                  "title_slot": 1
+                },
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    -0.000392913818359375,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -3.824425220955163e-10,
+                    0.17717978358268738,
+                    -2.5647750589996576e-10,
+                    0.9841785430908203
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 8077,
+              "kind": "guard_poll",
+              "real": 141.2948760986328
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "applyByManager": {
+                  "0x2d295c7dcf0": 61
+                },
+                "counters": {
+                  "debug_cctor": 1,
+                  "debug_initialize": 1,
+                  "ingame_start": 1,
+                  "npc_apply": 61,
+                  "npc_repop": 1,
+                  "pc_manual_save": 1,
+                  "save_load": 1,
+                  "save_preprocess": 4,
+                  "save_write": 1,
+                  "springboard": 1,
+                  "startup_delayed": 1,
+                  "title_manual_category": 1,
+                  "title_slot": 1
+                },
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    -0.0009456872940063477,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -3.185505192959681e-10,
+                    0.17718586325645447,
+                    -6.625668902415782e-10,
+                    0.9841774702072144
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 9877,
+              "kind": "guard_poll",
+              "real": 171.2966766357422
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x46e908",
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 2,
+                "slot": -1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    -0.0012680888175964355,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -5.566107019738809e-10,
+                    0.17718605697155,
+                    -6.593835893964339e-11,
+                    0.9841773509979248
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                },
+                "type": 4
+              },
+              "frame": 10651,
+              "kind": "save_load_enter",
+              "real": 184.25726318359375
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x49c777",
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "isBackup": false,
+                "isSystem": true,
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 5,
+                "slot": -1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    -0.0012680888175964355,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -5.566107019738809e-10,
+                    0.17718605697155,
+                    -6.593835893964339e-11,
+                    0.9841773509979248
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 10651,
+              "kind": "save_preprocess_enter",
+              "real": 184.2574005126953
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 5,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    -0.0012680888175964355,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -5.566107019738809e-10,
+                    0.17718605697155,
+                    -6.593835893964339e-11,
+                    0.9841773509979248
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 10651,
+              "kind": "save_preprocess_leave",
+              "real": 184.257568359375
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 2,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    -0.0012680888175964355,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -5.566107019738809e-10,
+                    0.17718605697155,
+                    -6.593835893964339e-11,
+                    0.9841773509979248
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 10651,
+              "kind": "save_load_leave",
+              "real": 184.26385498046875
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x1f57c34",
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 2,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    -0.0012680888175964355,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -5.566107019738809e-10,
+                    0.17718605697155,
+                    -6.593835893964339e-11,
+                    0.9841773509979248
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 10707,
+              "kind": "title_manual_category_enter",
+              "real": 185.5523223876953
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 2,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    -0.0012680888175964355,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -5.566107019738809e-10,
+                    0.17718605697155,
+                    -6.593835893964339e-11,
+                    0.9841773509979248
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 10707,
+              "kind": "title_manual_category_leave",
+              "real": 185.56076049804688
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x1f57c34",
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 2,
+                "slot": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    -0.0012680888175964355,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -5.566107019738809e-10,
+                    0.17718605697155,
+                    -6.593835893964339e-11,
+                    0.9841773509979248
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                },
+                "type": 3
+              },
+              "frame": 10751,
+              "kind": "title_slot_enter",
+              "real": 186.2925567626953
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x4e5229",
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 3,
+                "slot": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    -0.0012680888175964355,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -5.566107019738809e-10,
+                    0.17718605697155,
+                    -6.593835893964339e-11,
+                    0.9841773509979248
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                },
+                "type": 3
+              },
+              "frame": 10751,
+              "kind": "save_load_enter",
+              "real": 186.29299926757812
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x49c777",
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "isBackup": false,
+                "isSystem": true,
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 6,
+                "slot": -1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    -0.0012680888175964355,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -5.566107019738809e-10,
+                    0.17718605697155,
+                    -6.593835893964339e-11,
+                    0.9841773509979248
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 10751,
+              "kind": "save_preprocess_enter",
+              "real": 186.29312133789062
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 6,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    -0.0012680888175964355,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -5.566107019738809e-10,
+                    0.17718605697155,
+                    -6.593835893964339e-11,
+                    0.9841773509979248
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 10751,
+              "kind": "save_preprocess_leave",
+              "real": 186.29335021972656
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x49d979",
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "isBackup": false,
+                "isSystem": false,
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 7,
+                "slot": 1,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    -0.0012680888175964355,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -5.566107019738809e-10,
+                    0.17718605697155,
+                    -6.593835893964339e-11,
+                    0.9841773509979248
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 10751,
+              "kind": "save_preprocess_enter",
+              "real": 186.3007354736328
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 7,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    -0.0012680888175964355,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -5.566107019738809e-10,
+                    0.17718605697155,
+                    -6.593835893964339e-11,
+                    0.9841773509979248
+                  ],
+                  "pointer": "0x2d29552da80",
+                  "stage": 0
+                }
+              },
+              "frame": 10751,
+              "kind": "save_preprocess_leave",
+              "real": 186.30088806152344
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 3,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d2907cea80",
+                  "stage": 0
+                }
+              },
+              "frame": 10751,
+              "kind": "save_load_leave",
+              "real": 186.31898498535156
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 2,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d2907cea80",
+                  "stage": 0
+                }
+              },
+              "frame": 10751,
+              "kind": "title_slot_leave",
+              "real": 186.31991577148438
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x35bd19",
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 2,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d2907cea80",
+                  "stage": 0
+                }
+              },
+              "frame": 10762,
+              "kind": "springboard_enter",
+              "real": 186.71441650390625
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 2,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d2907cea80",
+                  "stage": 0
+                }
+              },
+              "frame": 10762,
+              "kind": "springboard_leave",
+              "real": 186.71475219726562
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x35bd19",
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 2,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d2907cea80",
+                  "stage": 0
+                }
+              },
+              "frame": 10763,
+              "kind": "ingame_start_enter",
+              "real": 187.07717895507812
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x4979ff",
+                "player": "0x2d2f71e1690",
+                "position": [
+                  0.34385067224502563,
+                  5.823373794555664e-05,
+                  1.1726408004760742
+                ],
+                "rotation": [
+                  -1.5643308870494366e-10,
+                  0.17717701196670532,
+                  2.4556356947869062e-11,
+                  0.9841790795326233
+                ]
+              },
+              "frame": 10763,
+              "kind": "player_warp",
+              "real": 187.11788940429688
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x497ad8",
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 2,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d2907cea80",
+                  "stage": 0
+                }
+              },
+              "frame": 10763,
+              "kind": "debug_initialize_enter",
+              "real": 187.12030029296875
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 2,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d2907cea80",
+                  "stage": 0
+                }
+              },
+              "frame": 10763,
+              "kind": "debug_initialize_leave",
+              "real": 187.12042236328125
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 2,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d2907cea80",
+                  "stage": 0
+                }
+              },
+              "frame": 10763,
+              "kind": "ingame_start_leave",
+              "real": 187.12057495117188
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "manager": {
+                  "fixed": 0,
+                  "initialized": 1,
+                  "live": 0,
+                  "loaded": 0,
+                  "pointer": "0x2d392d7bcf0",
+                  "spawn": 0
+                },
+                "sequence": 75,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d2907cea80",
+                  "stage": 0
+                }
+              },
+              "frame": 10763,
+              "kind": "npc_apply_enter",
+              "real": 187.13253784179688
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "manager": {
+                  "fixed": 0,
+                  "initialized": 1,
+                  "live": 0,
+                  "loaded": 0,
+                  "pointer": "0x2d392d7bcf0",
+                  "spawn": 0
+                },
+                "sequence": 75,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d2907cea80",
+                  "stage": 0
+                }
+              },
+              "frame": 10763,
+              "kind": "npc_apply_leave",
+              "real": 187.13265991210938
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x4b4f0b",
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  },
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d392d7bcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 2,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d2907cea80",
+                  "stage": 0
+                }
+              },
+              "frame": 10765,
+              "kind": "startup_delayed_enter",
+              "real": 187.16835021972656
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x498bb3",
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "manager": {
+                  "fixed": 0,
+                  "initialized": 1,
+                  "live": 0,
+                  "loaded": 0,
+                  "pointer": "0x2d392d7bcf0",
+                  "spawn": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  },
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d392d7bcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 2,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d2907cea80",
+                  "stage": 0
+                }
+              },
+              "frame": 10765,
+              "kind": "npc_repop_enter",
+              "real": 187.16854858398438
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  },
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d392d7bcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 2,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d2907cea80",
+                  "stage": 0
+                }
+              },
+              "frame": 10765,
+              "kind": "npc_repop_leave",
+              "real": 187.168701171875
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  },
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d392d7bcf0",
+                    "spawn": 0
+                  }
+                ],
+                "sequence": 2,
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    5.823373794555664e-05,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -1.5643308870494366e-10,
+                    0.17717701196670532,
+                    2.4556356947869062e-11,
+                    0.9841790795326233
+                  ],
+                  "pointer": "0x2d2907cea80",
+                  "stage": 0
+                }
+              },
+              "frame": 10765,
+              "kind": "startup_delayed_leave",
+              "real": 187.1692352294922
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "applyByManager": {
+                  "0x2d295c7dcf0": 74,
+                  "0x2d392d7bcf0": 15
+                },
+                "counters": {
+                  "debug_cctor": 1,
+                  "debug_initialize": 2,
+                  "ingame_start": 2,
+                  "npc_apply": 89,
+                  "npc_repop": 2,
+                  "pc_manual_save": 1,
+                  "save_load": 3,
+                  "save_preprocess": 7,
+                  "save_write": 1,
+                  "springboard": 2,
+                  "startup_delayed": 2,
+                  "title_manual_category": 2,
+                  "title_slot": 2
+                },
+                "debug": {
+                  "force": 1,
+                  "initialized": 0,
+                  "isDebug": 0
+                },
+                "managers": [
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d295c7dcf0",
+                    "spawn": 0
+                  },
+                  {
+                    "fixed": 0,
+                    "initialized": 1,
+                    "live": 0,
+                    "loaded": 0,
+                    "pointer": "0x2d392d7bcf0",
+                    "spawn": 0
+                  }
+                ],
+                "state": {
+                  "npcCount": 0,
+                  "npcExisting": 0,
+                  "npcs": [],
+                  "playerPosition": [
+                    0.34385067224502563,
+                    -0.00013899803161621094,
+                    1.1726408004760742
+                  ],
+                  "playerRotation": [
+                    -7.457856554538012e-11,
+                    0.17718246579170227,
+                    3.318518793093972e-10,
+                    0.9841780066490173
+                  ],
+                  "pointer": "0x2d2907cea80",
+                  "stage": 0
+                }
+              },
+              "frame": 11613,
+              "kind": "guard_poll",
+              "real": 201.30845642089844
+            },
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "mode": "attach",
+        "pid": 4276,
+        "scripts": [
+          {
+            "name": "rea-bdb3a50f-96e9-4c10-855e-aec1407f4c59",
+            "script_id": "bdb3a50f-96e9-4c10-855e-aec1407f4c59"
+          }
+        ],
+        "session_id": "31b7857c-f690-4b31-b674-c3fa568bcd8f",
+        "state": "running",
+        "target": "SecretFlasherManaka.exe (pid 4276)"
+      },
+      "operation": "frida_session_status",
+      "parameters": {
+        "session_id": "31b7857c-f690-4b31-b674-c3fa568bcd8f"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    }
+  ]
+}

@@ -75,3 +75,6 @@ python reverse-engineering/audit.py --inputs --write-index
 ```
 
 记录窗口零引擎Error与暂停后出现AppHang是两个不同时段的观察。
+
+
+2026-10-30后续：[自然标题读档闭环](natural-title.md)已通过真实新游戏、电脑保存和标题继续第二槽完成主档/玩家姿态对照。此处的“备份1、未再次读回”为本轮历史边界，不再代表最新状态；非空NPC默认守卫结论仍保留。

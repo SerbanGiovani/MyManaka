@@ -3,6 +3,8 @@
 工作分支 `codex/rea-salt`。原始文件固定取自 `E:\SecretFlasherManakaREA`，输入指纹验证通过才继续分析。
 早期分析仅执行离线解析、REA/Ghidra和本地解密；后续受控运行与完整启动均在独立副本进行，原始游戏文件保持不变。
 
+2026-10-30 闭合自然电脑保存与标题读回：真实新游戏第二槽、电脑保存产生主档，随后标题继续。新增2份REA查询；71条未截断原生消息连接按钮、isBackup=false、实际路径与加载/Warp。解码文件、Save/Load状态及Warp姿态在float32精度一致；20个实际位置样本约9.7秒内最大偏差0.155毫米。8项校验通过，原9份UserData及5项输入未变。两次启动仍force=true/loaded=false，未新增非空NPC自然恢复正例。副本正常退出、临时插件恢复；见[自然标题读档闭环](natural-title.md)及[继续入口](runtime/natural-title/next-run.md)。
+
 2026-10-27 补齐默认标题/NPC保存守卫：10份新增REA查询及原始PE扫描确认force默认true、IsDebug=false；真实标题加载含3条记录的受控来源档仍走强制重生，OnLoadData未执行。自然新游戏进入Residence时峰值25名NPC、fixed计数20，loaded仍false、列表始终空；自然保存实际落在备份1，未计作主槽再次读回。8项校验通过，9份原UserData未变。任务按用户要求暂停；进程挂起成功后出现AppHang关闭记录，内存现场未保留，下次从备份重新启动。见[自然标题读档与NPC保存守卫](natural-load.md)及[继续入口](runtime/natural-load/next-run.md)。
 
 2026-10-27 完成一轮受控原生保存/加载及运行对象对照：独立解码新存档，3名动态NPC均进入记录恢复、Instantiate/Initialize/Warp并继续移动；当前场景掉落激活、异场景掉落隐藏；两项预留一项投放出队、一项跨场景保留，重放不重复投放。干净轮0条引擎Error、8项校验测试通过，9份原UserData文件及5项引擎/资源输入哈希保持一致。Load将场景11重置为0，消费者前显式协调回商场，因此不计作自然标题读档生命周期验证。见[原生保存、加载与对象对照](state-restore-runtime.md)。

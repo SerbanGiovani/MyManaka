@@ -1,5 +1,7 @@
 # 下次继续
 
+2026-10-30更新：下述为上轮暂停时的历史状态。第二槽现已通过正常电脑保存产生主档并完成自然标题读回；测试进程已正常退出。当前继续入口改为[下一轮说明](../natural-title/next-run.md)，本轮结果见[自然标题读档闭环](../../natural-title.md)。
+
 用户于2026-10-27要求验证后暂停等待下次运行。独立游戏PID49736曾成功挂起，随后有AppHang关闭记录，收尾时进程已不存在。内存现场没有持久保留；暂停凭据为历史记录，不要对旧PID执行恢复。hold-process.ps1保留为操作记录，启动时间校验会拒绝被复用的PID。
 
 下次需重新启动 E:\ManakaREA-NaturalGameplay\SecretFlasherManaka.exe，连接新的REA会话，不复用旧session_id。附加插件NaturalLoadObserver.dll与原NaturalObserver.dll保留在副本。隔离配置为NaturalLoad/20261027-2/profile.txt，存档根仍是E:\ManakaREA-NaturalGameplay\NaturalLoad\20261027-2\nonempty-A。原UserData未变。

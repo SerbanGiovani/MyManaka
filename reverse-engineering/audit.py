@@ -331,6 +331,22 @@ def main():
     check(not load_post["process"]["present_at_final_check"] and not load_post["process"]["in_memory_resume_available"] and
           load_runtime["resume_requires_relaunch"], "Natural-load final process state differs")
     observed_runtime_records[load_dir / "rea-runtime.json"] = load_runtime
+    title_dir = ROOT / "runtime/natural-title"
+    title_runtime = read(title_dir / "manifest.json")
+    check(title_runtime["observation_complete"] and title_runtime["natural_only"] and
+          title_runtime["passive_only"] and title_runtime["user_input_driven"], "Natural-title authority differs")
+    for source in title_runtime["sources"]:
+        check(digest(title_dir / source["path"]) == source["sha256"], "Natural-title source differs")
+    for output in title_runtime["outputs"]:
+        path = title_dir / output["path"]
+        raw = gzip.decompress(path.read_bytes())
+        check(digest(path) == output["sha256"] and len(raw) == output["uncompressed_bytes"] and
+              hashlib.sha256(raw).hexdigest() == output["uncompressed_sha256"], "Natural-title capture differs")
+    title_analysis = runpy.run_path(str(title_dir / "analyze.py"))
+    check(title_analysis["build"](inputs=args.inputs) == read(title_dir / "results.json"), "Natural-title file/load/Warp joins differ")
+    title_bindings = runpy.run_path(str(ROOT / "salt/natural_title_evidence.py"))
+    check(title_bindings["build"]() == read(ROOT / "salt/evidence/natural-title-chain.json"), "Natural-title static bindings differ")
+    observed_runtime_records[title_dir / "rea-runtime.json"] = title_runtime
     verification = read(ROOT / "salt/evidence/decryption-verification.json")
     summary = read(ROOT / "salt/symbols/index-summary.json")
     object_record = asset["guid_object"]

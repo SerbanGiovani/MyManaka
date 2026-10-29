@@ -1,0 +1,78 @@
+{
+  "authority": "passive-native-observation-of-original-user-input-in-isolated-save-root",
+  "absent_slot": {
+    "frame": 3502,
+    "load_called": false,
+    "path": "SaveData/1.sd",
+    "backup_fallback_observed": false
+  },
+  "new_game": {
+    "frame": 6307,
+    "slot": 1
+  },
+  "save": {
+    "frame": 6755,
+    "caller": "0x4caf20",
+    "isBackup": false,
+    "preprocess_slot": 1,
+    "path": "SaveData/1.sd",
+    "sha256": "5b90c9cebbc37810d2671ce2f42ce1ac2b6eb05505ba84f2a0ed6d759f75a5b0",
+    "bytes": 91280,
+    "stage": 0,
+    "position": [
+      0.343850672,
+      5.82337379e-05,
+      1.1726408
+    ],
+    "rotation": [
+      -1.56433089e-10,
+      0.177177012,
+      2.45563569e-11,
+      0.9841791
+    ],
+    "npc_count": 0
+  },
+  "title_load": {
+    "frame": 10751,
+    "caller": "0x4e5229",
+    "slot": 1,
+    "isBackup": false,
+    "state_object_changed": true,
+    "springboard_frame": 10762,
+    "ingame_start_frame": 10763,
+    "warp_frame": 10763,
+    "warp_caller": "0x4979ff",
+    "position_and_rotation_float32_equal": true
+  },
+  "scene": {
+    "name": "Apartment",
+    "stage": "Apart",
+    "active_manager": "0x2d392d7bcf0",
+    "first_snapshot_frame": 10768,
+    "samples": 20,
+    "covered_seconds": 9.689250595703129,
+    "first_position_error_metres": 4.589558335771794e-06,
+    "maximum_position_error_metres": 0.00015491247191291052,
+    "actual_rotation_observed": false
+  },
+  "npc": {
+    "startups": 2,
+    "forced_repop": 2,
+    "on_load_calls": 0,
+    "isLoadedData": false,
+    "nonempty_restore_verified": false
+  },
+  "protected_files": {
+    "user_data": 9,
+    "engine_assets": 5,
+    "unchanged": true
+  },
+  "limits": [
+    "No native backup recovery route observed in this selected UI path; absence of every recovery path is not proven.",
+    "This new-game/home round contains no NPCs; prior nonempty controlled and natural Residence scopes remain separate.",
+    "Rotation equality covers stored/loaded fields and original Warp arguments; actual Transform rotation is not sampled.",
+    "Actual Transform position is sampled on the Unity thread, allowing bounded physical settling.",
+    "No guard writes, OnLoadData replay, state patch or direct scene loading."
+  ],
+  "engine_error_lines": 0
+}
