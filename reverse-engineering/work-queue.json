@@ -1,0 +1,56 @@
+{
+  "objective": "按用户已确认优先级依次推进逆向验证与独立运行工程；每轮同步当前分支",
+  "branch": "codex/rea-salt",
+  "tasks": [
+    {
+      "order": 1,
+      "name": "掉落物管理器冷/暖/失效缓存",
+      "status": "completed-within-selected-ordinary-item-scope",
+      "commit": "8738436",
+      "report": "drop-cold-cache.md"
+    },
+    {
+      "order": 2,
+      "name": "场景退出、销毁对象期间的恢复队列",
+      "status": "completed-within-selected-four-controlled-cases",
+      "directory": "runtime/restore-interruption",
+      "report": "restore-interruption.md"
+    },
+    {
+      "order": 3,
+      "name": "完整存档状态恢复及缺键/损坏/备份",
+      "status": "in-progress"
+    },
+    {
+      "order": 4,
+      "name": "最小独立运行工程",
+      "status": "pending",
+      "known_dependency": "H:/Unity Editor/2022.3.62t7/Editor/Tuanjie.exe verified; original game 2022.3.62f2, compatibility/license not yet validated"
+    },
+    {
+      "order": 5,
+      "name": "核心玩法运行对照",
+      "status": "pending"
+    },
+    {
+      "order": 6,
+      "name": "交互与动画接线",
+      "status": "pending"
+    },
+    {
+      "order": 7,
+      "name": "NPC剩余自然与几何边界",
+      "status": "pending"
+    },
+    {
+      "order": 8,
+      "name": "重建路径所需泛型接口与资源语义",
+      "status": "pending"
+    },
+    {
+      "order": 9,
+      "name": "其他构建DLC平台及Mod兼容",
+      "status": "pending"
+    }
+  ]
+}

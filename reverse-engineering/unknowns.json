@@ -158,6 +158,12 @@
       "status": "answered-within-ordinary-item-manager-cold-warm-stale-cache-scope",
       "question": "Verify current-stage dropped-item restoration with an empty or destroyed runtime instance cache",
       "boundary": "drop-cold-cache.md uses native Save/Load, independent encrypted-file projection and47 untruncated passive native messages. Empty manager cache synchronously clones preloaded AssetReferencer item0/4 prefabs; warm replay reuses both; a destroyed item0 entry is rebuilt once while item4 retains identity. Current-stage item activates with stored pose, other-stage item remains hidden and undropped item3 stays uncached. Seven monitored asset loading entrypoints have0 hits during the fixture. This is not asset-bundle cold-load or missing-prefab recovery.8 tests and protected-file checks pass; scene destruction/interrupted queues remain next."
+    },
+    {
+      "id": "U027",
+      "question": "Verify NPC restoration queue lifetime across destruction and scene exit",
+      "status": "selected-controlled-cases-verified",
+      "boundary": "restore-interruption.md adds four controlled cases and seven canonical REA records. Live control creates once; destroyed temporary owners and initialized original Title-exit owner retain the task until expiry, then attempt once without clone and dequeue. Entry-only capture does not identify the exact early-exit branch. Early partial crash e06d7363 and20 unrelated scene-reload errors remain separate; natural timing, arbitrary callbacks and full-state equivalence remain open."
     }
   ]
 }

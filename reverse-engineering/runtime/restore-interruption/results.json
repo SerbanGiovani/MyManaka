@@ -1,0 +1,112 @@
+{
+  "authority": "controlled-original-method-replay-with-entry-only-REA-witness",
+  "clean_cases": [
+    {
+      "trial": "control",
+      "original_owner": false,
+      "begin_frame": 8567,
+      "destroyed_before_callback": false,
+      "queue_frame": 8567,
+      "callback_frame": 8597,
+      "queue_entries": 1,
+      "callback_entries": 1,
+      "instantiate_attempts": 1,
+      "clone_entries": 1,
+      "model_invocations": 14,
+      "initial_remaining": 0.218622,
+      "remaining_during_hold": 0.218622,
+      "pending_before_resume": true,
+      "pending_before_probe_cleanup": false,
+      "outcome": "one_object_created"
+    },
+    {
+      "trial": "destroy",
+      "original_owner": false,
+      "begin_frame": 10180,
+      "destroyed_before_callback": true,
+      "queue_frame": 10180,
+      "callback_frame": 10225,
+      "queue_entries": 1,
+      "callback_entries": 1,
+      "instantiate_attempts": 1,
+      "clone_entries": 0,
+      "model_invocations": 29,
+      "initial_remaining": 0.4821561,
+      "remaining_during_hold": 0.4821561,
+      "pending_before_resume": true,
+      "pending_before_probe_cleanup": false,
+      "outcome": "attempted_without_observed_clone_then_dequeued"
+    },
+    {
+      "trial": "scene",
+      "original_owner": false,
+      "begin_frame": 15191,
+      "destroyed_before_callback": true,
+      "queue_frame": 15191,
+      "callback_frame": 15193,
+      "queue_entries": 1,
+      "callback_entries": 1,
+      "instantiate_attempts": 1,
+      "clone_entries": 0,
+      "model_invocations": 1,
+      "initial_remaining": 0.9850701,
+      "remaining_during_hold": 0.9850701,
+      "pending_before_resume": true,
+      "pending_before_probe_cleanup": false,
+      "outcome": "attempted_without_observed_clone_then_dequeued"
+    },
+    {
+      "trial": "original-manager-title",
+      "original_owner": true,
+      "begin_frame": 11457,
+      "destroyed_before_callback": true,
+      "queue_frame": 11457,
+      "callback_frame": 11468,
+      "queue_entries": 1,
+      "callback_entries": 1,
+      "instantiate_attempts": 1,
+      "clone_entries": 0,
+      "model_invocations": 2,
+      "initial_remaining": 0.48603088,
+      "remaining_during_hold": 0.48603088,
+      "pending_before_resume": true,
+      "pending_before_probe_cleanup": false,
+      "outcome": "attempted_without_observed_clone_then_dequeued"
+    }
+  ],
+  "destruction_cancels_queue_immediately": false,
+  "expired_dead_receiver_tasks_attempt_once": true,
+  "dead_receiver_clone_entries": 0,
+  "duplicate_queue_or_callback_entries": 0,
+  "engine_error_events": 20,
+  "engine_error_stack_groups": {
+    "SplineContainer finalizer": 17,
+    "NPC interaction update": 3
+  },
+  "selected_restore_callback_error_events": 0,
+  "limitation_on_early_exit": "Entry-only evidence proves the attempt, lack of clone-helper entry and final queue removal. The exact return/early-exit branch is not dynamically attributed.",
+  "natural_reachability_verified": false,
+  "limits": [
+    "Scheduler enabled/disabled is an explicit timing hold; no natural timing probability is claimed.",
+    "Three temporary managers are never registered as global managers and have initialized=false; the separate Title case uses initialized=true on the real manager.",
+    "Direct scene reload generated unrelated finalizer and interaction errors; those are retained, not counted as restore exceptions.",
+    "No statement of complete arbitrary-callback cancellation, permanent persistence, future-scene behavior or uninstrumented equivalence."
+  ],
+  "diagnostic_run": {
+    "pid": 59580,
+    "completed_before_exit": 4,
+    "not_counted_as_clean_cases": true,
+    "crash_code": "0xe06d7363",
+    "cause": "unassigned",
+    "missing_second_pass_cases": [
+      "destroy",
+      "scene"
+    ]
+  },
+  "protected_files": {
+    "user_data": 9,
+    "prior_natural": 4,
+    "engine_assets": 5,
+    "unchanged": true
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "sessions": [
+    {
+      "session_id": "8287aa0f-989b-491e-99a2-c1ceeddf1b08",
+      "pid": 59580,
+      "state": "detached",
+      "closed_by_operator": true,
+      "authority": "partial-crash-diagnostic"
+    },
+    {
+      "session_id": "5666d254-8985-4689-82fb-365acb0008fc",
+      "pid": 74160,
+      "state": "running",
+      "closed_by_operator": true,
+      "authority": "controlled-temporary-owner"
+    },
+    {
+      "session_id": "3193486b-af59-4423-981b-8c309b60be17",
+      "pid": 10064,
+      "state": "running",
+      "closed_by_operator": true,
+      "authority": "controlled-original-owner-title-exit"
+    }
+  ],
+  "evidence_ids": [
+    "ev_7f31a255a57634290c87f37a289257cc9f4bebdbd8495e01511397d7402edcb0",
+    "ev_9d8af919c575638107269e3450e3389e42cfcfe7603c9888b6e9f50865c8a94e",
+    "ev_abe7db29a0e8d2901cc09291dc59e79f5c8997816b841a26442bf9ff82a6cbf7",
+    "ev_b4937701a555ce52ad767fb825cf503725231850452b7729f9e93a2d68de060a",
+    "ev_d98d20c2674f5ee4296239a5e042923325719e01c487548823102ad6426283b8",
+    "ev_e9d997f1c423fcb2bb1ff7e5396fa7e72d89f33a50e19956323e942f3757189d",
+    "ev_f1a0895852019c620c73d3a109f137c5c1073a43891475f5d227143e057a4ed3"
+  ],
+  "plugins": [
+    {
+      "archived_path": "E:\\ManakaREA-NaturalGameplay\\RestoreInterruption\\20261030-1\\InterruptionProbe-v1.dll",
+      "sha256": "56cda7722e9d81bc01112e98ff2ca7d14cfc44c473ad6dfa0eae96033379a0cc"
+    },
+    {
+      "archived_path": "E:\\ManakaREA-NaturalGameplay\\RestoreInterruption\\20261030-2\\InterruptionProbe-completed.dll",
+      "sha256": "7e4abe38323d77e688e9676945eb90ed7f187bffae5c13cdfafdd81ec7635740"
+    },
+    {
+      "archived_path": "E:\\ManakaREA-NaturalGameplay\\RestoreInterruption\\20261030-3\\InterruptionProbe-completed.dll",
+      "sha256": "284747ee58777a4667d89df83af64c057e0f2e28153b85871ceff0a1e96a94f1"
+    }
+  ],
+  "sources": [
+    {
+      "path": "Probe.cs",
+      "sha256": "9a8a834f236cd94eb05956f9571002fd5e371e679207478740e13d0b122ddd66"
+    },
+    {
+      "path": "Probe-v1.cs",
+      "sha256": "91b7ba10f2a2177a7adbf51fe8d535615dfb28028e5174ae3e93e38e52949d29"
+    },
+    {
+      "path": "Probe-v2.cs",
+      "sha256": "061217fc4ed1a5bf632326add1fe6158e2785b1dcad4820cd629f0346f296678"
+    },
+    {
+      "path": "build.ps1",
+      "sha256": "fc8b2ea0c2fe8403fb1b6055d26e411d1be2b4f8012d653b2f8bac78238c09d6"
+    },
+    {
+      "path": "observe.js",
+      "sha256": "4adc5b8accb1511619eb259713f3232f72709f05e043214e7e15fc4f2dd1356f"
+    },
+    {
+      "path": "observe-v2.js",
+      "sha256": "51112eecbddb3218b22d9504824febcafb5bdc7ff72b94eae7317a9048105a94"
+    },
+    {
+      "path": "observe-v3.js",
+      "sha256": "5937a280d96edc0ee41dc1611056f847d772d81b510705f5869ed72201e4f792"
+    },
+    {
+      "path": "observe-v4.js",
+      "sha256": "fc47574fac0fe9f80edbd5a8978a5b250015bfc865d605e3611cf6661433e55b"
+    },
+    {
+      "path": "analyze.py",
+      "sha256": "8436923df4fb08381b43337121376086c6131f26fc622fec19b4587222bb057a"
+    },
+    {
+      "path": "collect.py",
+      "sha256": "a579a0dd502cb7584715cbacbe1c8421ca9312a9d37e176854aded966cca7cfc"
+    },
+    {
+      "path": "test_analysis.py",
+      "sha256": "b5e934d5225c9d8c3331b3f819107204c3d22ab0d6fb9ee24f3f739eaa06b762"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "managed.jsonl.gz",
+      "sha256": "12f0662fcf0c8f158c56c34b27216b6b24e57cb7c0617efd6ffa7ab789fab3cd",
+      "uncompressed_bytes": 2615,
+      "uncompressed_sha256": "bd76a734382911d4e3133b81cf1ce3eed6f712f6ef00733bc2d376ea55e7fd60"
+    },
+    {
+      "path": "paths.jsonl.gz",
+      "sha256": "77ccc00b4b431dee1b4f132e8eff42f8ce07b59c5b68c0a484b128e2b0ae90fa",
+      "uncompressed_bytes": 130765,
+      "uncompressed_sha256": "b8b2de51b8ef7e57c85c182667f777488c9d9522fc0bc453a557fbe212451643"
+    },
+    {
+      "path": "engine.log.gz",
+      "sha256": "8927d5f0248a994b96429af834ebfa58a90f57635ba512d66f5349d28a390bdd",
+      "uncompressed_bytes": 34142,
+      "uncompressed_sha256": "54945e1fd445072fc5a2c49aeb0e82c2c3fb0d5a6843acf2cbcc21b22b11f38f"
+    },
+    {
+      "path": "diagnostic-managed.jsonl.gz",
+      "sha256": "0ffd0d8fca0a3696c3dca21c14123e976822330802fd123dad3264c13c588419",
+      "uncompressed_bytes": 9825,
+      "uncompressed_sha256": "ffea0078bc95d8dfa0ca93c8bd96f5f3436ecf7d616cfa6918c3e148166c181c"
+    },
+    {
+      "path": "diagnostic-paths.jsonl.gz",
+      "sha256": "fa43928e5a9db65d5df6955d6b61fd2ac5e4242576b59ddd1b38554c14a05410",
+      "uncompressed_bytes": 1128070,
+      "uncompressed_sha256": "240fc003088d8c5d5aec230d505c60f6d86061d7ab0032fe2590be75fcff198d"
+    },
+    {
+      "path": "diagnostic-engine.log.gz",
+      "sha256": "07e5e00f8228f4991b1cff3ef6878369c14d34058a5888170e14b94a1ee532c2",
+      "uncompressed_bytes": 33929,
+      "uncompressed_sha256": "f22dc668ae8c6c7d0efe2ddb323a9be090dde4ce228e60227ba3dc362977771d"
+    },
+    {
+      "path": "clean-v3-managed.jsonl.gz",
+      "sha256": "90e149c2a79c66ac52f6887abad591d8b23030af0707edddebadc633e02f59f4",
+      "uncompressed_bytes": 7455,
+      "uncompressed_sha256": "265409d4105029bb6a69f89dee61f5eb472eee4159d0e8e4e68bbf77de168417"
+    },
+    {
+      "path": "clean-v3-paths.jsonl.gz",
+      "sha256": "9524621642107bfcbfa1e3681b1a52cc35d47f31e2d87a5dca8c53aecc475011",
+      "uncompressed_bytes": 966693,
+      "uncompressed_sha256": "0f5b980f63f9b977bb372e7174589e6b38c576fb704cd5811e1a188e85732dfd"
+    },
+    {
+      "path": "clean-v3-engine.log.gz",
+      "sha256": "8b1ea342253cdb719b12cf6005e825d60076832ef5835ea71804c97a4ac57729",
+      "uncompressed_bytes": 34038,
+      "uncompressed_sha256": "4deea9be0e5992b63b8d5d9023a342c242cf7cdbabdcfbe74f1d1aae24ec85f1"
+    }
+  ],
+  "natural_only": false,
+  "authority": "controlled-original-method-replay",
+  "diagnostic_boundary": "PID59580 crashed with e06d7363 after four partial observations; cause unassigned, not counted as clean cases.",
+  "process_subject_boundary": "REA subject null; PID/module paths and disk fingerprints supplement but do not attest process memory."
+}

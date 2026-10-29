@@ -1,0 +1,5730 @@
+{
+  "records": [
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_7f31a255a57634290c87f37a289257cc9f4bebdbd8495e01511397d7402edcb0",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "device_id": "local",
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "base": "0x7ffc1ad10000",
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 74160,
+                "scope": "entry-only original queue/model/callback/instantiate/clone/destruction and Application.CallLogCallback; no return hooks or throw/Icall hooks"
+              },
+              "frame": 2779,
+              "kind": "interruption_v3_ready",
+              "real": 55.490081787109375,
+              "thread": 65020
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 0,
+                  "native": "0x1ae58da0ff0",
+                  "pointer": "0x1b0e3050360"
+                }
+              },
+              "frame": 8567,
+              "kind": "restore_enter",
+              "real": 159.36624145507812,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "action": "0x1b0e30502d0",
+                "caller": "0x42f6f7",
+                "closure": "0x1b07f291f30",
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x1ae58da0ff0",
+                  "pointer": "0x1b0e3050360"
+                },
+                "record": "0x1b0e2f73040"
+              },
+              "frame": 8567,
+              "kind": "restore_queued",
+              "real": 159.3664093017578,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "action": "0x1b0e30502d0",
+                "pointer": "0x1b07f291f00"
+              },
+              "frame": 8567,
+              "kind": "time_model_constructor",
+              "real": 159.36647033691406,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e30502d0",
+                  "delay": 0.21862199902534485,
+                  "pointer": "0x1b07f291f00",
+                  "remaining": 0.21862199902534485,
+                  "unscaled": 1
+                }
+              },
+              "frame": 8584,
+              "kind": "time_invoke_enter",
+              "real": 159.64910888671875,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e30502d0",
+                  "delay": 0.21862199902534485,
+                  "pointer": "0x1b07f291f00",
+                  "remaining": 0.20195730030536652,
+                  "unscaled": 1
+                }
+              },
+              "frame": 8585,
+              "kind": "time_invoke_enter",
+              "real": 159.66656494140625,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e30502d0",
+                  "delay": 0.21862199902534485,
+                  "pointer": "0x1b07f291f00",
+                  "remaining": 0.18527650833129883,
+                  "unscaled": 1
+                }
+              },
+              "frame": 8586,
+              "kind": "time_invoke_enter",
+              "real": 159.6837158203125,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e30502d0",
+                  "delay": 0.21862199902534485,
+                  "pointer": "0x1b07f291f00",
+                  "remaining": 0.16862300038337708,
+                  "unscaled": 1
+                }
+              },
+              "frame": 8587,
+              "kind": "time_invoke_enter",
+              "real": 159.70008850097656,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e30502d0",
+                  "delay": 0.21862199902534485,
+                  "pointer": "0x1b07f291f00",
+                  "remaining": 0.15195730328559875,
+                  "unscaled": 1
+                }
+              },
+              "frame": 8588,
+              "kind": "time_invoke_enter",
+              "real": 159.71656799316406,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e30502d0",
+                  "delay": 0.21862199902534485,
+                  "pointer": "0x1b07f291f00",
+                  "remaining": 0.13529150187969208,
+                  "unscaled": 1
+                }
+              },
+              "frame": 8589,
+              "kind": "time_invoke_enter",
+              "real": 159.73275756835938,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e30502d0",
+                  "delay": 0.21862199902534485,
+                  "pointer": "0x1b07f291f00",
+                  "remaining": 0.1186193972826004,
+                  "unscaled": 1
+                }
+              },
+              "frame": 8590,
+              "kind": "time_invoke_enter",
+              "real": 159.74903869628906,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e30502d0",
+                  "delay": 0.21862199902534485,
+                  "pointer": "0x1b07f291f00",
+                  "remaining": 0.10195209830999374,
+                  "unscaled": 1
+                }
+              },
+              "frame": 8591,
+              "kind": "time_invoke_enter",
+              "real": 159.76663208007812,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e30502d0",
+                  "delay": 0.21862199902534485,
+                  "pointer": "0x1b07f291f00",
+                  "remaining": 0.08528099954128265,
+                  "unscaled": 1
+                }
+              },
+              "frame": 8592,
+              "kind": "time_invoke_enter",
+              "real": 159.78421020507812,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e30502d0",
+                  "delay": 0.21862199902534485,
+                  "pointer": "0x1b07f291f00",
+                  "remaining": 0.06861980259418488,
+                  "unscaled": 1
+                }
+              },
+              "frame": 8593,
+              "kind": "time_invoke_enter",
+              "real": 159.80050659179688,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e30502d0",
+                  "delay": 0.21862199902534485,
+                  "pointer": "0x1b07f291f00",
+                  "remaining": 0.05195410177111626,
+                  "unscaled": 1
+                }
+              },
+              "frame": 8594,
+              "kind": "time_invoke_enter",
+              "real": 159.81666564941406,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e30502d0",
+                  "delay": 0.21862199902534485,
+                  "pointer": "0x1b07f291f00",
+                  "remaining": 0.03528900444507599,
+                  "unscaled": 1
+                }
+              },
+              "frame": 8595,
+              "kind": "time_invoke_enter",
+              "real": 159.83255004882812,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e30502d0",
+                  "delay": 0.21862199902534485,
+                  "pointer": "0x1b07f291f00",
+                  "remaining": 0.018620004877448082,
+                  "unscaled": 1
+                }
+              },
+              "frame": 8596,
+              "kind": "time_invoke_enter",
+              "real": 159.84896850585938,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e30502d0",
+                  "delay": 0.21862199902534485,
+                  "pointer": "0x1b07f291f00",
+                  "remaining": 0.0019481051713228226,
+                  "unscaled": 1
+                }
+              },
+              "frame": 8597,
+              "kind": "time_invoke_enter",
+              "real": 159.86605834960938,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "closure": "0x1b07f291f30",
+                "frame": 8597,
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x1ae58da0ff0",
+                  "pointer": "0x1b0e3050360"
+                },
+                "record": "0x1b0e2f73040"
+              },
+              "frame": 8597,
+              "kind": "restore_callback_enter",
+              "real": 159.8661651611328,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x432e18",
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x1ae58da0ff0",
+                  "pointer": "0x1b0e3050360"
+                },
+                "record": "0x1b0e2f73040"
+              },
+              "frame": 8597,
+              "kind": "instantiate_enter",
+              "real": 159.86619567871094,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x430023",
+                "closure": "0x1b07f291f30",
+                "frame": 8597,
+                "manager": "0x1b0e3050360",
+                "parent": "0x1b07f294580",
+                "source": "0x1b07eba84e0"
+              },
+              "frame": 8597,
+              "kind": "npc_clone_enter",
+              "real": 159.86624145507812,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "initialized": 0,
+                "loaded": 1,
+                "native": "0x1ae58da0ff0",
+                "pointer": "0x1b0e3050360"
+              },
+              "frame": 8599,
+              "kind": "manager_destroy_enter",
+              "real": 159.9077606201172,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 0,
+                  "native": "0x1ae58da0ff0",
+                  "pointer": "0x1b0e275f240"
+                }
+              },
+              "frame": 10180,
+              "kind": "restore_enter",
+              "real": 186.26060485839844,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "action": "0x1b0e275f1b0",
+                "caller": "0x42f6f7",
+                "closure": "0x1ae20b18840",
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x1ae58da0ff0",
+                  "pointer": "0x1b0e275f240"
+                },
+                "record": "0x1b07f292440"
+              },
+              "frame": 10180,
+              "kind": "restore_queued",
+              "real": 186.2606964111328,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "action": "0x1b0e275f1b0",
+                "pointer": "0x1ae20b18810"
+              },
+              "frame": 10180,
+              "kind": "time_model_constructor",
+              "real": 186.26075744628906,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "initialized": 0,
+                "loaded": 1,
+                "native": "0x1ae58da0ff0",
+                "pointer": "0x1b0e275f240"
+              },
+              "frame": 10180,
+              "kind": "manager_destroy_enter",
+              "real": 186.2620391845703,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.48215609788894653,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10197,
+              "kind": "time_invoke_enter",
+              "real": 186.5419921875,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.4654896855354309,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10198,
+              "kind": "time_invoke_enter",
+              "real": 186.5586700439453,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.44882339239120483,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10199,
+              "kind": "time_invoke_enter",
+              "real": 186.57615661621094,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.43215590715408325,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10200,
+              "kind": "time_invoke_enter",
+              "real": 186.59141540527344,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.4154907166957855,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10201,
+              "kind": "time_invoke_enter",
+              "real": 186.6087188720703,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.3988226056098938,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10202,
+              "kind": "time_invoke_enter",
+              "real": 186.62567138671875,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.3821572959423065,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10203,
+              "kind": "time_invoke_enter",
+              "real": 186.6422882080078,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.36549049615859985,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10204,
+              "kind": "time_invoke_enter",
+              "real": 186.65872192382812,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.34882378578186035,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10205,
+              "kind": "time_invoke_enter",
+              "real": 186.67593383789062,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.3321544826030731,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10206,
+              "kind": "time_invoke_enter",
+              "real": 186.6912384033203,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.3154889941215515,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10207,
+              "kind": "time_invoke_enter",
+              "real": 186.70843505859375,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.2988184094429016,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10208,
+              "kind": "time_invoke_enter",
+              "real": 186.72618103027344,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.2821066975593567,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10209,
+              "kind": "time_invoke_enter",
+              "real": 186.74301147460938,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.26548969745635986,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10210,
+              "kind": "time_invoke_enter",
+              "real": 186.75881958007812,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.24882429838180542,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10211,
+              "kind": "time_invoke_enter",
+              "real": 186.7754364013672,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.2321522980928421,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10212,
+              "kind": "time_invoke_enter",
+              "real": 186.79173278808594,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.21548879146575928,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10213,
+              "kind": "time_invoke_enter",
+              "real": 186.8084259033203,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.1988202929496765,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10214,
+              "kind": "time_invoke_enter",
+              "real": 186.82521057128906,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.18215368688106537,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10215,
+              "kind": "time_invoke_enter",
+              "real": 186.84207153320312,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.16548559069633484,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10216,
+              "kind": "time_invoke_enter",
+              "real": 186.85855102539062,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.14881929755210876,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10217,
+              "kind": "time_invoke_enter",
+              "real": 186.87583923339844,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.13201209902763367,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10218,
+              "kind": "time_invoke_enter",
+              "real": 186.8922576904297,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.11538349837064743,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10219,
+              "kind": "time_invoke_enter",
+              "real": 186.90939331054688,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.09873199462890625,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10220,
+              "kind": "time_invoke_enter",
+              "real": 186.92645263671875,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.08206739276647568,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10221,
+              "kind": "time_invoke_enter",
+              "real": 186.94219970703125,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.06539749354124069,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10222,
+              "kind": "time_invoke_enter",
+              "real": 186.95938110351562,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.04873069375753403,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10223,
+              "kind": "time_invoke_enter",
+              "real": 186.9752655029297,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.03206339478492737,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10224,
+              "kind": "time_invoke_enter",
+              "real": 186.99166870117188,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e275f1b0",
+                  "delay": 0.48215609788894653,
+                  "pointer": "0x1ae20b18810",
+                  "remaining": 0.015395894646644592,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10225,
+              "kind": "time_invoke_enter",
+              "real": 187.00897216796875,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "closure": "0x1ae20b18840",
+                "frame": 10225,
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x0",
+                  "pointer": "0x1b0e275f240"
+                },
+                "record": "0x1b07f292440"
+              },
+              "frame": 10225,
+              "kind": "restore_callback_enter",
+              "real": 187.00904846191406,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x432e18",
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x0",
+                  "pointer": "0x1b0e275f240"
+                },
+                "record": "0x1b07f292440"
+              },
+              "frame": 10225,
+              "kind": "instantiate_enter",
+              "real": 187.0090789794922,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 0,
+                  "native": "0x1ae586ea2f0",
+                  "pointer": "0x1b0e2dd45a0"
+                }
+              },
+              "frame": 15191,
+              "kind": "restore_enter",
+              "real": 269.8672790527344,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "action": "0x1b0e2dd4510",
+                "caller": "0x42f6f7",
+                "closure": "0x1b106d86420",
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x1ae586ea2f0",
+                  "pointer": "0x1b0e2dd45a0"
+                },
+                "record": "0x1b0e2e34540"
+              },
+              "frame": 15191,
+              "kind": "restore_queued",
+              "real": 269.86737060546875,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "action": "0x1b0e2dd4510",
+                "pointer": "0x1b106d863f0"
+              },
+              "frame": 15191,
+              "kind": "time_model_constructor",
+              "real": 269.867431640625,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "initialized": 0,
+                "loaded": 1,
+                "native": "0x1ae586ea2f0",
+                "pointer": "0x1b0e2dd45a0"
+              },
+              "frame": 15192,
+              "kind": "manager_destroy_enter",
+              "real": 270.3413391113281,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 239,
+                  "text": "UnityEngine.Splines.SplineContainer.DisposeNativeSplinesCache () (at <00000000000000000000000000000000>:0)\nUnityEngine.Splines.SplineContainer.Finalize () (at <00000000000000000000000000000000>:0)\nUnityEngine.Debug:LogException(Exception)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15192,
+              "kind": "engine_error",
+              "real": 270.77520751953125,
+              "thread": 73068
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 239,
+                  "text": "UnityEngine.Splines.SplineContainer.DisposeNativeSplinesCache () (at <00000000000000000000000000000000>:0)\nUnityEngine.Splines.SplineContainer.Finalize () (at <00000000000000000000000000000000>:0)\nUnityEngine.Debug:LogException(Exception)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15192,
+              "kind": "engine_error",
+              "real": 270.7754821777344,
+              "thread": 73068
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 239,
+                  "text": "UnityEngine.Splines.SplineContainer.DisposeNativeSplinesCache () (at <00000000000000000000000000000000>:0)\nUnityEngine.Splines.SplineContainer.Finalize () (at <00000000000000000000000000000000>:0)\nUnityEngine.Debug:LogException(Exception)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15192,
+              "kind": "engine_error",
+              "real": 270.77569580078125,
+              "thread": 73068
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 239,
+                  "text": "UnityEngine.Splines.SplineContainer.DisposeNativeSplinesCache () (at <00000000000000000000000000000000>:0)\nUnityEngine.Splines.SplineContainer.Finalize () (at <00000000000000000000000000000000>:0)\nUnityEngine.Debug:LogException(Exception)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15192,
+              "kind": "engine_error",
+              "real": 270.77587890625,
+              "thread": 73068
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 239,
+                  "text": "UnityEngine.Splines.SplineContainer.DisposeNativeSplinesCache () (at <00000000000000000000000000000000>:0)\nUnityEngine.Splines.SplineContainer.Finalize () (at <00000000000000000000000000000000>:0)\nUnityEngine.Debug:LogException(Exception)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15192,
+              "kind": "engine_error",
+              "real": 270.7760925292969,
+              "thread": 73068
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 239,
+                  "text": "UnityEngine.Splines.SplineContainer.DisposeNativeSplinesCache () (at <00000000000000000000000000000000>:0)\nUnityEngine.Splines.SplineContainer.Finalize () (at <00000000000000000000000000000000>:0)\nUnityEngine.Debug:LogException(Exception)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15192,
+              "kind": "engine_error",
+              "real": 270.7762756347656,
+              "thread": 73068
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 239,
+                  "text": "UnityEngine.Splines.SplineContainer.DisposeNativeSplinesCache () (at <00000000000000000000000000000000>:0)\nUnityEngine.Splines.SplineContainer.Finalize () (at <00000000000000000000000000000000>:0)\nUnityEngine.Debug:LogException(Exception)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15192,
+              "kind": "engine_error",
+              "real": 270.7764587402344,
+              "thread": 73068
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 239,
+                  "text": "UnityEngine.Splines.SplineContainer.DisposeNativeSplinesCache () (at <00000000000000000000000000000000>:0)\nUnityEngine.Splines.SplineContainer.Finalize () (at <00000000000000000000000000000000>:0)\nUnityEngine.Debug:LogException(Exception)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15192,
+              "kind": "engine_error",
+              "real": 270.77667236328125,
+              "thread": 73068
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 239,
+                  "text": "UnityEngine.Splines.SplineContainer.DisposeNativeSplinesCache () (at <00000000000000000000000000000000>:0)\nUnityEngine.Splines.SplineContainer.Finalize () (at <00000000000000000000000000000000>:0)\nUnityEngine.Debug:LogException(Exception)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15192,
+              "kind": "engine_error",
+              "real": 270.77685546875,
+              "thread": 73068
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 239,
+                  "text": "UnityEngine.Splines.SplineContainer.DisposeNativeSplinesCache () (at <00000000000000000000000000000000>:0)\nUnityEngine.Splines.SplineContainer.Finalize () (at <00000000000000000000000000000000>:0)\nUnityEngine.Debug:LogException(Exception)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15192,
+              "kind": "engine_error",
+              "real": 270.7770080566406,
+              "thread": 73068
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 239,
+                  "text": "UnityEngine.Splines.SplineContainer.DisposeNativeSplinesCache () (at <00000000000000000000000000000000>:0)\nUnityEngine.Splines.SplineContainer.Finalize () (at <00000000000000000000000000000000>:0)\nUnityEngine.Debug:LogException(Exception)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15192,
+              "kind": "engine_error",
+              "real": 270.7771911621094,
+              "thread": 73068
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 239,
+                  "text": "UnityEngine.Splines.SplineContainer.DisposeNativeSplinesCache () (at <00000000000000000000000000000000>:0)\nUnityEngine.Splines.SplineContainer.Finalize () (at <00000000000000000000000000000000>:0)\nUnityEngine.Debug:LogException(Exception)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15192,
+              "kind": "engine_error",
+              "real": 270.7773742675781,
+              "thread": 73068
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 239,
+                  "text": "UnityEngine.Splines.SplineContainer.DisposeNativeSplinesCache () (at <00000000000000000000000000000000>:0)\nUnityEngine.Splines.SplineContainer.Finalize () (at <00000000000000000000000000000000>:0)\nUnityEngine.Debug:LogException(Exception)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15192,
+              "kind": "engine_error",
+              "real": 270.7775573730469,
+              "thread": 73068
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 239,
+                  "text": "UnityEngine.Splines.SplineContainer.DisposeNativeSplinesCache () (at <00000000000000000000000000000000>:0)\nUnityEngine.Splines.SplineContainer.Finalize () (at <00000000000000000000000000000000>:0)\nUnityEngine.Debug:LogException(Exception)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15192,
+              "kind": "engine_error",
+              "real": 270.7777404785156,
+              "thread": 73068
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 239,
+                  "text": "UnityEngine.Splines.SplineContainer.DisposeNativeSplinesCache () (at <00000000000000000000000000000000>:0)\nUnityEngine.Splines.SplineContainer.Finalize () (at <00000000000000000000000000000000>:0)\nUnityEngine.Debug:LogException(Exception)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15192,
+              "kind": "engine_error",
+              "real": 270.7779235839844,
+              "thread": 73068
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 239,
+                  "text": "UnityEngine.Splines.SplineContainer.DisposeNativeSplinesCache () (at <00000000000000000000000000000000>:0)\nUnityEngine.Splines.SplineContainer.Finalize () (at <00000000000000000000000000000000>:0)\nUnityEngine.Debug:LogException(Exception)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15192,
+              "kind": "engine_error",
+              "real": 270.7781066894531,
+              "thread": 73068
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 239,
+                  "text": "UnityEngine.Splines.SplineContainer.DisposeNativeSplinesCache () (at <00000000000000000000000000000000>:0)\nUnityEngine.Splines.SplineContainer.Finalize () (at <00000000000000000000000000000000>:0)\nUnityEngine.Debug:LogException(Exception)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15192,
+              "kind": "engine_error",
+              "real": 270.77825927734375,
+              "thread": 73068
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 426,
+                  "text": "ExposureUnnoticed2.Object3D.NPC.Script.NpcInteractState.OnUpdate () (at <00000000000000000000000000000000>:0)\nExposureUnnoticed2.Object3D.NPC.Script.NpcController.OnUpdate () (at <00000000000000000000000000000000>:0)\nExposureUnnoticed2.Object3D.NPC.Script.NpcManager.OnUpdate () (at <00000000000000000000000000000000>:0)\nExposureUnnoticed2.Scripts.InGame.EventMethodManager.Update () (at <00000000000000000000000000000000>:0)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15192,
+              "kind": "engine_error",
+              "real": 270.9806213378906,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 426,
+                  "text": "ExposureUnnoticed2.Object3D.NPC.Script.NpcInteractState.OnUpdate () (at <00000000000000000000000000000000>:0)\nExposureUnnoticed2.Object3D.NPC.Script.NpcController.OnUpdate () (at <00000000000000000000000000000000>:0)\nExposureUnnoticed2.Object3D.NPC.Script.NpcManager.OnUpdate () (at <00000000000000000000000000000000>:0)\nExposureUnnoticed2.Scripts.InGame.EventMethodManager.Update () (at <00000000000000000000000000000000>:0)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15193,
+              "kind": "engine_error",
+              "real": 271.0980529785156,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x1b0e2dd4510",
+                  "delay": 0.9850701093673706,
+                  "pointer": "0x1b106d863f0",
+                  "remaining": 0.9850701093673706,
+                  "unscaled": 1
+                }
+              },
+              "frame": 15193,
+              "kind": "time_invoke_enter",
+              "real": 271.098388671875,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "closure": "0x1b106d86420",
+                "frame": 15193,
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x0",
+                  "pointer": "0x1b0e2dd45a0"
+                },
+                "record": "0x1b0e2e34540"
+              },
+              "frame": 15193,
+              "kind": "restore_callback_enter",
+              "real": 271.09844970703125,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x432e18",
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x0",
+                  "pointer": "0x1b0e2dd45a0"
+                },
+                "record": "0x1b0e2e34540"
+              },
+              "frame": 15193,
+              "kind": "instantiate_enter",
+              "real": 271.0985107421875,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "condition": {
+                  "length": 77,
+                  "text": "NullReferenceException: Object reference not set to an instance of an object.",
+                  "truncated": false
+                },
+                "context": null,
+                "stack": {
+                  "length": 426,
+                  "text": "ExposureUnnoticed2.Object3D.NPC.Script.NpcInteractState.OnUpdate () (at <00000000000000000000000000000000>:0)\nExposureUnnoticed2.Object3D.NPC.Script.NpcController.OnUpdate () (at <00000000000000000000000000000000>:0)\nExposureUnnoticed2.Object3D.NPC.Script.NpcManager.OnUpdate () (at <00000000000000000000000000000000>:0)\nExposureUnnoticed2.Scripts.InGame.EventMethodManager.Update () (at <00000000000000000000000000000000>:0)\n",
+                  "truncated": false
+                },
+                "type": 4
+              },
+              "frame": 15194,
+              "kind": "engine_error",
+              "real": 271.1258544921875,
+              "thread": 64224
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "mode": "attach",
+        "pid": 74160,
+        "scripts": [
+          {
+            "name": "rea-ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80"
+          }
+        ],
+        "session_id": "5666d254-8985-4689-82fb-365acb0008fc",
+        "state": "running",
+        "target": "SecretFlasherManaka.exe (pid 74160)"
+      },
+      "operation": "frida_session_status",
+      "parameters": {
+        "session_id": "5666d254-8985-4689-82fb-365acb0008fc"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    },
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_9d8af919c575638107269e3450e3389e42cfcfe7603c9888b6e9f50865c8a94e",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "base": "0x7ffc1ad10000",
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 74160,
+                "scope": "entry-only original queue/model/callback/instantiate/clone/destruction and Application.CallLogCallback; no return hooks or throw/Icall hooks"
+              },
+              "frame": 2779,
+              "kind": "interruption_v3_ready",
+              "real": 55.490081787109375,
+              "thread": 65020
+            },
+            "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "script_id": "ed49c4e2-722c-4868-81ef-ce1c9050aa80",
+        "source_kind": "file",
+        "source_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\runtime\\restore-interruption\\observe-v3.js",
+        "source_sha256": "5937a280d96edc0ee41dc1611056f847d772d81b510705f5869ed72201e4f792"
+      },
+      "operation": "load_frida_script",
+      "parameters": {
+        "session_id": "5666d254-8985-4689-82fb-365acb0008fc"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    },
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_abe7db29a0e8d2901cc09291dc59e79f5c8997816b841a26442bf9ff82a6cbf7",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "device_id": "local",
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "base": "0x7ffc1ad10000",
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 10064,
+                "scope": "entry-only original queue/model/callback/instantiate/clone/destruction and Application.CallLogCallback; no return hooks or throw/Icall hooks"
+              },
+              "frame": 2543,
+              "kind": "interruption_v4_ready",
+              "real": 51.25031280517578,
+              "thread": 3824
+            },
+            "script_id": "7b892ddf-de49-4f23-a872-efa4fe12daf4",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "manager": {
+                  "initialized": 1,
+                  "loaded": 0,
+                  "native": "0x26d52f94d90",
+                  "pointer": "0x26e158a87e0"
+                }
+              },
+              "frame": 11457,
+              "kind": "restore_enter",
+              "real": 203.2184295654297,
+              "thread": 69644
+            },
+            "script_id": "7b892ddf-de49-4f23-a872-efa4fe12daf4",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "action": "0x26d8d8ccea0",
+                "caller": "0x42f6f7",
+                "closure": "0x26d8d6beea0",
+                "manager": {
+                  "initialized": 1,
+                  "loaded": 1,
+                  "native": "0x26d52f94d90",
+                  "pointer": "0x26e158a87e0"
+                },
+                "record": "0x26d8d892840"
+              },
+              "frame": 11457,
+              "kind": "restore_queued",
+              "real": 203.21856689453125,
+              "thread": 69644
+            },
+            "script_id": "7b892ddf-de49-4f23-a872-efa4fe12daf4",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "action": "0x26d8d8ccea0",
+                "pointer": "0x26d8d6bee70"
+              },
+              "frame": 11457,
+              "kind": "time_model_constructor",
+              "real": 203.21859741210938,
+              "thread": 69644
+            },
+            "script_id": "7b892ddf-de49-4f23-a872-efa4fe12daf4",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "initialized": 1,
+                "loaded": 1,
+                "native": "0x26d52f94d90",
+                "pointer": "0x26e158a87e0"
+              },
+              "frame": 11466,
+              "kind": "manager_destroy_enter",
+              "real": 203.4492950439453,
+              "thread": 69644
+            },
+            "script_id": "7b892ddf-de49-4f23-a872-efa4fe12daf4",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x26d8d8ccea0",
+                  "delay": 0.4860308766365051,
+                  "pointer": "0x26d8d6bee70",
+                  "remaining": 0.4860308766365051,
+                  "unscaled": 1
+                }
+              },
+              "frame": 11467,
+              "kind": "time_invoke_enter",
+              "real": 203.8648681640625,
+              "thread": 69644
+            },
+            "script_id": "7b892ddf-de49-4f23-a872-efa4fe12daf4",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "model": {
+                  "action": "0x26d8d8ccea0",
+                  "delay": 0.4860308766365051,
+                  "pointer": "0x26d8d6bee70",
+                  "remaining": 0.01470378041267395,
+                  "unscaled": 1
+                }
+              },
+              "frame": 11468,
+              "kind": "time_invoke_enter",
+              "real": 203.8813934326172,
+              "thread": 69644
+            },
+            "script_id": "7b892ddf-de49-4f23-a872-efa4fe12daf4",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "closure": "0x26d8d6beea0",
+                "frame": 11468,
+                "manager": {
+                  "initialized": 1,
+                  "loaded": 1,
+                  "native": "0x0",
+                  "pointer": "0x26e158a87e0"
+                },
+                "record": "0x26d8d892840"
+              },
+              "frame": 11468,
+              "kind": "restore_callback_enter",
+              "real": 203.8814697265625,
+              "thread": 69644
+            },
+            "script_id": "7b892ddf-de49-4f23-a872-efa4fe12daf4",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x432e18",
+                "manager": {
+                  "initialized": 1,
+                  "loaded": 1,
+                  "native": "0x0",
+                  "pointer": "0x26e158a87e0"
+                },
+                "record": "0x26d8d892840"
+              },
+              "frame": 11468,
+              "kind": "instantiate_enter",
+              "real": 203.8815155029297,
+              "thread": 69644
+            },
+            "script_id": "7b892ddf-de49-4f23-a872-efa4fe12daf4",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "mode": "attach",
+        "pid": 10064,
+        "scripts": [
+          {
+            "name": "rea-7b892ddf-de49-4f23-a872-efa4fe12daf4",
+            "script_id": "7b892ddf-de49-4f23-a872-efa4fe12daf4"
+          }
+        ],
+        "session_id": "3193486b-af59-4423-981b-8c309b60be17",
+        "state": "running",
+        "target": "SecretFlasherManaka.exe (pid 10064)"
+      },
+      "operation": "frida_session_status",
+      "parameters": {
+        "session_id": "3193486b-af59-4423-981b-8c309b60be17"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    },
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_b4937701a555ce52ad767fb825cf503725231850452b7729f9e93a2d68de060a",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "base": "0x7ffc1ad10000",
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 59580,
+                "scope": "original queue/model/callback/instantiate/destruction; controlled scheduler enable/disable is performed by managed fixture"
+              },
+              "frame": 1029,
+              "kind": "interruption_ready",
+              "real": 28.984947204589844
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+        "source_kind": "file",
+        "source_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\runtime\\restore-interruption\\observe.js",
+        "source_sha256": "4adc5b8accb1511619eb259713f3232f72709f05e043214e7e15fc4f2dd1356f"
+      },
+      "operation": "load_frida_script",
+      "parameters": {
+        "session_id": "8287aa0f-989b-491e-99a2-c1ceeddf1b08"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    },
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_d98d20c2674f5ee4296239a5e042923325719e01c487548823102ad6426283b8",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "device_id": "local",
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "base": "0x7ffc1ad10000",
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 59580,
+                "scope": "original queue/model/callback/instantiate/destruction; controlled scheduler enable/disable is performed by managed fixture"
+              },
+              "frame": 1029,
+              "kind": "interruption_ready",
+              "real": 28.984947204589844
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 1,
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 0,
+                  "native": "0x1e528993630",
+                  "pointer": "0x1e7967ac5a0"
+                }
+              },
+              "frame": 7816,
+              "kind": "restore_enter",
+              "real": 146.401611328125
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "action": "0x1e7967ac510",
+                "caller": "0x42f6f7",
+                "closure": "0x1e7fcda9450",
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x1e528993630",
+                  "pointer": "0x1e7967ac5a0"
+                },
+                "record": "0x1e7fc8c35c0"
+              },
+              "frame": 7816,
+              "kind": "restore_queued",
+              "real": 146.40174865722656
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "action": "0x1e7967ac510",
+                "delay": 0.636040985584259,
+                "pointer": "0x1e7fcda9420",
+                "remaining": 0.636040985584259,
+                "unscaled": 1
+              },
+              "frame": 7816,
+              "kind": "time_model_created",
+              "real": 146.4018096923828
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 1,
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x1e528993630",
+                  "pointer": "0x1e7967ac5a0"
+                }
+              },
+              "frame": 7816,
+              "kind": "restore_leave",
+              "real": 146.40187072753906
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 1,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.636040985584259,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7833,
+              "kind": "time_invoke_enter",
+              "real": 146.68064880371094
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 1,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.6193723678588867,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7833,
+              "kind": "time_invoke_leave",
+              "real": 146.6807098388672
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 2,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.6193723678588867,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7834,
+              "kind": "time_invoke_enter",
+              "real": 146.69627380371094
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 2,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.6027090549468994,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7834,
+              "kind": "time_invoke_leave",
+              "real": 146.6963348388672
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 3,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.6027090549468994,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7835,
+              "kind": "time_invoke_enter",
+              "real": 146.7134246826172
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 3,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.5860428810119629,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7835,
+              "kind": "time_invoke_leave",
+              "real": 146.71348571777344
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 4,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.5860428810119629,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7836,
+              "kind": "time_invoke_enter",
+              "real": 146.7310791015625
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 4,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.5693734884262085,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7836,
+              "kind": "time_invoke_leave",
+              "real": 146.7311553955078
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 5,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.5693734884262085,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7837,
+              "kind": "time_invoke_enter",
+              "real": 146.7470703125
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 5,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.5527076721191406,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7837,
+              "kind": "time_invoke_leave",
+              "real": 146.7471466064453
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 6,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.5527076721191406,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7838,
+              "kind": "time_invoke_enter",
+              "real": 146.76394653320312
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 6,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.5360428690910339,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7838,
+              "kind": "time_invoke_leave",
+              "real": 146.76402282714844
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 7,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.5360428690910339,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7839,
+              "kind": "time_invoke_enter",
+              "real": 146.7802734375
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 7,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.5193753838539124,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7839,
+              "kind": "time_invoke_leave",
+              "real": 146.78033447265625
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 8,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.5193753838539124,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7840,
+              "kind": "time_invoke_enter",
+              "real": 146.79624938964844
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 8,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.5027089715003967,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7840,
+              "kind": "time_invoke_leave",
+              "real": 146.79629516601562
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 9,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.5027089715003967,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7841,
+              "kind": "time_invoke_enter",
+              "real": 146.81362915039062
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 9,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.4860416650772095,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7841,
+              "kind": "time_invoke_leave",
+              "real": 146.813720703125
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 10,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.4860416650772095,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7842,
+              "kind": "time_invoke_enter",
+              "real": 146.83718872070312
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 10,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.46937355399131775,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7842,
+              "kind": "time_invoke_leave",
+              "real": 146.83726501464844
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 11,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.46937355399131775,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7843,
+              "kind": "time_invoke_enter",
+              "real": 146.8468780517578
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 11,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.4527088403701782,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7843,
+              "kind": "time_invoke_leave",
+              "real": 146.84695434570312
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 12,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.4527088403701782,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7844,
+              "kind": "time_invoke_enter",
+              "real": 146.86358642578125
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 12,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.43603962659835815,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7844,
+              "kind": "time_invoke_leave",
+              "real": 146.86366271972656
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 13,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.43603962659835815,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7845,
+              "kind": "time_invoke_enter",
+              "real": 146.88031005859375
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 13,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.4193742275238037,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7845,
+              "kind": "time_invoke_leave",
+              "real": 146.88037109375
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 14,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.4193742275238037,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7846,
+              "kind": "time_invoke_enter",
+              "real": 146.89630126953125
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 14,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.402707040309906,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7846,
+              "kind": "time_invoke_leave",
+              "real": 146.8963623046875
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 15,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.402707040309906,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7847,
+              "kind": "time_invoke_enter",
+              "real": 146.91390991210938
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 15,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.3860412538051605,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7847,
+              "kind": "time_invoke_leave",
+              "real": 146.91397094726562
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 16,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.3860412538051605,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7848,
+              "kind": "time_invoke_enter",
+              "real": 146.93020629882812
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 16,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.36937394738197327,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7848,
+              "kind": "time_invoke_leave",
+              "real": 146.93026733398438
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 17,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.36937394738197327,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7849,
+              "kind": "time_invoke_enter",
+              "real": 146.9468994140625
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 17,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.35270655155181885,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7849,
+              "kind": "time_invoke_leave",
+              "real": 146.9469757080078
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 18,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.35270655155181885,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7850,
+              "kind": "time_invoke_enter",
+              "real": 146.96363830566406
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 18,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.33603984117507935,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7850,
+              "kind": "time_invoke_leave",
+              "real": 146.96371459960938
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 19,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.33603984117507935,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7851,
+              "kind": "time_invoke_enter",
+              "real": 146.98040771484375
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 19,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.3193720281124115,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7851,
+              "kind": "time_invoke_leave",
+              "real": 146.98046875
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 20,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.3193720281124115,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7852,
+              "kind": "time_invoke_enter",
+              "real": 146.99627685546875
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 20,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.30270761251449585,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7852,
+              "kind": "time_invoke_leave",
+              "real": 146.996337890625
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 21,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.30270761251449585,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7853,
+              "kind": "time_invoke_enter",
+              "real": 147.01376342773438
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 21,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.28603869676589966,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7853,
+              "kind": "time_invoke_leave",
+              "real": 147.0138397216797
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 22,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.28603869676589966,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7854,
+              "kind": "time_invoke_enter",
+              "real": 147.03018188476562
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 22,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.2693732976913452,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7854,
+              "kind": "time_invoke_leave",
+              "real": 147.03024291992188
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 23,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.2693732976913452,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7855,
+              "kind": "time_invoke_enter",
+              "real": 147.04673767089844
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 23,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.2527078092098236,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7855,
+              "kind": "time_invoke_leave",
+              "real": 147.0467987060547
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 24,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.2527078092098236,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7856,
+              "kind": "time_invoke_enter",
+              "real": 147.06338500976562
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 24,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.23604071140289307,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7856,
+              "kind": "time_invoke_leave",
+              "real": 147.06344604492188
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 25,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.23604071140289307,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7857,
+              "kind": "time_invoke_enter",
+              "real": 147.0802459716797
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 25,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.21937371790409088,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7857,
+              "kind": "time_invoke_leave",
+              "real": 147.080322265625
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 26,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.21937371790409088,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7858,
+              "kind": "time_invoke_enter",
+              "real": 147.0962371826172
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 26,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.20270711183547974,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7858,
+              "kind": "time_invoke_leave",
+              "real": 147.09629821777344
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 27,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.20270711183547974,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7859,
+              "kind": "time_invoke_enter",
+              "real": 147.11354064941406
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 27,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.18604090809822083,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7859,
+              "kind": "time_invoke_leave",
+              "real": 147.1136016845703
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 28,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.18604090809822083,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7860,
+              "kind": "time_invoke_enter",
+              "real": 147.13018798828125
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 28,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.16937321424484253,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7860,
+              "kind": "time_invoke_leave",
+              "real": 147.1302490234375
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 29,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.16937321424484253,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7861,
+              "kind": "time_invoke_enter",
+              "real": 147.14703369140625
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 29,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.1527044177055359,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7861,
+              "kind": "time_invoke_leave",
+              "real": 147.14710998535156
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 30,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.1527044177055359,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7862,
+              "kind": "time_invoke_enter",
+              "real": 147.1637725830078
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 30,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.1360396146774292,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7862,
+              "kind": "time_invoke_leave",
+              "real": 147.16384887695312
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 31,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.1360396146774292,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7863,
+              "kind": "time_invoke_enter",
+              "real": 147.18063354492188
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 31,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.11937311291694641,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7863,
+              "kind": "time_invoke_leave",
+              "real": 147.18069458007812
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 32,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.11937311291694641,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7864,
+              "kind": "time_invoke_enter",
+              "real": 147.1962890625
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 32,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.10270581394433975,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7864,
+              "kind": "time_invoke_leave",
+              "real": 147.19635009765625
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 33,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.10270581394433975,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7865,
+              "kind": "time_invoke_enter",
+              "real": 147.2134552001953
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 33,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.08603861182928085,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7865,
+              "kind": "time_invoke_leave",
+              "real": 147.21351623535156
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 34,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.08603861182928085,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7866,
+              "kind": "time_invoke_enter",
+              "real": 147.2304229736328
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 34,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.06937091052532196,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7866,
+              "kind": "time_invoke_leave",
+              "real": 147.2305145263672
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 35,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.06937091052532196,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7867,
+              "kind": "time_invoke_enter",
+              "real": 147.24700927734375
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 35,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.052704110741615295,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7867,
+              "kind": "time_invoke_leave",
+              "real": 147.2470703125
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 36,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.052704110741615295,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7868,
+              "kind": "time_invoke_enter",
+              "real": 147.2635040283203
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 36,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.03603950887918472,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7868,
+              "kind": "time_invoke_leave",
+              "real": 147.26356506347656
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 37,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.03603950887918472,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7869,
+              "kind": "time_invoke_enter",
+              "real": 147.28045654296875
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 37,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.019370509311556816,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7869,
+              "kind": "time_invoke_leave",
+              "real": 147.280517578125
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 38,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.019370509311556816,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7870,
+              "kind": "time_invoke_enter",
+              "real": 147.29632568359375
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 38,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.0027039088308811188,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 7870,
+              "kind": "time_invoke_leave",
+              "real": 147.29638671875
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 39,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": 0.0027039088308811188,
+                  "unscaled": 1
+                }
+              },
+              "frame": 7871,
+              "kind": "time_invoke_enter",
+              "real": 147.31341552734375
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "closure": "0x1e7fcda9450",
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x1e528993630",
+                  "pointer": "0x1e7967ac5a0"
+                },
+                "record": "0x1e7fc8c35c0"
+              },
+              "frame": 7871,
+              "kind": "restore_callback_enter",
+              "real": 147.31349182128906
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x432e18",
+                "id": 1,
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x1e528993630",
+                  "pointer": "0x1e7967ac5a0"
+                },
+                "record": "0x1e7fc8c35c0"
+              },
+              "frame": 7871,
+              "kind": "instantiate_enter",
+              "real": 147.3135223388672
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 1,
+                "result": "0x1e7967ac3f0"
+              },
+              "frame": 7871,
+              "kind": "instantiate_leave",
+              "real": 147.31698608398438
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "closure": "0x1e7fcda9450"
+              },
+              "frame": 7871,
+              "kind": "restore_callback_leave",
+              "real": 147.3170166015625
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 39,
+                "model": {
+                  "action": "0x1e7967ac510",
+                  "delay": 0.636040985584259,
+                  "pointer": "0x1e7fcda9420",
+                  "remaining": -0.01396259106695652,
+                  "unscaled": 1
+                },
+                "result": 1
+              },
+              "frame": 7871,
+              "kind": "time_invoke_leave",
+              "real": 147.31704711914062
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "initialized": 0,
+                "loaded": 1,
+                "native": "0x1e528993630",
+                "pointer": "0x1e7967ac5a0"
+              },
+              "frame": 7873,
+              "kind": "manager_destroy_enter",
+              "real": 147.3531494140625
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "initialized": 0,
+                "loaded": 1,
+                "native": "0x1e528993630",
+                "pointer": "0x1e7967ac5a0"
+              },
+              "frame": 7873,
+              "kind": "manager_destroy_leave",
+              "real": 147.3531951904297
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 2,
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 0,
+                  "native": "0x1e528d67eb0",
+                  "pointer": "0x1e7fcb582d0"
+                }
+              },
+              "frame": 10002,
+              "kind": "restore_enter",
+              "real": 182.83334350585938
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "action": "0x1e7fcb58240",
+                "caller": "0x42f6f7",
+                "closure": "0x1e7fcb38120",
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x1e528d67eb0",
+                  "pointer": "0x1e7fcb582d0"
+                },
+                "record": "0x1e7fcd0d2c0"
+              },
+              "frame": 10002,
+              "kind": "restore_queued",
+              "real": 182.83340454101562
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "action": "0x1e7fcb58240",
+                "delay": 0.4147818684577942,
+                "pointer": "0x1e7fcb380f0",
+                "remaining": 0.4147818684577942,
+                "unscaled": 1
+              },
+              "frame": 10002,
+              "kind": "time_model_created",
+              "real": 182.8334503173828
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 2,
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x1e528d67eb0",
+                  "pointer": "0x1e7fcb582d0"
+                }
+              },
+              "frame": 10002,
+              "kind": "restore_leave",
+              "real": 182.83348083496094
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "initialized": 0,
+                "loaded": 1,
+                "native": "0x1e528d67eb0",
+                "pointer": "0x1e7fcb582d0"
+              },
+              "frame": 10002,
+              "kind": "manager_destroy_enter",
+              "real": 182.8345184326172
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "initialized": 0,
+                "loaded": 1,
+                "native": "0x1e528d67eb0",
+                "pointer": "0x1e7fcb582d0"
+              },
+              "frame": 10002,
+              "kind": "manager_destroy_leave",
+              "real": 182.8345489501953
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 40,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.4147818684577942,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10019,
+              "kind": "time_invoke_enter",
+              "real": 183.11412048339844
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 40,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.3981143832206726,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10019,
+              "kind": "time_invoke_leave",
+              "real": 183.1141815185547
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 41,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.3981143832206726,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10020,
+              "kind": "time_invoke_enter",
+              "real": 183.13153076171875
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 41,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.3814478814601898,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10020,
+              "kind": "time_invoke_leave",
+              "real": 183.131591796875
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 42,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.3814478814601898,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10021,
+              "kind": "time_invoke_enter",
+              "real": 183.15281677246094
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 42,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.3647816777229309,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10021,
+              "kind": "time_invoke_leave",
+              "real": 183.1528778076172
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 43,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.3647816777229309,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10022,
+              "kind": "time_invoke_enter",
+              "real": 183.1639862060547
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 43,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.3481149673461914,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10022,
+              "kind": "time_invoke_leave",
+              "real": 183.16404724121094
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 44,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.3481149673461914,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10023,
+              "kind": "time_invoke_enter",
+              "real": 183.180908203125
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 44,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.33139875531196594,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10023,
+              "kind": "time_invoke_leave",
+              "real": 183.18096923828125
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 45,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.33139875531196594,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10024,
+              "kind": "time_invoke_enter",
+              "real": 183.19703674316406
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 45,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.31473296880722046,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10024,
+              "kind": "time_invoke_leave",
+              "real": 183.1970977783203
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 46,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.31473296880722046,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10025,
+              "kind": "time_invoke_enter",
+              "real": 183.21412658691406
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 46,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.29806578159332275,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10025,
+              "kind": "time_invoke_leave",
+              "real": 183.2141876220703
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 47,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.29806578159332275,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10026,
+              "kind": "time_invoke_enter",
+              "real": 183.23170471191406
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 47,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.2813962697982788,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10026,
+              "kind": "time_invoke_leave",
+              "real": 183.23178100585938
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 48,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.2813962697982788,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10027,
+              "kind": "time_invoke_enter",
+              "real": 183.2474822998047
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 48,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.26473307609558105,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10027,
+              "kind": "time_invoke_leave",
+              "real": 183.24754333496094
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 49,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.26473307609558105,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10028,
+              "kind": "time_invoke_enter",
+              "real": 183.26406860351562
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 49,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.24806587398052216,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10028,
+              "kind": "time_invoke_leave",
+              "real": 183.26412963867188
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 50,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.24806587398052216,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10029,
+              "kind": "time_invoke_enter",
+              "real": 183.28082275390625
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 50,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.23139967024326324,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10029,
+              "kind": "time_invoke_leave",
+              "real": 183.2808837890625
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 51,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.23139967024326324,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10030,
+              "kind": "time_invoke_enter",
+              "real": 183.29701232910156
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 51,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.21473267674446106,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10030,
+              "kind": "time_invoke_leave",
+              "real": 183.29708862304688
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 52,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.21473267674446106,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10031,
+              "kind": "time_invoke_enter",
+              "real": 183.31427001953125
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 52,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.19806396961212158,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10031,
+              "kind": "time_invoke_leave",
+              "real": 183.3143310546875
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 53,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.19806396961212158,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10032,
+              "kind": "time_invoke_enter",
+              "real": 183.33096313476562
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 53,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.1813889741897583,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10032,
+              "kind": "time_invoke_leave",
+              "real": 183.33102416992188
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 54,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.1813889741897583,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10033,
+              "kind": "time_invoke_enter",
+              "real": 183.3478240966797
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 54,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.16472917795181274,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10033,
+              "kind": "time_invoke_leave",
+              "real": 183.34788513183594
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 55,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.16472917795181274,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10034,
+              "kind": "time_invoke_enter",
+              "real": 183.3642578125
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 55,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.14806437492370605,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10034,
+              "kind": "time_invoke_leave",
+              "real": 183.36431884765625
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 56,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.14806437492370605,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10035,
+              "kind": "time_invoke_enter",
+              "real": 183.38111877441406
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 56,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.1313965767621994,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10035,
+              "kind": "time_invoke_leave",
+              "real": 183.3811798095703
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 57,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.1313965767621994,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10036,
+              "kind": "time_invoke_enter",
+              "real": 183.3970489501953
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 57,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.11472907662391663,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10036,
+              "kind": "time_invoke_leave",
+              "real": 183.39710998535156
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 58,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.11472907662391663,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10037,
+              "kind": "time_invoke_enter",
+              "real": 183.41441345214844
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 58,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.0980621725320816,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10037,
+              "kind": "time_invoke_leave",
+              "real": 183.4144744873047
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 59,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.0980621725320816,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10038,
+              "kind": "time_invoke_enter",
+              "real": 183.43104553222656
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 59,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.08139647543430328,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10038,
+              "kind": "time_invoke_leave",
+              "real": 183.4311065673828
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 60,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.08139647543430328,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10039,
+              "kind": "time_invoke_enter",
+              "real": 183.44761657714844
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 60,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.06472097337245941,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10039,
+              "kind": "time_invoke_leave",
+              "real": 183.4476776123047
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 61,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.06472097337245941,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10040,
+              "kind": "time_invoke_enter",
+              "real": 183.46424865722656
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 61,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.04806177318096161,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10040,
+              "kind": "time_invoke_leave",
+              "real": 183.4643096923828
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 62,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.04806177318096161,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10041,
+              "kind": "time_invoke_enter",
+              "real": 183.48117065429688
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 62,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.03139057382941246,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10041,
+              "kind": "time_invoke_leave",
+              "real": 183.48123168945312
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 63,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.03139057382941246,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10042,
+              "kind": "time_invoke_enter",
+              "real": 183.4971160888672
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 63,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.014727674424648285,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 10042,
+              "kind": "time_invoke_leave",
+              "real": 183.49717712402344
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 64,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": 0.014727674424648285,
+                  "unscaled": 1
+                }
+              },
+              "frame": 10043,
+              "kind": "time_invoke_enter",
+              "real": 183.51429748535156
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "closure": "0x1e7fcb38120",
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x0",
+                  "pointer": "0x1e7fcb582d0"
+                },
+                "record": "0x1e7fcd0d2c0"
+              },
+              "frame": 10043,
+              "kind": "restore_callback_enter",
+              "real": 183.51437377929688
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x432e18",
+                "id": 2,
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x0",
+                  "pointer": "0x1e7fcb582d0"
+                },
+                "record": "0x1e7fcd0d2c0"
+              },
+              "frame": 10043,
+              "kind": "instantiate_enter",
+              "real": 183.51443481445312
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 64,
+                "model": {
+                  "action": "0x1e7fcb58240",
+                  "delay": 0.4147818684577942,
+                  "pointer": "0x1e7fcb380f0",
+                  "remaining": -0.0019511263817548752,
+                  "unscaled": 1
+                },
+                "result": 1
+              },
+              "frame": 10043,
+              "kind": "time_invoke_leave",
+              "real": 183.5147247314453
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 3,
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 0,
+                  "native": "0x1e5282a82b0",
+                  "pointer": "0x1e7fc81f480"
+                }
+              },
+              "frame": 12782,
+              "kind": "restore_enter",
+              "real": 229.16690063476562
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "action": "0x1e7fc81f3f0",
+                "caller": "0x42f6f7",
+                "closure": "0x1e7fca3b000",
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x1e5282a82b0",
+                  "pointer": "0x1e7fc81f480"
+                },
+                "record": "0x1e7fcae63c0"
+              },
+              "frame": 12782,
+              "kind": "restore_queued",
+              "real": 229.16697692871094
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "action": "0x1e7fc81f3f0",
+                "delay": 0.5888535380363464,
+                "pointer": "0x1e7fca41fc0",
+                "remaining": 0.5888535380363464,
+                "unscaled": 1
+              },
+              "frame": 12782,
+              "kind": "time_model_created",
+              "real": 229.16700744628906
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 3,
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x1e5282a82b0",
+                  "pointer": "0x1e7fc81f480"
+                }
+              },
+              "frame": 12782,
+              "kind": "restore_leave",
+              "real": 229.16705322265625
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "initialized": 0,
+                "loaded": 1,
+                "native": "0x1e5282a82b0",
+                "pointer": "0x1e7fc81f480"
+              },
+              "frame": 12783,
+              "kind": "manager_destroy_enter",
+              "real": 229.58180236816406
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "initialized": 0,
+                "loaded": 1,
+                "native": "0x1e5282a82b0",
+                "pointer": "0x1e7fc81f480"
+              },
+              "frame": 12783,
+              "kind": "manager_destroy_leave",
+              "real": 229.5818634033203
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 65,
+                "model": {
+                  "action": "0x1e7fc81f3f0",
+                  "delay": 0.5888535380363464,
+                  "pointer": "0x1e7fca41fc0",
+                  "remaining": 0.5888535380363464,
+                  "unscaled": 1
+                }
+              },
+              "frame": 12784,
+              "kind": "time_invoke_enter",
+              "real": 230.3875274658203
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "closure": "0x1e7fca3b000",
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x0",
+                  "pointer": "0x1e7fc81f480"
+                },
+                "record": "0x1e7fcae63c0"
+              },
+              "frame": 12784,
+              "kind": "restore_callback_enter",
+              "real": 230.38758850097656
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x432e18",
+                "id": 3,
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x0",
+                  "pointer": "0x1e7fc81f480"
+                },
+                "record": "0x1e7fcae63c0"
+              },
+              "frame": 12784,
+              "kind": "instantiate_enter",
+              "real": 230.3876495361328
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 65,
+                "model": {
+                  "action": "0x1e7fc81f3f0",
+                  "delay": 0.5888535380363464,
+                  "pointer": "0x1e7fca41fc0",
+                  "remaining": -0.6174870133399963,
+                  "unscaled": 1
+                },
+                "result": 1
+              },
+              "frame": 12784,
+              "kind": "time_invoke_leave",
+              "real": 230.38790893554688
+            },
+            "script_id": "76395620-c9f9-4ea0-9ebf-5bffac86f525",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "base": "0x7ffc1ad10000",
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 59580,
+                "scope": "original queue/model/callback/instantiate/destruction; controlled scheduler enable/disable is performed by managed fixture"
+              },
+              "frame": 25032,
+              "kind": "interruption_ready",
+              "real": 434.8679504394531
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 59580,
+                "scope": "additional manager transform/clone/null-throw evidence; no state writes"
+              },
+              "frame": 25032,
+              "kind": "interruption_v2_ready",
+              "real": 434.86932373046875
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 1,
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 0,
+                  "native": "0x1e5277edbf0",
+                  "pointer": "0x1e7fc19c990"
+                }
+              },
+              "frame": 25066,
+              "kind": "restore_enter",
+              "real": 435.4365539550781
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "action": "0x1e7fc19c900",
+                "caller": "0x42f6f7",
+                "closure": "0x1e7fc1e6fc0",
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x1e5277edbf0",
+                  "pointer": "0x1e7fc19c990"
+                },
+                "record": "0x1e7fc9ad5c0"
+              },
+              "frame": 25066,
+              "kind": "restore_queued",
+              "real": 435.4366760253906
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "action": "0x1e7fc19c900",
+                "delay": 0.1016845852136612,
+                "pointer": "0x1e7fc1e6f90",
+                "remaining": 0.1016845852136612,
+                "unscaled": 1
+              },
+              "frame": 25066,
+              "kind": "time_model_created",
+              "real": 435.4367370605469
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 1,
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x1e5277edbf0",
+                  "pointer": "0x1e7fc19c990"
+                }
+              },
+              "frame": 25066,
+              "kind": "restore_leave",
+              "real": 435.4367980957031
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 1,
+                "model": {
+                  "action": "0x1e7fc19c900",
+                  "delay": 0.1016845852136612,
+                  "pointer": "0x1e7fc1e6f90",
+                  "remaining": 0.1016845852136612,
+                  "unscaled": 1
+                }
+              },
+              "frame": 25083,
+              "kind": "time_invoke_enter",
+              "real": 435.71649169921875
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 1,
+                "model": {
+                  "action": "0x1e7fc19c900",
+                  "delay": 0.1016845852136612,
+                  "pointer": "0x1e7fc1e6f90",
+                  "remaining": 0.08501888811588287,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 25083,
+              "kind": "time_invoke_leave",
+              "real": 435.716552734375
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 2,
+                "model": {
+                  "action": "0x1e7fc19c900",
+                  "delay": 0.1016845852136612,
+                  "pointer": "0x1e7fc1e6f90",
+                  "remaining": 0.08501888811588287,
+                  "unscaled": 1
+                }
+              },
+              "frame": 25084,
+              "kind": "time_invoke_enter",
+              "real": 435.73419189453125
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 2,
+                "model": {
+                  "action": "0x1e7fc19c900",
+                  "delay": 0.1016845852136612,
+                  "pointer": "0x1e7fc1e6f90",
+                  "remaining": 0.06834109127521515,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 25084,
+              "kind": "time_invoke_leave",
+              "real": 435.7342529296875
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 3,
+                "model": {
+                  "action": "0x1e7fc19c900",
+                  "delay": 0.1016845852136612,
+                  "pointer": "0x1e7fc1e6f90",
+                  "remaining": 0.06834109127521515,
+                  "unscaled": 1
+                }
+              },
+              "frame": 25085,
+              "kind": "time_invoke_enter",
+              "real": 435.75054931640625
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 3,
+                "model": {
+                  "action": "0x1e7fc19c900",
+                  "delay": 0.1016845852136612,
+                  "pointer": "0x1e7fc1e6f90",
+                  "remaining": 0.05168459191918373,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 25085,
+              "kind": "time_invoke_leave",
+              "real": 435.7506103515625
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 4,
+                "model": {
+                  "action": "0x1e7fc19c900",
+                  "delay": 0.1016845852136612,
+                  "pointer": "0x1e7fc1e6f90",
+                  "remaining": 0.05168459191918373,
+                  "unscaled": 1
+                }
+              },
+              "frame": 25086,
+              "kind": "time_invoke_enter",
+              "real": 435.77154541015625
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 4,
+                "model": {
+                  "action": "0x1e7fc19c900",
+                  "delay": 0.1016845852136612,
+                  "pointer": "0x1e7fc1e6f90",
+                  "remaining": 0.035016290843486786,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 25086,
+              "kind": "time_invoke_leave",
+              "real": 435.77178955078125
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 5,
+                "model": {
+                  "action": "0x1e7fc19c900",
+                  "delay": 0.1016845852136612,
+                  "pointer": "0x1e7fc1e6f90",
+                  "remaining": 0.035016290843486786,
+                  "unscaled": 1
+                }
+              },
+              "frame": 25087,
+              "kind": "time_invoke_enter",
+              "real": 435.7834167480469
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 5,
+                "model": {
+                  "action": "0x1e7fc19c900",
+                  "delay": 0.1016845852136612,
+                  "pointer": "0x1e7fc1e6f90",
+                  "remaining": 0.018354391679167747,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 25087,
+              "kind": "time_invoke_leave",
+              "real": 435.7834777832031
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 6,
+                "model": {
+                  "action": "0x1e7fc19c900",
+                  "delay": 0.1016845852136612,
+                  "pointer": "0x1e7fc1e6f90",
+                  "remaining": 0.018354391679167747,
+                  "unscaled": 1
+                }
+              },
+              "frame": 25088,
+              "kind": "time_invoke_enter",
+              "real": 435.80010986328125
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 6,
+                "model": {
+                  "action": "0x1e7fc19c900",
+                  "delay": 0.1016845852136612,
+                  "pointer": "0x1e7fc1e6f90",
+                  "remaining": 0.0016862917691469193,
+                  "unscaled": 1
+                },
+                "result": 0
+              },
+              "frame": 25088,
+              "kind": "time_invoke_leave",
+              "real": 435.8001708984375
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 7,
+                "model": {
+                  "action": "0x1e7fc19c900",
+                  "delay": 0.1016845852136612,
+                  "pointer": "0x1e7fc1e6f90",
+                  "remaining": 0.0016862917691469193,
+                  "unscaled": 1
+                }
+              },
+              "frame": 25089,
+              "kind": "time_invoke_enter",
+              "real": 435.8163757324219
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "closure": "0x1e7fc1e6fc0",
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x1e5277edbf0",
+                  "pointer": "0x1e7fc19c990"
+                },
+                "record": "0x1e7fc9ad5c0"
+              },
+              "frame": 25089,
+              "kind": "restore_callback_enter",
+              "real": 435.81646728515625
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x432e18",
+                "id": 1,
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x1e5277edbf0",
+                  "pointer": "0x1e7fc19c990"
+                },
+                "record": "0x1e7fc9ad5c0"
+              },
+              "frame": 25089,
+              "kind": "instantiate_enter",
+              "real": 435.8165283203125
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "closure": "0x1e7fc1e6fc0",
+                "frame": 25089,
+                "manager": {
+                  "initialized": 0,
+                  "loaded": 1,
+                  "native": "0x1e5277edbf0",
+                  "pointer": "0x1e7fc19c990"
+                }
+              },
+              "frame": 25089,
+              "kind": "manager_transform_enter",
+              "real": 435.81658935546875
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "closure": "0x1e7fc1e6fc0",
+                "frame": 25089,
+                "result": "0x1e7fc1e7880"
+              },
+              "frame": 25089,
+              "kind": "manager_transform_leave",
+              "real": 435.81671142578125
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x430023",
+                "closure": "0x1e7fc1e6fc0",
+                "frame": 25089,
+                "parent": "0x1e7fc1e7880",
+                "source": "0x1e7947c84e0"
+              },
+              "frame": 25089,
+              "kind": "npc_clone_enter",
+              "real": 435.8168029785156
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "closure": "0x1e7fc1e6fc0",
+                "frame": 25089,
+                "result": "0x1e7fc1e7760"
+              },
+              "frame": 25089,
+              "kind": "npc_clone_leave",
+              "real": 435.8172302246094
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 1,
+                "result": "0x1e7fc19c7e0"
+              },
+              "frame": 25089,
+              "kind": "instantiate_leave",
+              "real": 435.82049560546875
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "closure": "0x1e7fc1e6fc0"
+              },
+              "frame": 25089,
+              "kind": "restore_callback_leave",
+              "real": 435.8205261230469
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 7,
+                "model": {
+                  "action": "0x1e7fc19c900",
+                  "delay": 0.1016845852136612,
+                  "pointer": "0x1e7fc1e6f90",
+                  "remaining": -0.014981608837842941,
+                  "unscaled": 1
+                },
+                "result": 1
+              },
+              "frame": 25089,
+              "kind": "time_invoke_leave",
+              "real": 435.8205871582031
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "initialized": 0,
+                "loaded": 1,
+                "native": "0x1e5277edbf0",
+                "pointer": "0x1e7fc19c990"
+              },
+              "frame": 25091,
+              "kind": "manager_destroy_enter",
+              "real": 435.853515625
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "initialized": 0,
+                "loaded": 1,
+                "native": "0x1e5277edbf0",
+                "pointer": "0x1e7fc19c990"
+              },
+              "frame": 25091,
+              "kind": "manager_destroy_leave",
+              "real": 435.85357666015625
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "mode": "attach",
+        "pid": 59580,
+        "scripts": [
+          {
+            "name": "rea-fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1"
+          }
+        ],
+        "session_id": "8287aa0f-989b-491e-99a2-c1ceeddf1b08",
+        "state": "detached",
+        "target": "SecretFlasherManaka.exe (pid 59580)"
+      },
+      "operation": "frida_session_status",
+      "parameters": {
+        "session_id": "8287aa0f-989b-491e-99a2-c1ceeddf1b08"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    },
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_e9d997f1c423fcb2bb1ff7e5396fa7e72d89f33a50e19956323e942f3757189d",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "base": "0x7ffc1ad10000",
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 10064,
+                "scope": "entry-only original queue/model/callback/instantiate/clone/destruction and Application.CallLogCallback; no return hooks or throw/Icall hooks"
+              },
+              "frame": 2543,
+              "kind": "interruption_v4_ready",
+              "real": 51.25031280517578,
+              "thread": 3824
+            },
+            "script_id": "7b892ddf-de49-4f23-a872-efa4fe12daf4",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "script_id": "7b892ddf-de49-4f23-a872-efa4fe12daf4",
+        "source_kind": "file",
+        "source_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\runtime\\restore-interruption\\observe-v4.js",
+        "source_sha256": "fc47574fac0fe9f80edbd5a8978a5b250015bfc865d605e3611cf6661433e55b"
+      },
+      "operation": "load_frida_script",
+      "parameters": {
+        "session_id": "3193486b-af59-4423-981b-8c309b60be17"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    },
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_f1a0895852019c620c73d3a109f137c5c1073a43891475f5d227143e057a4ed3",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "base": "0x7ffc1ad10000",
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 59580,
+                "scope": "original queue/model/callback/instantiate/destruction; controlled scheduler enable/disable is performed by managed fixture"
+              },
+              "frame": 25032,
+              "kind": "interruption_ready",
+              "real": 434.8679504394531
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 59580,
+                "scope": "additional manager transform/clone/null-throw evidence; no state writes"
+              },
+              "frame": 25032,
+              "kind": "interruption_v2_ready",
+              "real": 434.86932373046875
+            },
+            "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "script_id": "fcc4e3fb-2077-4821-8378-fbc13f5a7fb1",
+        "source_kind": "file",
+        "source_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\runtime\\restore-interruption\\observe-v2.js",
+        "source_sha256": "51112eecbddb3218b22d9504824febcafb5bdc7ff72b94eae7317a9048105a94"
+      },
+      "operation": "load_frida_script",
+      "parameters": {
+        "session_id": "8287aa0f-989b-491e-99a2-c1ceeddf1b08"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    }
+  ]
+}

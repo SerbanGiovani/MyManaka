@@ -378,6 +378,17 @@ def main():
     cold_bindings = runpy.run_path(str(ROOT / "salt/drop_cache_evidence.py"))
     check(cold_bindings["build"]() == read(ROOT / "salt/evidence/drop-cache-chain.json"), "Cold-cache static bindings differ")
     observed_runtime_records[cold_dir / "rea-runtime.json"] = cold_runtime
+    interruption_dir = ROOT / "runtime/restore-interruption"
+    interruption_runtime = read(interruption_dir / "manifest.json")
+    for source in interruption_runtime["sources"]:
+        check(digest(interruption_dir / source["path"]) == source["sha256"], "Interruption source differs")
+    for output in interruption_runtime["outputs"]:
+        path = interruption_dir / output["path"]
+        raw = gzip.decompress(path.read_bytes())
+        check(digest(path) == output["sha256"] and len(raw) == output["uncompressed_bytes"] and hashlib.sha256(raw).hexdigest() == output["uncompressed_sha256"], "Interruption log differs")
+    check(runpy.run_path(str(interruption_dir / "analyze.py"))["build"](inputs=args.inputs) == read(interruption_dir / "results.json"), "Interruption queue joins differ")
+    check(runpy.run_path(str(ROOT / "salt/restore_interruption_evidence.py"))["build"]() == read(ROOT / "salt/evidence/restore-interruption-chain.json"), "Interruption static bindings differ")
+    observed_runtime_records[interruption_dir / "rea-runtime.json"] = interruption_runtime
     verification = read(ROOT / "salt/evidence/decryption-verification.json")
     summary = read(ROOT / "salt/symbols/index-summary.json")
     object_record = asset["guid_object"]
@@ -743,6 +754,7 @@ def main():
         source_records.append(load_scan["decoder"])
         source_records.append({"path": npc_filter_runtime["plugin"]["archived_path"], "sha256": npc_filter_runtime["plugin"]["sha256"]})
         source_records.append({"path": cold_runtime["plugin"]["archived_path"], "sha256": cold_runtime["plugin"]["sha256"]})
+        source_records.extend({"path": p["archived_path"], "sha256": p["sha256"]} for p in interruption_runtime["plugins"])
         for source in source_records:
             # Derived SQLite byte identity is not portable after rebuilding it;
             # reconstruction scripts validate its build identity and coordinates.
