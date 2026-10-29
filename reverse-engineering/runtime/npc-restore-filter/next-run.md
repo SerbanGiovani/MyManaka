@@ -1,5 +1,7 @@
 # 继续入口（2026-10-30）
 
+后续更新：普通掉落物冷/暖/失效管理器缓存已在[冷缓存报告](../../drop-cold-cache.md)验证；接下来进行排队回调的场景/销毁中断覆盖。
+
 固定NPC快照排除、失效记录原生保存/读取及电梯内外过滤已有两组受控对照。自然force=true的守卫结论保持独立；不能将本轮显式OnLoadData前置/场景协调标为自然正例。
 
 PID40460已正常退出，REA会话关闭，临时NpcFilterProbe已移出plugins。NaturalLoadObserver、NaturalObserver已恢复原哈希。旧自然档`NaturalLoad/20261027-2/nonempty-A`的4份文件未改变，第二槽主档可供后续自然继续；本轮写入只发生于`NpcRestoreFilter/20261030-1/working-profile`。

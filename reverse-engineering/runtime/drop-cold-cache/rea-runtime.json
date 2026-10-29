@@ -1,0 +1,986 @@
+{
+  "records": [
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_e4ac7d6679a0dd9f738a26207a7bdaa60af21a36eb9bbe60a6aa0abf6a165f1b",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "device_id": "local",
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "asset_load_monitors": [
+                  "0x1438cf0",
+                  "0x1439090",
+                  "0x1433680",
+                  "0x1433c90",
+                  "0x1ef2610",
+                  "0x1ef26f0",
+                  "0x1ef2d90"
+                ],
+                "base": "0x7ffc1ad10000",
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 32812,
+                "scope": "passive manager cache/clone/controller initialization; asset API entry monitors during explicit fixtures"
+              },
+              "frame": 562,
+              "kind": "drop_cache_ready",
+              "real": 19.095861434936523,
+              "thread": 68728
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x35bd19",
+                "isBackup": false,
+                "item": null,
+                "sequence": 1,
+                "slot": 1,
+                "type": 3
+              },
+              "frame": 2338,
+              "kind": "save_enter",
+              "real": 53.17879104614258,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "sequence": 1
+              },
+              "frame": 2338,
+              "kind": "save_leave",
+              "real": 53.25667190551758,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x35bd19",
+                "isBackup": null,
+                "item": null,
+                "sequence": 1,
+                "slot": 1,
+                "type": 3
+              },
+              "frame": 2338,
+              "kind": "load_enter",
+              "real": 53.25822448730469,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "sequence": 1
+              },
+              "frame": 2338,
+              "kind": "load_leave",
+              "real": 53.28240203857422,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x35bd19",
+                "isBackup": null,
+                "item": null,
+                "sequence": 1,
+                "slot": null,
+                "type": null
+              },
+              "frame": 2338,
+              "kind": "restore_enter",
+              "real": 53.28356170654297,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x48ac81",
+                "isBackup": null,
+                "item": 0,
+                "sequence": 1,
+                "slot": null,
+                "type": null
+              },
+              "frame": 2338,
+              "kind": "drop_enter",
+              "real": 53.28360366821289,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "cache": "0x2e0942e9de0",
+                "caller": "0x488fe6",
+                "id": 1,
+                "item": 0,
+                "manager": "0x2e09316e420",
+                "prefab": "0x2e0976569e0"
+              },
+              "frame": 2338,
+              "kind": "cache_enter",
+              "real": 53.28366470336914,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "cache_id": 1,
+                "caller": "0x488d31",
+                "parent": "0x2e096ff4c60",
+                "source": "0x2e0976569e0"
+              },
+              "frame": 2338,
+              "kind": "clone_enter",
+              "real": 53.28376388549805,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "cache_id": 1,
+                "result": "0x2e0941ed860"
+              },
+              "frame": 2338,
+              "kind": "clone_leave",
+              "real": 53.28446960449219,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "cache_id": 1,
+                "item": 0,
+                "pointer": "0x2e0941b4540"
+              },
+              "frame": 2338,
+              "kind": "controller_init_enter",
+              "real": 53.284515380859375,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "cache_id": 1,
+                "item": 0,
+                "result": {
+                  "active": 1,
+                  "gameObject": "0x2e0941ed860",
+                  "pointer": "0x2e0941b4540",
+                  "position": [
+                    0,
+                    0.008200000040233135,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              },
+              "frame": 2338,
+              "kind": "controller_init_leave",
+              "real": 53.284645080566406,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 1,
+                "item": 0,
+                "result": {
+                  "active": 1,
+                  "gameObject": "0x2e0941ed860",
+                  "pointer": "0x2e0941b4540",
+                  "position": [
+                    0,
+                    0.008200000040233135,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              },
+              "frame": 2338,
+              "kind": "cache_leave",
+              "real": 53.28477478027344,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "sequence": 1
+              },
+              "frame": 2338,
+              "kind": "drop_leave",
+              "real": 53.28482437133789,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x48ac9e",
+                "isBackup": null,
+                "item": 4,
+                "sequence": 1,
+                "slot": null,
+                "type": null
+              },
+              "frame": 2338,
+              "kind": "hide_enter",
+              "real": 53.28489685058594,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "cache": "0x2e0942e9de0",
+                "caller": "0x4897ae",
+                "id": 2,
+                "item": 4,
+                "manager": "0x2e09316e420",
+                "prefab": "0x2e092a14fe0"
+              },
+              "frame": 2338,
+              "kind": "cache_enter",
+              "real": 53.285064697265625,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "cache_id": 2,
+                "caller": "0x488d31",
+                "parent": "0x2e096ff4c60",
+                "source": "0x2e092a14fe0"
+              },
+              "frame": 2338,
+              "kind": "clone_enter",
+              "real": 53.285125732421875,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "cache_id": 2,
+                "result": "0x2e0941ed7c0"
+              },
+              "frame": 2338,
+              "kind": "clone_leave",
+              "real": 53.28548049926758,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "cache_id": 2,
+                "item": 4,
+                "pointer": "0x2e0941b4500"
+              },
+              "frame": 2338,
+              "kind": "controller_init_enter",
+              "real": 53.28551483154297,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "cache_id": 2,
+                "item": 4,
+                "result": {
+                  "active": 1,
+                  "gameObject": "0x2e0941ed7c0",
+                  "pointer": "0x2e0941b4500",
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              },
+              "frame": 2338,
+              "kind": "controller_init_leave",
+              "real": 53.285648345947266,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 2,
+                "item": 4,
+                "result": {
+                  "active": 1,
+                  "gameObject": "0x2e0941ed7c0",
+                  "pointer": "0x2e0941b4500",
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              },
+              "frame": 2338,
+              "kind": "cache_leave",
+              "real": 53.285770416259766,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "sequence": 1
+              },
+              "frame": 2338,
+              "kind": "hide_leave",
+              "real": 53.285850524902344,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "sequence": 1
+              },
+              "frame": 2338,
+              "kind": "restore_leave",
+              "real": 53.28590393066406,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x35bd19",
+                "isBackup": null,
+                "item": null,
+                "sequence": 2,
+                "slot": null,
+                "type": null
+              },
+              "frame": 2338,
+              "kind": "restore_enter",
+              "real": 53.2879524230957,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x48ac81",
+                "isBackup": null,
+                "item": 0,
+                "sequence": 2,
+                "slot": null,
+                "type": null
+              },
+              "frame": 2338,
+              "kind": "drop_enter",
+              "real": 53.28799057006836,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "cache": "0x2e0942e9de0",
+                "caller": "0x488fe6",
+                "id": 3,
+                "item": 0,
+                "manager": "0x2e09316e420",
+                "prefab": "0x2e0976569e0"
+              },
+              "frame": 2338,
+              "kind": "cache_enter",
+              "real": 53.28803634643555,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 3,
+                "item": 0,
+                "result": {
+                  "active": 1,
+                  "gameObject": "0x2e0941ed860",
+                  "pointer": "0x2e0941b4540",
+                  "position": [
+                    0.8438506722450256,
+                    -0.0001410841941833496,
+                    1.6726408004760742
+                  ],
+                  "rotation": [
+                    0,
+                    0.30070579051971436,
+                    0,
+                    0.9537169337272644
+                  ]
+                }
+              },
+              "frame": 2338,
+              "kind": "cache_leave",
+              "real": 53.288124084472656,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "sequence": 2
+              },
+              "frame": 2338,
+              "kind": "drop_leave",
+              "real": 53.28817367553711,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x48ac9e",
+                "isBackup": null,
+                "item": 4,
+                "sequence": 2,
+                "slot": null,
+                "type": null
+              },
+              "frame": 2338,
+              "kind": "hide_enter",
+              "real": 53.288204193115234,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "cache": "0x2e0942e9de0",
+                "caller": "0x4897ae",
+                "id": 4,
+                "item": 4,
+                "manager": "0x2e09316e420",
+                "prefab": "0x2e092a14fe0"
+              },
+              "frame": 2338,
+              "kind": "cache_enter",
+              "real": 53.288291931152344,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 4,
+                "item": 4,
+                "result": {
+                  "active": 0,
+                  "gameObject": "0x2e0941ed7c0",
+                  "pointer": "0x2e0941b4500",
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              },
+              "frame": 2338,
+              "kind": "cache_leave",
+              "real": 53.288387298583984,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "sequence": 2
+              },
+              "frame": 2338,
+              "kind": "hide_leave",
+              "real": 53.288414001464844,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "sequence": 2
+              },
+              "frame": 2338,
+              "kind": "restore_leave",
+              "real": 53.2884407043457,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x35bd19",
+                "isBackup": null,
+                "item": null,
+                "sequence": 3,
+                "slot": null,
+                "type": null
+              },
+              "frame": 2348,
+              "kind": "restore_enter",
+              "real": 53.56513214111328,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x48ac81",
+                "isBackup": null,
+                "item": 0,
+                "sequence": 3,
+                "slot": null,
+                "type": null
+              },
+              "frame": 2348,
+              "kind": "drop_enter",
+              "real": 53.5651969909668,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "cache": "0x2e0942e9de0",
+                "caller": "0x488fe6",
+                "id": 5,
+                "item": 0,
+                "manager": "0x2e09316e420",
+                "prefab": "0x2e0976569e0"
+              },
+              "frame": 2348,
+              "kind": "cache_enter",
+              "real": 53.565242767333984,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "cache_id": 5,
+                "caller": "0x488d31",
+                "parent": "0x2e096ff4c60",
+                "source": "0x2e0976569e0"
+              },
+              "frame": 2348,
+              "kind": "clone_enter",
+              "real": 53.565277099609375,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "cache_id": 5,
+                "result": "0x2e11ae777c0"
+              },
+              "frame": 2348,
+              "kind": "clone_leave",
+              "real": 53.565975189208984,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "cache_id": 5,
+                "item": 0,
+                "pointer": "0x2e11b028fc0"
+              },
+              "frame": 2348,
+              "kind": "controller_init_enter",
+              "real": 53.566017150878906,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "cache_id": 5,
+                "item": 0,
+                "result": {
+                  "active": 1,
+                  "gameObject": "0x2e11ae777c0",
+                  "pointer": "0x2e11b028fc0",
+                  "position": [
+                    0,
+                    0.008200000040233135,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              },
+              "frame": 2348,
+              "kind": "controller_init_leave",
+              "real": 53.566123962402344,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 5,
+                "item": 0,
+                "result": {
+                  "active": 1,
+                  "gameObject": "0x2e11ae777c0",
+                  "pointer": "0x2e11b028fc0",
+                  "position": [
+                    0,
+                    0.008200000040233135,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              },
+              "frame": 2348,
+              "kind": "cache_leave",
+              "real": 53.56619644165039,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "sequence": 3
+              },
+              "frame": 2348,
+              "kind": "drop_leave",
+              "real": 53.566226959228516,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x48ac9e",
+                "isBackup": null,
+                "item": 4,
+                "sequence": 3,
+                "slot": null,
+                "type": null
+              },
+              "frame": 2348,
+              "kind": "hide_enter",
+              "real": 53.566261291503906,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "cache": "0x2e0942e9de0",
+                "caller": "0x4897ae",
+                "id": 6,
+                "item": 4,
+                "manager": "0x2e09316e420",
+                "prefab": "0x2e092a14fe0"
+              },
+              "frame": 2348,
+              "kind": "cache_enter",
+              "real": 53.566349029541016,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "id": 6,
+                "item": 4,
+                "result": {
+                  "active": 0,
+                  "gameObject": "0x2e0941ed7c0",
+                  "pointer": "0x2e0941b4500",
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "rotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              },
+              "frame": 2348,
+              "kind": "cache_leave",
+              "real": 53.56646728515625,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "sequence": 3
+              },
+              "frame": 2348,
+              "kind": "hide_leave",
+              "real": 53.566558837890625,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "sequence": 3
+              },
+              "frame": 2348,
+              "kind": "restore_leave",
+              "real": 53.56660461425781,
+              "thread": 29952
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "mode": "attach",
+        "pid": 32812,
+        "scripts": [
+          {
+            "name": "rea-fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b"
+          }
+        ],
+        "session_id": "39457486-1a0a-441d-81b2-75cd0f364450",
+        "state": "running",
+        "target": "SecretFlasherManaka.exe (pid 32812)"
+      },
+      "operation": "frida_session_status",
+      "parameters": {
+        "session_id": "39457486-1a0a-441d-81b2-75cd0f364450"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    },
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_e59ee703c703add736b672777a6843fb889564a5a4f30d2a7e2d9d380495d2d8",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "asset_load_monitors": [
+                  "0x1438cf0",
+                  "0x1439090",
+                  "0x1433680",
+                  "0x1433c90",
+                  "0x1ef2610",
+                  "0x1ef26f0",
+                  "0x1ef2d90"
+                ],
+                "base": "0x7ffc1ad10000",
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 32812,
+                "scope": "passive manager cache/clone/controller initialization; asset API entry monitors during explicit fixtures"
+              },
+              "frame": 562,
+              "kind": "drop_cache_ready",
+              "real": 19.095861434936523,
+              "thread": 68728
+            },
+            "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "script_id": "fbe9bd6a-4ade-482a-909b-1f7e892e3d6b",
+        "source_kind": "file",
+        "source_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\runtime\\drop-cold-cache\\observe.js",
+        "source_sha256": "7f97baec0eb05719f26ecda008c45815b9b3be7ebd64655311a50b80707aae44"
+      },
+      "operation": "load_frida_script",
+      "parameters": {
+        "session_id": "39457486-1a0a-441d-81b2-75cd0f364450"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    }
+  ]
+}

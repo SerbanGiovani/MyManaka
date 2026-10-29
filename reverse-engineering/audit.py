@@ -363,6 +363,21 @@ def main():
     npc_filter_bindings = runpy.run_path(str(ROOT / "salt/npc_restore_filter_evidence.py"))
     check(npc_filter_bindings["build"]() == read(ROOT / "salt/evidence/npc-restore-filter-chain.json"), "NPC filter static binding differs")
     observed_runtime_records[npc_filter_dir / "rea-runtime.json"] = npc_filter_runtime
+    cold_dir = ROOT / "runtime/drop-cold-cache"
+    cold_runtime = read(cold_dir / "manifest.json")
+    check(cold_runtime["observation_complete"] and not cold_runtime["natural_only"], "Cold-cache authority differs")
+    for source in cold_runtime["sources"]:
+        check(digest(cold_dir / source["path"]) == source["sha256"], "Cold-cache source differs")
+    for output in cold_runtime["outputs"]:
+        path = cold_dir / output["path"]
+        raw = gzip.decompress(path.read_bytes())
+        check(digest(path) == output["sha256"] and len(raw) == output["uncompressed_bytes"] and
+              hashlib.sha256(raw).hexdigest() == output["uncompressed_sha256"], "Cold-cache output differs")
+    cold_analysis = runpy.run_path(str(cold_dir / "analyze.py"))
+    check(cold_analysis["build"](inputs=args.inputs) == read(cold_dir / "results.json"), "Cold-cache object joins differ")
+    cold_bindings = runpy.run_path(str(ROOT / "salt/drop_cache_evidence.py"))
+    check(cold_bindings["build"]() == read(ROOT / "salt/evidence/drop-cache-chain.json"), "Cold-cache static bindings differ")
+    observed_runtime_records[cold_dir / "rea-runtime.json"] = cold_runtime
     verification = read(ROOT / "salt/evidence/decryption-verification.json")
     summary = read(ROOT / "salt/symbols/index-summary.json")
     object_record = asset["guid_object"]
@@ -727,6 +742,7 @@ def main():
         source_records.append({"path": load_post["plugin"]["path"], "sha256": load_post["plugin"]["sha256"]})
         source_records.append(load_scan["decoder"])
         source_records.append({"path": npc_filter_runtime["plugin"]["archived_path"], "sha256": npc_filter_runtime["plugin"]["sha256"]})
+        source_records.append({"path": cold_runtime["plugin"]["archived_path"], "sha256": cold_runtime["plugin"]["sha256"]})
         for source in source_records:
             # Derived SQLite byte identity is not portable after rebuilding it;
             # reconstruction scripts validate its build identity and coordinates.

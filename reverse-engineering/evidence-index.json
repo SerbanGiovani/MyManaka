@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-29T16:32:10.456967+00:00",
+  "generated_at_utc": "2026-10-29T16:52:04.841861+00:00",
   "status": "consistent",
-  "canonical_rea_observations": 991,
+  "canonical_rea_observations": 993,
   "rea_queries_completed": 887,
   "artifacts": [
     {
@@ -117,13 +117,18 @@
     },
     {
       "path": "audit.py",
-      "bytes": 69151,
-      "sha256": "f5b1cc15994650e145355eb5aed156cfa43b74b39b297656a88a6694457700af"
+      "bytes": 70440,
+      "sha256": "0d709a8c3309770b49ec40b727b2927f11221341f4ead9f7e8250d49142ef0cb"
     },
     {
       "path": "bareta-chain.md",
       "bytes": 16411,
       "sha256": "917693510419ef38f5b020256e633f46783ec096581122e14e6f5cfde63fd0f9"
+    },
+    {
+      "path": "drop-cold-cache.md",
+      "bytes": 4114,
+      "sha256": "22678780c270ffa84071507ea6b72f918d7fac56340867a48c6a290f1bda17de"
     },
     {
       "path": "event-generation.md",
@@ -212,8 +217,88 @@
     },
     {
       "path": "README.md",
-      "bytes": 23983,
-      "sha256": "9efb35a30aa4695987b07a3fade5b85d22696e43ccaea94b3025e5fc24e4e6a4"
+      "bytes": 24421,
+      "sha256": "f2535ca2c72e0ea5e7e89a2b48db727bebb496f523471f00866b6ed38a2295ef"
+    },
+    {
+      "path": "runtime/drop-cold-cache/analyze.py",
+      "bytes": 10105,
+      "sha256": "7ad60c3993ac778d974c1dbc0fb2c6a90b932c7eea5f71a0bdb4f8003862b673"
+    },
+    {
+      "path": "runtime/drop-cold-cache/baseline.json",
+      "bytes": 5023,
+      "sha256": "183649a9d5d9144be2ab4eba254918d962ff4eae1a26ef1245451afee649b982"
+    },
+    {
+      "path": "runtime/drop-cold-cache/build.ps1",
+      "bytes": 1862,
+      "sha256": "030b5cad736677e0c7e11373c17ce2dc810cfe72bee71bd567f5271713a84b1b"
+    },
+    {
+      "path": "runtime/drop-cold-cache/close-receipt.json",
+      "bytes": 245,
+      "sha256": "dcd69e02513950e79ab792a574a68b80f96d6527e59e84734da2c339d5cd8e59"
+    },
+    {
+      "path": "runtime/drop-cold-cache/collect.py",
+      "bytes": 3968,
+      "sha256": "4b053fa80ddaeb8ea763bdd208b5407bc1780c293a5c3a96fa2daca22e386963"
+    },
+    {
+      "path": "runtime/drop-cold-cache/engine.log.gz",
+      "bytes": 881,
+      "sha256": "2ff83d22d7112a0917fc04e9e5d97627ea07de6f36b98d717c858b9fcc2eb9c1"
+    },
+    {
+      "path": "runtime/drop-cold-cache/managed.jsonl.gz",
+      "bytes": 771,
+      "sha256": "700a1f0af19f85295c0c07502fc9c222e578d07396e894e996772ac718960113"
+    },
+    {
+      "path": "runtime/drop-cold-cache/manifest.json",
+      "bytes": 3026,
+      "sha256": "69ed246c3adfeb66e0a79d63d19f79cbd5b3f0226be7255337a4d5854148d510"
+    },
+    {
+      "path": "runtime/drop-cold-cache/native-save.json",
+      "bytes": 653,
+      "sha256": "6fa548e2105eb5a07b68665fae96896c0ea1b54a18ad0c668044e9d275df1fe5"
+    },
+    {
+      "path": "runtime/drop-cold-cache/observe.js",
+      "bytes": 4349,
+      "sha256": "7f97baec0eb05719f26ecda008c45815b9b3be7ebd64655311a50b80707aae44"
+    },
+    {
+      "path": "runtime/drop-cold-cache/paths.jsonl.gz",
+      "bytes": 2316,
+      "sha256": "0eba2af55991859a89ed4097cba8d2cde912984159ad76be015a19c1dd011163"
+    },
+    {
+      "path": "runtime/drop-cold-cache/post-state.json",
+      "bytes": 6571,
+      "sha256": "dcec2782e2bc77fbbb1175983664c09090d26646b8c33681156eeb1b70c6afe2"
+    },
+    {
+      "path": "runtime/drop-cold-cache/Probe.cs",
+      "bytes": 9233,
+      "sha256": "e5df1919e9c9f65f14bab5acbb8afde784c62fa663002f7a19c77af66ddb11c9"
+    },
+    {
+      "path": "runtime/drop-cold-cache/rea-runtime.json",
+      "bytes": 30221,
+      "sha256": "8c8c4d65d1119a0abb027188ed296beee4ec2b73609d6fa0d1fba68ec563179d"
+    },
+    {
+      "path": "runtime/drop-cold-cache/results.json",
+      "bytes": 1571,
+      "sha256": "7c74c57f1d45d01a819be77fcc5a5d9edb7c62dbadbb8679ea12f07bbb614ffe"
+    },
+    {
+      "path": "runtime/drop-cold-cache/test_analysis.py",
+      "bytes": 2127,
+      "sha256": "d942b82c51d0a5191ab61cd8505a5957403c85a55be1868fa75eddda714b45f2"
     },
     {
       "path": "runtime/natural-cancellation/analyze.py",
@@ -1157,8 +1242,8 @@
     },
     {
       "path": "runtime/npc-restore-filter/next-run.md",
-      "bytes": 1180,
-      "sha256": "1dce8d0a8949fb0e4af33c238f0bad757920c1d23feb3aa196bf81fe1f590b1b"
+      "bytes": 1372,
+      "sha256": "4a56334902b6aad1181c835af62f03fbf0306a6b9e30afa80bd70d307c65cb7c"
     },
     {
       "path": "runtime/npc-restore-filter/observe.js",
@@ -1444,6 +1529,11 @@
       "path": "salt/derive.py",
       "bytes": 2441,
       "sha256": "054b61b723f9f886c1e1e548420e0a71064fff98a2626880f31a5933776abf23"
+    },
+    {
+      "path": "salt/drop_cache_evidence.py",
+      "bytes": 2393,
+      "sha256": "9ae33d019611320ff97a9f25f7787b780b01c68dfe97a191ea47cdc30a2097f2"
     },
     {
       "path": "salt/evidence/animator-chain.json",
@@ -3309,6 +3399,11 @@
       "path": "salt/evidence/dotnet-verification.json",
       "bytes": 162,
       "sha256": "a3abaddd5c435522d2fbca7e557727b7be8c56cd722448ecd81e13af48814331"
+    },
+    {
+      "path": "salt/evidence/drop-cache-chain.json",
+      "bytes": 650291,
+      "sha256": "1da62c3abceaa25fd8f2df6b8853b2f31764f8a8275ee945f14f2d8aad23a93d"
     },
     {
       "path": "salt/evidence/loading/76199-0600001e-procedure_pseudo_code.json",
@@ -12207,8 +12302,8 @@
     },
     {
       "path": "unknowns.json",
-      "bytes": 22933,
-      "sha256": "54ed4103d61ccd130a2f6a3998c79af71f7b81ece5119bd8e09cd640d1503eb9"
+      "bytes": 23836,
+      "sha256": "61a4261c1deb32e3e0099cc56503dfd0dc1b5572ba071c02724558635b2d6f08"
     }
   ],
   "inputs_checked": [
@@ -12427,6 +12522,10 @@
     {
       "path": "E:\\ManakaREA-NaturalGameplay\\NpcRestoreFilter\\20261030-1\\NpcFilterProbe-completed.dll",
       "sha256": "a98df4c8fbf717de207b1197fb692f1869db2a8b7f54923801c4ce16cb91dd31"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\DropColdCache\\20261030-1\\ColdDropProbe-completed.dll",
+      "sha256": "f2c8cf28bd106a004d0413c85ce369cb467df30a43edc4d2de1e9cbc2c7feca5"
     }
   ],
   "observations": [
@@ -16926,6 +17025,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_e4ac7d6679a0dd9f738a26207a7bdaa60af21a36eb9bbe60a6aa0abf6a165f1b",
+      "operation": "frida_session_status",
+      "subject_sha256": null
+    },
+    {
       "evidence_id": "ev_e4dd60d2e1f547c84bfd84cc9167bdbf388966ec1e496e5aba198335b74175b8",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -16944,6 +17048,11 @@
       "evidence_id": "ev_e5951e6c69272dec386b08a165f52a49b6dcc84a9edd693d757555fd8625a58d",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_e59ee703c703add736b672777a6843fb889564a5a4f30d2a7e2d9d380495d2d8",
+      "operation": "load_frida_script",
+      "subject_sha256": null
     },
     {
       "evidence_id": "ev_e5a77520c8f98f4f9764a16f2f9cf5bd300c2e650d872a3e7d55acf08a068d77",

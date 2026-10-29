@@ -1,0 +1,55 @@
+{
+  "authority": "controlled-native-replay-with-passive-REA-witness",
+  "scope": "manager cache cold; title assets already loaded",
+  "native_save": {
+    "sha256": "4be9fb64ed79287e4409435e5284ec86a483c56df862f7ca009dfc005c7f48fe",
+    "bytes": 91360,
+    "stage": 0,
+    "items": [
+      0,
+      4
+    ]
+  },
+  "cases": [
+    {
+      "frame": 2338,
+      "new_items": [
+        0,
+        4
+      ],
+      "get_cache_calls": 2,
+      "synchronous": true
+    },
+    {
+      "frame": 2338,
+      "new_items": [],
+      "get_cache_calls": 2,
+      "synchronous": true
+    },
+    {
+      "frame": 2348,
+      "new_items": [
+        0
+      ],
+      "get_cache_calls": 2,
+      "synchronous": true
+    }
+  ],
+  "cache_calls": 6,
+  "clones": 3,
+  "controller_initializations": 3,
+  "observed_asset_load_entries": 0,
+  "asset_load_entrypoints_monitored": 7,
+  "current_stage_active": true,
+  "other_stage_hidden": true,
+  "undropped_item_uncached": true,
+  "stale_entry_retained_until_native_get": true,
+  "original_cache_restored": true,
+  "limits": [
+    "No asset-bundle cold load, missing-prefab recovery or asynchronous load completion is claimed.",
+    "Coverage is ordinary item0/4 prefabs, current Home and stored Residence stage guards; high item IDs and other prefab families remain unverified.",
+    "Explicit flags/cache isolation and native Save/Load are controlled preconditions.",
+    "Asset absence is limited to the seven monitored entrypoints and this fixture window."
+  ],
+  "engine_error_lines": 0
+}
