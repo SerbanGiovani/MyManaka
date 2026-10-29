@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "natural_only": false,
+  "authority": "controlled-original-save-load-initialize-callback",
+  "sessions": [
+    {
+      "session_id": "ff5fbb9c-0cb5-4bb6-b9c6-4586905c48a8",
+      "pid": 74792,
+      "state": "running",
+      "closed_by_operator": true
+    }
+  ],
+  "evidence_ids": [
+    "ev_f99b440dd8a76fb9d238a57657601536d6588328a74362fd144db20411fa7def",
+    "ev_55fa3ec09c49ff499b14abe201d0f57abe6d1f09647b2bc927eb44e5b11610b2"
+  ],
+  "plugin": {
+    "archived_path": "E:\\ManakaREA-NaturalGameplay\\AppearanceRestore\\20261030-1\\AppearanceProbe-completed.dll",
+    "sha256": "d0ab681aae3f33735002ce7b0ff2db2ba2ae9b42c8787ee3dbff2c77951b6f3b"
+  },
+  "sources": [
+    {
+      "path": "Probe.cs",
+      "sha256": "2095b49997ba6633881764902a2cac7dc5afefc27b18b0e45a42f6e6acedfc5b"
+    },
+    {
+      "path": "build.ps1",
+      "sha256": "61823e9d1f1808be7f2fdd24e9eb84c0cd70c2f93fcd4c654bd7f0b63739d596"
+    },
+    {
+      "path": "observe.js",
+      "sha256": "9b416f9f125572d70dd156fae1d675c30e3db0fe6603b20be2ffd16e2262a592"
+    },
+    {
+      "path": "run_cases.py",
+      "sha256": "d748b46360c49ec8ef0194dbfaf18dbbaa1f5642ab8c2a583ef9f0adda8ec826"
+    },
+    {
+      "path": "analyze.py",
+      "sha256": "0c793aab9cb081d8bc8c4ca907334f3035a06dc08583519cff096bfd78567b23"
+    },
+    {
+      "path": "collect.py",
+      "sha256": "4cb00625e980f2ec2689094c8942524ac3c959a732a10b766bf4b72f5116310c"
+    },
+    {
+      "path": "test_analysis.py",
+      "sha256": "e175fb7a02dd8667cdcb46da1ce1acf44c72b249d9e4e49f16871fc68703aa76"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "managed.jsonl.gz",
+      "sha256": "4644e85df097a4fe8dfeac0148a227bf3426fa8db3d6121953f53a034b88fab8",
+      "uncompressed_bytes": 73156,
+      "uncompressed_sha256": "2b52be8a992f35c9a26c848244a04b604b6345c52732898781cf9f8d8eabf17c"
+    },
+    {
+      "path": "paths.jsonl.gz",
+      "sha256": "2e194b9c02768aeca1159576202d3621a61ab7af3c5fc458e953e75b5de6c54f",
+      "uncompressed_bytes": 36795,
+      "uncompressed_sha256": "a55bba264c1fe091dedbe7e4777208c2005fea4d8c56364712e03d36fee7e024"
+    },
+    {
+      "path": "engine.log.gz",
+      "sha256": "b0780682b45c25cbc860d1c839388f897eff08feb5bfcdb5c05c8bf58236aaf4",
+      "uncompressed_bytes": 21071,
+      "uncompressed_sha256": "61de5975c998bc65b0e3447dcf2780b52c4bce9bfef08792018a35d74e746d60"
+    }
+  ],
+  "scope": "Three saved height values, actual avatar scale/speeds and deferred callbacks; not all custom-field visual equivalence."
+}

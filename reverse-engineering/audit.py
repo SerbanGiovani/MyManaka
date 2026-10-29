@@ -417,6 +417,23 @@ def main():
     finally:
         sys.path.remove(str(recovery_dir))
     observed_runtime_records[recovery_dir / "rea-runtime.json"] = recovery_runtime
+    appearance_dir = ROOT / "runtime/appearance-restore"
+    appearance_runtime = read(appearance_dir / "manifest.json")
+    for source in appearance_runtime["sources"]:
+        check(digest(appearance_dir / source["path"]) == source["sha256"], "Appearance source differs")
+    for output in appearance_runtime["outputs"]:
+        path = appearance_dir / output["path"]
+        raw = gzip.decompress(path.read_bytes())
+        check(digest(path) == output["sha256"] and len(raw) == output["uncompressed_bytes"] and hashlib.sha256(raw).hexdigest() == output["uncompressed_sha256"], "Appearance log differs")
+    check(runpy.run_path(str(appearance_dir / "analyze.py"))["build"](inputs=args.inputs) == read(appearance_dir / "results.json"), "Appearance scale/callback joins differ")
+    observed_runtime_records[appearance_dir / "rea-runtime.json"] = appearance_runtime
+    toolchain_dir = ROOT / "reconstruction"
+    toolchain = read(toolchain_dir / "editor-toolchain.json")
+    check(toolchain["status"] == "editor-build-and-player-smoke-verified" and toolchain["compilation_verified"] and toolchain["build_verified"] and toolchain["player_startup_verified"], "Editor smoke did not succeed")
+    check(toolchain["build_receipt"]["result"] == "Succeeded" and toolchain["build_receipt"]["errors"] == 0 and toolchain["runtime_proof"]["passed"] and toolchain["runtime_proof"]["frames"] == 5, "Editor build/player receipts differ")
+    check(all(r["exit_code"] == 0 and r["process_exited"] for r in toolchain["process_receipts"].values()), "Editor smoke process failed")
+    for source in toolchain["sources"]:
+        check(digest(toolchain_dir / source["path"]) == source["sha256"], "Editor smoke source differs")
     verification = read(ROOT / "salt/evidence/decryption-verification.json")
     summary = read(ROOT / "salt/symbols/index-summary.json")
     object_record = asset["guid_object"]
@@ -785,6 +802,9 @@ def main():
         source_records.extend({"path": p["archived_path"], "sha256": p["sha256"]} for p in interruption_runtime["plugins"])
         source_records.append({"path": full_save_runtime["plugin"]["archived_path"], "sha256": full_save_runtime["plugin"]["sha256"]})
         source_records.extend({"path": p["archived_path"], "sha256": p["sha256"]} for p in recovery_runtime["plugins"])
+        source_records.append({"path": appearance_runtime["plugin"]["archived_path"], "sha256": appearance_runtime["plugin"]["sha256"]})
+        source_records.extend(toolchain["build_outputs"])
+        source_records.append({"path": toolchain["editor_path"], "sha256": toolchain["editor_sha256"]})
         for source in source_records:
             # Derived SQLite byte identity is not portable after rebuilding it;
             # reconstruction scripts validate its build identity and coordinates.

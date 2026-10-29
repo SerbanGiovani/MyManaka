@@ -4,15 +4,104 @@
   "product_version": "2022.3.62t7_139712ad4655",
   "editor_sha256": "ab51353d6dcd26bf0f262f366ba8f1100746bbb0f0273514df10d7cd51eab89c",
   "original_game_engine_version": "2022.3.62f2",
-  "smoke_pid": 77016,
-  "raw_log_sha256": "199f37a923f38d8355009fe34e1e3336b8d02f872dd761bf7b89453838d51d7a",
-  "raw_log_bytes": 5701,
-  "raw_log_retained_locally": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\editor-create.log",
-  "license_message": "No valid Unity Editor license found. Please activate your license.",
-  "project_version_generated": false,
-  "status": "blocked-editor-license",
-  "compilation_verified": false,
-  "build_verified": false,
+  "smoke_pid": 67772,
+  "raw_log_sha256": "bcbc4f6e48cda1629949cb683a3e24687bdbccd948e5e2c9292b9391b8c1d3fa",
+  "raw_log_bytes": 99191,
+  "raw_log_retained_locally": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\authorized-20261030-1-create.log",
+  "license_message": null,
+  "project_version_generated": true,
+  "status": "editor-build-and-player-smoke-verified",
+  "compilation_verified": true,
+  "build_verified": true,
   "original_asset_compatibility_verified": false,
-  "scope": "Isolated project creation prerequisite only; no login, activation or license configuration changed."
+  "scope": "Isolated compiler, Windows64 Mono build and headless player startup. Original IL2CPP binding, assets/scenes and complete game reconstruction remain unverified.",
+  "project_version_text": "m_EditorVersion: 2022.3.62t7\nm_EditorVersionWithRevision: 2022.3.62t7 (139712ad4655)\nm_TuanjieEditorVersion: 1.8.5\n",
+  "player_startup_verified": true,
+  "build_receipt": {
+    "editorVersion": "2022.3.62t7",
+    "result": "Succeeded",
+    "outputPath": "E:/SecretFlasherManaka v1.1.3_Uncensored/reverse-engineering/reconstruction/.cache/authorized-20261030-1-build/ToolchainSmoke.exe",
+    "errors": 0,
+    "warnings": 1,
+    "bytes": 105366967
+  },
+  "runtime_proof": {
+    "engineVersion": "2022.3.62t7",
+    "scene": "ToolchainSmoke",
+    "frames": 5,
+    "passed": true,
+    "scope": "compiler/build/player startup only; no original assets or gameplay equivalence"
+  },
+  "process_receipts": {
+    "create": {
+      "project_version_generated": true,
+      "pid": 67772,
+      "exit_code": 0,
+      "process_exited": true
+    },
+    "build": {
+      "process_exited": true,
+      "pid": 78808,
+      "exit_code": 0
+    },
+    "runtime": {
+      "exit_code": 0,
+      "process_exited": true,
+      "pid": 77164,
+      "arguments": [
+        "-batchmode",
+        "-nographics",
+        "-reaProof",
+        "\"E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\authorized-20261030-1-runtime-proof.json\"",
+        "-logFile",
+        "\"E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\authorized-20261030-1-runtime.log\""
+      ],
+      "sha256": "1a1a0368abaced7b7679a48c0ca4cd080e391fe03ee4c27df30366136dddf479",
+      "executable": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\authorized-20261030-1-build\\ToolchainSmoke.exe"
+    }
+  },
+  "build_outputs": [
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\authorized-20261030-1-build\\ToolchainSmoke.exe",
+      "sha256": "1a1a0368abaced7b7679a48c0ca4cd080e391fe03ee4c27df30366136dddf479",
+      "bytes": 464384
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\authorized-20261030-1-build\\TuanjiePlayer.dll",
+      "sha256": "799e4d8ce8171704cb597958b6ec5999d7737b1fa86357182964a5106785e442",
+      "bytes": 42126680
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\authorized-20261030-1-build\\ToolchainSmoke_Data\\Managed\\Assembly-CSharp.dll",
+      "sha256": "faaeb136aed579e12da8e946bda03073e85f13f4a0fceb20450671d9e4fc98d3",
+      "bytes": 6144
+    }
+  ],
+  "sources": [
+    {
+      "path": "toolchain-smoke\\Assets\\Editor\\BuildSmoke.cs",
+      "sha256": "6060793071e660fe895c13c57629f18ecaac6e412ade81587e61234f38719880"
+    },
+    {
+      "path": "toolchain-smoke\\Assets\\RuntimeSmoke.cs",
+      "sha256": "55679145206cd26abd8c7db4816c12b37884e3fb073a0b647359cd5a9a8aecbe"
+    },
+    {
+      "path": "check-editor.ps1",
+      "sha256": "cb3ad58ade7ffbb20ebcd60df540b22c23fb57af1e7df741c6971cec1f01d560"
+    },
+    {
+      "path": "build-smoke.ps1",
+      "sha256": "11f310fa5b3b6595ce252250cefafcbb3d8dc7473677642650114e313236f88b"
+    },
+    {
+      "path": "run-smoke.ps1",
+      "sha256": "863c75398d075d0d0a445931f08978600acc55bb3aac0191389fd327374c2885"
+    },
+    {
+      "path": "inspect-editor-result.py",
+      "sha256": "1123feac3fb12676623341485549124583e02b91ddd8f9ba2d34fa93ce957348"
+    }
+  ],
+  "previous_license_failure_log_sha256": "199f37a923f38d8355009fe34e1e3336b8d02f872dd761bf7b89453838d51d7a"
 }

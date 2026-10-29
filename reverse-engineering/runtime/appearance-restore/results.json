@@ -1,0 +1,77 @@
+{
+  "authority": "controlled-original-save-load-initialize-callback",
+  "cases": [
+    {
+      "height": 120,
+      "saved_file_sha256": "f19a24a24711dd0505c5cfa255e7645f7faaec02bcd2378cbe86b85a856b05d5",
+      "save_frame": 4353,
+      "dispatch_frame": 4353,
+      "bone_callback_frame": 4354,
+      "height_scale": 0.75,
+      "actual_avatar_scale": [
+        0.90000004,
+        0.90000004,
+        0.90000004
+      ],
+      "move_speed": 1.1764705,
+      "animation_move_speed": 1.1764705,
+      "bone_receivers": 12,
+      "next_frame_callbacks": 12,
+      "initialized_hair_receivers": 2,
+      "total_hair_components": 22,
+      "nonunit_bone_targets": 0
+    },
+    {
+      "height": 160,
+      "saved_file_sha256": "adf24319c243721741e7573f772a1d7e132dd55432a6046bc4fcaa68313bacff",
+      "save_frame": 7043,
+      "dispatch_frame": 7043,
+      "bone_callback_frame": 7044,
+      "height_scale": 1.0,
+      "actual_avatar_scale": [
+        1.2,
+        1.2,
+        1.2
+      ],
+      "move_speed": 1,
+      "animation_move_speed": 1,
+      "bone_receivers": 12,
+      "next_frame_callbacks": 12,
+      "initialized_hair_receivers": 2,
+      "total_hair_components": 22,
+      "nonunit_bone_targets": 0
+    },
+    {
+      "height": 200,
+      "saved_file_sha256": "383155fbaf0392735729752341bb3384d3779e6314a98ba9e154c25154807f45",
+      "save_frame": 7050,
+      "dispatch_frame": 7050,
+      "bone_callback_frame": 7051,
+      "height_scale": 1.25,
+      "actual_avatar_scale": [
+        1.5,
+        1.5,
+        1.5
+      ],
+      "move_speed": 0.8333333,
+      "animation_move_speed": 0.8333333,
+      "bone_receivers": 12,
+      "next_frame_callbacks": 12,
+      "initialized_hair_receivers": 2,
+      "total_hair_components": 22,
+      "nonunit_bone_targets": 0
+    }
+  ],
+  "cleanup_original_height": 160,
+  "cleanup_next_frame_callbacks": 12,
+  "native_messages": 139,
+  "natural_only": false,
+  "engine_error_events": 0,
+  "all_custom_fields_visual_equivalence": false,
+  "limitations": [
+    "Only CustomizeHeight changed; colors, textures, face weights and other custom fields are not equivalence-tested.",
+    "All selected bone targets had unit local scale; the nonunit inverse-scale branch remains untested.",
+    "Original callback is deliberately invoked after Load; natural UI dispatch is not claimed.",
+    "Only two initialized hair receivers, out of22 components, are expected to receive this event."
+  ]
+}
