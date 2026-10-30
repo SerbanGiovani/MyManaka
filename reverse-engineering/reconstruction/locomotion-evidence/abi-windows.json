@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "evidence_type": "finite original x64 byte windows with explicit analyst decoding",
+  "authority": "shipped-artifact bytes; analyst-derived instruction interpretation",
+  "native_path": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "rea_dossier": {
+    "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native-decoded-code\\14526-06000c75-analyze_function.json",
+    "evidence_id": "ev_f0b7b245f7989e25f354962dc5e1ef05d84cf57f2f4706bb7b3408e448cb58b9",
+    "sha256": "7585692712275a085c4f212e519b8ebd0aa29d5ed6cfdf4ea6cc1004751e5a5c",
+    "observed_body": {
+      "available": true,
+      "provenance": "ghidra-function-body-address-set",
+      "ranges": [
+        {
+          "start": "0x18062cb20",
+          "end": "0x18062cb20"
+        }
+      ],
+      "total_bytes": 1,
+      "span_bytes": 1,
+      "non_contiguous": false,
+      "contains_entry": true
+    },
+    "high_pcode_operations": 1787,
+    "high_pcode_truncated": false
+  },
+  "windows": [
+    {
+      "purpose": "moveSpeedBlend.UpdateTo TargetMoveSpeed argument",
+      "va": "0x18062cccb",
+      "file_offset": 6468811,
+      "byte_length": 29,
+      "sha256": "ebb0873de9d9d4f010719f58fdb50b9abf5b37875218e0db3aa557788cb0960f",
+      "raw_hex": "48 8b 8b a0 00 00 00 48 85 c9 0f 84 5d 09 00 00 f3 0f 10 4b 10 45 33 c0 e8 08 88 e8 ff"
+    },
+    {
+      "purpose": "Speed SetFloatID Current value argument",
+      "va": "0x18062d031",
+      "file_offset": 6469681,
+      "byte_length": 100,
+      "sha256": "ff90881c1f863b05289c218ac1dd006d45b3c9b941aaa0ad348463441b6fa379",
+      "raw_hex": "48 8b 93 a0 00 00 00 48 85 d2 0f 84 f7 05 00 00 48 8b 7b 30 48 85 ff 0f 84 ea 05 00 00 48 8b 05 eb 22 74 02 f3 0f 10 72 10 48 8b 88 b8 00 00 00 48 8b 05 d0 22 89 02 8b 31 48 85 c0 75 1c 48 8d 0d 8a d9 e7 01 e8 45 20 ca ff 48 85 c0 0f 84 44 06 00 00 48 89 05 ad 22 89 02 0f 28 d6 8b d6 48 8b cf ff d0"
+    }
+  ],
+  "target_argument_instructions": [
+    {
+      "va": "0x18062cccb",
+      "file_offset": 6468811,
+      "raw_hex": "48 8b 8b a0 00 00 00",
+      "analyst_decoded_instruction": "MOV RCX, qword ptr [RBX+0xA0]"
+    },
+    {
+      "va": "0x18062ccd2",
+      "file_offset": 6468818,
+      "raw_hex": "48 85 c9",
+      "analyst_decoded_instruction": "TEST RCX, RCX"
+    },
+    {
+      "va": "0x18062ccd5",
+      "file_offset": 6468821,
+      "raw_hex": "0f 84 5d 09 00 00",
+      "analyst_decoded_instruction": "JZ 0x18062d638"
+    },
+    {
+      "va": "0x18062ccdb",
+      "file_offset": 6468827,
+      "raw_hex": "f3 0f 10 4b 10",
+      "analyst_decoded_instruction": "MOVSS XMM1, dword ptr [RBX+0x10]"
+    },
+    {
+      "va": "0x18062cce0",
+      "file_offset": 6468832,
+      "raw_hex": "45 33 c0",
+      "analyst_decoded_instruction": "XOR R8D, R8D"
+    },
+    {
+      "va": "0x18062cce3",
+      "file_offset": 6468835,
+      "raw_hex": "e8 08 88 e8 ff",
+      "analyst_decoded_instruction": "CALL 0x1804b54f0 (SmoothFloat.UpdateTo)"
+    }
+  ],
+  "speed_output_instructions": [
+    {
+      "va": "0x18062d031",
+      "file_offset": 6469681,
+      "raw_hex": "48 8b 93 a0 00 00 00",
+      "analyst_decoded_instruction": "MOV RDX, qword ptr [RBX+0xA0]"
+    },
+    {
+      "va": "0x18062d041",
+      "file_offset": 6469697,
+      "raw_hex": "48 8b 7b 30",
+      "analyst_decoded_instruction": "MOV RDI, qword ptr [RBX+0x30]"
+    },
+    {
+      "va": "0x18062d055",
+      "file_offset": 6469717,
+      "raw_hex": "f3 0f 10 72 10",
+      "analyst_decoded_instruction": "MOVSS XMM6, dword ptr [RDX+0x10]"
+    },
+    {
+      "va": "0x18062d068",
+      "file_offset": 6469736,
+      "raw_hex": "8b 31",
+      "analyst_decoded_instruction": "MOV ESI, dword ptr [RCX] (static field offset 0: MoveSpeed/Speed ID)"
+    },
+    {
+      "va": "0x18062d08b",
+      "file_offset": 6469771,
+      "raw_hex": "0f 28 d6",
+      "analyst_decoded_instruction": "MOVAPS XMM2, XMM6"
+    },
+    {
+      "va": "0x18062d08e",
+      "file_offset": 6469774,
+      "raw_hex": "8b d6",
+      "analyst_decoded_instruction": "MOV EDX, ESI"
+    },
+    {
+      "va": "0x18062d090",
+      "file_offset": 6469776,
+      "raw_hex": "48 8b cf",
+      "analyst_decoded_instruction": "MOV RCX, RDI"
+    },
+    {
+      "va": "0x18062d093",
+      "file_offset": 6469779,
+      "raw_hex": "ff d0",
+      "analyst_decoded_instruction": "CALL RAX (resolved Animator.SetFloatID ICall)"
+    }
+  ],
+  "field_bindings": {
+    "manager_RBX+0x10": "TargetMoveSpeed",
+    "manager_RBX+0x24": "baseMoveSpeed",
+    "manager_RBX+0x30": "Animator",
+    "manager_RBX+0xA0": "moveSpeedBlend",
+    "SmoothFloat+0x10": "Current",
+    "source": "../../salt/evidence/player-chain.json and native-contract.json"
+  },
+  "derived_conclusion": "The normal path passes TargetMoveSpeed directly in XMM1 to moveSpeedBlend.UpdateTo. It passes moveSpeedBlend.Current directly in XMM2 to Animator.SetFloatID(Speed). Neither of these two finite paths applies baseMoveSpeed multiplication.",
+  "limitations": [
+    "Analyst x64 decoding is finite and backed by asserted bytes, not an independent full disassembler.",
+    "The Ghidra seeded OnUpdate body remains one byte and its assembly listing covers only one instruction even after explicit code seeding. High-p-code/pseudocode follows more code and recovers call sites but drops float call bindings; neither is advertised as complete assembly coverage.",
+    "The output window also contains ICall-resolution control flow; the linked Ghidra pseudocode identifies SetFloatID and its static parameter ID.",
+    "This is static calling-convention reasoning, not an executed register observation."
+  ]
+}

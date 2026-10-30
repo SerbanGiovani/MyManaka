@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-30T17:48:53.982043+00:00",
+  "generated_at_utc": "2026-10-30T18:26:08.915986+00:00",
   "status": "consistent",
-  "canonical_rea_observations": 1117,
-  "rea_queries_completed": 957,
+  "canonical_rea_observations": 1144,
+  "rea_queries_completed": 980,
   "artifacts": [
     {
       "path": ".gitattributes",
@@ -137,8 +137,8 @@
     },
     {
       "path": "audit.py",
-      "bytes": 93169,
-      "sha256": "87dccc7845df50026f96a1bd118bf131897ed07c9a8171369f6e464893af464d"
+      "bytes": 94042,
+      "sha256": "a21d9e55c1633b8b4625025fdbac7369e70fbf1753721b9f55c46db31e913335"
     },
     {
       "path": "bareta-chain.md",
@@ -292,8 +292,83 @@
     },
     {
       "path": "README.md",
-      "bytes": 32791,
-      "sha256": "553bc1d988d3d7a94002681d2a10407bdfa4dd4f2909120b940e20990b256705"
+      "bytes": 33304,
+      "sha256": "ffbb0de583d7d8b18eaad7468c4dc1a70cc3997e715b342c011e8693e6280f39"
+    },
+    {
+      "path": "reconstruction/animator-probe/Assets/Editor/AnimatorProbe.cs",
+      "bytes": 4591,
+      "sha256": "10e08ca8f5d0ccefd835b973755d476ba3f5ecad18a27fe50a923f42e38e4965"
+    },
+    {
+      "path": "reconstruction/animator-probe/Assets/Editor/SaveFixProbe.cs",
+      "bytes": 3544,
+      "sha256": "6d352946bcd378bb204e9bf4d3ba27e5fb3394da7d0f5999365e6ca4c24740e6"
+    },
+    {
+      "path": "reconstruction/animator-probe/Assets/Editor/SaveRoundtripProbe.cs",
+      "bytes": 7370,
+      "sha256": "dcb4d48deeeb5c13b59eba52d176a64acefce2ea26dd8d9c3e5b0899bdeddc14"
+    },
+    {
+      "path": "reconstruction/animator-probe/diagnostics/long-decimal-probe/exit.json",
+      "bytes": 68,
+      "sha256": "edb1b2205bb8b183a6d4d5d51113f2e928cea0e0ffe04542d4ea2e93facfbbbb"
+    },
+    {
+      "path": "reconstruction/animator-probe/diagnostics/long-decimal-probe/result.json",
+      "bytes": 3448,
+      "sha256": "cfe9817110a80bb0f9750af9a57af6241356a0c74b7683381902e1316be95ccf"
+    },
+    {
+      "path": "reconstruction/animator-probe/diagnostics/long-decimal-probe/SaveRoundtripProbe.cs",
+      "bytes": 4905,
+      "sha256": "3d8347d0519b093dfabcd9e4b1cef76d563960d592ff67937c417da5f57eeb5d"
+    },
+    {
+      "path": "reconstruction/animator-probe/diagnostics/long-decimal-probe/start.json",
+      "bytes": 978,
+      "sha256": "e18ba2e6d75b06e75c87ae1c2bd96038dde9aa8fb768b827ae3ed8f3fdf59d2b"
+    },
+    {
+      "path": "reconstruction/animator-probe/diagnostics/signed-zero-probe/exit.json",
+      "bytes": 68,
+      "sha256": "48b125ed604e4a34a05ddd391aae4c7ae43ab924598dfd9243d392253bfd9fa7"
+    },
+    {
+      "path": "reconstruction/animator-probe/diagnostics/signed-zero-probe/result.json",
+      "bytes": 28570,
+      "sha256": "2fd940d4e923a00078a3ec4af4c3c10154078949aecef2868da4bb007eae748d"
+    },
+    {
+      "path": "reconstruction/animator-probe/diagnostics/signed-zero-probe/SaveRoundtripProbe.cs",
+      "bytes": 6303,
+      "sha256": "46c87e9aa59d87551704b3b3af2216ad00a96f78e976013c36d0228e748a2244"
+    },
+    {
+      "path": "reconstruction/animator-probe/diagnostics/signed-zero-probe/start.json",
+      "bytes": 978,
+      "sha256": "19885d0eb8e34e325e93a3aeadc02b12d7dcd3a9b1b71a189854d3d4d52d0c61"
+    },
+    {
+      "path": "reconstruction/animator-probe/managed-final-complete.json",
+      "bytes": 76548,
+      "sha256": "1cb81b9a29cf76163b439b5ac79d29ab9df854206927f54bbfd3661c6a70c357"
+    },
+    {
+      "path": "reconstruction/animator-probe/managed-final-summary.json",
+      "bytes": 7061,
+      "sha256": "44ed350ea4edb0b0f671f4e1cfe6b6d65045ad47c31313fe9b237b34ddd31537"
+    },
+    {
+      "path": "reconstruction/animator-probe/managed-runtime-complete.json",
+      "bytes": 76548,
+      "sha256": "b612141bdbd95b9b36f81ab31593ee1f0d1cee445201dbbbed060f076daa6106"
+    },
+    {
+      "path": "reconstruction/animator-probe/managed-runtime-summary.json",
+      "bytes": 7061,
+      "sha256": "524caaf06ca0484560355473544db03be961e24af5b52f18fb05c0c2ab9943ad"
     },
     {
       "path": "reconstruction/asset-bridge/bridge_assets.py",
@@ -426,6 +501,11 @@
       "sha256": "7866ad89c965c95522f9d8971361ec5119abfc8e4e7a6dc73a90d36a7f554c72"
     },
     {
+      "path": "reconstruction/build-locomotion.ps1",
+      "bytes": 4271,
+      "sha256": "d8a8801974b2f22c0483634c8c0a49f91cf25c9359c1b05f6afd0283bf529d41"
+    },
+    {
       "path": "reconstruction/build-minimal.ps1",
       "bytes": 4265,
       "sha256": "c372dcfe566e4e41d603bc37b5a36ec60e0ccbe5c7da9443b23830ac07c893dc"
@@ -441,6 +521,11 @@
       "sha256": "cb3ad58ade7ffbb20ebcd60df540b22c23fb57af1e7df741c6971cec1f01d560"
     },
     {
+      "path": "reconstruction/collect-locomotion.py",
+      "bytes": 6140,
+      "sha256": "ea23a6fb17c25b2e458e56f79dfa1a734573b9d14eb9321ab0f7509e8c187bbb"
+    },
+    {
       "path": "reconstruction/collect-minimal.py",
       "bytes": 6492,
       "sha256": "4ec621d11b5c373336a7fef49aa8f518e4063898d4d0d8fe7bec465b20c81077"
@@ -454,6 +539,806 @@
       "path": "reconstruction/inspect-editor-result.py",
       "bytes": 3571,
       "sha256": "1123feac3fb12676623341485549124583e02b91ddd8f9ba2d34fa93ce957348"
+    },
+    {
+      "path": "reconstruction/locomotion-acceptance-tools/acceptance-inputs.json",
+      "bytes": 3166,
+      "sha256": "291a85bdf141d764b84e18722f9bf2bbfe9d77e824425b2898709445b84960b7"
+    },
+    {
+      "path": "reconstruction/locomotion-acceptance-tools/acceptance.json",
+      "bytes": 23499,
+      "sha256": "3d4507e08402c3ce6995ef7e9545e5617f122fce0cbe00d4607100cefc4e98ce"
+    },
+    {
+      "path": "reconstruction/locomotion-acceptance-tools/diagnostic-negative-control.json",
+      "bytes": 896,
+      "sha256": "041052c772231a2953cc8eeb3be7292a29485afc16539f7c08e3a0fb67d12ab6"
+    },
+    {
+      "path": "reconstruction/locomotion-acceptance-tools/README.md",
+      "bytes": 11301,
+      "sha256": "e173581cdf45943333a1a8a326cc57ad56b0a511b85b6a3853fdddc6c6d42fbe"
+    },
+    {
+      "path": "reconstruction/locomotion-acceptance-tools/test_verify_locomotion.py",
+      "bytes": 20079,
+      "sha256": "f10d94155f71b388ec490095c67f2c214fdad807aa5e668b17fef9ccc7b6358c"
+    },
+    {
+      "path": "reconstruction/locomotion-acceptance-tools/verify_locomotion.py",
+      "bytes": 48737,
+      "sha256": "a34ec8df128c27661c6ab425e7a91757fa403c2ebf1e2560740eaca71478cb4d"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/abi-windows.json",
+      "bytes": 5878,
+      "sha256": "52d9ca27341aa3dfa3cca405f80c2450bb5b7922a4e21d0c50761c000fedd7cf"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/abi_windows.py",
+      "bytes": 4983,
+      "sha256": "ffef3a7f565448daf68be7395edbbdd2863588a8c999f068aa6d2a80a759496c"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/bind_native.py",
+      "bytes": 5962,
+      "sha256": "c9398b4798fc4ed82b51a2274b8e5008accb9290f375ef04c1c959dbae590973"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/collect.py",
+      "bytes": 8591,
+      "sha256": "95e4622a5acaee6d9aaeb3991ea976b03b1748ae326030b7358cf869c107f54d"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/decoded-code.seeds.tsv",
+      "bytes": 561283,
+      "sha256": "8ffa5265d5f901b3308db1d7bc80e212f9c8beff546213201fcb8be1ca8dfe74"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/14526-06000c75-procedure_assembly.json",
+      "bytes": 6254,
+      "sha256": "5d97be2bb0a9cc8a9af98c6c6e3db2e9df70810e2feebf6965ddd7380fa3cea0"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/14527-06000c76-procedure_assembly.json",
+      "bytes": 6384,
+      "sha256": "75b0385435ae745fc02a251d29e1d6bb860a1b6c2339bc8d86c147d561742f07"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/14527-06000c76-procedure_pseudo_code.json",
+      "bytes": 6715,
+      "sha256": "0dc69a4e8b03672e0101e501912d0037fcf505d5243f7c9f014177902da2b9e3"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/14527-06000c76-procedure_pseudo_code.pseudocode.c",
+      "bytes": 268,
+      "sha256": "aeb9c636a7e3f2bf34facb799c45e8b12a68c0aab7ad2ceb43acc397237fbd5f"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/14533-06000c7c-procedure_assembly.json",
+      "bytes": 6254,
+      "sha256": "9eb8464afd8ef896d476e6be614a76375a88142f4ae8ecb3cedd9cb88809ea37"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/14533-06000c7c-procedure_pseudo_code.json",
+      "bytes": 9357,
+      "sha256": "7f76a74c9dcb6035c79753020666b7191ea663184af6945a4ef531785a3c3382"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/14533-06000c7c-procedure_pseudo_code.pseudocode.c",
+      "bytes": 1487,
+      "sha256": "597ed2820a4d95266f516615884a6b93b2fcc3ca8c8f588792f93d17017f3c5b"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/14535-06000c7e-procedure_assembly.json",
+      "bytes": 6254,
+      "sha256": "e83ff2801c5f2688050b9c8d040ccce42f35cc2c5046df49e942d59cfa53b466"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/14535-06000c7e-procedure_pseudo_code.json",
+      "bytes": 8629,
+      "sha256": "0c8098b82b318fd59ce8294fc5c23b26a72300bbec29ef1e0e69257ff3dfc265"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/14535-06000c7e-procedure_pseudo_code.pseudocode.c",
+      "bytes": 1151,
+      "sha256": "48f50df0db6953ca3ce635fab5491597e1996bcefb7e0d84099316b0290889b5"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/14551-06000c8e-procedure_assembly.json",
+      "bytes": 6254,
+      "sha256": "c27e8c93bd61751e1a3b5486c4f58ca316c3c857570dcc305204f533da096933"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/14551-06000c8e-procedure_pseudo_code.json",
+      "bytes": 8289,
+      "sha256": "279aab23d16297ec8c072db1c66feea90596e5e0e8cae6b00bd435590f877dd9"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/14551-06000c8e-procedure_pseudo_code.pseudocode.c",
+      "bytes": 978,
+      "sha256": "dca117a70c8ae137d9e98973aa298cddf41ffa5f2cc3161fff0697be332cd75d"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/14552-06000c8f-procedure_assembly.json",
+      "bytes": 6254,
+      "sha256": "883736fdd3e84c2e3d866f0c263b24ca90fc9777cb2fc9683c76a15390e30ed7"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/14552-06000c8f-procedure_pseudo_code.json",
+      "bytes": 29829,
+      "sha256": "fd0d0ba4c9d623b9c0781697f9a44936a2a2999062c3f3effc37669b17405ece"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/14552-06000c8f-procedure_pseudo_code.pseudocode.c",
+      "bytes": 10906,
+      "sha256": "f053ea47522e611ba7202e5d5ec70cf83dc4eca41265509f1475e8674bd7bc51"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/14899-06000dea-procedure_assembly.json",
+      "bytes": 6254,
+      "sha256": "170e6e7f168c1780baf325ab6021015c2f7247041e476c5483148dc399939c24"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/17316-0600175b-procedure_assembly.json",
+      "bytes": 9962,
+      "sha256": "95d6039ad95a24d1ecd0f9b275d100a4be16d90f9d58f49d3a83d0046314910e"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/17316-0600175b-procedure_pseudo_code.json",
+      "bytes": 8297,
+      "sha256": "2d54639706f8679ac14dfd727d26e94719c262fbe280049db6c8926760f3e02e"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/17316-0600175b-procedure_pseudo_code.pseudocode.c",
+      "bytes": 994,
+      "sha256": "8ee30fbb8c247a51fd94ee2e189b8c39f50b4e368006716bd3e66e9957d493dc"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/17317-0600175c-procedure_assembly.json",
+      "bytes": 13602,
+      "sha256": "d7275c981ef3d66b8541c6645f2e05b03f34459b9790eb91e6fa6d72e4ab6b8a"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/17317-0600175c-procedure_pseudo_code.json",
+      "bytes": 11655,
+      "sha256": "97c929058af16ec1ae1f8ccb66c8f31c5254ed1500b3794d4efbb6e48b65a8e0"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/17317-0600175c-procedure_pseudo_code.pseudocode.c",
+      "bytes": 1962,
+      "sha256": "b156bf99759eb39d9cb45518438155d552b6c45803d30d0fe92f0016c30aa3a2"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/17319-0600175e-procedure_assembly.json",
+      "bytes": 6254,
+      "sha256": "df524bf186dbaae47c4e7aee9349d5ff310b33ce7f22fc12d5474284fbe7b060"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/17319-0600175e-procedure_pseudo_code.json",
+      "bytes": 8073,
+      "sha256": "83b2cbe71bddaadaa478f2b914887bb88c9e87b04722d53b98a12211ad7904dc"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/17319-0600175e-procedure_pseudo_code.pseudocode.c",
+      "bytes": 879,
+      "sha256": "abaf9e717cc2f72de5507fca37c04979054e90357c657c2f5a29295e496ce4d2"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/rea-evidence.json",
+      "bytes": 150244,
+      "sha256": "4ab98ac48b089ff3b839d6ff17af1cb22b92aad3fdc7de40c2f4bc1ae1046c02"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native/run.json",
+      "bytes": 9791,
+      "sha256": "78363ad473019d166d204aad70dc844e0451305f9463a2293e080989638b07c8"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native-contract.json",
+      "bytes": 60976,
+      "sha256": "cb706a35f3f7a306fb8f7344332508bce22d2a3a6dec3d31fb936ca4360e15d6"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native-decoded-code/14526-06000c75-analyze_function.json",
+      "bytes": 3625151,
+      "sha256": "7585692712275a085c4f212e519b8ebd0aa29d5ed6cfdf4ea6cc1004751e5a5c"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native-decoded-code/14526-06000c75-procedure_assembly.asm.txt",
+      "bytes": 44,
+      "sha256": "e78c062197144b5db044547f99878e7c61f9a10214b964cdefaae3e5516689c9"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native-decoded-code/14526-06000c75-procedure_assembly.json",
+      "bytes": 6387,
+      "sha256": "0bf94152b8aea3aaf0624028ccb38264dfe52ffbb579c3eb88ea4cae298e2217"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native-decoded-code/14535-06000c7e-procedure_assembly.asm.txt",
+      "bytes": 1992,
+      "sha256": "26ced81322218540349e9db2c829219b987f5c26fc3356cb047653745c2721f1"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native-decoded-code/14535-06000c7e-procedure_assembly.json",
+      "bytes": 10877,
+      "sha256": "96f20a0d244751c74fd7530996b732b586fe4af0dc32d0f2feb8b9ef774deadf"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native-decoded-code/14552-06000c8f-procedure_assembly.asm.txt",
+      "bytes": 43,
+      "sha256": "3525612ecc323da5acc35253748df44171167f0cfa29f2eb8240258cca54c922"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native-decoded-code/14552-06000c8f-procedure_assembly.json",
+      "bytes": 6385,
+      "sha256": "ad063396ba9f01bc68890fcb6db7ea44e5b6ca531724b80a7e09571d391a3173"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native-decoded-code/14899-06000dea-procedure_assembly.asm.txt",
+      "bytes": 21,
+      "sha256": "1b4bafd9122326e2cc155fd1676b8358ec39f8c7a6380c6690e44e01adad6f66"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native-decoded-code/14899-06000dea-procedure_assembly.json",
+      "bytes": 6341,
+      "sha256": "abe117a419131995913da2ddaa4f730802bceda0cf48abedd535a6515221a46c"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native-decoded-code/rea-evidence.json",
+      "bytes": 1884262,
+      "sha256": "0da593daffaa3654be6aba2cf81bfc956db99467abfca93b8b7d9149e1879a07"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native-decoded-code/run.json",
+      "bytes": 3028,
+      "sha256": "b5ee81bd04007beb7ca4dae10c0927cdb1b657c46fdc60b6c001058673c4e521"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native-decoded-code.plan.json",
+      "bytes": 2690,
+      "sha256": "0d6ed064f464dec6708ce62c37e2e50d3dfdc9de49cf58218bfc05c6441f0653"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/native.plan.json",
+      "bytes": 4870,
+      "sha256": "d4d4e0ee22cbdc7e41821b060894821fd660c4e214a43040b5cbef1777e9ef07"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/original-controller.json",
+      "bytes": 335784,
+      "sha256": "0ff4acbddb34bce70a184b26a4fc9cfc16f7ba0e506e889965be77dff82bb6d3"
+    },
+    {
+      "path": "reconstruction/locomotion-evidence/README.md",
+      "bytes": 7324,
+      "sha256": "da7942914194d5b25a71aafe35252f7e9819b81c0432a6ebb5202fdb6cba64e4"
+    },
+    {
+      "path": "reconstruction/locomotion-project/Assets/Editor/BuildMinimal.cs",
+      "bytes": 5037,
+      "sha256": "2086f55e0afc286de433d4adf3445fd769a8e0534329af3e7e4daba710be1ae3"
+    },
+    {
+      "path": "reconstruction/locomotion-project/Assets/Runtime/LocomotionAnimatorBridge.cs",
+      "bytes": 14304,
+      "sha256": "74793602c7100a457217184a80c0cabd8c2d510f998a3283c5dd4fd9a1bc436b"
+    },
+    {
+      "path": "reconstruction/locomotion-project/Assets/Runtime/MinimalBootstrap.cs",
+      "bytes": 27377,
+      "sha256": "d714d16abf8c2e3f1c5b2e178f6911bd822f44826bb1942277e046185ded0dbd"
+    },
+    {
+      "path": "reconstruction/locomotion-project/Assets/Runtime/PlayerMotor.cs",
+      "bytes": 8123,
+      "sha256": "eb8b438507d886d017424b3b60180cd42005db329d6f16dc3cd690fe9a3899f4"
+    },
+    {
+      "path": "reconstruction/locomotion-project/Assets/Runtime/RunEvidence.cs",
+      "bytes": 9913,
+      "sha256": "f2a584c36ea6ed4767407df7da8dcd5e003dc53e4cac04d4ea87df5f24c3a614"
+    },
+    {
+      "path": "reconstruction/locomotion-project/Assets/Runtime/SaveBridge.cs",
+      "bytes": 11469,
+      "sha256": "c5eb0a81187b5dc76efecb86892bc271b8c1e741c7f0de9a44572163fdae924e"
+    },
+    {
+      "path": "reconstruction/locomotion-project/Assets/Runtime/SceneAssets.cs",
+      "bytes": 25910,
+      "sha256": "4cb9b8c3baa2b4bd1d6f6e1b5ab5cf4252d9b43114396d35b40ad686a0b204f8"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/build/build-proof.json",
+      "bytes": 83,
+      "sha256": "c6135ed066eecc69f20deee2eef9aeaf808682e0d64d0d3d5e38521318d253e0"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/build/editor.log.gz",
+      "bytes": 17630,
+      "sha256": "fc38777c115b39020461ce57117c031ed3da54c85136f2b1bb8db8f5ba8b28f1"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/build/exit.json",
+      "bytes": 98,
+      "sha256": "c64bf29b6dfc2036a09a94783bb500d89213c8a0a71db346f545b37a937ae1c1"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/build/start.json",
+      "bytes": 33721,
+      "sha256": "a08b4850230ec344f817ba6abdc63307b635ba481f7ace30071ac55c27116016"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/build/stderr.log.gz",
+      "bytes": 20,
+      "sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/build/stdout.log.gz",
+      "bytes": 20,
+      "sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-1/Assets/Editor/BuildMinimal.cs",
+      "bytes": 5037,
+      "sha256": "2086f55e0afc286de433d4adf3445fd769a8e0534329af3e7e4daba710be1ae3"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-1/Assets/Runtime/LocomotionAnimatorBridge.cs",
+      "bytes": 14000,
+      "sha256": "c54b5c463d01ae021b59137e5c0b3f0a5226012225a7a759ca2b5907b482d216"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-1/Assets/Runtime/MinimalBootstrap.cs",
+      "bytes": 24228,
+      "sha256": "5b6d9456f6fa46f89b582f3a321f6ec2dd08bedacd36c4d766b6a86a0871a392"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-1/Assets/Runtime/PlayerMotor.cs",
+      "bytes": 7424,
+      "sha256": "30e39856f1ca8f6e3e186ef429f78ee9e2b71a3d244f2b3c026c9724e8c658f9"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-1/Assets/Runtime/RunEvidence.cs",
+      "bytes": 9792,
+      "sha256": "1de573bb8649762e5371893a0ebd38a1be21df765102e4e729ff58c3de2d3e3a"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-1/Assets/Runtime/SaveBridge.cs",
+      "bytes": 8382,
+      "sha256": "fa853aaaf1220a79535ccb3c69db5f93ac5413c3c44fbd5ed99adf44bf2750de"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-1/Assets/Runtime/SceneAssets.cs",
+      "bytes": 25910,
+      "sha256": "4cb9b8c3baa2b4bd1d6f6e1b5ab5cf4252d9b43114396d35b40ad686a0b204f8"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-1/build-proof.json",
+      "bytes": 83,
+      "sha256": "69541e82316a580226c9848e95c0028b5a338cf1590947037e3cd8ca564dda40"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-1/editor.log.gz",
+      "bytes": 31732,
+      "sha256": "48c68ddc39b9e8e1a6e06d7996fdad43f466a61446f21df447287fdf705db77c"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-1/exit.json",
+      "bytes": 98,
+      "sha256": "c99eeacdbab98c4837ee5749ec8a116ed029933519d67dde5c401865e89e68c2"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-1/start.json",
+      "bytes": 33720,
+      "sha256": "22cde8fb4a5413d5a85419f8d4814aeabcc78a0f9fd0d6f4e8a427d265f557cd"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-1/stderr.log.gz",
+      "bytes": 20,
+      "sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-1/stdout.log.gz",
+      "bytes": 20,
+      "sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-2/Assets/Editor/BuildMinimal.cs",
+      "bytes": 5037,
+      "sha256": "2086f55e0afc286de433d4adf3445fd769a8e0534329af3e7e4daba710be1ae3"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-2/Assets/Runtime/LocomotionAnimatorBridge.cs",
+      "bytes": 14304,
+      "sha256": "74793602c7100a457217184a80c0cabd8c2d510f998a3283c5dd4fd9a1bc436b"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-2/Assets/Runtime/MinimalBootstrap.cs",
+      "bytes": 24260,
+      "sha256": "afb9c8d8716670b9df08f3d2930274fce2332976f6c14ae8ea48334d069c180c"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-2/Assets/Runtime/PlayerMotor.cs",
+      "bytes": 8123,
+      "sha256": "eb8b438507d886d017424b3b60180cd42005db329d6f16dc3cd690fe9a3899f4"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-2/Assets/Runtime/RunEvidence.cs",
+      "bytes": 9792,
+      "sha256": "1de573bb8649762e5371893a0ebd38a1be21df765102e4e729ff58c3de2d3e3a"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-2/Assets/Runtime/SaveBridge.cs",
+      "bytes": 8382,
+      "sha256": "fa853aaaf1220a79535ccb3c69db5f93ac5413c3c44fbd5ed99adf44bf2750de"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-2/Assets/Runtime/SceneAssets.cs",
+      "bytes": 25910,
+      "sha256": "4cb9b8c3baa2b4bd1d6f6e1b5ab5cf4252d9b43114396d35b40ad686a0b204f8"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-2/build-proof.json",
+      "bytes": 83,
+      "sha256": "365e45e6e284018f62a5173522f7878e25dd5ab869d377a367627f6bbbc9ea22"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-2/editor.log.gz",
+      "bytes": 22048,
+      "sha256": "f7146c20c577343149f1998a8ba94f3e48b9670da0a4a7d4415c1afa5ffa04cb"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-2/exit.json",
+      "bytes": 98,
+      "sha256": "3acb2e91b639f565de09b1be93b8d7bf0502cabbda88c4f43199b496dd8ae7b2"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-2/start.json",
+      "bytes": 33720,
+      "sha256": "23643d35c5d907a3bc82eb9676f82c12b1e4329859ab4694af05f86ed4d1c36e"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-2/stderr.log.gz",
+      "bytes": 20,
+      "sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/build-2/stdout.log.gz",
+      "bytes": 20,
+      "sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/f5-failed-round-save.v1.json",
+      "bytes": 1655,
+      "sha256": "b8b7e564e6a472c0f6f4b91178687c5bbbab7193619c996c61dd8e30f812dc3c"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/keyboard-diagnostic-20261031-1-keyboard/events.jsonl.gz",
+      "bytes": 7682258,
+      "sha256": "e4b821d169c67ef51addef06222abad28f19882c6eabb1358015632298b8da1f"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/keyboard-diagnostic-20261031-1-keyboard/input-receipt.json",
+      "bytes": 1287,
+      "sha256": "fdd7ee9f12aeb6d8fa4d2e3e14b36efff095f7f4bd2341b91326e4d9ca206922"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/keyboard-diagnostic-20261031-1-keyboard/keyboard-ready.png",
+      "bytes": 837631,
+      "sha256": "4524e8a0ac3c998ccea91d42fe9bb0ac7f56dc1e973644d68b166b6c29fcd7c5"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/keyboard-diagnostic-20261031-1-keyboard/keyboard-saved.png",
+      "bytes": 828698,
+      "sha256": "4fcad2f3815c137b4fc3f7f22f688116b568dabd075d6bf1592cac2895926a83"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/keyboard-diagnostic-20261031-1-keyboard/player.log.gz",
+      "bytes": 6001,
+      "sha256": "79837bb3a5d73b5988ac33e644e1e0835a4fd9fc8c12bbfaa2d0f7bfeac9e8fb"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/keyboard-diagnostic-20261031-1-keyboard/process-exit.json",
+      "bytes": 117,
+      "sha256": "48109ace7ee7ce433f434a2bf95c9198d64e4801885a3706d937ca1f6666fc23"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/keyboard-diagnostic-20261031-1-keyboard/process-start.json",
+      "bytes": 1865,
+      "sha256": "4654cf64099c7f5a22d1b5577605bba67359a86900494a825148c70e9d591adc"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/keyboard-diagnostic-20261031-1-keyboard/proof.json",
+      "bytes": 4946,
+      "sha256": "91527641e49e2770cce38733d733d56c05ab07e5a1dac9ff397347d809acc3c2"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/keyboard-diagnostic-20261031-1-keyboard/title.png",
+      "bytes": 31726,
+      "sha256": "6152449be07f89d59336cfcc4e83f72648de079dda374169ffc09faf3f6625ae"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/keyboard-natural-20261031-1-keyboard/events.jsonl.gz",
+      "bytes": 1067731,
+      "sha256": "0117935a6ac3f69e083f8c8ca24ba52c77ddc24ef7fd3f7e300dee3b044efdc8"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/keyboard-natural-20261031-1-keyboard/keyboard-ready.png",
+      "bytes": 840295,
+      "sha256": "f14f924540739a8e211306f179aab8921c367f44ca66cce7006512ca589764b5"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/keyboard-natural-20261031-1-keyboard/player.log.gz",
+      "bytes": 5949,
+      "sha256": "60145e2182ce03b7ae13a8352bdd35f10bc7d4be2f7678d6a2b89ad3e0658e01"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/keyboard-natural-20261031-1-keyboard/process-exit.json",
+      "bytes": 118,
+      "sha256": "5dd1a83b6198d1b328c7cc13e7f0464c581b40d6c2599e90c119ea530b908d17"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/keyboard-natural-20261031-1-keyboard/process-start.json",
+      "bytes": 1844,
+      "sha256": "f43db34629feceaa602a2f6d152f4ad265af26d75998bb11dcdf377aac79804d"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/keyboard-natural-20261031-1-keyboard/proof.json",
+      "bytes": 4996,
+      "sha256": "f701827d048f4a3c3c8bfd0f48fa52565563ccf99211b655bbe06c89d1c82c86"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/keyboard-natural-20261031-1-keyboard/title.png",
+      "bytes": 31726,
+      "sha256": "6152449be07f89d59336cfcc4e83f72648de079dda374169ffc09faf3f6625ae"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/locomotion-diagnostic-20261031-1-phase1/events.jsonl.gz",
+      "bytes": 178686,
+      "sha256": "5bf193b42c7895d47c48c2081713f421d617fe75a9bef115c0fa61cd73486b2c"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/locomotion-diagnostic-20261031-1-phase1/movement.png",
+      "bytes": 774282,
+      "sha256": "eedda09d190d3665e84c97469ccb5879620af0b08c59cef56a540141f58555ea"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/locomotion-diagnostic-20261031-1-phase1/player.log.gz",
+      "bytes": 5969,
+      "sha256": "f2182fa057c3fff8942dfe0c555328c524b39906bc8467ae9e76d90e788fc2c1"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/locomotion-diagnostic-20261031-1-phase1/process-exit.json",
+      "bytes": 117,
+      "sha256": "a9211258546f0ceec787f81899b3b209cc73c31c0dd5acd1a761b0ea16bab78e"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/locomotion-diagnostic-20261031-1-phase1/process-start.json",
+      "bytes": 1853,
+      "sha256": "89dacc64be4448e4adddcec4bca1ae5243e4a30d1fb2cf6d590dd774585516c0"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/locomotion-diagnostic-20261031-1-phase1/proof.json",
+      "bytes": 4931,
+      "sha256": "3e6a947e9dadf833e220f2644e50812a6bb63d607796cd7f80cab9ca1bacf8cb"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/diagnostics/locomotion-diagnostic-20261031-1-phase1/title.png",
+      "bytes": 31726,
+      "sha256": "6152449be07f89d59336cfcc4e83f72648de079dda374169ffc09faf3f6625ae"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/keyboard/events.jsonl.gz",
+      "bytes": 7154814,
+      "sha256": "a7402b0a946290008fd24e82e6a580fae80ef7c783f72d78c5a8fe03abc22628"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/keyboard/input-receipt.json",
+      "bytes": 714,
+      "sha256": "1d805bd1bbb84ca28a9a1c2d197aa47200c12c4f2af8fbb2edd9c8cea1b12ee5"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/keyboard/keyboard-ready.png",
+      "bytes": 840415,
+      "sha256": "fa0c091cee0d73bf24cfc50cf5f47bdf1b8f56599bc7db8b449bae15df2ea5aa"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/keyboard/keyboard-saved.png",
+      "bytes": 618182,
+      "sha256": "3527d9108d23475dd0d2767051bc469158a038b0605f5ab0ca347a4f465fc177"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/keyboard/player.log.gz",
+      "bytes": 5971,
+      "sha256": "9eb0ae924b4fc0890bc7db9e8cf8845d4c6ac7cd2c2c98134c7238e6182685f1"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/keyboard/process-exit.json",
+      "bytes": 117,
+      "sha256": "ece9192d65ecd2e9e2006dd1dc6336acb328c6e5c0446b7329e2c0d3b3481e01"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/keyboard/process-start.json",
+      "bytes": 1844,
+      "sha256": "715c1b84aaa79edd8f9cb570202fe62419953470b1764b17ecc221a31ef65ad6"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/keyboard/proof.json",
+      "bytes": 5242,
+      "sha256": "058735a782a1ae3d096bf73012531d1fa3ec4271f09e0061b0ce24d3f79b172c"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/keyboard/title.png",
+      "bytes": 31726,
+      "sha256": "6152449be07f89d59336cfcc4e83f72648de079dda374169ffc09faf3f6625ae"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/phase2/events.jsonl.gz",
+      "bytes": 32095,
+      "sha256": "ed1de58b44d3201e14054652ecf42e0aae09192ad9f07eae3481ba78a9fc7cdd"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/phase2/player.log.gz",
+      "bytes": 5911,
+      "sha256": "12c4b42bd81ee9b6715a6258fabfe6c4d06b0e7af9ddc02995f77cad9ab45882"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/phase2/process-exit.json",
+      "bytes": 117,
+      "sha256": "e22380d78a4f160f4ad17e7926ca4521f57e86acf1bfc369d2abe50f9e1db3ae"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/phase2/process-start.json",
+      "bytes": 1834,
+      "sha256": "85e145dba0609d1a853883b037dee920bf049823a819fea2772218744451c5c1"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/phase2/proof.json",
+      "bytes": 4769,
+      "sha256": "ae07d046fbf71f1ef508f47bcb6e1091d478efa078d66903f6219cfb459828ce"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/phase2/readback.png",
+      "bytes": 1016516,
+      "sha256": "dc815b99c68096a7b972c74f65dc4d2bef7e40ab4e33ab3ded0957142fbed714"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/phase2/title.png",
+      "bytes": 31726,
+      "sha256": "6152449be07f89d59336cfcc4e83f72648de079dda374169ffc09faf3f6625ae"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/animator-probe-20261031-1/editor.log.gz",
+      "bytes": 18587,
+      "sha256": "9ab018791fa5154a73b5ea66f3f8119e94e41467aae3378d5466145468aa85a6"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/animator-probe-20261031-1/exit.json",
+      "bytes": 68,
+      "sha256": "77d10a2181e82c62a78c40df6bf0c7df4790ac40c5b26d89d3d221eee15c8584"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/animator-probe-20261031-1/result.json",
+      "bytes": 124324,
+      "sha256": "3d285a32e1d5f18b03bb8636491b76267377aa852361e9f57559e1e33008071c"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/animator-probe-20261031-1/start.json",
+      "bytes": 969,
+      "sha256": "43e224b3c8b815ca0d45149076a3bca4aae92d980c529adbe80526f4d8b91e63"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/animator-probe-20261031-1/stderr.log.gz",
+      "bytes": 20,
+      "sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/animator-probe-20261031-1/stdout.log.gz",
+      "bytes": 20,
+      "sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/save-fix-probe-20261031-1/editor.log.gz",
+      "bytes": 14861,
+      "sha256": "1d88ad928fb35505715baa0445a46d6c5101b5beb31317a7033a481bf9fa9601"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/save-fix-probe-20261031-1/exit.json",
+      "bytes": 68,
+      "sha256": "754c3ba5bdb1d6e21c13658481c98383503692daf97fd7d03b68ef541e4351c0"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/save-fix-probe-20261031-1/result.json",
+      "bytes": 487,
+      "sha256": "d19b1b65b4a0af033e49d5686df100d51aa1103e36b7c022b8badab39eb35396"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/save-fix-probe-20261031-1/start.json",
+      "bytes": 1241,
+      "sha256": "7e0951b57b5db16d9d11dd2ef834fe04893ef7367a1a9f6fe8d77752be394732"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/save-roundtrip-probe-20261031-1/editor.log.gz",
+      "bytes": 14561,
+      "sha256": "d1e9757e9fb3ef25dd2fb68e7732a92f54b70a73a79897aa45726b90202e1b9d"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/save-roundtrip-probe-20261031-1/exit.json",
+      "bytes": 68,
+      "sha256": "edb1b2205bb8b183a6d4d5d51113f2e928cea0e0ffe04542d4ea2e93facfbbbb"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/save-roundtrip-probe-20261031-1/result.json",
+      "bytes": 3448,
+      "sha256": "cfe9817110a80bb0f9750af9a57af6241356a0c74b7683381902e1316be95ccf"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/save-roundtrip-probe-20261031-1/start.json",
+      "bytes": 978,
+      "sha256": "e18ba2e6d75b06e75c87ae1c2bd96038dde9aa8fb768b827ae3ed8f3fdf59d2b"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/save-roundtrip-probe-20261031-2/editor.log.gz",
+      "bytes": 14220,
+      "sha256": "ae3a522d1fb6cdfee7ea312f56c300b5b3e29ab7f1a61ada14cb7f1d33ae991a"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/save-roundtrip-probe-20261031-2/exit.json",
+      "bytes": 68,
+      "sha256": "48b125ed604e4a34a05ddd391aae4c7ae43ab924598dfd9243d392253bfd9fa7"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/save-roundtrip-probe-20261031-2/result.json",
+      "bytes": 28570,
+      "sha256": "2fd940d4e923a00078a3ec4af4c3c10154078949aecef2868da4bb007eae748d"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/save-roundtrip-probe-20261031-2/start.json",
+      "bytes": 978,
+      "sha256": "19885d0eb8e34e325e93a3aeadc02b12d7dcd3a9b1b71a189854d3d4d52d0c61"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/save-roundtrip-probe-20261031-3/editor.log.gz",
+      "bytes": 14303,
+      "sha256": "6f027c68506a8afcab2da9d6e1f7eac204ea6341ea50b8cdd71bbce43403cda2"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/save-roundtrip-probe-20261031-3/exit.json",
+      "bytes": 68,
+      "sha256": "1fb66106bf7343bd0d9c47754d29a96502f931027184891b7606dd0b204d5d44"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/save-roundtrip-probe-20261031-3/result.json",
+      "bytes": 70153,
+      "sha256": "04ffd1aff99e893ff8bfdbc34d8a0d33116d439ecc266bced8ef12ddf44ff496"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/probes/save-roundtrip-probe-20261031-3/start.json",
+      "bytes": 978,
+      "sha256": "f99eb333043b4b425cc33f1d20c7133366b9d1ee7a1310243f092a3bd6ae0318"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/save.v1.json",
+      "bytes": 1654,
+      "sha256": "c4aba839937c1c02300b565e11b510dc3931f1c8f68bbb85062382f928545c92"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime/save.v1.json.bak",
+      "bytes": 1654,
+      "sha256": "d6ee4f443de79283410e03cdab1d61d0e50581d20e41849bf6ecc41aa21002a1"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime.json",
+      "bytes": 171356,
+      "sha256": "90ae097df55038944ade250e1e1da0b1c93ce9aab1339b42951fc9356fbf32da"
+    },
+    {
+      "path": "reconstruction/locomotion-runtime.md",
+      "bytes": 6705,
+      "sha256": "58c6bf12d09bb752c960ec23a3cbeda87e6c05e42210465308eabb11a6732502"
     },
     {
       "path": "reconstruction/minimal-acceptance/build/build-proof.json",
@@ -752,8 +1637,13 @@
     },
     {
       "path": "reconstruction/README.md",
-      "bytes": 2528,
-      "sha256": "9f36a5b141dc10c5ee753f6b9430a8f9c2939b43070173dbb243389664e8ad33"
+      "bytes": 3146,
+      "sha256": "5df90c47e227a6de7aadb09cbce4f690bc600cdd8b10c4a18606fad073aa2945"
+    },
+    {
+      "path": "reconstruction/run-locomotion.ps1",
+      "bytes": 2499,
+      "sha256": "54e7d1dcd421c2535eaf3122852dcee88f3ce0ea5a705ec12ab8b2d07c8cb7a3"
     },
     {
       "path": "reconstruction/run-minimal.ps1",
@@ -814,6 +1704,11 @@
       "path": "reconstruction/toolchain-smoke/Assets/RuntimeSmoke.cs",
       "bytes": 813,
       "sha256": "55679145206cd26abd8c7db4816c12b37884e3fb073a0b647359cd5a9a8aecbe"
+    },
+    {
+      "path": "reconstruction/verify-locomotion-runtime.py",
+      "bytes": 5067,
+      "sha256": "ae67bfc4c44c141937dd8a20d49060f293bff808def89603d8c4c29339edd8c6"
     },
     {
       "path": "reconstruction/verify-minimal.py",
@@ -15782,8 +16677,8 @@
     },
     {
       "path": "work-queue.json",
-      "bytes": 6701,
-      "sha256": "0ee30a70fe2f5bc40fbaf433d1b2b76726bc33b3c3101fa27a2d19add5fde344"
+      "bytes": 7588,
+      "sha256": "692b3ef150475c773adda011c7b6344494f93b27d8b8257a1dabb2a42fc1777e"
     }
   ],
   "inputs_checked": [
@@ -17710,6 +18605,1606 @@
     {
       "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\minimal-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.977.raw",
       "sha256": "5c760952aa2ccbb9067f338cfb7d37673906b916076b780449500f046dedfa91"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\build-proof.json",
+      "sha256": "c6135ed066eecc69f20deee2eef9aeaf808682e0d64d0d3d5e38521318d253e0"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion.exe",
+      "sha256": "b0ff5efad3d2eefc2180930caab8ed64b7447901e52096635e96c6c35ae12d0d"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\app.info",
+      "sha256": "e406f084f0d4a54fc8c1a149209872569f1641128467ff56cd28720a1870c781"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\boot.config",
+      "sha256": "e88ed7da9e0cf920de0a8b1c22dd17f9e1a90b86a256ec7e960e20c9817f6051"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\globalgamemanagers",
+      "sha256": "62f07d60d6f1c414c263554141097e9be2530bf156119b574a894e2c4df2f0f6"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\globalgamemanagers.assets",
+      "sha256": "2eed5b4d9cc5fdab8baf04db53aeea59fcebe01d28e1517c6f54a88fb8d14382"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\globalgamemanagers.assets.resS",
+      "sha256": "40f35910f0086a673884e0d6fc5b077bc73d0bc3b46dcac3308d2afb6d43dfb5"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\level0",
+      "sha256": "f603be5836fad9b15741c5cc0585edee8142b786172c1149a4a04e3dc435492b"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\Assembly-CSharp.dll",
+      "sha256": "3585f1862c3fae750fb167b5c56c086b61ef56ac603327c63993cf118104cbfe"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\Assembly-CSharp.pdb",
+      "sha256": "e3188f716813c0dc0b8d120fd27a84357e706d2af5c7da391707e43e54127c25"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\Mono.Security.dll",
+      "sha256": "2d7873a4b4beff04552395a65fcc8ef37b27a8c2dd1086de5eead48607e245cb"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\mscorlib.dll",
+      "sha256": "a0b2be9fbd29e5919764b836121858376bfd5f64978429887bf0da7b0b229b67"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\netstandard.dll",
+      "sha256": "6ae62e082dc494a2433984177f60ca4db5fae69b1f360a8b33754172b310b8c5"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\System.ComponentModel.Composition.dll",
+      "sha256": "849d8e6f926316d042cee63863b1ec1d14a0ab6876307942f27d7bb58bc42dad"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\System.Configuration.dll",
+      "sha256": "58e8908a09a0e0237d444a5002cf31e759513903d05de443e533e1cce3638545"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\System.Core.dll",
+      "sha256": "004bba2445e78170db699a0aa8741ef85604fe6c1ce59efe503456de54bb082a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\System.Data.DataSetExtensions.dll",
+      "sha256": "f437891cd82d172758aab6cdceb7df868c8bef0813bc02bfe7e02447048ccdb3"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\System.Data.dll",
+      "sha256": "202e89d3ece1fb0c4b6a92003afbb7e4add1265c26364c6fd0aa51b62710b87f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\System.dll",
+      "sha256": "e3220eb5b57502041f5027d40d86b6fca4fb1ce0d151e8766dc2a25d591c346b"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\System.Drawing.dll",
+      "sha256": "c69a175fcc18f436860172f2f8e78e2631b69f1dc64661d410fecd74e24affae"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\System.EnterpriseServices.dll",
+      "sha256": "322a825f861af29dd7212fb91bcda9c4573e927e8f5efda8f0d5647f5c86cf89"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\System.IO.Compression.dll",
+      "sha256": "b4cd740a14bb2eb2263203bfb85bdb758e81ff270e91019d9b8a58b8a94c53ae"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\System.IO.Compression.FileSystem.dll",
+      "sha256": "b04df9d1933eae9a8474eca6ca0646b155f3d222735707db67704c84e10ab984"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\System.Net.Http.dll",
+      "sha256": "a326a1efe08ddfc33f6ccfaa9e268ef328a7cbf47a763fa38bbca58e0be19015"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\System.Numerics.dll",
+      "sha256": "786f1c5e9ab50ca71d3714b5b795d1f34c39d42a666a61e27db539eca143e1ef"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\System.Runtime.Serialization.dll",
+      "sha256": "db52920647ac0f55521e6c095e86845d36dbd4e53187b98f5f8166df392c7061"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\System.Security.dll",
+      "sha256": "d2b40ccb59c3bdac10366090784346057fc4742802bdd02f1b99b63c83c48480"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\System.ServiceModel.Internals.dll",
+      "sha256": "32214a5f0e001cb09fd66badfdb7a782dde0e89fe07f04240ab0d3a6f33426c3"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\System.Transactions.dll",
+      "sha256": "a34eab6e7ea02b4eb94331971b2a7950bf339765557414a15b8296bae0ee7b00"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\System.Xml.dll",
+      "sha256": "4f7f5600ac3288b17aecbc92b5a0ce818d005b99b7112454951961433ab9bec0"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\System.Xml.Linq.dll",
+      "sha256": "a2e50bd64c59273af8f999296cd7d2f6aa06cda7a4b1e744332fae64af721c65"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.AccessibilityModule.dll",
+      "sha256": "f5c9fc8293d3c3a146da9d71fb9b2303436e55d3dea9b2009efe7cd8a33558fb"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.AccessibilityModule.pdb",
+      "sha256": "b0052d23690cc558b145e5e16d98947bfcb4b7a9a8ab8ee7e9bb5d9d866f20a0"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.AIModule.dll",
+      "sha256": "0fc62841ef2144479cf78ffab348483de6d4ca573753c647b886fb372907c71b"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.AIModule.pdb",
+      "sha256": "d7250f481695bded595f355f89a09da0ae31b9f8be46aa99e40b639d06b52aff"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.AndroidAppViewModule.dll",
+      "sha256": "37c7205d9dd60aec57ce5eb680bae12d592e11b4e09cb44a20681484b8cf189c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.AndroidAppViewModule.pdb",
+      "sha256": "ce89aa69b7f253f21812fedd54b2b57febf7ebb022cf713bc0e70a7d3719737e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.AndroidJNIModule.dll",
+      "sha256": "e50ee4b1777e36068ec3d2a952d9a312b237b96815a9800e5dfd0795e2b1748f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.AndroidJNIModule.pdb",
+      "sha256": "4ea58dc825fd34402a4fb672a0863103eb185411ee2cc3b40533f00494a3f3bd"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.AnimationModule.dll",
+      "sha256": "977ba10dac455f71cb685880c9c84d8ad5955d86b4e73c1bef8306ca58fa5c95"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.AnimationModule.pdb",
+      "sha256": "6caa189cdfd0bbfebaf81740d18d8f1a1fcf71bd741dd2b35aa1535fa4f7b732"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.ARModule.dll",
+      "sha256": "9e3f77fd5c2aeddf0794f47ea8171a2d8ca9fa935ef5a77219eb395cf5fe5fa6"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.ARModule.pdb",
+      "sha256": "0f40fc45fcefa54f45c1bef6c3b30c1a446f3e0ca830e80b3f4e2ef8c7973b52"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.AssetBundleModule.dll",
+      "sha256": "cb33b1506c804beda6f5c815487cf61a47940dbe31d13ee58a5c4d9d62d3d8b5"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.AssetBundleModule.pdb",
+      "sha256": "bb9bcb164fa196c6f4a17eebea5e357cf4a9767bcb30b2a131983db8f56f88dc"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.AudioModule.dll",
+      "sha256": "db1551e18a0b3b1b4bac0edcf18a6aa354eda63db7dea9111eebc4f536df54e6"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.AudioModule.pdb",
+      "sha256": "82ed880e6d0ae31db1f47009e3b32989fdc4ed7bff997e0ad7f45440fe8747ae"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.AutoStreamingModule.dll",
+      "sha256": "445147a8f4c450d15102bc0e7b60aa0fbbfdf50fd8c09fc9dd278832f62e4a65"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.AutoStreamingModule.pdb",
+      "sha256": "b4c14468f2f4c331d31df656f38cf5a61bcdc939c36836288cfaa00dcc9b273d"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.ClothModule.dll",
+      "sha256": "094c5483a669099fe11e1db0044329914ba0b98da25a17acf219913fa6010c2a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.ClothModule.pdb",
+      "sha256": "af97c804ae9bcda97f46eac17d4192c508e45773ae192b2255cc196b0dc37abd"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.ClusterInputModule.dll",
+      "sha256": "dc01e09ac9e53ba158c9284fda978ff6fe2748317cc73e6fa8ad841713bc7dfa"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.ClusterInputModule.pdb",
+      "sha256": "d746044af170619a39f064868e90afe3d4a4b0554b1ffa92ad53a4c7597c344e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.ClusterRendererModule.dll",
+      "sha256": "47f546ed4a93ee6fd357237d5150e32425e977b9d20fac00a3969bb25c097f46"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.ClusterRendererModule.pdb",
+      "sha256": "7c7a4ca311a5310ab913019281ee3f9b6c455c8d9247d77f146885a2f9a3505f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.ContentLoadModule.dll",
+      "sha256": "cfa722ac8d9809067cfb731e830f6324a43833039ca0818968b7ba349806c892"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.ContentLoadModule.pdb",
+      "sha256": "72492ab8e715ca88f473744a604b4f65ef09658eec5d013549d67e2c8fb6ced0"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.CoreModule.dll",
+      "sha256": "94931efb9ebb83ff7f82090cb96ba013bd3a9bc0a43bc9a613ec7c84154ebb9f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.CoreModule.pdb",
+      "sha256": "82dd37825b3ce0e81262e522838cce12fb9a88e9277dcab796bd34da2281a7db"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.CrashReportingModule.dll",
+      "sha256": "bf051ead392924908ee1e478a07fd5c7b4772c6a6790b68e77cb5ef3c5f73562"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.CrashReportingModule.pdb",
+      "sha256": "9804b5953c74318aaef6e8cf661e247f9b221c9bf995100b10a6082368a2647a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.DirectorModule.dll",
+      "sha256": "04aa1dabce5da19738f4ce81c96e7aac1889240ba427bd504fad9e32d5208a36"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.DirectorModule.pdb",
+      "sha256": "700759ee7071b89154a07da756d01be33c372b8741ed6bc379a5e9cc795039a0"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.dll",
+      "sha256": "cbb0fccbc2c6baabe54abdfe5b264ae8ba8684eeba1ef85bb697820b420fb800"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.DSPGraphModule.dll",
+      "sha256": "5503ec4fbe7d5baf2051c9a38b422b135a5afb2cc52964f670f759415e1e75fc"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.DSPGraphModule.pdb",
+      "sha256": "2182b65217bbb73f24b30e1417d5b8e0fc668549ec0e3068c4dd3e2562ef57d7"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.GameCenterModule.dll",
+      "sha256": "6a2c06d6c4f3613b43cad731e6242f810580b98119a4995b245dd49fb3a8997a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.GameCenterModule.pdb",
+      "sha256": "5a030bdf8380257bb73f239147c5d0474db79d542b8539f6958b6b385af8b8ef"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.GIModule.dll",
+      "sha256": "e422e4d28931cd05481999ca562f4b73aa2f0613894c65a70d57e0a4d9688156"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.GIModule.pdb",
+      "sha256": "bfd86a4788d6cbc04bab8dd222be0bc1cbb45f8394e63bdfe0c66b47708f7448"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.GridModule.dll",
+      "sha256": "13e14e8a1ef97b277d2c78e34db02636e522efd2bf3795d4ee953c60af445868"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.GridModule.pdb",
+      "sha256": "7cbbef8a7eeb78c7eaa13e4ff93fb0eb80c3c8fbf30a3cf439ea573be0e16c29"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.HotReloadModule.dll",
+      "sha256": "5d2c9765f6cb88e003f9a60d8a147afdef8eea8a90816d0b6edf883614581f8a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.HotReloadModule.pdb",
+      "sha256": "52c72bdea3a5be15f42ac6eab63f4438f046eacdf9cf1e06d10481f7f2c88683"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.ImageConversionModule.dll",
+      "sha256": "9e634116ab4d7156f5496a72d82c1afd03bcfb38a8df4320fe6c1b9b819adda2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.ImageConversionModule.pdb",
+      "sha256": "81a3bc8028b30ebde5320ce15d1a1d673c66140a7248c3395654bd8532e3ec4d"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.IMGUIModule.dll",
+      "sha256": "d2c0e2a32a4e6c5b4cfab91d789147af02ed63b94870ec9d9102e903447aeda5"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.IMGUIModule.pdb",
+      "sha256": "f3f0bda513356240cff05164abe9d5594828ea78f9c2ff6a9dbc99b96c0b8e27"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.InfinityModule.dll",
+      "sha256": "08bd8b0fe57dfe16b7070bdc4aa98e33564bc8a95180cda92d5762468ba35f0d"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.InfinityModule.pdb",
+      "sha256": "fee4933b61ede461431fcf132b7ba9c92fabbada2acbb59bf8c1e06c0af8ba36"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.InputLegacyModule.dll",
+      "sha256": "8e614f5921f3774d1a6e4f671aeb5af4d0365f156eaa27da11d53c25bbf7219d"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.InputLegacyModule.pdb",
+      "sha256": "8f43d8002e4e82832ba7d49c57edaff58b09ca883a9593b73728c428845e2cba"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.InputModule.dll",
+      "sha256": "4d3e12477f5a14275f41c37d28cf5c484563e2cfe0a48319ca7dd0aee642a399"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.InputModule.pdb",
+      "sha256": "29f9a6ff01d8fe7e8682f03bce6a8aa8e674af524420ff6b4fca4269f1033451"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.InstantAssetModule.dll",
+      "sha256": "b7e33069f3a32a8e1e897f770b9f02c555f4984d1501429c0677c542c874234b"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.InstantAssetModule.pdb",
+      "sha256": "816a206ff10bebd7a9d6ab02541b46a2b843f5992457f31d79c3a9f1e451ba2d"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.JSONSerializeModule.dll",
+      "sha256": "62f3668d6bd6fa5c82b5244f2f1aa543ea58cb8842b28d6b62dcd409b9350db5"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.JSONSerializeModule.pdb",
+      "sha256": "3b06553ba2972f13adeeafd652f647b34dfd65641eb5c645e8061955c25a54da"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.LocalizationModule.dll",
+      "sha256": "dcac9cab65747e5e277a10d0a5ca23284390950969c2b6670bd70de9526dc422"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.LocalizationModule.pdb",
+      "sha256": "d5f9a1c86197aca0973a3b363736b489a57b346dc97718b54c02e751803daac2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.NVIDIAModule.dll",
+      "sha256": "1f3329e0ed8d683ef6180f9284e34930e047429922807453cc5b9d9b7f9e11e0"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.NVIDIAModule.pdb",
+      "sha256": "20db742d4a7bf14bb72b53dcc5e9c51d3f385428cfc129576fb5820dffe2adab"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.OcclusionCullingModule.dll",
+      "sha256": "aec1cb3fbe19a53cc0694439e7e40c2b7bbb5943828b4a031214fd0b74ee667c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.OcclusionCullingModule.pdb",
+      "sha256": "37b98917b43f395e1df2748031d5b9d15a7de0bdb3895d5bd34226a825fd4937"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.OpenHarmonyJSModule.dll",
+      "sha256": "c540ce7013d93d9cf38deeff992a633aa9b68659c9b5145aae264586e05c1e5e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.OpenHarmonyJSModule.pdb",
+      "sha256": "4e8489180e2c64af89eff8cc82251d66452f9eee5a65bdf0b10a728ce8d029a4"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.ParticleSystemModule.dll",
+      "sha256": "e6585f5018e16c7bda62368f603ca7fbd79e22acc766c64c99d55eedce07eb58"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.ParticleSystemModule.pdb",
+      "sha256": "cc4336288166386f6c4aaf82bd3f20b527cc36954392130ecb1d2e9e11dc3c0a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.pdb",
+      "sha256": "d9136184b26d347969c28dea3d37426a28d2ba5aaff1033c0b694fa7fabd8136"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.PerformanceReportingModule.dll",
+      "sha256": "c42acf889e63c5e4fd762b5e20e1ca626a00f350134fb24a240a0ebdeb2e530e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.PerformanceReportingModule.pdb",
+      "sha256": "8e400a4dd9bc4b6ea8e4824aa44cc63d3d58f4e6f64f2add98ef9698f9a5eb38"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.Physics2DModule.dll",
+      "sha256": "9de33010adbb3388014c9805354d4f6232510ba42524b9c677d61e634f16e726"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.Physics2DModule.pdb",
+      "sha256": "37b47d0cc6f7a83950fc5547bbaede1701ba3eae4383acb8d23b110707ac0955"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.PhysicsModule.dll",
+      "sha256": "71daa13c0275596ae2ed33966fbe3b160babb8a8d04e91ae9456f9df4d807373"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.PhysicsModule.pdb",
+      "sha256": "b99cc4078252e649d1ac65dda4175c023692ba7749ca1273fd1bec5af9155e24"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.ProfilerModule.dll",
+      "sha256": "00811a0e1d9747bb4ff99a09827475b72976d0a8a496540be9e5d5b2896ee959"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.ProfilerModule.pdb",
+      "sha256": "dc3818cb303b9b9536e037ff078d951feecfc1977464ac51962e229b46713ddb"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.PropertiesModule.dll",
+      "sha256": "0c438a16dcf0bea744c33601ae708b5043f8fde16818e59ddb92b289b7a3d22a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.PropertiesModule.pdb",
+      "sha256": "70fe3927ac8fd18e75711565b7740f48bf39d4babf14475c9157e5dd8c64024f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll",
+      "sha256": "14210317402b55303ea41fb307f723e2b06286049abf160abe24bf45c8cd7650"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.pdb",
+      "sha256": "da056da7fa9883ce25f093dceb4792d1abdc03032ef6b568839dd2722dbe7428"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.ScreenCaptureModule.dll",
+      "sha256": "d9c94e3231e1006b9b2e41e1e68349471927196235dca6cd6781b63d9a99e701"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.ScreenCaptureModule.pdb",
+      "sha256": "b8cde14da18623be5519170fce25f7d819a9dc4273807115f12ecbdca4e2c1a6"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.SharedInternalsModule.dll",
+      "sha256": "c399cd127af8569ec899203e8e80f2267a7e544c3c85c527d490ff233b228344"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.SharedInternalsModule.pdb",
+      "sha256": "70cfc54eb301fc89122e11e6345dade4fe65fd7eeb2b11025908874f03cbac0f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.SpriteMaskModule.dll",
+      "sha256": "825fe4190be1dcfab76b7964b251c840dfddec19852170954c00855cbbfdad0c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.SpriteMaskModule.pdb",
+      "sha256": "9ef688397cc2a98f804d7af96bc8eccf070db5c0636d5aba718923b09350fb25"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.SpriteShapeModule.dll",
+      "sha256": "1484e3f7c3b4bfd129367f5f35df3176d8a3e2a71a268efd12b9ae976d4349f7"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.SpriteShapeModule.pdb",
+      "sha256": "2209aad9628391f83b4eb94a4a047083264cb74d4498cd507941a819b1fdf11b"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.StreamingModule.dll",
+      "sha256": "0eebf4c5d624054bc533dc7484de63ca052f2c460fb416b17148ffa4f971ddb2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.StreamingModule.pdb",
+      "sha256": "31feecef2ccdbbabbc5464ab4c729a2cfe734604ee696679eb271d007ba33890"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.SubstanceModule.dll",
+      "sha256": "32df17780c4445c204e5574af1f1b6d667417a130304c62c3257dbd76afae667"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.SubstanceModule.pdb",
+      "sha256": "ad9df06ac0d034531065ff2948ddbe84c5204761bd2eb5734c56a2c78bac3c74"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.SubsystemsModule.dll",
+      "sha256": "8d4dc1ce886560101027251d2bfeeb6622783f45bd91fa68076bbaa686f73698"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.SubsystemsModule.pdb",
+      "sha256": "91d27da2534ff1abaf7e8e7f93274d9c1122d45f3c982d7078f81f74f5691090"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.TerrainModule.dll",
+      "sha256": "5eadcc5e0ba86346b08f6142e4117f345758ef9b3d390dd135605163842a8c1e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.TerrainModule.pdb",
+      "sha256": "bdf103c6afb11662c4cb828f99908e788e5a85bbe80565a21567f888ca7c0f54"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.TerrainPhysicsModule.dll",
+      "sha256": "ef68769addf7e45d7ec788d2eda5a12da557d1c9c229fa0cc96168ab0309e650"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.TerrainPhysicsModule.pdb",
+      "sha256": "6670e599401e163171527bb0343cf4a19b459c27929c65cb5a9ddb58443e2da7"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.TextCoreFontEngineModule.dll",
+      "sha256": "b8413167092d6c3f941a91f696b53fb7a837b7242a5d7d30a1a18b263c0046f2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.TextCoreFontEngineModule.pdb",
+      "sha256": "b64ac1a3bfb6478934102ca6e853e5b54985f63ed657325e6d074d7d426ded5d"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.TextCoreTextEngineModule.dll",
+      "sha256": "7b5b3c12924141a6582a5df2b42f5cfe446a843695f7377ee18207dd2b909680"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.TextCoreTextEngineModule.pdb",
+      "sha256": "4347ada26d64e4d3c01e2f5c6d7000019e2cee1d456c566f49d2d9e623d9a15e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.TextRenderingModule.dll",
+      "sha256": "97ca59e8058e4652c40edfc55008a395373ed667fbb60629dafc740319b1316f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.TextRenderingModule.pdb",
+      "sha256": "cb1582c5949b5413cf7d45d1fcf73433286582decc63daa1f3a10c57e77d1b94"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.TextureManagerModule.dll",
+      "sha256": "1aab3ef7a9285cbbbe8e1859e7708f0fd2c6f22dc0a982c043b9f7352a7c63d5"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.TextureManagerModule.pdb",
+      "sha256": "7af007236937e815f3a4f3352e4574685c6ba6f75858038ba47702903c80baa7"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.TilemapModule.dll",
+      "sha256": "d4e740471e685e420efe2d90d4b5eb7fae564d4b2ab235a4a69aa4b657940665"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.TilemapModule.pdb",
+      "sha256": "de776d69238868eac494554dccb0542e0c830a81fb0788d04517b8e714961c1f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.TLSModule.dll",
+      "sha256": "becff6a34ef669d74538ccc4a2074b89e3228ad0d792525c0d2aa365c215ffb1"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.TLSModule.pdb",
+      "sha256": "944ea87318f2eb0d83c04ad2e7fa5178c4a12a52d545e55b4744fbac20b5c5e8"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.TuanjieGIModule.dll",
+      "sha256": "8c18807cdd96e7e84a8e35fcd8063cd5e33025cb0f6b93775bfb1287832d2d40"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.TuanjieGIModule.pdb",
+      "sha256": "3c90b8ff76494e618f13616d25f222fff93c70eed65bb2b940df0659fbff08a1"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UIElementsModule.dll",
+      "sha256": "7684916f9af151b60747e84e31567cd445d8a8039fd5f4b401c19272cb6916fe"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UIElementsModule.pdb",
+      "sha256": "31cccdff6ddb7f4e9ce05ad4280911b20045b3283ba6aeb186862404d90b280f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UIModule.dll",
+      "sha256": "5d858fb0fade66f184ca83172bc3bedeb4026a5424514401e2c4e048d4c65d8f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UIModule.pdb",
+      "sha256": "c875f8bfb3a22ff74d19939a146396adaf8f84e2844e0c61b7bcf7c7a32b5c2f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UmbraModule.dll",
+      "sha256": "98724b91a3c8da04db7d011191d940fe356e3fe7df1b8c20bb5471ba0877bc91"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UmbraModule.pdb",
+      "sha256": "5a797280446861aad7b4e918c6c9498e71da44cf592b5e1c29b386591c755307"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityAnalyticsCommonModule.dll",
+      "sha256": "4692d55e774c4f276eee5465b3df8d19ef54b622fd598bb5d7edee74e9128cf4"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityAnalyticsCommonModule.pdb",
+      "sha256": "cbc3e207c8771ad0f87ee54943c0ba4dd07c2db211605a8b57053a3ff5eaa0a6"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityAnalyticsModule.dll",
+      "sha256": "10e49a4216a320634c81abe4fcdc37d18fcee94f9573c85c8fcb81daacf61840"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityAnalyticsModule.pdb",
+      "sha256": "6717b50eee13ca1220d45d13674cf62447bc938601bdf90b2af5d5be20800ce0"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityConnectModule.dll",
+      "sha256": "53472712e48509efec50e0a720e43627ad31262d8872619c07b1731709482624"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityConnectModule.pdb",
+      "sha256": "2cfa8085871212086460d5a1ff7d11d8fa4a3e3c4a20b60fcd5a5a5ecb9eefe4"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityCurlModule.dll",
+      "sha256": "2cda6b3f150de709dc151da4a8d9c7ad7588cb56a56c79c99bf6ffb501dbc5b2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityCurlModule.pdb",
+      "sha256": "5187ac2f23d8e353f40b705648e40c2e6b9800cb9f9aafc3fec6d3c90a7d0cfe"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityTestProtocolModule.dll",
+      "sha256": "73841296ebeee3cabdba9a000ac5e085c1cae63dac61909608d537e46033b4fa"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityTestProtocolModule.pdb",
+      "sha256": "aef5d623222fd8a1d59cbac3f81b1aa6799d2709d83f23a010606ac599890851"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityWebRequestAssetBundleModule.dll",
+      "sha256": "0bbc485106e0bb78d10dd05eb828ca1049e881eae545acc7284f407f65789801"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityWebRequestAssetBundleModule.pdb",
+      "sha256": "f9103d3f2a17ca10c755147f1f65e7625ed327b9408647f7161aa4a0801f72f5"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityWebRequestAudioModule.dll",
+      "sha256": "9746f05c20f2cf24ceed5cbb7b57058b35e5662df0d0a3b1d3886e9d25a6fbbb"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityWebRequestAudioModule.pdb",
+      "sha256": "fee5854905b8bfbcfeb19b752c4e6df547f72dd78268642406da7a504a21fd45"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityWebRequestModule.dll",
+      "sha256": "e70f1c72e89ce3dac29a477e17302c42eddc6d5e91f7f46b04862b8ee9cbbba8"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityWebRequestModule.pdb",
+      "sha256": "9f595d7aa05126728b4f8674217e293ed99b41ed7fd58198f78791259cb97f8b"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityWebRequestTextureModule.dll",
+      "sha256": "3a3b0d77389a57a5c2197446dd0b7a9046402593c0755a25fcc073fbbd2b3c79"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityWebRequestTextureModule.pdb",
+      "sha256": "11d50105163aea6900297f228d86d6209d65578862b8e13e37828d6295645fd0"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityWebRequestWWWModule.dll",
+      "sha256": "ca06743bc783917ef153479a313208c2a23a05caae53e0a51d2d5fcb82d839bf"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.UnityWebRequestWWWModule.pdb",
+      "sha256": "4acf44b8d4929766f3b8ad4ef80c0edf74d391833e7afa9b0f20149ecf59fea5"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.VehiclesModule.dll",
+      "sha256": "8f7678f2b6dadafdba77b3d2e0e66892574aeb2577d6edc6a8b1770beb7dab26"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.VehiclesModule.pdb",
+      "sha256": "b94c408fe384e1ede3c244a75dfd8be86e331c14ca24ac1218085df8a3725b5e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.VFXModule.dll",
+      "sha256": "7d6b61ec16a3a0cb85cf4ab01573971543f40221d087d57f8ec0e055a751b123"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.VFXModule.pdb",
+      "sha256": "839be557fd6872a97b47ca23be76db99105271ff3cc55a6f29e140117c9b390e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.VideoModule.dll",
+      "sha256": "d7057d538eb02cd87a7418df49399bdc1b7131d669c12dcb3433820e00570fc9"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.VideoModule.pdb",
+      "sha256": "425dcba0753618f95ceb64fdd21221995c1d750475e601071ede554d07a5d92e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.VirtualTexturingModule.dll",
+      "sha256": "44571302cfe0e9c7d45b01bbb1621ec95bc540a31b650069785c40a98a8fbe55"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.VirtualTexturingModule.pdb",
+      "sha256": "f6f8282c8c8eb8b181f5fb06a30269048247b690fef1dec037c372a92870980d"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.VRModule.dll",
+      "sha256": "5f7a6d688cdbfd64d82eca805efb5d5117f90eafc587ad94e77b57cf137256f4"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.VRModule.pdb",
+      "sha256": "5846a1bbccdfc4384fd96aeb326ee2cd109997befd583324e6a1b6cf505b8b54"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.WindModule.dll",
+      "sha256": "01a667e54172be50885d81b9df1c31aba60ee53e30a20eaea4b32ed91ab3023b"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.WindModule.pdb",
+      "sha256": "46f53e566dc6a632021103ad8a4707ea59464657577c1aeefc139cd9c9d8ee54"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.XRModule.dll",
+      "sha256": "05e7205b85e6693ebfa4c6bfec7b403ab5b14efac468ea35a6b45e65b232a3f2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\UnityEngine.XRModule.pdb",
+      "sha256": "a535467e87e845957d0725eb587ad6dc66303afddbc9886fe6c32ae478c5eef4"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Resources\\tuanjie default resources",
+      "sha256": "ab1f575d278719e3f0e45e197a4390fea349d7fd0ce2cabf3b8c8107b02c70a7"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Resources\\tuanjie_builtin_extra",
+      "sha256": "79249be7fea252efd8f7820fd49d79c2495dc60b838a04043e3b30b2c331f1a7"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\resources.assets",
+      "sha256": "4cdddd68b300a3827a53f97d0da0a1ae0ee7e021910ef2f90ca473fff7f9ed38"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\RuntimeInitializeOnLoads.json",
+      "sha256": "6f191a25d20b6067094e47da212b94b5f6e34d316bd1c2562f231a0d8190632e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\ScriptingAssemblies.json",
+      "sha256": "9682153a3fb3ff7c5e5a9a127de7893c52b1b732ca07409f42c9114cc1c90ea2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\sharedassets0.assets",
+      "sha256": "584209a8ac32ab0f1fa9a5dcf3e2e2bb4adfc1fe9030249f71cc39579a3cd47c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Apartment.geometry.json",
+      "sha256": "3ef0c30c6d6ced487c6db594362f52bffba5990c0c5775a2981686293e3109c0"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\models.unity3d",
+      "sha256": "98621b2c4fa4f9de80f355fae5776ab17efc016bcc81c581bcd0917af4308367"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\roombridge.json",
+      "sha256": "207c453d4e9d4c8a887c1f5923980e429b54c8f84c67556d4292c05cd6e2b25e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1000.raw",
+      "sha256": "df5d00217ead8c833c07833204cab157251bf775cd76089de51c193ecb6820e8"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1016.raw",
+      "sha256": "d320d517a0b303d71d1dd47834e6c24fb58c4072f00d254a1172aa0a38daabdd"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1023.raw",
+      "sha256": "f7f84992f7905c51c1856da17a56e4cec0a53105e9b0f570c717278596ec88b7"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1027.raw",
+      "sha256": "b3e62a0cea6917dd31467cf4c27898789bdbc2154b1cc61f5abef69d1c119266"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1028.raw",
+      "sha256": "15ee010be30e6cf327cbd30cb28d586a3258796e2418a5d189dc8517a5775f0c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1030.raw",
+      "sha256": "c79d129ef19ab17c19d5a380a8a131ab3e590062ae4be7bfe8f035e2a81d1129"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1032.raw",
+      "sha256": "f9d07f639714f5e151db3a1da639193674bb0db39b972548690a44788f21af09"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1080.raw",
+      "sha256": "d3afda921214660087f613d8aae8fdc107ecb54447626411cb008e66b9c1a7a7"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1084.raw",
+      "sha256": "83bd98d7477624edad0282c04edb75fac5d8cfb40c8899aaffc3faa31a38fbd3"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1085.raw",
+      "sha256": "2a6b64c6f5709487382e4c325c896e803b07a02dea0e7f5afa5082b555f78d29"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1086.raw",
+      "sha256": "8da5bc5cd789f99b10e90ed889c090c4632d2a8f0a9bc4544aee6088094eed4b"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1089.raw",
+      "sha256": "cb5b7c0fd2d00714d5a200d80b791fe9a81272fe3063b5afa620ce46c95bd4e8"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1093.raw",
+      "sha256": "5f4805eb04e8548850e071cf7d9c2ae33aea0d69ebda222195aef7bf7be4455a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1118.raw",
+      "sha256": "13396f460609aa2bb287dd2b748a6475612dbcbb4748331d89945729a890a053"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1126.raw",
+      "sha256": "19a2d4cde7c00f7c3507af4dae8c663fc23ea3850a0f628dbfdd905e1e3a74a8"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.330.raw",
+      "sha256": "5846e52dc42ced33ecb9b546861b92aa18e4bd8e2e6a5749b9712710076315fc"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.332.raw",
+      "sha256": "7861a221d50fd1507c687e01e3d65362df08b3d4e64b9f9d631e1ee61584aad8"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.336.raw",
+      "sha256": "58832e1a71cecab01ebced66c537853f294daf2fae190fee965390886ceae7f1"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.342.raw",
+      "sha256": "d3d36c5c0d0fd46b394c8930fd6f60171d7d3fffc544701abe17cf349f0e540f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.352.raw",
+      "sha256": "b1c1656f3399b5ec08efdb44d6af08c6c4afa4803ce24d63c4fcf15f9fe932a2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.381.raw",
+      "sha256": "08a502f7db2564a29866526703395969f731665f76be20e7a500b98cb15f23a6"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.386.raw",
+      "sha256": "74a9c52693841667d9c59875ee3e591abaef510636cfd08645ef5ac594fd8a25"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.404.raw",
+      "sha256": "f0f09d7d8466673833a97e50451b4ae2730a566a5cca1927cb8d8a96934a4e60"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.408.raw",
+      "sha256": "f4083547747982a8c5d7dd26e25f64bd4f35ee0a1b21d125be8a6b9cb8346f5f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.415.raw",
+      "sha256": "668609d13017ca27df2e39e1b5ffc9d3039ff582d99c0549fc8f377b47291d70"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.419.raw",
+      "sha256": "5c17614c2f72094923cab6db7903496da54bab75349a66e6b2cf6af8dfdadd12"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.425.raw",
+      "sha256": "7c19449f7d2060cd5d8329225744b6d067a25091b7e02c91e9f761e35f768b01"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.434.raw",
+      "sha256": "6095ad79a8d5a7e41dd8c403dc2b25e470e74fce19e711e2be8d819df8469dac"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.467.raw",
+      "sha256": "eed22dd4fb9ea07e53d295148a0828f1fc7d4aa64bc3b4bffad8071a9b3dc7b9"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.472.raw",
+      "sha256": "d28e83b5d842ebecac76837c53ffeafbb4607e41dfd94bec03039ba62ad63bda"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.485.raw",
+      "sha256": "b8712886d88ba9369305b82c5c03d69d8c1c1062eb693a6bac949d159fb51818"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.524.raw",
+      "sha256": "ed80f5fd89627bfdad15c6c2981918301704e6b5ca1365dddd53b305fa94b376"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.537.raw",
+      "sha256": "93a4ad36fc148d558bf2502b4bf2dec5ad3415a17b2876e353bbe05d9f2d0ecd"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.547.raw",
+      "sha256": "9e21a7c228e4e2a835f61d307725354b56c73ea344e3d6e05f6262d67ffc3096"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.561.raw",
+      "sha256": "97dc8d582d2d33bcb9ea484ee15d84b9d694b993c19923e1c0dfebd022926f2b"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.573.raw",
+      "sha256": "8311a04a0c7ef47156f919302d94cc903abd96a684b30a0e0b47bbae0fafee8d"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.579.raw",
+      "sha256": "11544edd9426eaf30d4c130797b3e649db1f5316b1c509feb1125d0fd86f56b3"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.587.raw",
+      "sha256": "3a7e18f8512c6b2bbbc072dd9d0b365a5117e6b908b1472b6ee2f6e65d1747d1"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.604.raw",
+      "sha256": "937b98f6be04aedac98046af5fbed01c71f6a21675dc426e1b02fb38f1ca4c20"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.611.raw",
+      "sha256": "99182f5fcdbc21e683eb3e490c7b078c47bd0ac330cc6731ec64194272039dbc"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.615.raw",
+      "sha256": "ab8c8a63dd5faca8d0b8bba79f0418e7525844a8f96690dcbedbf7c96fe384c9"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.623.raw",
+      "sha256": "a9e789789f472c3437d99edd1b3919d18be0f2476d902f683a2adfda4af8c17e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.630.raw",
+      "sha256": "cec978a03928b1e780d1707ae1e8b75c9cc4f7dfeba8877204b918c92909c626"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.631.raw",
+      "sha256": "1762ba4e222cc0ef0e1ff2f28059ae7503308bfff3fad1f73bcde0ce9832b4d2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.648.raw",
+      "sha256": "c2ff24281e3d12b932ad20428eb390d97858f424d1cc4f7dfed20fd0526b096a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.661.raw",
+      "sha256": "bf3005bf44443b2d112162d9cdba921caf8d764e0affef82cf597f45dd03938f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.666.raw",
+      "sha256": "fcdd6a0909a42ed79ad495eb34a18b7e44d670ae1462222d6ccd90196583fbaf"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.684.raw",
+      "sha256": "1eb46ae7e640b3efedf9f8782a39332d39b409b39703304878cbd54311ba9638"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.697.raw",
+      "sha256": "59ea6694fae897765339ed5be3ecccf48246b8c0681fc6ab6a1e0d47ef7273e4"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.705.raw",
+      "sha256": "cb03446698c87ed281f3b62ade1acd06497b1f9258df5d0e87ebda5fd109239a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.711.raw",
+      "sha256": "573a508bcfe27c33ee9226e630f2597dd2699d5fc8a3f5e36a6b0eaf87bbbf21"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.713.raw",
+      "sha256": "7b8ae1802dd2464a94dca00e0db988c6906961d30ee1a567f31961709236099c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.724.raw",
+      "sha256": "31a44f222fb603dc5234f08c3508c54a23eb68c5e089149068665fa5311f893b"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.732.raw",
+      "sha256": "47e4704d1d3c9b7d48ec239129cb8eb0400c671fec596eb2e520895d09830910"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.749.raw",
+      "sha256": "a31ced7c13211b8160a268bcda4c48528fad61237a9c549da3b53f1071962520"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.752.raw",
+      "sha256": "fc588db75091496528acc1eda1bc303a11f9821a7260aff8e2d1aef88d6189d2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.757.raw",
+      "sha256": "376a159bd7c78af3b4e27108f4ede85eaaabe1094c3f92f2a6e091b965a36835"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.759.raw",
+      "sha256": "fb1d42791b5bc72d1d98331222b82f092ca6f425a3d5ccc5ab3fbd644c69317c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.775.raw",
+      "sha256": "0ba1e9085d83af189ea122b08006687273802853eaebdbec115b59f067fc7420"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.776.raw",
+      "sha256": "c7dd54cbf30dcb4ae08d0f61326ab431085c1f9bad88aeeb65562fd59cd9cbc1"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.785.raw",
+      "sha256": "55555e0f7184f675804fd4331308b081a5c509c6c40739d6e89823444aafed6e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.794.raw",
+      "sha256": "c9461db3b919f08ac12c818ccbb23c5c5385a078a860382612ebbc8f736f6d25"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.797.raw",
+      "sha256": "1dfa2a4daf2c141a36756a46e71c0990f039261fa6142c5b2050d43cc3e26041"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.803.raw",
+      "sha256": "7fa816984acb1a12a2a0d9c9f31293125bf4029da1494a623b2388fd21a7125d"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.813.raw",
+      "sha256": "ade39ee0090f18f5141a269d4bcbfbca5467c8b4e135d31ff71a2f36c2a2a2c7"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.818.raw",
+      "sha256": "c21c530377167f68870fc91204724a4537df4cf258b626cd104332a6c67fb277"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.820.raw",
+      "sha256": "f887650c3ea84eb523e8f66d7fca355f4ada84d0fc89da6068c1570eb635285c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.824.raw",
+      "sha256": "1463cb1c571a4e6dc009a7a32029d6caa016b1b762b1770be6c9cd3b2cfc9d37"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.825.raw",
+      "sha256": "75163a947c4dd439a41144db4578194ca468efad18b533996e2b2d56c8d8bbb2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.830.raw",
+      "sha256": "d7e53356abdb9d7139dc40b9ce5e72a527955431cf0d68f1df27fde794886cf5"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.833.raw",
+      "sha256": "cf06c4cae19554f44fcdbc96d3df018e0b59a5fd5b1e0a835a7beb64962cf66e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.838.raw",
+      "sha256": "11910954f34020fd39d68e92f8f8f975d4c61835cc7f9edbe523fc1ac10fb426"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.845.raw",
+      "sha256": "3ab65b9b404f626777593f5d5bb8dae6f94a55012d9660bfe3ca38d676a87e89"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.846.raw",
+      "sha256": "927a43fce630856375c2e149ca03d9e88cdcac95e50ca22df41a8a58644b34d6"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.865.raw",
+      "sha256": "a18b1a8b2c67b4c39723e3347b70d7af4e69f7e34d8abe32f14365fe46d56b08"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.877.raw",
+      "sha256": "bc304e22614c1c42bd02b43053efc3bc4fecc2c90926f86c0732a4f81cb1b1d9"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.879.raw",
+      "sha256": "d932b3fe063f32c978ceafc437428f314660312fb15a1a441355f2f2e9897e13"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.886.raw",
+      "sha256": "fbe31a8711db948525a8049c76470577b1c917c6379b20b95d166d9811bfae11"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.895.raw",
+      "sha256": "aeab398ff3746bf6d16742ae3f2f612a1ba4f64a1629ebfd2e8322bc5e295a16"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.913.raw",
+      "sha256": "0275cf3aaf5133e3f0c3ad249f8097bf5bfaa3dd934d43015b3178dfb20220fb"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.917.raw",
+      "sha256": "bac56921c777332b969bd2ff9cf38e9f9955568bcdb5ac2f5e7840f38fccf905"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.918.raw",
+      "sha256": "086f65747f064901357bb091368a4d90fb740743ed80c8552faf684ea7e28659"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.919.raw",
+      "sha256": "2e8499f4520216d30eac7e48fb2a924ea7e4abace4f003fdfd100a9fd3284f4c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.924.raw",
+      "sha256": "62dedd19679bea631ff391e9b396e2be50a774c3f8a43edfe5206d8eb30c1867"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.943.raw",
+      "sha256": "db7d0b8294f39d2a6164881708d0861ff3ee64113059fb88a7c801a0d22dd1a6"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.953.raw",
+      "sha256": "913a7b7e56a565fc91c889992c16ede82ff78043214fb37bcfc741a362c07ef4"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.963.raw",
+      "sha256": "14c926ecbd608258791b6a4938bf0feab42112e1d52f1679248a515ef7815d15"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.970.raw",
+      "sha256": "12997e800a1f602644241b47aa6bc12da06f43fd4cac83038bdf5120870131ed"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.975.raw",
+      "sha256": "7036c6a5b547f6a6624bbcb60424bfab7498ac08b4258e04973e06f200404536"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\Original\\Textures\\resources.assets.977.raw",
+      "sha256": "5c760952aa2ccbb9067f338cfb7d37673906b916076b780449500f046dedfa91"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\StreamingAssets\\seed.json",
+      "sha256": "bd556065ded1eb146f1d67c4a8204b6bbeda7c9b267d2aebd52431a4777a8e55"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\EmbedRuntime\\mono-2.0-bdwgc.dll",
+      "sha256": "37360ce84260a71e0b3a470c0e71a9eb94e6b21f8bfcdaad376fde96c4f69a9c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\EmbedRuntime\\MonoPosixHelper.dll",
+      "sha256": "7f730a54446834fb6e957990a137991436b153e1c433bbaa0c7789111b4e4c2f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\etc\\mono\\2.0\\Browsers\\Compat.browser",
+      "sha256": "8a1082057ac5681dcd4e9c227ed7fb8eb42ac1618963b5de3b65739dd77e2741"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\etc\\mono\\2.0\\DefaultWsdlHelpGenerator.aspx",
+      "sha256": "751861040b69ea63a3827507b7c8da9c7f549dc181c1c8af4b7ca78cc97d710a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\etc\\mono\\2.0\\machine.config",
+      "sha256": "e91782a27fa39fc6c1d6ee8b08529f5d35052310d0006034b878eb04b8f2af30"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\etc\\mono\\2.0\\settings.map",
+      "sha256": "49c6160f9d54af4270a3b4e997fc4a8301f79b9e2070118fa46ddbcbbc44f9a2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\etc\\mono\\2.0\\web.config",
+      "sha256": "cf2b54339e069b9e42f7d6795eecbf562c50c1011f4ca8f65f578fe52d97ff92"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\etc\\mono\\4.0\\Browsers\\Compat.browser",
+      "sha256": "8a1082057ac5681dcd4e9c227ed7fb8eb42ac1618963b5de3b65739dd77e2741"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\etc\\mono\\4.0\\DefaultWsdlHelpGenerator.aspx",
+      "sha256": "751861040b69ea63a3827507b7c8da9c7f549dc181c1c8af4b7ca78cc97d710a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\etc\\mono\\4.0\\machine.config",
+      "sha256": "e60aec2c5115d65b3acb3c55ea21576dbd770f579166c017125571e46ae560ed"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\etc\\mono\\4.0\\settings.map",
+      "sha256": "ce1db1ad8a9512073164e3eccdc193f7eda036e1a9733caec4635de21b2865c8"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\etc\\mono\\4.0\\web.config",
+      "sha256": "e38bb8cc68fe5b4edecdfd288d094b9e8ced7629039b2a347682aba0d8bd7492"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\etc\\mono\\4.5\\Browsers\\Compat.browser",
+      "sha256": "8a1082057ac5681dcd4e9c227ed7fb8eb42ac1618963b5de3b65739dd77e2741"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\etc\\mono\\4.5\\DefaultWsdlHelpGenerator.aspx",
+      "sha256": "751861040b69ea63a3827507b7c8da9c7f549dc181c1c8af4b7ca78cc97d710a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\etc\\mono\\4.5\\machine.config",
+      "sha256": "ee950004b576fb28dc85f4b0435ed04bf96612de2e8b53be84d07afe85a0de6c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\etc\\mono\\4.5\\settings.map",
+      "sha256": "ce1db1ad8a9512073164e3eccdc193f7eda036e1a9733caec4635de21b2865c8"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\etc\\mono\\4.5\\web.config",
+      "sha256": "c4cbddd4fd9347b58cc5a72b36dc4ba1ad2bb699e65869d05cd3fb9865f0d824"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\etc\\mono\\browscap.ini",
+      "sha256": "4ddd50f31fb968f30bedefc253a46dc3f2890192d05cdaa9e0a64a056eee807e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\etc\\mono\\config",
+      "sha256": "5776169973a26a387b8b3e5c0f2301a7ab9a6dd7c7d3efa22a96abc47fbf8662"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\MonoBleedingEdge\\etc\\mono\\mconfig\\config.xml",
+      "sha256": "0c56e34c69124510fa8c19e7b4c2ca6c1c4ff460ae19f798dd0ca035809e396d"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\TuanjieCrashHandler64.exe",
+      "sha256": "94c2af9ed1ad348f4eb6acf4a3f06be8f43e5d6ca7956596d02b05630e4b0dbc"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\TuanjiePlayer.dll",
+      "sha256": "36b30894e864512e1d2a9fc2928f9cf6db82e5f2c9293890477a5d823c1f9f82"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\WinPixEventRuntime.dll",
+      "sha256": "23ef5b23f1cf6f1b7132542c4063b5e9da532572634afa41f27139bbf02468fc"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\seed.json",
+      "sha256": "bd556065ded1eb146f1d67c4a8204b6bbeda7c9b267d2aebd52431a4777a8e55"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Apartment.geometry.json",
+      "sha256": "3ef0c30c6d6ced487c6db594362f52bffba5990c0c5775a2981686293e3109c0"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\models.unity3d",
+      "sha256": "98621b2c4fa4f9de80f355fae5776ab17efc016bcc81c581bcd0917af4308367"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\roombridge.json",
+      "sha256": "207c453d4e9d4c8a887c1f5923980e429b54c8f84c67556d4292c05cd6e2b25e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1000.raw",
+      "sha256": "df5d00217ead8c833c07833204cab157251bf775cd76089de51c193ecb6820e8"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1016.raw",
+      "sha256": "d320d517a0b303d71d1dd47834e6c24fb58c4072f00d254a1172aa0a38daabdd"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1023.raw",
+      "sha256": "f7f84992f7905c51c1856da17a56e4cec0a53105e9b0f570c717278596ec88b7"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1027.raw",
+      "sha256": "b3e62a0cea6917dd31467cf4c27898789bdbc2154b1cc61f5abef69d1c119266"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1028.raw",
+      "sha256": "15ee010be30e6cf327cbd30cb28d586a3258796e2418a5d189dc8517a5775f0c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1030.raw",
+      "sha256": "c79d129ef19ab17c19d5a380a8a131ab3e590062ae4be7bfe8f035e2a81d1129"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1032.raw",
+      "sha256": "f9d07f639714f5e151db3a1da639193674bb0db39b972548690a44788f21af09"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1080.raw",
+      "sha256": "d3afda921214660087f613d8aae8fdc107ecb54447626411cb008e66b9c1a7a7"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1084.raw",
+      "sha256": "83bd98d7477624edad0282c04edb75fac5d8cfb40c8899aaffc3faa31a38fbd3"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1085.raw",
+      "sha256": "2a6b64c6f5709487382e4c325c896e803b07a02dea0e7f5afa5082b555f78d29"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1086.raw",
+      "sha256": "8da5bc5cd789f99b10e90ed889c090c4632d2a8f0a9bc4544aee6088094eed4b"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1089.raw",
+      "sha256": "cb5b7c0fd2d00714d5a200d80b791fe9a81272fe3063b5afa620ce46c95bd4e8"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1093.raw",
+      "sha256": "5f4805eb04e8548850e071cf7d9c2ae33aea0d69ebda222195aef7bf7be4455a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1118.raw",
+      "sha256": "13396f460609aa2bb287dd2b748a6475612dbcbb4748331d89945729a890a053"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1126.raw",
+      "sha256": "19a2d4cde7c00f7c3507af4dae8c663fc23ea3850a0f628dbfdd905e1e3a74a8"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.330.raw",
+      "sha256": "5846e52dc42ced33ecb9b546861b92aa18e4bd8e2e6a5749b9712710076315fc"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.332.raw",
+      "sha256": "7861a221d50fd1507c687e01e3d65362df08b3d4e64b9f9d631e1ee61584aad8"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.336.raw",
+      "sha256": "58832e1a71cecab01ebced66c537853f294daf2fae190fee965390886ceae7f1"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.342.raw",
+      "sha256": "d3d36c5c0d0fd46b394c8930fd6f60171d7d3fffc544701abe17cf349f0e540f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.352.raw",
+      "sha256": "b1c1656f3399b5ec08efdb44d6af08c6c4afa4803ce24d63c4fcf15f9fe932a2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.381.raw",
+      "sha256": "08a502f7db2564a29866526703395969f731665f76be20e7a500b98cb15f23a6"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.386.raw",
+      "sha256": "74a9c52693841667d9c59875ee3e591abaef510636cfd08645ef5ac594fd8a25"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.404.raw",
+      "sha256": "f0f09d7d8466673833a97e50451b4ae2730a566a5cca1927cb8d8a96934a4e60"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.408.raw",
+      "sha256": "f4083547747982a8c5d7dd26e25f64bd4f35ee0a1b21d125be8a6b9cb8346f5f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.415.raw",
+      "sha256": "668609d13017ca27df2e39e1b5ffc9d3039ff582d99c0549fc8f377b47291d70"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.419.raw",
+      "sha256": "5c17614c2f72094923cab6db7903496da54bab75349a66e6b2cf6af8dfdadd12"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.425.raw",
+      "sha256": "7c19449f7d2060cd5d8329225744b6d067a25091b7e02c91e9f761e35f768b01"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.434.raw",
+      "sha256": "6095ad79a8d5a7e41dd8c403dc2b25e470e74fce19e711e2be8d819df8469dac"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.467.raw",
+      "sha256": "eed22dd4fb9ea07e53d295148a0828f1fc7d4aa64bc3b4bffad8071a9b3dc7b9"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.472.raw",
+      "sha256": "d28e83b5d842ebecac76837c53ffeafbb4607e41dfd94bec03039ba62ad63bda"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.485.raw",
+      "sha256": "b8712886d88ba9369305b82c5c03d69d8c1c1062eb693a6bac949d159fb51818"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.524.raw",
+      "sha256": "ed80f5fd89627bfdad15c6c2981918301704e6b5ca1365dddd53b305fa94b376"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.537.raw",
+      "sha256": "93a4ad36fc148d558bf2502b4bf2dec5ad3415a17b2876e353bbe05d9f2d0ecd"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.547.raw",
+      "sha256": "9e21a7c228e4e2a835f61d307725354b56c73ea344e3d6e05f6262d67ffc3096"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.561.raw",
+      "sha256": "97dc8d582d2d33bcb9ea484ee15d84b9d694b993c19923e1c0dfebd022926f2b"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.573.raw",
+      "sha256": "8311a04a0c7ef47156f919302d94cc903abd96a684b30a0e0b47bbae0fafee8d"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.579.raw",
+      "sha256": "11544edd9426eaf30d4c130797b3e649db1f5316b1c509feb1125d0fd86f56b3"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.587.raw",
+      "sha256": "3a7e18f8512c6b2bbbc072dd9d0b365a5117e6b908b1472b6ee2f6e65d1747d1"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.604.raw",
+      "sha256": "937b98f6be04aedac98046af5fbed01c71f6a21675dc426e1b02fb38f1ca4c20"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.611.raw",
+      "sha256": "99182f5fcdbc21e683eb3e490c7b078c47bd0ac330cc6731ec64194272039dbc"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.615.raw",
+      "sha256": "ab8c8a63dd5faca8d0b8bba79f0418e7525844a8f96690dcbedbf7c96fe384c9"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.623.raw",
+      "sha256": "a9e789789f472c3437d99edd1b3919d18be0f2476d902f683a2adfda4af8c17e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.630.raw",
+      "sha256": "cec978a03928b1e780d1707ae1e8b75c9cc4f7dfeba8877204b918c92909c626"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.631.raw",
+      "sha256": "1762ba4e222cc0ef0e1ff2f28059ae7503308bfff3fad1f73bcde0ce9832b4d2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.648.raw",
+      "sha256": "c2ff24281e3d12b932ad20428eb390d97858f424d1cc4f7dfed20fd0526b096a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.661.raw",
+      "sha256": "bf3005bf44443b2d112162d9cdba921caf8d764e0affef82cf597f45dd03938f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.666.raw",
+      "sha256": "fcdd6a0909a42ed79ad495eb34a18b7e44d670ae1462222d6ccd90196583fbaf"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.684.raw",
+      "sha256": "1eb46ae7e640b3efedf9f8782a39332d39b409b39703304878cbd54311ba9638"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.697.raw",
+      "sha256": "59ea6694fae897765339ed5be3ecccf48246b8c0681fc6ab6a1e0d47ef7273e4"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.705.raw",
+      "sha256": "cb03446698c87ed281f3b62ade1acd06497b1f9258df5d0e87ebda5fd109239a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.711.raw",
+      "sha256": "573a508bcfe27c33ee9226e630f2597dd2699d5fc8a3f5e36a6b0eaf87bbbf21"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.713.raw",
+      "sha256": "7b8ae1802dd2464a94dca00e0db988c6906961d30ee1a567f31961709236099c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.724.raw",
+      "sha256": "31a44f222fb603dc5234f08c3508c54a23eb68c5e089149068665fa5311f893b"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.732.raw",
+      "sha256": "47e4704d1d3c9b7d48ec239129cb8eb0400c671fec596eb2e520895d09830910"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.749.raw",
+      "sha256": "a31ced7c13211b8160a268bcda4c48528fad61237a9c549da3b53f1071962520"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.752.raw",
+      "sha256": "fc588db75091496528acc1eda1bc303a11f9821a7260aff8e2d1aef88d6189d2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.757.raw",
+      "sha256": "376a159bd7c78af3b4e27108f4ede85eaaabe1094c3f92f2a6e091b965a36835"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.759.raw",
+      "sha256": "fb1d42791b5bc72d1d98331222b82f092ca6f425a3d5ccc5ab3fbd644c69317c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.775.raw",
+      "sha256": "0ba1e9085d83af189ea122b08006687273802853eaebdbec115b59f067fc7420"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.776.raw",
+      "sha256": "c7dd54cbf30dcb4ae08d0f61326ab431085c1f9bad88aeeb65562fd59cd9cbc1"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.785.raw",
+      "sha256": "55555e0f7184f675804fd4331308b081a5c509c6c40739d6e89823444aafed6e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.794.raw",
+      "sha256": "c9461db3b919f08ac12c818ccbb23c5c5385a078a860382612ebbc8f736f6d25"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.797.raw",
+      "sha256": "1dfa2a4daf2c141a36756a46e71c0990f039261fa6142c5b2050d43cc3e26041"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.803.raw",
+      "sha256": "7fa816984acb1a12a2a0d9c9f31293125bf4029da1494a623b2388fd21a7125d"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.813.raw",
+      "sha256": "ade39ee0090f18f5141a269d4bcbfbca5467c8b4e135d31ff71a2f36c2a2a2c7"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.818.raw",
+      "sha256": "c21c530377167f68870fc91204724a4537df4cf258b626cd104332a6c67fb277"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.820.raw",
+      "sha256": "f887650c3ea84eb523e8f66d7fca355f4ada84d0fc89da6068c1570eb635285c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.824.raw",
+      "sha256": "1463cb1c571a4e6dc009a7a32029d6caa016b1b762b1770be6c9cd3b2cfc9d37"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.825.raw",
+      "sha256": "75163a947c4dd439a41144db4578194ca468efad18b533996e2b2d56c8d8bbb2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.830.raw",
+      "sha256": "d7e53356abdb9d7139dc40b9ce5e72a527955431cf0d68f1df27fde794886cf5"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.833.raw",
+      "sha256": "cf06c4cae19554f44fcdbc96d3df018e0b59a5fd5b1e0a835a7beb64962cf66e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.838.raw",
+      "sha256": "11910954f34020fd39d68e92f8f8f975d4c61835cc7f9edbe523fc1ac10fb426"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.845.raw",
+      "sha256": "3ab65b9b404f626777593f5d5bb8dae6f94a55012d9660bfe3ca38d676a87e89"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.846.raw",
+      "sha256": "927a43fce630856375c2e149ca03d9e88cdcac95e50ca22df41a8a58644b34d6"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.865.raw",
+      "sha256": "a18b1a8b2c67b4c39723e3347b70d7af4e69f7e34d8abe32f14365fe46d56b08"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.877.raw",
+      "sha256": "bc304e22614c1c42bd02b43053efc3bc4fecc2c90926f86c0732a4f81cb1b1d9"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.879.raw",
+      "sha256": "d932b3fe063f32c978ceafc437428f314660312fb15a1a441355f2f2e9897e13"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.886.raw",
+      "sha256": "fbe31a8711db948525a8049c76470577b1c917c6379b20b95d166d9811bfae11"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.895.raw",
+      "sha256": "aeab398ff3746bf6d16742ae3f2f612a1ba4f64a1629ebfd2e8322bc5e295a16"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.913.raw",
+      "sha256": "0275cf3aaf5133e3f0c3ad249f8097bf5bfaa3dd934d43015b3178dfb20220fb"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.917.raw",
+      "sha256": "bac56921c777332b969bd2ff9cf38e9f9955568bcdb5ac2f5e7840f38fccf905"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.918.raw",
+      "sha256": "086f65747f064901357bb091368a4d90fb740743ed80c8552faf684ea7e28659"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.919.raw",
+      "sha256": "2e8499f4520216d30eac7e48fb2a924ea7e4abace4f003fdfd100a9fd3284f4c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.924.raw",
+      "sha256": "62dedd19679bea631ff391e9b396e2be50a774c3f8a43edfe5206d8eb30c1867"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.943.raw",
+      "sha256": "db7d0b8294f39d2a6164881708d0861ff3ee64113059fb88a7c801a0d22dd1a6"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.953.raw",
+      "sha256": "913a7b7e56a565fc91c889992c16ede82ff78043214fb37bcfc741a362c07ef4"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.963.raw",
+      "sha256": "14c926ecbd608258791b6a4938bf0feab42112e1d52f1679248a515ef7815d15"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.970.raw",
+      "sha256": "12997e800a1f602644241b47aa6bc12da06f43fd4cac83038bdf5120870131ed"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.975.raw",
+      "sha256": "7036c6a5b547f6a6624bbcb60424bfab7498ac08b4258e04973e06f200404536"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.977.raw",
+      "sha256": "5c760952aa2ccbb9067f338cfb7d37673906b916076b780449500f046dedfa91"
     }
   ],
   "observations": [
@@ -17994,6 +20489,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_0cf4615254734b505dc562bede3c93296105e27329d23d8bfb92bb920c89373c",
+      "operation": "procedure_assembly",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_0cfbffd882709b2865ce47b949249f190e5841a19f16530cf000d8818d10191f",
       "operation": "load_frida_script",
       "subject_sha256": null
@@ -18007,6 +20507,11 @@
       "evidence_id": "ev_0d3474899b0b5239bae6551b11b1862264027a17a2a7601813e491067204dae2",
       "operation": "frida_session_status",
       "subject_sha256": null
+    },
+    {
+      "evidence_id": "ev_0d96ce81fa4c29cdec46f341d50da3356ea5ee6226e8d10dde767555d8d63afa",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
       "evidence_id": "ev_0dd2dd972582a2a38af72afa17a970ec9db27624c4bdc46293b381bdaf6eaf49",
@@ -18409,6 +20914,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_1e61d5c14420554620828922bbc105c27688a6443786faa737e29ea0bfbb7c02",
+      "operation": "procedure_assembly",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_1e75377c629fc1eea4bae1b369933a8e837ad6489ae50ce44986b8e8d51ee54c",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -18649,6 +21159,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_2c1b3d43ec9b7f64d6f576b97cadc76708a8ca209675707b4bc34b08c4bd4797",
+      "operation": "procedure_assembly",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_2c3c0aa0cdf690cba508fea7ce658a4a06e2b202258d9d2fbf34954dde0476ae",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -18774,6 +21289,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_3124d1d227cad5be24fdece8d0a26fd2d250e58318c7072aebe3cc5dcabd0394",
+      "operation": "procedure_assembly",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_31628301f93f9eeefa3426b2b27c79669778a310855aaad9459da311906075e2",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -18807,6 +21327,11 @@
       "evidence_id": "ev_328932e13e644e139cef253c371abd79951673781ad5f74cd1a1fd7f7369d12c",
       "operation": "load_frida_script",
       "subject_sha256": null
+    },
+    {
+      "evidence_id": "ev_329c9d6b07c52d831cf5b7d2bd5ec64d8df233e9962370a90c0a386261533f3e",
+      "operation": "procedure_assembly",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
       "evidence_id": "ev_334cc22f5c1bc259f8a5f1d534207b4752118bb2940c577377afb84c9779d100",
@@ -18984,6 +21509,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_3b0c6fa1acc4fe239bf0f776f0180282df1e8e0ad326ffc1ddbfb8037c7b48b0",
+      "operation": "procedure_assembly",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_3b1c833977deea99490c36e8b2ce38f1b1658070a0703e8a4bf40d52a5e6c38c",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -19016,6 +21546,11 @@
     {
       "evidence_id": "ev_3db91c7a98f5f688ff65f85a9c7a4e3cac90478f368c6682b986e9382bd15af7",
       "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_3e1a9b5e3a059b885ee66dd67c7c4d3d03bc6930a3708e5f56ff7ee90124e913",
+      "operation": "procedure_assembly",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
@@ -19554,6 +22089,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_53b63293998d1f249b557feb71eddd55929c8546e90ca68188f404a2ec3a2d25",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_54370ed76ff81171deca86d8244b73b2b212845b626493f82f6b407ee962e901",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -19639,6 +22179,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_58a0fbcb40ae972f4fb6c8c2b66b6d7a085103cf123aef58a7c327d75c5412da",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_59722e76e94063453312df7ff407c324bc74198646a1ba15705fb48415090e8f",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -19681,6 +22226,11 @@
     {
       "evidence_id": "ev_5b808099e835a21508b4d809bf67dfeb7992dedfb48181f36971aa2aae34a966",
       "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_5be74221e7613e0343912d71135699e5d64c3d259b4cbbe6c13af5f58296632d",
+      "operation": "procedure_assembly",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
@@ -19959,6 +22509,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_6a03368fa7d6d4c71d068fc6e7bffbc4221c4fb18da2f6dd04a102d92d2039e5",
+      "operation": "procedure_assembly",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_6a159de54c712a31a08cf3623fbfa0dc99d373c6b811808fdd7a2bc6167f0610",
       "operation": "frida_session_status",
       "subject_sha256": null
@@ -20232,6 +22787,11 @@
       "evidence_id": "ev_75a7548a98ecb37f830abd3ec11c4073cc6ebe30094e618b3260575100256403",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_75e84f1707841805a9d781a9a159806ffd028ae18a4c611663f57667814881a7",
+      "operation": "inspect_managed_artifact",
+      "subject_sha256": "3585f1862c3fae750fb167b5c56c086b61ef56ac603327c63993cf118104cbfe"
     },
     {
       "evidence_id": "ev_7698ca6f0947e30f402fa7bbe7cdd698ac827e7ab40468af8bae22f786443ca2",
@@ -20549,6 +23109,11 @@
       "subject_sha256": null
     },
     {
+      "evidence_id": "ev_83cd7dde5d2f1bfc56d866108b51a5dd26c123c4932d4f228fce76f04dfeb443",
+      "operation": "procedure_assembly",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_83da57d949b5aed2a8ef12e73ad904c92492780fdb7433a020510127861e1b71",
       "operation": "load_frida_script",
       "subject_sha256": null
@@ -20709,6 +23274,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_89bbc01799b0334f768530b5f98d80fa452fa047e2a4e96b8af2cd451343b63c",
+      "operation": "inspect_managed_artifact",
+      "subject_sha256": "5076a9ce4690d8207168848195bd408cf851521dd935908b19879ac6e9318141"
+    },
+    {
       "evidence_id": "ev_89c72caf2fad349e37c4e9faad9814f30b85b4b76da5428fc1615709f62766ba",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -20751,6 +23321,11 @@
     {
       "evidence_id": "ev_8cfb69e443bfd844c858d26e58bb41f8be68203df21a3c1691830fd55bc12298",
       "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_8d6059db961f8f54d840369ec0d0cca14e5d38af26cf93211614d71a1b16f8ce",
+      "operation": "procedure_assembly",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
@@ -21319,6 +23894,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_a339869ece4e627430974d937a001293e92222c9b588f6589d8733a5618fc4c9",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_a33c7cca63231d7aa3e6fb711e0389dc267332de1b059a7b2273d69768246e38",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -21425,6 +24005,11 @@
     },
     {
       "evidence_id": "ev_a75c02177ad2ef39892ce7d5c2c6fb13ac7ecb664818e8be55c5f00e436a5766",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_a78d1d69d0e32cc8ed550e5d241fed518ca2e764c8f768096b3ff5b692f22b35",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
@@ -21544,6 +24129,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_ac5d85b77c9f52ea2e04870c2177b7d1e05856cc2d070584a697a5a14e2f6259",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_ac78ffc24b98a6551fb9b364652d907cf9adbb46668c0a43fa3e71055fefec9e",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -21572,6 +24162,11 @@
       "evidence_id": "ev_adcd3267cb00e1709926ef12a56d7acde04ce7b1f3cc775eff3abcf35827d600",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_ae02721c7be43595b401685212a9e7e967c457f84a111702c6fa47e7209af3de",
+      "operation": "inspect_analysis_view",
+      "subject_sha256": "5076a9ce4690d8207168848195bd408cf851521dd935908b19879ac6e9318141"
     },
     {
       "evidence_id": "ev_ae475cf25d0f28d1ad94477f284e1d9e3eec9c11e220190c367e402cdde64584",
@@ -21716,6 +24311,11 @@
     {
       "evidence_id": "ev_b52e14775cef04eaab23e6d58fdeb81d29c334ef33ea4b568d11e48ea8e55541",
       "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_b5eb47bd477c15dace6971dfaf3dbde77d543abe45bd4a68d6ec95a982cd605f",
+      "operation": "procedure_assembly",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
@@ -21934,8 +24534,28 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_c18aa175a62243c7cebf573f372d1d6f6d05e2e25d4a0d0f81fb7c763a6c369a",
+      "operation": "inspect_analysis_view",
+      "subject_sha256": "3585f1862c3fae750fb167b5c56c086b61ef56ac603327c63993cf118104cbfe"
+    },
+    {
+      "evidence_id": "ev_c1905c45f110b98d275f39f6a7765633aaa5bed0073f4f386a8c7e9d4b39ee52",
+      "operation": "procedure_assembly",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_c1c084dffb5ffdaa7a9c9333db251b0a6ba6f9f87954733ebae53b8353febc58",
       "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_c1c60d813207c13e06bb90ba39713df7276ae71d0fe777b2064ab6a19329aba1",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_c1f999a8f676328c4e888e647d99e0d52a61f2ae8f16175db2633dbe7f091486",
+      "operation": "procedure_assembly",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
@@ -22959,6 +25579,11 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {
+      "evidence_id": "ev_efc6fdda40ead40460b3fca5e8dd2435d0807a8882b3b057260e58815e379c56",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
       "evidence_id": "ev_efeb9e401e8dd4f5b2cda9c6ecba77b7d79e7a7389c90af453c348d60b2d01d6",
       "operation": "procedure_pseudo_code",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
@@ -22971,6 +25596,11 @@
     {
       "evidence_id": "ev_f08a2be6b71929bc2838bbdfa22bb97f08522781a52a44c82a94c6df9d944f04",
       "operation": "procedure_pseudo_code",
+      "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    {
+      "evidence_id": "ev_f0b7b245f7989e25f354962dc5e1ef05d84cf57f2f4706bb7b3408e448cb58b9",
+      "operation": "analyze_function",
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     },
     {

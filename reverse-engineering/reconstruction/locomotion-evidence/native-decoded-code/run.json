@@ -1,0 +1,84 @@
+{
+  "plan": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native-decoded-code.plan.json",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "started_at_utc": "2026-10-30T17:56:33.002Z",
+  "seed_sha256": "8ffa5265d5f901b3308db1d7bc80e212f9c8beff546213201fcb8be1ca8dfe74",
+  "functions": [
+    {
+      "metadata_id": 14535,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::SetStrafe",
+      "token": "0x6000c7e",
+      "va": "0x18062def0",
+      "file_offset": 6473456,
+      "file_stem": "14535-06000c7e",
+      "operations": [
+        "procedure_assembly"
+      ],
+      "operation": "procedure_assembly",
+      "evidence_id": "ev_6a03368fa7d6d4c71d068fc6e7bffbc4221c4fb18da2f6dd04a102d92d2039e5",
+      "elapsed_seconds": 191.395
+    },
+    {
+      "metadata_id": 14552,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::.ctor",
+      "token": "0x6000c8f",
+      "va": "0x18062ea40",
+      "file_offset": 6476352,
+      "file_stem": "14552-06000c8f",
+      "operations": [
+        "procedure_assembly"
+      ],
+      "operation": "procedure_assembly",
+      "evidence_id": "ev_0cf4615254734b505dc562bede3c93296105e27329d23d8bfb92bb920c89373c",
+      "elapsed_seconds": 0.007
+    },
+    {
+      "metadata_id": 14526,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::OnUpdate",
+      "token": "0x6000c75",
+      "va": "0x18062cb20",
+      "file_offset": 6468384,
+      "file_stem": "14526-06000c75",
+      "operations": [
+        "procedure_assembly",
+        "analyze_function"
+      ],
+      "operation": "procedure_assembly",
+      "evidence_id": "ev_c1f999a8f676328c4e888e647d99e0d52a61f2ae8f16175db2633dbe7f091486",
+      "elapsed_seconds": 0.008
+    },
+    {
+      "metadata_id": 14526,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::OnUpdate",
+      "token": "0x6000c75",
+      "va": "0x18062cb20",
+      "file_offset": 6468384,
+      "file_stem": "14526-06000c75",
+      "operations": [
+        "procedure_assembly",
+        "analyze_function"
+      ],
+      "operation": "analyze_function",
+      "evidence_id": "ev_f0b7b245f7989e25f354962dc5e1ef05d84cf57f2f4706bb7b3408e448cb58b9",
+      "elapsed_seconds": 1.415
+    },
+    {
+      "metadata_id": 14899,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::OnUpdate",
+      "token": "0x6000dea",
+      "va": "0x180651940",
+      "file_offset": 6619456,
+      "file_stem": "14899-06000dea",
+      "operations": [
+        "procedure_assembly"
+      ],
+      "operation": "procedure_assembly",
+      "evidence_id": "ev_5be74221e7613e0343912d71135699e5d64c3d259b4cbbe6c13af5f58296632d",
+      "elapsed_seconds": 0.01
+    }
+  ],
+  "success": true,
+  "global_mcp_configuration_changed": false,
+  "elapsed_seconds": 203.525,
+  "finished_at_utc": "2026-10-30T17:59:56.529Z"
+}

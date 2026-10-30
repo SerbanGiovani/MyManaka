@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "phase1": {
+    "proof": "../locomotion-runtime/keyboard/proof.json",
+    "events": "../locomotion-runtime/keyboard/events.jsonl.gz",
+    "start": "../locomotion-runtime/keyboard/process-start.json",
+    "exit": "../locomotion-runtime/keyboard/process-exit.json",
+    "player_log": "../locomotion-runtime/keyboard/player.log.gz",
+    "title_screenshot": "../locomotion-runtime/keyboard/title.png",
+    "screenshot": "../locomotion-runtime/keyboard/keyboard-saved.png"
+  },
+  "phase2": {
+    "proof": "../locomotion-runtime/phase2/proof.json",
+    "events": "../locomotion-runtime/phase2/events.jsonl.gz",
+    "start": "../locomotion-runtime/phase2/process-start.json",
+    "exit": "../locomotion-runtime/phase2/process-exit.json",
+    "player_log": "../locomotion-runtime/phase2/player.log.gz",
+    "title_screenshot": "../locomotion-runtime/phase2/title.png",
+    "screenshot": "../locomotion-runtime/phase2/readback.png"
+  },
+  "save": "../locomotion-runtime/save.v1.json",
+  "save_backup": "../locomotion-runtime/save.v1.json.bak",
+  "seed_manifest": "../save-bridge/seed-manifest.json",
+  "animator_identity": "../locomotion-evidence/original-controller.json",
+  "input_receipt": "../locomotion-runtime/keyboard/input-receipt.json",
+  "save_bridge_sources": {
+    "old": "../minimal-project/Assets/Runtime/SaveBridge.cs",
+    "new": "../locomotion-project/Assets/Runtime/SaveBridge.cs"
+  },
+  "save_fix_probe": {
+    "result": "../locomotion-runtime/probes/save-fix-probe-20261031-1/result.json",
+    "start": "../locomotion-runtime/probes/save-fix-probe-20261031-1/start.json",
+    "exit": "../locomotion-runtime/probes/save-fix-probe-20261031-1/exit.json",
+    "source": "../animator-probe/Assets/Editor/SaveFixProbe.cs",
+    "old_save": "../minimal-acceptance/save.v1.json",
+    "failed_save": "../locomotion-runtime/diagnostics/f5-failed-round-save.v1.json"
+  },
+  "runtime_sources": [
+    {
+      "path": "../locomotion-project/Assets/Editor/BuildMinimal.cs",
+      "sha256": "2086f55e0afc286de433d4adf3445fd769a8e0534329af3e7e4daba710be1ae3"
+    },
+    {
+      "path": "../locomotion-project/Assets/Runtime/LocomotionAnimatorBridge.cs",
+      "sha256": "74793602c7100a457217184a80c0cabd8c2d510f998a3283c5dd4fd9a1bc436b"
+    },
+    {
+      "path": "../locomotion-project/Assets/Runtime/MinimalBootstrap.cs",
+      "sha256": "d714d16abf8c2e3f1c5b2e178f6911bd822f44826bb1942277e046185ded0dbd"
+    },
+    {
+      "path": "../locomotion-project/Assets/Runtime/PlayerMotor.cs",
+      "sha256": "eb8b438507d886d017424b3b60180cd42005db329d6f16dc3cd690fe9a3899f4"
+    },
+    {
+      "path": "../locomotion-project/Assets/Runtime/RunEvidence.cs",
+      "sha256": "f2a584c36ea6ed4767407df7da8dcd5e003dc53e4cac04d4ea87df5f24c3a614"
+    },
+    {
+      "path": "../locomotion-project/Assets/Runtime/SaveBridge.cs",
+      "sha256": "c5eb0a81187b5dc76efecb86892bc271b8c1e741c7f0de9a44572163fdae924e"
+    },
+    {
+      "path": "../locomotion-project/Assets/Runtime/SceneAssets.cs",
+      "sha256": "4cb9b8c3baa2b4bd1d6f6e1b5ab5cf4252d9b43114396d35b40ad686a0b204f8"
+    }
+  ]
+}

@@ -573,6 +573,11 @@ def main():
     check(minimal_check["formal_gpu_acceptance"] and minimal_check["original_resource_compatibility"] == "partial", "Minimum independent loop or compatibility scope differs")
     minimal_save_check = runpy.run_path(str(toolchain_dir / "save-bridge/verify_roundtrip.py"))["build"](inputs=args.inputs)
     check(minimal_save_check == read(toolchain_dir / "save-bridge/acceptance.json"), "Independent actual-pose save/new-process restoration differs")
+    locomotion_check = runpy.run_path(str(toolchain_dir / "verify-locomotion-runtime.py"))["build"](inputs=args.inputs)
+    locomotion_runtime = read(toolchain_dir / "locomotion-runtime.json")
+    locomotion_acceptance_dir = toolchain_dir / "locomotion-acceptance-tools"
+    locomotion_acceptance = runpy.run_path(str(locomotion_acceptance_dir / "verify_locomotion.py"))["build"](locomotion_acceptance_dir / "acceptance-inputs.json", verify_inputs=args.inputs)
+    check(locomotion_acceptance == read(locomotion_acceptance_dir / "acceptance.json"), "Physical-user keyboard/original Animator/save/restart joins differ")
     verification = read(ROOT / "salt/evidence/decryption-verification.json")
     summary = read(ROOT / "salt/symbols/index-summary.json")
     object_record = asset["guid_object"]
@@ -591,7 +596,7 @@ def main():
     check(verification["verified_node_ranges"] == len(decryption["nodes"]), "Not every node range was verified")
 
     artifacts, observations = [], {}
-    allowed_subjects = {identity["native_sha256"], identity["wrapper_sha256"], *minimal_check["managed_subjects"]}
+    allowed_subjects = {identity["native_sha256"], identity["wrapper_sha256"], *minimal_check["managed_subjects"], *locomotion_check["managed_subjects"]}
     for path in sorted(ROOT.rglob("*")):
         if not path.is_file() or any(part in (".cache", "__pycache__") for part in path.relative_to(ROOT).parts):
             continue
@@ -648,6 +653,7 @@ def main():
     for key in ("password_map_initializer_evidence", "password_map_constructor_evidence", "password_decoder_evidence"):
         check(recovered[key] in observations, f"Missing password reconstruction evidence: {key}")
     run_paths = sorted((ROOT / "salt/evidence").glob("*/run.json"))
+    run_paths.extend(toolchain_dir / "locomotion-evidence" / directory / "run.json" for directory in ("native", "native-decoded-code"))
     runs = [read(path) for path in run_paths]
     for run in runs:
         check(run["success"] and not run.get("close_error") and not run.get("transport_close_error"), "A required REA batch did not complete cleanly")
@@ -976,7 +982,7 @@ def main():
             checked_inputs.append({"path": str(path), "sha256": actual})
         # verify-minimal already hashed these package/editor files and admitted
         # managed inspection subjects; retain their identities in the global index.
-        for item in minimal_runtime["build"]["files"] + minimal_runtime["packaged_inputs"] + [minimal_runtime["build"]["editor"]]:
+        for item in minimal_runtime["build"]["files"] + minimal_runtime["packaged_inputs"] + [minimal_runtime["build"]["editor"]] + locomotion_runtime["build"]["files"] + locomotion_runtime["packaged_inputs"]:
             if item["path"].casefold() not in known:
                 checked_inputs.append({"path": item["path"], "sha256": item["sha256"]})
                 known.add(item["path"].casefold())

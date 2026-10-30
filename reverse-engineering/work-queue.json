@@ -66,14 +66,27 @@
         "269 original draws,33 reconstructed colliders,90 original compressed textures,4 selected player renderers; original native gameplay and Animator omitted; shader/missing-script limitations retained"
       ],
       "remaining": [
-        "Hardware keyboard and actual mouse UI acceptance; original animation and interaction equivalence",
-        "Remaining scene meshes/material fidelity and gameplay consumers; tasks5/6 remain pending"
+        "Remaining scene meshes/material fidelity and gameplay consumers; original full title/scene/appearance logic remains partial"
+      ],
+      "latest_reports": [
+        "reconstruction/minimal-runtime.md",
+        "reconstruction/locomotion-runtime.md"
       ]
     },
     {
       "order": 5,
       "name": "核心玩法运行对照",
-      "status": "pending"
+      "status": "in-progress-default-locomotion-keyboard-save-restart-verified",
+      "report": "reconstruction/locomotion-runtime.md",
+      "completed_batches": [
+        "User-attested physical WASD/LeftShift input -> actual CharacterController -> original Locomotion blend and skeleton, F5/F6 -> new-process readback",
+        "Original Player controller/ManustiaAvatar same reference, 40 parameters/175 clips; layer0 enabled, 11 ancillary layers isolated",
+        "Signed-zero save guard repair:362 real writes/reads and legacy JSON TryRead; first failed physical run preserved"
+      ],
+      "remaining": [
+        "Original gravity/fixed-step/turning/camera equivalence and remaining movement guards/strafe/autochase/stamina",
+        "Other actions/ancillary Animator layers, interactions, NPC and complete gameplay consumers"
+      ]
     },
     {
       "order": 6,

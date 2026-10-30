@@ -1,0 +1,12 @@
+{
+    "editorVersion": "2022.3.62t7",
+    "policy": "Normalize only IEEE-754 negative zero to positive zero before JSON serialization; every nonzero float bit and every canonical zero bit must survive exactly. Raw negative-zero sign bits are not preserved.",
+    "exception": "",
+    "oldMinimumRead": true,
+    "failedRoundRead": true,
+    "allWritesReadExact": true,
+    "allNumericValuesUnchanged": true,
+    "cases": 362,
+    "negativeZeroCases": 66,
+    "normalizedComponents": 67
+}

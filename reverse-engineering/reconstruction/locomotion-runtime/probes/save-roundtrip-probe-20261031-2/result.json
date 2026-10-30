@@ -1,0 +1,654 @@
+{
+    "editorVersion": "2022.3.62t7",
+    "sourceSavePath": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\keyboard-natural-20261031-1-profile\\save.v1.json",
+    "exception": "",
+    "components": [
+        {
+            "field": "position.x",
+            "expectedBits": "3ff824ff",
+            "nativeBits": "3ff824ff",
+            "doubleDtoBits": "3ff824ff",
+            "expected": 1.9386290311813355,
+            "native": 1.9386290311813355,
+            "doubleDto": 1.9386290311813355
+        },
+        {
+            "field": "position.y",
+            "expectedBits": "38d12000",
+            "nativeBits": "38d12000",
+            "doubleDtoBits": "38d12000",
+            "expected": 0.00009971857070922852,
+            "native": 0.00009971857070922852,
+            "doubleDto": 0.00009971857070922852
+        },
+        {
+            "field": "position.z",
+            "expectedBits": "3f23eb4d",
+            "nativeBits": "3f23eb4d",
+            "doubleDtoBits": "3f23eb4d",
+            "expected": 0.6403091549873352,
+            "native": 0.6403091549873352,
+            "doubleDto": 0.6403091549873352
+        },
+        {
+            "field": "rotation.x",
+            "expectedBits": "00000000",
+            "nativeBits": "00000000",
+            "doubleDtoBits": "00000000",
+            "expected": 0.0,
+            "native": 0.0,
+            "doubleDto": 0.0
+        },
+        {
+            "field": "rotation.y",
+            "expectedBits": "bf2c4d9e",
+            "nativeBits": "bf2c4d9e",
+            "doubleDtoBits": "bf2c4d9e",
+            "expected": -0.673059344291687,
+            "native": -0.673059344291687,
+            "doubleDto": -0.673059344291687
+        },
+        {
+            "field": "rotation.z",
+            "expectedBits": "00000000",
+            "nativeBits": "00000000",
+            "doubleDtoBits": "00000000",
+            "expected": 0.0,
+            "native": 0.0,
+            "doubleDto": 0.0
+        },
+        {
+            "field": "rotation.w",
+            "expectedBits": "3f3d55ac",
+            "nativeBits": "3f3d55ac",
+            "doubleDtoBits": "3f3d55ac",
+            "expected": 0.7395884990692139,
+            "native": 0.7395884990692139,
+            "doubleDto": 0.7395884990692139
+        },
+        {
+            "field": "bodyPaintRemaining",
+            "expectedBits": "42ed990b",
+            "nativeBits": "42ed990b",
+            "doubleDtoBits": "42ed990b",
+            "expected": 118.79891204833985,
+            "native": 118.79891204833985,
+            "doubleDto": 118.79891204833985
+        },
+        {
+            "field": "overwrite.rotation.y",
+            "expectedBits": "bf2c4d9e",
+            "nativeBits": "bf2c4d9e",
+            "doubleDtoBits": "bf2c4d9e",
+            "expected": -0.673059344291687,
+            "native": -0.673059344291687,
+            "doubleDto": -0.673059344291687
+        },
+        {
+            "field": "overwrite.position.y",
+            "expectedBits": "38d12000",
+            "nativeBits": "38d12000",
+            "doubleDtoBits": "38d12000",
+            "expected": 0.00009971857070922852,
+            "native": 0.00009971857070922852,
+            "doubleDto": 0.00009971857070922852
+        }
+    ],
+    "yawCases": [
+        {
+            "name": "yaw -180",
+            "components": [
+                {
+                    "field": "x",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "y",
+                    "expectedBits": "3f800000",
+                    "nativeBits": "3f800000",
+                    "doubleDtoBits": "3f800000",
+                    "expected": 1.0,
+                    "native": 1.0,
+                    "doubleDto": 1.0
+                },
+                {
+                    "field": "z",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "w",
+                    "expectedBits": "333bbd2e",
+                    "nativeBits": "333bbd2e",
+                    "doubleDtoBits": "333bbd2e",
+                    "expected": 4.371138828673793e-8,
+                    "native": 4.371138828673793e-8,
+                    "doubleDto": 4.371138828673793e-8
+                }
+            ],
+            "json": "{\"schemaVersion\":1,\"fileKind\":\"ReconstructedManakaSave\",\"sceneKey\":\"Apartment\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"rotation\":{\"x\":0.0,\"y\":1.0,\"z\":0.0,\"w\":4.371138828673793e-8},\"bodyPaintRemaining\":0.0,\"bodyPaintReusable\":false,\"inventory\":[],\"customization\":{\"height\":0,\"hair\":0,\"skinFree\":false,\"skinPreset\":0,\"skinR\":0,\"skinG\":0,\"skinB\":0},\"sourceSaveSha256\":\"\",\"savedProcessGuid\":\"\",\"revision\":0,\"savedAtUtc\":\"\"}",
+            "numericEqual": true,
+            "bitEqual": true
+        },
+        {
+            "name": "yaw -135",
+            "components": [
+                {
+                    "field": "x",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "y",
+                    "expectedBits": "bf6c8360",
+                    "nativeBits": "bf6c8360",
+                    "doubleDtoBits": "bf6c8360",
+                    "expected": -0.9238796234130859,
+                    "native": -0.9238796234130859,
+                    "doubleDto": -0.9238796234130859
+                },
+                {
+                    "field": "z",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "w",
+                    "expectedBits": "3ec3ef16",
+                    "nativeBits": "3ec3ef16",
+                    "doubleDtoBits": "3ec3ef16",
+                    "expected": 0.3826834559440613,
+                    "native": 0.3826834559440613,
+                    "doubleDto": 0.3826834559440613
+                }
+            ],
+            "json": "{\"schemaVersion\":1,\"fileKind\":\"ReconstructedManakaSave\",\"sceneKey\":\"Apartment\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"rotation\":{\"x\":0.0,\"y\":-0.9238796234130859,\"z\":0.0,\"w\":0.3826834559440613},\"bodyPaintRemaining\":0.0,\"bodyPaintReusable\":false,\"inventory\":[],\"customization\":{\"height\":0,\"hair\":0,\"skinFree\":false,\"skinPreset\":0,\"skinR\":0,\"skinG\":0,\"skinB\":0},\"sourceSaveSha256\":\"\",\"savedProcessGuid\":\"\",\"revision\":0,\"savedAtUtc\":\"\"}",
+            "numericEqual": true,
+            "bitEqual": true
+        },
+        {
+            "name": "yaw -90",
+            "components": [
+                {
+                    "field": "x",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "y",
+                    "expectedBits": "bf3504f2",
+                    "nativeBits": "bf3504f2",
+                    "doubleDtoBits": "bf3504f2",
+                    "expected": -0.7071067094802856,
+                    "native": -0.7071067094802856,
+                    "doubleDto": -0.7071067094802856
+                },
+                {
+                    "field": "z",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "w",
+                    "expectedBits": "3f3504f4",
+                    "nativeBits": "3f3504f4",
+                    "doubleDtoBits": "3f3504f4",
+                    "expected": 0.7071068286895752,
+                    "native": 0.7071068286895752,
+                    "doubleDto": 0.7071068286895752
+                }
+            ],
+            "json": "{\"schemaVersion\":1,\"fileKind\":\"ReconstructedManakaSave\",\"sceneKey\":\"Apartment\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"rotation\":{\"x\":0.0,\"y\":-0.7071067094802856,\"z\":0.0,\"w\":0.7071068286895752},\"bodyPaintRemaining\":0.0,\"bodyPaintReusable\":false,\"inventory\":[],\"customization\":{\"height\":0,\"hair\":0,\"skinFree\":false,\"skinPreset\":0,\"skinR\":0,\"skinG\":0,\"skinB\":0},\"sourceSaveSha256\":\"\",\"savedProcessGuid\":\"\",\"revision\":0,\"savedAtUtc\":\"\"}",
+            "numericEqual": true,
+            "bitEqual": true
+        },
+        {
+            "name": "yaw -84.6",
+            "components": [
+                {
+                    "field": "x",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "y",
+                    "expectedBits": "bf2c4a8d",
+                    "nativeBits": "bf2c4a8d",
+                    "doubleDtoBits": "bf2c4a8d",
+                    "expected": -0.6730125546455383,
+                    "native": -0.6730125546455383,
+                    "doubleDto": -0.6730125546455383
+                },
+                {
+                    "field": "z",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "w",
+                    "expectedBits": "3f3d5877",
+                    "nativeBits": "3f3d5877",
+                    "doubleDtoBits": "3f3d5877",
+                    "expected": 0.7396311163902283,
+                    "native": 0.7396311163902283,
+                    "doubleDto": 0.7396311163902283
+                }
+            ],
+            "json": "{\"schemaVersion\":1,\"fileKind\":\"ReconstructedManakaSave\",\"sceneKey\":\"Apartment\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"rotation\":{\"x\":0.0,\"y\":-0.6730125546455383,\"z\":0.0,\"w\":0.7396311163902283},\"bodyPaintRemaining\":0.0,\"bodyPaintReusable\":false,\"inventory\":[],\"customization\":{\"height\":0,\"hair\":0,\"skinFree\":false,\"skinPreset\":0,\"skinR\":0,\"skinG\":0,\"skinB\":0},\"sourceSaveSha256\":\"\",\"savedProcessGuid\":\"\",\"revision\":0,\"savedAtUtc\":\"\"}",
+            "numericEqual": true,
+            "bitEqual": true
+        },
+        {
+            "name": "yaw -45",
+            "components": [
+                {
+                    "field": "x",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "y",
+                    "expectedBits": "bec3ef16",
+                    "nativeBits": "bec3ef16",
+                    "doubleDtoBits": "bec3ef16",
+                    "expected": -0.3826834559440613,
+                    "native": -0.3826834559440613,
+                    "doubleDto": -0.3826834559440613
+                },
+                {
+                    "field": "z",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "w",
+                    "expectedBits": "3f6c835e",
+                    "nativeBits": "3f6c835e",
+                    "doubleDtoBits": "3f6c835e",
+                    "expected": 0.9238795042037964,
+                    "native": 0.9238795042037964,
+                    "doubleDto": 0.9238795042037964
+                }
+            ],
+            "json": "{\"schemaVersion\":1,\"fileKind\":\"ReconstructedManakaSave\",\"sceneKey\":\"Apartment\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"rotation\":{\"x\":0.0,\"y\":-0.3826834559440613,\"z\":0.0,\"w\":0.9238795042037964},\"bodyPaintRemaining\":0.0,\"bodyPaintReusable\":false,\"inventory\":[],\"customization\":{\"height\":0,\"hair\":0,\"skinFree\":false,\"skinPreset\":0,\"skinR\":0,\"skinG\":0,\"skinB\":0},\"sourceSaveSha256\":\"\",\"savedProcessGuid\":\"\",\"revision\":0,\"savedAtUtc\":\"\"}",
+            "numericEqual": true,
+            "bitEqual": true
+        },
+        {
+            "name": "yaw -0.1",
+            "components": [
+                {
+                    "field": "x",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "y",
+                    "expectedBits": "ba64c380",
+                    "nativeBits": "ba64c380",
+                    "doubleDtoBits": "ba64c380",
+                    "expected": -0.0008726641535758972,
+                    "native": -0.0008726641535758972,
+                    "doubleDto": -0.0008726641535758972
+                },
+                {
+                    "field": "z",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "w",
+                    "expectedBits": "3f7ffffa",
+                    "nativeBits": "3f7ffffa",
+                    "doubleDtoBits": "3f7ffffa",
+                    "expected": 0.9999996423721314,
+                    "native": 0.9999996423721314,
+                    "doubleDto": 0.9999996423721314
+                }
+            ],
+            "json": "{\"schemaVersion\":1,\"fileKind\":\"ReconstructedManakaSave\",\"sceneKey\":\"Apartment\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"rotation\":{\"x\":0.0,\"y\":-0.0008726641535758972,\"z\":0.0,\"w\":0.9999996423721314},\"bodyPaintRemaining\":0.0,\"bodyPaintReusable\":false,\"inventory\":[],\"customization\":{\"height\":0,\"hair\":0,\"skinFree\":false,\"skinPreset\":0,\"skinR\":0,\"skinG\":0,\"skinB\":0},\"sourceSaveSha256\":\"\",\"savedProcessGuid\":\"\",\"revision\":0,\"savedAtUtc\":\"\"}",
+            "numericEqual": true,
+            "bitEqual": true
+        },
+        {
+            "name": "yaw 0",
+            "components": [
+                {
+                    "field": "x",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "y",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "z",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "w",
+                    "expectedBits": "3f800000",
+                    "nativeBits": "3f800000",
+                    "doubleDtoBits": "3f800000",
+                    "expected": 1.0,
+                    "native": 1.0,
+                    "doubleDto": 1.0
+                }
+            ],
+            "json": "{\"schemaVersion\":1,\"fileKind\":\"ReconstructedManakaSave\",\"sceneKey\":\"Apartment\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"bodyPaintRemaining\":0.0,\"bodyPaintReusable\":false,\"inventory\":[],\"customization\":{\"height\":0,\"hair\":0,\"skinFree\":false,\"skinPreset\":0,\"skinR\":0,\"skinG\":0,\"skinB\":0},\"sourceSaveSha256\":\"\",\"savedProcessGuid\":\"\",\"revision\":0,\"savedAtUtc\":\"\"}",
+            "numericEqual": true,
+            "bitEqual": true
+        },
+        {
+            "name": "yaw 0.1",
+            "components": [
+                {
+                    "field": "x",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "y",
+                    "expectedBits": "3a64c380",
+                    "nativeBits": "3a64c380",
+                    "doubleDtoBits": "3a64c380",
+                    "expected": 0.0008726641535758972,
+                    "native": 0.0008726641535758972,
+                    "doubleDto": 0.0008726641535758972
+                },
+                {
+                    "field": "z",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "w",
+                    "expectedBits": "3f7ffffa",
+                    "nativeBits": "3f7ffffa",
+                    "doubleDtoBits": "3f7ffffa",
+                    "expected": 0.9999996423721314,
+                    "native": 0.9999996423721314,
+                    "doubleDto": 0.9999996423721314
+                }
+            ],
+            "json": "{\"schemaVersion\":1,\"fileKind\":\"ReconstructedManakaSave\",\"sceneKey\":\"Apartment\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"rotation\":{\"x\":0.0,\"y\":0.0008726641535758972,\"z\":0.0,\"w\":0.9999996423721314},\"bodyPaintRemaining\":0.0,\"bodyPaintReusable\":false,\"inventory\":[],\"customization\":{\"height\":0,\"hair\":0,\"skinFree\":false,\"skinPreset\":0,\"skinR\":0,\"skinG\":0,\"skinB\":0},\"sourceSaveSha256\":\"\",\"savedProcessGuid\":\"\",\"revision\":0,\"savedAtUtc\":\"\"}",
+            "numericEqual": true,
+            "bitEqual": true
+        },
+        {
+            "name": "yaw 45",
+            "components": [
+                {
+                    "field": "x",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "y",
+                    "expectedBits": "3ec3ef16",
+                    "nativeBits": "3ec3ef16",
+                    "doubleDtoBits": "3ec3ef16",
+                    "expected": 0.3826834559440613,
+                    "native": 0.3826834559440613,
+                    "doubleDto": 0.3826834559440613
+                },
+                {
+                    "field": "z",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "w",
+                    "expectedBits": "3f6c835e",
+                    "nativeBits": "3f6c835e",
+                    "doubleDtoBits": "3f6c835e",
+                    "expected": 0.9238795042037964,
+                    "native": 0.9238795042037964,
+                    "doubleDto": 0.9238795042037964
+                }
+            ],
+            "json": "{\"schemaVersion\":1,\"fileKind\":\"ReconstructedManakaSave\",\"sceneKey\":\"Apartment\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"rotation\":{\"x\":0.0,\"y\":0.3826834559440613,\"z\":0.0,\"w\":0.9238795042037964},\"bodyPaintRemaining\":0.0,\"bodyPaintReusable\":false,\"inventory\":[],\"customization\":{\"height\":0,\"hair\":0,\"skinFree\":false,\"skinPreset\":0,\"skinR\":0,\"skinG\":0,\"skinB\":0},\"sourceSaveSha256\":\"\",\"savedProcessGuid\":\"\",\"revision\":0,\"savedAtUtc\":\"\"}",
+            "numericEqual": true,
+            "bitEqual": true
+        },
+        {
+            "name": "yaw 90",
+            "components": [
+                {
+                    "field": "x",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "y",
+                    "expectedBits": "3f3504f2",
+                    "nativeBits": "3f3504f2",
+                    "doubleDtoBits": "3f3504f2",
+                    "expected": 0.7071067094802856,
+                    "native": 0.7071067094802856,
+                    "doubleDto": 0.7071067094802856
+                },
+                {
+                    "field": "z",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "w",
+                    "expectedBits": "3f3504f4",
+                    "nativeBits": "3f3504f4",
+                    "doubleDtoBits": "3f3504f4",
+                    "expected": 0.7071068286895752,
+                    "native": 0.7071068286895752,
+                    "doubleDto": 0.7071068286895752
+                }
+            ],
+            "json": "{\"schemaVersion\":1,\"fileKind\":\"ReconstructedManakaSave\",\"sceneKey\":\"Apartment\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"rotation\":{\"x\":0.0,\"y\":0.7071067094802856,\"z\":0.0,\"w\":0.7071068286895752},\"bodyPaintRemaining\":0.0,\"bodyPaintReusable\":false,\"inventory\":[],\"customization\":{\"height\":0,\"hair\":0,\"skinFree\":false,\"skinPreset\":0,\"skinR\":0,\"skinG\":0,\"skinB\":0},\"sourceSaveSha256\":\"\",\"savedProcessGuid\":\"\",\"revision\":0,\"savedAtUtc\":\"\"}",
+            "numericEqual": true,
+            "bitEqual": true
+        },
+        {
+            "name": "yaw 135",
+            "components": [
+                {
+                    "field": "x",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "y",
+                    "expectedBits": "3f6c835f",
+                    "nativeBits": "3f6c835f",
+                    "doubleDtoBits": "3f6c835f",
+                    "expected": 0.9238795638084412,
+                    "native": 0.9238795638084412,
+                    "doubleDto": 0.9238795638084412
+                },
+                {
+                    "field": "z",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "w",
+                    "expectedBits": "3ec3ef16",
+                    "nativeBits": "3ec3ef16",
+                    "doubleDtoBits": "3ec3ef16",
+                    "expected": 0.3826834559440613,
+                    "native": 0.3826834559440613,
+                    "doubleDto": 0.3826834559440613
+                }
+            ],
+            "json": "{\"schemaVersion\":1,\"fileKind\":\"ReconstructedManakaSave\",\"sceneKey\":\"Apartment\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"rotation\":{\"x\":0.0,\"y\":0.9238795638084412,\"z\":0.0,\"w\":0.3826834559440613},\"bodyPaintRemaining\":0.0,\"bodyPaintReusable\":false,\"inventory\":[],\"customization\":{\"height\":0,\"hair\":0,\"skinFree\":false,\"skinPreset\":0,\"skinR\":0,\"skinG\":0,\"skinB\":0},\"sourceSaveSha256\":\"\",\"savedProcessGuid\":\"\",\"revision\":0,\"savedAtUtc\":\"\"}",
+            "numericEqual": true,
+            "bitEqual": true
+        },
+        {
+            "name": "yaw 180",
+            "components": [
+                {
+                    "field": "x",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "y",
+                    "expectedBits": "3f800000",
+                    "nativeBits": "3f800000",
+                    "doubleDtoBits": "3f800000",
+                    "expected": 1.0,
+                    "native": 1.0,
+                    "doubleDto": 1.0
+                },
+                {
+                    "field": "z",
+                    "expectedBits": "00000000",
+                    "nativeBits": "00000000",
+                    "doubleDtoBits": "00000000",
+                    "expected": 0.0,
+                    "native": 0.0,
+                    "doubleDto": 0.0
+                },
+                {
+                    "field": "w",
+                    "expectedBits": "b33bbd2e",
+                    "nativeBits": "b33bbd2e",
+                    "doubleDtoBits": "b33bbd2e",
+                    "expected": -4.371138828673793e-8,
+                    "native": -4.371138828673793e-8,
+                    "doubleDto": -4.371138828673793e-8
+                }
+            ],
+            "json": "{\"schemaVersion\":1,\"fileKind\":\"ReconstructedManakaSave\",\"sceneKey\":\"Apartment\",\"position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"rotation\":{\"x\":0.0,\"y\":1.0,\"z\":0.0,\"w\":-4.371138828673793e-8},\"bodyPaintRemaining\":0.0,\"bodyPaintReusable\":false,\"inventory\":[],\"customization\":{\"height\":0,\"hair\":0,\"skinFree\":false,\"skinPreset\":0,\"skinR\":0,\"skinG\":0,\"skinB\":0},\"sourceSaveSha256\":\"\",\"savedProcessGuid\":\"\",\"revision\":0,\"savedAtUtc\":\"\"}",
+            "numericEqual": true,
+            "bitEqual": true
+        }
+    ],
+    "randomCases": 9975,
+    "nativeLongFailures": 1,
+    "nativeRFailures": 1,
+    "doubleDtoFailures": 1,
+    "singleParseFailures": 1,
+    "doubleParseFailures": 1,
+    "examples": [
+        {
+            "bits": "80000000",
+            "json": "{\"value\":0.0}",
+            "rJson": "{\"value\":0}",
+            "nativeBits": "00000000",
+            "rBits": "00000000",
+            "dtoBits": "00000000",
+            "expected": 0.0,
+            "nativeLong": 0.0,
+            "nativeRoundTrip": 0.0,
+            "dtoDouble": 0.0,
+            "singleParse": 0.0,
+            "doubleParse": 0.0,
+            "longExact": false,
+            "rExact": false,
+            "dtoExact": false,
+            "singleExact": false,
+            "doubleExact": false
+        }
+    ]
+}

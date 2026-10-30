@@ -1,0 +1,210 @@
+{
+  "evidence_id": "ev_c18aa175a62243c7cebf573f372d1d6f6d05e2e25d4a0d0f81fb7c763a6c369a",
+  "subject": {
+    "name": "Assembly-CSharp.dll",
+    "digest": {
+      "sha256": "3585f1862c3fae750fb167b5c56c086b61ef56ac603327c63993cf118104cbfe"
+    },
+    "local_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\Assembly-CSharp.dll",
+    "format": "pe",
+    "architecture": "x86"
+  },
+  "provider": {
+    "id": "rea-analysis-view",
+    "name": "REA analysis view projection",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis-view",
+  "operation": "inspect_analysis_view",
+  "parameters": {
+    "parent_evidence_id": "ev_75e84f1707841805a9d781a9a159806ffd028ae18a4c611663f57667814881a7",
+    "view": {
+      "kind": "summary"
+    }
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "kind": "summary",
+    "view": {
+      "kind": "summary"
+    },
+    "parent_evidence_id": "ev_75e84f1707841805a9d781a9a159806ffd028ae18a4c611663f57667814881a7",
+    "parent_operation": "inspect_managed_artifact",
+    "parent_digest": "75e84f1707841805a9d781a9a159806ffd028ae18a4c611663f57667814881a7",
+    "view_digest": "bff2953d1dafe0680039e843f072998ba4e95008a73db92a33c9ac15c964c301",
+    "artifact": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\Assembly-CSharp.dll",
+      "sha256": "3585f1862c3fae750fb167b5c56c086b61ef56ac603327c63993cf118104cbfe"
+    },
+    "coverage": {
+      "status": "complete-within-view",
+      "examined": 182,
+      "total": 182,
+      "next_offset": null,
+      "exhausted": true
+    },
+    "limitations": [
+      "Static inspection did not load the assembly, resolve dependencies through a CLR, decompile C#, or execute target code."
+    ],
+    "unknowns": [
+      "Collection counts and pages cover producer-returned rows; metadata completeness remains the original metadata status and coverage, not an absence claim about unreturned rows.",
+      "Metadata tokens are build-local coordinates bound to the recorded artifact SHA-256 and module MVID; this view does not load or execute the assembly."
+    ],
+    "summary": {
+      "artifact": {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\Assembly-CSharp.dll",
+        "sha256": "3585f1862c3fae750fb167b5c56c086b61ef56ac603327c63993cf118104cbfe",
+        "byte_length": 99328,
+        "format": "pe"
+      },
+      "pe": {
+        "machine": 332,
+        "machine_hex": "0x014c",
+        "architecture": "x86",
+        "optional_header": "pe32",
+        "section_count": 3,
+        "characteristics": 8226,
+        "cli": {
+          "header_offset": 520,
+          "header_size": 72,
+          "runtime_version": "2.5",
+          "flags": 1,
+          "flag_names": [
+            "il-only"
+          ],
+          "entry_point": {
+            "kind": "none",
+            "value": null
+          },
+          "metadata_rva": 47584,
+          "metadata_size": 55972,
+          "resources_rva": 0,
+          "resources_size": 0,
+          "strong_name_rva": 0,
+          "strong_name_size": 0,
+          "managed_native_header_rva": 0,
+          "managed_native_header_size": 0,
+          "ready_to_run_signature": false
+        }
+      },
+      "classification": {
+        "status": "managed",
+        "container": "pe",
+        "runtime_family": "unity-mono",
+        "implementation": "cil",
+        "managed_architecture": "anycpu",
+        "evidence": [
+          {
+            "code": "cli-header-observed",
+            "detail": "A file-backed PE CLI header and metadata root were admitted.",
+            "file_offset": 520
+          },
+          {
+            "code": "unity-reference-observed",
+            "detail": "The admitted AssemblyRef table contains a UnityEngine reference.",
+            "file_offset": 54362
+          },
+          {
+            "code": "managed-architecture-derived",
+            "detail": "Managed architecture anycpu is derived from PE machine and CLI flags.",
+            "file_offset": 536
+          }
+        ]
+      },
+      "metadata": {
+        "status": "complete",
+        "version": "v4.0.30319",
+        "stream_names": [
+          "#Blob",
+          "#GUID",
+          "#Strings",
+          "#US",
+          "#~"
+        ],
+        "table_row_counts": {
+          "Module": 1,
+          "TypeRef": 169,
+          "TypeDef": 51,
+          "Field": 445,
+          "MethodDef": 243,
+          "Param": 171,
+          "InterfaceImpl": 25,
+          "MemberRef": 502,
+          "Constant": 7,
+          "CustomAttribute": 170,
+          "ClassLayout": 4,
+          "StandAloneSig": 58,
+          "PropertyMap": 13,
+          "Property": 44,
+          "MethodSemantics": 67,
+          "MethodImpl": 40,
+          "TypeSpec": 38,
+          "FieldRVA": 4,
+          "Assembly": 1,
+          "AssemblyRef": 12,
+          "NestedClass": 23,
+          "MethodSpec": 58
+        }
+      },
+      "module": {
+        "name": "Assembly-CSharp.dll",
+        "generation": 0,
+        "mvid": "b0a2aba9-458a-4484-b79a-cc07028775a6",
+        "enc_id": null,
+        "enc_base_id": null,
+        "token": "0x00000001",
+        "row_offset": 40124
+      },
+      "assembly": {
+        "name": "Assembly-CSharp",
+        "version": "0.0.0.0",
+        "culture": null,
+        "flags": 0,
+        "hash_algorithm": 32772,
+        "public_key": {
+          "kind": "none",
+          "byte_length": 0,
+          "sha256": null,
+          "token": null
+        },
+        "token": "0x20000001",
+        "row_offset": 54340
+      },
+      "target_frameworks": [],
+      "coverage": {
+        "state": "complete",
+        "issues": []
+      },
+      "limitations": [
+        "Static inspection did not load the assembly, resolve dependencies through a CLR, decompile C#, or execute target code."
+      ],
+      "reported_counts": {
+        "references": 12,
+        "resources": 0,
+        "attributes": 170
+      },
+      "identity_scope": {
+        "token_identity": "build-local",
+        "requires_artifact_sha256": "3585f1862c3fae750fb167b5c56c086b61ef56ac603327c63993cf118104cbfe",
+        "requires_mvid": "b0a2aba9-458a-4484-b79a-cc07028775a6"
+      }
+    }
+  },
+  "confidence": "derived",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "Static inspection did not load the assembly, resolve dependencies through a CLR, decompile C#, or execute target code."
+  ],
+  "relationship_coverage": null,
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\locomotion-20261031-3-build\\ManakaLocomotion_Data\\Managed\\Assembly-CSharp.dll"
+    }
+  ],
+  "evidence_links": [
+    "ev_75e84f1707841805a9d781a9a159806ffd028ae18a4c611663f57667814881a7"
+  ]
+}

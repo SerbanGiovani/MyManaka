@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "name": "locomotion-decoded-code",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\decoded-code.seeds.tsv",
+  "seed_sha256": "8ffa5265d5f901b3308db1d7bc80e212f9c8beff546213201fcb8be1ca8dfe74",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native-decoded-code",
+  "seed_count": 6250,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 14535,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::SetStrafe",
+      "token": "0x6000c7e",
+      "va": "0x18062def0",
+      "file_offset": 6473456,
+      "file_stem": "14535-06000c7e",
+      "operations": [
+        "procedure_assembly"
+      ]
+    },
+    {
+      "metadata_id": 14552,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::.ctor",
+      "token": "0x6000c8f",
+      "va": "0x18062ea40",
+      "file_offset": 6476352,
+      "file_stem": "14552-06000c8f",
+      "operations": [
+        "procedure_assembly"
+      ]
+    },
+    {
+      "metadata_id": 14526,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::OnUpdate",
+      "token": "0x6000c75",
+      "va": "0x18062cb20",
+      "file_offset": 6468384,
+      "file_stem": "14526-06000c75",
+      "operations": [
+        "procedure_assembly",
+        "analyze_function"
+      ]
+    },
+    {
+      "metadata_id": 14899,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::OnUpdate",
+      "token": "0x6000dea",
+      "va": "0x180651940",
+      "file_offset": 6619456,
+      "file_stem": "14899-06000dea",
+      "operations": [
+        "procedure_assembly"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

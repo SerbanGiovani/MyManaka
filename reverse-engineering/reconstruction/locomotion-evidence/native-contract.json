@@ -1,0 +1,1504 @@
+{
+  "schema_version": 1,
+  "authority": "shipped-artifact",
+  "native": {
+    "path": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+    "sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+  },
+  "metadata": {
+    "path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
+    "sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8"
+  },
+  "runs": [
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native\\run.json",
+      "sha256": "78363ad473019d166d204aad70dc844e0451305f9463a2293e080989638b07c8",
+      "queries": 18,
+      "elapsed_seconds": 165.741,
+      "closed_without_error": true
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native-decoded-code\\run.json",
+      "sha256": "b5ee81bd04007beb7ca4dae10c0927cdb1b657c46fdc60b6c001058673c4e521",
+      "queries": 5,
+      "elapsed_seconds": 203.525,
+      "closed_without_error": true
+    }
+  ],
+  "new_observations": [
+    {
+      "method_id": 14527,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::SetMoveSpeed",
+      "va": "0x180426e60",
+      "file_offset": 4347488,
+      "token": "0x6000c76",
+      "metadata_file_offset": 2647436,
+      "metadata_raw_hex": "49f5030096080000155e00000000000831420000ffffffff760c000686000000ffff0100",
+      "parameters": [
+        {
+          "name": "speed",
+          "metadata_file_offset": 5950764,
+          "raw_hex": "5c2e0300300a0008b7540000",
+          "type": {
+            "runtime_type_index": 21687,
+            "pointer_file_offset": 43025240,
+            "type_va": "0x182d7d198",
+            "type_file_offset": 47690648,
+            "type_raw_hex": "1d0100000000000000000c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 0
+          }
+        }
+      ],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 13745,
+          "name": "CameraSettings::set_FOV"
+        },
+        {
+          "method_id": 14527,
+          "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::SetMoveSpeed"
+        },
+        {
+          "method_id": 15513,
+          "name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcController::set_PlayerDistance"
+        },
+        {
+          "method_id": 15950,
+          "name": "ExposureUnnoticed2.Object3D.Camera.InventoryCameraController::set_Pitch"
+        },
+        {
+          "method_id": 17124,
+          "name": "ExposureUnnoticed2.Scripts.InGame.Util.ColliderTriggerController::set_PenetrateDist"
+        },
+        {
+          "method_id": 27489,
+          "name": "InteractionState::set_totalTimeoutCompletionTimeRemaining"
+        },
+        {
+          "method_id": 68675,
+          "name": "UnityEngine.UI.CanvasScaler::set_referencePixelsPerUnit"
+        },
+        {
+          "method_id": 75933,
+          "name": "UnityEngine.HumanLimit::set_axisLength"
+        },
+        {
+          "method_id": 75949,
+          "name": "UnityEngine.HumanDescription::set_legStretch"
+        },
+        {
+          "method_id": 77381,
+          "name": "UnityEngine.TextCore.FaceInfo::set_lineHeight"
+        },
+        {
+          "method_id": 77958,
+          "name": "UnityEngine.AI.NavMeshBuildSettings::set_voxelSize"
+        }
+      ],
+      "operation": "procedure_pseudo_code",
+      "evidence_id": "ev_0d96ce81fa4c29cdec46f341d50da3356ea5ee6226e8d10dde767555d8d63afa",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native\\14527-06000c76-procedure_pseudo_code.json",
+      "evidence_file_sha256": "0dc69a4e8b03672e0101e501912d0037fcf505d5243f7c9f014177902da2b9e3",
+      "nonempty_result": true
+    },
+    {
+      "method_id": 14527,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::SetMoveSpeed",
+      "va": "0x180426e60",
+      "file_offset": 4347488,
+      "token": "0x6000c76",
+      "metadata_file_offset": 2647436,
+      "metadata_raw_hex": "49f5030096080000155e00000000000831420000ffffffff760c000686000000ffff0100",
+      "parameters": [
+        {
+          "name": "speed",
+          "metadata_file_offset": 5950764,
+          "raw_hex": "5c2e0300300a0008b7540000",
+          "type": {
+            "runtime_type_index": 21687,
+            "pointer_file_offset": 43025240,
+            "type_va": "0x182d7d198",
+            "type_file_offset": 47690648,
+            "type_raw_hex": "1d0100000000000000000c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 0
+          }
+        }
+      ],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 13745,
+          "name": "CameraSettings::set_FOV"
+        },
+        {
+          "method_id": 14527,
+          "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::SetMoveSpeed"
+        },
+        {
+          "method_id": 15513,
+          "name": "ExposureUnnoticed2.Object3D.NPC.Script.NpcController::set_PlayerDistance"
+        },
+        {
+          "method_id": 15950,
+          "name": "ExposureUnnoticed2.Object3D.Camera.InventoryCameraController::set_Pitch"
+        },
+        {
+          "method_id": 17124,
+          "name": "ExposureUnnoticed2.Scripts.InGame.Util.ColliderTriggerController::set_PenetrateDist"
+        },
+        {
+          "method_id": 27489,
+          "name": "InteractionState::set_totalTimeoutCompletionTimeRemaining"
+        },
+        {
+          "method_id": 68675,
+          "name": "UnityEngine.UI.CanvasScaler::set_referencePixelsPerUnit"
+        },
+        {
+          "method_id": 75933,
+          "name": "UnityEngine.HumanLimit::set_axisLength"
+        },
+        {
+          "method_id": 75949,
+          "name": "UnityEngine.HumanDescription::set_legStretch"
+        },
+        {
+          "method_id": 77381,
+          "name": "UnityEngine.TextCore.FaceInfo::set_lineHeight"
+        },
+        {
+          "method_id": 77958,
+          "name": "UnityEngine.AI.NavMeshBuildSettings::set_voxelSize"
+        }
+      ],
+      "operation": "procedure_assembly",
+      "evidence_id": "ev_329c9d6b07c52d831cf5b7d2bd5ec64d8df233e9962370a90c0a386261533f3e",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native\\14527-06000c76-procedure_assembly.json",
+      "evidence_file_sha256": "75b0385435ae745fc02a251d29e1d6bb860a1b6c2339bc8d86c147d561742f07",
+      "nonempty_result": true
+    },
+    {
+      "method_id": 14533,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::SetMotionSpeedScale",
+      "va": "0x18062dd50",
+      "file_offset": 6473040,
+      "token": "0x6000c7c",
+      "metadata_file_offset": 2647652,
+      "metadata_raw_hex": "b2f5030096080000155e00000000000834420000ffffffff7c0c000686000000ffff0100",
+      "parameters": [
+        {
+          "name": "scale",
+          "metadata_file_offset": 5950800,
+          "raw_hex": "8b6b0000330a0008b7540000",
+          "type": {
+            "runtime_type_index": 21687,
+            "pointer_file_offset": 43025240,
+            "type_va": "0x182d7d198",
+            "type_file_offset": 47690648,
+            "type_raw_hex": "1d0100000000000000000c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 0
+          }
+        }
+      ],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 14533,
+          "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::SetMotionSpeedScale"
+        }
+      ],
+      "operation": "procedure_pseudo_code",
+      "evidence_id": "ev_ac5d85b77c9f52ea2e04870c2177b7d1e05856cc2d070584a697a5a14e2f6259",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native\\14533-06000c7c-procedure_pseudo_code.json",
+      "evidence_file_sha256": "7f76a74c9dcb6035c79753020666b7191ea663184af6945a4ef531785a3c3382",
+      "nonempty_result": true
+    },
+    {
+      "method_id": 14533,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::SetMotionSpeedScale",
+      "va": "0x18062dd50",
+      "file_offset": 6473040,
+      "token": "0x6000c7c",
+      "metadata_file_offset": 2647652,
+      "metadata_raw_hex": "b2f5030096080000155e00000000000834420000ffffffff7c0c000686000000ffff0100",
+      "parameters": [
+        {
+          "name": "scale",
+          "metadata_file_offset": 5950800,
+          "raw_hex": "8b6b0000330a0008b7540000",
+          "type": {
+            "runtime_type_index": 21687,
+            "pointer_file_offset": 43025240,
+            "type_va": "0x182d7d198",
+            "type_file_offset": 47690648,
+            "type_raw_hex": "1d0100000000000000000c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 0
+          }
+        }
+      ],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 14533,
+          "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::SetMotionSpeedScale"
+        }
+      ],
+      "operation": "procedure_assembly",
+      "evidence_id": "ev_c1905c45f110b98d275f39f6a7765633aaa5bed0073f4f386a8c7e9d4b39ee52",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native\\14533-06000c7c-procedure_assembly.json",
+      "evidence_file_sha256": "9eb8464afd8ef896d476e6be614a76375a88142f4ae8ecb3cedd9cb88809ea37",
+      "nonempty_result": false
+    },
+    {
+      "method_id": 14535,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::SetStrafe",
+      "va": "0x18062def0",
+      "file_offset": 6473456,
+      "token": "0x6000c7e",
+      "metadata_file_offset": 2647724,
+      "metadata_raw_hex": "f6f5030096080000155e00000000000836420000ffffffff7e0c000686000000ffff0400",
+      "parameters": [
+        {
+          "name": "isStrafe",
+          "metadata_file_offset": 5950824,
+          "raw_hex": "d6f50300350a00085e350000",
+          "type": {
+            "runtime_type_index": 13662,
+            "pointer_file_offset": 42961040,
+            "type_va": "0x182d7d538",
+            "type_file_offset": 47691576,
+            "type_raw_hex": "b20000000000000000000280",
+            "type_enum": 2,
+            "data": 178,
+            "attributes": 0
+          }
+        },
+        {
+          "name": "isDash",
+          "metadata_file_offset": 5950836,
+          "raw_hex": "dff50300360a00085e350000",
+          "type": {
+            "runtime_type_index": 13662,
+            "pointer_file_offset": 42961040,
+            "type_va": "0x182d7d538",
+            "type_file_offset": 47691576,
+            "type_raw_hex": "b20000000000000000000280",
+            "type_enum": 2,
+            "data": 178,
+            "attributes": 0
+          }
+        },
+        {
+          "name": "strafeX",
+          "metadata_file_offset": 5950848,
+          "raw_hex": "e6f50300370a0008b7540000",
+          "type": {
+            "runtime_type_index": 21687,
+            "pointer_file_offset": 43025240,
+            "type_va": "0x182d7d198",
+            "type_file_offset": 47690648,
+            "type_raw_hex": "1d0100000000000000000c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 0
+          }
+        },
+        {
+          "name": "strafeY",
+          "metadata_file_offset": 5950860,
+          "raw_hex": "eef50300380a0008b7540000",
+          "type": {
+            "runtime_type_index": 21687,
+            "pointer_file_offset": 43025240,
+            "type_va": "0x182d7d198",
+            "type_file_offset": 47690648,
+            "type_raw_hex": "1d0100000000000000000c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 0
+          }
+        }
+      ],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 14535,
+          "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::SetStrafe"
+        }
+      ],
+      "operation": "procedure_pseudo_code",
+      "evidence_id": "ev_c1c60d813207c13e06bb90ba39713df7276ae71d0fe777b2064ab6a19329aba1",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native\\14535-06000c7e-procedure_pseudo_code.json",
+      "evidence_file_sha256": "0c8098b82b318fd59ce8294fc5c23b26a72300bbec29ef1e0e69257ff3dfc265",
+      "nonempty_result": true
+    },
+    {
+      "method_id": 14535,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::SetStrafe",
+      "va": "0x18062def0",
+      "file_offset": 6473456,
+      "token": "0x6000c7e",
+      "metadata_file_offset": 2647724,
+      "metadata_raw_hex": "f6f5030096080000155e00000000000836420000ffffffff7e0c000686000000ffff0400",
+      "parameters": [
+        {
+          "name": "isStrafe",
+          "metadata_file_offset": 5950824,
+          "raw_hex": "d6f50300350a00085e350000",
+          "type": {
+            "runtime_type_index": 13662,
+            "pointer_file_offset": 42961040,
+            "type_va": "0x182d7d538",
+            "type_file_offset": 47691576,
+            "type_raw_hex": "b20000000000000000000280",
+            "type_enum": 2,
+            "data": 178,
+            "attributes": 0
+          }
+        },
+        {
+          "name": "isDash",
+          "metadata_file_offset": 5950836,
+          "raw_hex": "dff50300360a00085e350000",
+          "type": {
+            "runtime_type_index": 13662,
+            "pointer_file_offset": 42961040,
+            "type_va": "0x182d7d538",
+            "type_file_offset": 47691576,
+            "type_raw_hex": "b20000000000000000000280",
+            "type_enum": 2,
+            "data": 178,
+            "attributes": 0
+          }
+        },
+        {
+          "name": "strafeX",
+          "metadata_file_offset": 5950848,
+          "raw_hex": "e6f50300370a0008b7540000",
+          "type": {
+            "runtime_type_index": 21687,
+            "pointer_file_offset": 43025240,
+            "type_va": "0x182d7d198",
+            "type_file_offset": 47690648,
+            "type_raw_hex": "1d0100000000000000000c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 0
+          }
+        },
+        {
+          "name": "strafeY",
+          "metadata_file_offset": 5950860,
+          "raw_hex": "eef50300380a0008b7540000",
+          "type": {
+            "runtime_type_index": 21687,
+            "pointer_file_offset": 43025240,
+            "type_va": "0x182d7d198",
+            "type_file_offset": 47690648,
+            "type_raw_hex": "1d0100000000000000000c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 0
+          }
+        }
+      ],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 14535,
+          "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::SetStrafe"
+        }
+      ],
+      "operation": "procedure_assembly",
+      "evidence_id": "ev_1e61d5c14420554620828922bbc105c27688a6443786faa737e29ea0bfbb7c02",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native\\14535-06000c7e-procedure_assembly.json",
+      "evidence_file_sha256": "e83ff2801c5f2688050b9c8d040ccce42f35cc2c5046df49e942d59cfa53b466",
+      "nonempty_result": false
+    },
+    {
+      "method_id": 14551,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::NearStrafeDirect",
+      "va": "0x18062e970",
+      "file_offset": 6476144,
+      "token": "0x6000c8e",
+      "metadata_file_offset": 2648300,
+      "metadata_raw_hex": "38f70300960800006c63000000000008ffffffffffffffff8e0c000686000000ffff0000",
+      "parameters": [],
+      "return_type": {
+        "runtime_type_index": 25452,
+        "pointer_file_offset": 43055360,
+        "type_va": "0x182dc2de8",
+        "type_file_offset": 47976424,
+        "type_raw_hex": "630a00000000000000001180",
+        "type_enum": 17,
+        "data": 2659,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 14551,
+          "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::NearStrafeDirect"
+        }
+      ],
+      "operation": "procedure_pseudo_code",
+      "evidence_id": "ev_58a0fbcb40ae972f4fb6c8c2b66b6d7a085103cf123aef58a7c327d75c5412da",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native\\14551-06000c8e-procedure_pseudo_code.json",
+      "evidence_file_sha256": "279aab23d16297ec8c072db1c66feea90596e5e0e8cae6b00bd435590f877dd9",
+      "nonempty_result": true
+    },
+    {
+      "method_id": 14551,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::NearStrafeDirect",
+      "va": "0x18062e970",
+      "file_offset": 6476144,
+      "token": "0x6000c8e",
+      "metadata_file_offset": 2648300,
+      "metadata_raw_hex": "38f70300960800006c63000000000008ffffffffffffffff8e0c000686000000ffff0000",
+      "parameters": [],
+      "return_type": {
+        "runtime_type_index": 25452,
+        "pointer_file_offset": 43055360,
+        "type_va": "0x182dc2de8",
+        "type_file_offset": 47976424,
+        "type_raw_hex": "630a00000000000000001180",
+        "type_enum": 17,
+        "data": 2659,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 14551,
+          "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::NearStrafeDirect"
+        }
+      ],
+      "operation": "procedure_assembly",
+      "evidence_id": "ev_3e1a9b5e3a059b885ee66dd67c7c4d3d03bc6930a3708e5f56ff7ee90124e913",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native\\14551-06000c8e-procedure_assembly.json",
+      "evidence_file_sha256": "c27e8c93bd61751e1a3b5486c4f58ca316c3c857570dcc305204f533da096933",
+      "nonempty_result": false
+    },
+    {
+      "method_id": 14552,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::.ctor",
+      "va": "0x18062ea40",
+      "file_offset": 6476352,
+      "token": "0x6000c8f",
+      "metadata_file_offset": 2648336,
+      "metadata_raw_hex": "b106000096080000155e000000000008ffffffffffffffff8f0c000686180000ffff0000",
+      "parameters": [],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 14552,
+          "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::.ctor"
+        }
+      ],
+      "operation": "procedure_pseudo_code",
+      "evidence_id": "ev_53b63293998d1f249b557feb71eddd55929c8546e90ca68188f404a2ec3a2d25",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native\\14552-06000c8f-procedure_pseudo_code.json",
+      "evidence_file_sha256": "fd0d0ba4c9d623b9c0781697f9a44936a2a2999062c3f3effc37669b17405ece",
+      "nonempty_result": true
+    },
+    {
+      "method_id": 14552,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::.ctor",
+      "va": "0x18062ea40",
+      "file_offset": 6476352,
+      "token": "0x6000c8f",
+      "metadata_file_offset": 2648336,
+      "metadata_raw_hex": "b106000096080000155e000000000008ffffffffffffffff8f0c000686180000ffff0000",
+      "parameters": [],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 14552,
+          "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::.ctor"
+        }
+      ],
+      "operation": "procedure_assembly",
+      "evidence_id": "ev_3124d1d227cad5be24fdece8d0a26fd2d250e58318c7072aebe3cc5dcabd0394",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native\\14552-06000c8f-procedure_assembly.json",
+      "evidence_file_sha256": "883736fdd3e84c2e3d866f0c263b24ca90fc9777cb2fc9683c76a15390e30ed7",
+      "nonempty_result": false
+    },
+    {
+      "method_id": 17316,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SmoothFloat::.ctor",
+      "va": "0x1804b5410",
+      "file_offset": 4930576,
+      "token": "0x600175b",
+      "metadata_file_offset": 2747840,
+      "metadata_raw_hex": "b1060000610a0000155e000000000008b1460000ffffffff5b17000686180000ffff0600",
+      "parameters": [
+        {
+          "name": "second",
+          "metadata_file_offset": 5964588,
+          "raw_hex": "556b0000b00e0008b7540000",
+          "type": {
+            "runtime_type_index": 21687,
+            "pointer_file_offset": 43025240,
+            "type_va": "0x182d7d198",
+            "type_file_offset": 47690648,
+            "type_raw_hex": "1d0100000000000000000c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 0
+          }
+        },
+        {
+          "name": "baseValue",
+          "metadata_file_offset": 5964600,
+          "raw_hex": "94360500b10e0008c8540000",
+          "type": {
+            "runtime_type_index": 21704,
+            "pointer_file_offset": 43025376,
+            "type_va": "0x182def288",
+            "type_file_offset": 48157832,
+            "type_raw_hex": "1d0100000000000010100c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 4112
+          }
+        },
+        {
+          "name": "defaultValue",
+          "metadata_file_offset": 5964612,
+          "raw_hex": "c02d0000b20e0008c8540000",
+          "type": {
+            "runtime_type_index": 21704,
+            "pointer_file_offset": 43025376,
+            "type_va": "0x182def288",
+            "type_file_offset": 48157832,
+            "type_raw_hex": "1d0100000000000010100c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 4112
+          }
+        },
+        {
+          "name": "isLerp",
+          "metadata_file_offset": 5964624,
+          "raw_hex": "9e360500b30e000874350000",
+          "type": {
+            "runtime_type_index": 13684,
+            "pointer_file_offset": 42961216,
+            "type_va": "0x182df2538",
+            "type_file_offset": 48170808,
+            "type_raw_hex": "b20000000000000010100280",
+            "type_enum": 2,
+            "data": 178,
+            "attributes": 4112
+          }
+        },
+        {
+          "name": "isUnscaled",
+          "metadata_file_offset": 5964636,
+          "raw_hex": "5c360500b40e000874350000",
+          "type": {
+            "runtime_type_index": 13684,
+            "pointer_file_offset": 42961216,
+            "type_va": "0x182df2538",
+            "type_file_offset": 48170808,
+            "type_raw_hex": "b20000000000000010100280",
+            "type_enum": 2,
+            "data": 178,
+            "attributes": 4112
+          }
+        },
+        {
+          "name": "downSecond",
+          "metadata_file_offset": 5964648,
+          "raw_hex": "a5360500b50e0008c8540000",
+          "type": {
+            "runtime_type_index": 21704,
+            "pointer_file_offset": 43025376,
+            "type_va": "0x182def288",
+            "type_file_offset": 48157832,
+            "type_raw_hex": "1d0100000000000010100c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 4112
+          }
+        }
+      ],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 17316,
+          "name": "ExposureUnnoticed2.Scripts.Base.SmoothFloat::.ctor"
+        }
+      ],
+      "operation": "procedure_pseudo_code",
+      "evidence_id": "ev_efc6fdda40ead40460b3fca5e8dd2435d0807a8882b3b057260e58815e379c56",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native\\17316-0600175b-procedure_pseudo_code.json",
+      "evidence_file_sha256": "2d54639706f8679ac14dfd727d26e94719c262fbe280049db6c8926760f3e02e",
+      "nonempty_result": true
+    },
+    {
+      "method_id": 17316,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SmoothFloat::.ctor",
+      "va": "0x1804b5410",
+      "file_offset": 4930576,
+      "token": "0x600175b",
+      "metadata_file_offset": 2747840,
+      "metadata_raw_hex": "b1060000610a0000155e000000000008b1460000ffffffff5b17000686180000ffff0600",
+      "parameters": [
+        {
+          "name": "second",
+          "metadata_file_offset": 5964588,
+          "raw_hex": "556b0000b00e0008b7540000",
+          "type": {
+            "runtime_type_index": 21687,
+            "pointer_file_offset": 43025240,
+            "type_va": "0x182d7d198",
+            "type_file_offset": 47690648,
+            "type_raw_hex": "1d0100000000000000000c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 0
+          }
+        },
+        {
+          "name": "baseValue",
+          "metadata_file_offset": 5964600,
+          "raw_hex": "94360500b10e0008c8540000",
+          "type": {
+            "runtime_type_index": 21704,
+            "pointer_file_offset": 43025376,
+            "type_va": "0x182def288",
+            "type_file_offset": 48157832,
+            "type_raw_hex": "1d0100000000000010100c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 4112
+          }
+        },
+        {
+          "name": "defaultValue",
+          "metadata_file_offset": 5964612,
+          "raw_hex": "c02d0000b20e0008c8540000",
+          "type": {
+            "runtime_type_index": 21704,
+            "pointer_file_offset": 43025376,
+            "type_va": "0x182def288",
+            "type_file_offset": 48157832,
+            "type_raw_hex": "1d0100000000000010100c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 4112
+          }
+        },
+        {
+          "name": "isLerp",
+          "metadata_file_offset": 5964624,
+          "raw_hex": "9e360500b30e000874350000",
+          "type": {
+            "runtime_type_index": 13684,
+            "pointer_file_offset": 42961216,
+            "type_va": "0x182df2538",
+            "type_file_offset": 48170808,
+            "type_raw_hex": "b20000000000000010100280",
+            "type_enum": 2,
+            "data": 178,
+            "attributes": 4112
+          }
+        },
+        {
+          "name": "isUnscaled",
+          "metadata_file_offset": 5964636,
+          "raw_hex": "5c360500b40e000874350000",
+          "type": {
+            "runtime_type_index": 13684,
+            "pointer_file_offset": 42961216,
+            "type_va": "0x182df2538",
+            "type_file_offset": 48170808,
+            "type_raw_hex": "b20000000000000010100280",
+            "type_enum": 2,
+            "data": 178,
+            "attributes": 4112
+          }
+        },
+        {
+          "name": "downSecond",
+          "metadata_file_offset": 5964648,
+          "raw_hex": "a5360500b50e0008c8540000",
+          "type": {
+            "runtime_type_index": 21704,
+            "pointer_file_offset": 43025376,
+            "type_va": "0x182def288",
+            "type_file_offset": 48157832,
+            "type_raw_hex": "1d0100000000000010100c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 4112
+          }
+        }
+      ],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 17316,
+          "name": "ExposureUnnoticed2.Scripts.Base.SmoothFloat::.ctor"
+        }
+      ],
+      "operation": "procedure_assembly",
+      "evidence_id": "ev_3b0c6fa1acc4fe239bf0f776f0180282df1e8e0ad326ffc1ddbfb8037c7b48b0",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native\\17316-0600175b-procedure_assembly.json",
+      "evidence_file_sha256": "95d6039ad95a24d1ecd0f9b275d100a4be16d90f9d58f49d3a83d0046314910e",
+      "nonempty_result": true
+    },
+    {
+      "method_id": 17317,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SmoothFloat::UpdateTo",
+      "va": "0x1804b54f0",
+      "file_offset": 4930800,
+      "token": "0x600175c",
+      "metadata_file_offset": 2747876,
+      "metadata_raw_hex": "b0360500610a0000155e000000000008b7460000ffffffff5c17000686000000ffff0100",
+      "parameters": [
+        {
+          "name": "target",
+          "metadata_file_offset": 5964660,
+          "raw_hex": "b02a0000b60e0008b7540000",
+          "type": {
+            "runtime_type_index": 21687,
+            "pointer_file_offset": 43025240,
+            "type_va": "0x182d7d198",
+            "type_file_offset": 47690648,
+            "type_raw_hex": "1d0100000000000000000c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 0
+          }
+        }
+      ],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 17317,
+          "name": "ExposureUnnoticed2.Scripts.Base.SmoothFloat::UpdateTo"
+        }
+      ],
+      "operation": "procedure_pseudo_code",
+      "evidence_id": "ev_a78d1d69d0e32cc8ed550e5d241fed518ca2e764c8f768096b3ff5b692f22b35",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native\\17317-0600175c-procedure_pseudo_code.json",
+      "evidence_file_sha256": "97c929058af16ec1ae1f8ccb66c8f31c5254ed1500b3794d4efbb6e48b65a8e0",
+      "nonempty_result": true
+    },
+    {
+      "method_id": 17317,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SmoothFloat::UpdateTo",
+      "va": "0x1804b54f0",
+      "file_offset": 4930800,
+      "token": "0x600175c",
+      "metadata_file_offset": 2747876,
+      "metadata_raw_hex": "b0360500610a0000155e000000000008b7460000ffffffff5c17000686000000ffff0100",
+      "parameters": [
+        {
+          "name": "target",
+          "metadata_file_offset": 5964660,
+          "raw_hex": "b02a0000b60e0008b7540000",
+          "type": {
+            "runtime_type_index": 21687,
+            "pointer_file_offset": 43025240,
+            "type_va": "0x182d7d198",
+            "type_file_offset": 47690648,
+            "type_raw_hex": "1d0100000000000000000c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 0
+          }
+        }
+      ],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 17317,
+          "name": "ExposureUnnoticed2.Scripts.Base.SmoothFloat::UpdateTo"
+        }
+      ],
+      "operation": "procedure_assembly",
+      "evidence_id": "ev_8d6059db961f8f54d840369ec0d0cca14e5d38af26cf93211614d71a1b16f8ce",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native\\17317-0600175c-procedure_assembly.json",
+      "evidence_file_sha256": "d7275c981ef3d66b8541c6645f2e05b03f34459b9790eb91e6fa6d72e4ab6b8a",
+      "nonempty_result": true
+    },
+    {
+      "method_id": 17319,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SmoothFloat::SetSecond",
+      "va": "0x1804b5680",
+      "file_offset": 4931200,
+      "token": "0x600175e",
+      "metadata_file_offset": 2747948,
+      "metadata_raw_hex": "c6360500610a0000155e000000000008b9460000ffffffff5e17000686000000ffff0100",
+      "parameters": [
+        {
+          "name": "second",
+          "metadata_file_offset": 5964684,
+          "raw_hex": "556b0000b80e0008b7540000",
+          "type": {
+            "runtime_type_index": 21687,
+            "pointer_file_offset": 43025240,
+            "type_va": "0x182d7d198",
+            "type_file_offset": 47690648,
+            "type_raw_hex": "1d0100000000000000000c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 0
+          }
+        }
+      ],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 17319,
+          "name": "ExposureUnnoticed2.Scripts.Base.SmoothFloat::SetSecond"
+        }
+      ],
+      "operation": "procedure_pseudo_code",
+      "evidence_id": "ev_a339869ece4e627430974d937a001293e92222c9b588f6589d8733a5618fc4c9",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native\\17319-0600175e-procedure_pseudo_code.json",
+      "evidence_file_sha256": "83b2cbe71bddaadaa478f2b914887bb88c9e87b04722d53b98a12211ad7904dc",
+      "nonempty_result": true
+    },
+    {
+      "method_id": 17319,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SmoothFloat::SetSecond",
+      "va": "0x1804b5680",
+      "file_offset": 4931200,
+      "token": "0x600175e",
+      "metadata_file_offset": 2747948,
+      "metadata_raw_hex": "c6360500610a0000155e000000000008b9460000ffffffff5e17000686000000ffff0100",
+      "parameters": [
+        {
+          "name": "second",
+          "metadata_file_offset": 5964684,
+          "raw_hex": "556b0000b80e0008b7540000",
+          "type": {
+            "runtime_type_index": 21687,
+            "pointer_file_offset": 43025240,
+            "type_va": "0x182d7d198",
+            "type_file_offset": 47690648,
+            "type_raw_hex": "1d0100000000000000000c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 0
+          }
+        }
+      ],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 17319,
+          "name": "ExposureUnnoticed2.Scripts.Base.SmoothFloat::SetSecond"
+        }
+      ],
+      "operation": "procedure_assembly",
+      "evidence_id": "ev_2c1b3d43ec9b7f64d6f576b97cadc76708a8ca209675707b4bc34b08c4bd4797",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native\\17319-0600175e-procedure_assembly.json",
+      "evidence_file_sha256": "df524bf186dbaae47c4e7aee9349d5ff310b33ce7f22fc12d5474284fbe7b060",
+      "nonempty_result": false
+    },
+    {
+      "method_id": 14526,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::OnUpdate",
+      "va": "0x18062cb20",
+      "file_offset": 6468384,
+      "token": "0x6000c75",
+      "metadata_file_offset": 2647400,
+      "metadata_raw_hex": "bab2030096080000155e00000000000830420000ffffffff750c000686000000ffff0100",
+      "parameters": [
+        {
+          "name": "inputData",
+          "metadata_file_offset": 5950752,
+          "raw_hex": "4eec03002f0a000819450000",
+          "type": {
+            "runtime_type_index": 17689,
+            "pointer_file_offset": 42993256,
+            "type_va": "0x182ddb748",
+            "type_file_offset": 48077128,
+            "type_raw_hex": "8b0800000000000000001200",
+            "type_enum": 18,
+            "data": 2187,
+            "attributes": 0
+          }
+        }
+      ],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 14526,
+          "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::OnUpdate"
+        }
+      ],
+      "operation": "procedure_assembly",
+      "evidence_id": "ev_b5eb47bd477c15dace6971dfaf3dbde77d543abe45bd4a68d6ec95a982cd605f",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native\\14526-06000c75-procedure_assembly.json",
+      "evidence_file_sha256": "5d97be2bb0a9cc8a9af98c6c6e3db2e9df70810e2feebf6965ddd7380fa3cea0",
+      "nonempty_result": false
+    },
+    {
+      "method_id": 14899,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::OnUpdate",
+      "va": "0x180651940",
+      "file_offset": 6619456,
+      "token": "0x6000dea",
+      "metadata_file_offset": 2660828,
+      "metadata_raw_hex": "bab20300b7080000155e000000000008da420000ffffffffea0d000686000000ffff0100",
+      "parameters": [
+        {
+          "name": "inputData",
+          "metadata_file_offset": 5952792,
+          "raw_hex": "4eec0300d90a000819450000",
+          "type": {
+            "runtime_type_index": 17689,
+            "pointer_file_offset": 42993256,
+            "type_va": "0x182ddb748",
+            "type_file_offset": 48077128,
+            "type_raw_hex": "8b0800000000000000001200",
+            "type_enum": 18,
+            "data": 2187,
+            "attributes": 0
+          }
+        }
+      ],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 14899,
+          "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::OnUpdate"
+        }
+      ],
+      "operation": "procedure_assembly",
+      "evidence_id": "ev_83cd7dde5d2f1bfc56d866108b51a5dd26c123c4932d4f228fce76f04dfeb443",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native\\14899-06000dea-procedure_assembly.json",
+      "evidence_file_sha256": "170e6e7f168c1780baf325ab6021015c2f7247041e476c5483148dc399939c24",
+      "nonempty_result": false
+    },
+    {
+      "method_id": 14535,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::SetStrafe",
+      "va": "0x18062def0",
+      "file_offset": 6473456,
+      "token": "0x6000c7e",
+      "metadata_file_offset": 2647724,
+      "metadata_raw_hex": "f6f5030096080000155e00000000000836420000ffffffff7e0c000686000000ffff0400",
+      "parameters": [
+        {
+          "name": "isStrafe",
+          "metadata_file_offset": 5950824,
+          "raw_hex": "d6f50300350a00085e350000",
+          "type": {
+            "runtime_type_index": 13662,
+            "pointer_file_offset": 42961040,
+            "type_va": "0x182d7d538",
+            "type_file_offset": 47691576,
+            "type_raw_hex": "b20000000000000000000280",
+            "type_enum": 2,
+            "data": 178,
+            "attributes": 0
+          }
+        },
+        {
+          "name": "isDash",
+          "metadata_file_offset": 5950836,
+          "raw_hex": "dff50300360a00085e350000",
+          "type": {
+            "runtime_type_index": 13662,
+            "pointer_file_offset": 42961040,
+            "type_va": "0x182d7d538",
+            "type_file_offset": 47691576,
+            "type_raw_hex": "b20000000000000000000280",
+            "type_enum": 2,
+            "data": 178,
+            "attributes": 0
+          }
+        },
+        {
+          "name": "strafeX",
+          "metadata_file_offset": 5950848,
+          "raw_hex": "e6f50300370a0008b7540000",
+          "type": {
+            "runtime_type_index": 21687,
+            "pointer_file_offset": 43025240,
+            "type_va": "0x182d7d198",
+            "type_file_offset": 47690648,
+            "type_raw_hex": "1d0100000000000000000c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 0
+          }
+        },
+        {
+          "name": "strafeY",
+          "metadata_file_offset": 5950860,
+          "raw_hex": "eef50300380a0008b7540000",
+          "type": {
+            "runtime_type_index": 21687,
+            "pointer_file_offset": 43025240,
+            "type_va": "0x182d7d198",
+            "type_file_offset": 47690648,
+            "type_raw_hex": "1d0100000000000000000c80",
+            "type_enum": 12,
+            "data": 285,
+            "attributes": 0
+          }
+        }
+      ],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 14535,
+          "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::SetStrafe"
+        }
+      ],
+      "operation": "procedure_assembly",
+      "evidence_id": "ev_6a03368fa7d6d4c71d068fc6e7bffbc4221c4fb18da2f6dd04a102d92d2039e5",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native-decoded-code\\14535-06000c7e-procedure_assembly.json",
+      "evidence_file_sha256": "96f20a0d244751c74fd7530996b732b586fe4af0dc32d0f2feb8b9ef774deadf",
+      "nonempty_result": true
+    },
+    {
+      "method_id": 14552,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::.ctor",
+      "va": "0x18062ea40",
+      "file_offset": 6476352,
+      "token": "0x6000c8f",
+      "metadata_file_offset": 2648336,
+      "metadata_raw_hex": "b106000096080000155e000000000008ffffffffffffffff8f0c000686180000ffff0000",
+      "parameters": [],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 14552,
+          "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::.ctor"
+        }
+      ],
+      "operation": "procedure_assembly",
+      "evidence_id": "ev_0cf4615254734b505dc562bede3c93296105e27329d23d8bfb92bb920c89373c",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native-decoded-code\\14552-06000c8f-procedure_assembly.json",
+      "evidence_file_sha256": "ad063396ba9f01bc68890fcb6db7ea44e5b6ca531724b80a7e09571d391a3173",
+      "nonempty_result": true
+    },
+    {
+      "method_id": 14526,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::OnUpdate",
+      "va": "0x18062cb20",
+      "file_offset": 6468384,
+      "token": "0x6000c75",
+      "metadata_file_offset": 2647400,
+      "metadata_raw_hex": "bab2030096080000155e00000000000830420000ffffffff750c000686000000ffff0100",
+      "parameters": [
+        {
+          "name": "inputData",
+          "metadata_file_offset": 5950752,
+          "raw_hex": "4eec03002f0a000819450000",
+          "type": {
+            "runtime_type_index": 17689,
+            "pointer_file_offset": 42993256,
+            "type_va": "0x182ddb748",
+            "type_file_offset": 48077128,
+            "type_raw_hex": "8b0800000000000000001200",
+            "type_enum": 18,
+            "data": 2187,
+            "attributes": 0
+          }
+        }
+      ],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 14526,
+          "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::OnUpdate"
+        }
+      ],
+      "operation": "procedure_assembly",
+      "evidence_id": "ev_c1f999a8f676328c4e888e647d99e0d52a61f2ae8f16175db2633dbe7f091486",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native-decoded-code\\14526-06000c75-procedure_assembly.json",
+      "evidence_file_sha256": "0bf94152b8aea3aaf0624028ccb38264dfe52ffbb579c3eb88ea4cae298e2217",
+      "nonempty_result": true
+    },
+    {
+      "method_id": 14526,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::OnUpdate",
+      "va": "0x18062cb20",
+      "file_offset": 6468384,
+      "token": "0x6000c75",
+      "metadata_file_offset": 2647400,
+      "metadata_raw_hex": "bab2030096080000155e00000000000830420000ffffffff750c000686000000ffff0100",
+      "parameters": [
+        {
+          "name": "inputData",
+          "metadata_file_offset": 5950752,
+          "raw_hex": "4eec03002f0a000819450000",
+          "type": {
+            "runtime_type_index": 17689,
+            "pointer_file_offset": 42993256,
+            "type_va": "0x182ddb748",
+            "type_file_offset": 48077128,
+            "type_raw_hex": "8b0800000000000000001200",
+            "type_enum": 18,
+            "data": 2187,
+            "attributes": 0
+          }
+        }
+      ],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 14526,
+          "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::OnUpdate"
+        }
+      ],
+      "operation": "analyze_function",
+      "evidence_id": "ev_f0b7b245f7989e25f354962dc5e1ef05d84cf57f2f4706bb7b3408e448cb58b9",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native-decoded-code\\14526-06000c75-analyze_function.json",
+      "evidence_file_sha256": "7585692712275a085c4f212e519b8ebd0aa29d5ed6cfdf4ea6cc1004751e5a5c",
+      "nonempty_result": true
+    },
+    {
+      "method_id": 14899,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::OnUpdate",
+      "va": "0x180651940",
+      "file_offset": 6619456,
+      "token": "0x6000dea",
+      "metadata_file_offset": 2660828,
+      "metadata_raw_hex": "bab20300b7080000155e000000000008da420000ffffffffea0d000686000000ffff0100",
+      "parameters": [
+        {
+          "name": "inputData",
+          "metadata_file_offset": 5952792,
+          "raw_hex": "4eec0300d90a000819450000",
+          "type": {
+            "runtime_type_index": 17689,
+            "pointer_file_offset": 42993256,
+            "type_va": "0x182ddb748",
+            "type_file_offset": 48077128,
+            "type_raw_hex": "8b0800000000000000001200",
+            "type_enum": 18,
+            "data": 2187,
+            "attributes": 0
+          }
+        }
+      ],
+      "return_type": {
+        "runtime_type_index": 24085,
+        "pointer_file_offset": 43044424,
+        "type_va": "0x182dec858",
+        "type_file_offset": 48147032,
+        "type_raw_hex": "450100000000000000000180",
+        "type_enum": 1,
+        "data": 325,
+        "attributes": 0
+      },
+      "native_address_aliases": [
+        {
+          "method_id": 14899,
+          "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::OnUpdate"
+        }
+      ],
+      "operation": "procedure_assembly",
+      "evidence_id": "ev_5be74221e7613e0343912d71135699e5d64c3d259b4cbbe6c13af5f58296632d",
+      "evidence_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\locomotion-evidence\\native-decoded-code\\14899-06000dea-procedure_assembly.json",
+      "evidence_file_sha256": "abe117a419131995913da2ddaa4f730802bceda0cf48abedd535a6515221a46c",
+      "nonempty_result": true
+    }
+  ],
+  "reused_observations": [
+    {
+      "method_id": 14421,
+      "name": "ExposureUnnoticed2.Object3D.Player.Scripts.InputResolver::Resolve",
+      "va": "0x180620800",
+      "evidence_id": "ev_8672bf7b859e764fc7220c5e288f83ebf6fc8025ed1d8bf575b7e879dd598d79",
+      "canonical_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\player-core\\14421-06000c0c-procedure_pseudo_code.json",
+      "source_chain_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\player-chain.json",
+      "source_chain_sha256": "b94b464168a1356f6d3c2105cb2cd27ebca44ea9d39d4a9f835e5b018dc628c3"
+    },
+    {
+      "method_id": 14894,
+      "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::Initialize",
+      "va": "0x180650b70",
+      "evidence_id": "ev_a5e422bc45a847cdf447847f6905fd0ef5ff521ea8ebb37403381522fbc13bae",
+      "canonical_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\player-core\\14894-06000de5-procedure_pseudo_code.json",
+      "source_chain_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\player-chain.json",
+      "source_chain_sha256": "b94b464168a1356f6d3c2105cb2cd27ebca44ea9d39d4a9f835e5b018dc628c3"
+    },
+    {
+      "method_id": 14899,
+      "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::OnUpdate",
+      "va": "0x180651940",
+      "evidence_id": "ev_a19fc917b5d13e860241f78dd6018c03294af460dd28ff0bf9fa1cd4a193f191",
+      "canonical_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\player-core\\14899-06000dea-procedure_pseudo_code.json",
+      "source_chain_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\player-chain.json",
+      "source_chain_sha256": "b94b464168a1356f6d3c2105cb2cd27ebca44ea9d39d4a9f835e5b018dc628c3"
+    },
+    {
+      "method_id": 14900,
+      "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::OnFixedUpdate",
+      "va": "0x180653b00",
+      "evidence_id": "ev_a30419a7fbb63ba9ec5617f57f1b076991f713fd99434dd9681f2ee8deef130a",
+      "canonical_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\player-core\\14900-06000deb-procedure_pseudo_code.json",
+      "source_chain_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\player-chain.json",
+      "source_chain_sha256": "b94b464168a1356f6d3c2105cb2cd27ebca44ea9d39d4a9f835e5b018dc628c3"
+    },
+    {
+      "method_id": 14901,
+      "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::StateUpdate",
+      "va": "0x180654c80",
+      "evidence_id": "ev_10bca1df9bda56b3502e250cbb7d07e180795366593c350c7f31af2a5c8e887e",
+      "canonical_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\player-core\\14901-06000dec-procedure_pseudo_code.json",
+      "source_chain_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\player-chain.json",
+      "source_chain_sha256": "b94b464168a1356f6d3c2105cb2cd27ebca44ea9d39d4a9f835e5b018dc628c3"
+    },
+    {
+      "method_id": 17228,
+      "name": "ExposureUnnoticed2.Scripts.Base.InputManager::GetVector3",
+      "va": "0x1804b0f80",
+      "evidence_id": "ev_0597fb68fb3739905b7df78d5c206a2bcdf942eeb3568d272c7cc3f3f04b2d1c",
+      "canonical_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\player-core\\17228-06001703-procedure_pseudo_code.json",
+      "source_chain_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\player-chain.json",
+      "source_chain_sha256": "b94b464168a1356f6d3c2105cb2cd27ebca44ea9d39d4a9f835e5b018dc628c3"
+    },
+    {
+      "method_id": 14906,
+      "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerLocomotion::.ctor",
+      "va": "0x180655490",
+      "evidence_id": "ev_a91334817bba2d175cfeeb8b0b69d39cc5558ac2eb9b3258471bb866463d7804",
+      "canonical_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\player-motion-state\\14906-06000df1-procedure_pseudo_code.json",
+      "source_chain_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\player-chain.json",
+      "source_chain_sha256": "b94b464168a1356f6d3c2105cb2cd27ebca44ea9d39d4a9f835e5b018dc628c3"
+    },
+    {
+      "method_id": 14757,
+      "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerController::OnUpdate",
+      "va": "0x180643a10",
+      "evidence_id": "ev_161000723ed3087be5a3afbe466bb727ff417b42483a303c53380195e2e03ddd",
+      "canonical_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\scene-loop\\14757-06000d5c-procedure_pseudo_code.json",
+      "source_chain_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\player-chain.json",
+      "source_chain_sha256": "b94b464168a1356f6d3c2105cb2cd27ebca44ea9d39d4a9f835e5b018dc628c3"
+    },
+    {
+      "method_id": 14525,
+      "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::Initialize",
+      "va": "0x18062c9d0",
+      "evidence_id": "ev_efeb9e401e8dd4f5b2cda9c6ecba77b7d79e7a7389c90af453c348d60b2d01d6",
+      "canonical_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\animator-parameters\\14525-06000c74-procedure_pseudo_code.json",
+      "source_chain_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\animator-chain.json",
+      "source_chain_sha256": "7e59bb9f66ec5472a348c1286f7e8f60defdb159ccb196ccc70779708df5b6a5"
+    },
+    {
+      "method_id": 14526,
+      "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::OnUpdate",
+      "va": "0x18062cb20",
+      "evidence_id": "ev_9822d1a4a7bf067b119779e75b3a8eca0383d0d5500d2fdafe7d9e0078fc9abd",
+      "canonical_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\animator-parameters\\14526-06000c75-procedure_pseudo_code.json",
+      "source_chain_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\animator-chain.json",
+      "source_chain_sha256": "7e59bb9f66ec5472a348c1286f7e8f60defdb159ccb196ccc70779708df5b6a5"
+    },
+    {
+      "method_id": 14553,
+      "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationManager::.cctor",
+      "va": "0x18062f360",
+      "evidence_id": "ev_9a3b7e0791acdd9ad000723ca1bbb6571d7986596ec87e0e507caab387dc8097",
+      "canonical_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\animator-parameters\\14553-06000c90-procedure_pseudo_code.json",
+      "source_chain_path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\animator-chain.json",
+      "source_chain_sha256": "7e59bb9f66ec5472a348c1286f7e8f60defdb159ccb196ccc70779708df5b6a5"
+    }
+  ],
+  "limitations": [
+    "Static Ghidra decompilation and listing; no execution or timing observations.",
+    "Native addresses may have multiple metadata methods; the selected metadata method is not established by the Ghidra display label alone.",
+    "The first native batch has empty assembly results for seven seeded function listings; these empty records are retained explicitly and are not used to prove instruction arithmetic. The decoded-code batch adds explicit code seeds.",
+    "Float/stack ABI artifacts in pseudocode require instruction corroboration before adopting exact arithmetic.",
+    "Metadata pointer coordinates and serialized controller hashes belong to this exact native/metadata/asset identity."
+  ]
+}
