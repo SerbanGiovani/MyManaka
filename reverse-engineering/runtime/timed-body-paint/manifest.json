@@ -1,0 +1,415 @@
+{
+  "schema_version": 1,
+  "natural_only": false,
+  "authority": "controlled-unregistered-native-body-paint-clone",
+  "sessions": [
+    {
+      "session_id": "92301c60-c265-4790-962d-5f2f7a6159f1",
+      "pid": 83220,
+      "state": "running",
+      "closed_by_operator": true
+    }
+  ],
+  "evidence_ids": [
+    "ev_527ea73a090bf4b22fb587e60b9fc95f32418227a672354f740b667dbccc1973",
+    "ev_f243755f47041881d751901fb1a801f17cde586ce9b9d6440c183bd7b5fb08f2"
+  ],
+  "plugin": {
+    "archived_path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\TimedBodyPaintProbe-completed.dll",
+    "sha256": "bd1ca28280809b922ad9e6a576fbba1b2c4f73cb9d6616b87b52c373fe6ca133"
+  },
+  "sources": [
+    {
+      "path": "Probe.cs",
+      "sha256": "4f829965a5c2906ae3d154d36afe3df3def83c93dd4adc6dd733330ce3c285eb"
+    },
+    {
+      "path": "build.ps1",
+      "sha256": "2e5e1aba62380bf82a3dd4537a5d10ff7e27042a615c99b21a8c382a4e45780b"
+    },
+    {
+      "path": "observe.js",
+      "sha256": "73cd4991b31f2a9e66d007b5f4cb3ab8907407065e2c872da396dede71ca78c9"
+    },
+    {
+      "path": "run_cases.py",
+      "sha256": "8c2cb32485094e915bc703c684035839eee3c0464d4dad202e15091499168df6"
+    },
+    {
+      "path": "analyze.py",
+      "sha256": "0e3913deeb1c28c714592af22e64e39d0c9af8f13a30b88ad1d0c3b9cdbba3ef"
+    },
+    {
+      "path": "collect.py",
+      "sha256": "8db589acfac4b0bdb9e8f3fcdee3dc1ce7793566ead9fb97b75242bbafa8f5aa"
+    },
+    {
+      "path": "test_analysis.py",
+      "sha256": "ccb2b31792b88b4b7e5ef6e07a1ce97bd1ede15cd8ca6fd1271b7709ae4fbab6"
+    },
+    {
+      "path": "timed-body-paint-runtime.md",
+      "sha256": "c4e85bdee464e435b2bd31057f3c5157ef22d87b29aeafe7c9af974c71547312"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "baseline.json",
+      "sha256": "3bf4f51e1a604a0753bc25ba1f5fbbc2240753c20a496ce5ed5603c373885baf"
+    },
+    {
+      "path": "session.json",
+      "sha256": "6f1547c5a9897e35d984340e85431f2b2fb45cff372e779a1a1bac7cba1e2d07"
+    },
+    {
+      "path": "compile-only.json",
+      "sha256": "d8c695d0370d1b266e82c794042c9c879e6309aed8216bbf76e2dcc124586d6d"
+    },
+    {
+      "path": "close-receipt.json",
+      "sha256": "a3668f0a33c3fc8959ed8e8c9726ab6e8afbe77bb3f797d011ae6ca6bdb6811f"
+    },
+    {
+      "path": "rea-runtime.json",
+      "sha256": "fef140ec8032c8dda46d69e48c1b3d3e1cd8ff80ace46b266943ce12de51f792"
+    },
+    {
+      "path": "diagnostics-rea.json",
+      "sha256": "f9a9218b5e63cc97be0100fad4510557427037b57800d16477303f18ccc41c1b"
+    },
+    {
+      "path": "diagnostics.json",
+      "sha256": "044d632d858877d4ee2e8623325bb56b28112d481bb557c4da78376e0395f6cd"
+    },
+    {
+      "path": "saved-files.json",
+      "sha256": "6d58c7150acaed9111eed1cedc6246432e4d071baaf508e6c0e51ea20d123652"
+    },
+    {
+      "path": "post-state.json",
+      "sha256": "9dc0feba2b0af8b81917d419c8c1f334f06cf5ca72aff899cf3f0760e91e2d47"
+    },
+    {
+      "path": "managed.jsonl.gz",
+      "sha256": "3f97e2307d8b391ab96c52d2cacddd8375adfb7c007553cc2b54290a2362c87b",
+      "uncompressed_bytes": 3679085,
+      "uncompressed_sha256": "cc0349f05a6fc6793944e916ac1e1214b5bbbc424367567c5d25a4d40867ea19"
+    },
+    {
+      "path": "paths.jsonl.gz",
+      "sha256": "f5f9945a9b06adc17b1981504b534e96d420ce3220b488ec78e51c37f0434467",
+      "uncompressed_bytes": 34420,
+      "uncompressed_sha256": "dd8c665457e56aa0c3cd92cbde5a4c8bc3dea0f793e11fb81d855761f24e7ce4"
+    },
+    {
+      "path": "engine.log.gz",
+      "sha256": "8a58d5fed2896c1c86b168f0ae67233cf4d5275f22becbfdf23e5514b0981b4e",
+      "uncompressed_bytes": 32020,
+      "uncompressed_sha256": "e63746099e14609a74e4e5659a89af756f2f5decd8c52821eb0fffdd53a88235"
+    },
+    {
+      "path": "raw/rea-runtime-full.json.gz",
+      "sha256": "ec0a71df7768fa81bfe87004ec26014ddc97b7d9162ba9a1acb6358e3e1216b6",
+      "uncompressed_bytes": 5117163,
+      "uncompressed_sha256": "b48322693a5c13d372c8222c446df0b9e6818ab63cdde41e22cffba6ff22351b"
+    },
+    {
+      "path": "diagnostics/first-run/baseline.json",
+      "sha256": "5c6e0f77b7a907840f177adde41481668732b41696ce0963ea073bd331a1e921"
+    },
+    {
+      "path": "diagnostics/first-run/build.ps1",
+      "sha256": "2e5e1aba62380bf82a3dd4537a5d10ff7e27042a615c99b21a8c382a4e45780b"
+    },
+    {
+      "path": "diagnostics/first-run/close-receipt.json",
+      "sha256": "6d91bcc6e4b3597a50b38a9010586848fead42b8d21de78b76520271946138e3"
+    },
+    {
+      "path": "diagnostics/first-run/compile-only.json",
+      "sha256": "ab92559793852ffecbbb9717f37ffae435f382de19a356a41c947a8ad84533f3"
+    },
+    {
+      "path": "diagnostics/first-run/engine.log.gz",
+      "sha256": "24747a63cabf72eae91f7c1515d508872d74990b0a82cbd532626b6c8d2be555",
+      "uncompressed_bytes": 595679,
+      "uncompressed_sha256": "da912c56aceacb48eceb29c52542ee698ce09fa59b99f965070dccb153f62047"
+    },
+    {
+      "path": "diagnostics/first-run/managed.jsonl.gz",
+      "sha256": "c9086dd3b051928e49a86628eea3b0fecdab45f2bb851ece1b8d2bea18a5df86",
+      "uncompressed_bytes": 887537,
+      "uncompressed_sha256": "456d68059526764c879c497ad076a2ea796e14dc48439de7d4ab14ba34edbfd2"
+    },
+    {
+      "path": "diagnostics/first-run/observe.js",
+      "sha256": "73cd4991b31f2a9e66d007b5f4cb3ab8907407065e2c872da396dede71ca78c9"
+    },
+    {
+      "path": "diagnostics/first-run/paths.jsonl.gz",
+      "sha256": "49e8b11ce8c2a8e363dbd276b2fdcdc3fcb15df6235c8303acd48955fe411d01",
+      "uncompressed_bytes": 45987,
+      "uncompressed_sha256": "6c45a86bcbb6aac4943b24e85b8b04eea857b356cd85a596b9fcc20df84720b1"
+    },
+    {
+      "path": "diagnostics/first-run/Probe.cs",
+      "sha256": "0dee17095887ec874276f53d3825b021625905b4d769d0f5a077774becacb2a2"
+    },
+    {
+      "path": "diagnostics/first-run/rea-runtime-full.json.gz",
+      "sha256": "930e7387966a4faa6188a408e7219cfa2e7cc445171382a1ba2f75e54ca7e566",
+      "uncompressed_bytes": 3842928,
+      "uncompressed_sha256": "3b6a19173ca6633c2d06a99f9ce61e86bd0bb95ef5469ef680024dca13856adb"
+    },
+    {
+      "path": "diagnostics/first-run/receipt.json",
+      "sha256": "b9e83e7cd6d02bb758a4007b99b75390f027f05cf3bb338eeb7e47288003f64f"
+    },
+    {
+      "path": "diagnostics/first-run/run_cases.py",
+      "sha256": "f7f43cd058f453a475e0a58e870ac8f540f6f80c4aee467c52d70322eb5fb355"
+    },
+    {
+      "path": "diagnostics/first-run/TimedBodyPaintProbe.dll",
+      "sha256": "7f1b7ca05881b63963afcd128348c1a54ea841913357320de09d348a26a9bd2f"
+    },
+    {
+      "path": "diagnostics/second-run/baseline.json",
+      "sha256": "eac613c2d7af0eedcc55275a06590bdd1f47c596d36bb8ad76996138548c2060"
+    },
+    {
+      "path": "diagnostics/second-run/build.ps1",
+      "sha256": "2e5e1aba62380bf82a3dd4537a5d10ff7e27042a615c99b21a8c382a4e45780b"
+    },
+    {
+      "path": "diagnostics/second-run/close-receipt.json",
+      "sha256": "b78357333c42afc03c6f0ccf12e751d5132965ed42537933ae701ddb642baaba"
+    },
+    {
+      "path": "diagnostics/second-run/compile-only.json",
+      "sha256": "bb52ab748012bb5ae7ef6895d6f0542db0255eff22912ea7869aca4175d614e4"
+    },
+    {
+      "path": "diagnostics/second-run/engine.log.gz",
+      "sha256": "3b66d84fdbb8caedfa88f80e58e319e46f11ee980506488e94886008ce22c4c3",
+      "uncompressed_bytes": 31958,
+      "uncompressed_sha256": "8082891d1c02745ec9b5e3c05ba31d8c0a47eefa7163a704ae7cc01ffeb1126c"
+    },
+    {
+      "path": "diagnostics/second-run/managed.jsonl.gz",
+      "sha256": "18ede6f640c72b83a3173fd6d3df1ab94768411dff50c2c636085ba32d293ca4",
+      "uncompressed_bytes": 3621867,
+      "uncompressed_sha256": "0b29f045582adc7119ecb00305c43481e41f514e970a6ab1bd556def9e8a7ea7"
+    },
+    {
+      "path": "diagnostics/second-run/observe.js",
+      "sha256": "73cd4991b31f2a9e66d007b5f4cb3ab8907407065e2c872da396dede71ca78c9"
+    },
+    {
+      "path": "diagnostics/second-run/paths.jsonl.gz",
+      "sha256": "02a49a6bed02674dfc45497dbad34bd5d11f7972aa6feb2cbbc47b6106009a11",
+      "uncompressed_bytes": 34835,
+      "uncompressed_sha256": "9181fa2615e2a559e110583f5f4339cc8791111b495245fd4a931b0154277fb6"
+    },
+    {
+      "path": "diagnostics/second-run/Probe.cs",
+      "sha256": "075e11c74c5d206244ef8984625151bbd351196362136996bf91ce6cb9560dd3"
+    },
+    {
+      "path": "diagnostics/second-run/rea-runtime-full.json.gz",
+      "sha256": "03fba40f12a6e12303726e736b26946bae6a57f26ce17951a92dfe5dddf10629",
+      "uncompressed_bytes": 4480845,
+      "uncompressed_sha256": "a92445b79404969b8f976bbab0d8f0d8c91c9857bdcbcfde660116bbdc9da54e"
+    },
+    {
+      "path": "diagnostics/second-run/receipt.json",
+      "sha256": "55d4ed8b9e66f7c51d5137f526dc7a4be7696a454ae0b1bda2e9f90dc91d96ce"
+    },
+    {
+      "path": "diagnostics/second-run/run_cases.py",
+      "sha256": "f88ed7d189540c9e74d49b6cf0aa5e5a0844005b1f2709a06cda6a4d4b7b7487"
+    },
+    {
+      "path": "diagnostics/second-run/TimedBodyPaintProbe.dll",
+      "sha256": "265e56625f007fd2313607ef17ffb80bd7feaf4fc02c8ff641a618f34251a3e8"
+    },
+    {
+      "path": "diagnostics/second-run/preliminary-collection/diagnostics-rea.json.gz",
+      "sha256": "651ddda364ab1d4bc62dea5a7ece1658d08849c32161d10134c2282355a12c42",
+      "uncompressed_bytes": 1324818,
+      "uncompressed_sha256": "855c181dc199ecf1db00157210b2bd9f1311f19e8e5ffba734240ec4a4345cde"
+    },
+    {
+      "path": "diagnostics/second-run/preliminary-collection/diagnostics.json.gz",
+      "sha256": "3e3d8b2f71ec2fe41a8bf9b75215ec4d0fafcad36ba1c0c691a76011fae5273b",
+      "uncompressed_bytes": 14700,
+      "uncompressed_sha256": "dc50e4ae9284429f7b0159db229bc9239c44cc715647befe1b1c8299eaa4e925"
+    },
+    {
+      "path": "diagnostics/second-run/preliminary-collection/manifest.json.gz",
+      "sha256": "7e28feeddcf549f09f41049adc295fc0b89e4bbc8eb2ddbe3466c118943084f1",
+      "uncompressed_bytes": 11818,
+      "uncompressed_sha256": "eb114c0ebe0138d329e26ba32e8e15b9fd8139f265090d1364041864b3464c4e"
+    },
+    {
+      "path": "diagnostics/second-run/preliminary-collection/post-state.json.gz",
+      "sha256": "6dadaa69c956be56d622153a1c902863651b1b99da4a959d436f2b99f951e30a",
+      "uncompressed_bytes": 6490,
+      "uncompressed_sha256": "dd2bc021fc7ecba609babe91fbc295305f5a7e1464eac89ec911c8ae3c83b122"
+    },
+    {
+      "path": "diagnostics/second-run/preliminary-collection/rea-runtime.json.gz",
+      "sha256": "5662b4208129421d71d2a7d11cb202c1ed857cb4c1cfdb16663923feb56bff5f",
+      "uncompressed_bytes": 1446788,
+      "uncompressed_sha256": "d6b3db9e3278cbb5fec6e5af1eb6bbdb7b1abc2b0abe5c5efa4d114806d94e55"
+    },
+    {
+      "path": "diagnostics/second-run/preliminary-collection/saved-files.json.gz",
+      "sha256": "8d76d248c9655380ad5f25e08b569de6fd2adf647f45a66ec06ee6e05c3dbe1a",
+      "uncompressed_bytes": 13166,
+      "uncompressed_sha256": "67c63083ca7820864ef41fc2992a0720e8c498a6004e9881855e59f92eab98c7"
+    },
+    {
+      "path": "diagnostics/second-run/preliminary-collection/session.json.gz",
+      "sha256": "6df60f1a0c958161f38146b5edaa457a007af93e0b6137767c2afd49839a4cb6",
+      "uncompressed_bytes": 497,
+      "uncompressed_sha256": "a43bee8871e0b71d94f1aedeb936b494c35a1892dafe00b20c954d4897050243"
+    }
+  ],
+  "raw_inputs": [
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\rea-runtime-full.json",
+      "sha256": "b48322693a5c13d372c8222c446df0b9e6818ab63cdde41e22cffba6ff22351b"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\captures\\cross-0.sd",
+      "sha256": "9f812a5bfe930babad170f10b8b6979038af922d8d0386594752a2fbcfa3f999"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\captures\\cross-24.sd",
+      "sha256": "03e4e9a84f0862409d2156bfde9213014fd4c8ead8d657f01a714f3dceb2fecf"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\captures\\cross-60.sd",
+      "sha256": "5b301b17a5da1de5ca372e23286b759d66d4f3b53d43d8fa67fc0ac8c9aa989c"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\captures\\init-0.sd",
+      "sha256": "1fc0ce21e76030a75fafd44c0b948e7b01338e068036c7a37130397c5ad823dc"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\captures\\init-12.sd",
+      "sha256": "078da3c995a56e50cbdc77758dca854754b2e0397d2f27ec1799f3d93452c93d"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\captures\\init-120-reusable.sd",
+      "sha256": "d7035c84f613d6b5dea98a09819bfe87b50c2ccaf813e83c0a4b6ebce513871c"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\captures\\init-120.sd",
+      "sha256": "3f44c0abc2b05aa8bd9f9bec29aaceeea6e680631cacd15d2f2386754fb40c26"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\captures\\init-24.sd",
+      "sha256": "ef2d517270b83da734f5e3f6254d03c033b96219d8a01b43d6b1f8e8eaf2d614"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\captures\\init-25.sd",
+      "sha256": "03497ee2f62269ece569b61653433a6eee3668ae18031f515f803c6e2487cb41"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\captures\\init-60.sd",
+      "sha256": "cdde3b6b3e5e1bf34620ed542d76b1361a38fc04f6ac3e6155d2c21380860adb"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\captures\\init-61.sd",
+      "sha256": "fc0e5ea4898b8da68f3e03bc6da937bcb664d892d420b73978f5f5c4415410c2"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\captures\\item-ordinary-false.sd",
+      "sha256": "36b4a1d2ba839bd7f14ba029e50447c69456eca832b8dca2c581ea0f7f54d934"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\captures\\item-ordinary-true.sd",
+      "sha256": "8deae1ef35295dc5e8f81b0661b1674794e9dbd1140f6fa916624246e0946b9f"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\captures\\item-reusable.sd",
+      "sha256": "d0e369c27c9472dc265c0dbf8ea563ca7f9338c8d8663bfc23a5978e5293e6ac"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\captures\\load-ordinary.sd",
+      "sha256": "63ad79d5cc6c49c81e06e549616b3c370697bb2465a56aaabb60776dc9ad2833"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\captures\\load-reusable.sd",
+      "sha256": "0881db39fab59c7bae1c240cc736ebe872cae2eaad497dd8399d14f6a8ae2708"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\captures\\wash-return.sd",
+      "sha256": "a63baee208e12de2109ceef2e0e53867add00100e4219994dd919b23dbbc9486"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-3\\baseline.sd",
+      "sha256": "908fe5387e306e91bcc253bf3ae152bc5dc50db975a87ca76d204a04fd389b53"
+    }
+  ],
+  "diagnostic_observation": {
+    "success": false,
+    "sessions": [
+      {
+        "session_id": "02393432-0c63-4500-a574-449a8d971aef",
+        "pid": 63556,
+        "state": "running",
+        "closed_by_operator": true
+      },
+      {
+        "session_id": "1386d21f-dd4f-475d-8808-e2c134082d99",
+        "pid": 72404,
+        "state": "running",
+        "closed_by_operator": true
+      }
+    ],
+    "evidence_ids": [
+      "ev_b18f078226465484846ca71606d6461029dae1377c778aab889f5cd01e95033d",
+      "ev_c238aa443056264adfa790256385d2f48a00e0591e2e214c0f1758c07f699c66",
+      "ev_69b6166b466857b84af09d07fa50c1f1cb3e04d26eaf7321fa44d7bf41ec5f74",
+      "ev_6a613c48af9b026591adc38d29dffdc5c6946887e8c6861c44990aa5b97b925d"
+    ],
+    "plugins": [
+      {
+        "archived_path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261030-1\\TimedBodyPaintProbe-diagnostic.dll",
+        "sha256": "7f1b7ca05881b63963afcd128348c1a54ea841913357320de09d348a26a9bd2f"
+      },
+      {
+        "archived_path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-2\\TimedBodyPaintProbe-completed.dll",
+        "sha256": "265e56625f007fd2313607ef17ffb80bd7feaf4fc02c8ff641a618f34251a3e8"
+      }
+    ],
+    "archived_frida_sources": [
+      {
+        "evidence_id": "ev_b18f078226465484846ca71606d6461029dae1377c778aab889f5cd01e95033d",
+        "original_path": "E:/SecretFlasherManaka v1.1.3_Uncensored/reverse-engineering/runtime/timed-body-paint/observe.js",
+        "path": "diagnostics/first-run/observe.js",
+        "sha256": "73cd4991b31f2a9e66d007b5f4cb3ab8907407065e2c872da396dede71ca78c9"
+      },
+      {
+        "evidence_id": "ev_69b6166b466857b84af09d07fa50c1f1cb3e04d26eaf7321fa44d7bf41ec5f74",
+        "original_path": "E:/SecretFlasherManaka v1.1.3_Uncensored/reverse-engineering/runtime/timed-body-paint/observe.js",
+        "path": "diagnostics/second-run/observe.js",
+        "sha256": "73cd4991b31f2a9e66d007b5f4cb3ab8907407065e2c872da396dede71ca78c9"
+      }
+    ]
+  },
+  "scope": "21 controlled native-clone cases and17 independently decoded saves; two earlier diagnostic runs excluded from complete success. Original controller stays registered, parked; natural producers and UI unverified.",
+  "dependencies": [
+    {
+      "path": "../../salt/evidence/timed-body-paint-chain.json",
+      "sha256": "60bbc69852f9515a53caa6e9e7dd71208f5663b7dca8c155a6c386939510d570"
+    },
+    {
+      "path": "../../timed-body-paint-static.md",
+      "sha256": "b3eb73329b283a3bf81f2215ce7a8c37fabdc79b798f10229c18bf427659b8fc"
+    }
+  ]
+}

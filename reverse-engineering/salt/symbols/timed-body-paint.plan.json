@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "name": "timed-body-paint",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\natural-load-saveui.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\timed-body-paint",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 14492,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerAnimationReceiver::JustEffectItem",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000c53",
+      "va": "0x18062ab50",
+      "file_offset": 6460240,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerAnimationReceiver__JustEffectItem__06000c53",
+      "file_stem": "14492-06000c53",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15013,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.BodyPaintController::GetMaxDeltaAdd",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e5c",
+      "va": "0x1803fd090",
+      "file_offset": 4176016,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_Other_BodyPaintController__GetMaxDeltaAdd__06000e5c",
+      "file_stem": "15013-06000e5c",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15014,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.BodyPaintController::IsPainted",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e5d",
+      "va": "0x1803fd130",
+      "file_offset": 4176176,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_Other_BodyPaintController__IsPainted__06000e5d",
+      "file_stem": "15014-06000e5d",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15017,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.BodyPaintController::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e60",
+      "va": "0x1803fd290",
+      "file_offset": 4176528,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_Other_BodyPaintController___ctor__06000e60",
+      "file_stem": "15017-06000e60",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17316,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SmoothFloat::.ctor",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600175b",
+      "va": "0x1804b5410",
+      "file_offset": 4930576,
+      "label": "ExposureUnnoticed2_Scripts_Base_SmoothFloat___ctor__0600175b",
+      "file_stem": "17316-0600175b",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17317,
+      "qualified_name": "ExposureUnnoticed2.Scripts.Base.SmoothFloat::UpdateTo",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600175c",
+      "va": "0x1804b54f0",
+      "file_offset": 4930800,
+      "label": "ExposureUnnoticed2_Scripts_Base_SmoothFloat__UpdateTo__0600175c",
+      "file_stem": "17317-0600175c",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15066,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.FutanariController::SetupPaint",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e91",
+      "va": "0x180401350",
+      "file_offset": 4193104,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_Other_FutanariController__SetupPaint__06000e91",
+      "file_stem": "15066-06000e91",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15067,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.FutanariController::SetupCosplayOption",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e92",
+      "va": "0x180402090",
+      "file_offset": 4196496,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_Other_FutanariController__SetupCosplayOption__06000e92",
+      "file_stem": "15067-06000e92",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

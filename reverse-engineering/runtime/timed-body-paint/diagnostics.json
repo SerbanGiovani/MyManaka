@@ -1,0 +1,931 @@
+{
+  "success": false,
+  "runs": [
+    {
+      "success": false,
+      "run": "20261030-1",
+      "native_messages": 949,
+      "messages_truncated": false,
+      "engine_errors": 334,
+      "engine_error_examples": [
+        {
+          "length": 113,
+          "text": "Material 'CensorEffectMatNpcChinpo (Instance)' with Shader 'FX/Censor' doesn't have a texture property '_MainTex'",
+          "truncated": false
+        },
+        {
+          "length": 113,
+          "text": "Material 'CensorEffectMatNpcChinpo (Instance)' with Shader 'FX/Censor' doesn't have a texture property '_MainTex'",
+          "truncated": false
+        }
+      ],
+      "reported_results": 21,
+      "runner_errors": [
+        {
+          "action": "LateUpdate",
+          "current": "cleanup",
+          "phase": "cleanup",
+          "error": "System.Exception: Cleanup verification failed\r\n   at REATimedBodyPaint.Runner.Check(Boolean v, String m)\r\n   at REATimedBodyPaint.Runner.LateUpdate()"
+        }
+      ],
+      "cleanup": [
+        {
+          "rootsRestored": true,
+          "controllerRestored": true,
+          "objectsRestored": false,
+          "playerStateRestored": true,
+          "stopRestored": true,
+          "slotRestored": true,
+          "original": {
+            "state": "2741879752672",
+            "custom": "2741877888192",
+            "pca": "2741895073152",
+            "pcaBodyPaint": "2741877215808",
+            "playerState": "2741879752000",
+            "remaining": 0,
+            "reusable": false,
+            "dokidoki": 0,
+            "lastItem": 0,
+            "applier": false,
+            "timeStop": false,
+            "original": {
+              "pointer": "2741877215808",
+              "pca": "2741895073152",
+              "state": 0,
+              "smooth": {
+                "pointer": "2741901431488",
+                "fields": {
+                  "Current": -1,
+                  "Target": 0,
+                  "maxDelta": 0.075,
+                  "downMaxDelta": 0.075,
+                  "isLerp": false,
+                  "baseValue": 0.15,
+                  "second": 2,
+                  "downSecond": 2,
+                  "isUnscaled": false
+                }
+              }
+            },
+            "clone": null,
+            "renderer": "2741893961312",
+            "materials": [
+              {
+                "slot": 0,
+                "valid": true,
+                "pointer": "2753168349472",
+                "name": "A (Instance)",
+                "shader": "2741902923904",
+                "shaderName": "UnityChanToonShader/Toon_DoubleShadeWithFeather",
+                "hasTweak": false,
+                "tweak": null,
+                "texture": "2741902923776"
+              },
+              {
+                "slot": 1,
+                "valid": true,
+                "pointer": "2753168349440",
+                "name": "Selestia_body (Instance)",
+                "shader": "2741902923712",
+                "shaderName": "UnityChanToonShader/Toon_ShadingGradeMap",
+                "hasTweak": false,
+                "tweak": null,
+                "texture": "2741894162560"
+              },
+              {
+                "slot": 2,
+                "valid": true,
+                "pointer": "2741882367872",
+                "name": "Sweat Texture [Less] -Selestia- 1 (Instance)",
+                "shader": "2741902923552",
+                "shaderName": "UnityChanToonShader/NoOutline/ToonColor_DoubleShadeWithFeather_TransClipping 1",
+                "hasTweak": true,
+                "tweak": -1,
+                "texture": "2741902923392"
+              }
+            ],
+            "clothes": {
+              "slot": -1,
+              "valid": false,
+              "pointer": null
+            },
+            "sao": {
+              "slot": -1,
+              "valid": true,
+              "pointer": "2753169925024",
+              "name": "otinpov3_texture",
+              "shader": "2741902923296",
+              "shaderName": "UnityChanToonShader/NoOutline/ToonColor_ShadingGradeMap",
+              "hasTweak": false,
+              "tweak": null,
+              "texture": "2741902923168"
+            },
+            "tama": {
+              "slot": -1,
+              "valid": true,
+              "pointer": "2753168349504",
+              "name": "CensorEffectMatNpcChinpo (Instance)",
+              "shader": "2741902923104",
+              "shaderName": "FX/Censor",
+              "hasTweak": false,
+              "tweak": null,
+              "texture": null
+            },
+            "saoRenderer": {
+              "pointer": "2741893961632",
+              "active": true,
+              "materials": [
+                {
+                  "slot": 0,
+                  "valid": true,
+                  "pointer": "2753169925024",
+                  "name": "otinpov3_texture",
+                  "shader": "2741902923296",
+                  "shaderName": "UnityChanToonShader/NoOutline/ToonColor_ShadingGradeMap",
+                  "hasTweak": false,
+                  "tweak": null,
+                  "texture": "2741902923168"
+                }
+              ]
+            },
+            "tamaRenderer": {
+              "pointer": "2741893961600",
+              "active": true,
+              "materials": [
+                {
+                  "slot": 0,
+                  "valid": true,
+                  "pointer": "2753169925024",
+                  "name": "otinpov3_texture",
+                  "shader": "2741902923296",
+                  "shaderName": "UnityChanToonShader/NoOutline/ToonColor_ShadingGradeMap",
+                  "hasTweak": false,
+                  "tweak": null,
+                  "texture": "2741902923168"
+                },
+                {
+                  "slot": 1,
+                  "valid": true,
+                  "pointer": "2753168349504",
+                  "name": "CensorEffectMatNpcChinpo (Instance)",
+                  "shader": "2741902923104",
+                  "shaderName": "FX/Censor",
+                  "hasTweak": false,
+                  "tweak": null,
+                  "texture": null
+                }
+              ]
+            }
+          },
+          "restored": {
+            "state": "2741879752672",
+            "custom": "2741877888192",
+            "pca": "2741895073152",
+            "pcaBodyPaint": "2741877215808",
+            "playerState": "2741879752000",
+            "remaining": 0,
+            "reusable": false,
+            "dokidoki": 0,
+            "lastItem": 0,
+            "applier": false,
+            "timeStop": false,
+            "original": {
+              "pointer": "2741877215808",
+              "pca": "2741895073152",
+              "state": 0,
+              "smooth": {
+                "pointer": "2741901431488",
+                "fields": {
+                  "Current": -1,
+                  "Target": 0,
+                  "maxDelta": 0.075,
+                  "downMaxDelta": 0.075,
+                  "isLerp": false,
+                  "baseValue": 0.15,
+                  "second": 2,
+                  "downSecond": 2,
+                  "isUnscaled": false
+                }
+              }
+            },
+            "clone": {
+              "pointer": "2741877447344",
+              "pca": "2741895073152",
+              "state": 0,
+              "smooth": {
+                "pointer": "2750909670528",
+                "fields": {
+                  "Current": -1,
+                  "Target": 0,
+                  "maxDelta": 0.5,
+                  "downMaxDelta": 0.5,
+                  "isLerp": false,
+                  "baseValue": 1,
+                  "second": 2,
+                  "downSecond": 2,
+                  "isUnscaled": false
+                }
+              }
+            },
+            "renderer": "2741893961312",
+            "materials": [
+              {
+                "slot": 0,
+                "valid": true,
+                "pointer": "2753168349472",
+                "name": "A (Instance)",
+                "shader": "2741902923904",
+                "shaderName": "UnityChanToonShader/Toon_DoubleShadeWithFeather",
+                "hasTweak": false,
+                "tweak": null,
+                "texture": "2741902923776"
+              },
+              {
+                "slot": 1,
+                "valid": true,
+                "pointer": "2753168349440",
+                "name": "Selestia_body (Instance)",
+                "shader": "2741902923712",
+                "shaderName": "UnityChanToonShader/Toon_ShadingGradeMap",
+                "hasTweak": false,
+                "tweak": null,
+                "texture": "2741894162560"
+              },
+              {
+                "slot": 2,
+                "valid": true,
+                "pointer": "2741882367872",
+                "name": "Sweat Texture [Less] -Selestia- 1 (Instance)",
+                "shader": "2741902923552",
+                "shaderName": "UnityChanToonShader/NoOutline/ToonColor_DoubleShadeWithFeather_TransClipping 1",
+                "hasTweak": true,
+                "tweak": -1,
+                "texture": "2741902923392"
+              }
+            ],
+            "clothes": {
+              "slot": -1,
+              "valid": false,
+              "pointer": null
+            },
+            "sao": {
+              "slot": -1,
+              "valid": true,
+              "pointer": "2753169925024",
+              "name": "otinpov3_texture",
+              "shader": "2741902923296",
+              "shaderName": "UnityChanToonShader/NoOutline/ToonColor_ShadingGradeMap",
+              "hasTweak": false,
+              "tweak": null,
+              "texture": "2741902923168"
+            },
+            "tama": {
+              "slot": -1,
+              "valid": true,
+              "pointer": "2753168349504",
+              "name": "CensorEffectMatNpcChinpo (Instance)",
+              "shader": "2741902923104",
+              "shaderName": "FX/Censor",
+              "hasTweak": false,
+              "tweak": null,
+              "texture": null
+            },
+            "saoRenderer": {
+              "pointer": "2741893961632",
+              "active": true,
+              "materials": [
+                {
+                  "slot": 0,
+                  "valid": true,
+                  "pointer": "2753169925024",
+                  "name": "otinpov3_texture",
+                  "shader": "2741902923296",
+                  "shaderName": "UnityChanToonShader/NoOutline/ToonColor_ShadingGradeMap",
+                  "hasTweak": false,
+                  "tweak": null,
+                  "texture": "2741902923168"
+                }
+              ]
+            },
+            "tamaRenderer": {
+              "pointer": "2741893961600",
+              "active": true,
+              "materials": [
+                {
+                  "slot": 0,
+                  "valid": true,
+                  "pointer": "2753169925024",
+                  "name": "otinpov3_texture",
+                  "shader": "2741902923296",
+                  "shaderName": "UnityChanToonShader/NoOutline/ToonColor_ShadingGradeMap",
+                  "hasTweak": false,
+                  "tweak": null,
+                  "texture": "2741902923168"
+                },
+                {
+                  "slot": 1,
+                  "valid": true,
+                  "pointer": "2753168349504",
+                  "name": "CensorEffectMatNpcChinpo (Instance)",
+                  "shader": "2741902923104",
+                  "shaderName": "FX/Censor",
+                  "hasTweak": false,
+                  "tweak": null,
+                  "texture": null
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "observed_snapshot_differences": [],
+      "close": {
+        "pid": 63556,
+        "exe": "E:\\ManakaREA-NaturalGameplay\\SecretFlasherManaka.exe",
+        "close_main_window": false,
+        "normal_exit_wait_ms": 2000,
+        "forced_after_close_timeout": true,
+        "reason": "First-run cleanup check failed; hidden window has no close handle. Original roots/controller/player/stop restored; material equality not confirmed. REA exported and detached before stop.",
+        "exited": true,
+        "process_absent": true,
+        "utc": "2026-10-30T16:05:31.0536370Z"
+      },
+      "ciphertexts": [
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261030-1\\captures\\cross-0.sd",
+          "sha256": "14a4257e0b2f22944404c5f66d7731e48baf46cc8b19b8235c713bb39c8541ad",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261030-1\\captures\\cross-24.sd",
+          "sha256": "ef77c6622c7daa0cf0d6fd03c683d387d7ae5c38148c9cf42b8a6184d995ff51",
+          "bytes": 91296
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261030-1\\captures\\cross-60.sd",
+          "sha256": "8460bf796946b18f3fe224c73d5cfc55ba81c78d57374bd0e885173d476f821e",
+          "bytes": 91296
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261030-1\\captures\\init-0.sd",
+          "sha256": "916eb43d2cee32d214936a5070f129ae5a2e417aa6be67c5a6675a09345f1470",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261030-1\\captures\\init-12.sd",
+          "sha256": "525cf02deda94522debe49649203e16610262543ba79b6dc94bbbaec59570195",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261030-1\\captures\\init-120-reusable.sd",
+          "sha256": "7f419dd003ee9c0a7b1fb1253dc1fc93e1db0dc8fe849cee26c53856fa1e64e0",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261030-1\\captures\\init-120.sd",
+          "sha256": "873c4b57c18cffd88bbd8a88be682b2e039c19c230e6c4804075018b41ef2065",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261030-1\\captures\\init-24.sd",
+          "sha256": "b9f6c648732d72d30f2b1581e5898f0cd9f1d6b293935c91783a21ac36d6a6e0",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261030-1\\captures\\init-25.sd",
+          "sha256": "33c7b900cc896762e35d60e4fa12fe7eac4407ee98ea19fa72b518a56eea2a0c",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261030-1\\captures\\init-60.sd",
+          "sha256": "67dee10a3a48bbc7bf21b869345e7ecb5f44d8d8d1031a0a2014e0f5df995375",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261030-1\\captures\\init-61.sd",
+          "sha256": "c9a70fec215909d47f9f634febf074e4a8b5b11013cff4040e72ea0d453130ae",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261030-1\\captures\\item-ordinary-false.sd",
+          "sha256": "472c84849c2d204dbfdb5412aad87696b3ca0aad317f11d3ecc0d72e6ff2a3b4",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261030-1\\captures\\item-ordinary-true.sd",
+          "sha256": "aadeffe1b84322858d06c289fd1abefbebca3b59e5b83e614a30ed4f02ff7b46",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261030-1\\captures\\item-reusable.sd",
+          "sha256": "cea52ee69ee4634a68d00cb6b034ccddc8ab8cd7a03f9052446b91283f8cc08e",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261030-1\\captures\\load-ordinary.sd",
+          "sha256": "7ca670d45eadb57c8b4e30b344cf96060c082dfafbc04ddb29573aea5e13f6cf",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261030-1\\captures\\load-reusable.sd",
+          "sha256": "27c1f93f3cb79dabbf7e972529448f82b7ac446b236ffc67d47c0f5d3357425c",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261030-1\\captures\\wash-return.sd",
+          "sha256": "8e346ea66f09912814e68efaac81dc49d992ee50b66130be3678538ef3376ea1",
+          "bytes": 91280
+        }
+      ],
+      "scope": "First run: observer errors plus unconfirmed declared-property restoration; no fine-grained root-cause evidence."
+    },
+    {
+      "success": false,
+      "run": "20261031-2",
+      "native_messages": 1611,
+      "messages_truncated": false,
+      "engine_errors": 0,
+      "engine_error_examples": [],
+      "reported_results": 21,
+      "runner_errors": [],
+      "cleanup": [
+        {
+          "rootsRestored": true,
+          "controllerRestored": true,
+          "objectsRestored": true,
+          "playerStateRestored": true,
+          "stopRestored": true,
+          "slotRestored": true,
+          "original": {
+            "state": "2196987553760",
+            "custom": "2196971610112",
+            "pca": "2209850658176",
+            "pcaBodyPaint": "2196957017600",
+            "playerState": "2196989143680",
+            "remaining": 0,
+            "reusable": false,
+            "dokidoki": 0,
+            "lastItem": 0,
+            "applier": false,
+            "timeStop": false,
+            "original": {
+              "pointer": "2196957017600",
+              "pca": "2209850658176",
+              "state": 0,
+              "smooth": {
+                "pointer": "2196995561984",
+                "fields": {
+                  "Current": -1,
+                  "Target": 0,
+                  "maxDelta": 0.075,
+                  "downMaxDelta": 0.075,
+                  "isLerp": false,
+                  "baseValue": 0.15,
+                  "second": 2,
+                  "downSecond": 2,
+                  "isUnscaled": false
+                }
+              }
+            },
+            "clone": null,
+            "renderer": "2209846215968",
+            "materials": [
+              {
+                "slot": 0,
+                "valid": true,
+                "pointer": "2196995415424",
+                "name": "A (Instance)",
+                "shader": "2196948901216",
+                "shaderName": "UnityChanToonShader/Toon_DoubleShadeWithFeather",
+                "hasTweak": false,
+                "tweak": null,
+                "hasMain": true,
+                "texture": "2196948901088"
+              },
+              {
+                "slot": 1,
+                "valid": true,
+                "pointer": "2196995415392",
+                "name": "Selestia_body (Instance)",
+                "shader": "2196948900960",
+                "shaderName": "UnityChanToonShader/Toon_ShadingGradeMap",
+                "hasTweak": false,
+                "tweak": null,
+                "hasMain": true,
+                "texture": "2196947026688"
+              },
+              {
+                "slot": 2,
+                "valid": true,
+                "pointer": "2196987401568",
+                "name": "Sweat Texture [Less] -Selestia- 1 (Instance)",
+                "shader": "2196948900736",
+                "shaderName": "UnityChanToonShader/NoOutline/ToonColor_DoubleShadeWithFeather_TransClipping 1",
+                "hasTweak": true,
+                "tweak": -1,
+                "hasMain": true,
+                "texture": "2196948900576"
+              }
+            ],
+            "clothes": {
+              "slot": -1,
+              "valid": false,
+              "pointer": null
+            },
+            "sao": {
+              "slot": -1,
+              "valid": true,
+              "pointer": "2196947029568",
+              "name": "otinpov3_texture",
+              "shader": "2196948900416",
+              "shaderName": "UnityChanToonShader/NoOutline/ToonColor_ShadingGradeMap",
+              "hasTweak": false,
+              "tweak": null,
+              "hasMain": true,
+              "texture": "2196948900288"
+            },
+            "tama": {
+              "slot": -1,
+              "valid": true,
+              "pointer": "2196995415456",
+              "name": "CensorEffectMatNpcChinpo (Instance)",
+              "shader": "2196948900160",
+              "shaderName": "FX/Censor",
+              "hasTweak": false,
+              "tweak": null,
+              "hasMain": false,
+              "texture": null
+            },
+            "saoRenderer": {
+              "pointer": "2209846216288",
+              "active": true,
+              "materials": [
+                {
+                  "slot": 0,
+                  "valid": true,
+                  "pointer": "2196947029568",
+                  "name": "otinpov3_texture",
+                  "shader": "2196948900416",
+                  "shaderName": "UnityChanToonShader/NoOutline/ToonColor_ShadingGradeMap",
+                  "hasTweak": false,
+                  "tweak": null,
+                  "hasMain": true,
+                  "texture": "2196948900288"
+                }
+              ]
+            },
+            "tamaRenderer": {
+              "pointer": "2209846216256",
+              "active": true,
+              "materials": [
+                {
+                  "slot": 0,
+                  "valid": true,
+                  "pointer": "2196947029568",
+                  "name": "otinpov3_texture",
+                  "shader": "2196948900416",
+                  "shaderName": "UnityChanToonShader/NoOutline/ToonColor_ShadingGradeMap",
+                  "hasTweak": false,
+                  "tweak": null,
+                  "hasMain": true,
+                  "texture": "2196948900288"
+                },
+                {
+                  "slot": 1,
+                  "valid": true,
+                  "pointer": "2196995415456",
+                  "name": "CensorEffectMatNpcChinpo (Instance)",
+                  "shader": "2196948900160",
+                  "shaderName": "FX/Censor",
+                  "hasTweak": false,
+                  "tweak": null,
+                  "hasMain": false,
+                  "texture": null
+                }
+              ]
+            }
+          },
+          "restored": {
+            "state": "2196987553760",
+            "custom": "2196971610112",
+            "pca": "2209850658176",
+            "pcaBodyPaint": "2196957017600",
+            "playerState": "2196989143680",
+            "remaining": 0,
+            "reusable": false,
+            "dokidoki": 0,
+            "lastItem": 0,
+            "applier": false,
+            "timeStop": false,
+            "original": {
+              "pointer": "2196957017600",
+              "pca": "2209850658176",
+              "state": 0,
+              "smooth": {
+                "pointer": "2196995561984",
+                "fields": {
+                  "Current": -1,
+                  "Target": 0,
+                  "maxDelta": 0.075,
+                  "downMaxDelta": 0.075,
+                  "isLerp": false,
+                  "baseValue": 0.15,
+                  "second": 2,
+                  "downSecond": 2,
+                  "isUnscaled": false
+                }
+              }
+            },
+            "clone": {
+              "pointer": "2196957156960",
+              "pca": "2209850658176",
+              "state": 0,
+              "smooth": {
+                "pointer": "2209848119936",
+                "fields": {
+                  "Current": -1,
+                  "Target": 0,
+                  "maxDelta": 0.5,
+                  "downMaxDelta": 0.5,
+                  "isLerp": false,
+                  "baseValue": 1,
+                  "second": 2,
+                  "downSecond": 2,
+                  "isUnscaled": false
+                }
+              }
+            },
+            "renderer": "2209846215968",
+            "materials": [
+              {
+                "slot": 0,
+                "valid": true,
+                "pointer": "2196995415424",
+                "name": "A (Instance)",
+                "shader": "2196948901216",
+                "shaderName": "UnityChanToonShader/Toon_DoubleShadeWithFeather",
+                "hasTweak": false,
+                "tweak": null,
+                "hasMain": true,
+                "texture": "2196948901088"
+              },
+              {
+                "slot": 1,
+                "valid": true,
+                "pointer": "2196995415392",
+                "name": "Selestia_body (Instance)",
+                "shader": "2196948900960",
+                "shaderName": "UnityChanToonShader/Toon_ShadingGradeMap",
+                "hasTweak": false,
+                "tweak": null,
+                "hasMain": true,
+                "texture": "2196947026688"
+              },
+              {
+                "slot": 2,
+                "valid": true,
+                "pointer": "2196987401568",
+                "name": "Sweat Texture [Less] -Selestia- 1 (Instance)",
+                "shader": "2196948900736",
+                "shaderName": "UnityChanToonShader/NoOutline/ToonColor_DoubleShadeWithFeather_TransClipping 1",
+                "hasTweak": true,
+                "tweak": -1,
+                "hasMain": true,
+                "texture": "2196948900576"
+              }
+            ],
+            "clothes": {
+              "slot": -1,
+              "valid": false,
+              "pointer": null
+            },
+            "sao": {
+              "slot": -1,
+              "valid": true,
+              "pointer": "2196947029568",
+              "name": "otinpov3_texture",
+              "shader": "2196948900416",
+              "shaderName": "UnityChanToonShader/NoOutline/ToonColor_ShadingGradeMap",
+              "hasTweak": true,
+              "tweak": -0.99527454,
+              "hasMain": true,
+              "texture": "2196948900288"
+            },
+            "tama": {
+              "slot": -1,
+              "valid": true,
+              "pointer": "2196995415456",
+              "name": "CensorEffectMatNpcChinpo (Instance)",
+              "shader": "2196948900160",
+              "shaderName": "FX/Censor",
+              "hasTweak": true,
+              "tweak": -0.99527454,
+              "hasMain": false,
+              "texture": null
+            },
+            "saoRenderer": {
+              "pointer": "2209846216288",
+              "active": true,
+              "materials": [
+                {
+                  "slot": 0,
+                  "valid": true,
+                  "pointer": "2196947029568",
+                  "name": "otinpov3_texture",
+                  "shader": "2196948900416",
+                  "shaderName": "UnityChanToonShader/NoOutline/ToonColor_ShadingGradeMap",
+                  "hasTweak": true,
+                  "tweak": -0.99527454,
+                  "hasMain": true,
+                  "texture": "2196948900288"
+                }
+              ]
+            },
+            "tamaRenderer": {
+              "pointer": "2209846216256",
+              "active": true,
+              "materials": [
+                {
+                  "slot": 0,
+                  "valid": true,
+                  "pointer": "2196947029568",
+                  "name": "otinpov3_texture",
+                  "shader": "2196948900416",
+                  "shaderName": "UnityChanToonShader/NoOutline/ToonColor_ShadingGradeMap",
+                  "hasTweak": true,
+                  "tweak": -0.99527454,
+                  "hasMain": true,
+                  "texture": "2196948900288"
+                },
+                {
+                  "slot": 1,
+                  "valid": true,
+                  "pointer": "2196995415456",
+                  "name": "CensorEffectMatNpcChinpo (Instance)",
+                  "shader": "2196948900160",
+                  "shaderName": "FX/Censor",
+                  "hasTweak": true,
+                  "tweak": -0.99527454,
+                  "hasMain": false,
+                  "texture": null
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "observed_snapshot_differences": [
+        {
+          "path": ".sao.hasTweak",
+          "expected": false,
+          "actual": true
+        },
+        {
+          "path": ".sao.tweak",
+          "expected": null,
+          "actual": -0.99527454
+        },
+        {
+          "path": ".tama.hasTweak",
+          "expected": false,
+          "actual": true
+        },
+        {
+          "path": ".tama.tweak",
+          "expected": null,
+          "actual": -0.99527454
+        },
+        {
+          "path": ".saoRenderer.materials[0].hasTweak",
+          "expected": false,
+          "actual": true
+        },
+        {
+          "path": ".saoRenderer.materials[0].tweak",
+          "expected": null,
+          "actual": -0.99527454
+        },
+        {
+          "path": ".tamaRenderer.materials[0].hasTweak",
+          "expected": false,
+          "actual": true
+        },
+        {
+          "path": ".tamaRenderer.materials[0].tweak",
+          "expected": null,
+          "actual": -0.99527454
+        },
+        {
+          "path": ".tamaRenderer.materials[1].hasTweak",
+          "expected": false,
+          "actual": true
+        },
+        {
+          "path": ".tamaRenderer.materials[1].tweak",
+          "expected": null,
+          "actual": -0.99527454
+        }
+      ],
+      "close": {
+        "pid": 72404,
+        "exe": "E:\\ManakaREA-NaturalGameplay\\SecretFlasherManaka.exe",
+        "quit_command": true,
+        "unity_main_thread": true,
+        "cleanup_verified": true,
+        "normal_exit": true,
+        "forced_after_close_timeout": false,
+        "exit_code": null,
+        "process_absent": true,
+        "utc": "2026-10-30T16:10:50.5747095Z"
+      },
+      "ciphertexts": [
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-2\\captures\\cross-0.sd",
+          "sha256": "62248b728c6fbaff50cc6b3523866d0ede6490826a98a98c2c66d62d751c016c",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-2\\captures\\cross-24.sd",
+          "sha256": "c8c938f61a5c98cf151afd87ffd46a57ec91a94b5f8f8002ce0f8b0a55830698",
+          "bytes": 91296
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-2\\captures\\cross-60.sd",
+          "sha256": "44cf8c3be19d74329d7ddb93093a271d22e2fd681dcf60aabd0c260fefc93f48",
+          "bytes": 91296
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-2\\captures\\init-0.sd",
+          "sha256": "4f1437f9fa82b8e39bfa6373f440f4f8911caddcb08366ebf32e886635e6cb11",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-2\\captures\\init-12.sd",
+          "sha256": "fe8523196348b9f77c864948966be8ba2607da395cd6a0517825e00c438920f4",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-2\\captures\\init-120-reusable.sd",
+          "sha256": "8bd6d0ee16f2128aa597970f0793cccc9c78511e47b346e1d39d6a2779cf6ab3",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-2\\captures\\init-120.sd",
+          "sha256": "b2663092b896aace099de50368920a3724dea437da88969a90ccfa23038088f3",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-2\\captures\\init-24.sd",
+          "sha256": "24649f5215f16d65161529ebdb058a3e9b9f29804832e9c8f34139f8fc55ba32",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-2\\captures\\init-25.sd",
+          "sha256": "06be20b6aece4e3bd58b841234440ecf3d64f0c22907644013e506a7a5769a34",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-2\\captures\\init-60.sd",
+          "sha256": "c68ad5e6fda6cecfbf4722e7b9402cace98d7d2c1993f704f43faa9d91bac26b",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-2\\captures\\init-61.sd",
+          "sha256": "dde69839c05f4b8ec90c8682ca4ea0515ae8e27daf2a6dcefd41148884621869",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-2\\captures\\item-ordinary-false.sd",
+          "sha256": "d53b9f0f8ec0db4154395a4d55dbce25c701484c41dfdb7dd9780c5157858667",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-2\\captures\\item-ordinary-true.sd",
+          "sha256": "7dab0b4636452eb6a7f6aea8db885ce75c2cb484719eb58f5db157295dc8c74a",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-2\\captures\\item-reusable.sd",
+          "sha256": "e038dd70dd461f99b1cdd5ea63ac19a46ebcd7dece5fca0779038e1764112097",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-2\\captures\\load-ordinary.sd",
+          "sha256": "a8b9008f39c67a792c017ed53c041219b231e66464bd7472aa6c1cde60086693",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-2\\captures\\load-reusable.sd",
+          "sha256": "4cbe1ad4cb99d8725224b49ebf0eb1d9cc0be4e27d5b4a156fa9d837e5fa80fd",
+          "bytes": 91280
+        },
+        {
+          "path": "E:\\ManakaREA-NaturalGameplay\\TimedBodyPaint\\20261031-2\\captures\\wash-return.sd",
+          "sha256": "f356342fdd5079df3b3c7873a5cd34b494cc9d8f873d71e5cf55b317d7cfb0e0",
+          "bytes": 91280
+        }
+      ],
+      "scope": "Second run: no errors and declared-property checks pass, but full public snapshot differs in Tweak presence/value. Excluded from complete success."
+    }
+  ]
+}

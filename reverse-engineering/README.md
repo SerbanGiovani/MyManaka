@@ -1,5 +1,9 @@
 # Manaka 资源解密与逆向入口
 
+本轮补齐临时身体涂料的21组受控对照：初始化阈值、4档Dokidoki计时、跨60/24/0状态切换、清洗淡出、普通/可重复物品及暖Load重初始化。17份保存快照对应实际状态和材质；倒计时按`2*Clamp(Dokidoki,0,.5)*deltaTime`递减。原自动控制器与独立原生测试控制器按指针区分，不把applier标志当作更新暂停守卫。见[运行验证](runtime/timed-body-paint/timed-body-paint-runtime.md)、[原生调用链](timed-body-paint-static.md)。
+
+所选暖路径中，Load恢复剩余时间/可重复标志，外观广播只重建材质，状态0仍需显式Initialize才能恢复涂料状态机。清洗也不会立即移除材质：先归零时间，再清标志并淡出，最后Setup移除。正式第三轮无脚本/引擎错误，完整公开快照及额外属性存在性恢复均通过，并经Unity线程正常退出；前两轮分别保留探针纹理读取错误/局部材质检查失败、声明属性检查通过但额外Tweak残留的诊断。材质清理不能只枚举shader声明属性。自然物品三秒延迟生产者仅静态定位，冷标题及自然UI仍未运行覆盖。
+
 2026-10-30补齐自然任务与返家结算：用户正常操作完成任务100000，经Residence返家确认后得到8 RP、8经验，完成计数0→1并保存。第二轮未完成任务往返曾产生约0.07218进度，返家后清零，奖励与计数均未再次增加。首轮10次观察器返回钩子异常保留为采集缺口；原生入口、被动快照与14份存档独立解码支持选定结论。见[自然任务与返家结算](natural-mission.md)。
 
 本轮受控外观恢复增加持久TattooDark、BodyOil及两者组合，以及free=false皮肤预设0/1。Load仅恢复数据，原玩家外观广播才恢复实际材质；身体和脸部预设颜色按原资源RGBA对照。临时涂料倒计时、其余贴图及物理效果仍待验证。见[持久身体涂装](runtime/appearance-boundary/appearance-boundary-runtime.md)、[皮肤预设](runtime/skin-preset/skin-preset-runtime.md)。

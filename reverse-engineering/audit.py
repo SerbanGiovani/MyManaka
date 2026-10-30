@@ -535,6 +535,16 @@ def main():
     verify_runtime_manifest(skin_preset_dir, skin_preset_runtime, "Skin preset")
     check(runpy.run_path(str(skin_preset_dir / "analyze.py"))["build"](inputs=args.inputs, require_finalized_plugins=True) == read(skin_preset_dir / "results.json"), "Skin preset data/material joins differ")
     observed_runtime_records[skin_preset_dir / "rea-runtime.json"] = skin_preset_runtime
+    timed_paint_dir = ROOT / "runtime/timed-body-paint"
+    timed_paint_runtime = read(timed_paint_dir / "manifest.json")
+    check(not timed_paint_runtime["natural_only"], "Timed paint controlled authority differs")
+    verify_runtime_manifest(timed_paint_dir, timed_paint_runtime, "Timed paint")
+    check(runpy.run_path(str(timed_paint_dir / "analyze.py"))["build"](inputs=args.inputs, require_finalized_plugins=True) == read(timed_paint_dir / "results.json"), "Timed paint countdown/wash/load material joins differ")
+    check(runpy.run_path(str(ROOT / "salt/timed_body_paint_evidence.py"))["build"]() == read(ROOT / "salt/evidence/timed-body-paint-chain.json"), "Timed paint static binding differs")
+    observed_runtime_records[timed_paint_dir / "rea-runtime.json"] = timed_paint_runtime
+    timed_paint_diagnostic = timed_paint_runtime["diagnostic_observation"]
+    check(timed_paint_diagnostic["success"] is False and not set(timed_paint_diagnostic["evidence_ids"]) & set(timed_paint_runtime["evidence_ids"]), "Failed timed paint setup merged with formal success")
+    observed_runtime_records[timed_paint_dir / "diagnostics-rea.json"] = timed_paint_diagnostic
     toolchain_dir = ROOT / "reconstruction"
     toolchain = read(toolchain_dir / "editor-toolchain.json")
     check(toolchain["status"] == "editor-build-and-player-smoke-verified" and toolchain["compilation_verified"] and toolchain["build_verified"] and toolchain["player_startup_verified"], "Editor smoke did not succeed")
@@ -923,9 +933,10 @@ def main():
         source_records.append({"path": appearance_hair_runtime["plugin"]["archived_path"], "sha256": appearance_hair_runtime["plugin"]["sha256"]})
         source_records.append({"path": consumers_runtime["plugin"]["archived_path"], "sha256": consumers_runtime["plugin"]["sha256"]})
         source_records.append({"path": mission_consumers_runtime["plugin"]["archived_path"], "sha256": mission_consumers_runtime["plugin"]["sha256"]})
-        for selected in [natural_mission_runtime, appearance_boundary_runtime, paid_skill_runtime, skin_preset_runtime]:
+        for selected in [natural_mission_runtime, appearance_boundary_runtime, paid_skill_runtime, skin_preset_runtime, timed_paint_runtime]:
             source_records.append({"path": selected["plugin"]["archived_path"], "sha256": selected["plugin"]["sha256"]})
         source_records.extend({"path": item["archived_path"], "sha256": item["sha256"]} for item in paid_skill_diagnostic["plugins"])
+        source_records.extend({"path": item["archived_path"], "sha256": item["sha256"]} for item in timed_paint_diagnostic["plugins"])
         source_records.extend({**output, "verify_cache_output": True} for output in toolchain["build_outputs"])
         source_records.append({"path": toolchain["editor_path"], "sha256": toolchain["editor_sha256"]})
         for source in source_records:
