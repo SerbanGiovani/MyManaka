@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "natural_only": false,
+  "authority": "controlled-active-original-skill-ui-and-runtime-consumers",
+  "successful_run": "20261030-3",
+  "sessions": [
+    {
+      "session_id": "dfe861aa-0082-4de9-be89-7e8e006e1b71",
+      "pid": 72824,
+      "state": "running",
+      "closed_by_operator": true
+    }
+  ],
+  "evidence_ids": [
+    "ev_ce7d5401050ae2fead9f88e7a3ac36cb4a9a8b24c7480ed969e556bfa67899d0",
+    "ev_6a159de54c712a31a08cf3623fbfa0dc99d373c6b811808fdd7a2bc6167f0610"
+  ],
+  "plugin": {
+    "archived_path": "E:\\ManakaREA-NaturalGameplay\\PaidSkillBoundary\\20261030-3\\PaidSkillBoundaryProbe-completed.dll",
+    "sha256": "1b9cd6650fb3922e32a4ddc96916da9aa8ed8d941c4dcde8dce378c453eb51d8"
+  },
+  "sources": [
+    {
+      "path": "Probe.cs",
+      "sha256": "846c3c8352d50c0c60ab2d02f57b86cbc7d4941b40b52a20bff96282130ab2b1"
+    },
+    {
+      "path": "build.ps1",
+      "sha256": "07781c589f32f139392be00dae38fc1185fd750166171c7931207783048f7289"
+    },
+    {
+      "path": "observe.js",
+      "sha256": "29ed8f9dfc8ba76c5ad51bfd6f2d75bb22f75d8524c1460a425f9c8909e79a9a"
+    },
+    {
+      "path": "run_cases.py",
+      "sha256": "2943c349af0b8eadc72fb383e2e98d18981c9a3398a921f5409f0882281f0fb0"
+    },
+    {
+      "path": "analyze.py",
+      "sha256": "9b63f96a0f45dba73c764f3f50f8453a09f2f6017277603377ce4f8d75df9442"
+    },
+    {
+      "path": "collect.py",
+      "sha256": "e5e9088a31ba0cb7ce3f104d75f75b85605b3258d6caa327a8be0e36481bd3fa"
+    },
+    {
+      "path": "test_analysis.py",
+      "sha256": "691bedce56be0842c27c48fe38105ee0c9123b4c82dd0b876782fefb55da8305"
+    },
+    {
+      "path": "paid-skill-boundary-runtime.md",
+      "sha256": "971970042fe14bb467f6b2d5a2d8fb9bdccd02f1c123c68fa11964a6ebf3a4db"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "managed.jsonl.gz",
+      "sha256": "e419fc8b9a95404ee62b62c7388b2d649b685bf8c3e33c513abbc0327e24cd8a",
+      "uncompressed_bytes": 53295,
+      "uncompressed_sha256": "cbd7daf783ff8f68de9ae7868f3e38cb67c7de484902d9fcd11fb1777eb30cf8"
+    },
+    {
+      "path": "paths.jsonl.gz",
+      "sha256": "9431ee6639684360a44b4413c0b1cf2ad8b4786a1e78d8561b845ef116d0b4a0",
+      "uncompressed_bytes": 49469,
+      "uncompressed_sha256": "e1f3a966ae719de142c7c977b396072fc5e2b8182baedeb35cfb19b21c58ab62"
+    },
+    {
+      "path": "engine.log.gz",
+      "sha256": "ead9b2f71e8cf650dd4534cf8378ead5bc541f5374b33b030278fdda8b1680ed",
+      "uncompressed_bytes": 317807,
+      "uncompressed_sha256": "cc77e1f3ab6968e3b967b01783b9eb4466c1def72607997dee78808d94a6c7a6"
+    },
+    {
+      "path": "baseline.json",
+      "sha256": "bc5d18b37e5fb766a9777760cbdefaf41cadb7f7060dbd4539ef7fcb5c72f45d"
+    },
+    {
+      "path": "close-receipt.json",
+      "sha256": "c56cd7b1ea8dafc4a1c726dd5d17996468f58465663b5f4b30ec6069273478cf"
+    },
+    {
+      "path": "rea-runtime.json",
+      "sha256": "81f5ad8af3c695ca05b468971055ff482620104531e5058cf72c97cf5874c6c0"
+    },
+    {
+      "path": "saved-files.json",
+      "sha256": "01013a78373fe016eb7a8db649698955fbe76f62f0dadbdfffc075fabea1f13f"
+    },
+    {
+      "path": "asset-tiers.json",
+      "sha256": "8cf6eefe8ced2509e7a0f19cdbfbbfe787b34c28e4ef591eaa7a2fb6e71dac10"
+    },
+    {
+      "path": "diagnostics.json",
+      "sha256": "5c3d785ccfacee45c92b04a791c306171c8fb6d628a5916fce4a14244c58b0ed"
+    },
+    {
+      "path": "diagnostics-rea.json",
+      "sha256": "f5a67db16feae6816fb2bd03d34be6efad5ce48b2db1a7b72559599789bed4a5"
+    },
+    {
+      "path": "post-state.json",
+      "sha256": "95df7147e98dea1c54acc73b9ed3a7a4275ffe60e15731a0d3ee67e2773138ea"
+    },
+    {
+      "path": "diagnostics/bootstrap/engine.log.gz",
+      "sha256": "934f15dddf802d13e81ac40900fec1ca5f61cf974c51cd29d58a7c33f106835f"
+    },
+    {
+      "path": "diagnostics/bootstrap/managed.jsonl.gz",
+      "sha256": "cd1b166f303527d64e92a9dd614ad1bebfdf4701ab876394218714500d982fe5"
+    },
+    {
+      "path": "diagnostics/invalid-fixture/engine.log.gz",
+      "sha256": "9044f253ef742faf023d8b339eb5978dede72fd3b046d93d7c98404112c4486b"
+    },
+    {
+      "path": "diagnostics/invalid-fixture/managed.jsonl.gz",
+      "sha256": "ed4878b6d48fe11a4b20e6b5df66b89bc626a9765df204373616bd02ea58a6b4"
+    },
+    {
+      "path": "diagnostics/invalid-fixture/Probe.cs",
+      "sha256": "b02ea0d9ffac5387b34b3ebf84c9a519a0adfa06b13b11c5d7eab7b0e9e7d4eb"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "../../paid-skill-boundary-assets.json",
+      "sha256": "ca4d78130b138b332674d3ab2f283d3ff0a65bf7ec659a3e72548184239b9b40"
+    },
+    {
+      "path": "../../paid-skill-boundary-metadata.json",
+      "sha256": "77ee89060638ce525e71d5656dd3f55a67897a3d14bf1721a5af14cfc85ff6b4"
+    }
+  ],
+  "raw_inputs": [
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\PaidSkillBoundary\\20261030-3\\rea-runtime-full.json",
+      "sha256": "e390a9fa59c23d0c5d6c295588a0d91487bac3c30d368c7505e33bd4d15e9aa1"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\PaidSkillBoundary\\20261030-3\\captures\\max-after.sd",
+      "sha256": "cb0f6c1f237abf7344e8e2fc5f2a329e3146a0c5ef592f4c1c936b59b6c21f1c"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\PaidSkillBoundary\\20261030-3\\captures\\max-before.sd",
+      "sha256": "086485970bd35034f0ef0c253a3e6f9a8ac444d0ecbfba03808adba57a5e5443"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\PaidSkillBoundary\\20261030-3\\captures\\passive-absent-after.sd",
+      "sha256": "59bb07d76be8d530f84af83d853ea2c68cf0ee1b507ed019706f75d9ee3a665b"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\PaidSkillBoundary\\20261030-3\\captures\\passive-absent-before.sd",
+      "sha256": "868d427df7a73b3fbcef3f41aa4dcaa523678169c4961df0a2714c71e8debf7c"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\PaidSkillBoundary\\20261030-3\\captures\\passive-false-after.sd",
+      "sha256": "11439424e29b4742940f9fa62bb68d7bfd21603135cf1018f95a04f2b8605062"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\PaidSkillBoundary\\20261030-3\\captures\\passive-false-before.sd",
+      "sha256": "920a8484fc41d77d86aaa781ecb6611189f55d2ff4701d640fc69dc525b0f7fa"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\PaidSkillBoundary\\20261030-3\\captures\\prerequisite-after.sd",
+      "sha256": "df8e04431460961b81926fd48919bc0cb291240f78b50ef161ce8ebbe4e9bd33"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\PaidSkillBoundary\\20261030-3\\captures\\prerequisite-before.sd",
+      "sha256": "df9b8c2efc19400e01c95a99044abd1f20ce27dbec21a9a25c2e2764ac6a84b4"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\PaidSkillBoundary\\20261030-3\\captures\\rank-locked-after.sd",
+      "sha256": "2f17fb40f9f0dc638cf01cdac3521b0b4fa7b2ccda1a20e771b998e66be5b00c"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\PaidSkillBoundary\\20261030-3\\captures\\rank-locked-before.sd",
+      "sha256": "588dce26f4995b60680fd87f79ab722f567449776ae4a3eee18420122da57712"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\PaidSkillBoundary\\20261030-3\\captures\\rp-exact-after.sd",
+      "sha256": "e098d3db62395ab0bc34ef7ba30a4e92495e2ad032ffd966a7c9c29668329918"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\PaidSkillBoundary\\20261030-3\\captures\\rp-exact-before.sd",
+      "sha256": "9be21c2871c2f3e5e14c42b9c01154deef1effdabcbeb4f73b0649f46c944b1f"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\PaidSkillBoundary\\20261030-3\\captures\\rp-low-after.sd",
+      "sha256": "a9682b319abe180990d2b15fe24357de43335e026839c19b535b7b22b8e55ac3"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\PaidSkillBoundary\\20261030-3\\captures\\rp-low-before.sd",
+      "sha256": "8e4b11c115c472ef3e9a88778d2ae06326f5d6c8775064910e5d95d66879c0d2"
+    }
+  ],
+  "scope": "Seven controlled active UI callback cases, actual capacity/buff consumers and14 independent before/after decryptions. Failed bootstrap and invalid disturbance runs excluded from success. No natural mouse or successful rank unlock claim.",
+  "diagnostic_observation": {
+    "success": false,
+    "sessions": [
+      {
+        "session_id": "82be49a3-2532-4a8a-b548-f3eda9a8dbe0",
+        "pid": 24096,
+        "state": "running",
+        "closed_by_operator": true
+      },
+      {
+        "session_id": "372d8be0-a991-424a-9c9c-97f21851b62d",
+        "pid": 46532,
+        "state": "running",
+        "closed_by_operator": true
+      }
+    ],
+    "evidence_ids": [
+      "ev_024d4d443e01bb79596decf6b937d643b2e4f3b84a0a1d98ab1c8e03fbf3ee4c",
+      "ev_71afe23175d9951b3f201da8920300b2de983dac7be81f29ade3ea1a4783f180",
+      "ev_958f7e92fd2a63dfa9d784016ef13cae3a2947b15fb0b3b020f8440ba865e28d",
+      "ev_d37c79cd1aac13affce8dcf3c682d0b0783b8ed56b9bc85e9729d863b6bb5c74"
+    ],
+    "scope": "Separate failed bootstrap/invalid-fixture runs; engine errors are retained diagnostics, not successful gameplay evidence.",
+    "plugins": [
+      {
+        "archived_path": "E:\\ManakaREA-NaturalGameplay\\PaidSkillBoundary\\20261030-1\\PaidSkillBoundaryProbe-bootstrap.dll",
+        "sha256": "4bb0da6f895dc569fbf537068470762757a31ab99f5d8877dcec9efc74269767"
+      },
+      {
+        "archived_path": "E:\\ManakaREA-NaturalGameplay\\PaidSkillBoundary\\20261030-2\\PaidSkillBoundaryProbe-invalid-fixture.dll",
+        "sha256": "c73b39147eb903741e4ad09d6c7dec7a083192b8f9d745045b90670f285793fd"
+      }
+    ]
+  }
+}

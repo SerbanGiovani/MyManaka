@@ -1,0 +1,150 @@
+{
+  "authority": "controlled-original-save-load-body-material-consumers",
+  "natural_only": false,
+  "cases": [
+    {
+      "name": "tattoo",
+      "active_types": [
+        2
+      ],
+      "saved_file_sha256": "62d046db3a727142e302b00b6b675407e8f8b27e700144a1f28aee8a1a8acbd7",
+      "reference_slots": 4,
+      "disturbed_slots": 3,
+      "loaded_slots": 3,
+      "restored_slots": 4,
+      "body_matcap": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "skin_rgba_unchanged": true,
+      "load_applied_renderer": false,
+      "sweat_tweak_immediate": 0,
+      "sweat_tweak_after_10_frames": -1,
+      "stages": {
+        "reference": {
+          "callbacks": 1,
+          "events": 1,
+          "setups": 1,
+          "applications": 1
+        },
+        "disturb": {
+          "callbacks": 1,
+          "events": 1,
+          "setups": 1,
+          "applications": 1
+        },
+        "restore": {
+          "callbacks": 1,
+          "events": 1,
+          "setups": 1,
+          "applications": 1
+        }
+      }
+    },
+    {
+      "name": "oil",
+      "active_types": [
+        8
+      ],
+      "saved_file_sha256": "c5e69415e3008d199685b4a4d2ad4ca59f578bc73e7b83fc79d7e4cf5ee4feb5",
+      "reference_slots": 3,
+      "disturbed_slots": 4,
+      "loaded_slots": 4,
+      "restored_slots": 3,
+      "body_matcap": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "skin_rgba_unchanged": true,
+      "load_applied_renderer": false,
+      "sweat_tweak_immediate": 0,
+      "sweat_tweak_after_10_frames": -1,
+      "stages": {
+        "reference": {
+          "callbacks": 1,
+          "events": 1,
+          "setups": 1,
+          "applications": 1
+        },
+        "disturb": {
+          "callbacks": 1,
+          "events": 1,
+          "setups": 1,
+          "applications": 1
+        },
+        "restore": {
+          "callbacks": 1,
+          "events": 1,
+          "setups": 1,
+          "applications": 1
+        }
+      }
+    },
+    {
+      "name": "combined",
+      "active_types": [
+        2,
+        8
+      ],
+      "saved_file_sha256": "9cb29198b2ff2f73f7d42f23494e270fb4591bb5c2e0524fbbc5873a0ec09638",
+      "reference_slots": 4,
+      "disturbed_slots": 3,
+      "loaded_slots": 3,
+      "restored_slots": 4,
+      "body_matcap": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "skin_rgba_unchanged": true,
+      "load_applied_renderer": false,
+      "sweat_tweak_immediate": 0,
+      "sweat_tweak_after_10_frames": -1,
+      "stages": {
+        "reference": {
+          "callbacks": 1,
+          "events": 1,
+          "setups": 1,
+          "applications": 1
+        },
+        "disturb": {
+          "callbacks": 1,
+          "events": 1,
+          "setups": 1,
+          "applications": 1
+        },
+        "restore": {
+          "callbacks": 1,
+          "events": 1,
+          "setups": 1,
+          "applications": 1
+        }
+      }
+    }
+  ],
+  "native_messages": 67,
+  "body_callback_sequences": 10,
+  "encrypted_files": 3,
+  "independently_decoded_bool_fields": 30,
+  "engine_error_events": 0,
+  "observed_shared_properties_restored": true,
+  "limits": [
+    "Selected persistent bool map types2 TattooDark and8 BodyOil only; other bool entries are false.",
+    "Load restores data while leaving the disturbed renderer graph until the explicit original player initialization callback; natural UI dispatch is unverified.",
+    "New runtime material pointers are identities, not a requirement to equal source assets or previous material instances. Shader/texture references, colors and slot ordering are compared.",
+    "Original renderer shared materials/properties and recorded controller references were restored. Properties of a RubberSuit material outside that observed array were not separately captured; complete material-graph equivalence is not claimed.",
+    "Timed paint fields stayed zero/false, controller state0/alpha-1; timers, physical effects, other appearance options and cold title recreation remain outside scope."
+  ],
+  "redirected_path_events": 47,
+  "plugins_finalized": true,
+  "protected_inputs": {
+    "userdata": 9,
+    "previous_natural_profile": 4,
+    "native_resources": 5
+  }
+}

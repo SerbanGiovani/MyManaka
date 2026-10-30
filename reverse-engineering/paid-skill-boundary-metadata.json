@@ -1,0 +1,1186 @@
+{
+  "schema_version": 1,
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "types": [
+    {
+      "type_id": 2419,
+      "name": "ExposureUnnoticed2.Master.Skill.MSkillRecord",
+      "fields": [
+        {
+          "id": 11260,
+          "name": "NameKey",
+          "type_index": 22103,
+          "offset": 24
+        },
+        {
+          "id": 11261,
+          "name": "DescriptionKey",
+          "type_index": 22103,
+          "offset": 32
+        },
+        {
+          "id": 11262,
+          "name": "InitRp",
+          "type_index": 17886,
+          "offset": 40
+        },
+        {
+          "id": 11263,
+          "name": "IncrementRp",
+          "type_index": 17886,
+          "offset": 44
+        },
+        {
+          "id": 11264,
+          "name": "MaxLevel",
+          "type_index": 17886,
+          "offset": 48
+        },
+        {
+          "id": 11265,
+          "name": "ReleaseRank",
+          "type_index": 17886,
+          "offset": 52
+        },
+        {
+          "id": 11266,
+          "name": "IsPassiveToggle",
+          "type_index": 13667,
+          "offset": 56
+        },
+        {
+          "id": 11267,
+          "name": "Type",
+          "type_index": 21735,
+          "offset": 60
+        },
+        {
+          "id": 11268,
+          "name": "CategoryType",
+          "type_index": 21728,
+          "offset": 64
+        },
+        {
+          "id": 11269,
+          "name": "ReleaseOrderTarget",
+          "type_index": 21735,
+          "offset": 68
+        },
+        {
+          "id": 11270,
+          "name": "RpBonus",
+          "type_index": 17886,
+          "offset": 72
+        }
+      ]
+    },
+    {
+      "type_id": 2438,
+      "name": "ExposureUnnoticed2.Master.Rank.MRankRecord",
+      "fields": [
+        {
+          "id": 11368,
+          "name": "Rank",
+          "type_index": 17886,
+          "offset": 24
+        },
+        {
+          "id": 11369,
+          "name": "NameKey",
+          "type_index": 22103,
+          "offset": 32
+        },
+        {
+          "id": 11370,
+          "name": "NeedRp",
+          "type_index": 17886,
+          "offset": 40
+        },
+        {
+          "id": 11371,
+          "name": "DokidokiBoostScale",
+          "type_index": 21692,
+          "offset": 44
+        },
+        {
+          "id": 11372,
+          "name": "NeedFearUpRp",
+          "type_index": 17886,
+          "offset": 48
+        },
+        {
+          "id": 11373,
+          "name": "FearLevelBias",
+          "type_index": 17886,
+          "offset": 52
+        },
+        {
+          "id": 11374,
+          "name": "LostRpByGameOver",
+          "type_index": 17886,
+          "offset": 56
+        }
+      ]
+    },
+    {
+      "type_id": 2722,
+      "name": "ExposureUnnoticed2.ObjectUI.SkillPanel.SkillItemView",
+      "fields": [
+        {
+          "id": 13369,
+          "name": "nameText",
+          "type_index": 22664,
+          "offset": 32
+        },
+        {
+          "id": 13370,
+          "name": "levelText",
+          "type_index": 22664,
+          "offset": 40
+        },
+        {
+          "id": 13371,
+          "name": "necessaryRpText",
+          "type_index": 22664,
+          "offset": 48
+        },
+        {
+          "id": 13372,
+          "name": "buttonText",
+          "type_index": 22664,
+          "offset": 56
+        },
+        {
+          "id": 13373,
+          "name": "reinforceButtonObject",
+          "type_index": 16436,
+          "offset": 64
+        },
+        {
+          "id": 13374,
+          "name": "conditionMask",
+          "type_index": 16436,
+          "offset": 72
+        },
+        {
+          "id": 13375,
+          "name": "rankConditionText",
+          "type_index": 22664,
+          "offset": 80
+        },
+        {
+          "id": 13376,
+          "name": "orderConditionText",
+          "type_index": 22664,
+          "offset": 88
+        },
+        {
+          "id": 13377,
+          "name": "learnedText",
+          "type_index": 16436,
+          "offset": 96
+        },
+        {
+          "id": 13378,
+          "name": "enableCheckMark",
+          "type_index": 16436,
+          "offset": 104
+        },
+        {
+          "id": 13379,
+          "name": "emitCanvasGroup",
+          "type_index": 13967,
+          "offset": 112
+        },
+        {
+          "id": 13380,
+          "name": "necessaryRp",
+          "type_index": 17881,
+          "offset": 120
+        },
+        {
+          "id": 13381,
+          "name": "skill",
+          "type_index": 18647,
+          "offset": 128
+        },
+        {
+          "id": 13382,
+          "name": "onClickReinforce",
+          "type_index": 3467,
+          "offset": 136
+        },
+        {
+          "id": 13383,
+          "name": "onClick",
+          "type_index": 3467,
+          "offset": 144
+        },
+        {
+          "id": 13384,
+          "name": "isSomeMask",
+          "type_index": 13663,
+          "offset": 152
+        },
+        {
+          "id": 13385,
+          "name": "isLearned",
+          "type_index": 13663,
+          "offset": 153
+        }
+      ]
+    },
+    {
+      "type_id": 2739,
+      "name": "ExposureUnnoticed2.ObjectUI.PcMenuPanel.SkillSwitchPanel.SkillSwitchItemView",
+      "fields": [
+        {
+          "id": 13501,
+          "name": "skillName",
+          "type_index": 22664,
+          "offset": 32
+        },
+        {
+          "id": 13502,
+          "name": "toggle",
+          "type_index": 22957,
+          "offset": 40
+        },
+        {
+          "id": 13503,
+          "name": "emitCanvasGroup",
+          "type_index": 13967,
+          "offset": 48
+        },
+        {
+          "id": 13504,
+          "name": "record",
+          "type_index": 18647,
+          "offset": 56
+        },
+        {
+          "id": 13505,
+          "name": "onClick",
+          "type_index": 3467,
+          "offset": 64
+        },
+        {
+          "id": 13506,
+          "name": "onChange",
+          "type_index": 12827,
+          "offset": 72
+        },
+        {
+          "id": 13507,
+          "name": "isNoSoundByInit",
+          "type_index": 13663,
+          "offset": 80
+        }
+      ]
+    },
+    {
+      "type_id": 2784,
+      "name": "ExposureUnnoticed2.ObjectUI.SaveDataSelectPanel.SkillPanelView",
+      "fields": [
+        {
+          "id": 13791,
+          "name": "itemParent",
+          "type_index": 23036,
+          "offset": 88
+        },
+        {
+          "id": 13792,
+          "name": "skillItemPrefab",
+          "type_index": 16436,
+          "offset": 96
+        },
+        {
+          "id": 13793,
+          "name": "tabView",
+          "type_index": 14348,
+          "offset": 104
+        },
+        {
+          "id": 13794,
+          "name": "currentSkillName",
+          "type_index": 22664,
+          "offset": 112
+        },
+        {
+          "id": 13795,
+          "name": "currentSkillDescription",
+          "type_index": 22664,
+          "offset": 120
+        },
+        {
+          "id": 13796,
+          "name": "uiPlayerPanelObject",
+          "type_index": 16436,
+          "offset": 128
+        },
+        {
+          "id": 13797,
+          "name": "buttonGroupManager",
+          "type_index": 13790,
+          "offset": 136
+        },
+        {
+          "id": 13798,
+          "name": "commonScrollRectView",
+          "type_index": 14345,
+          "offset": 144
+        },
+        {
+          "id": 13799,
+          "name": "onClose",
+          "type_index": 12827,
+          "offset": 152
+        },
+        {
+          "id": 13800,
+          "name": "childViewList",
+          "type_index": 8607,
+          "offset": 160
+        },
+        {
+          "id": 13801,
+          "name": "currentSelectIndex",
+          "type_index": 17881,
+          "offset": 168
+        }
+      ]
+    },
+    {
+      "type_id": 2241,
+      "name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerRpBonusCalculator",
+      "fields": [
+        {
+          "id": 9696,
+          "name": "pca",
+          "type_index": 20163,
+          "offset": 16
+        },
+        {
+          "id": 9697,
+          "name": "pathCalcTime",
+          "type_index": 21688,
+          "offset": 24
+        },
+        {
+          "id": 9698,
+          "name": "lastClothesRpBonus",
+          "type_index": 17881,
+          "offset": 28
+        },
+        {
+          "id": 9699,
+          "name": "currentStageType",
+          "type_index": 21987,
+          "offset": 32
+        }
+      ]
+    },
+    {
+      "type_id": 2262,
+      "name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.BuffModel",
+      "fields": [
+        {
+          "id": 9928,
+          "name": "SourceName",
+          "type_index": 22103,
+          "offset": 16
+        },
+        {
+          "id": 9929,
+          "name": "BuffSourceType",
+          "type_index": 13734,
+          "offset": 24
+        },
+        {
+          "id": 9930,
+          "name": "SpecialType",
+          "type_index": 21854,
+          "offset": 28
+        },
+        {
+          "id": 9931,
+          "name": "RpBonus100",
+          "type_index": 17886,
+          "offset": 32
+        },
+        {
+          "id": 9932,
+          "name": "RpBonusLastMult100",
+          "type_index": 17886,
+          "offset": 36
+        },
+        {
+          "id": 9933,
+          "name": "Strange100",
+          "type_index": 17886,
+          "offset": 40
+        },
+        {
+          "id": 9934,
+          "name": "Dokidoki100",
+          "type_index": 17886,
+          "offset": 44
+        },
+        {
+          "id": 9935,
+          "name": "IsActive",
+          "type_index": 13667,
+          "offset": 48
+        },
+        {
+          "id": 9936,
+          "name": "ItemIdParseInt",
+          "type_index": 17886,
+          "offset": 52
+        }
+      ]
+    },
+    {
+      "type_id": 2421,
+      "name": "ExposureUnnoticed2.Master.Skill.SkillSlow.RSkillSlow",
+      "fields": [
+        {
+          "id": 11273,
+          "name": "Level",
+          "type_index": 17886,
+          "offset": 24
+        },
+        {
+          "id": 11274,
+          "name": "MaxTimeTank",
+          "type_index": 21692,
+          "offset": 28
+        },
+        {
+          "id": 11275,
+          "name": "NextLevelUpRp",
+          "type_index": 17886,
+          "offset": 32
+        }
+      ]
+    },
+    {
+      "type_id": 2427,
+      "name": "ExposureUnnoticed2.Master.Skill.SkillMaxAccessoryNum.RSkillMaxAccessoryNum",
+      "fields": [
+        {
+          "id": 11290,
+          "name": "Level",
+          "type_index": 17886,
+          "offset": 24
+        },
+        {
+          "id": 11291,
+          "name": "MaxNum",
+          "type_index": 17886,
+          "offset": 28
+        },
+        {
+          "id": 11292,
+          "name": "NextLevelUpRp",
+          "type_index": 17886,
+          "offset": 32
+        }
+      ]
+    }
+  ],
+  "enum_values": [
+    {
+      "name": "None",
+      "value": -1,
+      "field_id": 11211,
+      "field_file_offset": 6908928,
+      "default_file_offset": 5033324,
+      "default_data": {
+        "metadata_file_offset": 5207348,
+        "raw_hex": "01",
+        "decoded_int32": -1
+      }
+    },
+    {
+      "name": "Mental",
+      "value": 0,
+      "field_id": 11212,
+      "field_file_offset": 6908940,
+      "default_file_offset": 5033336,
+      "default_data": {
+        "metadata_file_offset": 5207349,
+        "raw_hex": "00",
+        "decoded_int32": 0
+      }
+    },
+    {
+      "name": "Stamina",
+      "value": 1,
+      "field_id": 11213,
+      "field_file_offset": 6908952,
+      "default_file_offset": 5033348,
+      "default_data": {
+        "metadata_file_offset": 5207350,
+        "raw_hex": "02",
+        "decoded_int32": 1
+      }
+    },
+    {
+      "name": "CoatLevel",
+      "value": 2,
+      "field_id": 11214,
+      "field_file_offset": 6908964,
+      "default_file_offset": 5033360,
+      "default_data": {
+        "metadata_file_offset": 5207351,
+        "raw_hex": "04",
+        "decoded_int32": 2
+      }
+    },
+    {
+      "name": "Flasher",
+      "value": 3,
+      "field_id": 11215,
+      "field_file_offset": 6908976,
+      "default_file_offset": 5033372,
+      "default_data": {
+        "metadata_file_offset": 5207352,
+        "raw_hex": "06",
+        "decoded_int32": 3
+      }
+    },
+    {
+      "name": "Raper",
+      "value": 4,
+      "field_id": 11216,
+      "field_file_offset": 6908988,
+      "default_file_offset": 5033384,
+      "default_data": {
+        "metadata_file_offset": 5207353,
+        "raw_hex": "08",
+        "decoded_int32": 4
+      }
+    },
+    {
+      "name": "ContinueMission",
+      "value": 5,
+      "field_id": 11217,
+      "field_file_offset": 6909000,
+      "default_file_offset": 5033396,
+      "default_data": {
+        "metadata_file_offset": 5207354,
+        "raw_hex": "0a",
+        "decoded_int32": 5
+      }
+    },
+    {
+      "name": "Slow",
+      "value": 6,
+      "field_id": 11218,
+      "field_file_offset": 6909012,
+      "default_file_offset": 5033408,
+      "default_data": {
+        "metadata_file_offset": 5207355,
+        "raw_hex": "0c",
+        "decoded_int32": 6
+      }
+    },
+    {
+      "name": "NpcDirect",
+      "value": 7,
+      "field_id": 11219,
+      "field_file_offset": 6909024,
+      "default_file_offset": 5033420,
+      "default_data": {
+        "metadata_file_offset": 5207356,
+        "raw_hex": "0e",
+        "decoded_int32": 7
+      }
+    },
+    {
+      "name": "Sneak",
+      "value": 8,
+      "field_id": 11220,
+      "field_file_offset": 6909036,
+      "default_file_offset": 5033432,
+      "default_data": {
+        "metadata_file_offset": 5207357,
+        "raw_hex": "10",
+        "decoded_int32": 8
+      }
+    },
+    {
+      "name": "AutoSlow",
+      "value": 9,
+      "field_id": 11221,
+      "field_file_offset": 6909048,
+      "default_file_offset": 5033444,
+      "default_data": {
+        "metadata_file_offset": 5207358,
+        "raw_hex": "12",
+        "decoded_int32": 9
+      }
+    },
+    {
+      "name": "FixFps",
+      "value": 10,
+      "field_id": 11222,
+      "field_file_offset": 6909060,
+      "default_file_offset": 5033456,
+      "default_data": {
+        "metadata_file_offset": 5207359,
+        "raw_hex": "14",
+        "decoded_int32": 10
+      }
+    },
+    {
+      "name": "MaxAccessoryNum",
+      "value": 11,
+      "field_id": 11223,
+      "field_file_offset": 6909072,
+      "default_file_offset": 5033468,
+      "default_data": {
+        "metadata_file_offset": 5207360,
+        "raw_hex": "16",
+        "decoded_int32": 11
+      }
+    },
+    {
+      "name": "AutoBaretaSlow",
+      "value": 12,
+      "field_id": 11224,
+      "field_file_offset": 6909084,
+      "default_file_offset": 5033480,
+      "default_data": {
+        "metadata_file_offset": 5207361,
+        "raw_hex": "18",
+        "decoded_int32": 12
+      }
+    },
+    {
+      "name": "HideStrangeUi",
+      "value": 13,
+      "field_id": 11225,
+      "field_file_offset": 6909096,
+      "default_file_offset": 5033492,
+      "default_data": {
+        "metadata_file_offset": 5207362,
+        "raw_hex": "1a",
+        "decoded_int32": 13
+      }
+    },
+    {
+      "name": "NoFastTravel",
+      "value": 14,
+      "field_id": 11226,
+      "field_file_offset": 6909108,
+      "default_file_offset": 5033504,
+      "default_data": {
+        "metadata_file_offset": 5207363,
+        "raw_hex": "1c",
+        "decoded_int32": 14
+      }
+    },
+    {
+      "name": "Perspective",
+      "value": 15,
+      "field_id": 11227,
+      "field_file_offset": 6909120,
+      "default_file_offset": 5033516,
+      "default_data": {
+        "metadata_file_offset": 5207364,
+        "raw_hex": "1e",
+        "decoded_int32": 15
+      }
+    },
+    {
+      "name": "MyPace",
+      "value": 16,
+      "field_id": 11228,
+      "field_file_offset": 6909132,
+      "default_file_offset": 5033528,
+      "default_data": {
+        "metadata_file_offset": 5207365,
+        "raw_hex": "20",
+        "decoded_int32": 16
+      }
+    },
+    {
+      "name": "TimeStop",
+      "value": 17,
+      "field_id": 11229,
+      "field_file_offset": 6909144,
+      "default_file_offset": 5033540,
+      "default_data": {
+        "metadata_file_offset": 5207366,
+        "raw_hex": "22",
+        "decoded_int32": 17
+      }
+    },
+    {
+      "name": "CantDash",
+      "value": 18,
+      "field_id": 11230,
+      "field_file_offset": 6909156,
+      "default_file_offset": 5033552,
+      "default_data": {
+        "metadata_file_offset": 5207367,
+        "raw_hex": "24",
+        "decoded_int32": 18
+      }
+    },
+    {
+      "name": "DisableHideCostume",
+      "value": 19,
+      "field_id": 11231,
+      "field_file_offset": 6909168,
+      "default_file_offset": 5033564,
+      "default_data": {
+        "metadata_file_offset": 5207368,
+        "raw_hex": "26",
+        "decoded_int32": 19
+      }
+    },
+    {
+      "name": "FixTps",
+      "value": 20,
+      "field_id": 11232,
+      "field_file_offset": 6909180,
+      "default_file_offset": 5033576,
+      "default_data": {
+        "metadata_file_offset": 5207369,
+        "raw_hex": "28",
+        "decoded_int32": 20
+      }
+    },
+    {
+      "name": "Exhibitionism",
+      "value": 21,
+      "field_id": 11233,
+      "field_file_offset": 6909192,
+      "default_file_offset": 5033588,
+      "default_data": {
+        "metadata_file_offset": 5207370,
+        "raw_hex": "2a",
+        "decoded_int32": 21
+      }
+    },
+    {
+      "name": "Sex",
+      "value": 22,
+      "field_id": 11234,
+      "field_file_offset": 6909204,
+      "default_file_offset": 5033600,
+      "default_data": {
+        "metadata_file_offset": 5207371,
+        "raw_hex": "2c",
+        "decoded_int32": 22
+      }
+    },
+    {
+      "name": "AutoAddMoisture",
+      "value": 23,
+      "field_id": 11235,
+      "field_file_offset": 6909216,
+      "default_file_offset": 5033612,
+      "default_data": {
+        "metadata_file_offset": 5207372,
+        "raw_hex": "2e",
+        "decoded_int32": 23
+      }
+    },
+    {
+      "name": "NoReinforceEffect",
+      "value": 24,
+      "field_id": 11236,
+      "field_file_offset": 6909228,
+      "default_file_offset": 5033624,
+      "default_data": {
+        "metadata_file_offset": 5207373,
+        "raw_hex": "30",
+        "decoded_int32": 24
+      }
+    },
+    {
+      "name": "GanimataWalk",
+      "value": 10000,
+      "field_id": 11237,
+      "field_file_offset": 6909240,
+      "default_file_offset": 5033636,
+      "default_data": {
+        "metadata_file_offset": 5207374,
+        "raw_hex": "c0 00 4e 20",
+        "decoded_int32": 10000
+      }
+    },
+    {
+      "name": "AhegaoDoublePiece",
+      "value": 10001,
+      "field_id": 11238,
+      "field_file_offset": 6909252,
+      "default_file_offset": 5033648,
+      "default_data": {
+        "metadata_file_offset": 5207378,
+        "raw_hex": "c0 00 4e 22",
+        "decoded_int32": 10001
+      }
+    },
+    {
+      "name": "HipShake",
+      "value": 10002,
+      "field_id": 11239,
+      "field_file_offset": 6909264,
+      "default_file_offset": 5033660,
+      "default_data": {
+        "metadata_file_offset": 5207382,
+        "raw_hex": "c0 00 4e 24",
+        "decoded_int32": 10002
+      }
+    },
+    {
+      "name": "GanimataHip",
+      "value": 10003,
+      "field_id": 11240,
+      "field_file_offset": 6909276,
+      "default_file_offset": 5033672,
+      "default_data": {
+        "metadata_file_offset": 5207386,
+        "raw_hex": "c0 00 4e 26",
+        "decoded_int32": 10003
+      }
+    },
+    {
+      "name": "KaikyakuFella",
+      "value": 10004,
+      "field_id": 11241,
+      "field_file_offset": 6909288,
+      "default_file_offset": 5033684,
+      "default_data": {
+        "metadata_file_offset": 5207390,
+        "raw_hex": "c0 00 4e 28",
+        "decoded_int32": 10004
+      }
+    },
+    {
+      "name": "Dogeza",
+      "value": 10005,
+      "field_id": 11242,
+      "field_file_offset": 6909300,
+      "default_file_offset": 5033696,
+      "default_data": {
+        "metadata_file_offset": 5207394,
+        "raw_hex": "c0 00 4e 2a",
+        "decoded_int32": 10005
+      }
+    },
+    {
+      "name": "DogTintin",
+      "value": 10006,
+      "field_id": 11243,
+      "field_file_offset": 6909312,
+      "default_file_offset": 5033708,
+      "default_data": {
+        "metadata_file_offset": 5207398,
+        "raw_hex": "c0 00 4e 2c",
+        "decoded_int32": 10006
+      }
+    },
+    {
+      "name": "IBalance",
+      "value": 10007,
+      "field_id": 11244,
+      "field_file_offset": 6909324,
+      "default_file_offset": 5033720,
+      "default_data": {
+        "metadata_file_offset": 5207402,
+        "raw_hex": "c0 00 4e 2e",
+        "decoded_int32": 10007
+      }
+    },
+    {
+      "name": "WakimiseCrouch",
+      "value": 10008,
+      "field_id": 11245,
+      "field_file_offset": 6909336,
+      "default_file_offset": 5033732,
+      "default_data": {
+        "metadata_file_offset": 5207406,
+        "raw_hex": "c0 00 4e 30",
+        "decoded_int32": 10008
+      }
+    },
+    {
+      "name": "MituasiOnani",
+      "value": 10009,
+      "field_id": 11246,
+      "field_file_offset": 6909348,
+      "default_file_offset": 5033744,
+      "default_data": {
+        "metadata_file_offset": 5207410,
+        "raw_hex": "c0 00 4e 32",
+        "decoded_int32": 10009
+      }
+    },
+    {
+      "name": "Tebura",
+      "value": 10010,
+      "field_id": 11247,
+      "field_file_offset": 6909360,
+      "default_file_offset": 5033756,
+      "default_data": {
+        "metadata_file_offset": 5207414,
+        "raw_hex": "c0 00 4e 34",
+        "decoded_int32": 10010
+      }
+    },
+    {
+      "name": "PeeKaikyaku",
+      "value": 10011,
+      "field_id": 11248,
+      "field_file_offset": 6909372,
+      "default_file_offset": 5033768,
+      "default_data": {
+        "metadata_file_offset": 5207418,
+        "raw_hex": "c0 00 4e 36",
+        "decoded_int32": 10011
+      }
+    },
+    {
+      "name": "PeeDog",
+      "value": 10012,
+      "field_id": 11249,
+      "field_file_offset": 6909384,
+      "default_file_offset": 5033780,
+      "default_data": {
+        "metadata_file_offset": 5207422,
+        "raw_hex": "c0 00 4e 38",
+        "decoded_int32": 10012
+      }
+    },
+    {
+      "name": "ChikubiRotate",
+      "value": 10013,
+      "field_id": 11250,
+      "field_file_offset": 6909396,
+      "default_file_offset": 5033792,
+      "default_data": {
+        "metadata_file_offset": 5207426,
+        "raw_hex": "c0 00 4e 3a",
+        "decoded_int32": 10013
+      }
+    },
+    {
+      "name": "OnaniYotuashi",
+      "value": 10014,
+      "field_id": 11251,
+      "field_file_offset": 6909408,
+      "default_file_offset": 5033804,
+      "default_data": {
+        "metadata_file_offset": 5207430,
+        "raw_hex": "c0 00 4e 3c",
+        "decoded_int32": 10014
+      }
+    },
+    {
+      "name": "OnaniNeGanimata",
+      "value": 10015,
+      "field_id": 11252,
+      "field_file_offset": 6909420,
+      "default_file_offset": 5033816,
+      "default_data": {
+        "metadata_file_offset": 5207434,
+        "raw_hex": "c0 00 4e 3e",
+        "decoded_int32": 10015
+      }
+    },
+    {
+      "name": "OnaniNormal",
+      "value": 10016,
+      "field_id": 11253,
+      "field_file_offset": 6909432,
+      "default_file_offset": 5033828,
+      "default_data": {
+        "metadata_file_offset": 5207438,
+        "raw_hex": "c0 00 4e 40",
+        "decoded_int32": 10016
+      }
+    },
+    {
+      "name": "NeKataashiage",
+      "value": 10017,
+      "field_id": 11254,
+      "field_file_offset": 6909444,
+      "default_file_offset": 5033840,
+      "default_data": {
+        "metadata_file_offset": 5207442,
+        "raw_hex": "c0 00 4e 42",
+        "decoded_int32": 10017
+      }
+    },
+    {
+      "name": "OnaniArmKuri",
+      "value": 10018,
+      "field_id": 11255,
+      "field_file_offset": 6909456,
+      "default_file_offset": 5033852,
+      "default_data": {
+        "metadata_file_offset": 5207446,
+        "raw_hex": "c0 00 4e 44",
+        "decoded_int32": 10018
+      }
+    },
+    {
+      "name": "Sikoru",
+      "value": 10019,
+      "field_id": 11256,
+      "field_file_offset": 6909468,
+      "default_file_offset": 5033864,
+      "default_data": {
+        "metadata_file_offset": 5207450,
+        "raw_hex": "c0 00 4e 46",
+        "decoded_int32": 10019
+      }
+    },
+    {
+      "name": "GanimataKoshiHeko",
+      "value": 10020,
+      "field_id": 11257,
+      "field_file_offset": 6909480,
+      "default_file_offset": 5033876,
+      "default_data": {
+        "metadata_file_offset": 5207454,
+        "raw_hex": "c0 00 4e 48",
+        "decoded_int32": 10020
+      }
+    },
+    {
+      "name": "Haigure",
+      "value": 10021,
+      "field_id": 11258,
+      "field_file_offset": 6909492,
+      "default_file_offset": 5033888,
+      "default_data": {
+        "metadata_file_offset": 5207458,
+        "raw_hex": "c0 00 4e 4a",
+        "decoded_int32": 10021
+      }
+    },
+    {
+      "name": "PeeStand",
+      "value": 10022,
+      "field_id": 11259,
+      "field_file_offset": 6909504,
+      "default_file_offset": 5033900,
+      "default_data": {
+        "metadata_file_offset": 5207462,
+        "raw_hex": "c0 00 4e 4c",
+        "decoded_int32": 10022
+      }
+    },
+    {
+      "name": "BuffSourceType.NpcDirect",
+      "value": 33,
+      "field_id": 9972,
+      "default_data": {
+        "metadata_file_offset": 5207141,
+        "raw_hex": "42",
+        "decoded_int32": 33
+      }
+    },
+    {
+      "name": "BuffSourceType.AutoSlow",
+      "value": 55,
+      "field_id": 9994,
+      "default_data": {
+        "metadata_file_offset": 5207163,
+        "raw_hex": "6e",
+        "decoded_int32": 55
+      }
+    }
+  ],
+  "selected_master_records": {
+    "authority": "historical-controlled-observation",
+    "source": "reverse-engineering/runtime/state-consumers/diagnostics/2/managed.jsonl.gz",
+    "sha256": "780d96c5389a6ce69824c4cc3e21504825a99e8eebebfc28f3e193baff7a95c7",
+    "records": [
+      {
+        "InitRp": "10",
+        "IncrementRp": "20",
+        "MaxLevel": "3",
+        "ReleaseRank": "0",
+        "IsPassiveToggle": "False",
+        "Type": "MaxAccessoryNum",
+        "CategoryType": "Basic",
+        "ReleaseOrderTarget": "None",
+        "RpBonus": "0"
+      },
+      {
+        "InitRp": "100",
+        "IncrementRp": "0",
+        "MaxLevel": "1",
+        "ReleaseRank": "0",
+        "IsPassiveToggle": "True",
+        "Type": "NpcDirect",
+        "CategoryType": "Basic",
+        "ReleaseOrderTarget": "None",
+        "RpBonus": "-10"
+      },
+      {
+        "InitRp": "10",
+        "IncrementRp": "0",
+        "MaxLevel": "5",
+        "ReleaseRank": "0",
+        "IsPassiveToggle": "False",
+        "Type": "Slow",
+        "CategoryType": "Basic",
+        "ReleaseOrderTarget": "None",
+        "RpBonus": "0"
+      },
+      {
+        "InitRp": "200",
+        "IncrementRp": "20",
+        "MaxLevel": "1",
+        "ReleaseRank": "0",
+        "IsPassiveToggle": "True",
+        "Type": "AutoSlow",
+        "CategoryType": "Basic",
+        "ReleaseOrderTarget": "Slow",
+        "RpBonus": "-20"
+      },
+      {
+        "InitRp": "100",
+        "IncrementRp": "20",
+        "MaxLevel": "1",
+        "ReleaseRank": "1",
+        "IsPassiveToggle": "True",
+        "Type": "AutoAddMoisture",
+        "CategoryType": "Basic",
+        "ReleaseOrderTarget": "None",
+        "RpBonus": "0"
+      },
+      {
+        "InitRp": "100",
+        "IncrementRp": "20",
+        "MaxLevel": "1",
+        "ReleaseRank": "5",
+        "IsPassiveToggle": "True",
+        "Type": "Perspective",
+        "CategoryType": "Basic",
+        "ReleaseOrderTarget": "None",
+        "RpBonus": "0"
+      },
+      {
+        "InitRp": "1000",
+        "IncrementRp": "20",
+        "MaxLevel": "1",
+        "ReleaseRank": "7",
+        "IsPassiveToggle": "True",
+        "Type": "TimeStop",
+        "CategoryType": "Basic",
+        "ReleaseOrderTarget": "None",
+        "RpBonus": "0"
+      }
+    ]
+  }
+}

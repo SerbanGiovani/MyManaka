@@ -1,0 +1,55 @@
+{
+  "formal_success_run": "20261030-3",
+  "separate_failed_setup_runs": [
+    {
+      "name": "bootstrap",
+      "run": "20261030-1",
+      "pid": 24096,
+      "success": false,
+      "runner_errors": [
+        {
+          "action": "case rp-low",
+          "name": "idle",
+          "phase": "idle",
+          "error": "System.Exception: prepare/idle required\r\n   at REAPaidSkillBoundary.Runner.Configure(String value)\r\n   at REAPaidSkillBoundary.Runner.Handle(String action)\r\n   at REAPaidSkillBoundary.Runner.Update()"
+        }
+      ],
+      "cleanup": [],
+      "engine_error_lines": 0,
+      "rea_evidence_id": "ev_71afe23175d9951b3f201da8920300b2de983dac7be81f29ade3ea1a4783f180",
+      "rea_native_messages": 2,
+      "rea_engine_errors": 0,
+      "messages_truncated": false,
+      "shutdown": "Normal exit reported by operator. v2 Frida close returned late/no final response; process exit, not a returned close result, bounds capture."
+    },
+    {
+      "name": "invalid-fixture",
+      "run": "20261030-2",
+      "pid": 46532,
+      "success": false,
+      "runner_errors": [
+        {
+          "name": "rp-low",
+          "phase": "save-proof",
+          "error": "System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.\r\n ---> Il2CppInterop.Runtime.Il2CppException: System.Collections.Generic.KeyNotFoundException: The given key 'NpcDirect' was not present in the dictionary.\n--- BEGIN IL2CPP STACK TRACE ---\nSystem.Collections.Generic.KeyNotFoundException: The given key 'NpcDirect' was not present in the dictionary.\r\n  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x00000] in <00000000000000000000000000000000>:0 \n--- END IL2CPP STACK TRACE ---\n\r\n   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException) in /home/runner/work/Il2CppInterop/Il2CppInterop/Il2CppInterop.Runtime/Il2CppException.cs:line 36\r\n   at ExposureUnnoticed2.Scripts.InGame.GameStateFacade.IsActivePassiveSkill(SkillType type)\r\n   --- End of inner exception stack trace ---\r\n   at System.RuntimeMethodHandle.InvokeMethod(Object target, Span`1& arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)\r\n   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)\r\n   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)\r\n   at REAPaidSkillBoundary.Runner.M(Object o, String name, Object[] args)\r\n   at REAPaidSkillBoundary.Runner.Active(Int32 i)\r\n   at REAPaidSkillBoundary.Runner.SaveLoadProof()\r\n   at REAPaidSkillBoundary.Runner.LateUpdate()"
+        }
+      ],
+      "cleanup": [
+        {
+          "rootsRestored": true,
+          "rankRestored": true,
+          "playerFieldsRestored": true,
+          "calculatorFieldsRestored": true,
+          "buffFieldsRestored": true,
+          "stop": false
+        }
+      ],
+      "engine_error_lines": 3439,
+      "rea_evidence_id": "ev_958f7e92fd2a63dfa9d784016ef13cae3a2947b15fb0b3b020f8440ba865e28d",
+      "rea_native_messages": 3452,
+      "rea_engine_errors": 3439,
+      "messages_truncated": false,
+      "shutdown": "Normal exit reported by operator. v2 Frida close returned late/no final response; process exit, not a returned close result, bounds capture."
+    }
+  ]
+}

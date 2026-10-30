@@ -1,5 +1,11 @@
 # Manaka 资源解密与逆向入口
 
+2026-10-30补齐自然任务与返家结算：用户正常操作完成任务100000，经Residence返家确认后得到8 RP、8经验，完成计数0→1并保存。第二轮未完成任务往返曾产生约0.07218进度，返家后清零，奖励与计数均未再次增加。首轮10次观察器返回钩子异常保留为采集缺口；原生入口、被动快照与14份存档独立解码支持选定结论。见[自然任务与返家结算](natural-mission.md)。
+
+本轮受控外观恢复增加持久TattooDark、BodyOil及两者组合，以及free=false皮肤预设0/1。Load仅恢复数据，原玩家外观广播才恢复实际材质；身体和脸部预设颜色按原资源RGBA对照。临时涂料倒计时、其余贴图及物理效果仍待验证。见[持久身体涂装](runtime/appearance-boundary/appearance-boundary-runtime.md)、[皮肤预设](runtime/skin-preset/skin-preset-runtime.md)。
+
+付费学习七组受控验证经过原按钮方法：299 RP拒绝、300 RP升级容量5→10、最高等级和等级门槛拦截、Slow学习后解除AutoSlow前置遮罩，以及被动激活键缺失/预存false的不同结果。保存、扰动、加载后重新核对真实UI状态与Buff；这些是Unity主线程受控回调，尚非自然鼠标购买。两轮失败夹具与正式成功证据分开保留。见[付费学习边界](runtime/paid-skill-boundary/paid-skill-boundary-runtime.md)。
+
 工作分支 `codex/rea-salt`。原始文件固定取自 `E:\SecretFlasherManakaREA`，输入指纹验证通过才继续分析。
 早期分析仅执行离线解析、REA/Ghidra和本地解密；后续受控运行与完整启动均在独立副本进行，原始游戏文件保持不变。
 

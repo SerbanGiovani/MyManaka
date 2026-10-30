@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "name": "paid-skill-boundary",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\natural-load-saveui.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\paid-skill-boundary",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 17527,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.SkillPanel.SkillItemView::UpdateMask",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600182e",
+      "va": "0x1804c3b70",
+      "file_offset": 4989808,
+      "label": "ExposureUnnoticed2_ObjectUI_SkillPanel_SkillItemView__UpdateMask__0600182e",
+      "file_stem": "17527-0600182e",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17528,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.SkillPanel.SkillItemView::Refresh",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600182f",
+      "va": "0x1804c4020",
+      "file_offset": 4991008,
+      "label": "ExposureUnnoticed2_ObjectUI_SkillPanel_SkillItemView__Refresh__0600182f",
+      "file_stem": "17528-0600182f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17877,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.SaveDataSelectPanel.SkillPanelView::OnClickTab",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600198c",
+      "va": "0x1804e6c70",
+      "file_offset": 5133424,
+      "label": "ExposureUnnoticed2_ObjectUI_SaveDataSelectPanel_SkillPanelView__OnClickTab__0600198c",
+      "file_stem": "17877-0600198c",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17881,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.SaveDataSelectPanel.SkillPanelView::Open",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001990",
+      "va": "0x1804e7d10",
+      "file_offset": 5137680,
+      "label": "ExposureUnnoticed2_ObjectUI_SaveDataSelectPanel_SkillPanelView__Open__06001990",
+      "file_stem": "17881-06001990",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17641,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.PcMenuPanel.SkillSwitchPanel.SkillSwitchItemView::OnChangeToggle",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60018a0",
+      "va": "0x1804cecd0",
+      "file_offset": 5035216,
+      "label": "ExposureUnnoticed2_ObjectUI_PcMenuPanel_SkillSwitchPanel_SkillSwitchItemView__OnChangeToggle__060018a0",
+      "file_stem": "17641-060018a0",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

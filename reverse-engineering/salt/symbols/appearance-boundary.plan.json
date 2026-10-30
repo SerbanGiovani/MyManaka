@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "name": "appearance-boundary",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\natural-load-saveui.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\appearance-boundary",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 15011,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.BodyPaintController::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e5a",
+      "va": "0x1803fc940",
+      "file_offset": 4174144,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_Other_BodyPaintController__Initialize__06000e5a",
+      "file_stem": "15011-06000e5a",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15012,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.BodyPaintController::OnUpdate",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e5b",
+      "va": "0x1803fca90",
+      "file_offset": 4174480,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_Other_BodyPaintController__OnUpdate__06000e5b",
+      "file_stem": "15012-06000e5b",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15015,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.BodyPaintController::OnUseItem",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e5e",
+      "va": "0x1803fd150",
+      "file_offset": 4176208,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_Other_BodyPaintController__OnUseItem__06000e5e",
+      "file_stem": "15015-06000e5e",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15016,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.Other.BodyPaintController::OnUseWashItem",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000e5f",
+      "va": "0x1803fd230",
+      "file_offset": 4176432,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_Other_BodyPaintController__OnUseWashItem__06000e5f",
+      "file_stem": "15016-06000e5f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16305,
+      "qualified_name": "ExposureUnnoticed2.Master.BodyPaint.RBodyPaint::SwitchVisible",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001368",
+      "va": "0x18046c5f0",
+      "file_offset": 4632048,
+      "label": "ExposureUnnoticed2_Master_BodyPaint_RBodyPaint__SwitchVisible__06001368",
+      "file_stem": "16305-06001368",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16769,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.GameStateFacade::SetActiveBodyPaint",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001538",
+      "va": "0x18048f060",
+      "file_offset": 4773984,
+      "label": "ExposureUnnoticed2_Scripts_InGame_GameStateFacade__SetActiveBodyPaint__06001538",
+      "file_stem": "16769-06001538",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 14626,
+      "qualified_name": "ExposureUnnoticed2.Object3D.Player.Scripts.PlayerBodyMaterialController::OnChangeEvent",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6000cd9",
+      "va": "0x180638650",
+      "file_offset": 6516304,
+      "label": "ExposureUnnoticed2_Object3D_Player_Scripts_PlayerBodyMaterialController__OnChangeEvent__06000cd9",
+      "file_stem": "14626-06000cd9",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

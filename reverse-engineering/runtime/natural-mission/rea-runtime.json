@@ -1,0 +1,4450 @@
+{
+  "records": [
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_f32f3bffd1826eb6b17ca381b1e20d2a22bd320a9ffa193e8d1debbdaab3adb5",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 79816,
+                "scope": "passive observation only; active-stage mission progress sampled in 5% buckets; no native writes/replay; complete high-frequency totals at lifecycle boundaries"
+              },
+              "frame": 7986,
+              "kind": "natural_mission_ready",
+              "real": 143.3567352294922
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+        "source_kind": "file",
+        "source_path": "E:/SecretFlasherManaka v1.1.3_Uncensored/reverse-engineering/runtime/natural-mission/observe.js",
+        "source_sha256": "8dae018527b8660809ad33919a589f0aae0d24f02d1c484ab119b07dd728335e"
+      },
+      "operation": "load_frida_script",
+      "parameters": {
+        "session_id": "a5c08cb5-1349-450c-a7a9-39bf85289fdc"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    },
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_63f0c98005ec837beccebe9ea133bab8bed0cbfd24dbf355956545350e579edc",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "device_id": "local",
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 79816,
+                "scope": "passive observation only; active-stage mission progress sampled in 5% buckets; no native writes/replay; complete high-frequency totals at lifecycle boundaries"
+              },
+              "frame": 7986,
+              "kind": "natural_mission_ready",
+              "real": 143.3567352294922
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x3",
+                "arg1": "0x1",
+                "arg2": "0x0",
+                "caller": "0x4e5229",
+                "state": null
+              },
+              "frame": 14316,
+              "kind": "save_load_enter",
+              "real": 249.37774658203125
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "column_number": 1,
+            "description": "ReferenceError: 'm' is not defined",
+            "file_name": "/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js",
+            "line_number": 15,
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "stack": "ReferenceError: 'm' is not defined\n    at onLeave (/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js:15)",
+            "type": "error"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x23b1498ce40",
+                "arg1": "0x0",
+                "arg2": "0xa",
+                "caller": "0x4a7cfb",
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 0,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0
+                  },
+                  "total": 0
+                }
+              },
+              "frame": 14464,
+              "kind": "stage_transition_enter",
+              "real": 261.09234619140625
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "column_number": 1,
+            "description": "ReferenceError: 'm' is not defined",
+            "file_name": "/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js",
+            "line_number": 15,
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "stack": "ReferenceError: 'm' is not defined\n    at onLeave (/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js:15)",
+            "type": "error"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 1
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.52374267578125
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100001,
+                  "pointer": "0x23b11b61c80",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100001,
+                  "pointer": "0x23b11b61c80",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100001,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 2
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.52386474609375
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100002,
+                  "pointer": "0x23b11b61c30",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100002,
+                  "pointer": "0x23b11b61c30",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100002,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 3
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5240173339844
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100003,
+                  "pointer": "0x23b11b61be0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100003,
+                  "pointer": "0x23b11b61be0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100003,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 4
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5242919921875
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100004,
+                  "pointer": "0x23b11b61b90",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100004,
+                  "pointer": "0x23b11b61b90",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100004,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 5
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5244445800781
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100005,
+                  "pointer": "0x23b11b61b40",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100005,
+                  "pointer": "0x23b11b61b40",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100005,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 6
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.524658203125
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100006,
+                  "pointer": "0x23b13e7d460",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100006,
+                  "pointer": "0x23b13e7d460",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100006,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 7
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5248718261719
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100007,
+                  "pointer": "0x23b11b61af0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100007,
+                  "pointer": "0x23b11b61af0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100007,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 8
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5250244140625
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100008,
+                  "pointer": "0x23b11b61aa0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100008,
+                  "pointer": "0x23b11b61aa0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100008,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 9
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5251770019531
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100009,
+                  "pointer": "0x23b11b61a50",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100009,
+                  "pointer": "0x23b11b61a50",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100009,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 10
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.52532958984375
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100010,
+                  "pointer": "0x23b11b61a00",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100010,
+                  "pointer": "0x23b11b61a00",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100010,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 11
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5255432128906
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100011,
+                  "pointer": "0x23b11b619b0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100011,
+                  "pointer": "0x23b11b619b0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100011,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 12
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5257263183594
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100012,
+                  "pointer": "0x23b11b61960",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100012,
+                  "pointer": "0x23b11b61960",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100012,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 13
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5260009765625
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100013,
+                  "pointer": "0x23b11b61910",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100013,
+                  "pointer": "0x23b11b61910",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100013,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 14
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5262451171875
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100014,
+                  "pointer": "0x23b11b618c0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100014,
+                  "pointer": "0x23b11b618c0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100014,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 15
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.52642822265625
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100015,
+                  "pointer": "0x23b11b61870",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100015,
+                  "pointer": "0x23b11b61870",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100015,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 16
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5267028808594
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100016,
+                  "pointer": "0x23b11b61820",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100016,
+                  "pointer": "0x23b11b61820",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100016,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 17
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5270080566406
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100017,
+                  "pointer": "0x23b13e7d3f0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100017,
+                  "pointer": "0x23b13e7d3f0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100017,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 18
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5272216796875
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100018,
+                  "pointer": "0x23b11b617d0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100018,
+                  "pointer": "0x23b11b617d0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100018,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 19
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5274658203125
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100019,
+                  "pointer": "0x23b11b61780",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100019,
+                  "pointer": "0x23b11b61780",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100019,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 20
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5276794433594
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100020,
+                  "pointer": "0x23b11b61730",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100020,
+                  "pointer": "0x23b11b61730",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100020,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 21
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5279541015625
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100021,
+                  "pointer": "0x23b11b616e0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100021,
+                  "pointer": "0x23b11b616e0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100021,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 22
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5282287597656
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100022,
+                  "pointer": "0x23b11b61690",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100022,
+                  "pointer": "0x23b11b61690",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100022,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 23
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5285949707031
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100023,
+                  "pointer": "0x23b11b61640",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100023,
+                  "pointer": "0x23b11b61640",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100023,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 24
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5289001464844
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100024,
+                  "pointer": "0x23b13e7d380",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100024,
+                  "pointer": "0x23b13e7d380",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100024,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 25
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5291748046875
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100025,
+                  "pointer": "0x23b13e7d310",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100025,
+                  "pointer": "0x23b13e7d310",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100025,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 26
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5293884277344
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100026,
+                  "pointer": "0x23b11b615f0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100026,
+                  "pointer": "0x23b11b615f0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100026,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 27
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5296325683594
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100027,
+                  "pointer": "0x23b11b615a0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100027,
+                  "pointer": "0x23b11b615a0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100027,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 28
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.52984619140625
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100028,
+                  "pointer": "0x23b11b61550",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100028,
+                  "pointer": "0x23b11b61550",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100028,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 29
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.5302429199219
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100029,
+                  "pointer": "0x23b13e7d2a0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100029,
+                  "pointer": "0x23b13e7d2a0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100029,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 30
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.53106689453125
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100030,
+                  "pointer": "0x23b13e7d230",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100030,
+                  "pointer": "0x23b13e7d230",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100030,
+                    "progress": 0
+                  },
+                  "total": 0
+                },
+                "updates": 31
+              },
+              "frame": 14468,
+              "kind": "target_progress",
+              "real": 266.53131103515625
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.04762277752161026,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.050859954208135605,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.050859954208135605
+                  },
+                  "total": 0
+                },
+                "updates": 1675
+              },
+              "frame": 14522,
+              "kind": "target_progress",
+              "real": 270.63006591796875
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.09897083789110184,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.101731076836586,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.101731076836586
+                  },
+                  "total": 0
+                },
+                "updates": 2233
+              },
+              "frame": 14540,
+              "kind": "target_progress",
+              "real": 271.9016418457031
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.14861276745796204,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.15124933421611786,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.15124933421611786
+                  },
+                  "total": 0
+                },
+                "updates": 2791
+              },
+              "frame": 14558,
+              "kind": "target_progress",
+              "real": 273.1398620605469
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.19886691868305206,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.20163163542747498,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.20163163542747498
+                  },
+                  "total": 0
+                },
+                "updates": 3349
+              },
+              "frame": 14576,
+              "kind": "target_progress",
+              "real": 274.4068298339844
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.24931839108467102,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.25234922766685486,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.25234922766685486
+                  },
+                  "total": 0
+                },
+                "updates": 3907
+              },
+              "frame": 14594,
+              "kind": "target_progress",
+              "real": 275.6663513183594
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.2999741733074188,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.30302923917770386,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.30302923917770386
+                  },
+                  "total": 0
+                },
+                "updates": 4465
+              },
+              "frame": 14612,
+              "kind": "target_progress",
+              "real": 276.9340515136719
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.3474331200122833,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.35034772753715515,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.35034772753715515
+                  },
+                  "total": 0
+                },
+                "updates": 4992
+              },
+              "frame": 14629,
+              "kind": "target_progress",
+              "real": 278.11627197265625
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.3977760374546051,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.4006464183330536,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.4006464183330536
+                  },
+                  "total": 0
+                },
+                "updates": 5519
+              },
+              "frame": 14646,
+              "kind": "target_progress",
+              "real": 279.37420654296875
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.4485851526260376,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.45136672258377075,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.45136672258377075
+                  },
+                  "total": 0
+                },
+                "updates": 6077
+              },
+              "frame": 14664,
+              "kind": "target_progress",
+              "real": 280.6414489746094
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.49899914860725403,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.5022932291030884,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.5022932291030884
+                  },
+                  "total": 0
+                },
+                "updates": 6635
+              },
+              "frame": 14682,
+              "kind": "target_progress",
+              "real": 281.9152526855469
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.5495308041572571,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.5523684024810791,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.5523684024810791
+                  },
+                  "total": 0
+                },
+                "updates": 7193
+              },
+              "frame": 14700,
+              "kind": "target_progress",
+              "real": 283.1661071777344
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.5993916988372803,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.6020710468292236,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.6020710468292236
+                  },
+                  "total": 0
+                },
+                "updates": 7751
+              },
+              "frame": 14718,
+              "kind": "target_progress",
+              "real": 284.4085998535156
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.6491861939430237,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.6518552899360657,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.6518552899360657
+                  },
+                  "total": 0
+                },
+                "updates": 8309
+              },
+              "frame": 14736,
+              "kind": "target_progress",
+              "real": 285.6534118652344
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.6981768012046814,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.7010462880134583,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.7010462880134583
+                  },
+                  "total": 0
+                },
+                "updates": 8867
+              },
+              "frame": 14754,
+              "kind": "target_progress",
+              "real": 286.88275146484375
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.7490635514259338,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.752192497253418,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.752192497253418
+                  },
+                  "total": 0
+                },
+                "updates": 9425
+              },
+              "frame": 14772,
+              "kind": "target_progress",
+              "real": 288.1620178222656
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.798869788646698,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.8016085624694824,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.8016085624694824
+                  },
+                  "total": 0
+                },
+                "updates": 9983
+              },
+              "frame": 14790,
+              "kind": "target_progress",
+              "real": 289.3973083496094
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.8487681150436401,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.8516354560852051,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.8516354560852051
+                  },
+                  "total": 0
+                },
+                "updates": 10541
+              },
+              "frame": 14808,
+              "kind": "target_progress",
+              "real": 290.65948486328125
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.898810625076294,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.9015149474143982,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.9015149474143982
+                  },
+                  "total": 0
+                },
+                "updates": 11099
+              },
+              "frame": 14826,
+              "kind": "target_progress",
+              "real": 291.8955383300781
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.9475851655006409,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.9501928687095642,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.9501928687095642
+                  },
+                  "total": 0
+                },
+                "updates": 11657
+              },
+              "frame": 14844,
+              "kind": "target_progress",
+              "real": 293.1122131347656
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.999636709690094,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 1,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 1
+                  },
+                  "total": 0
+                },
+                "updates": 12246
+              },
+              "frame": 14863,
+              "kind": "target_progress",
+              "real": 294.41424560546875
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "caller": "0x479178",
+                "count": 1,
+                "mission": {
+                  "done": true,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 1,
+                  "stage": 10
+                },
+                "state": {
+                  "exp": 0,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 1
+                  },
+                  "total": 0
+                }
+              },
+              "frame": 14864,
+              "kind": "target_one_time",
+              "real": 294.49273681640625
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 1,
+                  "stage": 10
+                },
+                "continuous": 1,
+                "mission": {
+                  "done": true,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 1,
+                  "stage": 10
+                },
+                "oneTime": 1,
+                "state": {
+                  "exp": 0,
+                  "pending": 8.405553908087313,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 8.405553817749023,
+                    "id": 100000,
+                    "progress": 1
+                  },
+                  "total": 8.405553908087313
+                },
+                "updates": 12277
+              },
+              "frame": 14864,
+              "kind": "target_progress",
+              "real": 294.49298095703125
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x23b1498ce40",
+                "arg1": "0xa",
+                "arg2": "0x0",
+                "caller": "0x4a7cfb",
+                "state": {
+                  "exp": 0,
+                  "pending": 8.599584173411131,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 8.599583625793457,
+                    "id": 100000,
+                    "progress": 1
+                  },
+                  "total": 8.599584173411131
+                }
+              },
+              "frame": 14925,
+              "kind": "stage_transition_enter",
+              "real": 298.6236267089844
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "column_number": 1,
+            "description": "ReferenceError: 'm' is not defined",
+            "file_name": "/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js",
+            "line_number": 15,
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "stack": "ReferenceError: 'm' is not defined\n    at onLeave (/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js:15)",
+            "type": "error"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x23b12298d00",
+                "arg1": "0x0",
+                "arg2": "0x7",
+                "caller": "0x4a7a0b",
+                "state": {
+                  "exp": 0,
+                  "pending": 8.599584173411131,
+                  "pointer": "0x23b133647e0",
+                  "rp": 0,
+                  "stage": 0,
+                  "target": {
+                    "achieved": null,
+                    "earned": 8.599583625793457,
+                    "id": 100000,
+                    "progress": 1
+                  },
+                  "total": 8.599584173411131
+                }
+              },
+              "frame": 14933,
+              "kind": "result_initialize_enter",
+              "real": 299.6423645019531
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x186a0",
+                "arg1": "0x0",
+                "arg2": "0x19",
+                "caller": "0x4c7977",
+                "state": {
+                  "exp": 8,
+                  "pending": 8.599584173411131,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 0,
+                  "target": {
+                    "achieved": null,
+                    "earned": 8.599583625793457,
+                    "id": 100000,
+                    "progress": 1
+                  },
+                  "total": 8.599584173411131
+                }
+              },
+              "frame": 14933,
+              "kind": "mission_achieve_enter",
+              "real": 299.6440734863281
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "column_number": 1,
+            "description": "ReferenceError: 'm' is not defined",
+            "file_name": "/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js",
+            "line_number": 15,
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "stack": "ReferenceError: 'm' is not defined\n    at onLeave (/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js:15)",
+            "type": "error"
+          },
+          {
+            "column_number": 1,
+            "description": "ReferenceError: 'm' is not defined",
+            "file_name": "/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js",
+            "line_number": 15,
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "stack": "ReferenceError: 'm' is not defined\n    at onLeave (/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js:15)",
+            "type": "error"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x3",
+                "arg1": "0xffffffff",
+                "arg2": "0x0",
+                "caller": "0x4c86af",
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 0,
+                  "target": {
+                    "achieved": 1,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                }
+              },
+              "frame": 14950,
+              "kind": "save_write_enter",
+              "real": 300.8470458984375
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "column_number": 1,
+            "description": "ReferenceError: 'm' is not defined",
+            "file_name": "/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js",
+            "line_number": 15,
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "stack": "ReferenceError: 'm' is not defined\n    at onLeave (/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js:15)",
+            "type": "error"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x23b12298d00",
+                "arg1": "0x2388232cdf8",
+                "arg2": "0x238822f8250",
+                "caller": "0x1f57c34",
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 0,
+                  "target": {
+                    "achieved": 1,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                }
+              },
+              "frame": 14954,
+              "kind": "result_ok1_enter",
+              "real": 301.2227783203125
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "column_number": 1,
+            "description": "ReferenceError: 'm' is not defined",
+            "file_name": "/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js",
+            "line_number": 15,
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "stack": "ReferenceError: 'm' is not defined\n    at onLeave (/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js:15)",
+            "type": "error"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x3",
+                "arg1": "0xffffffff",
+                "arg2": "0x1",
+                "caller": "0x4b5147",
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 0,
+                  "target": {
+                    "achieved": 1,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                }
+              },
+              "frame": 15004,
+              "kind": "save_write_enter",
+              "real": 304.66375732421875
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "column_number": 1,
+            "description": "ReferenceError: 'm' is not defined",
+            "file_name": "/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js",
+            "line_number": 15,
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "stack": "ReferenceError: 'm' is not defined\n    at onLeave (/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js:15)",
+            "type": "error"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x23b14715dc0",
+                "arg1": "0x23882480d58",
+                "arg2": "0x23882463480",
+                "caller": "0x1f57c34",
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 0,
+                  "target": {
+                    "achieved": 1,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                }
+              },
+              "frame": 15040,
+              "kind": "pc_save_enter",
+              "real": 307.2680358886719
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x3",
+                "arg1": "0xffffffff",
+                "arg2": "0x0",
+                "caller": "0x4caf20",
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 0,
+                  "target": {
+                    "achieved": 1,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                }
+              },
+              "frame": 15040,
+              "kind": "save_write_enter",
+              "real": 307.26812744140625
+            },
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "type": "send"
+          },
+          {
+            "column_number": 1,
+            "description": "ReferenceError: 'm' is not defined",
+            "file_name": "/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js",
+            "line_number": 15,
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "stack": "ReferenceError: 'm' is not defined\n    at onLeave (/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js:15)",
+            "type": "error"
+          },
+          {
+            "column_number": 1,
+            "description": "ReferenceError: 'm' is not defined",
+            "file_name": "/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js",
+            "line_number": 15,
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "stack": "ReferenceError: 'm' is not defined\n    at onLeave (/rea-847bc558-309c-4adf-9b64-7b0a7acafe03.js:15)",
+            "type": "error"
+          }
+        ],
+        "messages_truncated": false,
+        "mode": "attach",
+        "pid": 79816,
+        "scripts": [
+          {
+            "name": "rea-847bc558-309c-4adf-9b64-7b0a7acafe03",
+            "script_id": "847bc558-309c-4adf-9b64-7b0a7acafe03"
+          }
+        ],
+        "session_id": "a5c08cb5-1349-450c-a7a9-39bf85289fdc",
+        "state": "running",
+        "target": "SecretFlasherManaka.exe (pid 79816)"
+      },
+      "operation": "frida_session_status",
+      "parameters": {
+        "session_id": "a5c08cb5-1349-450c-a7a9-39bf85289fdc"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    },
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_390f04b6140ff67cf29ada8a80552bb22f9c42dd3f8be3b6212cc900ad0444b7",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 79816,
+                "scope": "passive observation only; active-stage mission progress sampled in 5% buckets; no native writes/replay; complete high-frequency totals at lifecycle boundaries"
+              },
+              "frame": 16325,
+              "kind": "natural_mission_ready",
+              "real": 383.1439208984375
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+        "source_kind": "file",
+        "source_path": "E:/SecretFlasherManaka v1.1.3_Uncensored/reverse-engineering/runtime/natural-mission/observe.js",
+        "source_sha256": "0ff8c0700a68a6e9c1232ab04b7d600c1dfbd2f55387ab984ee36b87f06ae9a4"
+      },
+      "operation": "load_frida_script",
+      "parameters": {
+        "session_id": "6b9c9eca-58ae-45a1-bd34-a87069dd080d"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    },
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_782a5d711246f44112c7afe667cba3fd4efa3e3e5f4303790a274717e7f1bf44",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "device_id": "local",
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 79816,
+                "scope": "passive observation only; active-stage mission progress sampled in 5% buckets; no native writes/replay; complete high-frequency totals at lifecycle boundaries"
+              },
+              "frame": 16325,
+              "kind": "natural_mission_ready",
+              "real": 383.1439208984375
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x23b1498ce40",
+                "arg1": "0x0",
+                "arg2": "0xa",
+                "caller": "0x4a7cfb",
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 0,
+                  "target": {
+                    "achieved": 1,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                }
+              },
+              "frame": 16676,
+              "kind": "stage_transition_enter",
+              "real": 407.1318359375
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x23b1498ce40",
+                "arg1": "0x0",
+                "arg2": "0xa",
+                "caller": "0x4a7cfb",
+                "continuous": 0,
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 0,
+                  "target": {
+                    "achieved": 1,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 0
+              },
+              "frame": 16676,
+              "kind": "stage_transition_leave",
+              "real": 407.1324462890625
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": 1,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 1
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1465148925781
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100001,
+                  "pointer": "0x23b11b61c80",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100001,
+                  "pointer": "0x23b11b61c80",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100001,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 2
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.14666748046875
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100002,
+                  "pointer": "0x23b11b61c30",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100002,
+                  "pointer": "0x23b11b61c30",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100002,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 3
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1468811035156
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100003,
+                  "pointer": "0x23b11b61be0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100003,
+                  "pointer": "0x23b11b61be0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100003,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 4
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1470947265625
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100004,
+                  "pointer": "0x23b11b61b90",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100004,
+                  "pointer": "0x23b11b61b90",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100004,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 5
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1473693847656
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100005,
+                  "pointer": "0x23b11b61b40",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100005,
+                  "pointer": "0x23b11b61b40",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100005,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 6
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1475830078125
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100006,
+                  "pointer": "0x23b13e7d460",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100006,
+                  "pointer": "0x23b13e7d460",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100006,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 7
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1478271484375
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100007,
+                  "pointer": "0x23b11b61af0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100007,
+                  "pointer": "0x23b11b61af0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100007,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 8
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1480712890625
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100008,
+                  "pointer": "0x23b11b61aa0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100008,
+                  "pointer": "0x23b11b61aa0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100008,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 9
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1483154296875
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100009,
+                  "pointer": "0x23b11b61a50",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100009,
+                  "pointer": "0x23b11b61a50",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100009,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 10
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1485900878906
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100010,
+                  "pointer": "0x23b11b61a00",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100010,
+                  "pointer": "0x23b11b61a00",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100010,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 11
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1488342285156
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100011,
+                  "pointer": "0x23b11b619b0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100011,
+                  "pointer": "0x23b11b619b0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100011,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 12
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1490783691406
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100012,
+                  "pointer": "0x23b11b61960",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100012,
+                  "pointer": "0x23b11b61960",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100012,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 13
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1493835449219
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100013,
+                  "pointer": "0x23b11b61910",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100013,
+                  "pointer": "0x23b11b61910",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100013,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 14
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.14971923828125
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100014,
+                  "pointer": "0x23b11b618c0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100014,
+                  "pointer": "0x23b11b618c0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100014,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 15
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1499938964844
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100015,
+                  "pointer": "0x23b11b61870",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100015,
+                  "pointer": "0x23b11b61870",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100015,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 16
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1502990722656
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100016,
+                  "pointer": "0x23b11b61820",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100016,
+                  "pointer": "0x23b11b61820",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100016,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 17
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1505432128906
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100017,
+                  "pointer": "0x23b13e7d3f0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100017,
+                  "pointer": "0x23b13e7d3f0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100017,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 18
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1508483886719
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100018,
+                  "pointer": "0x23b11b617d0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100018,
+                  "pointer": "0x23b11b617d0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100018,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 19
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1511535644531
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100019,
+                  "pointer": "0x23b11b61780",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100019,
+                  "pointer": "0x23b11b61780",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100019,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 20
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1514587402344
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100020,
+                  "pointer": "0x23b11b61730",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100020,
+                  "pointer": "0x23b11b61730",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100020,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 21
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.15179443359375
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100021,
+                  "pointer": "0x23b11b616e0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100021,
+                  "pointer": "0x23b11b616e0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100021,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 22
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1521301269531
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100022,
+                  "pointer": "0x23b11b61690",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100022,
+                  "pointer": "0x23b11b61690",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100022,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 23
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1524353027344
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100023,
+                  "pointer": "0x23b11b61640",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100023,
+                  "pointer": "0x23b11b61640",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100023,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 24
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1527099609375
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100024,
+                  "pointer": "0x23b13e7d380",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100024,
+                  "pointer": "0x23b13e7d380",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100024,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 25
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1529846191406
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100025,
+                  "pointer": "0x23b13e7d310",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100025,
+                  "pointer": "0x23b13e7d310",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100025,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 26
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.15325927734375
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100026,
+                  "pointer": "0x23b11b615f0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100026,
+                  "pointer": "0x23b11b615f0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100026,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 27
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.153564453125
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100027,
+                  "pointer": "0x23b11b615a0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100027,
+                  "pointer": "0x23b11b615a0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100027,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 28
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.15386962890625
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100028,
+                  "pointer": "0x23b11b61550",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100028,
+                  "pointer": "0x23b11b61550",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100028,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 29
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1541442871094
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100029,
+                  "pointer": "0x23b13e7d2a0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100029,
+                  "pointer": "0x23b13e7d2a0",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100029,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 30
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1544494628906
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100030,
+                  "pointer": "0x23b13e7d230",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100030,
+                  "pointer": "0x23b13e7d230",
+                  "satisfy": 0,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": null,
+                    "earned": 0,
+                    "id": 100030,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 31
+              },
+              "frame": 16680,
+              "kind": "target_progress",
+              "real": 409.1548767089844
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "before": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.049664225429296494,
+                  "stage": 10
+                },
+                "continuous": 0,
+                "mission": {
+                  "done": false,
+                  "id": 100000,
+                  "pointer": "0x23b11b61cd0",
+                  "satisfy": 0.052744921296834946,
+                  "stage": 10
+                },
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": 1,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.052744921296834946
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 1923
+              },
+              "frame": 16742,
+              "kind": "target_progress",
+              "real": 413.84222412109375
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x23b1498ce40",
+                "arg1": "0xa",
+                "arg2": "0x0",
+                "caller": "0x4a7cfb",
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": 1,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.07217653095722198
+                  },
+                  "total": 8.599584173411131
+                }
+              },
+              "frame": 16786,
+              "kind": "stage_transition_enter",
+              "real": 416.904296875
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x23b1498ce40",
+                "arg1": "0xa",
+                "arg2": "0x0",
+                "caller": "0x4a7cfb",
+                "continuous": 0,
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 10,
+                  "target": {
+                    "achieved": 1,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0.07217653095722198
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 3286
+              },
+              "frame": 16786,
+              "kind": "stage_transition_leave",
+              "real": 416.9048156738281
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x23b135765a0",
+                "arg1": "0x23882480d58",
+                "arg2": "0x23882463480",
+                "caller": "0x1f57c34",
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 0,
+                  "target": {
+                    "achieved": 1,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                }
+              },
+              "frame": 16858,
+              "kind": "pc_save_enter",
+              "real": 422.1556091308594
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x3",
+                "arg1": "0xffffffff",
+                "arg2": "0x0",
+                "caller": "0x4caf20",
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 0,
+                  "target": {
+                    "achieved": 1,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                }
+              },
+              "frame": 16858,
+              "kind": "save_write_enter",
+              "real": 422.15570068359375
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x3",
+                "arg1": "0xffffffff",
+                "arg2": "0x0",
+                "caller": "0x4caf20",
+                "continuous": 0,
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 0,
+                  "target": {
+                    "achieved": 1,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 3415
+              },
+              "frame": 16858,
+              "kind": "save_write_leave",
+              "real": 422.2482604980469
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x23b135765a0",
+                "arg1": "0x23882480d58",
+                "arg2": "0x23882463480",
+                "caller": "0x1f57c34",
+                "continuous": 0,
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 0,
+                  "target": {
+                    "achieved": 1,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 3415
+              },
+              "frame": 16858,
+              "kind": "pc_save_leave",
+              "real": 422.25262451171875
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x3",
+                "arg1": "0xffffffff",
+                "arg2": "0x1",
+                "caller": "0x4b5147",
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 0,
+                  "target": {
+                    "achieved": 1,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                }
+              },
+              "frame": 16868,
+              "kind": "save_write_enter",
+              "real": 422.9645690917969
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg0": "0x3",
+                "arg1": "0xffffffff",
+                "arg2": "0x1",
+                "caller": "0x4b5147",
+                "continuous": 0,
+                "oneTime": 0,
+                "state": {
+                  "exp": 8,
+                  "pending": 0,
+                  "pointer": "0x23b133647e0",
+                  "rp": 8,
+                  "stage": 0,
+                  "target": {
+                    "achieved": 1,
+                    "earned": 0,
+                    "id": 100000,
+                    "progress": 0
+                  },
+                  "total": 8.599584173411131
+                },
+                "updates": 3415
+              },
+              "frame": 16868,
+              "kind": "save_write_leave",
+              "real": 423.0653991699219
+            },
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "mode": "attach",
+        "pid": 79816,
+        "scripts": [
+          {
+            "name": "rea-4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3",
+            "script_id": "4bdaca9f-920c-4bc0-bd11-f27ddc19d7f3"
+          }
+        ],
+        "session_id": "6b9c9eca-58ae-45a1-bd34-a87069dd080d",
+        "state": "running",
+        "target": "SecretFlasherManaka.exe (pid 79816)"
+      },
+      "operation": "frida_session_status",
+      "parameters": {
+        "session_id": "6b9c9eca-58ae-45a1-bd34-a87069dd080d"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    }
+  ]
+}

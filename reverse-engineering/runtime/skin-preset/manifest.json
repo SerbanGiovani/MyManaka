@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "natural_only": false,
+  "authority": "controlled-original-save-load-skin-preset-consumers",
+  "sessions": [
+    {
+      "session_id": "cba4cc57-1948-4d3b-abe8-81d7e9ba8b74",
+      "pid": 21048,
+      "state": "running",
+      "closed_by_operator": true,
+      "detached_reported": true
+    }
+  ],
+  "evidence_ids": [
+    "ev_3e31896e2e2af1feb18d12d21bcf13169bec57b92fe8cdbdfba5a1d56b851c22",
+    "ev_dcea3db349f2ca41f850b7f0cf2d486c22563b0e9e8bac5c90e014bf813d6310"
+  ],
+  "plugin": {
+    "archived_path": "E:\\ManakaREA-NaturalGameplay\\SkinPreset\\20261030-1\\SkinPresetProbe-completed.dll",
+    "sha256": "62452548d2d1ad7dfb4ccb5217e4908bf3e236ad9465b0c10eb5aa780d707910"
+  },
+  "sources": [
+    {
+      "path": "Probe.cs",
+      "sha256": "231c0980fed65f2e33398b77b34213783cbd388df3405c0f9244935632ca7f6a"
+    },
+    {
+      "path": "build.ps1",
+      "sha256": "56122f3323fc9b32e272fbd962622b941344a0c88a6d5de6424ff000faedb703"
+    },
+    {
+      "path": "observe.js",
+      "sha256": "85d0f516f4ee18245741a4bcc954e3975ec63350652cd80cf837a818e53d0d53"
+    },
+    {
+      "path": "run_cases.py",
+      "sha256": "fc296580fbd9a1f8967e415b6107820ed216f669693f7561597c06ea0430dd1f"
+    },
+    {
+      "path": "analyze.py",
+      "sha256": "e6778e4fa65b3ebab3fa332c86c85b55e4730835d09395877b0651d297d72863"
+    },
+    {
+      "path": "collect.py",
+      "sha256": "ad0d2ac407bd64df385d3b665593acc2cbc23a60159d182c297c37357ba99054"
+    },
+    {
+      "path": "test_analysis.py",
+      "sha256": "1469460c600bb9b5069982a5dccbc9a6c1668163e1edab4aa5c0bf1e83057396"
+    },
+    {
+      "path": "skin-preset-runtime.md",
+      "sha256": "5979c14b5580159c965ae327805686cdd6058cdfe710484fd78889e9dbd87d8f"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "managed.jsonl.gz",
+      "sha256": "fe0b289b99a58e190e3b5325af5bb24ef3a1578777fd422564f971ec3c230ce5",
+      "uncompressed_bytes": 71970,
+      "uncompressed_sha256": "38b8e02946fc5cb200d7054b84f810ddc4fae5515c705bbd1043d2f3bcf21646"
+    },
+    {
+      "path": "paths.jsonl.gz",
+      "sha256": "e654729cb633e85a95a44bc25c352367e0f5b8d6f297141351783cc941ace22b",
+      "uncompressed_bytes": 26730,
+      "uncompressed_sha256": "5730d81eedb3d50b2dd690414a1da111b4f71267962e869514ac54fbfeeda5b7"
+    },
+    {
+      "path": "engine.log.gz",
+      "sha256": "66935fc5e723bb0873377885b2f409d3a3ca39bf7f4f2723fa3861bbebf85367",
+      "uncompressed_bytes": 16581,
+      "uncompressed_sha256": "00de410104cf4f359a95912602cfb4dc105c8564cd13c4ec95672f355d4e243d"
+    },
+    {
+      "path": "raw/rea-runtime-full.json.gz",
+      "sha256": "62283e5addd32f030907fffcce37d5abe538722226e69512b0165ffea77abedc",
+      "uncompressed_bytes": 2936151,
+      "uncompressed_sha256": "ee1285ac8f8ab950ffd9240425fb36e4310a05b0a3e605eb6d85e56ef69d478d"
+    },
+    {
+      "path": "baseline.json",
+      "sha256": "4bfcc372c3403a4ec2fb061d2ae8b3c635dbfceb5453f4ff7984ac7accb4104a"
+    },
+    {
+      "path": "close-receipt.json",
+      "sha256": "745b354695a7ff5cb914d52bcbd4d75eb9101a9a79792ecc69c0d6f0f56399ab"
+    },
+    {
+      "path": "compile-only.json",
+      "sha256": "b19ad3d7b063879c5c8e8e0f3127679c8508b134aa8eea892c6f14fc7dc04f89"
+    },
+    {
+      "path": "rea-runtime.json",
+      "sha256": "15c368d193baf2a06cb54379d03608c87e9f894781ed302e2fda4881e13755bc"
+    },
+    {
+      "path": "saved-files.json",
+      "sha256": "85a2c4cc7154d59051e6e80060c7dbbaf33aa1f56b28c5196f8853f3f65f2d3e"
+    },
+    {
+      "path": "post-state.json",
+      "sha256": "1e4315030f461f98687900983c8ff0320e789f4b6f27fe9b9d2869606f3230bc"
+    }
+  ],
+  "scope": "Only free=false skin presets0 and1, original master RGBA, free=true disturbance, native Load before explicit original broadcast, renderer-bound colors and recorded cleanup. Hidden window could not close normally; exact PID was stopped after cleanup and detach. No natural UI/cold reconstruction/physics claim.",
+  "raw_inputs": [
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\SkinPreset\\20261030-1\\rea-runtime-full.json",
+      "sha256": "ee1285ac8f8ab950ffd9240425fb36e4310a05b0a3e605eb6d85e56ef69d478d"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\SkinPreset\\20261030-1\\captures\\preset-0.sd",
+      "sha256": "21e017284894698122f22cb05a372b414607bf10ed796ad5cd60a7c7f78a51fc"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\SkinPreset\\20261030-1\\captures\\preset-1.sd",
+      "sha256": "0f88d020eb0f4ae626f60297ae165994c430fe1306768a025e0a3acbb377a087"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\SkinPreset\\20261030-1\\baseline.sd",
+      "sha256": "fc1e69a8242839a30e3fe426b5fcf7fac32438e359be05ecb265aba09ece3a8d"
+    }
+  ],
+  "reused_static": [
+    {
+      "path": "../../salt/evidence/state-restore-tail/14602-06000cc1-procedure_pseudo_code.pseudocode.c",
+      "sha256": "27d12fa44ea381bb681bedd757a4ca9005915b8c73bfb783a882c76d3a60446b"
+    }
+  ]
+}

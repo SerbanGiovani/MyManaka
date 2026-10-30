@@ -1,0 +1,1062 @@
+{
+  "records": [
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_2f8c36470678ff7d0dbd0d637a36613458d773440aae7f6ad4a3ef903980ea01",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "device_id": "local",
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "name": null,
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 61804,
+                "scope": "entry-only observation; native methods are invoked by separate managed fixture; no observer writes"
+              },
+              "frame": 6411,
+              "kind": "appearance_boundary_ready",
+              "real": 120.26806640625
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "tattoo/reference",
+                "thread": 69276
+              },
+              "frame": 6835,
+              "kind": "marker_begin",
+              "real": 128.58645629882812
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19d02315ce0",
+                "caller": "0x35bd19",
+                "name": "tattoo/reference",
+                "pointer": "0x1a018e02eb0"
+              },
+              "frame": 6835,
+              "kind": "player_initialize_callback",
+              "real": 128.58692932128906
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19f968d2ce0",
+                "caller": "0xa496",
+                "name": "tattoo/reference",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6835,
+              "kind": "body_material_event",
+              "real": 128.58700561523438
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97061e",
+                "name": "tattoo/reference",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6835,
+              "kind": "body_material_setup",
+              "real": 128.5870361328125
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97081e",
+                "name": "tattoo/reference",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6835,
+              "kind": "body_apply_options",
+              "real": 128.58726501464844
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x1",
+                "caller": "0x35bd19",
+                "name": "tattoo/reference",
+                "pointer": "0x3"
+              },
+              "frame": 6845,
+              "kind": "native_save",
+              "real": 128.75917053222656
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "tattoo/reference",
+                "thread": 69276
+              },
+              "frame": 6845,
+              "kind": "marker_end",
+              "real": 128.8392791748047
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "tattoo/disturb",
+                "thread": 69276
+              },
+              "frame": 6845,
+              "kind": "marker_begin",
+              "real": 128.8408660888672
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19d02315ce0",
+                "caller": "0x35bd19",
+                "name": "tattoo/disturb",
+                "pointer": "0x1a018e02eb0"
+              },
+              "frame": 6845,
+              "kind": "player_initialize_callback",
+              "real": 128.84100341796875
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19f968d2ce0",
+                "caller": "0xa496",
+                "name": "tattoo/disturb",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6845,
+              "kind": "body_material_event",
+              "real": 128.84115600585938
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97061e",
+                "name": "tattoo/disturb",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6845,
+              "kind": "body_material_setup",
+              "real": 128.84120178222656
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97081e",
+                "name": "tattoo/disturb",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6845,
+              "kind": "body_apply_options",
+              "real": 128.84153747558594
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "tattoo/disturb",
+                "thread": 69276
+              },
+              "frame": 6855,
+              "kind": "marker_end",
+              "real": 129.00062561035156
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "tattoo/restore",
+                "thread": 69276
+              },
+              "frame": 6855,
+              "kind": "marker_begin",
+              "real": 129.00076293945312
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x1",
+                "caller": "0x35bd19",
+                "name": "tattoo/restore",
+                "pointer": "0x3"
+              },
+              "frame": 6855,
+              "kind": "native_load",
+              "real": 129.0008544921875
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19d02315ce0",
+                "caller": "0x35bd19",
+                "name": "tattoo/restore",
+                "pointer": "0x1a018e02eb0"
+              },
+              "frame": 6855,
+              "kind": "player_initialize_callback",
+              "real": 129.0305938720703
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19f968d2ce0",
+                "caller": "0xa496",
+                "name": "tattoo/restore",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6855,
+              "kind": "body_material_event",
+              "real": 129.03074645996094
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97061e",
+                "name": "tattoo/restore",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6855,
+              "kind": "body_material_setup",
+              "real": 129.03079223632812
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97081e",
+                "name": "tattoo/restore",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6855,
+              "kind": "body_apply_options",
+              "real": 129.03125
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "tattoo/restore",
+                "thread": 69276
+              },
+              "frame": 6865,
+              "kind": "marker_end",
+              "real": 129.1913299560547
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "oil/reference",
+                "thread": 69276
+              },
+              "frame": 6871,
+              "kind": "marker_begin",
+              "real": 129.31280517578125
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19d02315ce0",
+                "caller": "0x35bd19",
+                "name": "oil/reference",
+                "pointer": "0x1a018e02eb0"
+              },
+              "frame": 6871,
+              "kind": "player_initialize_callback",
+              "real": 129.3129425048828
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19f968d2ce0",
+                "caller": "0xa496",
+                "name": "oil/reference",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6871,
+              "kind": "body_material_event",
+              "real": 129.3130340576172
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97061e",
+                "name": "oil/reference",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6871,
+              "kind": "body_material_setup",
+              "real": 129.3130645751953
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97081e",
+                "name": "oil/reference",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6871,
+              "kind": "body_apply_options",
+              "real": 129.31333923339844
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x1",
+                "caller": "0x35bd19",
+                "name": "oil/reference",
+                "pointer": "0x3"
+              },
+              "frame": 6881,
+              "kind": "native_save",
+              "real": 129.47320556640625
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "oil/reference",
+                "thread": 69276
+              },
+              "frame": 6881,
+              "kind": "marker_end",
+              "real": 129.55503845214844
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "oil/disturb",
+                "thread": 69276
+              },
+              "frame": 6881,
+              "kind": "marker_begin",
+              "real": 129.55650329589844
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19d02315ce0",
+                "caller": "0x35bd19",
+                "name": "oil/disturb",
+                "pointer": "0x1a018e02eb0"
+              },
+              "frame": 6881,
+              "kind": "player_initialize_callback",
+              "real": 129.5565948486328
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19f968d2ce0",
+                "caller": "0xa496",
+                "name": "oil/disturb",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6881,
+              "kind": "body_material_event",
+              "real": 129.5566864013672
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97061e",
+                "name": "oil/disturb",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6881,
+              "kind": "body_material_setup",
+              "real": 129.5567169189453
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97081e",
+                "name": "oil/disturb",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6881,
+              "kind": "body_apply_options",
+              "real": 129.55709838867188
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "oil/disturb",
+                "thread": 69276
+              },
+              "frame": 6891,
+              "kind": "marker_end",
+              "real": 129.7176513671875
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "oil/restore",
+                "thread": 69276
+              },
+              "frame": 6891,
+              "kind": "marker_begin",
+              "real": 129.7178192138672
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x1",
+                "caller": "0x35bd19",
+                "name": "oil/restore",
+                "pointer": "0x3"
+              },
+              "frame": 6891,
+              "kind": "native_load",
+              "real": 129.71788024902344
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19d02315ce0",
+                "caller": "0x35bd19",
+                "name": "oil/restore",
+                "pointer": "0x1a018e02eb0"
+              },
+              "frame": 6891,
+              "kind": "player_initialize_callback",
+              "real": 129.74102783203125
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19f968d2ce0",
+                "caller": "0xa496",
+                "name": "oil/restore",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6891,
+              "kind": "body_material_event",
+              "real": 129.74114990234375
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97061e",
+                "name": "oil/restore",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6891,
+              "kind": "body_material_setup",
+              "real": 129.74118041992188
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97081e",
+                "name": "oil/restore",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6891,
+              "kind": "body_apply_options",
+              "real": 129.7414093017578
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "oil/restore",
+                "thread": 69276
+              },
+              "frame": 6901,
+              "kind": "marker_end",
+              "real": 129.90074157714844
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "combined/reference",
+                "thread": 69276
+              },
+              "frame": 6906,
+              "kind": "marker_begin",
+              "real": 130.00608825683594
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19d02315ce0",
+                "caller": "0x35bd19",
+                "name": "combined/reference",
+                "pointer": "0x1a018e02eb0"
+              },
+              "frame": 6906,
+              "kind": "player_initialize_callback",
+              "real": 130.00636291503906
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19f968d2ce0",
+                "caller": "0xa496",
+                "name": "combined/reference",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6906,
+              "kind": "body_material_event",
+              "real": 130.00653076171875
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97061e",
+                "name": "combined/reference",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6906,
+              "kind": "body_material_setup",
+              "real": 130.00656127929688
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97081e",
+                "name": "combined/reference",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6906,
+              "kind": "body_apply_options",
+              "real": 130.00692749023438
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x1",
+                "caller": "0x35bd19",
+                "name": "combined/reference",
+                "pointer": "0x3"
+              },
+              "frame": 6916,
+              "kind": "native_save",
+              "real": 130.16880798339844
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "combined/reference",
+                "thread": 69276
+              },
+              "frame": 6916,
+              "kind": "marker_end",
+              "real": 130.24417114257812
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "combined/disturb",
+                "thread": 69276
+              },
+              "frame": 6916,
+              "kind": "marker_begin",
+              "real": 130.24517822265625
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19d02315ce0",
+                "caller": "0x35bd19",
+                "name": "combined/disturb",
+                "pointer": "0x1a018e02eb0"
+              },
+              "frame": 6916,
+              "kind": "player_initialize_callback",
+              "real": 130.24525451660156
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19f968d2ce0",
+                "caller": "0xa496",
+                "name": "combined/disturb",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6916,
+              "kind": "body_material_event",
+              "real": 130.24533081054688
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97061e",
+                "name": "combined/disturb",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6916,
+              "kind": "body_material_setup",
+              "real": 130.24534606933594
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97081e",
+                "name": "combined/disturb",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6916,
+              "kind": "body_apply_options",
+              "real": 130.24563598632812
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "combined/disturb",
+                "thread": 69276
+              },
+              "frame": 6926,
+              "kind": "marker_end",
+              "real": 130.40415954589844
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "combined/restore",
+                "thread": 69276
+              },
+              "frame": 6926,
+              "kind": "marker_begin",
+              "real": 130.40426635742188
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x1",
+                "caller": "0x35bd19",
+                "name": "combined/restore",
+                "pointer": "0x3"
+              },
+              "frame": 6926,
+              "kind": "native_load",
+              "real": 130.40432739257812
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19d02315ce0",
+                "caller": "0x35bd19",
+                "name": "combined/restore",
+                "pointer": "0x1a018e02eb0"
+              },
+              "frame": 6926,
+              "kind": "player_initialize_callback",
+              "real": 130.42689514160156
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19f968d2ce0",
+                "caller": "0xa496",
+                "name": "combined/restore",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6926,
+              "kind": "body_material_event",
+              "real": 130.427001953125
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97061e",
+                "name": "combined/restore",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6926,
+              "kind": "body_material_setup",
+              "real": 130.42703247070312
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97081e",
+                "name": "combined/restore",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6926,
+              "kind": "body_apply_options",
+              "real": 130.42727661132812
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "combined/restore",
+                "thread": 69276
+              },
+              "frame": 6936,
+              "kind": "marker_end",
+              "real": 130.58615112304688
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "cleanup/restore",
+                "thread": 69276
+              },
+              "frame": 6941,
+              "kind": "marker_begin",
+              "real": 130.66909790039062
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19d02315ce0",
+                "caller": "0x35bd19",
+                "name": "cleanup/restore",
+                "pointer": "0x1a018e02eb0"
+              },
+              "frame": 6941,
+              "kind": "player_initialize_callback",
+              "real": 130.6692352294922
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x19f968d2ce0",
+                "caller": "0xa496",
+                "name": "cleanup/restore",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6941,
+              "kind": "body_material_event",
+              "real": 130.66932678222656
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97061e",
+                "name": "cleanup/restore",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6941,
+              "kind": "body_material_setup",
+              "real": 130.66937255859375
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x0",
+                "caller": "0xfffffffffe97081e",
+                "name": "cleanup/restore",
+                "pointer": "0x19f9684b800"
+              },
+              "frame": 6941,
+              "kind": "body_apply_options",
+              "real": 130.6696319580078
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "cleanup/restore",
+                "thread": 69276
+              },
+              "frame": 6951,
+              "kind": "marker_end",
+              "real": 130.84071350097656
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "mode": "attach",
+        "pid": 61804,
+        "scripts": [
+          {
+            "name": "rea-b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55"
+          }
+        ],
+        "session_id": "2f47ca4b-64dc-4bfc-a5ee-6f2b957df81e",
+        "state": "running",
+        "target": "SecretFlasherManaka.exe (pid 61804)"
+      },
+      "operation": "frida_session_status",
+      "parameters": {
+        "session_id": "2f47ca4b-64dc-4bfc-a5ee-6f2b957df81e"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    },
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_fe8dabd9375d80b33db473ad9fbf1fc38043228b26951d52e564ce681c9f582e",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "name": null,
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 61804,
+                "scope": "entry-only observation; native methods are invoked by separate managed fixture; no observer writes"
+              },
+              "frame": 6411,
+              "kind": "appearance_boundary_ready",
+              "real": 120.26806640625
+            },
+            "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "script_id": "b63d06ff-d47a-4c10-a0a6-ab6dad775f55",
+        "source_kind": "file",
+        "source_path": "E:/SecretFlasherManaka v1.1.3_Uncensored/reverse-engineering/runtime/appearance-boundary/observe.js",
+        "source_sha256": "079b9756da912190b434f8e94b077f66dfad0369ededbd600bba2166c69e0b62"
+      },
+      "operation": "load_frida_script",
+      "parameters": {
+        "session_id": "2f47ca4b-64dc-4bfc-a5ee-6f2b957df81e"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    }
+  ]
+}

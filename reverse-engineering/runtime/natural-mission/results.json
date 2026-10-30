@@ -1,0 +1,93 @@
+{
+  "authority": "passive-original-user-input-in-isolated-save-root",
+  "natural_only": true,
+  "managed_samples": 426,
+  "identities": {
+    "state": "2452748650464",
+    "player": "2452768524480",
+    "missionManager": "2452734150816",
+    "mission100000": "2452723473616"
+  },
+  "first_round": {
+    "messages": 74,
+    "script_errors": 10,
+    "lifecycle_returns_complete": false,
+    "missing_leave": {
+      "save_load_leave": 1,
+      "stage_transition_leave": 2,
+      "result_initialize_leave": 1,
+      "mission_achieve_leave": 1,
+      "save_write_leave": 3,
+      "result_ok1_leave": 1,
+      "pc_save_leave": 1
+    },
+    "threshold_frame": 14863,
+    "one_time_frame": 14864,
+    "one_time_calls_observed": 1,
+    "pending_before_return": 8.599584173411131,
+    "result_frame": 14933,
+    "wallet_after": 8,
+    "experience_after": 8,
+    "achieved_after": 1,
+    "original_instance_reset_observed": true,
+    "pc_save_frame": 15040,
+    "pc_main_sha256": "10696ceab5136fa5aa7a06978b5371c24514bd08f071d3b8b94eeb488f3c6344"
+  },
+  "second_round": {
+    "messages": 43,
+    "script_errors": 0,
+    "partial_progress": 0.07217653095722198,
+    "condition_always_unmet": false,
+    "incomplete": true,
+    "one_time_calls": 0,
+    "continuous_calls": 0,
+    "aggregate_active_mission_updates": 3415,
+    "result_initialize_calls": 0,
+    "achieve_calls": 0,
+    "wallet_after": 8,
+    "experience_after": 8,
+    "achieved_after": 1,
+    "original_instance_reset_observed": true,
+    "pc_save_frame": 16858,
+    "pc_main_sha256": "4edfa47d982a478dd9dd11bf8e2b226144d1292dfa85f7b74efc139b806c043b"
+  },
+  "captures": {
+    "total": 14,
+    "game": 8,
+    "system": 6,
+    "initial_copied": 4,
+    "initial_slot0_loaded": false
+  },
+  "engine_error_events": 0,
+  "limits": [
+    "Round1 has ten ReferenceError failures in native onLeave callbacks; native return states and final high-frequency totals are unavailable there. Subsequent native entries, managed snapshots and encrypted files close only the selected result/save state.",
+    "Round2 had real partial progress and sampled Front exposure, not a condition-always-unmet or truly empty run.",
+    "Progress samples are native 5% buckets and managed 0.5s reads. Exact condition changes between samples and the reason for a visually blank UI remain unknown.",
+    "Hook update counters aggregate matching active missions, not only task100000.",
+    "This natural route preserved original objects and reset progress through normal return/settlement; it does not demonstrate the controlled warm-recreation duplicate reward is naturally reachable.",
+    "The copied initial slot0 capture is decoded for integrity only and was not loaded in this observed title route."
+  ],
+  "plugin_verification": {
+    "checked": true,
+    "restored": true,
+    "reason": null,
+    "files": [
+      {
+        "path": "E:\\ManakaREA-NaturalGameplay\\BepInEx\\plugins\\NaturalLoadObserver.dll",
+        "expected": "6dc9ad8861847448b54d5f2420351d194a98ce445e87fb52e823f323434fd36f",
+        "actual": "6dc9ad8861847448b54d5f2420351d194a98ce445e87fb52e823f323434fd36f"
+      },
+      {
+        "path": "E:\\ManakaREA-NaturalGameplay\\BepInEx\\plugins\\NaturalObserver.dll",
+        "expected": "f0a94d41c55ff09e0ea56708c9d86bace4fd6fad68a7c982518f37b2d1996da8",
+        "actual": "f0a94d41c55ff09e0ea56708c9d86bace4fd6fad68a7c982518f37b2d1996da8"
+      }
+    ]
+  },
+  "protected_files": {
+    "user_data": 9,
+    "prior_natural": 4,
+    "inputs": 5,
+    "unchanged": true
+  }
+}

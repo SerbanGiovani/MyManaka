@@ -1,0 +1,171 @@
+{
+  "authority": "controlled-original-save-load-skin-preset-consumers",
+  "natural_only": false,
+  "native_messages": 33,
+  "body_callback_sequences": 7,
+  "encrypted_files": 2,
+  "baseline_file_independently_decoded": true,
+  "selected_saved_fields": [
+    "CustomIsSkinColorFree",
+    "CustomizeSkinColor",
+    "CustomizeSkinColorR",
+    "CustomizeSkinColorG",
+    "CustomizeSkinColorB"
+  ],
+  "cases": [
+    {
+      "name": "preset-0",
+      "saved_fields": {
+        "CustomIsSkinColorFree": false,
+        "CustomizeSkinColor": 0,
+        "CustomizeSkinColorR": 13,
+        "CustomizeSkinColorG": 71,
+        "CustomizeSkinColorB": 199
+      },
+      "ciphertext_sha256": "21e017284894698122f22cb05a372b414607bf10ed796ad5cd60a7c7f78a51fc",
+      "expected_primary": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "expected_secondary": [
+        1,
+        0.8745098,
+        0.8784314,
+        0
+      ],
+      "actual_primary": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "actual_secondary": [
+        1,
+        0.8745098,
+        0.8784314,
+        0
+      ],
+      "maximum_rgba_error": 0,
+      "load_applied_materials": false,
+      "actual_renderer_bindings": {
+        "body_slot": 1,
+        "face_slot": 2,
+        "sweat_slot": 2,
+        "face_option_slot": 6
+      },
+      "stages": {
+        "reference": {
+          "callbacks": 1,
+          "body_events": 1,
+          "frame": 1492,
+          "settled_frame": 1502
+        },
+        "disturb": {
+          "callbacks": 1,
+          "body_events": 1,
+          "frame": 1502,
+          "settled_frame": 1512
+        },
+        "restore": {
+          "callbacks": 1,
+          "body_events": 1,
+          "frame": 1512,
+          "settled_frame": 1522
+        }
+      }
+    },
+    {
+      "name": "preset-1",
+      "saved_fields": {
+        "CustomIsSkinColorFree": false,
+        "CustomizeSkinColor": 1,
+        "CustomizeSkinColorR": 13,
+        "CustomizeSkinColorG": 71,
+        "CustomizeSkinColorB": 199
+      },
+      "ciphertext_sha256": "0f88d020eb0f4ae626f60297ae165994c430fe1306768a025e0a3acbb377a087",
+      "expected_primary": [
+        1,
+        0.9957806,
+        0.93670887,
+        1
+      ],
+      "expected_secondary": [
+        0.9528302,
+        0.94414085,
+        0.8224902,
+        1
+      ],
+      "actual_primary": [
+        1,
+        0.9957805,
+        0.93670887,
+        1
+      ],
+      "actual_secondary": [
+        0.95283014,
+        0.94414085,
+        0.8224902,
+        1
+      ],
+      "maximum_rgba_error": 1.0000000005838672e-07,
+      "load_applied_materials": false,
+      "actual_renderer_bindings": {
+        "body_slot": 1,
+        "face_slot": 2,
+        "sweat_slot": 2,
+        "face_option_slot": 6
+      },
+      "stages": {
+        "reference": {
+          "callbacks": 1,
+          "body_events": 1,
+          "frame": 1530,
+          "settled_frame": 1540
+        },
+        "disturb": {
+          "callbacks": 1,
+          "body_events": 1,
+          "frame": 1540,
+          "settled_frame": 1550
+        },
+        "restore": {
+          "callbacks": 1,
+          "body_events": 1,
+          "frame": 1550,
+          "settled_frame": 1560
+        }
+      }
+    }
+  ],
+  "readiness": {
+    "total": 6,
+    "ready_apartment": 2,
+    "root_polling_assertion_is_game_error": false
+  },
+  "engine_error_events": 0,
+  "cleanup_verified": true,
+  "limits": [
+    "Only free=false skin presets0 and1 plus an explicit free=true RGB disturbance are covered. Other appearance fields, physics, UI interactions and cold reconstruction are outside this batch.",
+    "SkinPattern expectations are read from original MCustomizeColor/AssetReferencer master RGBA; they are not derived from the reference renderer. Alpha is retained, including preset0 alpha0.",
+    "Load restores data but leaves the disturbed material graph until the explicit original player initialization callback. Natural UI dispatch is not demonstrated.",
+    "Entry-only hooks prove selected original callback/consumer entries; no unobserved native returns are invented. Body color application was immediate and remains correct after ten frames.",
+    "Renderer arrays expose body,face,Sweat and face-option base/shade. All-player shader-color and cached-reference cleanup is additionally asserted by the fixture; a complete shader/property/physics graph is not claimed.",
+    "Two Apartment readiness responses and earlier Title polling are retained. An orchestration assertion read an old readiness response; no game runner_error was generated."
+  ],
+  "plugins_finalized": true,
+  "redirected_path_events": 41,
+  "protected_inputs": {
+    "userdata": 9,
+    "previous_natural_profile": 4,
+    "native_resources": 5
+  },
+  "process_shutdown": {
+    "normal_exit": false,
+    "forced_after_close_timeout": true,
+    "native_cleanup_completed_before_stop": true,
+    "frida_detached_reported": true
+  }
+}

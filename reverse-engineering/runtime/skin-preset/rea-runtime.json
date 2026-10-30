@@ -1,0 +1,564 @@
+{
+  "records": [
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_3e31896e2e2af1feb18d12d21bcf13169bec57b92fe8cdbdfba5a1d56b851c22",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "name": null,
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 21048,
+                "scope": "entry-only observation; native methods are invoked by separate managed fixture; no observer writes"
+              },
+              "frame": 1,
+              "kind": "skin_preset_ready",
+              "real": 5.2501654624938965
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+        "source_kind": "file",
+        "source_path": "E:/SecretFlasherManaka v1.1.3_Uncensored/reverse-engineering/runtime/skin-preset/observe.js",
+        "source_sha256": "85d0f516f4ee18245741a4bcc954e3975ec63350652cd80cf837a818e53d0d53"
+      },
+      "operation": "load_frida_script",
+      "parameters": {
+        "session_id": "cba4cc57-1948-4d3b-abe8-81d7e9ba8b74"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    },
+    {
+      "analysis_profile": null,
+      "authority": "external-service",
+      "confidence": "observed",
+      "environment": null,
+      "evidence_id": "ev_dcea3db349f2ca41f850b7f0cf2d486c22563b0e9e8bac5c90e014bf813d6310",
+      "evidence_links": [],
+      "limitations": [
+        "Artifact identity is unavailable for this observation.",
+        "The target operating system and architecture were not reported by this observation."
+      ],
+      "locations": [],
+      "normalized_result": {
+        "device_id": "local",
+        "messages": [
+          {
+            "payload": {
+              "data": {
+                "name": null,
+                "path": "E:\\ManakaREA-NaturalGameplay\\GameAssembly.dll",
+                "pid": 21048,
+                "scope": "entry-only observation; native methods are invoked by separate managed fixture; no observer writes"
+              },
+              "frame": 1,
+              "kind": "skin_preset_ready",
+              "real": 5.2501654624938965
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "preset-0/reference",
+                "thread": 28312
+              },
+              "frame": 1492,
+              "kind": "marker_begin",
+              "real": 35.42327117919922
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x2b6b2315ce0",
+                "caller": "0x35bd19",
+                "name": "preset-0/reference",
+                "pointer": "0x2b986adef00"
+              },
+              "frame": 1492,
+              "kind": "player_initialize_callback",
+              "real": 35.42377471923828
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x2b681da14a0",
+                "caller": "0xa496",
+                "name": "preset-0/reference",
+                "pointer": "0x2b8fe4e9a50"
+              },
+              "frame": 1492,
+              "kind": "body_customize_event",
+              "real": 35.42412185668945
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x1",
+                "caller": "0x35bd19",
+                "name": "preset-0/reference",
+                "pointer": "0x3"
+              },
+              "frame": 1502,
+              "kind": "native_save",
+              "real": 35.582435607910156
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "preset-0/reference",
+                "thread": 28312
+              },
+              "frame": 1502,
+              "kind": "marker_end",
+              "real": 35.65182113647461
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "preset-0/disturb",
+                "thread": 28312
+              },
+              "frame": 1502,
+              "kind": "marker_begin",
+              "real": 35.65192794799805
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x2b6b2315ce0",
+                "caller": "0x35bd19",
+                "name": "preset-0/disturb",
+                "pointer": "0x2b986adef00"
+              },
+              "frame": 1502,
+              "kind": "player_initialize_callback",
+              "real": 35.65202713012695
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x2b681da14a0",
+                "caller": "0xa496",
+                "name": "preset-0/disturb",
+                "pointer": "0x2b8fe4e9a50"
+              },
+              "frame": 1502,
+              "kind": "body_customize_event",
+              "real": 35.65226745605469
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "preset-0/disturb",
+                "thread": 28312
+              },
+              "frame": 1512,
+              "kind": "marker_end",
+              "real": 35.80558395385742
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "preset-0/restore",
+                "thread": 28312
+              },
+              "frame": 1512,
+              "kind": "marker_begin",
+              "real": 35.80568313598633
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x1",
+                "caller": "0x35bd19",
+                "name": "preset-0/restore",
+                "pointer": "0x3"
+              },
+              "frame": 1512,
+              "kind": "native_load",
+              "real": 35.805789947509766
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x2b6b2315ce0",
+                "caller": "0x35bd19",
+                "name": "preset-0/restore",
+                "pointer": "0x2b986adef00"
+              },
+              "frame": 1512,
+              "kind": "player_initialize_callback",
+              "real": 35.8276252746582
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x2b681da14a0",
+                "caller": "0xa496",
+                "name": "preset-0/restore",
+                "pointer": "0x2b8fe4e9a50"
+              },
+              "frame": 1512,
+              "kind": "body_customize_event",
+              "real": 35.82786178588867
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "preset-0/restore",
+                "thread": 28312
+              },
+              "frame": 1522,
+              "kind": "marker_end",
+              "real": 35.98190689086914
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "preset-1/reference",
+                "thread": 28312
+              },
+              "frame": 1530,
+              "kind": "marker_begin",
+              "real": 36.13626480102539
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x2b6b2315ce0",
+                "caller": "0x35bd19",
+                "name": "preset-1/reference",
+                "pointer": "0x2b986adef00"
+              },
+              "frame": 1530,
+              "kind": "player_initialize_callback",
+              "real": 36.13644027709961
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x2b681da14a0",
+                "caller": "0xa496",
+                "name": "preset-1/reference",
+                "pointer": "0x2b8fe4e9a50"
+              },
+              "frame": 1530,
+              "kind": "body_customize_event",
+              "real": 36.1368408203125
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x1",
+                "caller": "0x35bd19",
+                "name": "preset-1/reference",
+                "pointer": "0x3"
+              },
+              "frame": 1540,
+              "kind": "native_save",
+              "real": 36.291812896728516
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "preset-1/reference",
+                "thread": 28312
+              },
+              "frame": 1540,
+              "kind": "marker_end",
+              "real": 36.38212585449219
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "preset-1/disturb",
+                "thread": 28312
+              },
+              "frame": 1540,
+              "kind": "marker_begin",
+              "real": 36.382259368896484
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x2b6b2315ce0",
+                "caller": "0x35bd19",
+                "name": "preset-1/disturb",
+                "pointer": "0x2b986adef00"
+              },
+              "frame": 1540,
+              "kind": "player_initialize_callback",
+              "real": 36.382347106933594
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x2b681da14a0",
+                "caller": "0xa496",
+                "name": "preset-1/disturb",
+                "pointer": "0x2b8fe4e9a50"
+              },
+              "frame": 1540,
+              "kind": "body_customize_event",
+              "real": 36.38278579711914
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "preset-1/disturb",
+                "thread": 28312
+              },
+              "frame": 1550,
+              "kind": "marker_end",
+              "real": 36.5373420715332
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "preset-1/restore",
+                "thread": 28312
+              },
+              "frame": 1550,
+              "kind": "marker_begin",
+              "real": 36.537479400634766
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x1",
+                "caller": "0x35bd19",
+                "name": "preset-1/restore",
+                "pointer": "0x3"
+              },
+              "frame": 1550,
+              "kind": "native_load",
+              "real": 36.53761291503906
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x2b6b2315ce0",
+                "caller": "0x35bd19",
+                "name": "preset-1/restore",
+                "pointer": "0x2b986adef00"
+              },
+              "frame": 1550,
+              "kind": "player_initialize_callback",
+              "real": 36.563385009765625
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x2b681da14a0",
+                "caller": "0xa496",
+                "name": "preset-1/restore",
+                "pointer": "0x2b8fe4e9a50"
+              },
+              "frame": 1550,
+              "kind": "body_customize_event",
+              "real": 36.56393051147461
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "preset-1/restore",
+                "thread": 28312
+              },
+              "frame": 1560,
+              "kind": "marker_end",
+              "real": 36.718971252441406
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "cleanup/restore",
+                "thread": 28312
+              },
+              "frame": 1566,
+              "kind": "marker_begin",
+              "real": 36.81912612915039
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x2b6b2315ce0",
+                "caller": "0x35bd19",
+                "name": "cleanup/restore",
+                "pointer": "0x2b986adef00"
+              },
+              "frame": 1566,
+              "kind": "player_initialize_callback",
+              "real": 36.81929397583008
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "arg1": "0x2b681da14a0",
+                "caller": "0xa496",
+                "name": "cleanup/restore",
+                "pointer": "0x2b8fe4e9a50"
+              },
+              "frame": 1566,
+              "kind": "body_customize_event",
+              "real": 36.81962203979492
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          },
+          {
+            "payload": {
+              "data": {
+                "name": "cleanup/restore",
+                "thread": 28312
+              },
+              "frame": 1576,
+              "kind": "marker_end",
+              "real": 36.99427032470703
+            },
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c",
+            "type": "send"
+          }
+        ],
+        "messages_truncated": false,
+        "mode": "attach",
+        "pid": 21048,
+        "scripts": [
+          {
+            "name": "rea-e5180c2a-ff51-4366-b615-86a34a42254c",
+            "script_id": "e5180c2a-ff51-4366-b615-86a34a42254c"
+          }
+        ],
+        "session_id": "cba4cc57-1948-4d3b-abe8-81d7e9ba8b74",
+        "state": "running",
+        "target": "SecretFlasherManaka.exe (pid 21048)"
+      },
+      "operation": "frida_session_status",
+      "parameters": {
+        "session_id": "cba4cc57-1948-4d3b-abe8-81d7e9ba8b74"
+      },
+      "predicate_type": "rea.frida.instrumentation-observation",
+      "provider": {
+        "id": "frida",
+        "name": "Frida",
+        "version": null
+      },
+      "raw_result": null,
+      "relationship_coverage": null,
+      "subject": null
+    }
+  ]
+}

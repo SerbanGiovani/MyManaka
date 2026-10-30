@@ -1,0 +1,126 @@
+{
+  "authority": "offline-shipped-tier-assets-plus-separately-labeled-historical-master-records",
+  "tier_source_sha256": "ca4d78130b138b332674d3ab2f283d3ff0a65bf7ec659a3e72548184239b9b40",
+  "record_source_sha256": "77ee89060638ce525e71d5656dd3f55a67897a3d14bf1721a5af14cfc85ff6b4",
+  "tier_authority": "offline-shipped-asset-interpretation",
+  "master_record_authority": "historical-controlled-observation",
+  "tiers": {
+    "6": [
+      {
+        "Level": 0,
+        "MaxTimeTank": 0.0,
+        "NextLevelUpRp": 50
+      },
+      {
+        "Level": 1,
+        "MaxTimeTank": 2.0,
+        "NextLevelUpRp": 100
+      },
+      {
+        "Level": 2,
+        "MaxTimeTank": 5.0,
+        "NextLevelUpRp": 200
+      },
+      {
+        "Level": 3,
+        "MaxTimeTank": 10.0,
+        "NextLevelUpRp": 400
+      },
+      {
+        "Level": 4,
+        "MaxTimeTank": 20.0,
+        "NextLevelUpRp": 800
+      },
+      {
+        "Level": 5,
+        "MaxTimeTank": 30.0,
+        "NextLevelUpRp": 800
+      }
+    ],
+    "11": [
+      {
+        "Level": 0,
+        "MaxNum": 5,
+        "NextLevelUpRp": 300
+      },
+      {
+        "Level": 1,
+        "MaxNum": 10,
+        "NextLevelUpRp": 1000
+      },
+      {
+        "Level": 2,
+        "MaxNum": 15,
+        "NextLevelUpRp": 3000
+      },
+      {
+        "Level": 3,
+        "MaxNum": 30,
+        "NextLevelUpRp": 2000
+      }
+    ]
+  },
+  "records": {
+    "11": {
+      "InitRp": "10",
+      "IncrementRp": "20",
+      "MaxLevel": "3",
+      "ReleaseRank": "0",
+      "IsPassiveToggle": "False",
+      "Type": "MaxAccessoryNum",
+      "CategoryType": "Basic",
+      "ReleaseOrderTarget": "None",
+      "RpBonus": "0",
+      "ReleaseOrderTargetId": -1
+    },
+    "7": {
+      "InitRp": "100",
+      "IncrementRp": "0",
+      "MaxLevel": "1",
+      "ReleaseRank": "0",
+      "IsPassiveToggle": "True",
+      "Type": "NpcDirect",
+      "CategoryType": "Basic",
+      "ReleaseOrderTarget": "None",
+      "RpBonus": "-10",
+      "ReleaseOrderTargetId": -1
+    },
+    "6": {
+      "InitRp": "10",
+      "IncrementRp": "0",
+      "MaxLevel": "5",
+      "ReleaseRank": "0",
+      "IsPassiveToggle": "False",
+      "Type": "Slow",
+      "CategoryType": "Basic",
+      "ReleaseOrderTarget": "None",
+      "RpBonus": "0",
+      "ReleaseOrderTargetId": -1
+    },
+    "9": {
+      "InitRp": "200",
+      "IncrementRp": "20",
+      "MaxLevel": "1",
+      "ReleaseRank": "0",
+      "IsPassiveToggle": "True",
+      "Type": "AutoSlow",
+      "CategoryType": "Basic",
+      "ReleaseOrderTarget": "Slow",
+      "RpBonus": "-20",
+      "ReleaseOrderTargetId": 6
+    },
+    "17": {
+      "InitRp": "1000",
+      "IncrementRp": "20",
+      "MaxLevel": "1",
+      "ReleaseRank": "7",
+      "IsPassiveToggle": "True",
+      "Type": "TimeStop",
+      "CategoryType": "Basic",
+      "ReleaseOrderTarget": "None",
+      "RpBonus": "0",
+      "ReleaseOrderTargetId": -1
+    }
+  },
+  "limits": "Capacity/Slow use real tier NextLevelUpRp, not generic InitRp. Other selected master records are historical observations, corroborated here by actual v3 prices/masks and native spend arguments."
+}

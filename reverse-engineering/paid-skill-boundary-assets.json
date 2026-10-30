@@ -1,0 +1,4918 @@
+{
+  "schema_version": 1,
+  "authority": "offline-shipped-asset-interpretation",
+  "source_bundle": {
+    "path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\data.unity3d",
+    "size": 2444180156,
+    "sha256": "20781befb4cc42f898b65fe03f3d16c0a77b53aecac6ddc388460cfb710ae93a"
+  },
+  "parser": {
+    "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\paid-skill-boundary-assets.py",
+    "size": 2557,
+    "sha256": "bfc2887194bd865f69b441ef85c5124ae6557a62330fc0a7d3e9f530750d0246"
+  },
+  "wrapper_declarations": {
+    "sources": [
+      {
+        "path": "E:\\SecretFlasherManakaREA\\BepInEx\\interop\\Assembly-CSharp.dll",
+        "size": 4462592,
+        "sha256": "4603f1163ae85ba6b7faafe5fba5da642a6de2d81a93e5b711f35f04663c7744"
+      },
+      {
+        "path": "E:\\SecretFlasherManakaREA\\BepInEx\\interop\\Unity.InputSystem.dll",
+        "size": 2717184,
+        "sha256": "95b59c3f09f94ea48c0b608fa92cd20f140b6dc14f0b20ff559c502cfcba1239"
+      },
+      {
+        "path": "E:\\SecretFlasherManakaREA\\BepInEx\\interop\\UnityEngine.PhysicsModule.dll",
+        "size": 258048,
+        "sha256": "e7483a21e29eec4ae033625de32b4e08c41d1d7e03eecd453dd74ffd4020a994"
+      }
+    ],
+    "parser": {
+      "path": "E:\\SecretFlasherManakaREA\\BepInEx\\core\\Mono.Cecil.dll",
+      "size": 356864,
+      "sha256": "769a59793d4b8885bbbfbc5aee8f57a0d4e34d275c56c60c03994309b87f67e9"
+    },
+    "types": [
+      {
+        "type": "ExposureUnnoticed2.Object3D.IngameManager.AssetReferencer",
+        "base_type": "UnityEngine.MonoBehaviour",
+        "is_enum": false,
+        "wrapper_token": "0x0200028c",
+        "properties": [
+          {
+            "name": "MStage",
+            "type": "ExposureUnnoticed2.Master.Stage.MStage",
+            "wrapper_token": "0x17000e7a"
+          },
+          {
+            "name": "MCommon",
+            "type": "ExposureUnnoticed2.Master.Common.MCommon",
+            "wrapper_token": "0x17000e7b"
+          },
+          {
+            "name": "MCustomizeColor",
+            "type": "ExposureUnnoticed2.Master.Common.MCustomizeColor",
+            "wrapper_token": "0x17000e7c"
+          },
+          {
+            "name": "MClothes",
+            "type": "ExposureUnnoticed2.Master.Clothes.MClothes",
+            "wrapper_token": "0x17000e7d"
+          },
+          {
+            "name": "MSkill",
+            "type": "ExposureUnnoticed2.Master.Skill.MSkill",
+            "wrapper_token": "0x17000e7e"
+          },
+          {
+            "name": "MSex",
+            "type": "ExposureUnnoticed2.Master.Sex.MSex",
+            "wrapper_token": "0x17000e7f"
+          },
+          {
+            "name": "MAction",
+            "type": "ExposureUnnoticed2.Master.Action.MAction",
+            "wrapper_token": "0x17000e80"
+          },
+          {
+            "name": "MConversation",
+            "type": "ExposureUnnoticed2.Master.Conversation.MConversation",
+            "wrapper_token": "0x17000e81"
+          },
+          {
+            "name": "mAdultGoods",
+            "type": "ExposureUnnoticed2.Master.AdultGoods.MAdultGoods",
+            "wrapper_token": "0x17000e82"
+          },
+          {
+            "name": "MHair",
+            "type": "ExposureUnnoticed2.Master.Hair.MHair",
+            "wrapper_token": "0x17000e83"
+          },
+          {
+            "name": "MItem",
+            "type": "ExposureUnnoticed2.Master.Item.MItem",
+            "wrapper_token": "0x17000e84"
+          },
+          {
+            "name": "MMission",
+            "type": "ExposureUnnoticed2.Master.Mission.MMission",
+            "wrapper_token": "0x17000e85"
+          },
+          {
+            "name": "MRank",
+            "type": "ExposureUnnoticed2.Master.Rank.MRank",
+            "wrapper_token": "0x17000e86"
+          },
+          {
+            "name": "MRankRelease",
+            "type": "ExposureUnnoticed2.Master.RankRelease.MRankRelease",
+            "wrapper_token": "0x17000e87"
+          },
+          {
+            "name": "MCostume",
+            "type": "ExposureUnnoticed2.Master.Costume.MCostume",
+            "wrapper_token": "0x17000e88"
+          },
+          {
+            "name": "MDroneMission",
+            "type": "ExposureUnnoticed2.Master.DroneMission.MDroneMission",
+            "wrapper_token": "0x17000e89"
+          },
+          {
+            "name": "MSkillSlow",
+            "type": "ExposureUnnoticed2.Master.Skill.SkillSlow.MSkillSlow",
+            "wrapper_token": "0x17000e8a"
+          },
+          {
+            "name": "MSkillStamina",
+            "type": "ExposureUnnoticed2.Master.Skill.SkillSlow.MSkillStamina",
+            "wrapper_token": "0x17000e8b"
+          },
+          {
+            "name": "MSkillMental",
+            "type": "ExposureUnnoticed2.Master.Skill.SkillMental.MSkillMental",
+            "wrapper_token": "0x17000e8c"
+          },
+          {
+            "name": "MCosplay",
+            "type": "ExposureUnnoticed2.Master.Cosplay.MCosplay",
+            "wrapper_token": "0x17000e8d"
+          },
+          {
+            "name": "MReinforceEffect",
+            "type": "ExposureUnnoticed2.Master.ReinforceEffect.MReinforceEffect",
+            "wrapper_token": "0x17000e8e"
+          },
+          {
+            "name": "MFastTravel",
+            "type": "ExposureUnnoticed2.Master.FastTravel.MFastTravel",
+            "wrapper_token": "0x17000e8f"
+          },
+          {
+            "name": "MSkillMaxAccessoryNum",
+            "type": "ExposureUnnoticed2.Master.Skill.SkillMaxAccessoryNum.MSkillMaxAccessoryNum",
+            "wrapper_token": "0x17000e90"
+          },
+          {
+            "name": "MPants",
+            "type": "ExposureUnnoticed2.Master.Pants.MPants",
+            "wrapper_token": "0x17000e91"
+          },
+          {
+            "name": "MBra",
+            "type": "ExposureUnnoticed2.Master.Pants.MBra",
+            "wrapper_token": "0x17000e92"
+          },
+          {
+            "name": "MAchievement",
+            "type": "ExposureUnnoticed2.Master.Achievement.MAchievement",
+            "wrapper_token": "0x17000e93"
+          },
+          {
+            "name": "MBodyPaint",
+            "type": "ExposureUnnoticed2.Master.BodyPaint.MBodyPaint",
+            "wrapper_token": "0x17000e94"
+          },
+          {
+            "name": "FadePanel",
+            "type": "UnityEngine.GameObject",
+            "wrapper_token": "0x17000e95"
+          },
+          {
+            "name": "StageNamePanelView",
+            "type": "UnityEngine.GameObject",
+            "wrapper_token": "0x17000e96"
+          },
+          {
+            "name": "InGameSystemMenuView",
+            "type": "UnityEngine.GameObject",
+            "wrapper_token": "0x17000e97"
+          },
+          {
+            "name": "NpcUiView",
+            "type": "UnityEngine.GameObject",
+            "wrapper_token": "0x17000e98"
+          },
+          {
+            "name": "MissionFailedPanel",
+            "type": "UnityEngine.GameObject",
+            "wrapper_token": "0x17000e99"
+          },
+          {
+            "name": "SaveDataSelectPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000e9a"
+          },
+          {
+            "name": "SkillPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000e9b"
+          },
+          {
+            "name": "BuyPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000e9c"
+          },
+          {
+            "name": "InteractMenuPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000e9d"
+          },
+          {
+            "name": "TryClothesPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000e9e"
+          },
+          {
+            "name": "ConversationPanel",
+            "type": "UnityEngine.GameObject",
+            "wrapper_token": "0x17000e9f"
+          },
+          {
+            "name": "InventoryPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ea0"
+          },
+          {
+            "name": "BarberMenu",
+            "type": "ExposureUnnoticed2.ObjectUI.BarberMenu.BarberMenuView",
+            "wrapper_token": "0x17000ea1"
+          },
+          {
+            "name": "CommonPopup",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ea2"
+          },
+          {
+            "name": "ClosetMenu",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ea3"
+          },
+          {
+            "name": "SleepBlackPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ea4"
+          },
+          {
+            "name": "MissionMenuPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ea5"
+          },
+          {
+            "name": "ChooseHandcuffsPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ea6"
+          },
+          {
+            "name": "RankConfirmPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ea7"
+          },
+          {
+            "name": "SleepSelectPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ea8"
+          },
+          {
+            "name": "PcMenuPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ea9"
+          },
+          {
+            "name": "ManualSavePanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000eaa"
+          },
+          {
+            "name": "SystemMenu",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000eab"
+          },
+          {
+            "name": "OptionMenu",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000eac"
+          },
+          {
+            "name": "GraphicsPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ead"
+          },
+          {
+            "name": "InGameMenu",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000eae"
+          },
+          {
+            "name": "DroneMissionPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000eaf"
+          },
+          {
+            "name": "VibeRemoconReinforcePanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000eb0"
+          },
+          {
+            "name": "DroneReinforcePanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000eb1"
+          },
+          {
+            "name": "BuffPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000eb2"
+          },
+          {
+            "name": "SelectSexualityTypePanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000eb3"
+          },
+          {
+            "name": "SkillSwitchPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000eb4"
+          },
+          {
+            "name": "OnlineShopPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000eb5"
+          },
+          {
+            "name": "ReinforcePanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000eb6"
+          },
+          {
+            "name": "FastTravelPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000eb7"
+          },
+          {
+            "name": "SelectDifficultyPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000eb8"
+          },
+          {
+            "name": "SelectSexOptionPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000eb9"
+          },
+          {
+            "name": "ChooseDildoPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000eba"
+          },
+          {
+            "name": "KillTimeWaitPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ebb"
+          },
+          {
+            "name": "WaitPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ebc"
+          },
+          {
+            "name": "ResultPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ebd"
+          },
+          {
+            "name": "AchievementPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ebe"
+          },
+          {
+            "name": "ChooseHandcuffsTimerPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ebf"
+          },
+          {
+            "name": "ApplyGraphicsCountDownPopup",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ec0"
+          },
+          {
+            "name": "TutorialPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ec1"
+          },
+          {
+            "name": "ColorSettingPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ec2"
+          },
+          {
+            "name": "ChooseLanguagePanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ec3"
+          },
+          {
+            "name": "SexMenuPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ec4"
+          },
+          {
+            "name": "NameEditPanel",
+            "type": "Common.Scripts.UI.BasePanelView",
+            "wrapper_token": "0x17000ec5"
+          },
+          {
+            "name": "SweatBody",
+            "type": "UnityEngine.Material",
+            "wrapper_token": "0x17000ec6"
+          },
+          {
+            "name": "Inmon",
+            "type": "UnityEngine.Material",
+            "wrapper_token": "0x17000ec7"
+          },
+          {
+            "name": "Rakugaki",
+            "type": "UnityEngine.Material",
+            "wrapper_token": "0x17000ec8"
+          },
+          {
+            "name": "ClothesPaint",
+            "type": "UnityEngine.Material",
+            "wrapper_token": "0x17000ec9"
+          },
+          {
+            "name": "TattooDark",
+            "type": "UnityEngine.Material",
+            "wrapper_token": "0x17000eca"
+          },
+          {
+            "name": "TattooFlower1",
+            "type": "UnityEngine.Material",
+            "wrapper_token": "0x17000ecb"
+          },
+          {
+            "name": "TattooFlower2",
+            "type": "UnityEngine.Material",
+            "wrapper_token": "0x17000ecc"
+          },
+          {
+            "name": "TattooLotus",
+            "type": "UnityEngine.Material",
+            "wrapper_token": "0x17000ecd"
+          },
+          {
+            "name": "TattooSatanism",
+            "type": "UnityEngine.Material",
+            "wrapper_token": "0x17000ece"
+          },
+          {
+            "name": "TattooSlave",
+            "type": "UnityEngine.Material",
+            "wrapper_token": "0x17000ecf"
+          },
+          {
+            "name": "RubberSuit",
+            "type": "UnityEngine.Material",
+            "wrapper_token": "0x17000ed0"
+          },
+          {
+            "name": "FutanariPaint",
+            "type": "UnityEngine.Material",
+            "wrapper_token": "0x17000ed1"
+          },
+          {
+            "name": "NightSpermDecal",
+            "type": "UnityEngine.Material",
+            "wrapper_token": "0x17000ed2"
+          },
+          {
+            "name": "FutanariMaterial",
+            "type": "UnityEngine.Material",
+            "wrapper_token": "0x17000ed3"
+          },
+          {
+            "name": "FutanariRubberMaterial",
+            "type": "UnityEngine.Material",
+            "wrapper_token": "0x17000ed4"
+          },
+          {
+            "name": "Fresnel",
+            "type": "UnityEngine.Material",
+            "wrapper_token": "0x17000ed5"
+          },
+          {
+            "name": "CensorPussy",
+            "type": "UnityEngine.Material",
+            "wrapper_token": "0x17000ed6"
+          },
+          {
+            "name": "CensorChinpo",
+            "type": "UnityEngine.Material",
+            "wrapper_token": "0x17000ed7"
+          },
+          {
+            "name": "RubberSuitBlack",
+            "type": "UnityEngine.Texture",
+            "wrapper_token": "0x17000ed8"
+          },
+          {
+            "name": "RubberSuitWhite",
+            "type": "UnityEngine.Texture",
+            "wrapper_token": "0x17000ed9"
+          },
+          {
+            "name": "DroppedPrefabs",
+            "type": "Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppReferenceArray`1<UnityEngine.GameObject>",
+            "wrapper_token": "0x17000eda"
+          },
+          {
+            "name": "MultipleDroppedPrefabs",
+            "type": "Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppReferenceArray`1<UnityEngine.GameObject>",
+            "wrapper_token": "0x17000edb"
+          },
+          {
+            "name": "HoldInHandClothesPrefabs",
+            "type": "Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppReferenceArray`1<UnityEngine.GameObject>",
+            "wrapper_token": "0x17000edc"
+          },
+          {
+            "name": "SpermBullet",
+            "type": "UnityEngine.GameObject",
+            "wrapper_token": "0x17000edd"
+          },
+          {
+            "name": "SpermDecal",
+            "type": "UnityEngine.GameObject",
+            "wrapper_token": "0x17000ede"
+          },
+          {
+            "name": "Player",
+            "type": "UnityEngine.GameObject",
+            "wrapper_token": "0x17000edf"
+          },
+          {
+            "name": "UiPlayer",
+            "type": "UnityEngine.GameObject",
+            "wrapper_token": "0x17000ee0"
+          },
+          {
+            "name": "fontKr",
+            "type": "TMPro.TMP_FontAsset",
+            "wrapper_token": "0x17000ee1"
+          },
+          {
+            "name": "fontSc",
+            "type": "TMPro.TMP_FontAsset",
+            "wrapper_token": "0x17000ee2"
+          },
+          {
+            "name": "fontTc",
+            "type": "TMPro.TMP_FontAsset",
+            "wrapper_token": "0x17000ee3"
+          },
+          {
+            "name": "defaultFont",
+            "type": "TMPro.TMP_FontAsset",
+            "wrapper_token": "0x17000ee4"
+          },
+          {
+            "name": "fontMaterials",
+            "type": "Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppReferenceArray`1<UnityEngine.Material>",
+            "wrapper_token": "0x17000ee5"
+          },
+          {
+            "name": "AudioMixer",
+            "type": "UnityEngine.Audio.AudioMixer",
+            "wrapper_token": "0x17000ee6"
+          },
+          {
+            "name": "AudioMixerEnvironment",
+            "type": "UnityEngine.Audio.AudioMixerGroup",
+            "wrapper_token": "0x17000ee7"
+          },
+          {
+            "name": "Instance",
+            "type": "ExposureUnnoticed2.Object3D.IngameManager.AssetReferencer",
+            "wrapper_token": "0x17000ee8"
+          }
+        ],
+        "constants": []
+      },
+      {
+        "type": "ExposureUnnoticed2.Master.Skill.SkillSlow.MSkillSlow",
+        "base_type": "UnityEngine.ScriptableObject",
+        "is_enum": false,
+        "wrapper_token": "0x020002a4",
+        "properties": [
+          {
+            "name": "records",
+            "type": "Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppReferenceArray`1<ExposureUnnoticed2.Master.Skill.SkillSlow.RSkillSlow>",
+            "wrapper_token": "0x17000fc2"
+          },
+          {
+            "name": "dict",
+            "type": "Il2CppSystem.Collections.Generic.Dictionary`2<System.Int32,ExposureUnnoticed2.Master.Skill.SkillSlow.RSkillSlow>",
+            "wrapper_token": "0x17000fc3"
+          }
+        ],
+        "constants": []
+      },
+      {
+        "type": "ExposureUnnoticed2.Master.Skill.SkillSlow.RSkillSlow",
+        "base_type": "UnityEngine.ScriptableObject",
+        "is_enum": false,
+        "wrapper_token": "0x020002a5",
+        "properties": [
+          {
+            "name": "Level",
+            "type": "System.Int32",
+            "wrapper_token": "0x17000fc4"
+          },
+          {
+            "name": "MaxTimeTank",
+            "type": "System.Single",
+            "wrapper_token": "0x17000fc5"
+          },
+          {
+            "name": "NextLevelUpRp",
+            "type": "System.Int32",
+            "wrapper_token": "0x17000fc6"
+          }
+        ],
+        "constants": []
+      },
+      {
+        "type": "ExposureUnnoticed2.Master.Skill.SkillMaxAccessoryNum.MSkillMaxAccessoryNum",
+        "base_type": "UnityEngine.ScriptableObject",
+        "is_enum": false,
+        "wrapper_token": "0x020002aa",
+        "properties": [
+          {
+            "name": "records",
+            "type": "Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppReferenceArray`1<ExposureUnnoticed2.Master.Skill.SkillMaxAccessoryNum.RSkillMaxAccessoryNum>",
+            "wrapper_token": "0x17000fd3"
+          },
+          {
+            "name": "dict",
+            "type": "Il2CppSystem.Collections.Generic.Dictionary`2<System.Int32,ExposureUnnoticed2.Master.Skill.SkillMaxAccessoryNum.RSkillMaxAccessoryNum>",
+            "wrapper_token": "0x17000fd4"
+          }
+        ],
+        "constants": []
+      },
+      {
+        "type": "ExposureUnnoticed2.Master.Skill.SkillMaxAccessoryNum.RSkillMaxAccessoryNum",
+        "base_type": "UnityEngine.ScriptableObject",
+        "is_enum": false,
+        "wrapper_token": "0x020002ab",
+        "properties": [
+          {
+            "name": "Level",
+            "type": "System.Int32",
+            "wrapper_token": "0x17000fd5"
+          },
+          {
+            "name": "MaxNum",
+            "type": "System.Int32",
+            "wrapper_token": "0x17000fd6"
+          },
+          {
+            "name": "NextLevelUpRp",
+            "type": "System.Int32",
+            "wrapper_token": "0x17000fd7"
+          }
+        ],
+        "constants": []
+      }
+    ],
+    "limitation": "Interop properties/constants are generated declarations, not executable original source; wrapper tokens differ from original metadata tokens."
+  },
+  "metadata": {
+    "source": {
+      "path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
+      "size": 9890040,
+      "sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8"
+    },
+    "native_source": {
+      "path": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+      "size": 51356160,
+      "sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    },
+    "registration_source": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\field-offsets.json",
+      "size": 8554542,
+      "sha256": "79e19efde41f052bb1c80194eca5e62b4d7fadb74243cc18fcc6ea264370f04d"
+    },
+    "types": [
+      {
+        "type_id": 2391,
+        "full_name": "ExposureUnnoticed2.Object3D.IngameManager.AssetReferencer",
+        "metadata_file_offset": 8146872,
+        "type_raw_hex": "fd 89 04 00 0d 8a 04 00 90 33 00 00 ff ff ff ff 03 4b 00 00 90 33 00 00 ff ff ff ff 01 00 10 00 7d 2a 00 00 d5 3d 00 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 12 5f 00 00 ff ff ff ff 02 00 00 00 6f 00 00 00 00 00 04 00 00 00 00 00 00 0c 00 00 10 03 00 02",
+        "fields": [
+          {
+            "field_id": 10877,
+            "name": "MStage",
+            "token": "0x400104f",
+            "metadata_file_offset": 6904920,
+            "raw_hex": "37 8a 04 00 dd 48 00 00 4f 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18653,
+              "pointer_file_offset": 43000968,
+              "type_va": "0x182dd7098",
+              "type_file_offset": 48059032,
+              "type_raw_hex": "6e 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2414,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2414,
+              "type_name": "ExposureUnnoticed2.Master.Stage.MStage"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 32,
+            "offset_entry_file_offset": 37846304
+          },
+          {
+            "field_id": 10878,
+            "name": "MCommon",
+            "token": "0x4001050",
+            "metadata_file_offset": 6904932,
+            "raw_hex": "3e 8a 04 00 8c 48 00 00 50 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18572,
+              "pointer_file_offset": 43000320,
+              "type_va": "0x182dd7908",
+              "type_file_offset": 48061192,
+              "type_raw_hex": "b3 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2483,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2483,
+              "type_name": "ExposureUnnoticed2.Master.Common.MCommon"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 40,
+            "offset_entry_file_offset": 37846308
+          },
+          {
+            "field_id": 10879,
+            "name": "MCustomizeColor",
+            "token": "0x4001051",
+            "metadata_file_offset": 6904944,
+            "raw_hex": "46 8a 04 00 9c 48 00 00 51 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18588,
+              "pointer_file_offset": 43000448,
+              "type_va": "0x182dd7718",
+              "type_file_offset": 48060696,
+              "type_raw_hex": "b5 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2485,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2485,
+              "type_name": "ExposureUnnoticed2.Master.Common.MCustomizeColor"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 48,
+            "offset_entry_file_offset": 37846312
+          },
+          {
+            "field_id": 10880,
+            "name": "MClothes",
+            "token": "0x4001052",
+            "metadata_file_offset": 6904956,
+            "raw_hex": "56 8a 04 00 86 48 00 00 52 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18566,
+              "pointer_file_offset": 43000272,
+              "type_va": "0x182dd78a8",
+              "type_file_offset": 48061096,
+              "type_raw_hex": "b7 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2487,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2487,
+              "type_name": "ExposureUnnoticed2.Master.Clothes.MClothes"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 56,
+            "offset_entry_file_offset": 37846316
+          },
+          {
+            "field_id": 10881,
+            "name": "MSkill",
+            "token": "0x4001053",
+            "metadata_file_offset": 6904968,
+            "raw_hex": "5f 8a 04 00 d1 48 00 00 53 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18641,
+              "pointer_file_offset": 43000872,
+              "type_va": "0x182dd7288",
+              "type_file_offset": 48059528,
+              "type_raw_hex": "70 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2416,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2416,
+              "type_name": "ExposureUnnoticed2.Master.Skill.MSkill"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 64,
+            "offset_entry_file_offset": 37846320
+          },
+          {
+            "field_id": 10882,
+            "name": "MSex",
+            "token": "0x4001054",
+            "metadata_file_offset": 6904980,
+            "raw_hex": "66 8a 04 00 cf 48 00 00 54 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18639,
+              "pointer_file_offset": 43000856,
+              "type_va": "0x182dd71e8",
+              "type_file_offset": 48059368,
+              "type_raw_hex": "7c 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2428,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2428,
+              "type_name": "ExposureUnnoticed2.Master.Sex.MSex"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 72,
+            "offset_entry_file_offset": 37846324
+          },
+          {
+            "field_id": 10883,
+            "name": "MAction",
+            "token": "0x4001055",
+            "metadata_file_offset": 6904992,
+            "raw_hex": "6b 8a 04 00 74 48 00 00 55 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18548,
+              "pointer_file_offset": 43000128,
+              "type_va": "0x182dd7a38",
+              "type_file_offset": 48061496,
+              "type_raw_hex": "cb 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2507,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2507,
+              "type_name": "ExposureUnnoticed2.Master.Action.MAction"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 80,
+            "offset_entry_file_offset": 37846328
+          },
+          {
+            "field_id": 10884,
+            "name": "MConversation",
+            "token": "0x4001056",
+            "metadata_file_offset": 6905004,
+            "raw_hex": "73 8a 04 00 8f 48 00 00 56 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18575,
+              "pointer_file_offset": 43000344,
+              "type_va": "0x182dd7988",
+              "type_file_offset": 48061320,
+              "type_raw_hex": "aa 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2474,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2474,
+              "type_name": "ExposureUnnoticed2.Master.Conversation.MConversation"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 88,
+            "offset_entry_file_offset": 37846332
+          },
+          {
+            "field_id": 10885,
+            "name": "mAdultGoods",
+            "token": "0x4001057",
+            "metadata_file_offset": 6905016,
+            "raw_hex": "81 8a 04 00 78 48 00 00 57 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18552,
+              "pointer_file_offset": 43000160,
+              "type_va": "0x182dd7aa8",
+              "type_file_offset": 48061608,
+              "type_raw_hex": "c5 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2501,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2501,
+              "type_name": "ExposureUnnoticed2.Master.AdultGoods.MAdultGoods"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 96,
+            "offset_entry_file_offset": 37846336
+          },
+          {
+            "field_id": 10886,
+            "name": "MHair",
+            "token": "0x4001058",
+            "metadata_file_offset": 6905028,
+            "raw_hex": "8d 8a 04 00 a6 48 00 00 58 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18598,
+              "pointer_file_offset": 43000528,
+              "type_va": "0x182dd7568",
+              "type_file_offset": 48060264,
+              "type_raw_hex": "93 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2451,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2451,
+              "type_name": "ExposureUnnoticed2.Master.Hair.MHair"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 104,
+            "offset_entry_file_offset": 37846340
+          },
+          {
+            "field_id": 10887,
+            "name": "MItem",
+            "token": "0x4001059",
+            "metadata_file_offset": 6905040,
+            "raw_hex": "93 8a 04 00 aa 48 00 00 59 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18602,
+              "pointer_file_offset": 43000560,
+              "type_va": "0x182dd7518",
+              "type_file_offset": 48060184,
+              "type_raw_hex": "90 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2448,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2448,
+              "type_name": "ExposureUnnoticed2.Master.Item.MItem"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 112,
+            "offset_entry_file_offset": 37846344
+          },
+          {
+            "field_id": 10888,
+            "name": "MMission",
+            "token": "0x400105a",
+            "metadata_file_offset": 6905052,
+            "raw_hex": "99 8a 04 00 b1 48 00 00 5a 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18609,
+              "pointer_file_offset": 43000616,
+              "type_va": "0x182dd7608",
+              "type_file_offset": 48060424,
+              "type_raw_hex": "87 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2439,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2439,
+              "type_name": "ExposureUnnoticed2.Master.Mission.MMission"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 120,
+            "offset_entry_file_offset": 37846348
+          },
+          {
+            "field_id": 10889,
+            "name": "MRank",
+            "token": "0x400105b",
+            "metadata_file_offset": 6905064,
+            "raw_hex": "a2 8a 04 00 ba 48 00 00 5b 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18618,
+              "pointer_file_offset": 43000688,
+              "type_va": "0x182dd73e8",
+              "type_file_offset": 48059880,
+              "type_raw_hex": "85 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2437,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2437,
+              "type_name": "ExposureUnnoticed2.Master.Rank.MRank"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 128,
+            "offset_entry_file_offset": 37846352
+          },
+          {
+            "field_id": 10890,
+            "name": "MRankRelease",
+            "token": "0x400105c",
+            "metadata_file_offset": 6905076,
+            "raw_hex": "a8 8a 04 00 bf 48 00 00 5c 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18623,
+              "pointer_file_offset": 43000728,
+              "type_va": "0x182dd7448",
+              "type_file_offset": 48059976,
+              "type_raw_hex": "82 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2434,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2434,
+              "type_name": "ExposureUnnoticed2.Master.RankRelease.MRankRelease"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 136,
+            "offset_entry_file_offset": 37846356
+          },
+          {
+            "field_id": 10891,
+            "name": "MCostume",
+            "token": "0x400105d",
+            "metadata_file_offset": 6905088,
+            "raw_hex": "b5 8a 04 00 9a 48 00 00 5d 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18586,
+              "pointer_file_offset": 43000432,
+              "type_va": "0x182dd7748",
+              "type_file_offset": 48060744,
+              "type_raw_hex": "9c 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2460,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2460,
+              "type_name": "ExposureUnnoticed2.Master.Costume.MCostume"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 144,
+            "offset_entry_file_offset": 37846360
+          },
+          {
+            "field_id": 10892,
+            "name": "MDroneMission",
+            "token": "0x400105e",
+            "metadata_file_offset": 6905100,
+            "raw_hex": "be 8a 04 00 a1 48 00 00 5e 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18593,
+              "pointer_file_offset": 43000488,
+              "type_va": "0x182dd7768",
+              "type_file_offset": 48060776,
+              "type_raw_hex": "99 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2457,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2457,
+              "type_name": "ExposureUnnoticed2.Master.DroneMission.MDroneMission"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 152,
+            "offset_entry_file_offset": 37846364
+          },
+          {
+            "field_id": 10893,
+            "name": "MSkillSlow",
+            "token": "0x400105f",
+            "metadata_file_offset": 6905112,
+            "raw_hex": "cc 8a 04 00 d9 48 00 00 5f 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18649,
+              "pointer_file_offset": 43000936,
+              "type_va": "0x182dd7388",
+              "type_file_offset": 48059784,
+              "type_raw_hex": "74 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2420,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2420,
+              "type_name": "ExposureUnnoticed2.Master.Skill.SkillSlow.MSkillSlow"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 160,
+            "offset_entry_file_offset": 37846368
+          },
+          {
+            "field_id": 10894,
+            "name": "MSkillStamina",
+            "token": "0x4001060",
+            "metadata_file_offset": 6905124,
+            "raw_hex": "d7 8a 04 00 db 48 00 00 60 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18651,
+              "pointer_file_offset": 43000952,
+              "type_va": "0x182dd7358",
+              "type_file_offset": 48059736,
+              "type_raw_hex": "76 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2422,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2422,
+              "type_name": "ExposureUnnoticed2.Master.Skill.SkillSlow.MSkillStamina"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 168,
+            "offset_entry_file_offset": 37846372
+          },
+          {
+            "field_id": 10895,
+            "name": "MSkillMental",
+            "token": "0x4001061",
+            "metadata_file_offset": 6905136,
+            "raw_hex": "e5 8a 04 00 d5 48 00 00 61 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18645,
+              "pointer_file_offset": 43000904,
+              "type_va": "0x182dd7308",
+              "type_file_offset": 48059656,
+              "type_raw_hex": "78 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2424,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2424,
+              "type_name": "ExposureUnnoticed2.Master.Skill.SkillMental.MSkillMental"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 176,
+            "offset_entry_file_offset": 37846376
+          },
+          {
+            "field_id": 10896,
+            "name": "MCosplay",
+            "token": "0x4001062",
+            "metadata_file_offset": 6905148,
+            "raw_hex": "f2 8a 04 00 98 48 00 00 62 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18584,
+              "pointer_file_offset": 43000416,
+              "type_va": "0x182dd76b8",
+              "type_file_offset": 48060600,
+              "type_raw_hex": "a2 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2466,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2466,
+              "type_name": "ExposureUnnoticed2.Master.Cosplay.MCosplay"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 184,
+            "offset_entry_file_offset": 37846380
+          },
+          {
+            "field_id": 10897,
+            "name": "MReinforceEffect",
+            "token": "0x4001063",
+            "metadata_file_offset": 6905160,
+            "raw_hex": "fb 8a 04 00 c2 48 00 00 63 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18626,
+              "pointer_file_offset": 43000752,
+              "type_va": "0x182dd7418",
+              "type_file_offset": 48059928,
+              "type_raw_hex": "7f 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2431,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2431,
+              "type_name": "ExposureUnnoticed2.Master.ReinforceEffect.MReinforceEffect"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 192,
+            "offset_entry_file_offset": 37846384
+          },
+          {
+            "field_id": 10898,
+            "name": "MFastTravel",
+            "token": "0x4001064",
+            "metadata_file_offset": 6905172,
+            "raw_hex": "0c 8b 04 00 a3 48 00 00 64 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18595,
+              "pointer_file_offset": 43000504,
+              "type_va": "0x182dd77f8",
+              "type_file_offset": 48060920,
+              "type_raw_hex": "97 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2455,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2455,
+              "type_name": "ExposureUnnoticed2.Master.FastTravel.MFastTravel"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 200,
+            "offset_entry_file_offset": 37846388
+          },
+          {
+            "field_id": 10899,
+            "name": "MSkillMaxAccessoryNum",
+            "token": "0x4001065",
+            "metadata_file_offset": 6905184,
+            "raw_hex": "18 8b 04 00 d3 48 00 00 65 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18643,
+              "pointer_file_offset": 43000888,
+              "type_va": "0x182dd7248",
+              "type_file_offset": 48059464,
+              "type_raw_hex": "7a 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2426,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2426,
+              "type_name": "ExposureUnnoticed2.Master.Skill.SkillMaxAccessoryNum.MSkillMaxAccessoryNum"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 208,
+            "offset_entry_file_offset": 37846392
+          },
+          {
+            "field_id": 10900,
+            "name": "MPants",
+            "token": "0x4001066",
+            "metadata_file_offset": 6905196,
+            "raw_hex": "2e 8b 04 00 b8 48 00 00 66 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18616,
+              "pointer_file_offset": 43000672,
+              "type_va": "0x182dd7658",
+              "type_file_offset": 48060504,
+              "type_raw_hex": "bf 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2495,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2495,
+              "type_name": "ExposureUnnoticed2.Master.Pants.MPants"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 216,
+            "offset_entry_file_offset": 37846396
+          },
+          {
+            "field_id": 10901,
+            "name": "MBra",
+            "token": "0x4001067",
+            "metadata_file_offset": 6905208,
+            "raw_hex": "35 8b 04 00 82 48 00 00 67 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18562,
+              "pointer_file_offset": 43000240,
+              "type_va": "0x182dd7848",
+              "type_file_offset": 48061000,
+              "type_raw_hex": "bc 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2492,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2492,
+              "type_name": "ExposureUnnoticed2.Master.Pants.MBra"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 224,
+            "offset_entry_file_offset": 37846400
+          },
+          {
+            "field_id": 10902,
+            "name": "MAchievement",
+            "token": "0x4001068",
+            "metadata_file_offset": 6905220,
+            "raw_hex": "3a 8b 04 00 72 48 00 00 68 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18546,
+              "pointer_file_offset": 43000112,
+              "type_va": "0x182dd79a8",
+              "type_file_offset": 48061352,
+              "type_raw_hex": "cf 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2511,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2511,
+              "type_name": "ExposureUnnoticed2.Master.Achievement.MAchievement"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 232,
+            "offset_entry_file_offset": 37846404
+          },
+          {
+            "field_id": 10903,
+            "name": "MBodyPaint",
+            "token": "0x4001069",
+            "metadata_file_offset": 6905232,
+            "raw_hex": "47 8b 04 00 80 48 00 00 69 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18560,
+              "pointer_file_offset": 43000224,
+              "type_va": "0x182dd7ac8",
+              "type_file_offset": 48061640,
+              "type_raw_hex": "c1 09 00 00 00 00 00 00 06 00 12 00",
+              "data": 2497,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2497,
+              "type_name": "ExposureUnnoticed2.Master.BodyPaint.MBodyPaint"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 240,
+            "offset_entry_file_offset": 37846408
+          },
+          {
+            "field_id": 10904,
+            "name": "FadePanel",
+            "token": "0x400106a",
+            "metadata_file_offset": 6905244,
+            "raw_hex": "52 8b 04 00 37 40 00 00 6a 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 16439,
+              "pointer_file_offset": 42983256,
+              "type_va": "0x182df1688",
+              "type_file_offset": 48167048,
+              "type_raw_hex": "70 16 00 00 00 00 00 00 06 00 12 00",
+              "data": 5744,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5744,
+              "type_name": "UnityEngine.GameObject"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 248,
+            "offset_entry_file_offset": 37846412
+          },
+          {
+            "field_id": 10905,
+            "name": "StageNamePanelView",
+            "token": "0x400106b",
+            "metadata_file_offset": 6905256,
+            "raw_hex": "5c 8b 04 00 37 40 00 00 6b 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 16439,
+              "pointer_file_offset": 42983256,
+              "type_va": "0x182df1688",
+              "type_file_offset": 48167048,
+              "type_raw_hex": "70 16 00 00 00 00 00 00 06 00 12 00",
+              "data": 5744,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5744,
+              "type_name": "UnityEngine.GameObject"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 256,
+            "offset_entry_file_offset": 37846416
+          },
+          {
+            "field_id": 10906,
+            "name": "InGameSystemMenuView",
+            "token": "0x400106c",
+            "metadata_file_offset": 6905268,
+            "raw_hex": "6f 8b 04 00 37 40 00 00 6c 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 16439,
+              "pointer_file_offset": 42983256,
+              "type_va": "0x182df1688",
+              "type_file_offset": 48167048,
+              "type_raw_hex": "70 16 00 00 00 00 00 00 06 00 12 00",
+              "data": 5744,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5744,
+              "type_name": "UnityEngine.GameObject"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 264,
+            "offset_entry_file_offset": 37846420
+          },
+          {
+            "field_id": 10907,
+            "name": "NpcUiView",
+            "token": "0x400106d",
+            "metadata_file_offset": 6905280,
+            "raw_hex": "84 8b 04 00 37 40 00 00 6d 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 16439,
+              "pointer_file_offset": 42983256,
+              "type_va": "0x182df1688",
+              "type_file_offset": 48167048,
+              "type_raw_hex": "70 16 00 00 00 00 00 00 06 00 12 00",
+              "data": 5744,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5744,
+              "type_name": "UnityEngine.GameObject"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 272,
+            "offset_entry_file_offset": 37846424
+          },
+          {
+            "field_id": 10908,
+            "name": "MissionFailedPanel",
+            "token": "0x400106e",
+            "metadata_file_offset": 6905292,
+            "raw_hex": "8e 8b 04 00 37 40 00 00 6e 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 16439,
+              "pointer_file_offset": 42983256,
+              "type_va": "0x182df1688",
+              "type_file_offset": 48167048,
+              "type_raw_hex": "70 16 00 00 00 00 00 00 06 00 12 00",
+              "data": 5744,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5744,
+              "type_name": "UnityEngine.GameObject"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 280,
+            "offset_entry_file_offset": 37846428
+          },
+          {
+            "field_id": 10909,
+            "name": "SaveDataSelectPanel",
+            "token": "0x400106f",
+            "metadata_file_offset": 6905304,
+            "raw_hex": "a1 8b 04 00 60 34 00 00 6f 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 288,
+            "offset_entry_file_offset": 37846432
+          },
+          {
+            "field_id": 10910,
+            "name": "SkillPanel",
+            "token": "0x4001070",
+            "metadata_file_offset": 6905316,
+            "raw_hex": "b5 8b 04 00 60 34 00 00 70 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 296,
+            "offset_entry_file_offset": 37846436
+          },
+          {
+            "field_id": 10911,
+            "name": "BuyPanel",
+            "token": "0x4001071",
+            "metadata_file_offset": 6905328,
+            "raw_hex": "c0 8b 04 00 60 34 00 00 71 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 304,
+            "offset_entry_file_offset": 37846440
+          },
+          {
+            "field_id": 10912,
+            "name": "InteractMenuPanel",
+            "token": "0x4001072",
+            "metadata_file_offset": 6905340,
+            "raw_hex": "c9 8b 04 00 60 34 00 00 72 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 312,
+            "offset_entry_file_offset": 37846444
+          },
+          {
+            "field_id": 10913,
+            "name": "TryClothesPanel",
+            "token": "0x4001073",
+            "metadata_file_offset": 6905352,
+            "raw_hex": "db 8b 04 00 60 34 00 00 73 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 320,
+            "offset_entry_file_offset": 37846448
+          },
+          {
+            "field_id": 10914,
+            "name": "ConversationPanel",
+            "token": "0x4001074",
+            "metadata_file_offset": 6905364,
+            "raw_hex": "eb 8b 04 00 37 40 00 00 74 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 16439,
+              "pointer_file_offset": 42983256,
+              "type_va": "0x182df1688",
+              "type_file_offset": 48167048,
+              "type_raw_hex": "70 16 00 00 00 00 00 00 06 00 12 00",
+              "data": 5744,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5744,
+              "type_name": "UnityEngine.GameObject"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 328,
+            "offset_entry_file_offset": 37846452
+          },
+          {
+            "field_id": 10915,
+            "name": "InventoryPanel",
+            "token": "0x4001075",
+            "metadata_file_offset": 6905376,
+            "raw_hex": "fd 8b 04 00 60 34 00 00 75 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 336,
+            "offset_entry_file_offset": 37846456
+          },
+          {
+            "field_id": 10916,
+            "name": "BarberMenu",
+            "token": "0x4001076",
+            "metadata_file_offset": 6905388,
+            "raw_hex": "0c 8c 04 00 3d 34 00 00 76 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13373,
+              "pointer_file_offset": 42958728,
+              "type_va": "0x182de9c68",
+              "type_file_offset": 48135784,
+              "type_raw_hex": "5a 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2906,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2906,
+              "type_name": "ExposureUnnoticed2.ObjectUI.BarberMenu.BarberMenuView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 344,
+            "offset_entry_file_offset": 37846460
+          },
+          {
+            "field_id": 10917,
+            "name": "CommonPopup",
+            "token": "0x4001077",
+            "metadata_file_offset": 6905400,
+            "raw_hex": "17 8c 04 00 60 34 00 00 77 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 352,
+            "offset_entry_file_offset": 37846464
+          },
+          {
+            "field_id": 10918,
+            "name": "ClosetMenu",
+            "token": "0x4001078",
+            "metadata_file_offset": 6905412,
+            "raw_hex": "23 8c 04 00 60 34 00 00 78 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 360,
+            "offset_entry_file_offset": 37846468
+          },
+          {
+            "field_id": 10919,
+            "name": "SleepBlackPanel",
+            "token": "0x4001079",
+            "metadata_file_offset": 6905424,
+            "raw_hex": "2e 8c 04 00 60 34 00 00 79 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 368,
+            "offset_entry_file_offset": 37846472
+          },
+          {
+            "field_id": 10920,
+            "name": "MissionMenuPanel",
+            "token": "0x400107a",
+            "metadata_file_offset": 6905436,
+            "raw_hex": "3e 8c 04 00 60 34 00 00 7a 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 376,
+            "offset_entry_file_offset": 37846476
+          },
+          {
+            "field_id": 10921,
+            "name": "ChooseHandcuffsPanel",
+            "token": "0x400107b",
+            "metadata_file_offset": 6905448,
+            "raw_hex": "4f 8c 04 00 60 34 00 00 7b 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 384,
+            "offset_entry_file_offset": 37846480
+          },
+          {
+            "field_id": 10922,
+            "name": "RankConfirmPanel",
+            "token": "0x400107c",
+            "metadata_file_offset": 6905460,
+            "raw_hex": "64 8c 04 00 60 34 00 00 7c 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 392,
+            "offset_entry_file_offset": 37846484
+          },
+          {
+            "field_id": 10923,
+            "name": "SleepSelectPanel",
+            "token": "0x400107d",
+            "metadata_file_offset": 6905472,
+            "raw_hex": "75 8c 04 00 60 34 00 00 7d 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 400,
+            "offset_entry_file_offset": 37846488
+          },
+          {
+            "field_id": 10924,
+            "name": "PcMenuPanel",
+            "token": "0x400107e",
+            "metadata_file_offset": 6905484,
+            "raw_hex": "86 8c 04 00 60 34 00 00 7e 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 408,
+            "offset_entry_file_offset": 37846492
+          },
+          {
+            "field_id": 10925,
+            "name": "ManualSavePanel",
+            "token": "0x400107f",
+            "metadata_file_offset": 6905496,
+            "raw_hex": "92 8c 04 00 60 34 00 00 7f 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 416,
+            "offset_entry_file_offset": 37846496
+          },
+          {
+            "field_id": 10926,
+            "name": "SystemMenu",
+            "token": "0x4001080",
+            "metadata_file_offset": 6905508,
+            "raw_hex": "a2 8c 04 00 60 34 00 00 80 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 424,
+            "offset_entry_file_offset": 37846500
+          },
+          {
+            "field_id": 10927,
+            "name": "OptionMenu",
+            "token": "0x4001081",
+            "metadata_file_offset": 6905520,
+            "raw_hex": "ad 8c 04 00 60 34 00 00 81 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 432,
+            "offset_entry_file_offset": 37846504
+          },
+          {
+            "field_id": 10928,
+            "name": "GraphicsPanel",
+            "token": "0x4001082",
+            "metadata_file_offset": 6905532,
+            "raw_hex": "b8 8c 04 00 60 34 00 00 82 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 440,
+            "offset_entry_file_offset": 37846508
+          },
+          {
+            "field_id": 10929,
+            "name": "InGameMenu",
+            "token": "0x4001083",
+            "metadata_file_offset": 6905544,
+            "raw_hex": "c6 8c 04 00 60 34 00 00 83 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 448,
+            "offset_entry_file_offset": 37846512
+          },
+          {
+            "field_id": 10930,
+            "name": "DroneMissionPanel",
+            "token": "0x4001084",
+            "metadata_file_offset": 6905556,
+            "raw_hex": "d1 8c 04 00 60 34 00 00 84 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 456,
+            "offset_entry_file_offset": 37846516
+          },
+          {
+            "field_id": 10931,
+            "name": "VibeRemoconReinforcePanel",
+            "token": "0x4001085",
+            "metadata_file_offset": 6905568,
+            "raw_hex": "e3 8c 04 00 60 34 00 00 85 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 464,
+            "offset_entry_file_offset": 37846520
+          },
+          {
+            "field_id": 10932,
+            "name": "DroneReinforcePanel",
+            "token": "0x4001086",
+            "metadata_file_offset": 6905580,
+            "raw_hex": "fd 8c 04 00 60 34 00 00 86 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 472,
+            "offset_entry_file_offset": 37846524
+          },
+          {
+            "field_id": 10933,
+            "name": "BuffPanel",
+            "token": "0x4001087",
+            "metadata_file_offset": 6905592,
+            "raw_hex": "11 8d 04 00 60 34 00 00 87 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 480,
+            "offset_entry_file_offset": 37846528
+          },
+          {
+            "field_id": 10934,
+            "name": "SelectSexualityTypePanel",
+            "token": "0x4001088",
+            "metadata_file_offset": 6905604,
+            "raw_hex": "1b 8d 04 00 60 34 00 00 88 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 488,
+            "offset_entry_file_offset": 37846532
+          },
+          {
+            "field_id": 10935,
+            "name": "SkillSwitchPanel",
+            "token": "0x4001089",
+            "metadata_file_offset": 6905616,
+            "raw_hex": "34 8d 04 00 60 34 00 00 89 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 496,
+            "offset_entry_file_offset": 37846536
+          },
+          {
+            "field_id": 10936,
+            "name": "OnlineShopPanel",
+            "token": "0x400108a",
+            "metadata_file_offset": 6905628,
+            "raw_hex": "45 8d 04 00 60 34 00 00 8a 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 504,
+            "offset_entry_file_offset": 37846540
+          },
+          {
+            "field_id": 10937,
+            "name": "ReinforcePanel",
+            "token": "0x400108b",
+            "metadata_file_offset": 6905640,
+            "raw_hex": "55 8d 04 00 60 34 00 00 8b 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 512,
+            "offset_entry_file_offset": 37846544
+          },
+          {
+            "field_id": 10938,
+            "name": "FastTravelPanel",
+            "token": "0x400108c",
+            "metadata_file_offset": 6905652,
+            "raw_hex": "64 8d 04 00 60 34 00 00 8c 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 520,
+            "offset_entry_file_offset": 37846548
+          },
+          {
+            "field_id": 10939,
+            "name": "SelectDifficultyPanel",
+            "token": "0x400108d",
+            "metadata_file_offset": 6905664,
+            "raw_hex": "74 8d 04 00 60 34 00 00 8d 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 528,
+            "offset_entry_file_offset": 37846552
+          },
+          {
+            "field_id": 10940,
+            "name": "SelectSexOptionPanel",
+            "token": "0x400108e",
+            "metadata_file_offset": 6905676,
+            "raw_hex": "8a 8d 04 00 60 34 00 00 8e 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 536,
+            "offset_entry_file_offset": 37846556
+          },
+          {
+            "field_id": 10941,
+            "name": "ChooseDildoPanel",
+            "token": "0x400108f",
+            "metadata_file_offset": 6905688,
+            "raw_hex": "9f 8d 04 00 60 34 00 00 8f 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 544,
+            "offset_entry_file_offset": 37846560
+          },
+          {
+            "field_id": 10942,
+            "name": "KillTimeWaitPanel",
+            "token": "0x4001090",
+            "metadata_file_offset": 6905700,
+            "raw_hex": "b0 8d 04 00 60 34 00 00 90 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 552,
+            "offset_entry_file_offset": 37846564
+          },
+          {
+            "field_id": 10943,
+            "name": "WaitPanel",
+            "token": "0x4001091",
+            "metadata_file_offset": 6905712,
+            "raw_hex": "c2 8d 04 00 60 34 00 00 91 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 560,
+            "offset_entry_file_offset": 37846568
+          },
+          {
+            "field_id": 10944,
+            "name": "ResultPanel",
+            "token": "0x4001092",
+            "metadata_file_offset": 6905724,
+            "raw_hex": "cc 8d 04 00 60 34 00 00 92 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 568,
+            "offset_entry_file_offset": 37846572
+          },
+          {
+            "field_id": 10945,
+            "name": "AchievementPanel",
+            "token": "0x4001093",
+            "metadata_file_offset": 6905736,
+            "raw_hex": "d8 8d 04 00 60 34 00 00 93 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 576,
+            "offset_entry_file_offset": 37846576
+          },
+          {
+            "field_id": 10946,
+            "name": "ChooseHandcuffsTimerPanel",
+            "token": "0x4001094",
+            "metadata_file_offset": 6905748,
+            "raw_hex": "e9 8d 04 00 60 34 00 00 94 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 584,
+            "offset_entry_file_offset": 37846580
+          },
+          {
+            "field_id": 10947,
+            "name": "ApplyGraphicsCountDownPopup",
+            "token": "0x4001095",
+            "metadata_file_offset": 6905760,
+            "raw_hex": "03 8e 04 00 60 34 00 00 95 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 592,
+            "offset_entry_file_offset": 37846584
+          },
+          {
+            "field_id": 10948,
+            "name": "TutorialPanel",
+            "token": "0x4001096",
+            "metadata_file_offset": 6905772,
+            "raw_hex": "1f 8e 04 00 60 34 00 00 96 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 600,
+            "offset_entry_file_offset": 37846588
+          },
+          {
+            "field_id": 10949,
+            "name": "ColorSettingPanel",
+            "token": "0x4001097",
+            "metadata_file_offset": 6905784,
+            "raw_hex": "2d 8e 04 00 60 34 00 00 97 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 608,
+            "offset_entry_file_offset": 37846592
+          },
+          {
+            "field_id": 10950,
+            "name": "ChooseLanguagePanel",
+            "token": "0x4001098",
+            "metadata_file_offset": 6905796,
+            "raw_hex": "3f 8e 04 00 60 34 00 00 98 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 616,
+            "offset_entry_file_offset": 37846596
+          },
+          {
+            "field_id": 10951,
+            "name": "SexMenuPanel",
+            "token": "0x4001099",
+            "metadata_file_offset": 6905808,
+            "raw_hex": "53 8e 04 00 60 34 00 00 99 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 624,
+            "offset_entry_file_offset": 37846600
+          },
+          {
+            "field_id": 10952,
+            "name": "NameEditPanel",
+            "token": "0x400109a",
+            "metadata_file_offset": 6905820,
+            "raw_hex": "60 8e 04 00 60 34 00 00 9a 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13408,
+              "pointer_file_offset": 42959008,
+              "type_va": "0x182de9af8",
+              "type_file_offset": 48135416,
+              "type_raw_hex": "97 0b 00 00 00 00 00 00 06 00 12 00",
+              "data": 2967,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 2967,
+              "type_name": "Common.Scripts.UI.BasePanelView"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 632,
+            "offset_entry_file_offset": 37846604
+          },
+          {
+            "field_id": 10953,
+            "name": "SweatBody",
+            "token": "0x400109b",
+            "metadata_file_offset": 6905832,
+            "raw_hex": "6e 8e 04 00 64 49 00 00 9b 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18788,
+              "pointer_file_offset": 43002048,
+              "type_va": "0x182df05a8",
+              "type_file_offset": 48162728,
+              "type_raw_hex": "d5 15 00 00 00 00 00 00 06 00 12 00",
+              "data": 5589,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5589,
+              "type_name": "UnityEngine.Material"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 640,
+            "offset_entry_file_offset": 37846608
+          },
+          {
+            "field_id": 10954,
+            "name": "Inmon",
+            "token": "0x400109c",
+            "metadata_file_offset": 6905844,
+            "raw_hex": "78 8e 04 00 64 49 00 00 9c 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18788,
+              "pointer_file_offset": 43002048,
+              "type_va": "0x182df05a8",
+              "type_file_offset": 48162728,
+              "type_raw_hex": "d5 15 00 00 00 00 00 00 06 00 12 00",
+              "data": 5589,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5589,
+              "type_name": "UnityEngine.Material"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 648,
+            "offset_entry_file_offset": 37846612
+          },
+          {
+            "field_id": 10955,
+            "name": "Rakugaki",
+            "token": "0x400109d",
+            "metadata_file_offset": 6905856,
+            "raw_hex": "7e 8e 04 00 64 49 00 00 9d 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18788,
+              "pointer_file_offset": 43002048,
+              "type_va": "0x182df05a8",
+              "type_file_offset": 48162728,
+              "type_raw_hex": "d5 15 00 00 00 00 00 00 06 00 12 00",
+              "data": 5589,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5589,
+              "type_name": "UnityEngine.Material"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 656,
+            "offset_entry_file_offset": 37846616
+          },
+          {
+            "field_id": 10956,
+            "name": "ClothesPaint",
+            "token": "0x400109e",
+            "metadata_file_offset": 6905868,
+            "raw_hex": "87 8e 04 00 64 49 00 00 9e 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18788,
+              "pointer_file_offset": 43002048,
+              "type_va": "0x182df05a8",
+              "type_file_offset": 48162728,
+              "type_raw_hex": "d5 15 00 00 00 00 00 00 06 00 12 00",
+              "data": 5589,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5589,
+              "type_name": "UnityEngine.Material"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 664,
+            "offset_entry_file_offset": 37846620
+          },
+          {
+            "field_id": 10957,
+            "name": "TattooDark",
+            "token": "0x400109f",
+            "metadata_file_offset": 6905880,
+            "raw_hex": "94 8e 04 00 64 49 00 00 9f 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18788,
+              "pointer_file_offset": 43002048,
+              "type_va": "0x182df05a8",
+              "type_file_offset": 48162728,
+              "type_raw_hex": "d5 15 00 00 00 00 00 00 06 00 12 00",
+              "data": 5589,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5589,
+              "type_name": "UnityEngine.Material"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 672,
+            "offset_entry_file_offset": 37846624
+          },
+          {
+            "field_id": 10958,
+            "name": "TattooFlower1",
+            "token": "0x40010a0",
+            "metadata_file_offset": 6905892,
+            "raw_hex": "9f 8e 04 00 64 49 00 00 a0 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18788,
+              "pointer_file_offset": 43002048,
+              "type_va": "0x182df05a8",
+              "type_file_offset": 48162728,
+              "type_raw_hex": "d5 15 00 00 00 00 00 00 06 00 12 00",
+              "data": 5589,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5589,
+              "type_name": "UnityEngine.Material"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 680,
+            "offset_entry_file_offset": 37846628
+          },
+          {
+            "field_id": 10959,
+            "name": "TattooFlower2",
+            "token": "0x40010a1",
+            "metadata_file_offset": 6905904,
+            "raw_hex": "ad 8e 04 00 64 49 00 00 a1 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18788,
+              "pointer_file_offset": 43002048,
+              "type_va": "0x182df05a8",
+              "type_file_offset": 48162728,
+              "type_raw_hex": "d5 15 00 00 00 00 00 00 06 00 12 00",
+              "data": 5589,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5589,
+              "type_name": "UnityEngine.Material"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 688,
+            "offset_entry_file_offset": 37846632
+          },
+          {
+            "field_id": 10960,
+            "name": "TattooLotus",
+            "token": "0x40010a2",
+            "metadata_file_offset": 6905916,
+            "raw_hex": "bb 8e 04 00 64 49 00 00 a2 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18788,
+              "pointer_file_offset": 43002048,
+              "type_va": "0x182df05a8",
+              "type_file_offset": 48162728,
+              "type_raw_hex": "d5 15 00 00 00 00 00 00 06 00 12 00",
+              "data": 5589,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5589,
+              "type_name": "UnityEngine.Material"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 696,
+            "offset_entry_file_offset": 37846636
+          },
+          {
+            "field_id": 10961,
+            "name": "TattooSatanism",
+            "token": "0x40010a3",
+            "metadata_file_offset": 6905928,
+            "raw_hex": "c7 8e 04 00 64 49 00 00 a3 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18788,
+              "pointer_file_offset": 43002048,
+              "type_va": "0x182df05a8",
+              "type_file_offset": 48162728,
+              "type_raw_hex": "d5 15 00 00 00 00 00 00 06 00 12 00",
+              "data": 5589,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5589,
+              "type_name": "UnityEngine.Material"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 704,
+            "offset_entry_file_offset": 37846640
+          },
+          {
+            "field_id": 10962,
+            "name": "TattooSlave",
+            "token": "0x40010a4",
+            "metadata_file_offset": 6905940,
+            "raw_hex": "d6 8e 04 00 64 49 00 00 a4 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18788,
+              "pointer_file_offset": 43002048,
+              "type_va": "0x182df05a8",
+              "type_file_offset": 48162728,
+              "type_raw_hex": "d5 15 00 00 00 00 00 00 06 00 12 00",
+              "data": 5589,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5589,
+              "type_name": "UnityEngine.Material"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 712,
+            "offset_entry_file_offset": 37846644
+          },
+          {
+            "field_id": 10963,
+            "name": "RubberSuit",
+            "token": "0x40010a5",
+            "metadata_file_offset": 6905952,
+            "raw_hex": "e2 8e 04 00 64 49 00 00 a5 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18788,
+              "pointer_file_offset": 43002048,
+              "type_va": "0x182df05a8",
+              "type_file_offset": 48162728,
+              "type_raw_hex": "d5 15 00 00 00 00 00 00 06 00 12 00",
+              "data": 5589,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5589,
+              "type_name": "UnityEngine.Material"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 720,
+            "offset_entry_file_offset": 37846648
+          },
+          {
+            "field_id": 10964,
+            "name": "FutanariPaint",
+            "token": "0x40010a6",
+            "metadata_file_offset": 6905964,
+            "raw_hex": "ed 8e 04 00 64 49 00 00 a6 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18788,
+              "pointer_file_offset": 43002048,
+              "type_va": "0x182df05a8",
+              "type_file_offset": 48162728,
+              "type_raw_hex": "d5 15 00 00 00 00 00 00 06 00 12 00",
+              "data": 5589,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5589,
+              "type_name": "UnityEngine.Material"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 728,
+            "offset_entry_file_offset": 37846652
+          },
+          {
+            "field_id": 10965,
+            "name": "NightSpermDecal",
+            "token": "0x40010a7",
+            "metadata_file_offset": 6905976,
+            "raw_hex": "fb 8e 04 00 64 49 00 00 a7 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18788,
+              "pointer_file_offset": 43002048,
+              "type_va": "0x182df05a8",
+              "type_file_offset": 48162728,
+              "type_raw_hex": "d5 15 00 00 00 00 00 00 06 00 12 00",
+              "data": 5589,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5589,
+              "type_name": "UnityEngine.Material"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 736,
+            "offset_entry_file_offset": 37846656
+          },
+          {
+            "field_id": 10966,
+            "name": "FutanariMaterial",
+            "token": "0x40010a8",
+            "metadata_file_offset": 6905988,
+            "raw_hex": "0b 8f 04 00 64 49 00 00 a8 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18788,
+              "pointer_file_offset": 43002048,
+              "type_va": "0x182df05a8",
+              "type_file_offset": 48162728,
+              "type_raw_hex": "d5 15 00 00 00 00 00 00 06 00 12 00",
+              "data": 5589,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5589,
+              "type_name": "UnityEngine.Material"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 744,
+            "offset_entry_file_offset": 37846660
+          },
+          {
+            "field_id": 10967,
+            "name": "FutanariRubberMaterial",
+            "token": "0x40010a9",
+            "metadata_file_offset": 6906000,
+            "raw_hex": "1c 8f 04 00 64 49 00 00 a9 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18788,
+              "pointer_file_offset": 43002048,
+              "type_va": "0x182df05a8",
+              "type_file_offset": 48162728,
+              "type_raw_hex": "d5 15 00 00 00 00 00 00 06 00 12 00",
+              "data": 5589,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5589,
+              "type_name": "UnityEngine.Material"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 752,
+            "offset_entry_file_offset": 37846664
+          },
+          {
+            "field_id": 10968,
+            "name": "Fresnel",
+            "token": "0x40010aa",
+            "metadata_file_offset": 6906012,
+            "raw_hex": "33 8f 04 00 64 49 00 00 aa 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18788,
+              "pointer_file_offset": 43002048,
+              "type_va": "0x182df05a8",
+              "type_file_offset": 48162728,
+              "type_raw_hex": "d5 15 00 00 00 00 00 00 06 00 12 00",
+              "data": 5589,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5589,
+              "type_name": "UnityEngine.Material"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 760,
+            "offset_entry_file_offset": 37846668
+          },
+          {
+            "field_id": 10969,
+            "name": "CensorPussy",
+            "token": "0x40010ab",
+            "metadata_file_offset": 6906024,
+            "raw_hex": "ff fd 03 00 64 49 00 00 ab 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18788,
+              "pointer_file_offset": 43002048,
+              "type_va": "0x182df05a8",
+              "type_file_offset": 48162728,
+              "type_raw_hex": "d5 15 00 00 00 00 00 00 06 00 12 00",
+              "data": 5589,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5589,
+              "type_name": "UnityEngine.Material"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 768,
+            "offset_entry_file_offset": 37846672
+          },
+          {
+            "field_id": 10970,
+            "name": "CensorChinpo",
+            "token": "0x40010ac",
+            "metadata_file_offset": 6906036,
+            "raw_hex": "3b 8f 04 00 64 49 00 00 ac 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 18788,
+              "pointer_file_offset": 43002048,
+              "type_va": "0x182df05a8",
+              "type_file_offset": 48162728,
+              "type_raw_hex": "d5 15 00 00 00 00 00 00 06 00 12 00",
+              "data": 5589,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5589,
+              "type_name": "UnityEngine.Material"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 776,
+            "offset_entry_file_offset": 37846676
+          },
+          {
+            "field_id": 10971,
+            "name": "RubberSuitBlack",
+            "token": "0x40010ad",
+            "metadata_file_offset": 6906048,
+            "raw_hex": "48 8f 04 00 c8 58 00 00 ad 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 22728,
+              "pointer_file_offset": 43033568,
+              "type_va": "0x182dcae18",
+              "type_file_offset": 48009240,
+              "type_raw_hex": "0c 16 00 00 00 00 00 00 06 00 12 00",
+              "data": 5644,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5644,
+              "type_name": "UnityEngine.Texture"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 784,
+            "offset_entry_file_offset": 37846680
+          },
+          {
+            "field_id": 10972,
+            "name": "RubberSuitWhite",
+            "token": "0x40010ae",
+            "metadata_file_offset": 6906060,
+            "raw_hex": "58 8f 04 00 c8 58 00 00 ae 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 22728,
+              "pointer_file_offset": 43033568,
+              "type_va": "0x182dcae18",
+              "type_file_offset": 48009240,
+              "type_raw_hex": "0c 16 00 00 00 00 00 00 06 00 12 00",
+              "data": 5644,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5644,
+              "type_name": "UnityEngine.Texture"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 792,
+            "offset_entry_file_offset": 37846684
+          },
+          {
+            "field_id": 10973,
+            "name": "DroppedPrefabs",
+            "token": "0x40010af",
+            "metadata_file_offset": 6906072,
+            "raw_hex": "68 8f 04 00 3f 2f 00 00 af 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 12095,
+              "pointer_file_offset": 42948504,
+              "type_va": "0x182923630",
+              "type_file_offset": 43128880,
+              "type_raw_hex": "e8 d7 d7 82 01 00 00 00 06 00 1d 00",
+              "data": 6490150888,
+              "attrs": 6,
+              "type_enum": 29
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 800,
+            "offset_entry_file_offset": 37846688
+          },
+          {
+            "field_id": 10974,
+            "name": "MultipleDroppedPrefabs",
+            "token": "0x40010b0",
+            "metadata_file_offset": 6906084,
+            "raw_hex": "77 8f 04 00 3f 2f 00 00 b0 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 12095,
+              "pointer_file_offset": 42948504,
+              "type_va": "0x182923630",
+              "type_file_offset": 43128880,
+              "type_raw_hex": "e8 d7 d7 82 01 00 00 00 06 00 1d 00",
+              "data": 6490150888,
+              "attrs": 6,
+              "type_enum": 29
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 808,
+            "offset_entry_file_offset": 37846692
+          },
+          {
+            "field_id": 10975,
+            "name": "HoldInHandClothesPrefabs",
+            "token": "0x40010b1",
+            "metadata_file_offset": 6906096,
+            "raw_hex": "8e 8f 04 00 3f 2f 00 00 b1 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 12095,
+              "pointer_file_offset": 42948504,
+              "type_va": "0x182923630",
+              "type_file_offset": 43128880,
+              "type_raw_hex": "e8 d7 d7 82 01 00 00 00 06 00 1d 00",
+              "data": 6490150888,
+              "attrs": 6,
+              "type_enum": 29
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 816,
+            "offset_entry_file_offset": 37846696
+          },
+          {
+            "field_id": 10976,
+            "name": "SpermBullet",
+            "token": "0x40010b2",
+            "metadata_file_offset": 6906108,
+            "raw_hex": "42 b5 03 00 37 40 00 00 b2 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 16439,
+              "pointer_file_offset": 42983256,
+              "type_va": "0x182df1688",
+              "type_file_offset": 48167048,
+              "type_raw_hex": "70 16 00 00 00 00 00 00 06 00 12 00",
+              "data": 5744,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5744,
+              "type_name": "UnityEngine.GameObject"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 824,
+            "offset_entry_file_offset": 37846700
+          },
+          {
+            "field_id": 10977,
+            "name": "SpermDecal",
+            "token": "0x40010b3",
+            "metadata_file_offset": 6906120,
+            "raw_hex": "a7 8f 04 00 37 40 00 00 b3 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 16439,
+              "pointer_file_offset": 42983256,
+              "type_va": "0x182df1688",
+              "type_file_offset": 48167048,
+              "type_raw_hex": "70 16 00 00 00 00 00 00 06 00 12 00",
+              "data": 5744,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5744,
+              "type_name": "UnityEngine.GameObject"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 832,
+            "offset_entry_file_offset": 37846704
+          },
+          {
+            "field_id": 10978,
+            "name": "Player",
+            "token": "0x40010b4",
+            "metadata_file_offset": 6906132,
+            "raw_hex": "33 1a 04 00 37 40 00 00 b4 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 16439,
+              "pointer_file_offset": 42983256,
+              "type_va": "0x182df1688",
+              "type_file_offset": 48167048,
+              "type_raw_hex": "70 16 00 00 00 00 00 00 06 00 12 00",
+              "data": 5744,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5744,
+              "type_name": "UnityEngine.GameObject"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 840,
+            "offset_entry_file_offset": 37846708
+          },
+          {
+            "field_id": 10979,
+            "name": "UiPlayer",
+            "token": "0x40010b5",
+            "metadata_file_offset": 6906144,
+            "raw_hex": "b2 8f 04 00 37 40 00 00 b5 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 16439,
+              "pointer_file_offset": 42983256,
+              "type_va": "0x182df1688",
+              "type_file_offset": 48167048,
+              "type_raw_hex": "70 16 00 00 00 00 00 00 06 00 12 00",
+              "data": 5744,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 5744,
+              "type_name": "UnityEngine.GameObject"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 848,
+            "offset_entry_file_offset": 37846712
+          },
+          {
+            "field_id": 10980,
+            "name": "fontKr",
+            "token": "0x40010b6",
+            "metadata_file_offset": 6906156,
+            "raw_hex": "bb 8f 04 00 4d 57 00 00 b6 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 22349,
+              "pointer_file_offset": 43030536,
+              "type_va": "0x182deedf8",
+              "type_file_offset": 48156664,
+              "type_raw_hex": "e5 1d 00 00 00 00 00 00 06 00 12 00",
+              "data": 7653,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 7653,
+              "type_name": "TMPro.TMP_FontAsset"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 856,
+            "offset_entry_file_offset": 37846716
+          },
+          {
+            "field_id": 10981,
+            "name": "fontSc",
+            "token": "0x40010b7",
+            "metadata_file_offset": 6906168,
+            "raw_hex": "c2 8f 04 00 4d 57 00 00 b7 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 22349,
+              "pointer_file_offset": 43030536,
+              "type_va": "0x182deedf8",
+              "type_file_offset": 48156664,
+              "type_raw_hex": "e5 1d 00 00 00 00 00 00 06 00 12 00",
+              "data": 7653,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 7653,
+              "type_name": "TMPro.TMP_FontAsset"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 864,
+            "offset_entry_file_offset": 37846720
+          },
+          {
+            "field_id": 10982,
+            "name": "fontTc",
+            "token": "0x40010b8",
+            "metadata_file_offset": 6906180,
+            "raw_hex": "c9 8f 04 00 4d 57 00 00 b8 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 22349,
+              "pointer_file_offset": 43030536,
+              "type_va": "0x182deedf8",
+              "type_file_offset": 48156664,
+              "type_raw_hex": "e5 1d 00 00 00 00 00 00 06 00 12 00",
+              "data": 7653,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 7653,
+              "type_name": "TMPro.TMP_FontAsset"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 872,
+            "offset_entry_file_offset": 37846724
+          },
+          {
+            "field_id": 10983,
+            "name": "defaultFont",
+            "token": "0x40010b9",
+            "metadata_file_offset": 6906192,
+            "raw_hex": "d0 8f 04 00 4d 57 00 00 b9 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 22349,
+              "pointer_file_offset": 43030536,
+              "type_va": "0x182deedf8",
+              "type_file_offset": 48156664,
+              "type_raw_hex": "e5 1d 00 00 00 00 00 00 06 00 12 00",
+              "data": 7653,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 7653,
+              "type_name": "TMPro.TMP_FontAsset"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 880,
+            "offset_entry_file_offset": 37846728
+          },
+          {
+            "field_id": 10984,
+            "name": "fontMaterials",
+            "token": "0x40010ba",
+            "metadata_file_offset": 6906204,
+            "raw_hex": "dc 8f 04 00 da 2f 00 00 ba 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 12250,
+              "pointer_file_offset": 42949744,
+              "type_va": "0x182922be0",
+              "type_file_offset": 43126240,
+              "type_raw_hex": "98 d2 d7 82 01 00 00 00 06 00 1d 00",
+              "data": 6490149528,
+              "attrs": 6,
+              "type_enum": 29
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 888,
+            "offset_entry_file_offset": 37846732
+          },
+          {
+            "field_id": 10985,
+            "name": "AudioMixer",
+            "token": "0x40010bb",
+            "metadata_file_offset": 6906216,
+            "raw_hex": "ea 8f 04 00 e5 33 00 00 bb 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13285,
+              "pointer_file_offset": 42958024,
+              "type_va": "0x182dea1b8",
+              "type_file_offset": 48137144,
+              "type_raw_hex": "06 28 00 00 00 00 00 00 06 00 12 00",
+              "data": 10246,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 10246,
+              "type_name": "UnityEngine.Audio.AudioMixer"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 896,
+            "offset_entry_file_offset": 37846736
+          },
+          {
+            "field_id": 10986,
+            "name": "AudioMixerEnvironment",
+            "token": "0x40010bc",
+            "metadata_file_offset": 6906228,
+            "raw_hex": "f5 8f 04 00 e7 33 00 00 bc 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13287,
+              "pointer_file_offset": 42958040,
+              "type_va": "0x182dea208",
+              "type_file_offset": 48137224,
+              "type_raw_hex": "07 28 00 00 00 00 00 00 06 00 12 00",
+              "data": 10247,
+              "attrs": 6,
+              "type_enum": 18,
+              "type_id": 10247,
+              "type_name": "UnityEngine.Audio.AudioMixerGroup"
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 904,
+            "offset_entry_file_offset": 37846740
+          },
+          {
+            "field_id": 10987,
+            "name": "Instance",
+            "token": "0x40010bd",
+            "metadata_file_offset": 6906240,
+            "raw_hex": "bc 25 00 00 91 33 00 00 bd 10 00 04",
+            "runtime_type": {
+              "runtime_type_index": 13201,
+              "pointer_file_offset": 42957352,
+              "type_va": "0x182dea4d8",
+              "type_file_offset": 48137944,
+              "type_raw_hex": "57 09 00 00 00 00 00 00 16 00 12 00",
+              "data": 2391,
+              "attrs": 22,
+              "type_enum": 18,
+              "type_id": 2391,
+              "type_name": "ExposureUnnoticed2.Object3D.IngameManager.AssetReferencer"
+            },
+            "is_static": true,
+            "is_literal": false,
+            "registered_offset": 0,
+            "offset_entry_file_offset": 37846744
+          }
+        ],
+        "registered_sizes": {
+          "instance_size": 912,
+          "native_size": -1,
+          "static_fields_size": 8,
+          "thread_static_fields_size": 0
+        },
+        "methods": [
+          {
+            "method_id": 15829,
+            "name": "Awake",
+            "token": "0x600118c",
+            "metadata_file_offset": 2694308
+          },
+          {
+            "method_id": 15830,
+            "name": ".ctor",
+            "token": "0x600118d",
+            "metadata_file_offset": 2694344
+          }
+        ]
+      },
+      {
+        "type_id": 2420,
+        "full_name": "ExposureUnnoticed2.Master.Skill.SkillSlow.MSkillSlow",
+        "metadata_file_offset": 8149424,
+        "type_raw_hex": "cc 8a 04 00 3b a5 04 00 d8 48 00 00 ff ff ff ff c6 53 00 00 d8 48 00 00 ff ff ff ff 01 00 10 00 07 2c 00 00 80 3e 00 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff e9 5f 00 00 ff ff ff ff 04 00 00 00 02 00 00 00 00 00 04 00 00 00 00 00 00 0c 00 00 2d 03 00 02",
+        "fields": [
+          {
+            "field_id": 11271,
+            "name": "records",
+            "token": "0x40011d9",
+            "metadata_file_offset": 6909648,
+            "raw_hex": "65 a5 04 00 38 30 00 00 d9 11 00 04",
+            "runtime_type": {
+              "runtime_type_index": 12344,
+              "pointer_file_offset": 42950496,
+              "type_va": "0x182922740",
+              "type_file_offset": 43125056,
+              "type_raw_hex": "88 b3 d7 82 01 00 00 00 01 00 1d 00",
+              "data": 6490141576,
+              "attrs": 1,
+              "type_enum": 29
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 24,
+            "offset_entry_file_offset": 37845656
+          },
+          {
+            "field_id": 11272,
+            "name": "dict",
+            "token": "0x40011da",
+            "metadata_file_offset": 6909660,
+            "raw_hex": "74 cc 01 00 ab 10 00 00 da 11 00 04",
+            "runtime_type": {
+              "runtime_type_index": 4267,
+              "pointer_file_offset": 42885880,
+              "type_va": "0x1829487e0",
+              "type_file_offset": 43280864,
+              "type_raw_hex": "a8 63 db 82 01 00 00 00 11 00 15 00",
+              "data": 6490383272,
+              "attrs": 17,
+              "type_enum": 21
+            },
+            "is_static": true,
+            "is_literal": false,
+            "registered_offset": 0,
+            "offset_entry_file_offset": 37845660
+          }
+        ],
+        "registered_sizes": {
+          "instance_size": 32,
+          "native_size": -1,
+          "static_fields_size": 8,
+          "thread_static_fields_size": 0
+        },
+        "methods": [
+          {
+            "method_id": 16000,
+            "name": "CheckInitialize",
+            "token": "0x6001237",
+            "metadata_file_offset": 2700464
+          },
+          {
+            "method_id": 16001,
+            "name": "Get",
+            "token": "0x6001238",
+            "metadata_file_offset": 2700500
+          },
+          {
+            "method_id": 16002,
+            "name": "GetAll",
+            "token": "0x6001239",
+            "metadata_file_offset": 2700536
+          },
+          {
+            "method_id": 16003,
+            "name": ".ctor",
+            "token": "0x600123a",
+            "metadata_file_offset": 2700572
+          }
+        ]
+      },
+      {
+        "type_id": 2421,
+        "full_name": "ExposureUnnoticed2.Master.Skill.SkillSlow.RSkillSlow",
+        "metadata_file_offset": 8149512,
+        "type_raw_hex": "6d a5 04 00 3b a5 04 00 d4 50 00 00 ff ff ff ff c6 53 00 00 d4 50 00 00 ff ff ff ff 01 00 10 00 09 2c 00 00 84 3e 00 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ed 5f 00 00 ff ff ff ff 01 00 00 00 03 00 00 00 00 00 04 00 00 00 00 00 00 0c 00 00 2e 03 00 02",
+        "fields": [
+          {
+            "field_id": 11273,
+            "name": "Level",
+            "token": "0x40011db",
+            "metadata_file_offset": 6909672,
+            "raw_hex": "3b bb 02 00 de 45 00 00 db 11 00 04",
+            "runtime_type": {
+              "runtime_type_index": 17886,
+              "pointer_file_offset": 42994832,
+              "type_va": "0x182df0eb8",
+              "type_file_offset": 48165048,
+              "type_raw_hex": "ef 00 00 00 00 00 00 00 06 00 08 80",
+              "data": 239,
+              "attrs": 6,
+              "type_enum": 8
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 24,
+            "offset_entry_file_offset": 37845640
+          },
+          {
+            "field_id": 11274,
+            "name": "MaxTimeTank",
+            "token": "0x40011dc",
+            "metadata_file_offset": 6909684,
+            "raw_hex": "78 a5 04 00 bc 54 00 00 dc 11 00 04",
+            "runtime_type": {
+              "runtime_type_index": 21692,
+              "pointer_file_offset": 43025280,
+              "type_va": "0x182def3b8",
+              "type_file_offset": 48158136,
+              "type_raw_hex": "1d 01 00 00 00 00 00 00 06 00 0c 80",
+              "data": 285,
+              "attrs": 6,
+              "type_enum": 12
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 28,
+            "offset_entry_file_offset": 37845644
+          },
+          {
+            "field_id": 11275,
+            "name": "NextLevelUpRp",
+            "token": "0x40011dd",
+            "metadata_file_offset": 6909696,
+            "raw_hex": "84 a5 04 00 de 45 00 00 dd 11 00 04",
+            "runtime_type": {
+              "runtime_type_index": 17886,
+              "pointer_file_offset": 42994832,
+              "type_va": "0x182df0eb8",
+              "type_file_offset": 48165048,
+              "type_raw_hex": "ef 00 00 00 00 00 00 00 06 00 08 80",
+              "data": 239,
+              "attrs": 6,
+              "type_enum": 8
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 32,
+            "offset_entry_file_offset": 37845648
+          }
+        ],
+        "registered_sizes": {
+          "instance_size": 40,
+          "native_size": -1,
+          "static_fields_size": 0,
+          "thread_static_fields_size": 0
+        },
+        "methods": [
+          {
+            "method_id": 16004,
+            "name": ".ctor",
+            "token": "0x600123b",
+            "metadata_file_offset": 2700608
+          }
+        ]
+      },
+      {
+        "type_id": 2426,
+        "full_name": "ExposureUnnoticed2.Master.Skill.SkillMaxAccessoryNum.MSkillMaxAccessoryNum",
+        "metadata_file_offset": 8149952,
+        "type_raw_hex": "18 8b 04 00 f1 a5 04 00 d2 48 00 00 ff ff ff ff c6 53 00 00 d2 48 00 00 ff ff ff ff 01 00 10 00 18 2c 00 00 8f 3e 00 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 01 60 00 00 ff ff ff ff 04 00 00 00 02 00 00 00 00 00 04 00 00 00 00 00 00 0c 00 00 33 03 00 02",
+        "fields": [
+          {
+            "field_id": 11288,
+            "name": "records",
+            "token": "0x40011ea",
+            "metadata_file_offset": 6909852,
+            "raw_hex": "65 a5 04 00 36 30 00 00 ea 11 00 04",
+            "runtime_type": {
+              "runtime_type_index": 12342,
+              "pointer_file_offset": 42950480,
+              "type_va": "0x182922710",
+              "type_file_offset": 43125008,
+              "type_raw_hex": "f8 b3 d7 82 01 00 00 00 01 00 1d 00",
+              "data": 6490141688,
+              "attrs": 1,
+              "type_enum": 29
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 24,
+            "offset_entry_file_offset": 37845304
+          },
+          {
+            "field_id": 11289,
+            "name": "dict",
+            "token": "0x40011eb",
+            "metadata_file_offset": 6909864,
+            "raw_hex": "74 cc 01 00 a7 10 00 00 eb 11 00 04",
+            "runtime_type": {
+              "runtime_type_index": 4263,
+              "pointer_file_offset": 42885848,
+              "type_va": "0x1829487c0",
+              "type_file_offset": 43280832,
+              "type_raw_hex": "68 63 db 82 01 00 00 00 11 00 15 00",
+              "data": 6490383208,
+              "attrs": 17,
+              "type_enum": 21
+            },
+            "is_static": true,
+            "is_literal": false,
+            "registered_offset": 0,
+            "offset_entry_file_offset": 37845308
+          }
+        ],
+        "registered_sizes": {
+          "instance_size": 32,
+          "native_size": -1,
+          "static_fields_size": 8,
+          "thread_static_fields_size": 0
+        },
+        "methods": [
+          {
+            "method_id": 16015,
+            "name": "CheckInitialize",
+            "token": "0x6001246",
+            "metadata_file_offset": 2701004
+          },
+          {
+            "method_id": 16016,
+            "name": "Get",
+            "token": "0x6001247",
+            "metadata_file_offset": 2701040
+          },
+          {
+            "method_id": 16017,
+            "name": "GetAll",
+            "token": "0x6001248",
+            "metadata_file_offset": 2701076
+          },
+          {
+            "method_id": 16018,
+            "name": ".ctor",
+            "token": "0x6001249",
+            "metadata_file_offset": 2701112
+          }
+        ]
+      },
+      {
+        "type_id": 2427,
+        "full_name": "ExposureUnnoticed2.Master.Skill.SkillMaxAccessoryNum.RSkillMaxAccessoryNum",
+        "metadata_file_offset": 8150040,
+        "type_raw_hex": "26 a6 04 00 f1 a5 04 00 d1 50 00 00 ff ff ff ff c6 53 00 00 d1 50 00 00 ff ff ff ff 01 00 10 00 1a 2c 00 00 93 3e 00 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 05 60 00 00 ff ff ff ff 01 00 00 00 03 00 00 00 00 00 04 00 00 00 00 00 00 0c 00 00 34 03 00 02",
+        "fields": [
+          {
+            "field_id": 11290,
+            "name": "Level",
+            "token": "0x40011ec",
+            "metadata_file_offset": 6909876,
+            "raw_hex": "3b bb 02 00 de 45 00 00 ec 11 00 04",
+            "runtime_type": {
+              "runtime_type_index": 17886,
+              "pointer_file_offset": 42994832,
+              "type_va": "0x182df0eb8",
+              "type_file_offset": 48165048,
+              "type_raw_hex": "ef 00 00 00 00 00 00 00 06 00 08 80",
+              "data": 239,
+              "attrs": 6,
+              "type_enum": 8
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 24,
+            "offset_entry_file_offset": 37845288
+          },
+          {
+            "field_id": 11291,
+            "name": "MaxNum",
+            "token": "0x40011ed",
+            "metadata_file_offset": 6909888,
+            "raw_hex": "3c a6 04 00 de 45 00 00 ed 11 00 04",
+            "runtime_type": {
+              "runtime_type_index": 17886,
+              "pointer_file_offset": 42994832,
+              "type_va": "0x182df0eb8",
+              "type_file_offset": 48165048,
+              "type_raw_hex": "ef 00 00 00 00 00 00 00 06 00 08 80",
+              "data": 239,
+              "attrs": 6,
+              "type_enum": 8
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 28,
+            "offset_entry_file_offset": 37845292
+          },
+          {
+            "field_id": 11292,
+            "name": "NextLevelUpRp",
+            "token": "0x40011ee",
+            "metadata_file_offset": 6909900,
+            "raw_hex": "84 a5 04 00 de 45 00 00 ee 11 00 04",
+            "runtime_type": {
+              "runtime_type_index": 17886,
+              "pointer_file_offset": 42994832,
+              "type_va": "0x182df0eb8",
+              "type_file_offset": 48165048,
+              "type_raw_hex": "ef 00 00 00 00 00 00 00 06 00 08 80",
+              "data": 239,
+              "attrs": 6,
+              "type_enum": 8
+            },
+            "is_static": false,
+            "is_literal": false,
+            "registered_offset": 32,
+            "offset_entry_file_offset": 37845296
+          }
+        ],
+        "registered_sizes": {
+          "instance_size": 40,
+          "native_size": -1,
+          "static_fields_size": 0,
+          "thread_static_fields_size": 0
+        },
+        "methods": [
+          {
+            "method_id": 16019,
+            "name": ".ctor",
+            "token": "0x600124a",
+            "metadata_file_offset": 2701148
+          }
+        ]
+      }
+    ],
+    "enums": [],
+    "integer_rule": "v31 Int32 field defaults use compressed unsigned 1/2/4-byte prefixes (or f0+LE32), then signed zigzag decoding. Each selected enum value is independently compared with its interop constant.",
+    "requested_names_without_original_type": [
+      "PlayerActionType",
+      "LocomotionState"
+    ],
+    "limitation": "Registered offsets are native instance/static storage coordinates. Enum literal offset=0 is not an instance field. These are separate from serialized object offsets; declaration order alone is not a Unity schema."
+  },
+  "bindings": [
+    {
+      "field": "MSkillSlow",
+      "field_id": 10893,
+      "offset": 160,
+      "pointer": {
+        "serialized_offset": 224,
+        "serialized_end": 236,
+        "value": {
+          "file_id": 0,
+          "path_id": 62463
+        },
+        "raw_hex": "00 00 00 00 ff f3 00 00 00 00 00 00"
+      },
+      "target": {
+        "node": "resources.assets",
+        "object": {
+          "path_id": 62463,
+          "offset": 252246912,
+          "size": 120,
+          "type_index": 94,
+          "class_id": 114
+        }
+      }
+    },
+    {
+      "field": "MSkillMaxAccessoryNum",
+      "field_id": 10899,
+      "offset": 208,
+      "pointer": {
+        "serialized_offset": 296,
+        "serialized_end": 308,
+        "value": {
+          "file_id": 0,
+          "path_id": 62451
+        },
+        "raw_hex": "00 00 00 00 f3 f3 00 00 00 00 00 00"
+      },
+      "target": {
+        "node": "resources.assets",
+        "object": {
+          "path_id": 62451,
+          "offset": 252246008,
+          "size": 108,
+          "type_index": 90,
+          "class_id": 114
+        }
+      }
+    }
+  ],
+  "tables": {
+    "MSkillMaxAccessoryNum": {
+      "source": {
+        "node": "resources.assets",
+        "object": {
+          "path_id": 62451,
+          "offset": 252246008,
+          "size": 108,
+          "type_index": 90,
+          "class_id": 114
+        },
+        "uncompressed_stream_offset": 4393045534,
+        "sha256": "e2f0b4bd85c2f62067ee8b44dfd806c1ad02c99d4a2a7d0be05e406fc22665cb",
+        "compressed_source_blocks": [
+          {
+            "index": 33516,
+            "file_offset": 2255628344,
+            "stream_offset": 4393009152,
+            "size": 131072,
+            "compressed_size": 51825,
+            "flags": 2
+          }
+        ]
+      },
+      "script_identity": {
+        "source": {
+          "node": "globalgamemanagers.assets",
+          "object": {
+            "path_id": 3182,
+            "offset": 461680,
+            "size": 152,
+            "type_index": 0,
+            "class_id": 115
+          },
+          "uncompressed_stream_offset": 6023448,
+          "sha256": "1888384082cce9948780627288742b94718e30f1a98e3e265311c042cb4d29c1",
+          "compressed_source_blocks": [
+            {
+              "index": 45,
+              "file_offset": 2145935,
+              "stream_offset": 5898240,
+              "size": 131072,
+              "compressed_size": 38839,
+              "flags": 2
+            }
+          ]
+        },
+        "fields": {
+          "name": "MSkillMaxAccessoryNum",
+          "execution_order": 0,
+          "properties_hash": "e0fe8b64d7bee1b8cc665bb7cce0e81c",
+          "class_name": "MSkillMaxAccessoryNum",
+          "namespace": "ExposureUnnoticed2.Master.Skill.SkillMaxAccessoryNum",
+          "assembly_name": "Assembly-CSharp"
+        }
+      },
+      "raw_hex": "00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 6e 0c 00 00 00 00 00 00 15 00 00 00 4d 53 6b 69 6c 6c 4d 61 78 41 63 63 65 73 73 6f 72 79 4e 75 6d 00 00 00 04 00 00 00 00 00 00 00 f4 f3 00 00 00 00 00 00 00 00 00 00 f5 f3 00 00 00 00 00 00 00 00 00 00 f6 f3 00 00 00 00 00 00 00 00 00 00 f7 f3 00 00 00 00 00 00",
+      "serialized_name": "MSkillMaxAccessoryNum",
+      "record_count": {
+        "serialized_offset": 56,
+        "serialized_end": 60,
+        "value": 4,
+        "raw_hex": "04 00 00 00"
+      },
+      "entries": [
+        {
+          "array_index": 0,
+          "pointer_origin": {
+            "node": "resources.assets",
+            "path_id": 62451
+          },
+          "serialized_pointer": {
+            "serialized_offset": 60,
+            "serialized_end": 72,
+            "value": {
+              "file_id": 0,
+              "path_id": 62452
+            },
+            "raw_hex": "00 00 00 00 f4 f3 00 00 00 00 00 00"
+          },
+          "record": {
+            "source": {
+              "node": "resources.assets",
+              "object": {
+                "path_id": 62452,
+                "offset": 252246120,
+                "size": 68,
+                "type_index": 91,
+                "class_id": 114
+              },
+              "uncompressed_stream_offset": 4393045646,
+              "sha256": "ecde5461adcf2c0f9606be8aa9807928fae1d4cea324e5a02ec9f887acd37870",
+              "compressed_source_blocks": [
+                {
+                  "index": 33516,
+                  "file_offset": 2255628344,
+                  "stream_offset": 4393009152,
+                  "size": 131072,
+                  "compressed_size": 51825,
+                  "flags": 2
+                }
+              ]
+            },
+            "script_identity": {
+              "source": {
+                "node": "globalgamemanagers.assets",
+                "object": {
+                  "path_id": 1608,
+                  "offset": 274392,
+                  "size": 152,
+                  "type_index": 0,
+                  "class_id": 115
+                },
+                "uncompressed_stream_offset": 5836160,
+                "sha256": "e521f5e4d113fa5c4111b6db82185200810d240d53af420cd1a57db98380ed78",
+                "compressed_source_blocks": [
+                  {
+                    "index": 44,
+                    "file_offset": 2107248,
+                    "stream_offset": 5767168,
+                    "size": 131072,
+                    "compressed_size": 38687,
+                    "flags": 2
+                  }
+                ]
+              },
+              "fields": {
+                "name": "RSkillMaxAccessoryNum",
+                "execution_order": 0,
+                "properties_hash": "a7c5585f23c0d444b077bf536695a402",
+                "class_name": "RSkillMaxAccessoryNum",
+                "namespace": "ExposureUnnoticed2.Master.Skill.SkillMaxAccessoryNum",
+                "assembly_name": "Assembly-CSharp"
+              }
+            },
+            "raw_hex": "00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 48 06 00 00 00 00 00 00 17 00 00 00 52 53 6b 69 6c 6c 4d 61 78 41 63 63 65 73 73 6f 72 79 4e 75 6d 20 30 00 00 00 00 00 05 00 00 00 2c 01 00 00",
+            "serialized_name": "RSkillMaxAccessoryNum 0",
+            "fields": [
+              {
+                "name": "Level",
+                "field_id": 11290,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 24,
+                "serialized_offset": 56,
+                "serialized_end": 60,
+                "value": 0,
+                "raw_hex": "00 00 00 00"
+              },
+              {
+                "name": "MaxNum",
+                "field_id": 11291,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 28,
+                "serialized_offset": 60,
+                "serialized_end": 64,
+                "value": 5,
+                "raw_hex": "05 00 00 00"
+              },
+              {
+                "name": "NextLevelUpRp",
+                "field_id": 11292,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 32,
+                "serialized_offset": 64,
+                "serialized_end": 68,
+                "value": 300,
+                "raw_hex": "2c 01 00 00"
+              }
+            ],
+            "bytes_consumed": 68,
+            "end_of_object_verified": true,
+            "unparsed_tail_hex": "",
+            "schema_boundary": "All declared instance fields of this selected simple record consume EOF; layout is structurally corroborated by original metadata and generated field-property types, with no embedded source type tree."
+          }
+        },
+        {
+          "array_index": 1,
+          "pointer_origin": {
+            "node": "resources.assets",
+            "path_id": 62451
+          },
+          "serialized_pointer": {
+            "serialized_offset": 72,
+            "serialized_end": 84,
+            "value": {
+              "file_id": 0,
+              "path_id": 62453
+            },
+            "raw_hex": "00 00 00 00 f5 f3 00 00 00 00 00 00"
+          },
+          "record": {
+            "source": {
+              "node": "resources.assets",
+              "object": {
+                "path_id": 62453,
+                "offset": 252246192,
+                "size": 68,
+                "type_index": 91,
+                "class_id": 114
+              },
+              "uncompressed_stream_offset": 4393045718,
+              "sha256": "b2888ac588323400b5944f861d615e6841401c594bc9fa307d20dc7254b1109f",
+              "compressed_source_blocks": [
+                {
+                  "index": 33516,
+                  "file_offset": 2255628344,
+                  "stream_offset": 4393009152,
+                  "size": 131072,
+                  "compressed_size": 51825,
+                  "flags": 2
+                }
+              ]
+            },
+            "script_identity": {
+              "source": {
+                "node": "globalgamemanagers.assets",
+                "object": {
+                  "path_id": 1608,
+                  "offset": 274392,
+                  "size": 152,
+                  "type_index": 0,
+                  "class_id": 115
+                },
+                "uncompressed_stream_offset": 5836160,
+                "sha256": "e521f5e4d113fa5c4111b6db82185200810d240d53af420cd1a57db98380ed78",
+                "compressed_source_blocks": [
+                  {
+                    "index": 44,
+                    "file_offset": 2107248,
+                    "stream_offset": 5767168,
+                    "size": 131072,
+                    "compressed_size": 38687,
+                    "flags": 2
+                  }
+                ]
+              },
+              "fields": {
+                "name": "RSkillMaxAccessoryNum",
+                "execution_order": 0,
+                "properties_hash": "a7c5585f23c0d444b077bf536695a402",
+                "class_name": "RSkillMaxAccessoryNum",
+                "namespace": "ExposureUnnoticed2.Master.Skill.SkillMaxAccessoryNum",
+                "assembly_name": "Assembly-CSharp"
+              }
+            },
+            "raw_hex": "00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 48 06 00 00 00 00 00 00 17 00 00 00 52 53 6b 69 6c 6c 4d 61 78 41 63 63 65 73 73 6f 72 79 4e 75 6d 20 31 00 01 00 00 00 0a 00 00 00 e8 03 00 00",
+            "serialized_name": "RSkillMaxAccessoryNum 1",
+            "fields": [
+              {
+                "name": "Level",
+                "field_id": 11290,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 24,
+                "serialized_offset": 56,
+                "serialized_end": 60,
+                "value": 1,
+                "raw_hex": "01 00 00 00"
+              },
+              {
+                "name": "MaxNum",
+                "field_id": 11291,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 28,
+                "serialized_offset": 60,
+                "serialized_end": 64,
+                "value": 10,
+                "raw_hex": "0a 00 00 00"
+              },
+              {
+                "name": "NextLevelUpRp",
+                "field_id": 11292,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 32,
+                "serialized_offset": 64,
+                "serialized_end": 68,
+                "value": 1000,
+                "raw_hex": "e8 03 00 00"
+              }
+            ],
+            "bytes_consumed": 68,
+            "end_of_object_verified": true,
+            "unparsed_tail_hex": "",
+            "schema_boundary": "All declared instance fields of this selected simple record consume EOF; layout is structurally corroborated by original metadata and generated field-property types, with no embedded source type tree."
+          }
+        },
+        {
+          "array_index": 2,
+          "pointer_origin": {
+            "node": "resources.assets",
+            "path_id": 62451
+          },
+          "serialized_pointer": {
+            "serialized_offset": 84,
+            "serialized_end": 96,
+            "value": {
+              "file_id": 0,
+              "path_id": 62454
+            },
+            "raw_hex": "00 00 00 00 f6 f3 00 00 00 00 00 00"
+          },
+          "record": {
+            "source": {
+              "node": "resources.assets",
+              "object": {
+                "path_id": 62454,
+                "offset": 252246264,
+                "size": 68,
+                "type_index": 91,
+                "class_id": 114
+              },
+              "uncompressed_stream_offset": 4393045790,
+              "sha256": "15c54701db6269fe0989ced5feed558a8a944903992eec26ad74a91f0d06f8d5",
+              "compressed_source_blocks": [
+                {
+                  "index": 33516,
+                  "file_offset": 2255628344,
+                  "stream_offset": 4393009152,
+                  "size": 131072,
+                  "compressed_size": 51825,
+                  "flags": 2
+                }
+              ]
+            },
+            "script_identity": {
+              "source": {
+                "node": "globalgamemanagers.assets",
+                "object": {
+                  "path_id": 1608,
+                  "offset": 274392,
+                  "size": 152,
+                  "type_index": 0,
+                  "class_id": 115
+                },
+                "uncompressed_stream_offset": 5836160,
+                "sha256": "e521f5e4d113fa5c4111b6db82185200810d240d53af420cd1a57db98380ed78",
+                "compressed_source_blocks": [
+                  {
+                    "index": 44,
+                    "file_offset": 2107248,
+                    "stream_offset": 5767168,
+                    "size": 131072,
+                    "compressed_size": 38687,
+                    "flags": 2
+                  }
+                ]
+              },
+              "fields": {
+                "name": "RSkillMaxAccessoryNum",
+                "execution_order": 0,
+                "properties_hash": "a7c5585f23c0d444b077bf536695a402",
+                "class_name": "RSkillMaxAccessoryNum",
+                "namespace": "ExposureUnnoticed2.Master.Skill.SkillMaxAccessoryNum",
+                "assembly_name": "Assembly-CSharp"
+              }
+            },
+            "raw_hex": "00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 48 06 00 00 00 00 00 00 17 00 00 00 52 53 6b 69 6c 6c 4d 61 78 41 63 63 65 73 73 6f 72 79 4e 75 6d 20 32 00 02 00 00 00 0f 00 00 00 b8 0b 00 00",
+            "serialized_name": "RSkillMaxAccessoryNum 2",
+            "fields": [
+              {
+                "name": "Level",
+                "field_id": 11290,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 24,
+                "serialized_offset": 56,
+                "serialized_end": 60,
+                "value": 2,
+                "raw_hex": "02 00 00 00"
+              },
+              {
+                "name": "MaxNum",
+                "field_id": 11291,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 28,
+                "serialized_offset": 60,
+                "serialized_end": 64,
+                "value": 15,
+                "raw_hex": "0f 00 00 00"
+              },
+              {
+                "name": "NextLevelUpRp",
+                "field_id": 11292,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 32,
+                "serialized_offset": 64,
+                "serialized_end": 68,
+                "value": 3000,
+                "raw_hex": "b8 0b 00 00"
+              }
+            ],
+            "bytes_consumed": 68,
+            "end_of_object_verified": true,
+            "unparsed_tail_hex": "",
+            "schema_boundary": "All declared instance fields of this selected simple record consume EOF; layout is structurally corroborated by original metadata and generated field-property types, with no embedded source type tree."
+          }
+        },
+        {
+          "array_index": 3,
+          "pointer_origin": {
+            "node": "resources.assets",
+            "path_id": 62451
+          },
+          "serialized_pointer": {
+            "serialized_offset": 96,
+            "serialized_end": 108,
+            "value": {
+              "file_id": 0,
+              "path_id": 62455
+            },
+            "raw_hex": "00 00 00 00 f7 f3 00 00 00 00 00 00"
+          },
+          "record": {
+            "source": {
+              "node": "resources.assets",
+              "object": {
+                "path_id": 62455,
+                "offset": 252246336,
+                "size": 68,
+                "type_index": 91,
+                "class_id": 114
+              },
+              "uncompressed_stream_offset": 4393045862,
+              "sha256": "3546101726967f71b8f434da233a288cafbb9545818997183034622fb42a1bc1",
+              "compressed_source_blocks": [
+                {
+                  "index": 33516,
+                  "file_offset": 2255628344,
+                  "stream_offset": 4393009152,
+                  "size": 131072,
+                  "compressed_size": 51825,
+                  "flags": 2
+                }
+              ]
+            },
+            "script_identity": {
+              "source": {
+                "node": "globalgamemanagers.assets",
+                "object": {
+                  "path_id": 1608,
+                  "offset": 274392,
+                  "size": 152,
+                  "type_index": 0,
+                  "class_id": 115
+                },
+                "uncompressed_stream_offset": 5836160,
+                "sha256": "e521f5e4d113fa5c4111b6db82185200810d240d53af420cd1a57db98380ed78",
+                "compressed_source_blocks": [
+                  {
+                    "index": 44,
+                    "file_offset": 2107248,
+                    "stream_offset": 5767168,
+                    "size": 131072,
+                    "compressed_size": 38687,
+                    "flags": 2
+                  }
+                ]
+              },
+              "fields": {
+                "name": "RSkillMaxAccessoryNum",
+                "execution_order": 0,
+                "properties_hash": "a7c5585f23c0d444b077bf536695a402",
+                "class_name": "RSkillMaxAccessoryNum",
+                "namespace": "ExposureUnnoticed2.Master.Skill.SkillMaxAccessoryNum",
+                "assembly_name": "Assembly-CSharp"
+              }
+            },
+            "raw_hex": "00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 48 06 00 00 00 00 00 00 17 00 00 00 52 53 6b 69 6c 6c 4d 61 78 41 63 63 65 73 73 6f 72 79 4e 75 6d 20 33 00 03 00 00 00 1e 00 00 00 d0 07 00 00",
+            "serialized_name": "RSkillMaxAccessoryNum 3",
+            "fields": [
+              {
+                "name": "Level",
+                "field_id": 11290,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 24,
+                "serialized_offset": 56,
+                "serialized_end": 60,
+                "value": 3,
+                "raw_hex": "03 00 00 00"
+              },
+              {
+                "name": "MaxNum",
+                "field_id": 11291,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 28,
+                "serialized_offset": 60,
+                "serialized_end": 64,
+                "value": 30,
+                "raw_hex": "1e 00 00 00"
+              },
+              {
+                "name": "NextLevelUpRp",
+                "field_id": 11292,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 32,
+                "serialized_offset": 64,
+                "serialized_end": 68,
+                "value": 2000,
+                "raw_hex": "d0 07 00 00"
+              }
+            ],
+            "bytes_consumed": 68,
+            "end_of_object_verified": true,
+            "unparsed_tail_hex": "",
+            "schema_boundary": "All declared instance fields of this selected simple record consume EOF; layout is structurally corroborated by original metadata and generated field-property types, with no embedded source type tree."
+          }
+        }
+      ],
+      "bytes_consumed": 108,
+      "end_of_object_verified": true,
+      "schema_boundary": "The leading record/stages PPtr vector fully consumes this table. Native static/literal and Dictionary/list fields have no serialized bytes in this supported interpretation."
+    },
+    "MSkillSlow": {
+      "source": {
+        "node": "resources.assets",
+        "object": {
+          "path_id": 62463,
+          "offset": 252246912,
+          "size": 120,
+          "type_index": 94,
+          "class_id": 114
+        },
+        "uncompressed_stream_offset": 4393046438,
+        "sha256": "b71fe99ce23b4606ac8123efe3a528bb4b213a90a3de07760be643a1bc7df167",
+        "compressed_source_blocks": [
+          {
+            "index": 33516,
+            "file_offset": 2255628344,
+            "stream_offset": 4393009152,
+            "size": 131072,
+            "compressed_size": 51825,
+            "flags": 2
+          }
+        ]
+      },
+      "script_identity": {
+        "source": {
+          "node": "globalgamemanagers.assets",
+          "object": {
+            "path_id": 1634,
+            "offset": 277584,
+            "size": 120,
+            "type_index": 0,
+            "class_id": 115
+          },
+          "uncompressed_stream_offset": 5839352,
+          "sha256": "88b35ec99b23dbefba1c397e347094fa0cd254aa2c929352f60e62821581ef5d",
+          "compressed_source_blocks": [
+            {
+              "index": 44,
+              "file_offset": 2107248,
+              "stream_offset": 5767168,
+              "size": 131072,
+              "compressed_size": 38687,
+              "flags": 2
+            }
+          ]
+        },
+        "fields": {
+          "name": "MSkillSlow",
+          "execution_order": 0,
+          "properties_hash": "555c63e53f7e5e777f260cfa3c4efa41",
+          "class_name": "MSkillSlow",
+          "namespace": "ExposureUnnoticed2.Master.Skill.SkillSlow",
+          "assembly_name": "Assembly-CSharp"
+        }
+      },
+      "raw_hex": "00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 62 06 00 00 00 00 00 00 0a 00 00 00 4d 53 6b 69 6c 6c 53 6c 6f 77 00 00 06 00 00 00 00 00 00 00 00 f4 00 00 00 00 00 00 00 00 00 00 01 f4 00 00 00 00 00 00 00 00 00 00 02 f4 00 00 00 00 00 00 00 00 00 00 03 f4 00 00 00 00 00 00 00 00 00 00 04 f4 00 00 00 00 00 00 00 00 00 00 05 f4 00 00 00 00 00 00",
+      "serialized_name": "MSkillSlow",
+      "record_count": {
+        "serialized_offset": 44,
+        "serialized_end": 48,
+        "value": 6,
+        "raw_hex": "06 00 00 00"
+      },
+      "entries": [
+        {
+          "array_index": 0,
+          "pointer_origin": {
+            "node": "resources.assets",
+            "path_id": 62463
+          },
+          "serialized_pointer": {
+            "serialized_offset": 48,
+            "serialized_end": 60,
+            "value": {
+              "file_id": 0,
+              "path_id": 62464
+            },
+            "raw_hex": "00 00 00 00 00 f4 00 00 00 00 00 00"
+          },
+          "record": {
+            "source": {
+              "node": "resources.assets",
+              "object": {
+                "path_id": 62464,
+                "offset": 252247032,
+                "size": 56,
+                "type_index": 95,
+                "class_id": 114
+              },
+              "uncompressed_stream_offset": 4393046558,
+              "sha256": "6e4e67958085944d5ec1eb7fb9111ac390f70f1567ba9f1bdd2b0c7654105c5b",
+              "compressed_source_blocks": [
+                {
+                  "index": 33516,
+                  "file_offset": 2255628344,
+                  "stream_offset": 4393009152,
+                  "size": 131072,
+                  "compressed_size": 51825,
+                  "flags": 2
+                }
+              ]
+            },
+            "script_identity": {
+              "source": {
+                "node": "globalgamemanagers.assets",
+                "object": {
+                  "path_id": 3228,
+                  "offset": 467064,
+                  "size": 120,
+                  "type_index": 0,
+                  "class_id": 115
+                },
+                "uncompressed_stream_offset": 6028832,
+                "sha256": "6950eccc4cbf388fa0f2dd1ef3033ebf7b0de4f1bc6010ff20930034a9956834",
+                "compressed_source_blocks": [
+                  {
+                    "index": 45,
+                    "file_offset": 2145935,
+                    "stream_offset": 5898240,
+                    "size": 131072,
+                    "compressed_size": 38839,
+                    "flags": 2
+                  }
+                ]
+              },
+              "fields": {
+                "name": "RSkillSlow",
+                "execution_order": 0,
+                "properties_hash": "e920386f6c655ff38fef03d011c0b063",
+                "class_name": "RSkillSlow",
+                "namespace": "ExposureUnnoticed2.Master.Skill.SkillSlow",
+                "assembly_name": "Assembly-CSharp"
+              }
+            },
+            "raw_hex": "00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 9c 0c 00 00 00 00 00 00 0b 00 00 00 52 53 6b 69 6c 6c 53 6c 6f 77 30 00 00 00 00 00 00 00 00 00 32 00 00 00",
+            "serialized_name": "RSkillSlow0",
+            "fields": [
+              {
+                "name": "Level",
+                "field_id": 11273,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 24,
+                "serialized_offset": 44,
+                "serialized_end": 48,
+                "value": 0,
+                "raw_hex": "00 00 00 00"
+              },
+              {
+                "name": "MaxTimeTank",
+                "field_id": 11274,
+                "wrapper_type": "System.Single",
+                "native_registered_offset": 28,
+                "serialized_offset": 48,
+                "serialized_end": 52,
+                "value": 0.0,
+                "raw_hex": "00 00 00 00"
+              },
+              {
+                "name": "NextLevelUpRp",
+                "field_id": 11275,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 32,
+                "serialized_offset": 52,
+                "serialized_end": 56,
+                "value": 50,
+                "raw_hex": "32 00 00 00"
+              }
+            ],
+            "bytes_consumed": 56,
+            "end_of_object_verified": true,
+            "unparsed_tail_hex": "",
+            "schema_boundary": "All declared instance fields of this selected simple record consume EOF; layout is structurally corroborated by original metadata and generated field-property types, with no embedded source type tree."
+          }
+        },
+        {
+          "array_index": 1,
+          "pointer_origin": {
+            "node": "resources.assets",
+            "path_id": 62463
+          },
+          "serialized_pointer": {
+            "serialized_offset": 60,
+            "serialized_end": 72,
+            "value": {
+              "file_id": 0,
+              "path_id": 62465
+            },
+            "raw_hex": "00 00 00 00 01 f4 00 00 00 00 00 00"
+          },
+          "record": {
+            "source": {
+              "node": "resources.assets",
+              "object": {
+                "path_id": 62465,
+                "offset": 252247088,
+                "size": 56,
+                "type_index": 95,
+                "class_id": 114
+              },
+              "uncompressed_stream_offset": 4393046614,
+              "sha256": "eec254870d9be104812b61b07fae1169bf3e485c8a48cf98797684be71739fa7",
+              "compressed_source_blocks": [
+                {
+                  "index": 33516,
+                  "file_offset": 2255628344,
+                  "stream_offset": 4393009152,
+                  "size": 131072,
+                  "compressed_size": 51825,
+                  "flags": 2
+                }
+              ]
+            },
+            "script_identity": {
+              "source": {
+                "node": "globalgamemanagers.assets",
+                "object": {
+                  "path_id": 3228,
+                  "offset": 467064,
+                  "size": 120,
+                  "type_index": 0,
+                  "class_id": 115
+                },
+                "uncompressed_stream_offset": 6028832,
+                "sha256": "6950eccc4cbf388fa0f2dd1ef3033ebf7b0de4f1bc6010ff20930034a9956834",
+                "compressed_source_blocks": [
+                  {
+                    "index": 45,
+                    "file_offset": 2145935,
+                    "stream_offset": 5898240,
+                    "size": 131072,
+                    "compressed_size": 38839,
+                    "flags": 2
+                  }
+                ]
+              },
+              "fields": {
+                "name": "RSkillSlow",
+                "execution_order": 0,
+                "properties_hash": "e920386f6c655ff38fef03d011c0b063",
+                "class_name": "RSkillSlow",
+                "namespace": "ExposureUnnoticed2.Master.Skill.SkillSlow",
+                "assembly_name": "Assembly-CSharp"
+              }
+            },
+            "raw_hex": "00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 9c 0c 00 00 00 00 00 00 0b 00 00 00 52 53 6b 69 6c 6c 53 6c 6f 77 31 00 01 00 00 00 00 00 00 40 64 00 00 00",
+            "serialized_name": "RSkillSlow1",
+            "fields": [
+              {
+                "name": "Level",
+                "field_id": 11273,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 24,
+                "serialized_offset": 44,
+                "serialized_end": 48,
+                "value": 1,
+                "raw_hex": "01 00 00 00"
+              },
+              {
+                "name": "MaxTimeTank",
+                "field_id": 11274,
+                "wrapper_type": "System.Single",
+                "native_registered_offset": 28,
+                "serialized_offset": 48,
+                "serialized_end": 52,
+                "value": 2.0,
+                "raw_hex": "00 00 00 40"
+              },
+              {
+                "name": "NextLevelUpRp",
+                "field_id": 11275,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 32,
+                "serialized_offset": 52,
+                "serialized_end": 56,
+                "value": 100,
+                "raw_hex": "64 00 00 00"
+              }
+            ],
+            "bytes_consumed": 56,
+            "end_of_object_verified": true,
+            "unparsed_tail_hex": "",
+            "schema_boundary": "All declared instance fields of this selected simple record consume EOF; layout is structurally corroborated by original metadata and generated field-property types, with no embedded source type tree."
+          }
+        },
+        {
+          "array_index": 2,
+          "pointer_origin": {
+            "node": "resources.assets",
+            "path_id": 62463
+          },
+          "serialized_pointer": {
+            "serialized_offset": 72,
+            "serialized_end": 84,
+            "value": {
+              "file_id": 0,
+              "path_id": 62466
+            },
+            "raw_hex": "00 00 00 00 02 f4 00 00 00 00 00 00"
+          },
+          "record": {
+            "source": {
+              "node": "resources.assets",
+              "object": {
+                "path_id": 62466,
+                "offset": 252247144,
+                "size": 56,
+                "type_index": 95,
+                "class_id": 114
+              },
+              "uncompressed_stream_offset": 4393046670,
+              "sha256": "61d9efff0805718a16fde5605e866134966aab7c903e260d82ddb2bfff46f32b",
+              "compressed_source_blocks": [
+                {
+                  "index": 33516,
+                  "file_offset": 2255628344,
+                  "stream_offset": 4393009152,
+                  "size": 131072,
+                  "compressed_size": 51825,
+                  "flags": 2
+                }
+              ]
+            },
+            "script_identity": {
+              "source": {
+                "node": "globalgamemanagers.assets",
+                "object": {
+                  "path_id": 3228,
+                  "offset": 467064,
+                  "size": 120,
+                  "type_index": 0,
+                  "class_id": 115
+                },
+                "uncompressed_stream_offset": 6028832,
+                "sha256": "6950eccc4cbf388fa0f2dd1ef3033ebf7b0de4f1bc6010ff20930034a9956834",
+                "compressed_source_blocks": [
+                  {
+                    "index": 45,
+                    "file_offset": 2145935,
+                    "stream_offset": 5898240,
+                    "size": 131072,
+                    "compressed_size": 38839,
+                    "flags": 2
+                  }
+                ]
+              },
+              "fields": {
+                "name": "RSkillSlow",
+                "execution_order": 0,
+                "properties_hash": "e920386f6c655ff38fef03d011c0b063",
+                "class_name": "RSkillSlow",
+                "namespace": "ExposureUnnoticed2.Master.Skill.SkillSlow",
+                "assembly_name": "Assembly-CSharp"
+              }
+            },
+            "raw_hex": "00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 9c 0c 00 00 00 00 00 00 0b 00 00 00 52 53 6b 69 6c 6c 53 6c 6f 77 32 00 02 00 00 00 00 00 a0 40 c8 00 00 00",
+            "serialized_name": "RSkillSlow2",
+            "fields": [
+              {
+                "name": "Level",
+                "field_id": 11273,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 24,
+                "serialized_offset": 44,
+                "serialized_end": 48,
+                "value": 2,
+                "raw_hex": "02 00 00 00"
+              },
+              {
+                "name": "MaxTimeTank",
+                "field_id": 11274,
+                "wrapper_type": "System.Single",
+                "native_registered_offset": 28,
+                "serialized_offset": 48,
+                "serialized_end": 52,
+                "value": 5.0,
+                "raw_hex": "00 00 a0 40"
+              },
+              {
+                "name": "NextLevelUpRp",
+                "field_id": 11275,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 32,
+                "serialized_offset": 52,
+                "serialized_end": 56,
+                "value": 200,
+                "raw_hex": "c8 00 00 00"
+              }
+            ],
+            "bytes_consumed": 56,
+            "end_of_object_verified": true,
+            "unparsed_tail_hex": "",
+            "schema_boundary": "All declared instance fields of this selected simple record consume EOF; layout is structurally corroborated by original metadata and generated field-property types, with no embedded source type tree."
+          }
+        },
+        {
+          "array_index": 3,
+          "pointer_origin": {
+            "node": "resources.assets",
+            "path_id": 62463
+          },
+          "serialized_pointer": {
+            "serialized_offset": 84,
+            "serialized_end": 96,
+            "value": {
+              "file_id": 0,
+              "path_id": 62467
+            },
+            "raw_hex": "00 00 00 00 03 f4 00 00 00 00 00 00"
+          },
+          "record": {
+            "source": {
+              "node": "resources.assets",
+              "object": {
+                "path_id": 62467,
+                "offset": 252247200,
+                "size": 56,
+                "type_index": 95,
+                "class_id": 114
+              },
+              "uncompressed_stream_offset": 4393046726,
+              "sha256": "c4b32ca49e91a59fe6b41c581840faa63cdb31ce4f052ad734e8937404e27f2c",
+              "compressed_source_blocks": [
+                {
+                  "index": 33516,
+                  "file_offset": 2255628344,
+                  "stream_offset": 4393009152,
+                  "size": 131072,
+                  "compressed_size": 51825,
+                  "flags": 2
+                }
+              ]
+            },
+            "script_identity": {
+              "source": {
+                "node": "globalgamemanagers.assets",
+                "object": {
+                  "path_id": 3228,
+                  "offset": 467064,
+                  "size": 120,
+                  "type_index": 0,
+                  "class_id": 115
+                },
+                "uncompressed_stream_offset": 6028832,
+                "sha256": "6950eccc4cbf388fa0f2dd1ef3033ebf7b0de4f1bc6010ff20930034a9956834",
+                "compressed_source_blocks": [
+                  {
+                    "index": 45,
+                    "file_offset": 2145935,
+                    "stream_offset": 5898240,
+                    "size": 131072,
+                    "compressed_size": 38839,
+                    "flags": 2
+                  }
+                ]
+              },
+              "fields": {
+                "name": "RSkillSlow",
+                "execution_order": 0,
+                "properties_hash": "e920386f6c655ff38fef03d011c0b063",
+                "class_name": "RSkillSlow",
+                "namespace": "ExposureUnnoticed2.Master.Skill.SkillSlow",
+                "assembly_name": "Assembly-CSharp"
+              }
+            },
+            "raw_hex": "00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 9c 0c 00 00 00 00 00 00 0b 00 00 00 52 53 6b 69 6c 6c 53 6c 6f 77 33 00 03 00 00 00 00 00 20 41 90 01 00 00",
+            "serialized_name": "RSkillSlow3",
+            "fields": [
+              {
+                "name": "Level",
+                "field_id": 11273,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 24,
+                "serialized_offset": 44,
+                "serialized_end": 48,
+                "value": 3,
+                "raw_hex": "03 00 00 00"
+              },
+              {
+                "name": "MaxTimeTank",
+                "field_id": 11274,
+                "wrapper_type": "System.Single",
+                "native_registered_offset": 28,
+                "serialized_offset": 48,
+                "serialized_end": 52,
+                "value": 10.0,
+                "raw_hex": "00 00 20 41"
+              },
+              {
+                "name": "NextLevelUpRp",
+                "field_id": 11275,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 32,
+                "serialized_offset": 52,
+                "serialized_end": 56,
+                "value": 400,
+                "raw_hex": "90 01 00 00"
+              }
+            ],
+            "bytes_consumed": 56,
+            "end_of_object_verified": true,
+            "unparsed_tail_hex": "",
+            "schema_boundary": "All declared instance fields of this selected simple record consume EOF; layout is structurally corroborated by original metadata and generated field-property types, with no embedded source type tree."
+          }
+        },
+        {
+          "array_index": 4,
+          "pointer_origin": {
+            "node": "resources.assets",
+            "path_id": 62463
+          },
+          "serialized_pointer": {
+            "serialized_offset": 96,
+            "serialized_end": 108,
+            "value": {
+              "file_id": 0,
+              "path_id": 62468
+            },
+            "raw_hex": "00 00 00 00 04 f4 00 00 00 00 00 00"
+          },
+          "record": {
+            "source": {
+              "node": "resources.assets",
+              "object": {
+                "path_id": 62468,
+                "offset": 252247256,
+                "size": 56,
+                "type_index": 95,
+                "class_id": 114
+              },
+              "uncompressed_stream_offset": 4393046782,
+              "sha256": "e729ec082a43bab22667b6f25d85e877095981c96f38b5b5040f8729b0e187ca",
+              "compressed_source_blocks": [
+                {
+                  "index": 33516,
+                  "file_offset": 2255628344,
+                  "stream_offset": 4393009152,
+                  "size": 131072,
+                  "compressed_size": 51825,
+                  "flags": 2
+                }
+              ]
+            },
+            "script_identity": {
+              "source": {
+                "node": "globalgamemanagers.assets",
+                "object": {
+                  "path_id": 3228,
+                  "offset": 467064,
+                  "size": 120,
+                  "type_index": 0,
+                  "class_id": 115
+                },
+                "uncompressed_stream_offset": 6028832,
+                "sha256": "6950eccc4cbf388fa0f2dd1ef3033ebf7b0de4f1bc6010ff20930034a9956834",
+                "compressed_source_blocks": [
+                  {
+                    "index": 45,
+                    "file_offset": 2145935,
+                    "stream_offset": 5898240,
+                    "size": 131072,
+                    "compressed_size": 38839,
+                    "flags": 2
+                  }
+                ]
+              },
+              "fields": {
+                "name": "RSkillSlow",
+                "execution_order": 0,
+                "properties_hash": "e920386f6c655ff38fef03d011c0b063",
+                "class_name": "RSkillSlow",
+                "namespace": "ExposureUnnoticed2.Master.Skill.SkillSlow",
+                "assembly_name": "Assembly-CSharp"
+              }
+            },
+            "raw_hex": "00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 9c 0c 00 00 00 00 00 00 0b 00 00 00 52 53 6b 69 6c 6c 53 6c 6f 77 34 00 04 00 00 00 00 00 a0 41 20 03 00 00",
+            "serialized_name": "RSkillSlow4",
+            "fields": [
+              {
+                "name": "Level",
+                "field_id": 11273,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 24,
+                "serialized_offset": 44,
+                "serialized_end": 48,
+                "value": 4,
+                "raw_hex": "04 00 00 00"
+              },
+              {
+                "name": "MaxTimeTank",
+                "field_id": 11274,
+                "wrapper_type": "System.Single",
+                "native_registered_offset": 28,
+                "serialized_offset": 48,
+                "serialized_end": 52,
+                "value": 20.0,
+                "raw_hex": "00 00 a0 41"
+              },
+              {
+                "name": "NextLevelUpRp",
+                "field_id": 11275,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 32,
+                "serialized_offset": 52,
+                "serialized_end": 56,
+                "value": 800,
+                "raw_hex": "20 03 00 00"
+              }
+            ],
+            "bytes_consumed": 56,
+            "end_of_object_verified": true,
+            "unparsed_tail_hex": "",
+            "schema_boundary": "All declared instance fields of this selected simple record consume EOF; layout is structurally corroborated by original metadata and generated field-property types, with no embedded source type tree."
+          }
+        },
+        {
+          "array_index": 5,
+          "pointer_origin": {
+            "node": "resources.assets",
+            "path_id": 62463
+          },
+          "serialized_pointer": {
+            "serialized_offset": 108,
+            "serialized_end": 120,
+            "value": {
+              "file_id": 0,
+              "path_id": 62469
+            },
+            "raw_hex": "00 00 00 00 05 f4 00 00 00 00 00 00"
+          },
+          "record": {
+            "source": {
+              "node": "resources.assets",
+              "object": {
+                "path_id": 62469,
+                "offset": 252247312,
+                "size": 56,
+                "type_index": 95,
+                "class_id": 114
+              },
+              "uncompressed_stream_offset": 4393046838,
+              "sha256": "d85d9557018c3cd810b02e48e1dc0efb4d9f253576aaf6cadd34f35787b95422",
+              "compressed_source_blocks": [
+                {
+                  "index": 33516,
+                  "file_offset": 2255628344,
+                  "stream_offset": 4393009152,
+                  "size": 131072,
+                  "compressed_size": 51825,
+                  "flags": 2
+                }
+              ]
+            },
+            "script_identity": {
+              "source": {
+                "node": "globalgamemanagers.assets",
+                "object": {
+                  "path_id": 3228,
+                  "offset": 467064,
+                  "size": 120,
+                  "type_index": 0,
+                  "class_id": 115
+                },
+                "uncompressed_stream_offset": 6028832,
+                "sha256": "6950eccc4cbf388fa0f2dd1ef3033ebf7b0de4f1bc6010ff20930034a9956834",
+                "compressed_source_blocks": [
+                  {
+                    "index": 45,
+                    "file_offset": 2145935,
+                    "stream_offset": 5898240,
+                    "size": 131072,
+                    "compressed_size": 38839,
+                    "flags": 2
+                  }
+                ]
+              },
+              "fields": {
+                "name": "RSkillSlow",
+                "execution_order": 0,
+                "properties_hash": "e920386f6c655ff38fef03d011c0b063",
+                "class_name": "RSkillSlow",
+                "namespace": "ExposureUnnoticed2.Master.Skill.SkillSlow",
+                "assembly_name": "Assembly-CSharp"
+              }
+            },
+            "raw_hex": "00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 9c 0c 00 00 00 00 00 00 0b 00 00 00 52 53 6b 69 6c 6c 53 6c 6f 77 35 00 05 00 00 00 00 00 f0 41 20 03 00 00",
+            "serialized_name": "RSkillSlow5",
+            "fields": [
+              {
+                "name": "Level",
+                "field_id": 11273,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 24,
+                "serialized_offset": 44,
+                "serialized_end": 48,
+                "value": 5,
+                "raw_hex": "05 00 00 00"
+              },
+              {
+                "name": "MaxTimeTank",
+                "field_id": 11274,
+                "wrapper_type": "System.Single",
+                "native_registered_offset": 28,
+                "serialized_offset": 48,
+                "serialized_end": 52,
+                "value": 30.0,
+                "raw_hex": "00 00 f0 41"
+              },
+              {
+                "name": "NextLevelUpRp",
+                "field_id": 11275,
+                "wrapper_type": "System.Int32",
+                "native_registered_offset": 32,
+                "serialized_offset": 52,
+                "serialized_end": 56,
+                "value": 800,
+                "raw_hex": "20 03 00 00"
+              }
+            ],
+            "bytes_consumed": 56,
+            "end_of_object_verified": true,
+            "unparsed_tail_hex": "",
+            "schema_boundary": "All declared instance fields of this selected simple record consume EOF; layout is structurally corroborated by original metadata and generated field-property types, with no embedded source type tree."
+          }
+        }
+      ],
+      "bytes_consumed": 120,
+      "end_of_object_verified": true,
+      "schema_boundary": "The leading record/stages PPtr vector fully consumes this table. Native static/literal and Dictionary/list fields have no serialized bytes in this supported interpretation."
+    }
+  },
+  "limitations": [
+    "Uses generated field-property types corroborated by original metadata and full record EOF.",
+    "Primary asset bytes, not observed runtime use; UI Refresh calls the corresponding master Get."
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "natural_only": true,
+  "passive_only": true,
+  "user_input_driven": true,
+  "authority": "passive-original-user-input-in-isolated-save-root",
+  "observation_complete": false,
+  "sessions": [
+    {
+      "session_id": "a5c08cb5-1349-450c-a7a9-39bf85289fdc",
+      "pid": 79816,
+      "state": "running",
+      "closed_by_operator": true
+    },
+    {
+      "session_id": "6b9c9eca-58ae-45a1-bd34-a87069dd080d",
+      "pid": 79816,
+      "state": "running",
+      "closed_by_operator": true
+    }
+  ],
+  "evidence_ids": [
+    "ev_f32f3bffd1826eb6b17ca381b1e20d2a22bd320a9ffa193e8d1debbdaab3adb5",
+    "ev_63f0c98005ec837beccebe9ea133bab8bed0cbfd24dbf355956545350e579edc",
+    "ev_390f04b6140ff67cf29ada8a80552bb22f9c42dd3f8be3b6212cc900ad0444b7",
+    "ev_782a5d711246f44112c7afe667cba3fd4efa3e3e5f4303790a274717e7f1bf44"
+  ],
+  "plugin": {
+    "archived_path": "E:\\ManakaREA-NaturalGameplay\\NaturalMission\\20261030-1\\NaturalMissionObserver-completed.dll",
+    "sha256": "f4317da3d9bca8ef9a4d02685b4e70d2861d599f681bced0a16ab344031f7325"
+  },
+  "sources": [
+    {
+      "path": "Observe.cs",
+      "sha256": "08f4e471ec39ac80abe5d935e830540e05ef66547a4b84408229d0c55c4d6944"
+    },
+    {
+      "path": "build.ps1",
+      "sha256": "b0a731de08cdd058c9235c3a34e442e2323105a9a5ec3a928fba1a1425650559"
+    },
+    {
+      "path": "observe-initial.js",
+      "sha256": "9d9e58e35dee53870847fa99a19fc932540299528170346b2484b53e08a0133d"
+    },
+    {
+      "path": "observe-round1.js",
+      "sha256": "8dae018527b8660809ad33919a589f0aae0d24f02d1c484ab119b07dd728335e"
+    },
+    {
+      "path": "observe.js",
+      "sha256": "0ff8c0700a68a6e9c1232ab04b7d600c1dfbd2f55387ab984ee36b87f06ae9a4"
+    },
+    {
+      "path": "analyze.py",
+      "sha256": "e6ffc692bdf6b6584e75969a5b52bb40ae77b1ac362fafc1584ce34be2f9ec50"
+    },
+    {
+      "path": "collect.py",
+      "sha256": "25e87be7b6426b798224b37322aea0949164b23663e4ad6173816ddbf395d1ad"
+    },
+    {
+      "path": "test_analysis.py",
+      "sha256": "2daeeca57e3d89561e173b4335bcc19eed03179ea17fec6a225bb23e4174db2f"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "baseline.json",
+      "sha256": "348a2222668178e571938fea309510f30e15c206d5c0e6004724245c7c6b0316"
+    },
+    {
+      "path": "close-receipt.json",
+      "sha256": "bef385909e533587b4b6803cc927a91b959e909db2c96e5239b875060daac8ce"
+    },
+    {
+      "path": "rea-runtime.json",
+      "sha256": "e87ab620fa1927bc218da75ef5424373eca595352473fc79bd2f489435800854"
+    },
+    {
+      "path": "saved-files.json",
+      "sha256": "ecf81a226f0508db1f4d023ccf237b6cfa4ba8e7f900107ef9e351f6583837b3"
+    },
+    {
+      "path": "post-state.json",
+      "sha256": "b2341676e548e30176802a81546ea44e86b0c7cc6d2019962826676d9fe46e6f"
+    },
+    {
+      "path": "managed.jsonl.gz",
+      "sha256": "1f3e1b4676a2d213292987b1e0ed24bd4fb1dda3bf15b5080ed7626bb504fc61",
+      "uncompressed_bytes": 785569,
+      "uncompressed_sha256": "994a41f137a720dcee27d3acc538c9c8200ff2991660a2600bde059f12341411"
+    },
+    {
+      "path": "paths.jsonl.gz",
+      "sha256": "84f51427624e6204d7231cc780afb76f20a6071a2365d118a1dfa1234b5c428b",
+      "uncompressed_bytes": 224739,
+      "uncompressed_sha256": "fb357891d01d717207e3d1f8ed7ea5e8af77915ef4a4436501bd4cf12748e300"
+    },
+    {
+      "path": "engine.log.gz",
+      "sha256": "cda09798a91e41f280dfab33d9e236643f77a577d8a1823511cece4ff43763b8",
+      "uncompressed_bytes": 85049,
+      "uncompressed_sha256": "11e1b6ffd76b63ca13d42adf6361e9d34ec55293a2c868e06827ad40dea6fccf"
+    },
+    {
+      "path": "raw/rea-round1.json.gz",
+      "sha256": "1cc9795118343a70a480eabc95429823fbb833e25275a8332dab9014ebcbe415",
+      "uncompressed_bytes": 39361,
+      "uncompressed_sha256": "ee277688133b80ebf4caeb540702a556fe9c7ea7d10164f675fd986517daf3ac"
+    },
+    {
+      "path": "raw/rea-round2.json.gz",
+      "sha256": "ec644153c9b4a5e8208b8601544d10f56007be0c731b4f48e0c3e00ab1398c36",
+      "uncompressed_bytes": 63110,
+      "uncompressed_sha256": "017c63e3c051b0335916d64510cec72546857fc518c370c938dadc01aaf8a722"
+    }
+  ],
+  "scope": "Round1 ten failed onLeave callbacks retained; round2 clean. The second route had incomplete positive progress, not an always-unmet condition. Initial slot0 was copied and never loaded.",
+  "archived_frida_sources": [
+    {
+      "evidence_id": "ev_f32f3bffd1826eb6b17ca381b1e20d2a22bd320a9ffa193e8d1debbdaab3adb5",
+      "original_path": "E:/SecretFlasherManaka v1.1.3_Uncensored/reverse-engineering/runtime/natural-mission/observe.js",
+      "path": "observe-round1.js",
+      "sha256": "8dae018527b8660809ad33919a589f0aae0d24f02d1c484ab119b07dd728335e"
+    }
+  ],
+  "ciphertexts": [
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalMission\\20261030-1\\captures\\0000-SaveData-0.sd",
+      "sha256": "7b572855d33725a6b2e9d45df63c051175c0ebb5de72ea32593485882c94f40d",
+      "bytes": 92672,
+      "plaintext_sha256": "a5099a9fa8a27ece234eecd5bd22feb1bff6c1165afafbdcfc00c87f41f13494",
+      "typed_tree_sha256": "9d4d3371b912e4a782a535a4cb9305ebfb5ac439962b2795a4d934ae97b40603"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalMission\\20261030-1\\captures\\0001-SaveData-1.sd",
+      "sha256": "5b90c9cebbc37810d2671ce2f42ce1ac2b6eb05505ba84f2a0ed6d759f75a5b0",
+      "bytes": 91280,
+      "plaintext_sha256": "beb02b796ed3c394fda2bec8232049c0c4329a963605721912fb19850c3131db",
+      "typed_tree_sha256": "434e960e6deac97d5a508a72dc81cd894784c8f457a2a6ed7e7d1cd4d8d946b8"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalMission\\20261030-1\\captures\\0002-SaveData-s.sd",
+      "sha256": "01febe3c7ab08ff30a817a68bf64f4a8c85a85de74eaccc6b1f3c7c47a9a2726",
+      "bytes": 4160,
+      "plaintext_sha256": "ceb5309503df54e615594224b95676c571bc4b5d825013f4a6d2b7248f25f807",
+      "typed_tree_sha256": "260bdc70025582e33fedba995b59c82094bf5eac6432e13ad7b3c3325f051f74"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalMission\\20261030-1\\captures\\0003-SaveDataBackup-1.sd",
+      "sha256": "b311b605875259b1bbf334c9a3170409c6bd63121c03208bdbb44a04d2caabdf",
+      "bytes": 91328,
+      "plaintext_sha256": "40f379ec09a6ca5eb1aa72e73ba9ba9186ebc4bf8d5ed1d016677ccaa74d2335",
+      "typed_tree_sha256": "44d0cc0161e41971ad3bb74c4ec01830af2b75102b8bc02ef1f2d2d9b6c5cd43"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalMission\\20261030-1\\captures\\0004-SaveData-1.sd",
+      "sha256": "8c140f3be8217fb56d81d1c7973c2612d09f8dbb5f94006449c43ee52865c7f8",
+      "bytes": 91312,
+      "plaintext_sha256": "96077883a86cdfe3e6d588229f2e649cd8c89bbb587c21234979fc08399865e1",
+      "typed_tree_sha256": "600b87768054ccf3e2cad86d3367e2b9ffd073e6882ee69a4050ea944bf6ff0b"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalMission\\20261030-1\\captures\\0005-SaveData-s.sd",
+      "sha256": "acee8027814d32a902556c70619eb6c3adffb567e9beba1578290496d4efe858",
+      "bytes": 4160,
+      "plaintext_sha256": "873e83ef88bf921c1888c17c10f4c41b84224cc288f98c7c54173e7c13370f83",
+      "typed_tree_sha256": "bec3e8e45f46d5265058a531a8e364963760accd064d1150c8affff021fe1358"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalMission\\20261030-1\\captures\\0006-SaveData-s.sd",
+      "sha256": "b6ccc07e54b2d4926e6cdca90a29ad109b207fc9e0b3fd088c487c787106b36a",
+      "bytes": 4160,
+      "plaintext_sha256": "6314b7b67bd209eb7b0d13e5a3583ee1aab9965bd513f26dd40ebd5db1642c29",
+      "typed_tree_sha256": "6549d11fe6932103d34c658647ea2e55111b28620ecc7df1cefd8e3c82f6ffde"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalMission\\20261030-1\\captures\\0007-SaveDataBackup-1.sd",
+      "sha256": "bbe8bec9c0136f5e3430901e20abc4e7202bff4fe5ac1a22bb100fd3c5af2c7d",
+      "bytes": 91312,
+      "plaintext_sha256": "cee6efede20c52eb49a250293f4f44098a6b09794df027e3584f54296087d85f",
+      "typed_tree_sha256": "5462bda3efb6620fd11fec94518732f17227c1e3a01e4a1e44eb4e46fd0e3d21"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalMission\\20261030-1\\captures\\0008-SaveData-1.sd",
+      "sha256": "10696ceab5136fa5aa7a06978b5371c24514bd08f071d3b8b94eeb488f3c6344",
+      "bytes": 91312,
+      "plaintext_sha256": "c4ade9c4cb5136dabcec03fa114153c6168acf6fea85a01bb15e3b147afa17b9",
+      "typed_tree_sha256": "06228a002a8c6d8b671d45e6c224965c6124445d7021a99e78ec869e7069aa48"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalMission\\20261030-1\\captures\\0009-SaveData-s.sd",
+      "sha256": "21b4948857ed7c48fbabb4ff3975efc08638e64fd5afa3ef7ad829f6686e0d1e",
+      "bytes": 4160,
+      "plaintext_sha256": "b90f0115b30e034cf32d51a8252cd5aa3635786eedb4b0c507e73491b5c133ca",
+      "typed_tree_sha256": "04d0db4526dd16b99745855b5aaf6b89e1f11ab98d7fe4e249bbcf4e044720f1"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalMission\\20261030-1\\captures\\0010-SaveData-1.sd",
+      "sha256": "4edfa47d982a478dd9dd11bf8e2b226144d1292dfa85f7b74efc139b806c043b",
+      "bytes": 91312,
+      "plaintext_sha256": "949d1a0790f7f3342b2e845447b6a72e9cc217d00e14f6c5bc8869b56ef8d015",
+      "typed_tree_sha256": "6b303d2e6959d925e4b3eaf2801f39c08d000253ee1e371c5bccfbd06428858b"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalMission\\20261030-1\\captures\\0011-SaveData-s.sd",
+      "sha256": "3ae4e0600bd988e8ab9bdb7655b519741f1ed1dfda38ac79d5329a55ea002f1f",
+      "bytes": 4160,
+      "plaintext_sha256": "3962eb6357e804b311c6afc04a647f131f036451ea83caec6f17325263acd438",
+      "typed_tree_sha256": "b5e2ea919667cb382e8c73c7e05d79d4a4533d593f45d1d7dac35b9bea6b85b0"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalMission\\20261030-1\\captures\\0012-SaveData-s.sd",
+      "sha256": "634b5a7bcd1812d6fb14c4a6185f587d1b0b1071b6107f0d2d903fbf53ff2595",
+      "bytes": 4160,
+      "plaintext_sha256": "a19c0bfaa30bd02b511e716d70e8cac26de95e387c0200dea6cda3c201a0cc2d",
+      "typed_tree_sha256": "4a5c785a7ec57818a8d6ef8e9c4153329135f0cce3de7e4a77af7d16d40f0d99"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalMission\\20261030-1\\captures\\0013-SaveDataBackup-1.sd",
+      "sha256": "eeeb8a02501b9c110bc1231e98eca64c3492449243289b48a99d4cdec56c2c24",
+      "bytes": 91312,
+      "plaintext_sha256": "b225359e2486c86e3b978a66f68bf0ac112e94c5c9040e1a1819845183523614",
+      "typed_tree_sha256": "4c231e8b781163dacac35bde7e5a7fe0bc1cd46901d023d154d266eba71f8b0d"
+    }
+  ]
+}

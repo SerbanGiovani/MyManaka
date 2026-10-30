@@ -28,6 +28,35 @@ def check(condition, message):
         raise ValueError(message)
 
 
+def verify_runtime_manifest(directory, manifest, label):
+    for source in manifest["sources"] + manifest.get("dependencies", []):
+        check(digest(directory / source["path"]) == source["sha256"], f"{label} source differs: {source['path']}")
+    for output in manifest["outputs"]:
+        path = directory / output["path"]
+        check(digest(path) == output["sha256"], f"{label} capture differs: {output['path']}")
+        if "uncompressed_sha256" in output:
+            check(path.suffix == ".gz", f"{label} compressed output extension differs")
+            raw = gzip.decompress(path.read_bytes())
+            check(len(raw) == output["uncompressed_bytes"] and hashlib.sha256(raw).hexdigest() == output["uncompressed_sha256"], f"{label} decompressed capture differs")
+
+
+def observed_frida_source(record, directory, manifest):
+    result = record["normalized_result"]
+    source = Path(result["source_path"])
+    archives = manifest.get("archived_frida_sources", [])
+    check(len({item["evidence_id"] for item in archives}) == len(archives), "Duplicate archived Frida source declaration")
+    check(all(item["evidence_id"] in manifest["evidence_ids"] for item in archives), "Archived Frida source refers to undeclared Evidence")
+    selected = [item for item in archives if item["evidence_id"] == record["evidence_id"]]
+    if selected:
+        item = selected[0]
+        check(item["original_path"] == result["source_path"] and item["sha256"] == result["source_sha256"], "Archived Frida source does not match original Evidence")
+        relative = Path(item["path"])
+        check(not relative.is_absolute() and ".." not in relative.parts, "Archived Frida source must remain in its runtime directory")
+        source = directory / relative
+    check(digest(source) == result["source_sha256"], "Observed Frida source differs")
+    return source
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--inputs", action="store_true", help="Also verify original files and the materialized plaintext")
@@ -475,6 +504,37 @@ def main():
     check(runpy.run_path(str(mission_consumers_dir / "analyze.py"))["build"](inputs=args.inputs) == read(mission_consumers_dir / "results.json"), "Mission progress/reward/settlement joins differ")
     check(runpy.run_path(str(ROOT / "salt/mission_consumers_evidence.py"))["build"]() == read(ROOT / "salt/evidence/mission-consumers-chain.json"), "Mission consumer static binding differs")
     observed_runtime_records[mission_consumers_dir / "rea-runtime.json"] = mission_consumers_runtime
+    natural_mission_dir = ROOT / "runtime/natural-mission"
+    natural_mission_runtime = read(natural_mission_dir / "manifest.json")
+    check(natural_mission_runtime["natural_only"] and natural_mission_runtime["passive_only"] and natural_mission_runtime["user_input_driven"] and not natural_mission_runtime["observation_complete"], "Natural mission authority/capture boundary differs")
+    verify_runtime_manifest(natural_mission_dir, natural_mission_runtime, "Natural mission")
+    natural_mission_post = read(natural_mission_dir / "post-state.json")
+    check(natural_mission_post["plugin_verification"]["checked"] and natural_mission_post["plugin_verification"]["restored"], "Natural mission plugin finalization incomplete")
+    check(runpy.run_path(str(natural_mission_dir / "analyze.py"))["build"](inputs=args.inputs) == read(natural_mission_dir / "results.json"), "Natural mission progress/settlement joins differ")
+    observed_runtime_records[natural_mission_dir / "rea-runtime.json"] = natural_mission_runtime
+    appearance_boundary_dir = ROOT / "runtime/appearance-boundary"
+    appearance_boundary_runtime = read(appearance_boundary_dir / "manifest.json")
+    check(not appearance_boundary_runtime["natural_only"], "Persistent paint authority differs")
+    verify_runtime_manifest(appearance_boundary_dir, appearance_boundary_runtime, "Persistent paint")
+    check(runpy.run_path(str(appearance_boundary_dir / "analyze.py"))["build"](inputs=args.inputs, require_finalized_plugins=True) == read(appearance_boundary_dir / "results.json"), "Persistent paint material joins differ")
+    check(runpy.run_path(str(ROOT / "salt/appearance-boundary-evidence.py"))["build"]() == read(ROOT / "salt/evidence/appearance-boundary-chain.json"), "Persistent/timed paint static binding differs")
+    observed_runtime_records[appearance_boundary_dir / "rea-runtime.json"] = appearance_boundary_runtime
+    paid_skill_dir = ROOT / "runtime/paid-skill-boundary"
+    paid_skill_runtime = read(paid_skill_dir / "manifest.json")
+    check(not paid_skill_runtime["natural_only"], "Paid learning authority differs")
+    verify_runtime_manifest(paid_skill_dir, paid_skill_runtime, "Paid learning")
+    check(runpy.run_path(str(paid_skill_dir / "analyze.py"))["build"](inputs=args.inputs, require_finalized_plugins=True) == read(paid_skill_dir / "results.json"), "Paid learning guards/consumer joins differ")
+    check(runpy.run_path(str(ROOT / "salt/paid-skill-boundary-evidence.py"))["build"]() == read(ROOT / "salt/evidence/paid-skill-boundary-chain.json"), "Paid learning static binding differs")
+    observed_runtime_records[paid_skill_dir / "rea-runtime.json"] = paid_skill_runtime
+    paid_skill_diagnostic = paid_skill_runtime["diagnostic_observation"]
+    check(paid_skill_diagnostic["success"] is False and not set(paid_skill_diagnostic["evidence_ids"]) & set(paid_skill_runtime["evidence_ids"]), "Failed paid setup Evidence merged with formal success")
+    observed_runtime_records[paid_skill_dir / "diagnostics-rea.json"] = paid_skill_diagnostic
+    skin_preset_dir = ROOT / "runtime/skin-preset"
+    skin_preset_runtime = read(skin_preset_dir / "manifest.json")
+    check(not skin_preset_runtime["natural_only"], "Skin preset authority differs")
+    verify_runtime_manifest(skin_preset_dir, skin_preset_runtime, "Skin preset")
+    check(runpy.run_path(str(skin_preset_dir / "analyze.py"))["build"](inputs=args.inputs, require_finalized_plugins=True) == read(skin_preset_dir / "results.json"), "Skin preset data/material joins differ")
+    observed_runtime_records[skin_preset_dir / "rea-runtime.json"] = skin_preset_runtime
     toolchain_dir = ROOT / "reconstruction"
     toolchain = read(toolchain_dir / "editor-toolchain.json")
     check(toolchain["status"] == "editor-build-and-player-smoke-verified" and toolchain["compilation_verified"] and toolchain["build_verified"] and toolchain["player_startup_verified"], "Editor smoke did not succeed")
@@ -527,8 +587,7 @@ def main():
                 result = record["normalized_result"]
                 check(not result["messages_truncated"] or (path == coverage_dir / "rea-runtime.json" and coverage_result["capture_joins"]), "Natural checkpoint Evidence truncated without verified overlap")
                 if record["operation"] == "load_frida_script":
-                    source = Path(result["source_path"])
-                    check(digest(source) == result["source_sha256"], "Natural Frida source differs")
+                    observed_frida_source(record, path.parent, selected_observation)
                 else:
                     session = selected_sessions[record["parameters"]["session_id"]]
                     check(record["operation"] == "frida_session_status" and result["pid"] == session["pid"] and result["state"] == session["state"], "Natural checkpoint process/session differs")
@@ -553,6 +612,7 @@ def main():
             else:
                 observations[key] = {"canonical": canonical, "operation": record["operation"], "subject_sha256": subject_hash}
     check(all(key in observations for selected in runtime_records.values() for key in selected["evidence_ids"]), "Missing runtime observations")
+    check(all(key in observations for selected in observed_runtime_records.values() for key in selected["evidence_ids"]), "Missing observed runtime records")
     for key in ("password_map_initializer_evidence", "password_map_constructor_evidence", "password_decoder_evidence"):
         check(recovered[key] in observations, f"Missing password reconstruction evidence: {key}")
     run_paths = sorted((ROOT / "salt/evidence").glob("*/run.json"))
@@ -613,6 +673,12 @@ def main():
         check(digest(Path(source["path"])) == source["sha256"], "Bareta parser fingerprint differs")
     for table in bareta_assets["tables"].values():
         check(table["end_of_object_verified"] and all(e["record"]["end_of_object_verified"] for e in table["entries"]), "Bareta configuration schema boundary differs")
+    paid_skill_assets = read(ROOT / "paid-skill-boundary-assets.json")
+    check(paid_skill_assets["source_bundle"]["sha256"] == asset["source_sha256"], "Paid skill tier source bundle differs")
+    check(digest(Path(paid_skill_assets["parser"]["path"])) == paid_skill_assets["parser"]["sha256"], "Paid skill tier parser differs")
+    check(set(paid_skill_assets["tables"]) == {"MSkillMaxAccessoryNum", "MSkillSlow"} and len(paid_skill_assets["bindings"]) == 2, "Paid skill tier master selection differs")
+    for table in paid_skill_assets["tables"].values():
+        check(table["end_of_object_verified"] and all(e["record"]["end_of_object_verified"] for e in table["entries"]), "Paid skill tier schema did not consume EOF")
     check({c["requested_player_state"] for c in bareta["literal_state_change_calls"]} == {0, 1, 2}, "Bareta selected transition excerpts differ")
     producer = read(ROOT / bareta["producer_and_animation_dependency"]["path"])
     check(producer["method"]["id"] == 15358 and producer["static_event_field"]["raw_offset"] == 40, "Unexpected discovery producer identity")
@@ -812,6 +878,8 @@ def main():
         source_records.extend([scene_assets["stage_enum"]["source"], scene_assets["stage_enum"]["parser"]])
         source_records.extend(player_assets["wrapper_declarations"]["sources"])
         source_records.extend(bareta_assets["wrapper_declarations"]["sources"])
+        source_records.extend(paid_skill_assets["wrapper_declarations"]["sources"])
+        source_records.append(paid_skill_assets["wrapper_declarations"]["parser"])
         source_records.extend(producer["sources"])
         source_records.extend(model_assets["wrapper_declarations"]["sources"])
         source_records.extend([model_assets["wrapper_attribute_observations"]["parser"], model_assets["wrapper_attribute_observations"]["source"]])
@@ -855,6 +923,9 @@ def main():
         source_records.append({"path": appearance_hair_runtime["plugin"]["archived_path"], "sha256": appearance_hair_runtime["plugin"]["sha256"]})
         source_records.append({"path": consumers_runtime["plugin"]["archived_path"], "sha256": consumers_runtime["plugin"]["sha256"]})
         source_records.append({"path": mission_consumers_runtime["plugin"]["archived_path"], "sha256": mission_consumers_runtime["plugin"]["sha256"]})
+        for selected in [natural_mission_runtime, appearance_boundary_runtime, paid_skill_runtime, skin_preset_runtime]:
+            source_records.append({"path": selected["plugin"]["archived_path"], "sha256": selected["plugin"]["sha256"]})
+        source_records.extend({"path": item["archived_path"], "sha256": item["sha256"]} for item in paid_skill_diagnostic["plugins"])
         source_records.extend({**output, "verify_cache_output": True} for output in toolchain["build_outputs"])
         source_records.append({"path": toolchain["editor_path"], "sha256": toolchain["editor_sha256"]})
         for source in source_records:
