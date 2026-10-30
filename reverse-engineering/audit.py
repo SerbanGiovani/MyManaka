@@ -12,6 +12,8 @@ ROOT = Path(__file__).resolve().parent
 
 
 def read(path):
+    if path.suffix == ".gz":
+        return json.loads(gzip.decompress(path.read_bytes()).decode("utf-8-sig"))
     return json.loads(path.read_text(encoding="utf-8-sig"))
 
 
@@ -545,6 +547,20 @@ def main():
     timed_paint_diagnostic = timed_paint_runtime["diagnostic_observation"]
     check(timed_paint_diagnostic["success"] is False and not set(timed_paint_diagnostic["evidence_ids"]) & set(timed_paint_runtime["evidence_ids"]), "Failed timed paint setup merged with formal success")
     observed_runtime_records[timed_paint_dir / "diagnostics-rea.json"] = timed_paint_diagnostic
+    natural_paint_dir = ROOT / "runtime/natural-paint"
+    natural_paint_runtime = read(natural_paint_dir / "manifest.json")
+    check(natural_paint_runtime["natural_only"] and natural_paint_runtime["passive_only"] and natural_paint_runtime["user_input_driven"], "Natural paint observation authority differs")
+    verify_runtime_manifest(natural_paint_dir, natural_paint_runtime, "Natural paint")
+    check(runpy.run_path(str(natural_paint_dir / "analyze.py"))["build"](inputs=args.inputs, require_finalized_plugins=True) == read(natural_paint_dir / "results.json"), "Natural paint item/deadline/title/cold-load joins differ")
+    check(runpy.run_path(str(ROOT / "salt/natural_paint_evidence.py"))["build"]() == read(ROOT / "salt/evidence/natural-paint-chain.json"), "Natural paint producer/UI/cold static binding differs")
+    check(runpy.run_path(str(ROOT / "natural-paint-assets.py"))["build"]() == read(ROOT / "natural-paint-assets.json"), "Natural paint item/localization asset binding differs")
+    observed_runtime_records[natural_paint_dir / "rea-runtime.json.gz"] = natural_paint_runtime
+    natural_paint_diagnostic = natural_paint_runtime["diagnostic_observation"]
+    check(natural_paint_diagnostic["success"] is False and natural_paint_diagnostic["capture_complete"] is False and not set(natural_paint_diagnostic["evidence_ids"]) & set(natural_paint_runtime["evidence_ids"]), "Incompatible natural save merged with formal success")
+    natural_paint_diagnostic_records = read(natural_paint_dir / "diagnostics-rea.json.gz")["records"]
+    natural_paint_truncated = {r["evidence_id"] for r in natural_paint_diagnostic_records if r["normalized_result"]["messages_truncated"]}
+    check(natural_paint_truncated == set(natural_paint_diagnostic["truncated_evidence_ids"]) and natural_paint_truncated <= set(natural_paint_diagnostic["evidence_ids"]), "Natural paint diagnostic truncation declaration differs")
+    observed_runtime_records[natural_paint_dir / "diagnostics-rea.json.gz"] = natural_paint_diagnostic
     toolchain_dir = ROOT / "reconstruction"
     toolchain = read(toolchain_dir / "editor-toolchain.json")
     check(toolchain["status"] == "editor-build-and-player-smoke-verified" and toolchain["compilation_verified"] and toolchain["build_verified"] and toolchain["player_startup_verified"], "Editor smoke did not succeed")
@@ -577,7 +593,7 @@ def main():
         if path.name == "evidence-index.json" or path.name.endswith((".stderr.log", ".pending.json")):
             continue
         artifacts.append({"path": path.relative_to(ROOT).as_posix(), "bytes": path.stat().st_size, "sha256": digest(path)})
-        if path.suffix != ".json":
+        if path.suffix != ".json" and path not in observed_runtime_records:
             continue
         value = read(path)
         records = value.get("records", []) if isinstance(value, dict) else []
@@ -595,7 +611,8 @@ def main():
                 check(subject_hash is None and record["provider"]["id"] == "frida" and record["predicate_type"] == "rea.frida.instrumentation-observation", "Unexpected natural runtime provider")
                 check(key in selected_observation["evidence_ids"] and record["parameters"]["session_id"] in selected_sessions, "Unexpected natural runtime session")
                 result = record["normalized_result"]
-                check(not result["messages_truncated"] or (path == coverage_dir / "rea-runtime.json" and coverage_result["capture_joins"]), "Natural checkpoint Evidence truncated without verified overlap")
+                incompatible_paint_capture = path == natural_paint_dir / "diagnostics-rea.json.gz" and key in natural_paint_truncated
+                check(not result["messages_truncated"] or (path == coverage_dir / "rea-runtime.json" and coverage_result["capture_joins"]) or incompatible_paint_capture, "Natural checkpoint Evidence truncated without verified overlap or explicit failed diagnostic scope")
                 if record["operation"] == "load_frida_script":
                     observed_frida_source(record, path.parent, selected_observation)
                 else:
@@ -933,10 +950,11 @@ def main():
         source_records.append({"path": appearance_hair_runtime["plugin"]["archived_path"], "sha256": appearance_hair_runtime["plugin"]["sha256"]})
         source_records.append({"path": consumers_runtime["plugin"]["archived_path"], "sha256": consumers_runtime["plugin"]["sha256"]})
         source_records.append({"path": mission_consumers_runtime["plugin"]["archived_path"], "sha256": mission_consumers_runtime["plugin"]["sha256"]})
-        for selected in [natural_mission_runtime, appearance_boundary_runtime, paid_skill_runtime, skin_preset_runtime, timed_paint_runtime]:
+        for selected in [natural_mission_runtime, appearance_boundary_runtime, paid_skill_runtime, skin_preset_runtime, timed_paint_runtime, natural_paint_runtime]:
             source_records.append({"path": selected["plugin"]["archived_path"], "sha256": selected["plugin"]["sha256"]})
         source_records.extend({"path": item["archived_path"], "sha256": item["sha256"]} for item in paid_skill_diagnostic["plugins"])
         source_records.extend({"path": item["archived_path"], "sha256": item["sha256"]} for item in timed_paint_diagnostic["plugins"])
+        source_records.extend({"path": item["archived_path"], "sha256": item["sha256"]} for item in natural_paint_diagnostic["plugins"])
         source_records.extend({**output, "verify_cache_output": True} for output in toolchain["build_outputs"])
         source_records.append({"path": toolchain["editor_path"], "sha256": toolchain["editor_sha256"]})
         for source in source_records:

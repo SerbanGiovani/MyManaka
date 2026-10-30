@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "name": "natural-paint",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\natural-load-saveui.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\natural-paint",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 17600,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.PcMenuPanel.PcMenuPanelView::OnClickOnlineShop",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001877",
+      "va": "0x1804cb4e0",
+      "file_offset": 5020896,
+      "label": "ExposureUnnoticed2_ObjectUI_PcMenuPanel_PcMenuPanelView__OnClickOnlineShop__06001877",
+      "file_stem": "17600-06001877",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17725,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.PcMenuPanel.OnlineShopPanel.OnlineShopItemView::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60018f4",
+      "va": "0x1804d6ab0",
+      "file_offset": 5067440,
+      "label": "ExposureUnnoticed2_ObjectUI_PcMenuPanel_OnlineShopPanel_OnlineShopItemView__Initialize__060018f4",
+      "file_stem": "17725-060018f4",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17742,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.PcMenuPanel.OnlineShopPanel.OnlineShopPanelView::OnClickTab",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001905",
+      "va": "0x1804d8920",
+      "file_offset": 5075232,
+      "label": "ExposureUnnoticed2_ObjectUI_PcMenuPanel_OnlineShopPanel_OnlineShopPanelView__OnClickTab__06001905",
+      "file_stem": "17742-06001905",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17747,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.PcMenuPanel.OnlineShopPanel.OnlineShopPanelView::OnClickPurchase",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600190a",
+      "va": "0x1804db560",
+      "file_offset": 5086560,
+      "label": "ExposureUnnoticed2_ObjectUI_PcMenuPanel_OnlineShopPanel_OnlineShopPanelView__OnClickPurchase__0600190a",
+      "file_stem": "17747-0600190a",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17921,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.InventoryPanel.InventoryItemView::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60019b8",
+      "va": "0x1804e9dd0",
+      "file_offset": 5146064,
+      "label": "ExposureUnnoticed2_ObjectUI_InventoryPanel_InventoryItemView__Initialize__060019b8",
+      "file_stem": "17921-060019b8",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17992,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.InventoryPanel.InventoryPanelView::<RefreshItemCategory>g__Process|39_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60019ff",
+      "va": "0x1804f33a0",
+      "file_offset": 5184416,
+      "label": "ExposureUnnoticed2_ObjectUI_InventoryPanel_InventoryPanelView__<RefreshItemCategory>g__Process|39_0__060019ff",
+      "file_stem": "17992-060019ff",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17993,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.InventoryPanel.InventoryPanelView::<RefreshItemCategory>b__39_2",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001a00",
+      "va": "0x1804f3590",
+      "file_offset": 5184912,
+      "label": "ExposureUnnoticed2_ObjectUI_InventoryPanel_InventoryPanelView__<RefreshItemCategory>b__39_2__06001a00",
+      "file_stem": "17993-06001a00",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

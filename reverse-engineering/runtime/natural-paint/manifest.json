@@ -1,0 +1,359 @@
+{
+  "schema_version": 1,
+  "natural_only": true,
+  "passive_only": true,
+  "user_input_driven": true,
+  "authority": "passive-original-user-input-and-true-process-restart-in-isolated-save-root",
+  "sessions": [
+    {
+      "session_id": "023e144b-89eb-4503-9fb6-ae684c2dc3f4",
+      "pid": 85172,
+      "state": "running",
+      "closed_by_operator": true
+    },
+    {
+      "session_id": "39175936-d69c-4919-a40e-c6f38d464082",
+      "pid": 85172,
+      "state": "running",
+      "closed_by_operator": true
+    }
+  ],
+  "evidence_ids": [
+    "ev_932b09effc0e609f0e87197128f14d5ad27bcf21297611a42d86f701515b29b5",
+    "ev_7b8e88bd6126709a6638defd364b8c8fd035043817c73ff8323be6b37d901531",
+    "ev_0cfbffd882709b2865ce47b949249f190e5841a19f16530cf000d8818d10191f",
+    "ev_28e1f1bb39dd194cab97585a418226a1a82a794053a3af01ec9eeebb6533a992"
+  ],
+  "plugin": {
+    "archived_path": "E:/ManakaREA-NaturalGameplay/NaturalPaint/20261031-2/NaturalPaintObserver-completed.dll",
+    "sha256": "f92550b2a6b0cc0d9b1515c4728f08f36005238d301ffe2342dde50bfbcc7505"
+  },
+  "sources": [
+    {
+      "path": "Observe.cs",
+      "sha256": "31d81350ed60ff057eaf75c0afd995a60e105e52593b042072d44a4d04acb700"
+    },
+    {
+      "path": "build.ps1",
+      "sha256": "e933e015c8d36e6f73242660fc511d34c85ce29cb7485d90e4734d179c46dbf1"
+    },
+    {
+      "path": "observe.js",
+      "sha256": "b00d1188a1798b358a7990468182b9e0b8e0f038ada5d647e530ba3c06c10b47"
+    },
+    {
+      "path": "profile-inventory.json",
+      "sha256": "d5938fab6e86adeb200e23af4d58834b172132d1e25ad20af6b3b4c842bc8664"
+    },
+    {
+      "path": "analyze.py",
+      "sha256": "562e5a1d2fd44d2de707f69634879877afe0ba55c88872045d9a11160ab7cc95"
+    },
+    {
+      "path": "collect.py",
+      "sha256": "b89f97a2e893eaab6c653a90ff86f0ac2903215b80f3aae7b9dc81a7d211210e"
+    },
+    {
+      "path": "test_analysis.py",
+      "sha256": "901d29aa9d59ec00bee6c5ba5281df03ddf27fedc20d943801cb36b78a5dab56"
+    },
+    {
+      "path": "natural-paint-runtime.md",
+      "sha256": "572edc6507e1f6f41a52af1afbe60d83a0b47be8c10d03caa4c1a7e6e1364aa6"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "baseline.json",
+      "sha256": "3de3f56270de7459b3d928eb92eeee85a26b77df93b301f790e6044fecc6bc28"
+    },
+    {
+      "path": "cold-baseline.json",
+      "sha256": "078ad7070ef9a701335f81ab1c9f67a4bd9c3909ed4a57b26520c09a4aa4101a"
+    },
+    {
+      "path": "cold-start-receipt.json",
+      "sha256": "6ff6276671db101377c33d886652d0c058e549cc369e77ac0d446cc48078ad52"
+    },
+    {
+      "path": "compile-only.json",
+      "sha256": "b8857f48a171e35128dd939a2502febd597c703d57d1d64a8076efabce530e52"
+    },
+    {
+      "path": "session-plan.json",
+      "sha256": "87f445823ed2b3aceeb6ea48d83b09adddb9793f92121f650c6b597edd370c61"
+    },
+    {
+      "path": "post-state.json",
+      "sha256": "e826fde8f8238a417bacc36c57386a49133f6ee05c146f3e7a075b55984bdf06"
+    },
+    {
+      "path": "rea-runtime.json.gz",
+      "sha256": "b2db7610f6fabb21e5ae4f2975d7abdd187c4827c344c98b1e7cf527629f07cf",
+      "uncompressed_bytes": 21639316,
+      "uncompressed_sha256": "7b8bdec7e50320d4e2843acb0f7831d329064953fdfaf0e35330e18d59a67a17"
+    },
+    {
+      "path": "diagnostics-rea.json.gz",
+      "sha256": "2566864f121923ce26c9b5ee68b6f60632613e7aba225b55555d87b9e2f96de1",
+      "uncompressed_bytes": 57564064,
+      "uncompressed_sha256": "a84b96b9e61dbb4053bf1ab928a0e43be5c2bdd59d5c199b9512c3a41ab7796d"
+    },
+    {
+      "path": "diagnostics.json",
+      "sha256": "b8c153b659373190ebff37bb9c3682fe716c3a3a6f95e5952b59a653c70c0d3a"
+    },
+    {
+      "path": "runs/cold/close-receipt-observed.json",
+      "sha256": "e1b0c4b8d74d170ffc8ec20b1fd293f774d423f1c44b2cad978ccb2c2b697e6b"
+    },
+    {
+      "path": "runs/cold/close-receipt.json",
+      "sha256": "97a040557397b4dbb48e48bc79cc29fba48b920393dd8511ec3e14549babce99"
+    },
+    {
+      "path": "runs/cold/engine.log.gz",
+      "sha256": "107f36f4cf0cffe6cedb137b568e5428be9c1d52ac13fcd872e37afe5f3cf1b9",
+      "uncompressed_bytes": 31688,
+      "uncompressed_sha256": "9dfbc0eec0107abdd81c0feef280a573a7b396a7e996057656e269f85762185c"
+    },
+    {
+      "path": "runs/cold/managed.jsonl.gz",
+      "sha256": "839cebac61f6361f52c1f2412807fbd7d708782c3ab2b1ee43656b74713f3b30",
+      "uncompressed_bytes": 5237931,
+      "uncompressed_sha256": "22dccc0e0a886d03efc18201a1e6518e7b15ce2c307ae7474587241c77446925"
+    },
+    {
+      "path": "runs/cold/paths.jsonl.gz",
+      "sha256": "c10ae1f499517dc39ba4574b5107bdd90b9fd3fcfb1b2cf3b818525af641891e",
+      "uncompressed_bytes": 72131,
+      "uncompressed_sha256": "dd1c492918eb2f9a86f96bede0618e4cf61397efa58bdd5739a3ef4055fb3a37"
+    },
+    {
+      "path": "runs/cold/rea-runtime-full.json.gz",
+      "sha256": "815f6cb45fbbb02cd6750fae95b773d45a6abe9c645641081fedf9240a684e94",
+      "uncompressed_bytes": 55728947,
+      "uncompressed_sha256": "0068ff52375ebe4e04d67e163c0d062064b9ea8abaa8d39830f22fffea5d6b1c"
+    },
+    {
+      "path": "runs/cold/rea-runtime.json.gz",
+      "sha256": "961418113b1304a5966817b8077d7c7ed874c0b62b0b2148b18e4a421cb25641",
+      "uncompressed_bytes": 1186732,
+      "uncompressed_sha256": "d678b101a405a3ed6ca3869e6f9dc708a6fd5e1deecf852a6c9dd5df73a90416"
+    },
+    {
+      "path": "runs/cold/saved-files.json",
+      "sha256": "6740c634960b0991f85a20cfe61a4b6279bce30ff8c97e40d6183af2ca298415"
+    },
+    {
+      "path": "runs/use/close-receipt.json",
+      "sha256": "c273ed1b54d8d5ac547fcd8b380d15103a7d05f90ece9260d9c6d02da4fc16fc"
+    },
+    {
+      "path": "runs/use/engine.log.gz",
+      "sha256": "01cc87892a67784a47d071b47d37746aad54b729fbca42c4ae2cc901c2897f57",
+      "uncompressed_bytes": 284487,
+      "uncompressed_sha256": "7d52ee6b6a6e49291422750650d9b768c17d2ff2dea5054dce3f86341109a58a"
+    },
+    {
+      "path": "runs/use/managed.jsonl.gz",
+      "sha256": "5c8ace4000895de049bb133f03fe699759c7dd91fb95bfaea84ddc4a2ab63c67",
+      "uncompressed_bytes": 5109310,
+      "uncompressed_sha256": "b07d48afcee0baba5e0ed2acdd33ae10e4ede6b2c3b43facccfb6e241a0bdca2"
+    },
+    {
+      "path": "runs/use/paths.jsonl.gz",
+      "sha256": "ff656cf8d113cfbb7cb4a686f5dd0d45ffc3c38d17761ff3da7b6bccdd3d597e",
+      "uncompressed_bytes": 137487,
+      "uncompressed_sha256": "ff2b353008f145aade874692e47483ef987d619a523d0b8d70a7e56f3e32b73a"
+    },
+    {
+      "path": "runs/use/rea-runtime-full.json.gz",
+      "sha256": "f3dee4486d2760b90604cb4fa352fb4aca1690e59ef362d87444634c23ad8348",
+      "uncompressed_bytes": 55015328,
+      "uncompressed_sha256": "0fb5f081c6f4021370cc54896b42a5b01a8c18b06efd5a3e0f7d9aea2761acb1"
+    },
+    {
+      "path": "runs/use/rea-runtime.json.gz",
+      "sha256": "a2a6ab0702f0198c287016d1048da7a7b4d9b77657c18b57334bba8a337921a1",
+      "uncompressed_bytes": 20452606,
+      "uncompressed_sha256": "0408d1276affd78d42c6b22a6888e79ed2a3c8ad5e07c88aa644ded904c445e0"
+    },
+    {
+      "path": "runs/use/saved-files.json",
+      "sha256": "00303da8faa4a07baab27e14721dc08a210163834d180b63667f169e271e007e"
+    },
+    {
+      "path": "diagnostics/incompatible-profile/baseline.json",
+      "sha256": "fc20ff2fed92365504710afc8ac7c0736bd2c75b95830af557f6a2fcc82eeda2"
+    },
+    {
+      "path": "diagnostics/incompatible-profile/build.ps1",
+      "sha256": "e933e015c8d36e6f73242660fc511d34c85ce29cb7485d90e4734d179c46dbf1"
+    },
+    {
+      "path": "diagnostics/incompatible-profile/close-receipt.json",
+      "sha256": "662fa67852a982df040e4a4c8a8646fc81baeef093ed36ff4498c40a209469bd"
+    },
+    {
+      "path": "diagnostics/incompatible-profile/compile-only.json",
+      "sha256": "b8857f48a171e35128dd939a2502febd597c703d57d1d64a8076efabce530e52"
+    },
+    {
+      "path": "diagnostics/incompatible-profile/diagnostic-full-evidence.json.gz",
+      "sha256": "e5b7bef15b0773524713fa1f63cd7ab5fa0a1fab9a1a3a3f86ad0db8448ac484",
+      "uncompressed_bytes": 38734632,
+      "uncompressed_sha256": "0d2310ff9ee9808e74131593ae2f2a046627cbfe28ec251881c42d7941bdbb27"
+    },
+    {
+      "path": "diagnostics/incompatible-profile/engine.log.gz",
+      "sha256": "e216b1f0a1265349c48681591b0c46b3ba5c598b48f1edc1f7c49abfe1a067cd",
+      "uncompressed_bytes": 129586870,
+      "uncompressed_sha256": "b7915272fc863e3632ca357d14d0f1c8e3db98a1a8c1ee0f79d332d1b60d464f"
+    },
+    {
+      "path": "diagnostics/incompatible-profile/managed.jsonl.gz",
+      "sha256": "860d87f4520fa475ed50f0146a60cfb6a75d5646be244aea55f30236912cec7f",
+      "uncompressed_bytes": 2460947,
+      "uncompressed_sha256": "5aae54d8cb3b311dafc47e07d1f8ba305544d37252ed109e07acdd7075822cd8"
+    },
+    {
+      "path": "diagnostics/incompatible-profile/Observe.cs",
+      "sha256": "31d81350ed60ff057eaf75c0afd995a60e105e52593b042072d44a4d04acb700"
+    },
+    {
+      "path": "diagnostics/incompatible-profile/observe.js",
+      "sha256": "46478e87b2a48c91422ac2983575db06f7e418289860e8c8ef0cecc80d8c19fa"
+    },
+    {
+      "path": "diagnostics/incompatible-profile/paths.jsonl.gz",
+      "sha256": "87d58d22e6e6edf28666e972016657dcef023db02800b5199a3316357b1967b1",
+      "uncompressed_bytes": 149791,
+      "uncompressed_sha256": "002ee8cb0e61a06508d60c3d8c99f7dfc6eeb6e828f4cf4ebde2c0af9399de50"
+    },
+    {
+      "path": "diagnostics/incompatible-profile/receipt.json",
+      "sha256": "4590d5b76e8e2d5787464837f185205a382dcb5880e65fff126faad7a1dfc9df"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "../../natural-paint-assets.json",
+      "sha256": "1f4c0a656c2c0ae3f5cf667bbca6d0fcd7ff234d43a7b5d1b07a45fad04e0796"
+    },
+    {
+      "path": "../../natural-paint-static.md",
+      "sha256": "f6a26b609c241542061bdd15ea8c7aeb9adf80a09cb13af1ddb575bfcf9851cc"
+    },
+    {
+      "path": "../../salt/evidence/natural-paint-chain.json",
+      "sha256": "9b84ae10e8bc1c2b9554d3c1e888f4650d454c0b7aa0373a35d1680a48936907"
+    },
+    {
+      "path": "../timed-body-paint/analyze.py",
+      "sha256": "0e3913deeb1c28c714592af22e64e39d0c9af8f13a30b88ad1d0c3b9cdbba3ef"
+    }
+  ],
+  "raw_inputs": [
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalPaint\\20261031-2\\rea-runtime-full.json",
+      "sha256": "0fb5f081c6f4021370cc54896b42a5b01a8c18b06efd5a3e0f7d9aea2761acb1"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalPaint\\20261031-2\\captures\\0000-SaveData-1.sd",
+      "sha256": "d69bcd2a1ff6f229c2698eedfa895416a4f5b3f87dbb9d8357e40dc1c6f803f6"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalPaint\\20261031-2\\captures\\0001-SaveData-s.sd",
+      "sha256": "86f624b5478a8ef7f41ea79bafe87f4c97890cf895171d29d3d98fb9dc551b76"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalPaint\\20261031-2\\captures\\0002-SaveDataBackup-1.sd",
+      "sha256": "008d2bb85f0176d38919d9c477179856d7554d6855e246c3949caeb4ef304e69"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalPaint\\20261031-2\\captures\\0003-SaveData-1.sd",
+      "sha256": "7a71560d17fa8d81adfbf53a92324f879723ed9409a5687ad15cb2688a612151"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalPaint\\20261031-2\\captures\\0004-SaveData-s.sd",
+      "sha256": "a08eb2c76ccae0892a0ad4d51d451e8cb2a6a20b2690f94d9f976f4c47d90c84"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalPaint\\20261031-2\\captures\\0005-SaveData-1.sd",
+      "sha256": "dabd634d0ec5c4c7ec9db0affa725ab7daf86f853ba67974f1e9f918aea8fdcc"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalPaint\\20261031-2\\captures\\0006-SaveData-s.sd",
+      "sha256": "382b882fcee2eee1b9a9dbd274a1520953de5571f816e126fb7dd18dffb369a9"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalPaint\\20261031-2\\captures\\0007-SaveData-1.sd",
+      "sha256": "ace4c2419642a4deb614711f77545f498ecc9a3258cb8522394d0278f049d45e"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalPaint\\20261031-2\\captures\\0008-SaveData-s.sd",
+      "sha256": "2ca27139593ab5623625ff5c01999c47d035ae0896b4b5d94e499b37d67774e7"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalPaint\\20261031-2\\captures\\0009-SaveData-1.sd",
+      "sha256": "c71c2bf5861903ccae6700dbfe6df5783804334df8582d13d7f2de5921ba3fa7"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalPaint\\20261031-2\\captures\\0010-SaveData-s.sd",
+      "sha256": "0ff7110b6faa45bcd6479f2d23ed2772f1d3bf4a4ad0eb7551587ffcc3043db8"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalPaint\\20261031-3\\rea-runtime-full.json",
+      "sha256": "0068ff52375ebe4e04d67e163c0d062064b9ea8abaa8d39830f22fffea5d6b1c"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalPaint\\20261031-3\\captures\\0000-SaveData-1.sd",
+      "sha256": "c71c2bf5861903ccae6700dbfe6df5783804334df8582d13d7f2de5921ba3fa7"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalPaint\\20261031-3\\captures\\0001-SaveData-s.sd",
+      "sha256": "0ff7110b6faa45bcd6479f2d23ed2772f1d3bf4a4ad0eb7551587ffcc3043db8"
+    },
+    {
+      "path": "E:\\ManakaREA-NaturalGameplay\\NaturalPaint\\20261031-3\\captures\\0002-SaveDataBackup-1.sd",
+      "sha256": "008d2bb85f0176d38919d9c477179856d7554d6855e246c3949caeb4ef304e69"
+    }
+  ],
+  "diagnostic_observation": {
+    "success": false,
+    "capture_complete": false,
+    "sessions": [
+      {
+        "session_id": "99d258eb-fe27-486d-9cb5-d8d9447d537a",
+        "pid": 60392,
+        "state": "running",
+        "closed_by_operator": true
+      }
+    ],
+    "evidence_ids": [
+      "ev_83bb139113e1c58cd2aa43929adb3449540843a1cd69f0e12caecdcdd6b62e2f",
+      "ev_a84b4b8745ef8b06cce4aa1af03c570adff72e1c72045cde585edbafe53cd613",
+      "ev_b9d4fc888a57b6b09456aac122e70e7cdc5842675fda649ced1f506660e38edc"
+    ],
+    "plugins": [
+      {
+        "archived_path": "E:\\ManakaREA-NaturalGameplay\\NaturalPaint\\20261031-1\\NaturalPaintObserver-diagnostic.dll",
+        "sha256": "f92550b2a6b0cc0d9b1515c4728f08f36005238d301ffe2342dde50bfbcc7505"
+      }
+    ],
+    "truncated_evidence_ids": [
+      "ev_a84b4b8745ef8b06cce4aa1af03c570adff72e1c72045cde585edbafe53cd613",
+      "ev_b9d4fc888a57b6b09456aac122e70e7cdc5842675fda649ced1f506660e38edc"
+    ],
+    "archived_frida_sources": [
+      {
+        "evidence_id": "ev_83bb139113e1c58cd2aa43929adb3449540843a1cd69f0e12caecdcdd6b62e2f",
+        "original_path": "E:/SecretFlasherManaka v1.1.3_Uncensored/reverse-engineering/runtime/natural-paint/observe.js",
+        "path": "diagnostics/incompatible-profile/observe.js",
+        "sha256": "46478e87b2a48c91422ac2983575db06f7e418289860e8c8ef0cecc80d8c19fa"
+      }
+    ]
+  },
+  "scope": "Natural UI types5/8/9 and original delayed effects; warm title reconstruction separated from fresh process restart. Failed incompatible profile is partial evidence only."
+}
