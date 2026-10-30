@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "status": "partial-original-resource-compatibility",
+  "editor_version": "2022.3.62t7",
+  "probes": [
+    {
+      "run": 1,
+      "result_path": "diagnostics/first-probe/result.json",
+      "exit_path": "diagnostics/first-probe/exit.json",
+      "source": "diagnostics/first-probe/CompatibilityProbe.cs"
+    },
+    {
+      "run": 2,
+      "result_path": "accepted-assets/result.json",
+      "exit_path": "accepted-assets/exit.json",
+      "source": "Assets/Editor/CompatibilityProbe.cs"
+    }
+  ],
+  "sources": [
+    {
+      "path": "Assets/Editor/CompatibilityProbe.cs",
+      "sha256": "37251b2fbd543262f9172b689e7c3434108eccc7017dd7a6c6481556238bbbd5"
+    },
+    {
+      "path": "diagnostics/first-probe/CompatibilityProbe.cs",
+      "sha256": "0d49fb996a0d12feae51534c51d722b73afd24de6e78ca3f7fbd1f3c13bfa576"
+    },
+    {
+      "path": "collect.py",
+      "sha256": "9acb1c400f340fcf656c56a7c5cd15148486b42716fdc0950012fad1cc3a6d37"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "diagnostics/first-probe/result.json",
+      "bytes": 4250,
+      "sha256": "97fd2553dfbf0e281ee0dce58e3c935d5db0c850896eb3670a2b5ea56087dd4b"
+    },
+    {
+      "path": "diagnostics/first-probe/start.json",
+      "bytes": 1007,
+      "sha256": "491bc0546854ad3924516b7e3e2c7a22164c3ec4024e5d2f4cac2cb5bd69f4cb"
+    },
+    {
+      "path": "diagnostics/first-probe/exit.json",
+      "bytes": 102,
+      "sha256": "68374cd26fb9d6dab4f60a3b111496c8422363135dd1ddf4155870a3f01b31cf"
+    },
+    {
+      "path": "diagnostics/first-probe/original-player.png",
+      "bytes": 8468,
+      "sha256": "4e3b37eca3b7034862703d6181cb1160382c52868fb48b2b0a34e24d5184cb83"
+    },
+    {
+      "path": "diagnostics/first-probe/original-texture.png",
+      "bytes": 36492,
+      "sha256": "867f5f3e7b8003d122a9b8225ffe427fa3f377fb0fbec774064741f155f2384a"
+    },
+    {
+      "path": "diagnostics/first-probe/editor.log.gz",
+      "bytes": 17473,
+      "sha256": "7a1a30d6eee7212f28ba80d97928310642fd5f13a71bcec4a159d18aca02244e",
+      "uncompressed_bytes": 115857,
+      "uncompressed_sha256": "e75465d573ede8cf88eef55403fd5bcad048ee95bf7ebb50f3902ebfdadef362"
+    },
+    {
+      "path": "accepted-assets/result.json",
+      "bytes": 5338,
+      "sha256": "7a767b3a1d3a3045c0278cc46bcc860a0fa35fd3bd4dc7f75e04f52c49ccc836"
+    },
+    {
+      "path": "accepted-assets/start.json",
+      "bytes": 776,
+      "sha256": "19a8b215915976d2ae8f3e5d3470bed89eb545467f80708a18b8832f1b29a02b"
+    },
+    {
+      "path": "accepted-assets/exit.json",
+      "bytes": 102,
+      "sha256": "7ad574d9dfb397bc0990262d8d9d4823349830d68d2f1e4f90a3471cbb014f1f"
+    },
+    {
+      "path": "accepted-assets/original-player.png",
+      "bytes": 69603,
+      "sha256": "f23e9765133dce650c2ffd3558bcd5fbdbe2725eda64029853a60c77dff4a458"
+    },
+    {
+      "path": "accepted-assets/original-texture.png",
+      "bytes": 36492,
+      "sha256": "867f5f3e7b8003d122a9b8225ffe427fa3f377fb0fbec774064741f155f2384a"
+    },
+    {
+      "path": "accepted-assets/editor.log.gz",
+      "bytes": 14559,
+      "sha256": "ed89b66fb3c8ee7d66ab308276db3a849c8411e4abad8b21e17aeb42a6c30b91",
+      "uncompressed_bytes": 99416,
+      "uncompressed_sha256": "f477dee27797ecf167e0a8c155f443059780e64e7c9dab78f5fcc59467dab060"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\.cache\\decrypted\\models.unity3d",
+      "sha256": "98621b2c4fa4f9de80f355fae5776ab17efc016bcc81c581bcd0917af4308367"
+    },
+    {
+      "path": "E:/SecretFlasherManakaREA/SecretFlasherManaka_Data/data.unity3d",
+      "sha256": "20781befb4cc42f898b65fe03f3d16c0a77b53aecac6ddc388460cfb710ae93a"
+    }
+  ],
+  "summary": {
+    "asset_names": 1948,
+    "transforms": 4003,
+    "skinned_renderers": 348,
+    "mesh_renderers": 32,
+    "missing_mono_slots": 596,
+    "unsupported_material_shaders": 7,
+    "texture_gpu_readback": true,
+    "player_gpu_readback": true,
+    "original_build_data_load": false
+  },
+  "limitations": [
+    "Original behaviour scripts are missing; instantiated prefab is not a working original player.",
+    "Two original shader constant-buffer errors are preserved in each probe.",
+    "Original build data is not a directly loadable scene AssetBundle in this engine; original scene geometry needs a separate bridge.",
+    "First image had only 199 non-background pixels; second probe deliberately reframed the player and yielded 51037."
+  ]
+}

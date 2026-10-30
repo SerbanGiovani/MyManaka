@@ -568,6 +568,11 @@ def main():
     check(all(r["exit_code"] == 0 and r["process_exited"] for r in toolchain["process_receipts"].values()), "Editor smoke process failed")
     for source in toolchain["sources"]:
         check(digest(toolchain_dir / source["path"]) == source["sha256"], "Editor smoke source differs")
+    minimal_check = runpy.run_path(str(toolchain_dir / "verify-minimal.py"))["build"](inputs=args.inputs)
+    minimal_runtime = read(toolchain_dir / "minimal-runtime.json")
+    check(minimal_check["formal_gpu_acceptance"] and minimal_check["original_resource_compatibility"] == "partial", "Minimum independent loop or compatibility scope differs")
+    minimal_save_check = runpy.run_path(str(toolchain_dir / "save-bridge/verify_roundtrip.py"))["build"](inputs=args.inputs)
+    check(minimal_save_check == read(toolchain_dir / "save-bridge/acceptance.json"), "Independent actual-pose save/new-process restoration differs")
     verification = read(ROOT / "salt/evidence/decryption-verification.json")
     summary = read(ROOT / "salt/symbols/index-summary.json")
     object_record = asset["guid_object"]
@@ -586,7 +591,7 @@ def main():
     check(verification["verified_node_ranges"] == len(decryption["nodes"]), "Not every node range was verified")
 
     artifacts, observations = [], {}
-    allowed_subjects = {identity["native_sha256"], identity["wrapper_sha256"]}
+    allowed_subjects = {identity["native_sha256"], identity["wrapper_sha256"], *minimal_check["managed_subjects"]}
     for path in sorted(ROOT.rglob("*")):
         if not path.is_file() or any(part in (".cache", "__pycache__") for part in path.relative_to(ROOT).parts):
             continue
@@ -969,6 +974,12 @@ def main():
             actual = digest(path)
             check(actual == expected, f"Input fingerprint differs: {path}")
             checked_inputs.append({"path": str(path), "sha256": actual})
+        # verify-minimal already hashed these package/editor files and admitted
+        # managed inspection subjects; retain their identities in the global index.
+        for item in minimal_runtime["build"]["files"] + minimal_runtime["packaged_inputs"] + [minimal_runtime["build"]["editor"]]:
+            if item["path"].casefold() not in known:
+                checked_inputs.append({"path": item["path"], "sha256": item["sha256"]})
+                known.add(item["path"].casefold())
     result = {"schema_version": 1, "generated_at_utc": datetime.now(timezone.utc).isoformat(),
               "status": "consistent", "canonical_rea_observations": len(observations),
               "rea_queries_completed": sum(len(run["functions"]) for run in runs),

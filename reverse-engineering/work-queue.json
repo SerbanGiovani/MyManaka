@@ -56,9 +56,19 @@
     {
       "order": 4,
       "name": "最小独立运行工程",
-      "status": "toolchain-verified-project-pending",
-      "known_dependency": "Authorized Tuanjie 2022.3.62t7: project creation, compilation, Windows64 Mono build and5-frame player startup verified; original2022.3.62f2 assets/IL2CPP compatibility unverified",
-      "toolchain_report": "reconstruction/editor-toolchain.json"
+      "status": "completed-within-minimum-original-resource-loop-scope",
+      "known_dependency": "Tuanjie2022.3.62t7 accepts original models/native textures; original2022.3.62f2 build data fails direct bundle loading; partial Apartment geometry/material bridge used; no original GameAssembly dependency",
+      "toolchain_report": "reconstruction/editor-toolchain.json",
+      "report": "reconstruction/minimal-runtime.md",
+      "runtime_manifest": "reconstruction/minimal-runtime.json",
+      "completed_batches": [
+        "Visible Windows64 Mono title/import-original-seed/Apartment/motor/save/quit/fresh-process-continue; actual float32 position and Quaternion preserved; pixel checks and independent offline verification",
+        "269 original draws,33 reconstructed colliders,90 original compressed textures,4 selected player renderers; original native gameplay and Animator omitted; shader/missing-script limitations retained"
+      ],
+      "remaining": [
+        "Hardware keyboard and actual mouse UI acceptance; original animation and interaction equivalence",
+        "Remaining scene meshes/material fidelity and gameplay consumers; tasks5/6 remain pending"
+      ]
     },
     {
       "order": 5,

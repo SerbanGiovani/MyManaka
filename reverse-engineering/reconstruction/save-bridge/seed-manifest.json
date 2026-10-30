@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "authority": "read-only-original-ES3-to-selected-independent-runtime-seed",
+  "codec": {
+    "envelope": "AES-128-CBC",
+    "kdf": "PBKDF2-HMAC-SHA1",
+    "iterations": 100,
+    "iv_is_salt": true,
+    "payload": "Bounded ES3 typed text grammar including numeric dictionary keys; no original object construction"
+  },
+  "source": {
+    "source_path": "E:\\ManakaREA-NaturalGameplay\\NaturalPaint\\20261031-2\\working-profile\\SaveData\\1.sd",
+    "source_sha256": "c71c2bf5861903ccae6700dbfe6df5783804334df8582d13d7f2de5921ba3fa7",
+    "source_bytes": 122192,
+    "plaintext_sha256": "682d56940709f6f2b20b5d0d0779210b0531dc7f500174baa167841e609ab8d4",
+    "numeric_key_count": 1535,
+    "slot": 1,
+    "source_stage": 0,
+    "stored_position": {
+      "x": 0.332664877,
+      "y": -0.000462949276,
+      "z": 1.21904826
+    },
+    "stored_rotation": {
+      "x": -2.87172952e-10,
+      "y": 0.0837884545,
+      "z": -1.114131e-11,
+      "w": 0.9964836
+    },
+    "runtime_position": {
+      "x": 0.3326648771762848,
+      "y": -0.000462949275970459,
+      "z": 1.219048261642456
+    },
+    "runtime_rotation": {
+      "x": -2.871729520848021e-10,
+      "y": 0.08378845453262329,
+      "z": -1.1141310096718371e-11,
+      "w": 0.9964836239814758
+    },
+    "inventory_entries": 12,
+    "custom_fields_selected": [
+      "height",
+      "hair",
+      "skinFree",
+      "skinPreset",
+      "skinR",
+      "skinG",
+      "skinB"
+    ],
+    "source_game_fields": 107,
+    "source_custom_fields": 66
+  },
+  "selected_summary": {
+    "sceneKey": "Apartment",
+    "position": {
+      "x": 0.3326648771762848,
+      "y": -0.000462949275970459,
+      "z": 1.219048261642456
+    },
+    "rotation": {
+      "x": -2.871729520848021e-10,
+      "y": 0.08378845453262329,
+      "z": -1.1141310096718371e-11,
+      "w": 0.9964836239814758
+    },
+    "sourceSaveSha256": "c71c2bf5861903ccae6700dbfe6df5783804334df8582d13d7f2de5921ba3fa7",
+    "bodyPaintRemaining": 118.79891204833984,
+    "bodyPaintReusable": true,
+    "inventory_sha256": "b8471d3643dd215420c102c3ba278100ad900ab095629b7ff5bc7532b84abd16",
+    "customization_sha256": "e223993f8509df5039a41d7e436577e8f27cef7e479b5c708290f461a7a33895",
+    "inventory_entries": 12
+  },
+  "seed": {
+    "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\save-bridge\\.cache\\seed.json",
+    "sha256": "bd556065ded1eb146f1d67c4a8204b6bbeda7c9b267d2aebd52431a4777a8e55",
+    "bytes": 1304
+  },
+  "sources": [
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\save-bridge\\prepare_seed.py",
+      "sha256": "a7f1aab3b606ce4e44ae7558dca33c4e001d2fd12e2b270a127bce45f1f6c649"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\save_codec.py",
+      "sha256": "4891ae09d49378b64b1ff6795ac6c4aa8eba73f61e9e3f7bc9e01befb96bb843"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\minimal-project\\Assets\\Runtime\\SaveBridge.cs",
+      "sha256": "fa853aaaf1220a79535ccb3c69db5f93ac5413c3c44fbd5ed99adf44bf2750de"
+    }
+  ],
+  "source_unchanged": true,
+  "scope": "Original read is offline only. Independent runtime writes version1 JSON to a separate profile. Apartment pose, quaternion, complete saved inventory and selected appearance/paint data are retained; original full-state/object restoration, visuals, physics and gameplay equivalence are not claimed."
+}
