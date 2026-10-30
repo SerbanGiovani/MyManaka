@@ -1,0 +1,2854 @@
+{
+  "schema_version": 1,
+  "status": "original-action-event-physical-recovery-save-restart-verified",
+  "sources": [
+    {
+      "path": "build-interaction.ps1",
+      "bytes": 4475,
+      "sha256": "d625bdcb0c2c60cb940ca05256532631e371b9a6b8d6be5bd6a938a38c5876f5"
+    },
+    {
+      "path": "collect-interaction.py",
+      "bytes": 5992,
+      "sha256": "63193e5a74e7a72646d5df00434744f6ea299bbbcb35b1c02e6e28871159181a"
+    },
+    {
+      "path": "interaction-project/Assets/Editor/BuildMinimal.cs",
+      "bytes": 5038,
+      "sha256": "90e8cd54589bf3870a84ea219afbc355cb66781d2173ae2d86354d8d2eb54156"
+    },
+    {
+      "path": "interaction-project/Assets/Runtime/ActionAnimatorBridge.cs",
+      "bytes": 9535,
+      "sha256": "a8d472541455cdd5ba325790adc9b5a5cd96a6d3aaa24b434f6d89669685253f"
+    },
+    {
+      "path": "interaction-project/Assets/Runtime/InteractionManager.cs",
+      "bytes": 15620,
+      "sha256": "3a0704cc16e6ba94e4bf03a6a590eb23cc81255d8a20a13f259b9b59d6a3667d"
+    },
+    {
+      "path": "interaction-project/Assets/Runtime/LocomotionAnimatorBridge.cs",
+      "bytes": 14949,
+      "sha256": "5bb2c2952515fcbd925ad19cec4d7684eb4a3a2391318e0cc4da5ae1b09c69b2"
+    },
+    {
+      "path": "interaction-project/Assets/Runtime/MinimalBootstrap.cs",
+      "bytes": 33839,
+      "sha256": "b98b350d2f59795d1c02c40399a37b124736008b22c65e19b7ae70030184df43"
+    },
+    {
+      "path": "interaction-project/Assets/Runtime/PlayerAction.cs",
+      "bytes": 7388,
+      "sha256": "c30f1f117bbabfacec564d33ba8d22038fb40551eb3ba574bc79180eb6e8119a"
+    },
+    {
+      "path": "interaction-project/Assets/Runtime/PlayerMotor.cs",
+      "bytes": 8493,
+      "sha256": "c11431a0be118e6d3e385ca164183f2e014cf242dca3467bc821b526e6c068c5"
+    },
+    {
+      "path": "interaction-project/Assets/Runtime/RunEvidence.cs",
+      "bytes": 9913,
+      "sha256": "f2a584c36ea6ed4767407df7da8dcd5e003dc53e4cac04d4ea87df5f24c3a614"
+    },
+    {
+      "path": "interaction-project/Assets/Runtime/SaveBridge.cs",
+      "bytes": 11469,
+      "sha256": "c5eb0a81187b5dc76efecb86892bc271b8c1e741c7f0de9a44572163fdae924e"
+    },
+    {
+      "path": "interaction-project/Assets/Runtime/SceneAssets.cs",
+      "bytes": 30633,
+      "sha256": "72ea39a5a7bb32b53377fe2748383ef402e1d079b744450c706d6e13014aad40"
+    },
+    {
+      "path": "run-interaction.ps1",
+      "bytes": 2568,
+      "sha256": "73ae863366077b020305698ab23ed03fd36d65e067b940ce1c9e297baefed46b"
+    },
+    {
+      "path": "verify-interaction-runtime.py",
+      "bytes": 7976,
+      "sha256": "0a7f846545b75701017280b4e0539392982e2d9b28cda95680cae5fe5459876e"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "interaction-runtime/build/Assets/Editor/BuildMinimal.cs",
+      "bytes": 5038,
+      "sha256": "90e8cd54589bf3870a84ea219afbc355cb66781d2173ae2d86354d8d2eb54156"
+    },
+    {
+      "path": "interaction-runtime/build/Assets/Runtime/ActionAnimatorBridge.cs",
+      "bytes": 9535,
+      "sha256": "a8d472541455cdd5ba325790adc9b5a5cd96a6d3aaa24b434f6d89669685253f"
+    },
+    {
+      "path": "interaction-runtime/build/Assets/Runtime/InteractionManager.cs",
+      "bytes": 15620,
+      "sha256": "3a0704cc16e6ba94e4bf03a6a590eb23cc81255d8a20a13f259b9b59d6a3667d"
+    },
+    {
+      "path": "interaction-runtime/build/Assets/Runtime/LocomotionAnimatorBridge.cs",
+      "bytes": 14949,
+      "sha256": "5bb2c2952515fcbd925ad19cec4d7684eb4a3a2391318e0cc4da5ae1b09c69b2"
+    },
+    {
+      "path": "interaction-runtime/build/Assets/Runtime/MinimalBootstrap.cs",
+      "bytes": 33839,
+      "sha256": "b98b350d2f59795d1c02c40399a37b124736008b22c65e19b7ae70030184df43"
+    },
+    {
+      "path": "interaction-runtime/build/Assets/Runtime/PlayerAction.cs",
+      "bytes": 7388,
+      "sha256": "c30f1f117bbabfacec564d33ba8d22038fb40551eb3ba574bc79180eb6e8119a"
+    },
+    {
+      "path": "interaction-runtime/build/Assets/Runtime/PlayerMotor.cs",
+      "bytes": 8493,
+      "sha256": "c11431a0be118e6d3e385ca164183f2e014cf242dca3467bc821b526e6c068c5"
+    },
+    {
+      "path": "interaction-runtime/build/Assets/Runtime/RunEvidence.cs",
+      "bytes": 9913,
+      "sha256": "f2a584c36ea6ed4767407df7da8dcd5e003dc53e4cac04d4ea87df5f24c3a614"
+    },
+    {
+      "path": "interaction-runtime/build/Assets/Runtime/SaveBridge.cs",
+      "bytes": 11469,
+      "sha256": "c5eb0a81187b5dc76efecb86892bc271b8c1e741c7f0de9a44572163fdae924e"
+    },
+    {
+      "path": "interaction-runtime/build/Assets/Runtime/SceneAssets.cs",
+      "bytes": 30633,
+      "sha256": "72ea39a5a7bb32b53377fe2748383ef402e1d079b744450c706d6e13014aad40"
+    },
+    {
+      "path": "interaction-runtime/build/build-proof.json",
+      "bytes": 83,
+      "sha256": "0b259f1b61a0aef135c77d4c417aab5fe7c388d1e22e59ba7b7ba051046505ee"
+    },
+    {
+      "path": "interaction-runtime/build/editor.log.gz",
+      "bytes": 34333,
+      "sha256": "3f52a67a65ae19784d6d411fc5f6daadbe2de2ab65279003ecf4850d6b7c0b70",
+      "uncompressed_bytes": 317340,
+      "uncompressed_sha256": "aa578255f0c27237763cc2395f319ea0be468bba705fd4a7315c6100f6f3080d"
+    },
+    {
+      "path": "interaction-runtime/build/exit.json",
+      "bytes": 98,
+      "sha256": "98913003fdcb168514d56fa4c954b643fa10e7de686c2b58f5c9974d4a9f0b2c"
+    },
+    {
+      "path": "interaction-runtime/build/start.json",
+      "bytes": 35041,
+      "sha256": "507da132ea957f603218b1f6682c1661fe4fbb5fdc97fe0bb929beda26a8a1ba"
+    },
+    {
+      "path": "interaction-runtime/build/stderr.log.gz",
+      "bytes": 20,
+      "sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e",
+      "uncompressed_bytes": 0,
+      "uncompressed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "interaction-runtime/build/stdout.log.gz",
+      "bytes": 20,
+      "sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e",
+      "uncompressed_bytes": 0,
+      "uncompressed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "interaction-runtime/controlled/events.jsonl.gz",
+      "bytes": 110559,
+      "sha256": "30200a262a9f9905fdfef3525b227d4a6847bf886935f044c0d68f83d54273a2",
+      "uncompressed_bytes": 2905108,
+      "uncompressed_sha256": "69a9583f7b1802a2903b530a981c83a0ee8dc1cf1e5dbfbda469ab540f66cc56"
+    },
+    {
+      "path": "interaction-runtime/controlled/interaction-controlled.png",
+      "bytes": 747530,
+      "sha256": "b5de7b933f8ed6a174b2ed04a0b0d758f6c2848ff3aa938e3633da2f234308de"
+    },
+    {
+      "path": "interaction-runtime/controlled/player.log.gz",
+      "bytes": 5957,
+      "sha256": "11780d6b1a6738dd9295a71cb778c0818d6c2d2671cf68dccb21f48a30189f99",
+      "uncompressed_bytes": 105190,
+      "uncompressed_sha256": "952082938fd3e664706aac740d36f0aac9abd38d7ac7009c288764a34d069641"
+    },
+    {
+      "path": "interaction-runtime/controlled/process-exit.json",
+      "bytes": 117,
+      "sha256": "438c49460ebdbcbb05ceb543f44b4975e18ea6a3ec5dbebc5b531cf96a3299c2"
+    },
+    {
+      "path": "interaction-runtime/controlled/process-start.json",
+      "bytes": 1983,
+      "sha256": "8b685af0ba0715f28961725bb1e5be159ae645a6d5d1b5725e433ad07a5dce07"
+    },
+    {
+      "path": "interaction-runtime/controlled/proof.json",
+      "bytes": 5139,
+      "sha256": "bfd53d1587c723d8df2ab6f585a4474373019f13799f7c4214fe831782ac5e0f"
+    },
+    {
+      "path": "interaction-runtime/interaction/events.jsonl.gz",
+      "bytes": 1537406,
+      "sha256": "d6f2908022924a0f356f9dfd199ef6a535ca554fe48acb4d9a74497a14a778de",
+      "uncompressed_bytes": 48460360,
+      "uncompressed_sha256": "0f3af1956d68f7215d4174192f0727388a8675006f829a3927777f27f78c3750"
+    },
+    {
+      "path": "interaction-runtime/interaction/input-receipt.json",
+      "bytes": 681,
+      "sha256": "54919a675e087b59f711a4e693253beb4d8949bdfc59d9a0042b3d890ebc3b4e"
+    },
+    {
+      "path": "interaction-runtime/interaction/keyboard-ready.png",
+      "bytes": 841687,
+      "sha256": "9a2ba21b339ab6cc74373939beeb1e654827a34557c3cdb00f16daf3cf253c06"
+    },
+    {
+      "path": "interaction-runtime/interaction/keyboard-saved.png",
+      "bytes": 1129543,
+      "sha256": "b4a527e22a3d2296bb49db448cef5b54be51a3d5abd2c720fa9a027ab08940ac"
+    },
+    {
+      "path": "interaction-runtime/interaction/player.log.gz",
+      "bytes": 5996,
+      "sha256": "e702eb18ebd47dd51c0cf0bbd87793acb94fc7aaea1143cbd9abfaa244c8ffdc",
+      "uncompressed_bytes": 105215,
+      "uncompressed_sha256": "e4ddf1ae05fccd074f2af4fe4186e785046de1700b499dc507e2169d8d3c958d"
+    },
+    {
+      "path": "interaction-runtime/interaction/process-exit.json",
+      "bytes": 117,
+      "sha256": "f38a2c00ff5de4985aa8f7797758c353b4c03901926d753a0d5b3995ca17bcdc"
+    },
+    {
+      "path": "interaction-runtime/interaction/process-start.json",
+      "bytes": 1903,
+      "sha256": "b42748794152341f4a3427433a7ecea9e47fca08c86969679b82fc3be7fd07b6"
+    },
+    {
+      "path": "interaction-runtime/interaction/proof.json",
+      "bytes": 5336,
+      "sha256": "3995b1a09772e6a4363e12b47d24e4ceeb7ded67f56303cc8f14d8ec6f958eb9"
+    },
+    {
+      "path": "interaction-runtime/interaction/title.png",
+      "bytes": 31726,
+      "sha256": "6152449be07f89d59336cfcc4e83f72648de079dda374169ffc09faf3f6625ae"
+    },
+    {
+      "path": "interaction-runtime/phase2/events.jsonl.gz",
+      "bytes": 35908,
+      "sha256": "f7c8a7599a7e7f2de1e18c96fe00d95a82beb361f603abf764e7b34b7bb7d307",
+      "uncompressed_bytes": 604744,
+      "uncompressed_sha256": "87a9a15235e750e6cc192306df221e2105a67bffecc8ed7d319008e58b492225"
+    },
+    {
+      "path": "interaction-runtime/phase2/player.log.gz",
+      "bytes": 5939,
+      "sha256": "b0bd2882e588114bf9335537cad56a5f4df7f450891858e57fd815dca0df2e7e",
+      "uncompressed_bytes": 105078,
+      "uncompressed_sha256": "3164dffdffb25ddba833588fce03cc38647ce810d7e3f10136c3203a9cb8e137"
+    },
+    {
+      "path": "interaction-runtime/phase2/process-exit.json",
+      "bytes": 132,
+      "sha256": "3a89a2255299d662e09a89289828e13822d9d59ddeb9af3fa67e3abca84643ec"
+    },
+    {
+      "path": "interaction-runtime/phase2/process-start.json",
+      "bytes": 2221,
+      "sha256": "6c77ad37585db8534dbfbd804a40d1f2e657eb4e2a6a8d9039e17e511a8d7cd0"
+    },
+    {
+      "path": "interaction-runtime/phase2/proof.json",
+      "bytes": 4792,
+      "sha256": "898dad732fbbfc3455e1b4bb1afaea4313082024e400a92e5c6e38f308ff43bc"
+    },
+    {
+      "path": "interaction-runtime/phase2/readback.png",
+      "bytes": 761009,
+      "sha256": "90b303a5cb772733e138afc634c4605ea3b701af20637d2438a3c2076af9ab68"
+    },
+    {
+      "path": "interaction-runtime/phase2/title.png",
+      "bytes": 31726,
+      "sha256": "6152449be07f89d59336cfcc4e83f72648de079dda374169ffc09faf3f6625ae"
+    },
+    {
+      "path": "interaction-runtime/save.v1.json",
+      "bytes": 1657,
+      "sha256": "f466eb7f14275ab12bef4821ec67d6f2389a8347ee45d5cf59ec7c4763baff20"
+    },
+    {
+      "path": "interaction-runtime/save.v1.json.bak",
+      "bytes": 1657,
+      "sha256": "2191bb126ccd6cd70aecacefc2c3c48fa5a9d88c9fde3327c13c41d63e77771d"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "interaction-evidence/manifest.json",
+      "bytes": 8195,
+      "sha256": "f2ecf1cb8781663ba96a0aa459a7707dd9f7c9a2a3ce6d83a44ff5e1e637b46e"
+    },
+    {
+      "path": "interaction-evidence/interactions.json",
+      "bytes": 4202,
+      "sha256": "fdc8908e79edfba7b246ce364ac43c3cf0f36810ebc8ade6283e632eecef49cc"
+    },
+    {
+      "path": "interaction-evidence/original-interaction.json",
+      "bytes": 4980,
+      "sha256": "84d6cd2031791c474ae758afc5b3a9f74376286256809fe140a730f257c9a05e"
+    },
+    {
+      "path": "locomotion-evidence/original-controller.json",
+      "bytes": 335784,
+      "sha256": "0ff4acbddb34bce70a184b26a4fc9cfc16f7ba0e506e889965be77dff82bb6d3"
+    },
+    {
+      "path": "save-bridge/seed-manifest.json",
+      "bytes": 3507,
+      "sha256": "5169ad6190ab0cddeac95c160e299915df39cecb68ccee20e60ca1c093f99246"
+    },
+    {
+      "path": "interaction-managed-summary.json",
+      "bytes": 7118,
+      "sha256": "84bbff3ba2fc4fea5048b8ca22156bbff78f2469287d02ffbd38758fbe9331d8"
+    },
+    {
+      "path": "interaction-managed-complete.json",
+      "bytes": 118950,
+      "sha256": "e99cc2604376b309c4024e37b7e9eb58ac4615dcd3b5823d774d18f0879f1226"
+    }
+  ],
+  "build": {
+    "run": "interaction-20261031-1",
+    "receipt": {
+      "schemaVersion": 1,
+      "result": "Succeeded",
+      "errors": 0,
+      "warnings": 1,
+      "bytes": 434457492
+    },
+    "process_exit": {
+      "exit_code": 0,
+      "process_exited": true,
+      "pid": 62224,
+      "executable_exists": true
+    },
+    "project": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1",
+    "executable": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction.exe",
+    "files": [
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\build-proof.json",
+        "bytes": 83,
+        "sha256": "0b259f1b61a0aef135c77d4c417aab5fe7c388d1e22e59ba7b7ba051046505ee"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction.exe",
+        "bytes": 464384,
+        "sha256": "b0ff5efad3d2eefc2180930caab8ed64b7447901e52096635e96c6c35ae12d0d"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\app.info",
+        "bytes": 42,
+        "sha256": "7138a1e2a6ef05a93f60f298021b3724a583a599b3e02476126ccbd36262f790"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\boot.config",
+        "bytes": 423,
+        "sha256": "ede5fa2f615aa55f4d87f41ee6365d27c8dd0b10b71cf6db3c838a6bfe7c0d6f"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\globalgamemanagers",
+        "bytes": 22584,
+        "sha256": "d5739af64063c6d877764fd5de093c19da54ac5de39247e5d07fe22fa2608ca0"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\globalgamemanagers.assets",
+        "bytes": 2976,
+        "sha256": "8ccf3d645c48133251e456743ee8ca39f50bbb52b26be070578ead38c95be92b"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\globalgamemanagers.assets.resS",
+        "bytes": 2798288,
+        "sha256": "40f35910f0086a673884e0d6fc5b077bc73d0bc3b46dcac3308d2afb6d43dfb5"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\level0",
+        "bytes": 852,
+        "sha256": "f603be5836fad9b15741c5cc0585edee8142b786172c1149a4a04e3dc435492b"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\Assembly-CSharp.dll",
+        "bytes": 143360,
+        "sha256": "1de70877fd056e883b0e54b62452bfbbba3c14d5bb96bc793c54fd1a0727efe6"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\Assembly-CSharp.pdb",
+        "bytes": 46356,
+        "sha256": "3c421b3b9623c4f625abbac16cf5b1c16bc8ecea05a382c5ef7c774bb344c1f9"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\Mono.Security.dll",
+        "bytes": 241152,
+        "sha256": "2d7873a4b4beff04552395a65fcc8ef37b27a8c2dd1086de5eead48607e245cb"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\mscorlib.dll",
+        "bytes": 4631552,
+        "sha256": "a0b2be9fbd29e5919764b836121858376bfd5f64978429887bf0da7b0b229b67"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\netstandard.dll",
+        "bytes": 90112,
+        "sha256": "6ae62e082dc494a2433984177f60ca4db5fae69b1f360a8b33754172b310b8c5"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\System.ComponentModel.Composition.dll",
+        "bytes": 257024,
+        "sha256": "849d8e6f926316d042cee63863b1ec1d14a0ab6876307942f27d7bb58bc42dad"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\System.Configuration.dll",
+        "bytes": 124928,
+        "sha256": "58e8908a09a0e0237d444a5002cf31e759513903d05de443e533e1cce3638545"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\System.Core.dll",
+        "bytes": 1113088,
+        "sha256": "004bba2445e78170db699a0aa8741ef85604fe6c1ce59efe503456de54bb082a"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\System.Data.DataSetExtensions.dll",
+        "bytes": 29696,
+        "sha256": "f437891cd82d172758aab6cdceb7df868c8bef0813bc02bfe7e02447048ccdb3"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\System.Data.dll",
+        "bytes": 2125312,
+        "sha256": "202e89d3ece1fb0c4b6a92003afbb7e4add1265c26364c6fd0aa51b62710b87f"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\System.dll",
+        "bytes": 2639872,
+        "sha256": "e3220eb5b57502041f5027d40d86b6fca4fb1ce0d151e8766dc2a25d591c346b"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\System.Drawing.dll",
+        "bytes": 489984,
+        "sha256": "c69a175fcc18f436860172f2f8e78e2631b69f1dc64661d410fecd74e24affae"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\System.EnterpriseServices.dll",
+        "bytes": 44544,
+        "sha256": "322a825f861af29dd7212fb91bcda9c4573e927e8f5efda8f0d5647f5c86cf89"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\System.IO.Compression.dll",
+        "bytes": 114688,
+        "sha256": "b4cd740a14bb2eb2263203bfb85bdb758e81ff270e91019d9b8a58b8a94c53ae"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\System.IO.Compression.FileSystem.dll",
+        "bytes": 18432,
+        "sha256": "b04df9d1933eae9a8474eca6ca0646b155f3d222735707db67704c84e10ab984"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\System.Net.Http.dll",
+        "bytes": 122880,
+        "sha256": "a326a1efe08ddfc33f6ccfaa9e268ef328a7cbf47a763fa38bbca58e0be19015"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\System.Numerics.dll",
+        "bytes": 119296,
+        "sha256": "786f1c5e9ab50ca71d3714b5b795d1f34c39d42a666a61e27db539eca143e1ef"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\System.Runtime.Serialization.dll",
+        "bytes": 934400,
+        "sha256": "db52920647ac0f55521e6c095e86845d36dbd4e53187b98f5f8166df392c7061"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\System.Security.dll",
+        "bytes": 320000,
+        "sha256": "d2b40ccb59c3bdac10366090784346057fc4742802bdd02f1b99b63c83c48480"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\System.ServiceModel.Internals.dll",
+        "bytes": 215040,
+        "sha256": "32214a5f0e001cb09fd66badfdb7a782dde0e89fe07f04240ab0d3a6f33426c3"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\System.Transactions.dll",
+        "bytes": 35328,
+        "sha256": "a34eab6e7ea02b4eb94331971b2a7950bf339765557414a15b8296bae0ee7b00"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\System.Xml.dll",
+        "bytes": 3160064,
+        "sha256": "4f7f5600ac3288b17aecbc92b5a0ce818d005b99b7112454951961433ab9bec0"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\System.Xml.Linq.dll",
+        "bytes": 136704,
+        "sha256": "a2e50bd64c59273af8f999296cd7d2f6aa06cda7a4b1e744332fae64af721c65"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.AccessibilityModule.dll",
+        "bytes": 25432,
+        "sha256": "f5c9fc8293d3c3a146da9d71fb9b2303436e55d3dea9b2009efe7cd8a33558fb"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.AccessibilityModule.pdb",
+        "bytes": 10236,
+        "sha256": "b0052d23690cc558b145e5e16d98947bfcb4b7a9a8ab8ee7e9bb5d9d866f20a0"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.AIModule.dll",
+        "bytes": 60760,
+        "sha256": "0fc62841ef2144479cf78ffab348483de6d4ca573753c647b886fb372907c71b"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.AIModule.pdb",
+        "bytes": 19748,
+        "sha256": "d7250f481695bded595f355f89a09da0ae31b9f8be46aa99e40b639d06b52aff"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.AndroidAppViewModule.dll",
+        "bytes": 22360,
+        "sha256": "37c7205d9dd60aec57ce5eb680bae12d592e11b4e09cb44a20681484b8cf189c"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.AndroidAppViewModule.pdb",
+        "bytes": 9052,
+        "sha256": "ce89aa69b7f253f21812fedd54b2b57febf7ebb022cf713bc0e70a7d3719737e"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.AndroidJNIModule.dll",
+        "bytes": 98136,
+        "sha256": "e50ee4b1777e36068ec3d2a952d9a312b237b96815a9800e5dfd0795e2b1748f"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.AndroidJNIModule.pdb",
+        "bytes": 45628,
+        "sha256": "4ea58dc825fd34402a4fb672a0863103eb185411ee2cc3b40533f00494a3f3bd"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.AnimationModule.dll",
+        "bytes": 247640,
+        "sha256": "977ba10dac455f71cb685880c9c84d8ad5955d86b4e73c1bef8306ca58fa5c95"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.AnimationModule.pdb",
+        "bytes": 80180,
+        "sha256": "6caa189cdfd0bbfebaf81740d18d8f1a1fcf71bd741dd2b35aa1535fa4f7b732"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.ARModule.dll",
+        "bytes": 23384,
+        "sha256": "9e3f77fd5c2aeddf0794f47ea8171a2d8ca9fa935ef5a77219eb395cf5fe5fa6"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.ARModule.pdb",
+        "bytes": 9720,
+        "sha256": "0f40fc45fcefa54f45c1bef6c3b30c1a446f3e0ca830e80b3f4e2ef8c7973b52"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.AssetBundleModule.dll",
+        "bytes": 35672,
+        "sha256": "cb33b1506c804beda6f5c815487cf61a47940dbe31d13ee58a5c4d9d62d3d8b5"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.AssetBundleModule.pdb",
+        "bytes": 13188,
+        "sha256": "bb9bcb164fa196c6f4a17eebea5e357cf4a9767bcb30b2a131983db8f56f88dc"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.AudioModule.dll",
+        "bytes": 73560,
+        "sha256": "db1551e18a0b3b1b4bac0edcf18a6aa354eda63db7dea9111eebc4f536df54e6"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.AudioModule.pdb",
+        "bytes": 21744,
+        "sha256": "82ed880e6d0ae31db1f47009e3b32989fdc4ed7bff997e0ad7f45440fe8747ae"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.AutoStreamingModule.dll",
+        "bytes": 23384,
+        "sha256": "445147a8f4c450d15102bc0e7b60aa0fbbfdf50fd8c09fc9dd278832f62e4a65"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.AutoStreamingModule.pdb",
+        "bytes": 9820,
+        "sha256": "b4c14468f2f4c331d31df656f38cf5a61bcdc939c36836288cfaa00dcc9b273d"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.ClothModule.dll",
+        "bytes": 27992,
+        "sha256": "094c5483a669099fe11e1db0044329914ba0b98da25a17acf219913fa6010c2a"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.ClothModule.pdb",
+        "bytes": 10104,
+        "sha256": "af97c804ae9bcda97f46eac17d4192c508e45773ae192b2255cc196b0dc37abd"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.ClusterInputModule.dll",
+        "bytes": 23896,
+        "sha256": "dc01e09ac9e53ba158c9284fda978ff6fe2748317cc73e6fa8ad841713bc7dfa"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.ClusterInputModule.pdb",
+        "bytes": 9080,
+        "sha256": "d746044af170619a39f064868e90afe3d4a4b0554b1ffa92ad53a4c7597c344e"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.ClusterRendererModule.dll",
+        "bytes": 25944,
+        "sha256": "47f546ed4a93ee6fd357237d5150e32425e977b9d20fac00a3969bb25c097f46"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.ClusterRendererModule.pdb",
+        "bytes": 10036,
+        "sha256": "7c7a4ca311a5310ab913019281ee3f9b6c455c8d9247d77f146885a2f9a3505f"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.ContentLoadModule.dll",
+        "bytes": 29528,
+        "sha256": "cfa722ac8d9809067cfb731e830f6324a43833039ca0818968b7ba349806c892"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.ContentLoadModule.pdb",
+        "bytes": 10880,
+        "sha256": "72492ab8e715ca88f473744a604b4f65ef09658eec5d013549d67e2c8fb6ced0"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.CoreModule.dll",
+        "bytes": 1440600,
+        "sha256": "94931efb9ebb83ff7f82090cb96ba013bd3a9bc0a43bc9a613ec7c84154ebb9f"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.CoreModule.pdb",
+        "bytes": 465308,
+        "sha256": "82dd37825b3ce0e81262e522838cce12fb9a88e9277dcab796bd34da2281a7db"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.CrashReportingModule.dll",
+        "bytes": 23384,
+        "sha256": "bf051ead392924908ee1e478a07fd5c7b4772c6a6790b68e77cb5ef3c5f73562"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.CrashReportingModule.pdb",
+        "bytes": 9632,
+        "sha256": "9804b5953c74318aaef6e8cf661e247f9b221c9bf995100b10a6082368a2647a"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.DirectorModule.dll",
+        "bytes": 26968,
+        "sha256": "04aa1dabce5da19738f4ce81c96e7aac1889240ba427bd504fad9e32d5208a36"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.DirectorModule.pdb",
+        "bytes": 10352,
+        "sha256": "700759ee7071b89154a07da756d01be33c372b8741ed6bc379a5e9cc795039a0"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.dll",
+        "bytes": 153944,
+        "sha256": "cbb0fccbc2c6baabe54abdfe5b264ae8ba8684eeba1ef85bb697820b420fb800"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.DSPGraphModule.dll",
+        "bytes": 31576,
+        "sha256": "5503ec4fbe7d5baf2051c9a38b422b135a5afb2cc52964f670f759415e1e75fc"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.DSPGraphModule.pdb",
+        "bytes": 10256,
+        "sha256": "2182b65217bbb73f24b30e1417d5b8e0fc668549ec0e3068c4dd3e2562ef57d7"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.GameCenterModule.dll",
+        "bytes": 41816,
+        "sha256": "6a2c06d6c4f3613b43cad731e6242f810580b98119a4995b245dd49fb3a8997a"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.GameCenterModule.pdb",
+        "bytes": 17196,
+        "sha256": "5a030bdf8380257bb73f239147c5d0474db79d542b8539f6958b6b385af8b8ef"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.GIModule.dll",
+        "bytes": 22360,
+        "sha256": "e422e4d28931cd05481999ca562f4b73aa2f0613894c65a70d57e0a4d9688156"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.GIModule.pdb",
+        "bytes": 8992,
+        "sha256": "bfd86a4788d6cbc04bab8dd222be0bc1cbb45f8394e63bdfe0c66b47708f7448"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.GridModule.dll",
+        "bytes": 26968,
+        "sha256": "13e14e8a1ef97b277d2c78e34db02636e522efd2bf3795d4ee953c60af445868"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.GridModule.pdb",
+        "bytes": 9712,
+        "sha256": "7cbbef8a7eeb78c7eaa13e4ff93fb0eb80c3c8fbf30a3cf439ea573be0e16c29"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.HotReloadModule.dll",
+        "bytes": 22360,
+        "sha256": "5d2c9765f6cb88e003f9a60d8a147afdef8eea8a90816d0b6edf883614581f8a"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.HotReloadModule.pdb",
+        "bytes": 8992,
+        "sha256": "52c72bdea3a5be15f42ac6eab63f4438f046eacdf9cf1e06d10481f7f2c88683"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.ImageConversionModule.dll",
+        "bytes": 26456,
+        "sha256": "9e634116ab4d7156f5496a72d82c1afd03bcfb38a8df4320fe6c1b9b819adda2"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.ImageConversionModule.pdb",
+        "bytes": 10120,
+        "sha256": "81a3bc8028b30ebde5320ce15d1a1d673c66140a7248c3395654bd8532e3ec4d"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.IMGUIModule.dll",
+        "bytes": 193368,
+        "sha256": "d2c0e2a32a4e6c5b4cfab91d789147af02ed63b94870ec9d9102e903447aeda5"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.IMGUIModule.pdb",
+        "bytes": 87360,
+        "sha256": "f3f0bda513356240cff05164abe9d5594828ea78f9c2ff6a9dbc99b96c0b8e27"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.InfinityModule.dll",
+        "bytes": 238936,
+        "sha256": "08bd8b0fe57dfe16b7070bdc4aa98e33564bc8a95180cda92d5762468ba35f0d"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.InfinityModule.pdb",
+        "bytes": 82408,
+        "sha256": "fee4933b61ede461431fcf132b7ba9c92fabbada2acbb59bf8c1e06c0af8ba36"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.InputLegacyModule.dll",
+        "bytes": 41304,
+        "sha256": "8e614f5921f3774d1a6e4f671aeb5af4d0365f156eaa27da11d53c25bbf7219d"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.InputLegacyModule.pdb",
+        "bytes": 15016,
+        "sha256": "8f43d8002e4e82832ba7d49c57edaff58b09ca883a9593b73728c428845e2cba"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.InputModule.dll",
+        "bytes": 25944,
+        "sha256": "4d3e12477f5a14275f41c37d28cf5c484563e2cfe0a48319ca7dd0aee642a399"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.InputModule.pdb",
+        "bytes": 10336,
+        "sha256": "29f9a6ff01d8fe7e8682f03bce6a8aa8e674af524420ff6b4fca4269f1033451"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.InstantAssetModule.dll",
+        "bytes": 25944,
+        "sha256": "b7e33069f3a32a8e1e897f770b9f02c555f4984d1501429c0677c542c874234b"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.InstantAssetModule.pdb",
+        "bytes": 10456,
+        "sha256": "816a206ff10bebd7a9d6ab02541b46a2b843f5992457f31d79c3a9f1e451ba2d"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.JSONSerializeModule.dll",
+        "bytes": 24408,
+        "sha256": "62f3668d6bd6fa5c82b5244f2f1aa543ea58cb8842b28d6b62dcd409b9350db5"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.JSONSerializeModule.pdb",
+        "bytes": 9600,
+        "sha256": "3b06553ba2972f13adeeafd652f647b34dfd65641eb5c645e8061955c25a54da"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.LocalizationModule.dll",
+        "bytes": 23384,
+        "sha256": "dcac9cab65747e5e277a10d0a5ca23284390950969c2b6670bd70de9526dc422"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.LocalizationModule.pdb",
+        "bytes": 9368,
+        "sha256": "d5f9a1c86197aca0973a3b363736b489a57b346dc97718b54c02e751803daac2"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.NVIDIAModule.dll",
+        "bytes": 36184,
+        "sha256": "1f3329e0ed8d683ef6180f9284e34930e047429922807453cc5b9d9b7f9e11e0"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.NVIDIAModule.pdb",
+        "bytes": 15416,
+        "sha256": "20db742d4a7bf14bb72b53dcc5e9c51d3f385428cfc129576fb5820dffe2adab"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.OcclusionCullingModule.dll",
+        "bytes": 22360,
+        "sha256": "aec1cb3fbe19a53cc0694439e7e40c2b7bbb5943828b4a031214fd0b74ee667c"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.OcclusionCullingModule.pdb",
+        "bytes": 8992,
+        "sha256": "37b98917b43f395e1df2748031d5b9d15a7de0bdb3895d5bd34226a825fd4937"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.OpenHarmonyJSModule.dll",
+        "bytes": 56152,
+        "sha256": "c540ce7013d93d9cf38deeff992a633aa9b68659c9b5145aae264586e05c1e5e"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.OpenHarmonyJSModule.pdb",
+        "bytes": 22544,
+        "sha256": "4e8489180e2c64af89eff8cc82251d66452f9eee5a65bdf0b10a728ce8d029a4"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.ParticleSystemModule.dll",
+        "bytes": 163672,
+        "sha256": "e6585f5018e16c7bda62368f603ca7fbd79e22acc766c64c99d55eedce07eb58"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.ParticleSystemModule.pdb",
+        "bytes": 35808,
+        "sha256": "cc4336288166386f6c4aaf82bd3f20b527cc36954392130ecb1d2e9e11dc3c0a"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.pdb",
+        "bytes": 12184,
+        "sha256": "d9136184b26d347969c28dea3d37426a28d2ba5aaff1033c0b694fa7fabd8136"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.PerformanceReportingModule.dll",
+        "bytes": 22872,
+        "sha256": "c42acf889e63c5e4fd762b5e20e1ca626a00f350134fb24a240a0ebdeb2e530e"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.PerformanceReportingModule.pdb",
+        "bytes": 9200,
+        "sha256": "8e400a4dd9bc4b6ea8e4824aa44cc63d3d58f4e6f64f2add98ef9698f9a5eb38"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.Physics2DModule.dll",
+        "bytes": 145752,
+        "sha256": "9de33010adbb3388014c9805354d4f6232510ba42524b9c677d61e634f16e726"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.Physics2DModule.pdb",
+        "bytes": 42692,
+        "sha256": "37b47d0cc6f7a83950fc5547bbaede1701ba3eae4383acb8d23b110707ac0955"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.PhysicsModule.dll",
+        "bytes": 140632,
+        "sha256": "71daa13c0275596ae2ed33966fbe3b160babb8a8d04e91ae9456f9df4d807373"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.PhysicsModule.pdb",
+        "bytes": 40968,
+        "sha256": "b99cc4078252e649d1ac65dda4175c023692ba7749ca1273fd1bec5af9155e24"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.ProfilerModule.dll",
+        "bytes": 22360,
+        "sha256": "00811a0e1d9747bb4ff99a09827475b72976d0a8a496540be9e5d5b2896ee959"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.ProfilerModule.pdb",
+        "bytes": 8992,
+        "sha256": "dc3818cb303b9b9536e037ff078d951feecfc1977464ac51962e229b46713ddb"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.PropertiesModule.dll",
+        "bytes": 157528,
+        "sha256": "0c438a16dcf0bea744c33601ae708b5043f8fde16818e59ddb92b289b7a3d22a"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.PropertiesModule.pdb",
+        "bytes": 58504,
+        "sha256": "70fe3927ac8fd18e75711565b7740f48bf39d4babf14475c9157e5dd8c64024f"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll",
+        "bytes": 22360,
+        "sha256": "14210317402b55303ea41fb307f723e2b06286049abf160abe24bf45c8cd7650"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.pdb",
+        "bytes": 9056,
+        "sha256": "da056da7fa9883ce25f093dceb4792d1abdc03032ef6b568839dd2722dbe7428"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.ScreenCaptureModule.dll",
+        "bytes": 23384,
+        "sha256": "d9c94e3231e1006b9b2e41e1e68349471927196235dca6cd6781b63d9a99e701"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.ScreenCaptureModule.pdb",
+        "bytes": 9608,
+        "sha256": "b8cde14da18623be5519170fce25f7d819a9dc4273807115f12ecbdca4e2c1a6"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.SharedInternalsModule.dll",
+        "bytes": 35160,
+        "sha256": "c399cd127af8569ec899203e8e80f2267a7e544c3c85c527d490ff233b228344"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.SharedInternalsModule.pdb",
+        "bytes": 13952,
+        "sha256": "70cfc54eb301fc89122e11e6345dade4fe65fd7eeb2b11025908874f03cbac0f"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.SpriteMaskModule.dll",
+        "bytes": 23896,
+        "sha256": "825fe4190be1dcfab76b7964b251c840dfddec19852170954c00855cbbfdad0c"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.SpriteMaskModule.pdb",
+        "bytes": 9104,
+        "sha256": "9ef688397cc2a98f804d7af96bc8eccf070db5c0636d5aba718923b09350fb25"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.SpriteShapeModule.dll",
+        "bytes": 28504,
+        "sha256": "1484e3f7c3b4bfd129367f5f35df3176d8a3e2a71a268efd12b9ae976d4349f7"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.SpriteShapeModule.pdb",
+        "bytes": 10520,
+        "sha256": "2209aad9628391f83b4eb94a4a047083264cb74d4498cd507941a819b1fdf11b"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.StreamingModule.dll",
+        "bytes": 22872,
+        "sha256": "0eebf4c5d624054bc533dc7484de63ca052f2c460fb416b17148ffa4f971ddb2"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.StreamingModule.pdb",
+        "bytes": 9044,
+        "sha256": "31feecef2ccdbbabbc5464ab4c729a2cfe734604ee696679eb271d007ba33890"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.SubstanceModule.dll",
+        "bytes": 26968,
+        "sha256": "32df17780c4445c204e5574af1f1b6d667417a130304c62c3257dbd76afae667"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.SubstanceModule.pdb",
+        "bytes": 11188,
+        "sha256": "ad9df06ac0d034531065ff2948ddbe84c5204761bd2eb5734c56a2c78bac3c74"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.SubsystemsModule.dll",
+        "bytes": 37208,
+        "sha256": "8d4dc1ce886560101027251d2bfeeb6622783f45bd91fa68076bbaa686f73698"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.SubsystemsModule.pdb",
+        "bytes": 15256,
+        "sha256": "91d27da2534ff1abaf7e8e7f93274d9c1122d45f3c982d7078f81f74f5691090"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.TerrainModule.dll",
+        "bytes": 103256,
+        "sha256": "5eadcc5e0ba86346b08f6142e4117f345758ef9b3d390dd135605163842a8c1e"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.TerrainModule.pdb",
+        "bytes": 32480,
+        "sha256": "bdf103c6afb11662c4cb828f99908e788e5a85bbe80565a21567f888ca7c0f54"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.TerrainPhysicsModule.dll",
+        "bytes": 22872,
+        "sha256": "ef68769addf7e45d7ec788d2eda5a12da557d1c9c229fa0cc96168ab0309e650"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.TerrainPhysicsModule.pdb",
+        "bytes": 9436,
+        "sha256": "6670e599401e163171527bb0343cf4a19b459c27929c65cb5a9ddb58443e2da7"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.TextCoreFontEngineModule.dll",
+        "bytes": 74584,
+        "sha256": "b8413167092d6c3f941a91f696b53fb7a837b7242a5d7d30a1a18b263c0046f2"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.TextCoreFontEngineModule.pdb",
+        "bytes": 27360,
+        "sha256": "b64ac1a3bfb6478934102ca6e853e5b54985f63ed657325e6d074d7d426ded5d"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.TextCoreTextEngineModule.dll",
+        "bytes": 252248,
+        "sha256": "7b5b3c12924141a6582a5df2b42f5cfe446a843695f7377ee18207dd2b909680"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.TextCoreTextEngineModule.pdb",
+        "bytes": 111328,
+        "sha256": "4347ada26d64e4d3c01e2f5c6d7000019e2cee1d456c566f49d2d9e623d9a15e"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.TextRenderingModule.dll",
+        "bytes": 41304,
+        "sha256": "97ca59e8058e4652c40edfc55008a395373ed667fbb60629dafc740319b1316f"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.TextRenderingModule.pdb",
+        "bytes": 14664,
+        "sha256": "cb1582c5949b5413cf7d45d1fcf73433286582decc63daa1f3a10c57e77d1b94"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.TextureManagerModule.dll",
+        "bytes": 23384,
+        "sha256": "1aab3ef7a9285cbbbe8e1859e7708f0fd2c6f22dc0a982c043b9f7352a7c63d5"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.TextureManagerModule.pdb",
+        "bytes": 9768,
+        "sha256": "7af007236937e815f3a4f3352e4574685c6ba6f75858038ba47702903c80baa7"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.TilemapModule.dll",
+        "bytes": 48984,
+        "sha256": "d4e740471e685e420efe2d90d4b5eb7fae564d4b2ab235a4a69aa4b657940665"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.TilemapModule.pdb",
+        "bytes": 18216,
+        "sha256": "de776d69238868eac494554dccb0542e0c830a81fb0788d04517b8e714961c1f"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.TLSModule.dll",
+        "bytes": 29016,
+        "sha256": "becff6a34ef669d74538ccc4a2074b89e3228ad0d792525c0d2aa365c215ffb1"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.TLSModule.pdb",
+        "bytes": 9012,
+        "sha256": "944ea87318f2eb0d83c04ad2e7fa5178c4a12a52d545e55b4744fbac20b5c5e8"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.TuanjieGIModule.dll",
+        "bytes": 27480,
+        "sha256": "8c18807cdd96e7e84a8e35fcd8063cd5e33025cb0f6b93775bfb1287832d2d40"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.TuanjieGIModule.pdb",
+        "bytes": 9656,
+        "sha256": "3c90b8ff76494e618f13616d25f222fff93c70eed65bb2b940df0659fbff08a1"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UIElementsModule.dll",
+        "bytes": 1538904,
+        "sha256": "7684916f9af151b60747e84e31567cd445d8a8039fd5f4b401c19272cb6916fe"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UIElementsModule.pdb",
+        "bytes": 702180,
+        "sha256": "31cccdff6ddb7f4e9ce05ad4280911b20045b3283ba6aeb186862404d90b280f"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UIModule.dll",
+        "bytes": 39256,
+        "sha256": "5d858fb0fade66f184ca83172bc3bedeb4026a5424514401e2c4e048d4c65d8f"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UIModule.pdb",
+        "bytes": 13264,
+        "sha256": "c875f8bfb3a22ff74d19939a146396adaf8f84e2844e0c61b7bcf7c7a32b5c2f"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UmbraModule.dll",
+        "bytes": 22360,
+        "sha256": "98724b91a3c8da04db7d011191d940fe356e3fe7df1b8c20bb5471ba0877bc91"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UmbraModule.pdb",
+        "bytes": 8992,
+        "sha256": "5a797280446861aad7b4e918c6c9498e71da44cf592b5e1c29b386591c755307"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityAnalyticsCommonModule.dll",
+        "bytes": 22872,
+        "sha256": "4692d55e774c4f276eee5465b3df8d19ef54b622fd598bb5d7edee74e9128cf4"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityAnalyticsCommonModule.pdb",
+        "bytes": 9400,
+        "sha256": "cbc3e207c8771ad0f87ee54943c0ba4dd07c2db211605a8b57053a3ff5eaa0a6"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityAnalyticsModule.dll",
+        "bytes": 46936,
+        "sha256": "10e49a4216a320634c81abe4fcdc37d18fcee94f9573c85c8fcb81daacf61840"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityAnalyticsModule.pdb",
+        "bytes": 17336,
+        "sha256": "6717b50eee13ca1220d45d13674cf62447bc938601bdf90b2af5d5be20800ce0"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityConnectModule.dll",
+        "bytes": 23896,
+        "sha256": "53472712e48509efec50e0a720e43627ad31262d8872619c07b1731709482624"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityConnectModule.pdb",
+        "bytes": 9544,
+        "sha256": "2cfa8085871212086460d5a1ff7d11d8fa4a3e3c4a20b60fcd5a5a5ecb9eefe4"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityCurlModule.dll",
+        "bytes": 23896,
+        "sha256": "2cda6b3f150de709dc151da4a8d9c7ad7588cb56a56c79c99bf6ffb501dbc5b2"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityCurlModule.pdb",
+        "bytes": 9376,
+        "sha256": "5187ac2f23d8e353f40b705648e40c2e6b9800cb9f9aafc3fec6d3c90a7d0cfe"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityTestProtocolModule.dll",
+        "bytes": 22360,
+        "sha256": "73841296ebeee3cabdba9a000ac5e085c1cae63dac61909608d537e46033b4fa"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityTestProtocolModule.pdb",
+        "bytes": 9056,
+        "sha256": "aef5d623222fd8a1d59cbac3f81b1aa6799d2709d83f23a010606ac599890851"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityWebRequestAssetBundleModule.dll",
+        "bytes": 25944,
+        "sha256": "0bbc485106e0bb78d10dd05eb828ca1049e881eae545acc7284f407f65789801"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityWebRequestAssetBundleModule.pdb",
+        "bytes": 10704,
+        "sha256": "f9103d3f2a17ca10c755147f1f65e7625ed327b9408647f7161aa4a0801f72f5"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityWebRequestAudioModule.dll",
+        "bytes": 24920,
+        "sha256": "9746f05c20f2cf24ceed5cbb7b57058b35e5662df0d0a3b1d3886e9d25a6fbbb"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityWebRequestAudioModule.pdb",
+        "bytes": 10300,
+        "sha256": "fee5854905b8bfbcfeb19b752c4e6df547f72dd78268642406da7a504a21fd45"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityWebRequestModule.dll",
+        "bytes": 60760,
+        "sha256": "e70f1c72e89ce3dac29a477e17302c42eddc6d5e91f7f46b04862b8ee9cbbba8"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityWebRequestModule.pdb",
+        "bytes": 27508,
+        "sha256": "9f595d7aa05126728b4f8674217e293ed99b41ed7fd58198f78791259cb97f8b"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityWebRequestTextureModule.dll",
+        "bytes": 23896,
+        "sha256": "3a3b0d77389a57a5c2197446dd0b7a9046402593c0755a25fcc073fbbd2b3c79"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityWebRequestTextureModule.pdb",
+        "bytes": 10060,
+        "sha256": "11d50105163aea6900297f228d86d6209d65578862b8e13e37828d6295645fd0"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityWebRequestWWWModule.dll",
+        "bytes": 33624,
+        "sha256": "ca06743bc783917ef153479a313208c2a23a05caae53e0a51d2d5fcb82d839bf"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.UnityWebRequestWWWModule.pdb",
+        "bytes": 13420,
+        "sha256": "4acf44b8d4929766f3b8ad4ef80c0edf74d391833e7afa9b0f20149ecf59fea5"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.VehiclesModule.dll",
+        "bytes": 26456,
+        "sha256": "8f7678f2b6dadafdba77b3d2e0e66892574aeb2577d6edc6a8b1770beb7dab26"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.VehiclesModule.pdb",
+        "bytes": 10128,
+        "sha256": "b94c408fe384e1ede3c244a75dfd8be86e331c14ca24ac1218085df8a3725b5e"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.VFXModule.dll",
+        "bytes": 60760,
+        "sha256": "7d6b61ec16a3a0cb85cf4ab01573971543f40221d087d57f8ec0e055a751b123"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.VFXModule.pdb",
+        "bytes": 17576,
+        "sha256": "839be557fd6872a97b47ca23be76db99105271ff3cc55a6f29e140117c9b390e"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.VideoModule.dll",
+        "bytes": 43352,
+        "sha256": "d7057d538eb02cd87a7418df49399bdc1b7131d669c12dcb3433820e00570fc9"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.VideoModule.pdb",
+        "bytes": 13172,
+        "sha256": "425dcba0753618f95ceb64fdd21221995c1d750475e601071ede554d07a5d92e"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.VirtualTexturingModule.dll",
+        "bytes": 38232,
+        "sha256": "44571302cfe0e9c7d45b01bbb1621ec95bc540a31b650069785c40a98a8fbe55"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.VirtualTexturingModule.pdb",
+        "bytes": 13144,
+        "sha256": "f6f8282c8c8eb8b181f5fb06a30269048247b690fef1dec037c372a92870980d"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.VRModule.dll",
+        "bytes": 29016,
+        "sha256": "5f7a6d688cdbfd64d82eca805efb5d5117f90eafc587ad94e77b57cf137256f4"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.VRModule.pdb",
+        "bytes": 10032,
+        "sha256": "5846a1bbccdfc4384fd96aeb326ee2cd109997befd583324e6a1b6cf505b8b54"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.WindModule.dll",
+        "bytes": 22872,
+        "sha256": "01a667e54172be50885d81b9df1c31aba60ee53e30a20eaea4b32ed91ab3023b"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.WindModule.pdb",
+        "bytes": 9076,
+        "sha256": "46f53e566dc6a632021103ad8a4707ea59464657577c1aeefc139cd9c9d8ee54"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.XRModule.dll",
+        "bytes": 73048,
+        "sha256": "05e7205b85e6693ebfa4c6bfec7b403ab5b14efac468ea35a6b45e65b232a3f2"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\UnityEngine.XRModule.pdb",
+        "bytes": 23104,
+        "sha256": "a535467e87e845957d0725eb587ad6dc66303afddbc9886fe6c32ae478c5eef4"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Resources\\tuanjie default resources",
+        "bytes": 25124116,
+        "sha256": "ab1f575d278719e3f0e45e197a4390fea349d7fd0ce2cabf3b8c8107b02c70a7"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Resources\\tuanjie_builtin_extra",
+        "bytes": 381972,
+        "sha256": "79249be7fea252efd8f7820fd49d79c2495dc60b838a04043e3b30b2c331f1a7"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\resources.assets",
+        "bytes": 51448,
+        "sha256": "4cdddd68b300a3827a53f97d0da0a1ae0ee7e021910ef2f90ca473fff7f9ed38"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\RuntimeInitializeOnLoads.json",
+        "bytes": 170,
+        "sha256": "6f191a25d20b6067094e47da212b94b5f6e34d316bd1c2562f231a0d8190632e"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\ScriptingAssemblies.json",
+        "bytes": 2907,
+        "sha256": "9682153a3fb3ff7c5e5a9a127de7893c52b1b732ca07409f42c9114cc1c90ea2"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\sharedassets0.assets",
+        "bytes": 7656,
+        "sha256": "584209a8ac32ab0f1fa9a5dcf3e2e2bb4adfc1fe9030249f71cc39579a3cd47c"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Apartment.geometry.json",
+        "bytes": 17368474,
+        "sha256": "3ef0c30c6d6ced487c6db594362f52bffba5990c0c5775a2981686293e3109c0"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\interactions.json",
+        "bytes": 4202,
+        "sha256": "fdc8908e79edfba7b246ce364ac43c3cf0f36810ebc8ade6283e632eecef49cc"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\models.unity3d",
+        "bytes": 223101993,
+        "sha256": "98621b2c4fa4f9de80f355fae5776ab17efc016bcc81c581bcd0917af4308367"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\roombridge.json",
+        "bytes": 1019,
+        "sha256": "207c453d4e9d4c8a887c1f5923980e429b54c8f84c67556d4292c05cd6e2b25e"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1000.raw",
+        "bytes": 699064,
+        "sha256": "df5d00217ead8c833c07833204cab157251bf775cd76089de51c193ecb6820e8"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1016.raw",
+        "bytes": 699064,
+        "sha256": "d320d517a0b303d71d1dd47834e6c24fb58c4072f00d254a1172aa0a38daabdd"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1023.raw",
+        "bytes": 699064,
+        "sha256": "f7f84992f7905c51c1856da17a56e4cec0a53105e9b0f570c717278596ec88b7"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1027.raw",
+        "bytes": 699064,
+        "sha256": "b3e62a0cea6917dd31467cf4c27898789bdbc2154b1cc61f5abef69d1c119266"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1028.raw",
+        "bytes": 699064,
+        "sha256": "15ee010be30e6cf327cbd30cb28d586a3258796e2418a5d189dc8517a5775f0c"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1030.raw",
+        "bytes": 699064,
+        "sha256": "c79d129ef19ab17c19d5a380a8a131ab3e590062ae4be7bfe8f035e2a81d1129"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1032.raw",
+        "bytes": 699064,
+        "sha256": "f9d07f639714f5e151db3a1da639193674bb0db39b972548690a44788f21af09"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1080.raw",
+        "bytes": 699064,
+        "sha256": "d3afda921214660087f613d8aae8fdc107ecb54447626411cb008e66b9c1a7a7"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1084.raw",
+        "bytes": 699064,
+        "sha256": "83bd98d7477624edad0282c04edb75fac5d8cfb40c8899aaffc3faa31a38fbd3"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1085.raw",
+        "bytes": 699064,
+        "sha256": "2a6b64c6f5709487382e4c325c896e803b07a02dea0e7f5afa5082b555f78d29"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1086.raw",
+        "bytes": 699064,
+        "sha256": "8da5bc5cd789f99b10e90ed889c090c4632d2a8f0a9bc4544aee6088094eed4b"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1089.raw",
+        "bytes": 699064,
+        "sha256": "cb5b7c0fd2d00714d5a200d80b791fe9a81272fe3063b5afa620ce46c95bd4e8"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1093.raw",
+        "bytes": 699064,
+        "sha256": "5f4805eb04e8548850e071cf7d9c2ae33aea0d69ebda222195aef7bf7be4455a"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1118.raw",
+        "bytes": 699064,
+        "sha256": "13396f460609aa2bb287dd2b748a6475612dbcbb4748331d89945729a890a053"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.1126.raw",
+        "bytes": 699064,
+        "sha256": "19a2d4cde7c00f7c3507af4dae8c663fc23ea3850a0f628dbfdd905e1e3a74a8"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.330.raw",
+        "bytes": 699064,
+        "sha256": "5846e52dc42ced33ecb9b546861b92aa18e4bd8e2e6a5749b9712710076315fc"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.332.raw",
+        "bytes": 699064,
+        "sha256": "7861a221d50fd1507c687e01e3d65362df08b3d4e64b9f9d631e1ee61584aad8"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.336.raw",
+        "bytes": 699064,
+        "sha256": "58832e1a71cecab01ebced66c537853f294daf2fae190fee965390886ceae7f1"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.342.raw",
+        "bytes": 699064,
+        "sha256": "d3d36c5c0d0fd46b394c8930fd6f60171d7d3fffc544701abe17cf349f0e540f"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.352.raw",
+        "bytes": 699064,
+        "sha256": "b1c1656f3399b5ec08efdb44d6af08c6c4afa4803ce24d63c4fcf15f9fe932a2"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.381.raw",
+        "bytes": 699064,
+        "sha256": "08a502f7db2564a29866526703395969f731665f76be20e7a500b98cb15f23a6"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.386.raw",
+        "bytes": 699064,
+        "sha256": "74a9c52693841667d9c59875ee3e591abaef510636cfd08645ef5ac594fd8a25"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.404.raw",
+        "bytes": 699064,
+        "sha256": "f0f09d7d8466673833a97e50451b4ae2730a566a5cca1927cb8d8a96934a4e60"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.408.raw",
+        "bytes": 699064,
+        "sha256": "f4083547747982a8c5d7dd26e25f64bd4f35ee0a1b21d125be8a6b9cb8346f5f"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.415.raw",
+        "bytes": 699064,
+        "sha256": "668609d13017ca27df2e39e1b5ffc9d3039ff582d99c0549fc8f377b47291d70"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.419.raw",
+        "bytes": 699064,
+        "sha256": "5c17614c2f72094923cab6db7903496da54bab75349a66e6b2cf6af8dfdadd12"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.425.raw",
+        "bytes": 699064,
+        "sha256": "7c19449f7d2060cd5d8329225744b6d067a25091b7e02c91e9f761e35f768b01"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.434.raw",
+        "bytes": 699064,
+        "sha256": "6095ad79a8d5a7e41dd8c403dc2b25e470e74fce19e711e2be8d819df8469dac"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.467.raw",
+        "bytes": 699064,
+        "sha256": "eed22dd4fb9ea07e53d295148a0828f1fc7d4aa64bc3b4bffad8071a9b3dc7b9"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.472.raw",
+        "bytes": 699064,
+        "sha256": "d28e83b5d842ebecac76837c53ffeafbb4607e41dfd94bec03039ba62ad63bda"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.485.raw",
+        "bytes": 699064,
+        "sha256": "b8712886d88ba9369305b82c5c03d69d8c1c1062eb693a6bac949d159fb51818"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.524.raw",
+        "bytes": 699064,
+        "sha256": "ed80f5fd89627bfdad15c6c2981918301704e6b5ca1365dddd53b305fa94b376"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.537.raw",
+        "bytes": 699064,
+        "sha256": "93a4ad36fc148d558bf2502b4bf2dec5ad3415a17b2876e353bbe05d9f2d0ecd"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.547.raw",
+        "bytes": 699064,
+        "sha256": "9e21a7c228e4e2a835f61d307725354b56c73ea344e3d6e05f6262d67ffc3096"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.561.raw",
+        "bytes": 699064,
+        "sha256": "97dc8d582d2d33bcb9ea484ee15d84b9d694b993c19923e1c0dfebd022926f2b"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.573.raw",
+        "bytes": 699064,
+        "sha256": "8311a04a0c7ef47156f919302d94cc903abd96a684b30a0e0b47bbae0fafee8d"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.579.raw",
+        "bytes": 699064,
+        "sha256": "11544edd9426eaf30d4c130797b3e649db1f5316b1c509feb1125d0fd86f56b3"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.587.raw",
+        "bytes": 699064,
+        "sha256": "3a7e18f8512c6b2bbbc072dd9d0b365a5117e6b908b1472b6ee2f6e65d1747d1"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.604.raw",
+        "bytes": 699064,
+        "sha256": "937b98f6be04aedac98046af5fbed01c71f6a21675dc426e1b02fb38f1ca4c20"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.611.raw",
+        "bytes": 699064,
+        "sha256": "99182f5fcdbc21e683eb3e490c7b078c47bd0ac330cc6731ec64194272039dbc"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.615.raw",
+        "bytes": 699064,
+        "sha256": "ab8c8a63dd5faca8d0b8bba79f0418e7525844a8f96690dcbedbf7c96fe384c9"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.623.raw",
+        "bytes": 699064,
+        "sha256": "a9e789789f472c3437d99edd1b3919d18be0f2476d902f683a2adfda4af8c17e"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.630.raw",
+        "bytes": 699064,
+        "sha256": "cec978a03928b1e780d1707ae1e8b75c9cc4f7dfeba8877204b918c92909c626"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.631.raw",
+        "bytes": 699064,
+        "sha256": "1762ba4e222cc0ef0e1ff2f28059ae7503308bfff3fad1f73bcde0ce9832b4d2"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.648.raw",
+        "bytes": 699064,
+        "sha256": "c2ff24281e3d12b932ad20428eb390d97858f424d1cc4f7dfed20fd0526b096a"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.661.raw",
+        "bytes": 699064,
+        "sha256": "bf3005bf44443b2d112162d9cdba921caf8d764e0affef82cf597f45dd03938f"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.666.raw",
+        "bytes": 699064,
+        "sha256": "fcdd6a0909a42ed79ad495eb34a18b7e44d670ae1462222d6ccd90196583fbaf"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.684.raw",
+        "bytes": 699064,
+        "sha256": "1eb46ae7e640b3efedf9f8782a39332d39b409b39703304878cbd54311ba9638"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.697.raw",
+        "bytes": 699064,
+        "sha256": "59ea6694fae897765339ed5be3ecccf48246b8c0681fc6ab6a1e0d47ef7273e4"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.705.raw",
+        "bytes": 699064,
+        "sha256": "cb03446698c87ed281f3b62ade1acd06497b1f9258df5d0e87ebda5fd109239a"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.711.raw",
+        "bytes": 699064,
+        "sha256": "573a508bcfe27c33ee9226e630f2597dd2699d5fc8a3f5e36a6b0eaf87bbbf21"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.713.raw",
+        "bytes": 699064,
+        "sha256": "7b8ae1802dd2464a94dca00e0db988c6906961d30ee1a567f31961709236099c"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.724.raw",
+        "bytes": 699064,
+        "sha256": "31a44f222fb603dc5234f08c3508c54a23eb68c5e089149068665fa5311f893b"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.732.raw",
+        "bytes": 699064,
+        "sha256": "47e4704d1d3c9b7d48ec239129cb8eb0400c671fec596eb2e520895d09830910"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.749.raw",
+        "bytes": 699064,
+        "sha256": "a31ced7c13211b8160a268bcda4c48528fad61237a9c549da3b53f1071962520"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.752.raw",
+        "bytes": 699064,
+        "sha256": "fc588db75091496528acc1eda1bc303a11f9821a7260aff8e2d1aef88d6189d2"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.757.raw",
+        "bytes": 699064,
+        "sha256": "376a159bd7c78af3b4e27108f4ede85eaaabe1094c3f92f2a6e091b965a36835"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.759.raw",
+        "bytes": 699064,
+        "sha256": "fb1d42791b5bc72d1d98331222b82f092ca6f425a3d5ccc5ab3fbd644c69317c"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.775.raw",
+        "bytes": 699064,
+        "sha256": "0ba1e9085d83af189ea122b08006687273802853eaebdbec115b59f067fc7420"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.776.raw",
+        "bytes": 699064,
+        "sha256": "c7dd54cbf30dcb4ae08d0f61326ab431085c1f9bad88aeeb65562fd59cd9cbc1"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.785.raw",
+        "bytes": 699064,
+        "sha256": "55555e0f7184f675804fd4331308b081a5c509c6c40739d6e89823444aafed6e"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.794.raw",
+        "bytes": 699064,
+        "sha256": "c9461db3b919f08ac12c818ccbb23c5c5385a078a860382612ebbc8f736f6d25"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.797.raw",
+        "bytes": 699064,
+        "sha256": "1dfa2a4daf2c141a36756a46e71c0990f039261fa6142c5b2050d43cc3e26041"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.803.raw",
+        "bytes": 699064,
+        "sha256": "7fa816984acb1a12a2a0d9c9f31293125bf4029da1494a623b2388fd21a7125d"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.813.raw",
+        "bytes": 699064,
+        "sha256": "ade39ee0090f18f5141a269d4bcbfbca5467c8b4e135d31ff71a2f36c2a2a2c7"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.818.raw",
+        "bytes": 699064,
+        "sha256": "c21c530377167f68870fc91204724a4537df4cf258b626cd104332a6c67fb277"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.820.raw",
+        "bytes": 699064,
+        "sha256": "f887650c3ea84eb523e8f66d7fca355f4ada84d0fc89da6068c1570eb635285c"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.824.raw",
+        "bytes": 699064,
+        "sha256": "1463cb1c571a4e6dc009a7a32029d6caa016b1b762b1770be6c9cd3b2cfc9d37"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.825.raw",
+        "bytes": 699064,
+        "sha256": "75163a947c4dd439a41144db4578194ca468efad18b533996e2b2d56c8d8bbb2"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.830.raw",
+        "bytes": 699064,
+        "sha256": "d7e53356abdb9d7139dc40b9ce5e72a527955431cf0d68f1df27fde794886cf5"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.833.raw",
+        "bytes": 699064,
+        "sha256": "cf06c4cae19554f44fcdbc96d3df018e0b59a5fd5b1e0a835a7beb64962cf66e"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.838.raw",
+        "bytes": 699064,
+        "sha256": "11910954f34020fd39d68e92f8f8f975d4c61835cc7f9edbe523fc1ac10fb426"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.845.raw",
+        "bytes": 699064,
+        "sha256": "3ab65b9b404f626777593f5d5bb8dae6f94a55012d9660bfe3ca38d676a87e89"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.846.raw",
+        "bytes": 1398128,
+        "sha256": "927a43fce630856375c2e149ca03d9e88cdcac95e50ca22df41a8a58644b34d6"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.865.raw",
+        "bytes": 1398128,
+        "sha256": "a18b1a8b2c67b4c39723e3347b70d7af4e69f7e34d8abe32f14365fe46d56b08"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.877.raw",
+        "bytes": 699064,
+        "sha256": "bc304e22614c1c42bd02b43053efc3bc4fecc2c90926f86c0732a4f81cb1b1d9"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.879.raw",
+        "bytes": 699064,
+        "sha256": "d932b3fe063f32c978ceafc437428f314660312fb15a1a441355f2f2e9897e13"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.886.raw",
+        "bytes": 699064,
+        "sha256": "fbe31a8711db948525a8049c76470577b1c917c6379b20b95d166d9811bfae11"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.895.raw",
+        "bytes": 699064,
+        "sha256": "aeab398ff3746bf6d16742ae3f2f612a1ba4f64a1629ebfd2e8322bc5e295a16"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.913.raw",
+        "bytes": 699064,
+        "sha256": "0275cf3aaf5133e3f0c3ad249f8097bf5bfaa3dd934d43015b3178dfb20220fb"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.917.raw",
+        "bytes": 1398128,
+        "sha256": "bac56921c777332b969bd2ff9cf38e9f9955568bcdb5ac2f5e7840f38fccf905"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.918.raw",
+        "bytes": 699064,
+        "sha256": "086f65747f064901357bb091368a4d90fb740743ed80c8552faf684ea7e28659"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.919.raw",
+        "bytes": 699064,
+        "sha256": "2e8499f4520216d30eac7e48fb2a924ea7e4abace4f003fdfd100a9fd3284f4c"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.924.raw",
+        "bytes": 699064,
+        "sha256": "62dedd19679bea631ff391e9b396e2be50a774c3f8a43edfe5206d8eb30c1867"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.943.raw",
+        "bytes": 699064,
+        "sha256": "db7d0b8294f39d2a6164881708d0861ff3ee64113059fb88a7c801a0d22dd1a6"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.953.raw",
+        "bytes": 699064,
+        "sha256": "913a7b7e56a565fc91c889992c16ede82ff78043214fb37bcfc741a362c07ef4"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.963.raw",
+        "bytes": 699064,
+        "sha256": "14c926ecbd608258791b6a4938bf0feab42112e1d52f1679248a515ef7815d15"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.970.raw",
+        "bytes": 699064,
+        "sha256": "12997e800a1f602644241b47aa6bc12da06f43fd4cac83038bdf5120870131ed"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.975.raw",
+        "bytes": 699064,
+        "sha256": "7036c6a5b547f6a6624bbcb60424bfab7498ac08b4258e04973e06f200404536"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\Original\\Textures\\resources.assets.977.raw",
+        "bytes": 699064,
+        "sha256": "5c760952aa2ccbb9067f338cfb7d37673906b916076b780449500f046dedfa91"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\StreamingAssets\\seed.json",
+        "bytes": 1304,
+        "sha256": "bd556065ded1eb146f1d67c4a8204b6bbeda7c9b267d2aebd52431a4777a8e55"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\EmbedRuntime\\mono-2.0-bdwgc.dll",
+        "bytes": 7961944,
+        "sha256": "37360ce84260a71e0b3a470c0e71a9eb94e6b21f8bfcdaad376fde96c4f69a9c"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\EmbedRuntime\\MonoPosixHelper.dll",
+        "bytes": 677720,
+        "sha256": "7f730a54446834fb6e957990a137991436b153e1c433bbaa0c7789111b4e4c2f"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\etc\\mono\\2.0\\Browsers\\Compat.browser",
+        "bytes": 1605,
+        "sha256": "8a1082057ac5681dcd4e9c227ed7fb8eb42ac1618963b5de3b65739dd77e2741"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\etc\\mono\\2.0\\DefaultWsdlHelpGenerator.aspx",
+        "bytes": 60575,
+        "sha256": "751861040b69ea63a3827507b7c8da9c7f549dc181c1c8af4b7ca78cc97d710a"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\etc\\mono\\2.0\\machine.config",
+        "bytes": 29066,
+        "sha256": "e91782a27fa39fc6c1d6ee8b08529f5d35052310d0006034b878eb04b8f2af30"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\etc\\mono\\2.0\\settings.map",
+        "bytes": 2622,
+        "sha256": "49c6160f9d54af4270a3b4e997fc4a8301f79b9e2070118fa46ddbcbbc44f9a2"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\etc\\mono\\2.0\\web.config",
+        "bytes": 11635,
+        "sha256": "cf2b54339e069b9e42f7d6795eecbf562c50c1011f4ca8f65f578fe52d97ff92"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\etc\\mono\\4.0\\Browsers\\Compat.browser",
+        "bytes": 1605,
+        "sha256": "8a1082057ac5681dcd4e9c227ed7fb8eb42ac1618963b5de3b65739dd77e2741"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\etc\\mono\\4.0\\DefaultWsdlHelpGenerator.aspx",
+        "bytes": 60575,
+        "sha256": "751861040b69ea63a3827507b7c8da9c7f549dc181c1c8af4b7ca78cc97d710a"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\etc\\mono\\4.0\\machine.config",
+        "bytes": 33598,
+        "sha256": "e60aec2c5115d65b3acb3c55ea21576dbd770f579166c017125571e46ae560ed"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\etc\\mono\\4.0\\settings.map",
+        "bytes": 2622,
+        "sha256": "ce1db1ad8a9512073164e3eccdc193f7eda036e1a9733caec4635de21b2865c8"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\etc\\mono\\4.0\\web.config",
+        "bytes": 18802,
+        "sha256": "e38bb8cc68fe5b4edecdfd288d094b9e8ced7629039b2a347682aba0d8bd7492"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\etc\\mono\\4.5\\Browsers\\Compat.browser",
+        "bytes": 1605,
+        "sha256": "8a1082057ac5681dcd4e9c227ed7fb8eb42ac1618963b5de3b65739dd77e2741"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\etc\\mono\\4.5\\DefaultWsdlHelpGenerator.aspx",
+        "bytes": 60575,
+        "sha256": "751861040b69ea63a3827507b7c8da9c7f549dc181c1c8af4b7ca78cc97d710a"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\etc\\mono\\4.5\\machine.config",
+        "bytes": 34056,
+        "sha256": "ee950004b576fb28dc85f4b0435ed04bf96612de2e8b53be84d07afe85a0de6c"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\etc\\mono\\4.5\\settings.map",
+        "bytes": 2622,
+        "sha256": "ce1db1ad8a9512073164e3eccdc193f7eda036e1a9733caec4635de21b2865c8"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\etc\\mono\\4.5\\web.config",
+        "bytes": 18811,
+        "sha256": "c4cbddd4fd9347b58cc5a72b36dc4ba1ad2bb699e65869d05cd3fb9865f0d824"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\etc\\mono\\browscap.ini",
+        "bytes": 311984,
+        "sha256": "4ddd50f31fb968f30bedefc253a46dc3f2890192d05cdaa9e0a64a056eee807e"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\etc\\mono\\config",
+        "bytes": 3815,
+        "sha256": "5776169973a26a387b8b3e5c0f2301a7ab9a6dd7c7d3efa22a96abc47fbf8662"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\MonoBleedingEdge\\etc\\mono\\mconfig\\config.xml",
+        "bytes": 25817,
+        "sha256": "0c56e34c69124510fa8c19e7b4c2ca6c1c4ff460ae19f798dd0ca035809e396d"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\TuanjieCrashHandler64.exe",
+        "bytes": 1202008,
+        "sha256": "94c2af9ed1ad348f4eb6acf4a3f06be8f43e5d6ca7956596d02b05630e4b0dbc"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\TuanjiePlayer.dll",
+        "bytes": 62910296,
+        "sha256": "36b30894e864512e1d2a9fc2928f9cf6db82e5f2c9293890477a5d823c1f9f82"
+      },
+      {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\WinPixEventRuntime.dll",
+        "bytes": 33360,
+        "sha256": "23ef5b23f1cf6f1b7132542c4063b5e9da532572634afa41f27139bbf02468fc"
+      }
+    ]
+  },
+  "packaged_inputs": [
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\seed.json",
+      "bytes": 1304,
+      "sha256": "bd556065ded1eb146f1d67c4a8204b6bbeda7c9b267d2aebd52431a4777a8e55"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Apartment.geometry.json",
+      "bytes": 17368474,
+      "sha256": "3ef0c30c6d6ced487c6db594362f52bffba5990c0c5775a2981686293e3109c0"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\interactions.json",
+      "bytes": 4202,
+      "sha256": "fdc8908e79edfba7b246ce364ac43c3cf0f36810ebc8ade6283e632eecef49cc"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\models.unity3d",
+      "bytes": 223101993,
+      "sha256": "98621b2c4fa4f9de80f355fae5776ab17efc016bcc81c581bcd0917af4308367"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\roombridge.json",
+      "bytes": 1019,
+      "sha256": "207c453d4e9d4c8a887c1f5923980e429b54c8f84c67556d4292c05cd6e2b25e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1000.raw",
+      "bytes": 699064,
+      "sha256": "df5d00217ead8c833c07833204cab157251bf775cd76089de51c193ecb6820e8"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1016.raw",
+      "bytes": 699064,
+      "sha256": "d320d517a0b303d71d1dd47834e6c24fb58c4072f00d254a1172aa0a38daabdd"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1023.raw",
+      "bytes": 699064,
+      "sha256": "f7f84992f7905c51c1856da17a56e4cec0a53105e9b0f570c717278596ec88b7"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1027.raw",
+      "bytes": 699064,
+      "sha256": "b3e62a0cea6917dd31467cf4c27898789bdbc2154b1cc61f5abef69d1c119266"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1028.raw",
+      "bytes": 699064,
+      "sha256": "15ee010be30e6cf327cbd30cb28d586a3258796e2418a5d189dc8517a5775f0c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1030.raw",
+      "bytes": 699064,
+      "sha256": "c79d129ef19ab17c19d5a380a8a131ab3e590062ae4be7bfe8f035e2a81d1129"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1032.raw",
+      "bytes": 699064,
+      "sha256": "f9d07f639714f5e151db3a1da639193674bb0db39b972548690a44788f21af09"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1080.raw",
+      "bytes": 699064,
+      "sha256": "d3afda921214660087f613d8aae8fdc107ecb54447626411cb008e66b9c1a7a7"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1084.raw",
+      "bytes": 699064,
+      "sha256": "83bd98d7477624edad0282c04edb75fac5d8cfb40c8899aaffc3faa31a38fbd3"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1085.raw",
+      "bytes": 699064,
+      "sha256": "2a6b64c6f5709487382e4c325c896e803b07a02dea0e7f5afa5082b555f78d29"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1086.raw",
+      "bytes": 699064,
+      "sha256": "8da5bc5cd789f99b10e90ed889c090c4632d2a8f0a9bc4544aee6088094eed4b"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1089.raw",
+      "bytes": 699064,
+      "sha256": "cb5b7c0fd2d00714d5a200d80b791fe9a81272fe3063b5afa620ce46c95bd4e8"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1093.raw",
+      "bytes": 699064,
+      "sha256": "5f4805eb04e8548850e071cf7d9c2ae33aea0d69ebda222195aef7bf7be4455a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1118.raw",
+      "bytes": 699064,
+      "sha256": "13396f460609aa2bb287dd2b748a6475612dbcbb4748331d89945729a890a053"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.1126.raw",
+      "bytes": 699064,
+      "sha256": "19a2d4cde7c00f7c3507af4dae8c663fc23ea3850a0f628dbfdd905e1e3a74a8"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.330.raw",
+      "bytes": 699064,
+      "sha256": "5846e52dc42ced33ecb9b546861b92aa18e4bd8e2e6a5749b9712710076315fc"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.332.raw",
+      "bytes": 699064,
+      "sha256": "7861a221d50fd1507c687e01e3d65362df08b3d4e64b9f9d631e1ee61584aad8"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.336.raw",
+      "bytes": 699064,
+      "sha256": "58832e1a71cecab01ebced66c537853f294daf2fae190fee965390886ceae7f1"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.342.raw",
+      "bytes": 699064,
+      "sha256": "d3d36c5c0d0fd46b394c8930fd6f60171d7d3fffc544701abe17cf349f0e540f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.352.raw",
+      "bytes": 699064,
+      "sha256": "b1c1656f3399b5ec08efdb44d6af08c6c4afa4803ce24d63c4fcf15f9fe932a2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.381.raw",
+      "bytes": 699064,
+      "sha256": "08a502f7db2564a29866526703395969f731665f76be20e7a500b98cb15f23a6"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.386.raw",
+      "bytes": 699064,
+      "sha256": "74a9c52693841667d9c59875ee3e591abaef510636cfd08645ef5ac594fd8a25"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.404.raw",
+      "bytes": 699064,
+      "sha256": "f0f09d7d8466673833a97e50451b4ae2730a566a5cca1927cb8d8a96934a4e60"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.408.raw",
+      "bytes": 699064,
+      "sha256": "f4083547747982a8c5d7dd26e25f64bd4f35ee0a1b21d125be8a6b9cb8346f5f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.415.raw",
+      "bytes": 699064,
+      "sha256": "668609d13017ca27df2e39e1b5ffc9d3039ff582d99c0549fc8f377b47291d70"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.419.raw",
+      "bytes": 699064,
+      "sha256": "5c17614c2f72094923cab6db7903496da54bab75349a66e6b2cf6af8dfdadd12"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.425.raw",
+      "bytes": 699064,
+      "sha256": "7c19449f7d2060cd5d8329225744b6d067a25091b7e02c91e9f761e35f768b01"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.434.raw",
+      "bytes": 699064,
+      "sha256": "6095ad79a8d5a7e41dd8c403dc2b25e470e74fce19e711e2be8d819df8469dac"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.467.raw",
+      "bytes": 699064,
+      "sha256": "eed22dd4fb9ea07e53d295148a0828f1fc7d4aa64bc3b4bffad8071a9b3dc7b9"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.472.raw",
+      "bytes": 699064,
+      "sha256": "d28e83b5d842ebecac76837c53ffeafbb4607e41dfd94bec03039ba62ad63bda"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.485.raw",
+      "bytes": 699064,
+      "sha256": "b8712886d88ba9369305b82c5c03d69d8c1c1062eb693a6bac949d159fb51818"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.524.raw",
+      "bytes": 699064,
+      "sha256": "ed80f5fd89627bfdad15c6c2981918301704e6b5ca1365dddd53b305fa94b376"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.537.raw",
+      "bytes": 699064,
+      "sha256": "93a4ad36fc148d558bf2502b4bf2dec5ad3415a17b2876e353bbe05d9f2d0ecd"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.547.raw",
+      "bytes": 699064,
+      "sha256": "9e21a7c228e4e2a835f61d307725354b56c73ea344e3d6e05f6262d67ffc3096"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.561.raw",
+      "bytes": 699064,
+      "sha256": "97dc8d582d2d33bcb9ea484ee15d84b9d694b993c19923e1c0dfebd022926f2b"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.573.raw",
+      "bytes": 699064,
+      "sha256": "8311a04a0c7ef47156f919302d94cc903abd96a684b30a0e0b47bbae0fafee8d"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.579.raw",
+      "bytes": 699064,
+      "sha256": "11544edd9426eaf30d4c130797b3e649db1f5316b1c509feb1125d0fd86f56b3"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.587.raw",
+      "bytes": 699064,
+      "sha256": "3a7e18f8512c6b2bbbc072dd9d0b365a5117e6b908b1472b6ee2f6e65d1747d1"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.604.raw",
+      "bytes": 699064,
+      "sha256": "937b98f6be04aedac98046af5fbed01c71f6a21675dc426e1b02fb38f1ca4c20"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.611.raw",
+      "bytes": 699064,
+      "sha256": "99182f5fcdbc21e683eb3e490c7b078c47bd0ac330cc6731ec64194272039dbc"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.615.raw",
+      "bytes": 699064,
+      "sha256": "ab8c8a63dd5faca8d0b8bba79f0418e7525844a8f96690dcbedbf7c96fe384c9"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.623.raw",
+      "bytes": 699064,
+      "sha256": "a9e789789f472c3437d99edd1b3919d18be0f2476d902f683a2adfda4af8c17e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.630.raw",
+      "bytes": 699064,
+      "sha256": "cec978a03928b1e780d1707ae1e8b75c9cc4f7dfeba8877204b918c92909c626"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.631.raw",
+      "bytes": 699064,
+      "sha256": "1762ba4e222cc0ef0e1ff2f28059ae7503308bfff3fad1f73bcde0ce9832b4d2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.648.raw",
+      "bytes": 699064,
+      "sha256": "c2ff24281e3d12b932ad20428eb390d97858f424d1cc4f7dfed20fd0526b096a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.661.raw",
+      "bytes": 699064,
+      "sha256": "bf3005bf44443b2d112162d9cdba921caf8d764e0affef82cf597f45dd03938f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.666.raw",
+      "bytes": 699064,
+      "sha256": "fcdd6a0909a42ed79ad495eb34a18b7e44d670ae1462222d6ccd90196583fbaf"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.684.raw",
+      "bytes": 699064,
+      "sha256": "1eb46ae7e640b3efedf9f8782a39332d39b409b39703304878cbd54311ba9638"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.697.raw",
+      "bytes": 699064,
+      "sha256": "59ea6694fae897765339ed5be3ecccf48246b8c0681fc6ab6a1e0d47ef7273e4"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.705.raw",
+      "bytes": 699064,
+      "sha256": "cb03446698c87ed281f3b62ade1acd06497b1f9258df5d0e87ebda5fd109239a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.711.raw",
+      "bytes": 699064,
+      "sha256": "573a508bcfe27c33ee9226e630f2597dd2699d5fc8a3f5e36a6b0eaf87bbbf21"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.713.raw",
+      "bytes": 699064,
+      "sha256": "7b8ae1802dd2464a94dca00e0db988c6906961d30ee1a567f31961709236099c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.724.raw",
+      "bytes": 699064,
+      "sha256": "31a44f222fb603dc5234f08c3508c54a23eb68c5e089149068665fa5311f893b"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.732.raw",
+      "bytes": 699064,
+      "sha256": "47e4704d1d3c9b7d48ec239129cb8eb0400c671fec596eb2e520895d09830910"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.749.raw",
+      "bytes": 699064,
+      "sha256": "a31ced7c13211b8160a268bcda4c48528fad61237a9c549da3b53f1071962520"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.752.raw",
+      "bytes": 699064,
+      "sha256": "fc588db75091496528acc1eda1bc303a11f9821a7260aff8e2d1aef88d6189d2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.757.raw",
+      "bytes": 699064,
+      "sha256": "376a159bd7c78af3b4e27108f4ede85eaaabe1094c3f92f2a6e091b965a36835"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.759.raw",
+      "bytes": 699064,
+      "sha256": "fb1d42791b5bc72d1d98331222b82f092ca6f425a3d5ccc5ab3fbd644c69317c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.775.raw",
+      "bytes": 699064,
+      "sha256": "0ba1e9085d83af189ea122b08006687273802853eaebdbec115b59f067fc7420"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.776.raw",
+      "bytes": 699064,
+      "sha256": "c7dd54cbf30dcb4ae08d0f61326ab431085c1f9bad88aeeb65562fd59cd9cbc1"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.785.raw",
+      "bytes": 699064,
+      "sha256": "55555e0f7184f675804fd4331308b081a5c509c6c40739d6e89823444aafed6e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.794.raw",
+      "bytes": 699064,
+      "sha256": "c9461db3b919f08ac12c818ccbb23c5c5385a078a860382612ebbc8f736f6d25"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.797.raw",
+      "bytes": 699064,
+      "sha256": "1dfa2a4daf2c141a36756a46e71c0990f039261fa6142c5b2050d43cc3e26041"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.803.raw",
+      "bytes": 699064,
+      "sha256": "7fa816984acb1a12a2a0d9c9f31293125bf4029da1494a623b2388fd21a7125d"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.813.raw",
+      "bytes": 699064,
+      "sha256": "ade39ee0090f18f5141a269d4bcbfbca5467c8b4e135d31ff71a2f36c2a2a2c7"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.818.raw",
+      "bytes": 699064,
+      "sha256": "c21c530377167f68870fc91204724a4537df4cf258b626cd104332a6c67fb277"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.820.raw",
+      "bytes": 699064,
+      "sha256": "f887650c3ea84eb523e8f66d7fca355f4ada84d0fc89da6068c1570eb635285c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.824.raw",
+      "bytes": 699064,
+      "sha256": "1463cb1c571a4e6dc009a7a32029d6caa016b1b762b1770be6c9cd3b2cfc9d37"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.825.raw",
+      "bytes": 699064,
+      "sha256": "75163a947c4dd439a41144db4578194ca468efad18b533996e2b2d56c8d8bbb2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.830.raw",
+      "bytes": 699064,
+      "sha256": "d7e53356abdb9d7139dc40b9ce5e72a527955431cf0d68f1df27fde794886cf5"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.833.raw",
+      "bytes": 699064,
+      "sha256": "cf06c4cae19554f44fcdbc96d3df018e0b59a5fd5b1e0a835a7beb64962cf66e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.838.raw",
+      "bytes": 699064,
+      "sha256": "11910954f34020fd39d68e92f8f8f975d4c61835cc7f9edbe523fc1ac10fb426"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.845.raw",
+      "bytes": 699064,
+      "sha256": "3ab65b9b404f626777593f5d5bb8dae6f94a55012d9660bfe3ca38d676a87e89"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.846.raw",
+      "bytes": 1398128,
+      "sha256": "927a43fce630856375c2e149ca03d9e88cdcac95e50ca22df41a8a58644b34d6"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.865.raw",
+      "bytes": 1398128,
+      "sha256": "a18b1a8b2c67b4c39723e3347b70d7af4e69f7e34d8abe32f14365fe46d56b08"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.877.raw",
+      "bytes": 699064,
+      "sha256": "bc304e22614c1c42bd02b43053efc3bc4fecc2c90926f86c0732a4f81cb1b1d9"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.879.raw",
+      "bytes": 699064,
+      "sha256": "d932b3fe063f32c978ceafc437428f314660312fb15a1a441355f2f2e9897e13"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.886.raw",
+      "bytes": 699064,
+      "sha256": "fbe31a8711db948525a8049c76470577b1c917c6379b20b95d166d9811bfae11"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.895.raw",
+      "bytes": 699064,
+      "sha256": "aeab398ff3746bf6d16742ae3f2f612a1ba4f64a1629ebfd2e8322bc5e295a16"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.913.raw",
+      "bytes": 699064,
+      "sha256": "0275cf3aaf5133e3f0c3ad249f8097bf5bfaa3dd934d43015b3178dfb20220fb"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.917.raw",
+      "bytes": 1398128,
+      "sha256": "bac56921c777332b969bd2ff9cf38e9f9955568bcdb5ac2f5e7840f38fccf905"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.918.raw",
+      "bytes": 699064,
+      "sha256": "086f65747f064901357bb091368a4d90fb740743ed80c8552faf684ea7e28659"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.919.raw",
+      "bytes": 699064,
+      "sha256": "2e8499f4520216d30eac7e48fb2a924ea7e4abace4f003fdfd100a9fd3284f4c"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.924.raw",
+      "bytes": 699064,
+      "sha256": "62dedd19679bea631ff391e9b396e2be50a774c3f8a43edfe5206d8eb30c1867"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.943.raw",
+      "bytes": 699064,
+      "sha256": "db7d0b8294f39d2a6164881708d0861ff3ee64113059fb88a7c801a0d22dd1a6"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.953.raw",
+      "bytes": 699064,
+      "sha256": "913a7b7e56a565fc91c889992c16ede82ff78043214fb37bcfc741a362c07ef4"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.963.raw",
+      "bytes": 699064,
+      "sha256": "14c926ecbd608258791b6a4938bf0feab42112e1d52f1679248a515ef7815d15"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.970.raw",
+      "bytes": 699064,
+      "sha256": "12997e800a1f602644241b47aa6bc12da06f43fd4cac83038bdf5120870131ed"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.975.raw",
+      "bytes": 699064,
+      "sha256": "7036c6a5b547f6a6624bbcb60424bfab7498ac08b4258e04973e06f200404536"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1\\Assets\\StreamingAssets\\Original\\Textures\\resources.assets.977.raw",
+      "bytes": 699064,
+      "sha256": "5c760952aa2ccbb9067f338cfb7d37673906b916076b780449500f046dedfa91"
+    }
+  ],
+  "managed_inspections": [
+    {
+      "evidence_id": "ev_fe65bc5997f816f5be8013cc0169daf85efef4f3c44f64f1710a8968be5dbb31",
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\Assembly-CSharp.dll",
+      "sha256": "1de70877fd056e883b0e54b62452bfbbba3c14d5bb96bc793c54fd1a0727efe6"
+    },
+    {
+      "evidence_id": "ev_829883727ebc47ca0b762a86d1c318643002bf289d32a261b53be0e78c7d86c9",
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-20261031-1-build\\ManakaInteraction_Data\\Managed\\Assembly-CSharp.dll",
+      "sha256": "1de70877fd056e883b0e54b62452bfbbba3c14d5bb96bc793c54fd1a0727efe6"
+    }
+  ],
+  "runtime": {
+    "run": "interaction-natural-20261031-1",
+    "controlled_run": "interaction-controlled-20261031-1",
+    "interaction": {
+      "schemaVersion": 1,
+      "processGuid": "b0a74581527942a5abde279dcab4c078",
+      "phase": "interaction",
+      "startedUtc": "2026-10-30T18:43:02.8238897Z",
+      "finishedUtc": "2026-10-30T18:44:10.3571713Z",
+      "profileRoot": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-natural-20261031-1-profile",
+      "eventPath": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-natural-20261031-1-interaction\\events.jsonl",
+      "proofPath": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-natural-20261031-1-interaction\\proof.json",
+      "processId": 94856,
+      "engineErrorCount": 0,
+      "engineWarningCount": 1232,
+      "missingScriptWarnings": 1232,
+      "knownCompatibilityErrors": 0,
+      "unexpectedEngineErrors": 0,
+      "degradedAssetCompatibility": true,
+      "originalShaderCompatibilityVerified": false,
+      "unityVersion": "2022.3.62t7",
+      "sceneKey": "Apartment",
+      "environmentSource": "20781befb4cc42f898b65fe03f3d16c0a77b53aecac6ddc388460cfb710ae93a:3ef0c30c6d6ced487c6db594362f52bffba5990c0c5775a2981686293e3109c0",
+      "playerSource": "98621b2c4fa4f9de80f355fae5776ab17efc016bcc81c581bcd0917af4308367:assets/zzz-externalencryptasset/player.prefab",
+      "savePath": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-natural-20261031-1-profile\\save.v1.json",
+      "saveSha256": "f466eb7f14275ab12bef4821ec67d6f2389a8347ee45d5cf59ec7c4763baff20",
+      "loadedSavedProcessGuid": "",
+      "passed": true,
+      "completed": true,
+      "originalGeometry": true,
+      "originalPlayerVisual": true,
+      "groundedSeen": true,
+      "controlledInput": false,
+      "geometryMeshes": 269,
+      "geometryColliders": 33,
+      "geometryTextures": 90,
+      "declaredTextures": 90,
+      "unresolvedBuiltinMeshes": 5,
+      "visualRenderers": 4,
+      "copiedGameBehaviours": 0,
+      "playerShaderFallbacks": 12,
+      "inputSamples": 2982,
+      "belowCollisions": 2982,
+      "sideCollisions": 35,
+      "travelledDistance": 7.61402941,
+      "horizontalDisplacement": 0,
+      "positionError": 0,
+      "rotationErrorDegrees": 0,
+      "movementStart": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "movementEnd": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "loadedPosition": {
+        "x": 0.332664877,
+        "y": -0.000462949276,
+        "z": 1.21904826
+      },
+      "appliedPosition": {
+        "x": 0.332664877,
+        "y": -0.000462949276,
+        "z": 1.21904826
+      },
+      "savedPosition": {
+        "x": 0.919581,
+        "y": 9.971857e-05,
+        "z": 1.29818666
+      },
+      "loadedRotation": {
+        "x": -2.87172952e-10,
+        "y": 0.0837884545,
+        "z": -1.114131e-11,
+        "w": 0.9964836
+      },
+      "appliedRotation": {
+        "x": -2.87172952e-10,
+        "y": 0.0837884545,
+        "z": -1.114131e-11,
+        "w": 0.9964836
+      },
+      "savedRotation": {
+        "x": 0,
+        "y": 0.96803236,
+        "z": 0,
+        "w": -0.250825524
+      },
+      "saveRevision": 2,
+      "exactStoredPosition": true,
+      "exactStoredRotation": true,
+      "exactAppliedPosition": true,
+      "exactAppliedRotation": true,
+      "failure": null,
+      "inputDescription": "Unity legacy keyboard axes/buttons; F starts the selected original key pickup through original Action controller parameters and its clip event restores None. Device provenance is declared separately. F5 saves actual pose; F6 saves, captures GPU pixels and exits.",
+      "collisionPolicy": "exported original collider geometry reconstructed as static MeshColliders",
+      "visualPolicy": "original mesh geometry, extracted primary colors and supported raw textures; reconstruction shaders, color-space interpretation not independently verified; original body/face and default-active attachments; Standard player materials; original Animator controller/avatar, reconstructed FootL/FootR event collector, root motion disabled, no original game behaviours",
+      "screenshotPath": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-natural-20261031-1-interaction\\keyboard-saved.png",
+      "screenshotSha256": "b4a527e22a3d2296bb49db448cef5b54be51a3d5abd2c720fa9a027ab08940ac",
+      "screenshotBytes": 1129543,
+      "screenshotWidth": 1280,
+      "screenshotHeight": 720,
+      "screenshotNonBlackPixels": 921585,
+      "screenshotDifferentPixels": 921278,
+      "screenshotValidated": true,
+      "cameraActive": true,
+      "cameraEnabled": true,
+      "cameraPosition": {
+        "x": 1.76729965,
+        "y": 1.83443868,
+        "z": 0.8272682
+      },
+      "cameraRotation": {
+        "x": 0.197832048,
+        "y": -0.4936008,
+        "z": 0.1164094,
+        "w": 0.8388502
+      },
+      "graphicsDevice": "Direct3D11",
+      "titleScreenshotPath": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-natural-20261031-1-interaction\\title.png",
+      "titleScreenshotSha256": "6152449be07f89d59336cfcc4e83f72648de079dda374169ffc09faf3f6625ae",
+      "titleScreenshotValidated": true,
+      "playerVisualOffset": {
+        "x": -0.0160308778,
+        "y": -0.00155460835,
+        "z": -0.0197124183
+      },
+      "playerVisualBoundsSize": {
+        "x": 0.5460015,
+        "y": 1.6198231,
+        "z": 0.389261544
+      },
+      "originalAnimatorController": true,
+      "originalAnimatorAvatar": true,
+      "animatorInitialized": true,
+      "animatorBonesChanged": true,
+      "physicalKeyboardVerified": false,
+      "animatorControllerName": "Player",
+      "animatorAvatarName": "ManustiaAvatar",
+      "animatorPath": "Manustia",
+      "inputProvenance": "externally_declared_physical_keyboard_unverified",
+      "locomotionFrames": 2990,
+      "unityKeyboardFrames": 2990,
+      "movingKeyboardFrames": 426,
+      "simulatedAxisFrames": 0,
+      "animatorStateChanges": 2,
+      "animatorBoneChangeFrames": 1761,
+      "keyboardSaveCommands": 1,
+      "keyboardSaveQuitCommands": 1,
+      "keyboardTravelledDistance": 7.61402941,
+      "animatorMaximumBoneRotationDelta": 9.452761,
+      "saveZeroSignNormalizations": 0,
+      "lastSaveZeroSignNormalizations": 0,
+      "saveEqualityPolicy": "Normalize only IEEE-754 negative zero to positive zero before JSON serialization; every nonzero float bit and every canonical zero bit must survive exactly. Raw negative-zero sign bits are not preserved."
+    },
+    "phase2": {
+      "schemaVersion": 1,
+      "processGuid": "862e455802fa4a17802657a288bbb072",
+      "phase": "phase2",
+      "startedUtc": "2026-10-30T18:46:20.3898582Z",
+      "finishedUtc": "2026-10-30T18:46:37.0152597Z",
+      "profileRoot": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-natural-20261031-1-profile",
+      "eventPath": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-natural-20261031-1-phase2\\events.jsonl",
+      "proofPath": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-natural-20261031-1-phase2\\proof.json",
+      "processId": 97848,
+      "engineErrorCount": 0,
+      "engineWarningCount": 1232,
+      "missingScriptWarnings": 1232,
+      "knownCompatibilityErrors": 0,
+      "unexpectedEngineErrors": 0,
+      "degradedAssetCompatibility": true,
+      "originalShaderCompatibilityVerified": false,
+      "unityVersion": "2022.3.62t7",
+      "sceneKey": "Apartment",
+      "environmentSource": "20781befb4cc42f898b65fe03f3d16c0a77b53aecac6ddc388460cfb710ae93a:3ef0c30c6d6ced487c6db594362f52bffba5990c0c5775a2981686293e3109c0",
+      "playerSource": "98621b2c4fa4f9de80f355fae5776ab17efc016bcc81c581bcd0917af4308367:assets/zzz-externalencryptasset/player.prefab",
+      "savePath": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-natural-20261031-1-profile\\save.v1.json",
+      "saveSha256": "f466eb7f14275ab12bef4821ec67d6f2389a8347ee45d5cf59ec7c4763baff20",
+      "loadedSavedProcessGuid": "b0a74581527942a5abde279dcab4c078",
+      "passed": true,
+      "completed": true,
+      "originalGeometry": true,
+      "originalPlayerVisual": true,
+      "groundedSeen": false,
+      "controlledInput": false,
+      "geometryMeshes": 269,
+      "geometryColliders": 33,
+      "geometryTextures": 90,
+      "declaredTextures": 90,
+      "unresolvedBuiltinMeshes": 5,
+      "visualRenderers": 4,
+      "copiedGameBehaviours": 0,
+      "playerShaderFallbacks": 12,
+      "inputSamples": 0,
+      "belowCollisions": 0,
+      "sideCollisions": 0,
+      "travelledDistance": 0,
+      "horizontalDisplacement": 0,
+      "positionError": 0,
+      "rotationErrorDegrees": 0,
+      "movementStart": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "movementEnd": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "loadedPosition": {
+        "x": 0.919581,
+        "y": 9.971857e-05,
+        "z": 1.29818666
+      },
+      "appliedPosition": {
+        "x": 0.919581,
+        "y": 9.971857e-05,
+        "z": 1.29818666
+      },
+      "savedPosition": {
+        "x": 0.919581,
+        "y": 9.971857e-05,
+        "z": 1.29818666
+      },
+      "loadedRotation": {
+        "x": 0,
+        "y": 0.96803236,
+        "z": 0,
+        "w": -0.250825524
+      },
+      "appliedRotation": {
+        "x": 0,
+        "y": 0.96803236,
+        "z": 0,
+        "w": -0.250825524
+      },
+      "savedRotation": {
+        "x": 0,
+        "y": 0.96803236,
+        "z": 0,
+        "w": -0.250825524
+      },
+      "saveRevision": 2,
+      "exactStoredPosition": false,
+      "exactStoredRotation": false,
+      "exactAppliedPosition": true,
+      "exactAppliedRotation": true,
+      "failure": null,
+      "inputDescription": null,
+      "collisionPolicy": "exported original collider geometry reconstructed as static MeshColliders",
+      "visualPolicy": "original mesh geometry, extracted primary colors and supported raw textures; reconstruction shaders, color-space interpretation not independently verified; original body/face and default-active attachments; Standard player materials; original Animator controller/avatar, reconstructed FootL/FootR event collector, root motion disabled, no original game behaviours",
+      "screenshotPath": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-natural-20261031-1-phase2\\readback.png",
+      "screenshotSha256": "90b303a5cb772733e138afc634c4605ea3b701af20637d2438a3c2076af9ab68",
+      "screenshotBytes": 761009,
+      "screenshotWidth": 1280,
+      "screenshotHeight": 720,
+      "screenshotNonBlackPixels": 921319,
+      "screenshotDifferentPixels": 919387,
+      "screenshotValidated": true,
+      "cameraActive": true,
+      "cameraEnabled": true,
+      "cameraPosition": {
+        "x": 1.64885449,
+        "y": 1.83804929,
+        "z": 2.61097956
+      },
+      "cameraRotation": {
+        "x": -0.0392377675,
+        "y": 0.956114233,
+        "z": -0.151433632,
+        "w": -0.247737482
+      },
+      "graphicsDevice": "Direct3D11",
+      "titleScreenshotPath": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-natural-20261031-1-phase2\\title.png",
+      "titleScreenshotSha256": "6152449be07f89d59336cfcc4e83f72648de079dda374169ffc09faf3f6625ae",
+      "titleScreenshotValidated": true,
+      "playerVisualOffset": {
+        "x": -0.0160308778,
+        "y": -0.00155460835,
+        "z": -0.0197124183
+      },
+      "playerVisualBoundsSize": {
+        "x": 0.5460015,
+        "y": 1.6198231,
+        "z": 0.389261544
+      },
+      "originalAnimatorController": true,
+      "originalAnimatorAvatar": true,
+      "animatorInitialized": true,
+      "animatorBonesChanged": true,
+      "physicalKeyboardVerified": false,
+      "animatorControllerName": "Player",
+      "animatorAvatarName": "ManustiaAvatar",
+      "animatorPath": "Manustia",
+      "inputProvenance": "externally_declared_physical_keyboard_unverified",
+      "locomotionFrames": 9,
+      "unityKeyboardFrames": 9,
+      "movingKeyboardFrames": 0,
+      "simulatedAxisFrames": 0,
+      "animatorStateChanges": 0,
+      "animatorBoneChangeFrames": 5,
+      "keyboardSaveCommands": 0,
+      "keyboardSaveQuitCommands": 0,
+      "keyboardTravelledDistance": 0,
+      "animatorMaximumBoneRotationDelta": 4.83891153,
+      "saveZeroSignNormalizations": 0,
+      "lastSaveZeroSignNormalizations": 0,
+      "saveEqualityPolicy": null
+    },
+    "controlled": {
+      "schemaVersion": 1,
+      "processGuid": "75aeb0f41c6b4c9fb2191e337bc388aa",
+      "phase": "interaction-controlled",
+      "startedUtc": "2026-10-30T18:41:46.8601337Z",
+      "finishedUtc": "2026-10-30T18:42:06.4350503Z",
+      "profileRoot": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-controlled-20261031-1-profile",
+      "eventPath": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-controlled-20261031-1-interaction-controlled\\events.jsonl",
+      "proofPath": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-controlled-20261031-1-interaction-controlled\\proof.json",
+      "processId": 94672,
+      "engineErrorCount": 0,
+      "engineWarningCount": 1232,
+      "missingScriptWarnings": 1232,
+      "knownCompatibilityErrors": 0,
+      "unexpectedEngineErrors": 0,
+      "degradedAssetCompatibility": true,
+      "originalShaderCompatibilityVerified": false,
+      "unityVersion": "2022.3.62t7",
+      "sceneKey": "Apartment",
+      "environmentSource": "20781befb4cc42f898b65fe03f3d16c0a77b53aecac6ddc388460cfb710ae93a:3ef0c30c6d6ced487c6db594362f52bffba5990c0c5775a2981686293e3109c0",
+      "playerSource": "98621b2c4fa4f9de80f355fae5776ab17efc016bcc81c581bcd0917af4308367:assets/zzz-externalencryptasset/player.prefab",
+      "savePath": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-controlled-20261031-1-profile\\save.v1.json",
+      "saveSha256": "e7b6ff245e1aa268051ac72cf8929438bc80ebd3b639c160470f5db7d0fd315f",
+      "loadedSavedProcessGuid": "",
+      "passed": true,
+      "completed": true,
+      "originalGeometry": true,
+      "originalPlayerVisual": true,
+      "groundedSeen": true,
+      "controlledInput": true,
+      "geometryMeshes": 269,
+      "geometryColliders": 33,
+      "geometryTextures": 90,
+      "declaredTextures": 90,
+      "unresolvedBuiltinMeshes": 5,
+      "visualRenderers": 4,
+      "copiedGameBehaviours": 0,
+      "playerShaderFallbacks": 12,
+      "inputSamples": 143,
+      "belowCollisions": 143,
+      "sideCollisions": 0,
+      "travelledDistance": 0.09223205,
+      "horizontalDisplacement": 0,
+      "positionError": 0,
+      "rotationErrorDegrees": 0,
+      "movementStart": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "movementEnd": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "loadedPosition": {
+        "x": 0.332664877,
+        "y": -0.000462949276,
+        "z": 1.21904826
+      },
+      "appliedPosition": {
+        "x": 0.332664877,
+        "y": -0.000462949276,
+        "z": 1.21904826
+      },
+      "savedPosition": {
+        "x": 0.820937037,
+        "y": 9.97781754e-05,
+        "z": 0.903646648
+      },
+      "loadedRotation": {
+        "x": -2.87172952e-10,
+        "y": 0.0837884545,
+        "z": -1.114131e-11,
+        "w": 0.9964836
+      },
+      "appliedRotation": {
+        "x": -2.87172952e-10,
+        "y": 0.0837884545,
+        "z": -1.114131e-11,
+        "w": 0.9964836
+      },
+      "savedRotation": {
+        "x": -1.42200487e-10,
+        "y": 0.489541441,
+        "z": -5.516884e-12,
+        "w": 0.871980131
+      },
+      "saveRevision": 1,
+      "exactStoredPosition": true,
+      "exactStoredRotation": true,
+      "exactAppliedPosition": true,
+      "exactAppliedRotation": true,
+      "failure": null,
+      "inputDescription": "Controlled F edges and movement axes exercise the same manager/PlayerAction/original Animator/CC path; not a real keyboard acceptance. Completion exclusively comes from the original clip AnimationEvent.",
+      "collisionPolicy": "exported original collider geometry reconstructed as static MeshColliders",
+      "visualPolicy": "original mesh geometry, extracted primary colors and supported raw textures; reconstruction shaders, color-space interpretation not independently verified; original body/face and default-active attachments; Standard player materials; original Animator controller/avatar, reconstructed FootL/FootR event collector, root motion disabled, no original game behaviours",
+      "screenshotPath": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\.cache\\interaction-controlled-20261031-1-interaction-controlled\\interaction-controlled.png",
+      "screenshotSha256": "b5de7b933f8ed6a174b2ed04a0b0d758f6c2848ff3aa938e3633da2f234308de",
+      "screenshotBytes": 747530,
+      "screenshotWidth": 1280,
+      "screenshotHeight": 720,
+      "screenshotNonBlackPixels": 921600,
+      "screenshotDifferentPixels": 921591,
+      "screenshotValidated": true,
+      "cameraActive": true,
+      "cameraEnabled": true,
+      "cameraPosition": {
+        "x": 0.5008373,
+        "y": 1.97294068,
+        "z": -0.9863449
+      },
+      "cameraRotation": {
+        "x": 0.155884415,
+        "y": 0.08275689,
+        "z": -0.013107405,
+        "w": 0.9842152
+      },
+      "graphicsDevice": "Direct3D11",
+      "titleScreenshotPath": null,
+      "titleScreenshotSha256": null,
+      "titleScreenshotValidated": false,
+      "playerVisualOffset": {
+        "x": -0.0160308778,
+        "y": -0.00155460835,
+        "z": -0.0197124183
+      },
+      "playerVisualBoundsSize": {
+        "x": 0.5460015,
+        "y": 1.6198231,
+        "z": 0.389261544
+      },
+      "originalAnimatorController": true,
+      "originalAnimatorAvatar": true,
+      "animatorInitialized": true,
+      "animatorBonesChanged": true,
+      "physicalKeyboardVerified": false,
+      "animatorControllerName": "Player",
+      "animatorAvatarName": "ManustiaAvatar",
+      "animatorPath": "Manustia",
+      "inputProvenance": "undeclared_keyboard_device",
+      "locomotionFrames": 151,
+      "unityKeyboardFrames": 3,
+      "movingKeyboardFrames": 0,
+      "simulatedAxisFrames": 148,
+      "animatorStateChanges": 2,
+      "animatorBoneChangeFrames": 102,
+      "keyboardSaveCommands": 0,
+      "keyboardSaveQuitCommands": 0,
+      "keyboardTravelledDistance": 0,
+      "animatorMaximumBoneRotationDelta": 45.7244225,
+      "saveZeroSignNormalizations": 0,
+      "lastSaveZeroSignNormalizations": 0,
+      "saveEqualityPolicy": "Normalize only IEEE-754 negative zero to positive zero before JSON serialization; every nonzero float bit and every canonical zero bit must survive exactly. Raw negative-zero sign bits are not preserved."
+    }
+  },
+  "limitations": [
+    "Physical run confirms F, original event, same-frame None, later movement, save and cold readback. It does not include nonzero movement input during the action lock; that condition is separately controlled.",
+    "Original Apartment has only PC, bed and closet UI interaction areas. The genuine original key prefab is an explicitly placed reconstruction fixture, recreated per process; natural drop spawning/persistence is not implemented.",
+    "Only original Locomotion and Action layers are enabled; ten ancillary layers remain zero. Handclothes, non-Idle, ecstasy and global-manager conditions are neutral rather than fully reconstructed.",
+    "The reconstruction adapter directly starts PlayerAction before motor update; the original callback stages TransAction for PlayerAction.OnUpdate. Exact original intra-frame update order is not claimed.",
+    "Original scripts and GameAssembly are absent. Shader/material fallback, missing scripts and five unresolved builtin meshes remain.",
+    "IEEE-754 negative zero is canonicalized; all nonzero pose bits remain exact. Hardware provenance requires the separate user receipt."
+  ]
+}

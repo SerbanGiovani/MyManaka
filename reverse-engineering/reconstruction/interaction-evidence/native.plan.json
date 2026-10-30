@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "name": "interaction-pickup",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\animator-parameters.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-evidence\\native",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 15889,
+      "qualified_name": "ExposureUnnoticed2.Object3D.DropedCoat.DroppedItemController::Initialize",
+      "token": "0x60011c8",
+      "va": "0x180459880",
+      "file_offset": 4554880,
+      "file_stem": "15889-060011c8",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16710,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.DroppedItemManager::GetCache",
+      "token": "0x60014fd",
+      "va": "0x180488a50",
+      "file_offset": 4747856,
+      "file_stem": "16710-060014fd",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16712,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.DroppedItemManager::Drop",
+      "token": "0x60014ff",
+      "va": "0x180488f70",
+      "file_offset": 4749168,
+      "file_stem": "16712-060014ff",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 16720,
+      "qualified_name": "ExposureUnnoticed2.Scripts.InGame.DroppedItemManager::Collect",
+      "token": "0x6001507",
+      "va": "0x18048a0e0",
+      "file_offset": 4753632,
+      "file_stem": "16720-06001507",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

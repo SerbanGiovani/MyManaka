@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "scope": "Scoped composite: actual user-attested natural F/end/later movement and separately labelled controlled lock exercise. Strict single-process full chain remains false.",
+  "events": "../interaction-runtime/interaction/events.jsonl.gz",
+  "identity": "../interaction-evidence/original-interaction.json",
+  "start": "../interaction-runtime/interaction/process-start.json",
+  "exit": "../interaction-runtime/interaction/process-exit.json",
+  "proof": "../interaction-runtime/interaction/proof.json",
+  "input_receipt": "../interaction-runtime/interaction/input-receipt.json",
+  "controlled_config": "controlled-inputs.json",
+  "save": "../interaction-runtime/save.v1.json",
+  "save_backup": "../interaction-runtime/save.v1.json.bak",
+  "cold_events": "../interaction-runtime/phase2/events.jsonl.gz",
+  "cold_proof": "../interaction-runtime/phase2/proof.json",
+  "cold_start": "../interaction-runtime/phase2/process-start.json",
+  "cold_exit": "../interaction-runtime/phase2/process-exit.json",
+  "runtime_sources": [
+    {
+      "path": "../interaction-runtime/build/Assets/Editor/BuildMinimal.cs",
+      "sha256": "90e8cd54589bf3870a84ea219afbc355cb66781d2173ae2d86354d8d2eb54156"
+    },
+    {
+      "path": "../interaction-runtime/build/Assets/Runtime/ActionAnimatorBridge.cs",
+      "sha256": "a8d472541455cdd5ba325790adc9b5a5cd96a6d3aaa24b434f6d89669685253f"
+    },
+    {
+      "path": "../interaction-runtime/build/Assets/Runtime/InteractionManager.cs",
+      "sha256": "3a0704cc16e6ba94e4bf03a6a590eb23cc81255d8a20a13f259b9b59d6a3667d"
+    },
+    {
+      "path": "../interaction-runtime/build/Assets/Runtime/LocomotionAnimatorBridge.cs",
+      "sha256": "5bb2c2952515fcbd925ad19cec4d7684eb4a3a2391318e0cc4da5ae1b09c69b2"
+    },
+    {
+      "path": "../interaction-runtime/build/Assets/Runtime/MinimalBootstrap.cs",
+      "sha256": "b98b350d2f59795d1c02c40399a37b124736008b22c65e19b7ae70030184df43"
+    },
+    {
+      "path": "../interaction-runtime/build/Assets/Runtime/PlayerAction.cs",
+      "sha256": "c30f1f117bbabfacec564d33ba8d22038fb40551eb3ba574bc79180eb6e8119a"
+    },
+    {
+      "path": "../interaction-runtime/build/Assets/Runtime/PlayerMotor.cs",
+      "sha256": "c11431a0be118e6d3e385ca164183f2e014cf242dca3467bc821b526e6c068c5"
+    },
+    {
+      "path": "../interaction-runtime/build/Assets/Runtime/RunEvidence.cs",
+      "sha256": "f2a584c36ea6ed4767407df7da8dcd5e003dc53e4cac04d4ea87df5f24c3a614"
+    },
+    {
+      "path": "../interaction-runtime/build/Assets/Runtime/SaveBridge.cs",
+      "sha256": "c5eb0a81187b5dc76efecb86892bc271b8c1e741c7f0de9a44572163fdae924e"
+    },
+    {
+      "path": "../interaction-runtime/build/Assets/Runtime/SceneAssets.cs",
+      "sha256": "72ea39a5a7bb32b53377fe2748383ef402e1d079b744450c706d6e13014aad40"
+    }
+  ]
+}

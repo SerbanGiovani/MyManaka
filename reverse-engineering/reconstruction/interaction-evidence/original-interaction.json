@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "authority": "Static original asset/native evidence plus explicitly labelled fixture placement",
+  "acceptance_identity": {
+    "bundleSha256": "98621b2c4fa4f9de80f355fae5776ab17efc016bcc81c581bcd0917af4308367",
+    "controllerObjectSha256": "e1135eac992f564dcea388149032d88673e5b478fa135e70bc142e6494444b08",
+    "controllerPathId": -1824587515900773540,
+    "controllerName": "Player",
+    "playerAsset": "assets/zzz-externalencryptasset/player.prefab",
+    "controllerAsset": null,
+    "avatarName": "ManustiaAvatar",
+    "avatarPathId": -4334950846762833491,
+    "avatarObjectSha256": "f201a706fc9a9cc20b2a246e27a86c4bacd56e36f095a0e4833d8da359254f19",
+    "animatorPath": "Player/Manustia",
+    "animatorPathId": -4550091270844762613
+  },
+  "interaction": {
+    "id": 10025,
+    "name": "PickUpItem",
+    "noneId": -1,
+    "canMove": false,
+    "target": {
+      "sourceBundleSha256": "98621b2c4fa4f9de80f355fae5776ab17efc016bcc81c581bcd0917af4308367",
+      "sourceScene": null,
+      "sourcePath": "DroppedHandcuffKey/InteractArea (3)",
+      "sourcePathId": -7929292301847529429,
+      "originalComponent": "InteractAreaController / SphereCollider",
+      "trigger": {
+        "shape": "Sphere",
+        "isTrigger": true,
+        "center": {
+          "x": 0.0,
+          "y": 0.44999998807907104,
+          "z": 0.0
+        },
+        "radius": 0.4000000059604645
+      }
+    },
+    "layer": {
+      "index": 1,
+      "name": "Action",
+      "stateName": "PickUpItem",
+      "stateFullPathHash": 886742834,
+      "clipName": "PickUpItem",
+      "clipPathId": -8816799273270535533,
+      "clipLength": 2.0
+    },
+    "end": {
+      "mechanism": "AnimationEvent",
+      "function": "OnAnimEndPickUpItem",
+      "intParameter": 0,
+      "time": 1.9833333492279053,
+      "frameDelay": 0
+    },
+    "effects": {
+      "collectItemId": 10000,
+      "countDelta": 1,
+      "targetInactive": true
+    },
+    "enterParameters": [
+      {
+        "name": "OldActionId",
+        "type": "Int",
+        "valueSource": "previousActionId"
+      },
+      {
+        "name": "ActionId",
+        "type": "Int",
+        "valueSource": "actionId"
+      },
+      {
+        "name": "TransAction",
+        "type": "Trigger"
+      }
+    ],
+    "exitParameters": [
+      {
+        "name": "OldActionId",
+        "type": "Int",
+        "valueSource": "previousActionId"
+      },
+      {
+        "name": "ActionId",
+        "type": "Int",
+        "valueSource": "actionId"
+      },
+      {
+        "name": "TransAction",
+        "type": "Trigger"
+      }
+    ],
+    "guards": {
+      "callback_fields": {
+        "LastPickUpItemType": 5,
+        "ForceSkipHandcuffCheckTransAction": true,
+        "TransAction": 10025
+      },
+      "external_request": "14462 checks IsPlayingAction then CanUseHand(true, state.ForceSkipHandcuffCheckTransAction, false, false, false), clears skip flag and calls ChangeAction",
+      "CanUseHand_arguments": {
+        "isSendMessage": true,
+        "isSkipHandcuff": true,
+        "isSkipBasket": false,
+        "isSkipPlayingAction": false,
+        "isSkipCrouch": false
+      },
+      "reject_crouch": true,
+      "requires_handcuffs": false,
+      "handcuff_guard_explicitly_skipped": true,
+      "neutral_scope": "CurrentAction=None, CurrentState=Idle, no ecstasy, no active SexManager, no held clothing. Other subsystems are neutral and not reconstructed."
+    },
+    "locomotion": {
+      "layerIndex": 0,
+      "stateFullPathHash": 686120411,
+      "movingClips": [
+        "Female_Walk_Forward",
+        "Female_Jog_Forward"
+      ]
+    }
+  },
+  "fixturePlacement": {
+    "worldPosition": {
+      "x": 0.73,
+      "y": 0,
+      "z": 1.21904826
+    },
+    "worldRotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "worldScale": {
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "placementProvenance": "Root-authored reconstruction fixture placed in independent Apartment near verified original spawn; no fixed original Apartment key or original world placement is claimed."
+  },
+  "sources": [
+    {
+      "path": "target-assets.json",
+      "sha256": "a077ff0343fd537820912af76bdace015f9b75f7d8435024d2892c6f88e0b999"
+    },
+    {
+      "path": "reused-native-contract.json",
+      "sha256": "4d21e34b4f8809be81e7c9e6e3bfd51215152819dd6357f4dca6c01bdbe44810"
+    },
+    {
+      "path": "native-contract.json",
+      "sha256": "86d96498cf4d130f0cf74c80fd5a7bfc2ecf25ef0be8ae1f8cfcf02b52c1ed13"
+    }
+  ],
+  "limitations": [
+    "This contract is static evidence; runtime acceptance is independent.",
+    "Apartment fixed serialized targets are Closet11/Bed13/PC14 UI; this key is an explicitly placed reconstruction fixture.",
+    "Original CanUseHand features outside neutral state are not implemented by this finite reconstruction."
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "passed": true,
+  "full_chain_accepted": false,
+  "scoped_natural_chain_accepted": false,
+  "unmet_single_process_requirements": [],
+  "actual_unity_f_accepted": false,
+  "controlled_subchain_only": true,
+  "controlled_setup_excluded_frames": [
+    191,
+    203
+  ],
+  "process_guid": "75aeb0f41c6b4c9fb2191e337bc388aa",
+  "sample_count": 148,
+  "accepted_f_attempts": 1,
+  "rejected_f_attempts": 2,
+  "unfocused_idle_excluded_frames": [],
+  "cycles": [
+    {
+      "sequence": 1,
+      "action_id": 10025,
+      "none_id": -1,
+      "target_id": "original-dropped-handcuff-key-fixture",
+      "f_frame": 206,
+      "action_frame": 206,
+      "end_event_frame": 325,
+      "none_frame": 325,
+      "original_frame_delay": 0,
+      "stable_action_frames": [
+        221,
+        324
+      ],
+      "blocked_input_samples": 119,
+      "movement_restored_frames": [
+        326,
+        332
+      ],
+      "restored_horizontal_distance": 0.07668802993731236,
+      "pickup_effects": {
+        "item_id": 10000,
+        "before": 1,
+        "after": 2,
+        "delta": 1,
+        "target_inactive": true
+      }
+    }
+  ],
+  "original_guard_scope": {
+    "callback_fields": {
+      "LastPickUpItemType": 5,
+      "ForceSkipHandcuffCheckTransAction": true,
+      "TransAction": 10025
+    },
+    "external_request": "14462 checks IsPlayingAction then CanUseHand(true, state.ForceSkipHandcuffCheckTransAction, false, false, false), clears skip flag and calls ChangeAction",
+    "CanUseHand_arguments": {
+      "isSendMessage": true,
+      "isSkipHandcuff": true,
+      "isSkipBasket": false,
+      "isSkipPlayingAction": false,
+      "isSkipCrouch": false
+    },
+    "reject_crouch": true,
+    "requires_handcuffs": false,
+    "handcuff_guard_explicitly_skipped": true,
+    "neutral_scope": "CurrentAction=None, CurrentState=Idle, no ecstasy, no active SexManager, no held clothing. Other subsystems are neutral and not reconstructed."
+  },
+  "physical_keyboard_measured": false,
+  "identity_basis": "Independent original source bundle/prefab/target PPtr inventory plus runtime same-reference controller/avatar and matching original controller clip instance. Runtime does not expose serialized PPtr IDs.",
+  "scope": "Controlled simulated F/axes diagnostic verifies the original target/action/end/CC subchain only; actual Unity GetKeyDown(F), focused keyboard operation and physical input are not accepted.",
+  "schema_version": 1,
+  "evidence_kind": "controlled-subchain-diagnostic",
+  "input_origin": {
+    "classification": "automated-simulated-controlled-diagnostic",
+    "unity_key_observed": false,
+    "physical_keyboard_measured": false,
+    "human_physical_attestation": false
+  },
+  "lifecycle": {
+    "pid": 94672,
+    "exit_code": 0,
+    "assembly_sha256": "1de70877fd056e883b0e54b62452bfbbba3c14d5bb96bc793c54fd1a0727efe6",
+    "executable_sha256": "b0ff5efad3d2eefc2180930caab8ed64b7447901e52096635e96c6c35ae12d0d",
+    "actual_launched_binaries_rehashed": true
+  },
+  "known_shader_error_count": 0,
+  "asset_degradation": {
+    "engine_warnings": 1232,
+    "missing_script_warnings": 1232,
+    "known_shader_errors": 0,
+    "player_shader_fallbacks": 12,
+    "original_shader_compatibility_verified": false,
+    "full_visual_parity_verified": false
+  },
+  "native_system_limitations": [
+    "This contract is static evidence; runtime acceptance is independent.",
+    "Apartment fixed serialized targets are Closet11/Bed13/PC14 UI; this key is an explicitly placed reconstruction fixture.",
+    "Original CanUseHand features outside neutral state are not implemented by this finite reconstruction."
+  ],
+  "fixture_placement": {
+    "worldPosition": {
+      "x": 0.73,
+      "y": 0,
+      "z": 1.21904826
+    },
+    "worldRotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "worldScale": {
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "placementProvenance": "Root-authored reconstruction fixture placed in independent Apartment near verified original spawn; no fixed original Apartment key or original world placement is claimed."
+  },
+  "artifacts": {
+    "config": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-acceptance-tools\\controlled-inputs.json",
+      "sha256": "d4e751d49ae2cb30226156059a07016c47c8cff062e59a2ca62fc4efeb0737fd"
+    },
+    "events": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\controlled\\events.jsonl.gz",
+      "sha256": "30200a262a9f9905fdfef3525b227d4a6847bf886935f044c0d68f83d54273a2"
+    },
+    "identity": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-evidence\\original-interaction.json",
+      "sha256": "84d6cd2031791c474ae758afc5b3a9f74376286256809fe140a730f257c9a05e"
+    },
+    "start": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\controlled\\process-start.json",
+      "sha256": "8b685af0ba0715f28961725bb1e5be159ae645a6d5d1b5725e433ad07a5dce07"
+    },
+    "exit": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\controlled\\process-exit.json",
+      "sha256": "438c49460ebdbcbb05ceb543f44b4975e18ea6a3ec5dbebc5b531cf96a3299c2"
+    },
+    "proof": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\controlled\\proof.json",
+      "sha256": "bfd53d1587c723d8df2ab6f585a4474373019f13799f7c4214fe831782ac5e0f"
+    }
+  },
+  "identity_sources": [
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-evidence\\target-assets.json",
+      "sha256": "a077ff0343fd537820912af76bdace015f9b75f7d8435024d2892c6f88e0b999"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-evidence\\reused-native-contract.json",
+      "sha256": "4d21e34b4f8809be81e7c9e6e3bfd51215152819dd6357f4dca6c01bdbe44810"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-evidence\\native-contract.json",
+      "sha256": "86d96498cf4d130f0cf74c80fd5a7bfc2ecf25ef0be8ae1f8cfcf02b52c1ed13"
+    }
+  ],
+  "runtime_sources": [
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\build\\Assets\\Editor\\BuildMinimal.cs",
+      "sha256": "90e8cd54589bf3870a84ea219afbc355cb66781d2173ae2d86354d8d2eb54156"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\build\\Assets\\Runtime\\ActionAnimatorBridge.cs",
+      "sha256": "a8d472541455cdd5ba325790adc9b5a5cd96a6d3aaa24b434f6d89669685253f"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\build\\Assets\\Runtime\\InteractionManager.cs",
+      "sha256": "3a0704cc16e6ba94e4bf03a6a590eb23cc81255d8a20a13f259b9b59d6a3667d"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\build\\Assets\\Runtime\\LocomotionAnimatorBridge.cs",
+      "sha256": "5bb2c2952515fcbd925ad19cec4d7684eb4a3a2391318e0cc4da5ae1b09c69b2"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\build\\Assets\\Runtime\\MinimalBootstrap.cs",
+      "sha256": "b98b350d2f59795d1c02c40399a37b124736008b22c65e19b7ae70030184df43"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\build\\Assets\\Runtime\\PlayerAction.cs",
+      "sha256": "c30f1f117bbabfacec564d33ba8d22038fb40551eb3ba574bc79180eb6e8119a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\build\\Assets\\Runtime\\PlayerMotor.cs",
+      "sha256": "c11431a0be118e6d3e385ca164183f2e014cf242dca3467bc821b526e6c068c5"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\build\\Assets\\Runtime\\RunEvidence.cs",
+      "sha256": "f2a584c36ea6ed4767407df7da8dcd5e003dc53e4cac04d4ea87df5f24c3a614"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\build\\Assets\\Runtime\\SaveBridge.cs",
+      "sha256": "c5eb0a81187b5dc76efecb86892bc271b8c1e741c7f0de9a44572163fdae924e"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\build\\Assets\\Runtime\\SceneAssets.cs",
+      "sha256": "72ea39a5a7bb32b53377fe2748383ef402e1d079b744450c706d6e13014aad40"
+    }
+  ]
+}

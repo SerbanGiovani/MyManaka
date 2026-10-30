@@ -578,6 +578,44 @@ def main():
     locomotion_acceptance_dir = toolchain_dir / "locomotion-acceptance-tools"
     locomotion_acceptance = runpy.run_path(str(locomotion_acceptance_dir / "verify_locomotion.py"))["build"](locomotion_acceptance_dir / "acceptance-inputs.json", verify_inputs=args.inputs)
     check(locomotion_acceptance == read(locomotion_acceptance_dir / "acceptance.json"), "Physical-user keyboard/original Animator/save/restart joins differ")
+    interaction_check = runpy.run_path(str(toolchain_dir / "verify-interaction-runtime.py"))["build"](inputs=args.inputs)
+    interaction_runtime = read(toolchain_dir / "interaction-runtime.json")
+    check(interaction_check["status"] == "original-action-event-physical-recovery-save-restart-verified" and interaction_check["cold_pose_readback"] and interaction_check["saved_inventory_10000"] == 2, "Independent interaction/cold pose save scope differs")
+    interaction_acceptance_dir = toolchain_dir / "interaction-acceptance-tools"
+    interaction_analyzer = runpy.run_path(str(interaction_acceptance_dir / "verify_interaction.py"))
+    # Keep actual keyboard recovery and controlled lock input in separate
+    # processes. The physical run did not apply a direction during CanMove=false.
+    for filename in ("acceptance-inputs.json", "controlled-inputs.json"):
+        config = read(interaction_acceptance_dir / filename)
+        for key in ("events", "identity", "start", "exit", "proof", "input_receipt", "controlled_config", "save", "save_backup", "cold_events", "cold_proof", "cold_start", "cold_exit"):
+            if key in config:
+                check(".cache" not in (interaction_acceptance_dir / config[key]).resolve().parts, "Interaction acceptance config depends on mutable cache evidence")
+        for source in config.get("runtime_sources", []):
+            check(".cache" not in (interaction_acceptance_dir / source["path"]).resolve().parts, "Interaction acceptance source depends on mutable cache")
+    interaction_acceptance = interaction_analyzer["build"](interaction_acceptance_dir / "acceptance-inputs.json", verify_inputs=args.inputs, scoped=True)
+    interaction_controlled = interaction_analyzer["build"](interaction_acceptance_dir / "controlled-inputs.json", verify_inputs=args.inputs, controlled=True)
+    def interaction_semantics(value):
+        # --inputs changes only whether optional live binaries were rehashed in
+        # this audit invocation. Keep all recorded behavioral claims exact.
+        if isinstance(value, dict):
+            return {key: interaction_semantics(item) for key, item in value.items() if key != "actual_launched_binaries_rehashed"}
+        if isinstance(value, list):
+            return [interaction_semantics(item) for item in value]
+        return value
+    check(interaction_semantics(interaction_acceptance) == interaction_semantics(read(interaction_acceptance_dir / "acceptance.json")), "Scoped physical interaction/original event/recovery joins differ")
+    check(interaction_semantics(interaction_controlled) == interaction_semantics(read(interaction_acceptance_dir / "controlled-diagnostic.json")), "Controlled original action lock/recovery joins differ")
+    interaction_strict = interaction_analyzer["strict_rejection"](interaction_acceptance_dir / "acceptance-inputs.json", verify_inputs=args.inputs)
+    check(interaction_semantics(interaction_strict) == interaction_semantics(read(interaction_acceptance_dir / "strict-natural-rejection.json")), "Strict natural lock-input rejection differs")
+    check(not interaction_strict["passed"] and not interaction_strict["accepted"] and not interaction_strict["full_chain_accepted"] and interaction_strict["reason"] == "Insufficient movement input while original CanMove blocked", "Natural interaction strict gate was bypassed")
+    check(interaction_acceptance["scoped_natural_chain_accepted"] and interaction_acceptance["actual_unity_f_accepted"] and not interaction_acceptance["controlled_subchain_only"] and not interaction_acceptance["passed"] and not interaction_acceptance["full_chain_accepted"], "Incomplete natural lock coverage was promoted to a full-chain pass")
+    interaction_unmet = interaction_acceptance["unmet_single_process_requirements"]
+    check(len(interaction_unmet) == 1 and interaction_unmet[0]["gate"] == "movement-input-during-CanMove-lock" and interaction_unmet[0]["observed_samples"] == 0 and interaction_unmet[0]["required_samples"] == 3, "Natural interaction lock-input gap differs")
+    check(interaction_controlled["passed"] and interaction_controlled["controlled_subchain_only"] and not interaction_controlled["actual_unity_f_accepted"] and not interaction_controlled["full_chain_accepted"], "Simulated control was promoted to actual Unity F acceptance")
+    check(interaction_acceptance["input_origin"]["human_physical_attestation"] and not interaction_acceptance["input_origin"]["physical_keyboard_measured"] and not interaction_controlled["input_origin"]["human_physical_attestation"] and not interaction_controlled["input_origin"]["physical_keyboard_measured"], "User attestation or simulated input was promoted to measured physical hardware")
+    interaction_save, interaction_cold = interaction_acceptance["save_verification"], interaction_acceptance["cold_readback"]
+    check(interaction_save["saved_revision"] == 2 and interaction_save["persisted_item_id"] == 10000 and interaction_save["persisted_item_quantity"] == 2 and interaction_cold["same_saved_bytes_verified"] and interaction_cold["component_exact_pose_before_physics"] and interaction_cold["save_sha256"] == interaction_save["saved_sha256"] and interaction_cold["pid"] == interaction_runtime["runtime"]["phase2"]["processId"] and not interaction_cold["cold_in_memory_inventory_quantity_observed"], "Cold pose/retained inventory file scope differs")
+    interaction_composite = interaction_acceptance["scoped_composite_acceptance"]
+    check(interaction_composite["accepted"] and not interaction_composite["single_process_full_chain_accepted"] and interaction_composite["natural_pid"] == interaction_runtime["runtime"]["interaction"]["processId"] and interaction_composite["controlled_pid"] == interaction_runtime["runtime"]["controlled"]["processId"] and interaction_composite["natural_guid"] != interaction_composite["controlled_guid"], "Distinct interaction input origins were merged")
     verification = read(ROOT / "salt/evidence/decryption-verification.json")
     summary = read(ROOT / "salt/symbols/index-summary.json")
     object_record = asset["guid_object"]
@@ -596,7 +634,7 @@ def main():
     check(verification["verified_node_ranges"] == len(decryption["nodes"]), "Not every node range was verified")
 
     artifacts, observations = [], {}
-    allowed_subjects = {identity["native_sha256"], identity["wrapper_sha256"], *minimal_check["managed_subjects"], *locomotion_check["managed_subjects"]}
+    allowed_subjects = {identity["native_sha256"], identity["wrapper_sha256"], *minimal_check["managed_subjects"], *locomotion_check["managed_subjects"], *interaction_check["managed_subjects"]}
     for path in sorted(ROOT.rglob("*")):
         if not path.is_file() or any(part in (".cache", "__pycache__") for part in path.relative_to(ROOT).parts):
             continue
@@ -654,6 +692,7 @@ def main():
         check(recovered[key] in observations, f"Missing password reconstruction evidence: {key}")
     run_paths = sorted((ROOT / "salt/evidence").glob("*/run.json"))
     run_paths.extend(toolchain_dir / "locomotion-evidence" / directory / "run.json" for directory in ("native", "native-decoded-code"))
+    run_paths.extend(toolchain_dir / "interaction-evidence" / directory / "run.json" for directory in ("native", "native-key-callback"))
     runs = [read(path) for path in run_paths]
     for run in runs:
         check(run["success"] and not run.get("close_error") and not run.get("transport_close_error"), "A required REA batch did not complete cleanly")
@@ -982,7 +1021,7 @@ def main():
             checked_inputs.append({"path": str(path), "sha256": actual})
         # verify-minimal already hashed these package/editor files and admitted
         # managed inspection subjects; retain their identities in the global index.
-        for item in minimal_runtime["build"]["files"] + minimal_runtime["packaged_inputs"] + [minimal_runtime["build"]["editor"]] + locomotion_runtime["build"]["files"] + locomotion_runtime["packaged_inputs"]:
+        for item in minimal_runtime["build"]["files"] + minimal_runtime["packaged_inputs"] + [minimal_runtime["build"]["editor"]] + locomotion_runtime["build"]["files"] + locomotion_runtime["packaged_inputs"] + interaction_runtime["build"]["files"] + interaction_runtime["packaged_inputs"]:
             if item["path"].casefold() not in known:
                 checked_inputs.append({"path": item["path"], "sha256": item["sha256"]})
                 known.add(item["path"].casefold())

@@ -1,5 +1,7 @@
 # 独立运行工程
 
+最新动作阶段已接回真实F键、原钥匙交互和原Animator Action层：原PickUpItem事件同帧完成入库及None，后续真实移动、F5／F6和冷启动姿态恢复通过。人工与受控证据分开，锁内方向输入仅在受控进程覆盖。当前产物为`.cache/interaction-20261031-1-build/ManakaInteraction.exe`，源码`interaction-project/Assets`；见[交互报告](interaction-runtime.md)、[清单](interaction-runtime.json)及[独立分析](interaction-acceptance-tools/README.md)。原Apartment UI、其余动作与10个辅助层继续待补，下方旧locomotion结果保持历史范围。
+
 最新阶段已接回原Player控制器、ManustiaAvatar和原Locomotion层，真实键盘移动／跑步、F5保存、F6退出和新进程读回通过。F5误退出问题已修复，符号零规范化及362组实际写读回归独立保留。当前程序为`.cache/locomotion-20261031-3-build/ManakaLocomotion.exe`，源码在`locomotion-project/Assets`；见[本轮运行报告](locomotion-runtime.md)和[清单](locomotion-runtime.json)。其他11个原动画层、原转向／重力积分及完整玩法仍有边界。下方旧minimum结果保持历史范围，不将其模拟输入升级为真实键盘证明。
 
 2026-10-31已完成“标题→原档选定字段读入→原自宅→移动→独立保存→关闭→新进程继续”，正式构建0错误、0警告，两个可见进程正常退出，位置和Quaternion逐位读回，标题与场景图像有效。见[最小闭环报告](minimal-runtime.md)及[运行清单](minimal-runtime.json)。

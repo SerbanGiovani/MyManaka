@@ -76,12 +76,13 @@
     {
       "order": 5,
       "name": "核心玩法运行对照",
-      "status": "in-progress-default-locomotion-keyboard-save-restart-verified",
-      "report": "reconstruction/locomotion-runtime.md",
+      "status": "in-progress-selected-interaction-original-action-recovery-verified",
+      "report": "reconstruction/interaction-runtime.md",
       "completed_batches": [
         "User-attested physical WASD/LeftShift input -> actual CharacterController -> original Locomotion blend and skeleton, F5/F6 -> new-process readback",
         "Original Player controller/ManustiaAvatar same reference, 40 parameters/175 clips; layer0 enabled, 11 ancillary layers isolated",
-        "Signed-zero save guard repair:362 real writes/reads and legacy JSON TryRead; first failed physical run preserved"
+        "Signed-zero save guard repair:362 real writes/reads and legacy JSON TryRead; first failed physical run preserved",
+        "Original dropped-key F fixture -> Action10025 original clip/event -> same-frame collection10000+1/None -> physical CC movement -> F5/F6/cold pose readback; physical lock-overlap not covered, controlled input-to-lock proof kept separate"
       ],
       "remaining": [
         "Original gravity/fixed-step/turning/camera equivalence and remaining movement guards/strafe/autochase/stamina",
@@ -91,7 +92,20 @@
     {
       "order": 6,
       "name": "交互与动画接线",
-      "status": "pending"
+      "status": "completed-within-selected-key-fixture-action-scope",
+      "report": "reconstruction/interaction-runtime.md",
+      "runtime_manifest": "reconstruction/interaction-runtime.json",
+      "completed_batches": [
+        "REA original key callback15896, original SphereCollider/Action1/PickUpItem clip and immediate event completion; six static queries closed",
+        "Physical F2427 -> event/None2546 -> post-action CC2599-3009, item10000 1->2, no-target repeat rejected; separate controlled119-frame lock proof",
+        "F5/F6 revision2 save, fresh process exact float32 pose readback; persisted key count2 independently parsed; cold in-memory count not separately observed"
+      ],
+      "remaining": [
+        "Original Apartment PC/bed/closet UI interaction, sleep and save consumers",
+        "Other finite actions/completion and interruption guards, ten ancillary layers",
+        "Exact original intra-frame TransAction staging and same-frame C+F ordering",
+        "Natural dropped-item spawning, world persistence and key use; fixture is recreated per process"
+      ]
     },
     {
       "order": 7,

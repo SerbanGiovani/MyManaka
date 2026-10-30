@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "sceneKey": "Apartment",
+  "sourceScene": null,
+  "sourceBundleSha256": "98621b2c4fa4f9de80f355fae5776ab17efc016bcc81c581bcd0917af4308367",
+  "sourceEvidence": "interaction-evidence/target-assets.json; interaction-evidence/reused-native-contract.json; native-key-callback/15896-060011cf-procedure_pseudo_code.json",
+  "scope": "Finite original dropped-key F interaction through original Player Action controller and original end AnimationEvent, placed as an explicit reconstruction Apartment fixture; neutral player state only; no complete game equivalence.",
+  "noneActionId": -1,
+  "noneCanMove": true,
+  "actions": [
+    {
+      "id": 10025,
+      "name": "PickUpItem",
+      "canMove": false,
+      "layerName": "Action",
+      "statePath": "Action.PickUpItem",
+      "stateFullPathHash": 886742834,
+      "clipName": "PickUpItem",
+      "sourceEvidence": "interaction-evidence/target-assets.json; interaction-evidence/reused-native-contract.json; native-key-callback/15896-060011cf-procedure_pseudo_code.json",
+      "enterParameters": [
+        {
+          "name": "OldActionId",
+          "type": "Int",
+          "valueSource": "previousActionId"
+        },
+        {
+          "name": "ActionId",
+          "type": "Int",
+          "valueSource": "actionId"
+        },
+        {
+          "name": "TransAction",
+          "type": "Trigger"
+        }
+      ],
+      "exitParameters": [
+        {
+          "name": "OldActionId",
+          "type": "Int",
+          "valueSource": "previousActionId"
+        },
+        {
+          "name": "ActionId",
+          "type": "Int",
+          "valueSource": "actionId"
+        },
+        {
+          "name": "TransAction",
+          "type": "Trigger"
+        }
+      ],
+      "layers": [
+        {
+          "name": "Action",
+          "weight": 1
+        }
+      ],
+      "completion": {
+        "function": "OnAnimEndPickUpItem",
+        "clipName": "PickUpItem",
+        "eventTime": 1.9833333492279053,
+        "intParameter": 0,
+        "deferFrames": 0,
+        "sourceEvidence": "target-assets.json clip/event; ev_94fb1d7bcea10ce8efff244b6424f27374b95d6eb463993001d3bf31a51267dc"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "id": "original-dropped-handcuff-key-fixture",
+      "label": "拾取钥匙 / Pick up key",
+      "sourcePath": "DroppedHandcuffKey/InteractArea (3)",
+      "sourceScene": null,
+      "sourcePathId": -7929292301847529429,
+      "sourceBundleSha256": "98621b2c4fa4f9de80f355fae5776ab17efc016bcc81c581bcd0917af4308367",
+      "sourceEvidence": "interaction-evidence/target-assets.json; interaction-evidence/reused-native-contract.json; native-key-callback/15896-060011cf-procedure_pseudo_code.json",
+      "originalSource": true,
+      "originalComponent": "InteractAreaController / SphereCollider",
+      "triggerPath": "InteractArea (3)",
+      "placementProvenance": "Root-authored reconstruction fixture placed in independent Apartment near verified original spawn; no fixed original Apartment key or original world placement is claimed.",
+      "worldPosition": {
+        "x": 0.73,
+        "y": 0,
+        "z": 1.21904826
+      },
+      "worldRotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "worldScale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "actionId": 10025,
+      "collectOnCompletion": true,
+      "collectItemId": 10000,
+      "trigger": {
+        "shape": "Sphere",
+        "isTrigger": true,
+        "center": {
+          "x": 0.0,
+          "y": 0.44999998807907104,
+          "z": 0.0
+        },
+        "radius": 0.4000000059604645
+      },
+      "visual": {
+        "bundle": "models.unity3d",
+        "bundleSha256": "98621b2c4fa4f9de80f355fae5776ab17efc016bcc81c581bcd0917af4308367",
+        "asset": "assets/zzz-externalencryptasset/droppedhandcuffkey.prefab",
+        "objectName": "DroppedHandcuffKey",
+        "sourcePathId": 1236904147823038301
+      },
+      "guardEvidence": "native-key-callback/15896-060011cf-procedure_pseudo_code.json",
+      "rejectCrouch": true
+    }
+  ]
+}

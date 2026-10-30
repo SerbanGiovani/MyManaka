@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "evidence_kind": "strict-natural-rejection",
+  "passed": false,
+  "accepted": false,
+  "full_chain_accepted": false,
+  "reason": "Insufficient movement input while original CanMove blocked",
+  "unmet_single_process_requirements": [
+    {
+      "sequence": 1,
+      "gate": "movement-input-during-CanMove-lock",
+      "required_samples": 3,
+      "observed_samples": 0
+    }
+  ],
+  "lifecycle": {
+    "pid": 94856,
+    "exit_code": 0,
+    "assembly_sha256": "1de70877fd056e883b0e54b62452bfbbba3c14d5bb96bc793c54fd1a0727efe6",
+    "executable_sha256": "b0ff5efad3d2eefc2180930caab8ed64b7447901e52096635e96c6c35ae12d0d",
+    "actual_launched_binaries_rehashed": true
+  },
+  "process_guid": "b0a74581527942a5abde279dcab4c078",
+  "input_origin": {
+    "classification": "user-physical-attestation-and-unity-reception",
+    "unity_key_observed": true,
+    "physical_keyboard_measured": false,
+    "human_physical_attestation": true,
+    "attestation": "完成"
+  },
+  "cycles": [
+    {
+      "sequence": 1,
+      "action_id": 10025,
+      "none_id": -1,
+      "target_id": "original-dropped-handcuff-key-fixture",
+      "f_frame": 2427,
+      "action_frame": 2427,
+      "end_event_frame": 2546,
+      "none_frame": 2546,
+      "original_frame_delay": 0,
+      "stable_action_frames": [
+        2442,
+        2545
+      ],
+      "blocked_input_samples": 0,
+      "movement_restored_frames": [
+        2599,
+        3009
+      ],
+      "restored_horizontal_distance": 7.327820347911178,
+      "pickup_effects": {
+        "item_id": 10000,
+        "before": 1,
+        "after": 2,
+        "delta": 1,
+        "target_inactive": true
+      }
+    }
+  ],
+  "artifacts": {
+    "config": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-acceptance-tools\\acceptance-inputs.json",
+      "sha256": "8f4fd52273ef3869f2536361ba32be69d6153583936807ba60436d6a7cc59bf8"
+    },
+    "events": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\interaction\\events.jsonl.gz",
+      "sha256": "d6f2908022924a0f356f9dfd199ef6a535ca554fe48acb4d9a74497a14a778de"
+    },
+    "identity": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-evidence\\original-interaction.json",
+      "sha256": "84d6cd2031791c474ae758afc5b3a9f74376286256809fe140a730f257c9a05e"
+    },
+    "start": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\interaction\\process-start.json",
+      "sha256": "b42748794152341f4a3427433a7ecea9e47fca08c86969679b82fc3be7fd07b6"
+    },
+    "exit": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\interaction\\process-exit.json",
+      "sha256": "f38a2c00ff5de4985aa8f7797758c353b4c03901926d753a0d5b3995ca17bcdc"
+    },
+    "proof": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\interaction\\proof.json",
+      "sha256": "3995b1a09772e6a4363e12b47d24e4ceeb7ded67f56303cc8f14d8ec6f958eb9"
+    },
+    "input_receipt": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\interaction\\input-receipt.json",
+      "sha256": "54919a675e087b59f711a4e693253beb4d8949bdfc59d9a0042b3d890ebc3b4e"
+    },
+    "save": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\save.v1.json",
+      "sha256": "f466eb7f14275ab12bef4821ec67d6f2389a8347ee45d5cf59ec7c4763baff20"
+    },
+    "save_backup": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\save.v1.json.bak",
+      "sha256": "2191bb126ccd6cd70aecacefc2c3c48fa5a9d88c9fde3327c13c41d63e77771d"
+    },
+    "cold_events": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\phase2\\events.jsonl.gz",
+      "sha256": "f7c8a7599a7e7f2de1e18c96fe00d95a82beb361f603abf764e7b34b7bb7d307"
+    },
+    "cold_proof": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\phase2\\proof.json",
+      "sha256": "898dad732fbbfc3455e1b4bb1afaea4313082024e400a92e5c6e38f308ff43bc"
+    },
+    "cold_start": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\phase2\\process-start.json",
+      "sha256": "6c77ad37585db8534dbfbd804a40d1f2e657eb4e2a6a8d9039e17e511a8d7cd0"
+    },
+    "cold_exit": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-runtime\\phase2\\process-exit.json",
+      "sha256": "3a89a2255299d662e09a89289828e13822d9d59ddeb9af3fa67e3abca84643ec"
+    },
+    "controlled_config": {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\interaction-acceptance-tools\\controlled-inputs.json",
+      "sha256": "d4e751d49ae2cb30226156059a07016c47c8cff062e59a2ca62fc4efeb0737fd"
+    }
+  },
+  "scope": "The unchanged strict single-process gate was executed and rejected this natural process. Separate composite evidence does not turn this result into a strict pass."
+}
