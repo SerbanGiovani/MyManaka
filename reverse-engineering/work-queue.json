@@ -64,7 +64,8 @@
       "completed_batches": [
         "Visible Windows64 Mono title/import-original-seed/Apartment/motor/save/quit/fresh-process-continue; actual float32 position and Quaternion preserved; pixel checks and independent offline verification",
         "269 original draws,33 reconstructed colliders,90 original compressed textures,4 selected player renderers; original native gameplay and Animator omitted; shader/missing-script limitations retained",
-        "Unity6000.6.7f1 Create/Win64 Mono Build3/controlled original key Action-event/CC/save/new-process exact-pose readback; new64-bit EntityId API adapter, compiler failure and unavailable-exit startup preserved separately; hardware input not revalidated"
+        "Unity6000.6.7f1 Create/Win64 Mono Build3/controlled original key Action-event/CC/save/new-process exact-pose readback; new64-bit EntityId API adapter, compiler failure and unavailable-exit startup preserved separately; hardware input not revalidated",
+        "Version-controlled UnityProject with native Apartment scene/prefab,302 meshes/302 materials/90 exact compressed textures;1465 maintained files unchanged across Build1;fresh-editor saved-reference validation;standalone outside repo controlled pickup/movement/save and fresh-process exact pose readback"
       ],
       "remaining": [
         "Remaining scene meshes/material fidelity and gameplay consumers; original full title/scene/appearance logic remains partial"
@@ -73,7 +74,21 @@
         "reconstruction/minimal-runtime.md",
         "reconstruction/locomotion-runtime.md"
       ],
-      "latest_editor_report": "reconstruction/unity-editor.md"
+      "latest_editor_report": "reconstruction/formal-project.md",
+      "formal_project": {
+        "status": "completed-within-maintained-project-and-partial-apartment-assetization-scope",
+        "project": "reconstruction/UnityProject",
+        "entry": "reconstruction/unity-project.ps1",
+        "report": "reconstruction/formal-project.md",
+        "runtime_manifest": "reconstruction/formal-project-runtime.json",
+        "build_sources_unchanged": true,
+        "editable_apartment_scene": true,
+        "remaining": [
+          "Original Apartment PC/bed/closet UI and natural save/sleep consumers",
+          "Original material/shader/lighting and omitted physics fidelity,5 builtin meshes",
+          "Further maps/lifecycle,NPC and gameplay;player bundle remains prepared external input"
+        ]
+      }
     },
     {
       "order": 5,
@@ -129,10 +144,10 @@
     "product": "Unity",
     "version": "6000.6.7f1",
     "path": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.7f1\\Editor\\Unity.exe",
-    "configuration": "reconstruction/editor-settings.json",
-    "entry": "reconstruction/unity-editor.ps1",
-    "report": "reconstruction/unity-editor.md",
-    "status": "selected-built-controlled-action-save-cold-readback-verified",
+    "configuration": "reconstruction/formal-editor-settings.json",
+    "entry": "reconstruction/unity-project.ps1",
+    "report": "reconstruction/formal-project.md",
+    "status": "maintained-project-authored-apartment-build-controlled-save-restart-verified",
     "physical_keyboard_under_this_editor_verified": false,
     "mcp_installation": {
       "status": "unity-mcp-installed-configured-independent-stdio-verified",
@@ -140,7 +155,12 @@
       "cli_version_observed": "1.0.0-beta.15",
       "pipeline_version": "0.9.1-exp.1",
       "tools_discovered": 169,
-      "installation_chat_catalog_loaded": false
-    }
+      "installation_chat_catalog_loaded": false,
+      "subsequent_chat_catalog_loaded": true,
+      "formal_project_target_configured": false
+    },
+    "project": "reconstruction/UnityProject",
+    "interactive_open_status": "ready-Apartment-open-edit-mode-no-unsaved-changes",
+    "interactive_open_receipt": "reconstruction/formal-editor-open.json"
   }
 }

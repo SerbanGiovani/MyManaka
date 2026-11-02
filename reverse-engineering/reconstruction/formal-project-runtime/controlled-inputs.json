@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "scope": "Controlled input only; no physical-keyboard or complete-gameplay acceptance.",
+  "events": "controlled/events.jsonl.gz",
+  "identity": "../interaction-evidence/original-interaction.json",
+  "start": "controlled/process-start.json",
+  "exit": "controlled/process-exit.json",
+  "proof": "controlled/proof.json",
+  "runtime_sources": [
+    {
+      "path": "build/Assets/Runtime/ActionAnimatorBridge.cs",
+      "sha256": "545752cf032953f59442786e21ca01119570375feec54e5fe4da390f44795927"
+    },
+    {
+      "path": "build/Assets/Runtime/ApartmentSceneRoot.cs",
+      "sha256": "cd9b2e31095e4ea32d1c07ff1532e946a16d064b8e6e3ab8f931467c50b383b5"
+    },
+    {
+      "path": "build/Assets/Runtime/InteractionManager.cs",
+      "sha256": "f7d25850dd727bc493d58d7037c12029644ba121ba3a82e11a78b7eb989d4ab5"
+    },
+    {
+      "path": "build/Assets/Runtime/LocomotionAnimatorBridge.cs",
+      "sha256": "78d2fa017970f3fe2dafd443663581415cb627be770c3695761597b5648782c7"
+    },
+    {
+      "path": "build/Assets/Runtime/MinimalBootstrap.cs",
+      "sha256": "234eb0e7a947db9a4e956f548ac64ad3133fac7404f9a26ddeaeb306479dee43"
+    },
+    {
+      "path": "build/Assets/Runtime/PlayerAction.cs",
+      "sha256": "c30f1f117bbabfacec564d33ba8d22038fb40551eb3ba574bc79180eb6e8119a"
+    },
+    {
+      "path": "build/Assets/Runtime/PlayerMotor.cs",
+      "sha256": "c11431a0be118e6d3e385ca164183f2e014cf242dca3467bc821b526e6c068c5"
+    },
+    {
+      "path": "build/Assets/Runtime/RunEvidence.cs",
+      "sha256": "f2a584c36ea6ed4767407df7da8dcd5e003dc53e4cac04d4ea87df5f24c3a614"
+    },
+    {
+      "path": "build/Assets/Runtime/SaveBridge.cs",
+      "sha256": "c5eb0a81187b5dc76efecb86892bc271b8c1e741c7f0de9a44572163fdae924e"
+    },
+    {
+      "path": "build/Assets/Runtime/SceneAssets.cs",
+      "sha256": "f51eb795932ebcbf890d8269d8003ac2b4345155bed532db9ddf6f42fb61c495"
+    },
+    {
+      "path": "build/Assets/Runtime/UnityObjectIdentity.cs",
+      "sha256": "c46f8395d4d57030cee62f928ff83bd11c7274b1a5d47cf23cf17302f3e86524"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "command": "command",
+  "data": {
+    "command": "script eval",
+    "parameters": {
+      "code": "var scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene(); var roots = scene.GetRootGameObjects(); var root = System.Array.Find(roots, g => g.GetComponent<ReconstructedManaka.ApartmentSceneRoot>() != null); if (!root) throw new System.Exception(\"Apartment root absent\"); var marker = root.GetComponent<ReconstructedManaka.ApartmentSceneRoot>(); bool persistent = true; foreach (var m in root.GetComponentsInChildren<UnityEngine.MeshFilter>(true)) persistent &= UnityEditor.EditorUtility.IsPersistent(m.sharedMesh); foreach (var r in root.GetComponentsInChildren<UnityEngine.Renderer>(true)) foreach (var material in r.sharedMaterials) persistent &= UnityEditor.EditorUtility.IsPersistent(material); return new { scenePath = scene.path, dirty = scene.isDirty, rootCount = roots.Length, draws = root.GetComponentsInChildren<UnityEngine.MeshRenderer>(true).Length, colliders = root.GetComponentsInChildren<UnityEngine.Collider>(true).Length, mappedNodes = marker.sourcePathIds.Length, allReferencedMeshesAndMaterialsPersistent = persistent, prefab = UnityEditor.PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(root), playMode = UnityEditor.EditorApplication.isPlaying };"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": {
+        "scenePath": "Assets/Scenes/Apartment.unity",
+        "dirty": false,
+        "rootCount": 1,
+        "draws": 269,
+        "colliders": 33,
+        "mappedNodes": 760,
+        "allReferencedMeshesAndMaterialsPersistent": true,
+        "prefab": "Assets/Apartment/Environment.prefab",
+        "playMode": false
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\UnityProject"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

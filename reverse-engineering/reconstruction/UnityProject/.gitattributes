@@ -1,0 +1,9 @@
+# Native serialized geometry/image bytes are validated by the importer receipts.
+Assets/Apartment/Textures/*.asset -diff
+Assets/Apartment/Meshes/*.asset -diff
+# Unity emits empty scalar fields with a trailing space. Preserve its bytes.
+*.asset whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+*.mat whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+*.prefab whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+*.unity whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+*.meta whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol

@@ -6,9 +6,29 @@ import gzip
 import runpy
 import sys
 import json
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+
+
+def artifact_paths():
+    """Inventory maintained files, pruning local Unity caches before descent."""
+    formal = ROOT / "reconstruction/UnityProject"
+    local_dirs = {"Library", "Temp", "Obj", "Logs", "UserSettings", "Builds", ".vs", ".idea"}
+    paths = []
+    for directory, dirs, files in os.walk(ROOT):
+        parent = Path(directory)
+        dirs[:] = [name for name in dirs if name not in {".cache", "__pycache__"}
+                   and not (parent == formal and name in local_dirs)]
+        for name in files:
+            path = parent / name
+            if path == formal / "Assets/StreamingAssets/Original/models.unity3d":
+                continue  # Prepared external bytes are independently fingerprinted.
+            if parent == formal and path.suffix in {".csproj", ".sln", ".slnx", ".user"}:
+                continue
+            paths.append(path)
+    return sorted(paths)
 
 
 def read(path):
@@ -624,6 +644,14 @@ def main():
     unity_mcp_check = runpy.run_path(str(toolchain_dir / "unity-mcp/verify.py"))["build"](inputs=args.inputs)
     unity_mcp = read(toolchain_dir / "unity-mcp/manifest.json")
     check(unity_mcp_check["stdio_verified"] and unity_mcp_check["readonly_editor_status_verified"] and unity_mcp_check["tools_count"] == 169 and not unity_mcp_check["client_catalog_loaded_in_installation_chat"], "Unity MCP installation/probe or client-reload scope differs")
+    formal_check = runpy.run_path(str(toolchain_dir / "verify-formal-runtime.py"))["build"](inputs=args.inputs)
+    formal_runtime = read(toolchain_dir / "formal-project-runtime.json")
+    check(formal_check["status"] == "formal-unity-project-authored-apartment-build-controlled-save-restart-verified" and formal_check["source_and_scene_bytes_preserved"] and formal_check["saved_scene_native_assets_verified"], "Maintained Unity project or authored scene verification failed")
+    check(formal_check["controlled_original_action"] and not formal_check["actual_keyboard_verified"] and not formal_check["full_chain_accepted"] and formal_check["cold_readback"]["component_exact_pose_before_physics"], "Maintained-project controlled acceptance scope differs")
+    formal_editor = read(toolchain_dir / "formal-editor-open.json")
+    formal_scene = formal_editor["data"]["result"]["result"]
+    check(formal_editor["success"] and formal_editor["data"]["result"]["success"] and formal_scene["scenePath"] == "Assets/Scenes/Apartment.unity" and not formal_scene["dirty"] and not formal_scene["playMode"], "Formal editor did not open the saved Apartment in edit mode")
+    check((formal_scene["rootCount"], formal_scene["draws"], formal_scene["colliders"], formal_scene["mappedNodes"]) == (1, 269, 33, 760) and formal_scene["allReferencedMeshesAndMaterialsPersistent"], "Interactive Apartment persistent asset observation differs")
     verification = read(ROOT / "salt/evidence/decryption-verification.json")
     summary = read(ROOT / "salt/symbols/index-summary.json")
     object_record = asset["guid_object"]
@@ -643,9 +671,7 @@ def main():
 
     artifacts, observations = [], {}
     allowed_subjects = {identity["native_sha256"], identity["wrapper_sha256"], *minimal_check["managed_subjects"], *locomotion_check["managed_subjects"], *interaction_check["managed_subjects"]}
-    for path in sorted(ROOT.rglob("*")):
-        if not path.is_file() or any(part in (".cache", "__pycache__") for part in path.relative_to(ROOT).parts):
-            continue
+    for path in artifact_paths():
         if path.name == "evidence-index.json" or path.name.endswith((".stderr.log", ".pending.json")):
             continue
         artifacts.append({"path": path.relative_to(ROOT).as_posix(), "bytes": path.stat().st_size, "sha256": digest(path)})
@@ -1031,6 +1057,13 @@ def main():
         # managed inspection subjects; retain their identities in the global index.
         unity_project_inputs = read(toolchain_dir / "unity-editor-runtime/build/project-configuration.json")["files"]
         for item in minimal_runtime["build"]["files"] + minimal_runtime["packaged_inputs"] + [minimal_runtime["build"]["editor"]] + locomotion_runtime["build"]["files"] + locomotion_runtime["packaged_inputs"] + interaction_runtime["build"]["files"] + interaction_runtime["packaged_inputs"] + unity_editor_runtime["build"]["files"] + unity_editor_runtime["packaged_inputs"] + [unity_editor_runtime["editor"]] + unity_editor_runtime["private_logs"] + unity_project_inputs + unity_mcp["package_inputs"]:
+            if item["path"].casefold() not in known:
+                checked_inputs.append({"path": item["path"], "sha256": item["sha256"]})
+                known.add(item["path"].casefold())
+        formal_inputs = [dict(item, path=str(toolchain_dir / "UnityProject" / item["path"])) for item in formal_runtime["project_inputs"]]
+        formal_inputs += formal_runtime["build"]["files"] + formal_runtime["private_logs"] + formal_runtime["authoring"]["receipt"]["inputs"]
+        formal_inputs += [item for package in formal_runtime["runtime"]["packages"] for item in package["files"]]
+        for item in formal_inputs:
             if item["path"].casefold() not in known:
                 checked_inputs.append({"path": item["path"], "sha256": item["sha256"]})
                 known.add(item["path"].casefold())
