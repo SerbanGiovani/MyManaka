@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "scope": "Unity6000.6.7f1 compile adaptation of the frozen interaction Runtime only; no gameplay, input, Animator or save behavior changes are intended.",
+  "id_api": "UnityEngine.Object.GetEntityId -> UnityEngine.EntityId.ToULong",
+  "id_width_bits": 64,
+  "json_representation": "Complete System.UInt64 unsigned decimal primitive; existing JsonText already preserves ulong.",
+  "legacy_schema_field_names_retained": true,
+  "transformations": [
+    "Replace each exact .GetInstanceID() call with .EvidenceId().",
+    "Split only SceneAssetResult sourceAnimators/int identity declaration so sourceAnimators stays int and the two runtime object identities become ulong.",
+    "Add the explicit complete-EntityId extension helper; no suppression of obsolete errors and no hashing/truncation."
+  ],
+  "sources": [
+    {
+      "source": "interaction-project/Assets/Runtime/ActionAnimatorBridge.cs",
+      "destination": "unity-project/Assets/Runtime/ActionAnimatorBridge.cs",
+      "source_sha256": "a8d472541455cdd5ba325790adc9b5a5cd96a6d3aaa24b434f6d89669685253f",
+      "destination_sha256": "545752cf032953f59442786e21ca01119570375feec54e5fe4da390f44795927",
+      "source_bytes": 9535,
+      "destination_bytes": 9511,
+      "get_instance_id_replacements": 8,
+      "scene_identity_field_split": false
+    },
+    {
+      "source": "interaction-project/Assets/Runtime/InteractionManager.cs",
+      "destination": "unity-project/Assets/Runtime/InteractionManager.cs",
+      "source_sha256": "3a0704cc16e6ba94e4bf03a6a590eb23cc81255d8a20a13f259b9b59d6a3667d",
+      "destination_sha256": "f7d25850dd727bc493d58d7037c12029644ba121ba3a82e11a78b7eb989d4ab5",
+      "source_bytes": 15620,
+      "destination_bytes": 15593,
+      "get_instance_id_replacements": 9,
+      "scene_identity_field_split": false
+    },
+    {
+      "source": "interaction-project/Assets/Runtime/LocomotionAnimatorBridge.cs",
+      "destination": "unity-project/Assets/Runtime/LocomotionAnimatorBridge.cs",
+      "source_sha256": "5bb2c2952515fcbd925ad19cec4d7684eb4a3a2391318e0cc4da5ae1b09c69b2",
+      "destination_sha256": "78d2fa017970f3fe2dafd443663581415cb627be770c3695761597b5648782c7",
+      "source_bytes": 14949,
+      "destination_bytes": 14931,
+      "get_instance_id_replacements": 6,
+      "scene_identity_field_split": false
+    },
+    {
+      "source": "interaction-project/Assets/Runtime/MinimalBootstrap.cs",
+      "destination": "unity-project/Assets/Runtime/MinimalBootstrap.cs",
+      "source_sha256": "b98b350d2f59795d1c02c40399a37b124736008b22c65e19b7ae70030184df43",
+      "destination_sha256": "b98b350d2f59795d1c02c40399a37b124736008b22c65e19b7ae70030184df43",
+      "source_bytes": 33839,
+      "destination_bytes": 33839,
+      "get_instance_id_replacements": 0,
+      "scene_identity_field_split": false
+    },
+    {
+      "source": "interaction-project/Assets/Runtime/PlayerAction.cs",
+      "destination": "unity-project/Assets/Runtime/PlayerAction.cs",
+      "source_sha256": "c30f1f117bbabfacec564d33ba8d22038fb40551eb3ba574bc79180eb6e8119a",
+      "destination_sha256": "c30f1f117bbabfacec564d33ba8d22038fb40551eb3ba574bc79180eb6e8119a",
+      "source_bytes": 7388,
+      "destination_bytes": 7388,
+      "get_instance_id_replacements": 0,
+      "scene_identity_field_split": false
+    },
+    {
+      "source": "interaction-project/Assets/Runtime/PlayerMotor.cs",
+      "destination": "unity-project/Assets/Runtime/PlayerMotor.cs",
+      "source_sha256": "c11431a0be118e6d3e385ca164183f2e014cf242dca3467bc821b526e6c068c5",
+      "destination_sha256": "c11431a0be118e6d3e385ca164183f2e014cf242dca3467bc821b526e6c068c5",
+      "source_bytes": 8493,
+      "destination_bytes": 8493,
+      "get_instance_id_replacements": 0,
+      "scene_identity_field_split": false
+    },
+    {
+      "source": "interaction-project/Assets/Runtime/RunEvidence.cs",
+      "destination": "unity-project/Assets/Runtime/RunEvidence.cs",
+      "source_sha256": "f2a584c36ea6ed4767407df7da8dcd5e003dc53e4cac04d4ea87df5f24c3a614",
+      "destination_sha256": "f2a584c36ea6ed4767407df7da8dcd5e003dc53e4cac04d4ea87df5f24c3a614",
+      "source_bytes": 9913,
+      "destination_bytes": 9913,
+      "get_instance_id_replacements": 0,
+      "scene_identity_field_split": false
+    },
+    {
+      "source": "interaction-project/Assets/Runtime/SaveBridge.cs",
+      "destination": "unity-project/Assets/Runtime/SaveBridge.cs",
+      "source_sha256": "c5eb0a81187b5dc76efecb86892bc271b8c1e741c7f0de9a44572163fdae924e",
+      "destination_sha256": "c5eb0a81187b5dc76efecb86892bc271b8c1e741c7f0de9a44572163fdae924e",
+      "source_bytes": 11469,
+      "destination_bytes": 11469,
+      "get_instance_id_replacements": 0,
+      "scene_identity_field_split": false
+    },
+    {
+      "source": "interaction-project/Assets/Runtime/SceneAssets.cs",
+      "destination": "unity-project/Assets/Runtime/SceneAssets.cs",
+      "source_sha256": "72ea39a5a7bb32b53377fe2748383ef402e1d079b744450c706d6e13014aad40",
+      "destination_sha256": "8550378d1ebae996eb195e6e7cddd945767c82c0e5b2aff7fccd608e1c99c78c",
+      "source_bytes": 30633,
+      "destination_bytes": 30642,
+      "get_instance_id_replacements": 4,
+      "scene_identity_field_split": true
+    }
+  ],
+  "helper": {
+    "path": "unity-project/Assets/Runtime/UnityObjectIdentity.cs",
+    "sha256": "c46f8395d4d57030cee62f928ff83bd11c7274b1a5d47cf23cf17302f3e86524",
+    "bytes": 545
+  },
+  "limitations": [
+    "Runtime object identities are process-local; they are not original serialized pathIDs or Animator state hashes.",
+    "Old Tuanjie evidence retains its original GetInstanceID values and is not rewritten."
+  ]
+}

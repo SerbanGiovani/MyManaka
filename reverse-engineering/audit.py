@@ -616,6 +616,11 @@ def main():
     check(interaction_save["saved_revision"] == 2 and interaction_save["persisted_item_id"] == 10000 and interaction_save["persisted_item_quantity"] == 2 and interaction_cold["same_saved_bytes_verified"] and interaction_cold["component_exact_pose_before_physics"] and interaction_cold["save_sha256"] == interaction_save["saved_sha256"] and interaction_cold["pid"] == interaction_runtime["runtime"]["phase2"]["processId"] and not interaction_cold["cold_in_memory_inventory_quantity_observed"], "Cold pose/retained inventory file scope differs")
     interaction_composite = interaction_acceptance["scoped_composite_acceptance"]
     check(interaction_composite["accepted"] and not interaction_composite["single_process_full_chain_accepted"] and interaction_composite["natural_pid"] == interaction_runtime["runtime"]["interaction"]["processId"] and interaction_composite["controlled_pid"] == interaction_runtime["runtime"]["controlled"]["processId"] and interaction_composite["natural_guid"] != interaction_composite["controlled_guid"], "Distinct interaction input origins were merged")
+    unity_editor_check = runpy.run_path(str(toolchain_dir / "verify-unity-editor.py"))["build"](inputs=args.inputs)
+    unity_editor_runtime = read(toolchain_dir / "unity-editor-runtime.json")
+    check(unity_editor_check["status"] == "unity6-original-resource-controlled-action-save-restart-verified" and unity_editor_check["editor_version"] == "6000.6.7f1", "Selected Unity editor was not built and exercised")
+    check(unity_editor_check["controlled_original_action"] and not unity_editor_check["actual_keyboard_verified"] and not unity_editor_check["full_chain_accepted"], "Unity6 controlled migration was promoted to physical-keyboard acceptance")
+    check(unity_editor_check["cold_readback"]["same_saved_bytes_verified"] and unity_editor_check["cold_readback"]["component_exact_pose_before_physics"] and not unity_editor_check["cold_readback"]["cold_in_memory_inventory_quantity_observed"], "Unity6 cold readback scope differs")
     verification = read(ROOT / "salt/evidence/decryption-verification.json")
     summary = read(ROOT / "salt/symbols/index-summary.json")
     object_record = asset["guid_object"]
@@ -1021,7 +1026,8 @@ def main():
             checked_inputs.append({"path": str(path), "sha256": actual})
         # verify-minimal already hashed these package/editor files and admitted
         # managed inspection subjects; retain their identities in the global index.
-        for item in minimal_runtime["build"]["files"] + minimal_runtime["packaged_inputs"] + [minimal_runtime["build"]["editor"]] + locomotion_runtime["build"]["files"] + locomotion_runtime["packaged_inputs"] + interaction_runtime["build"]["files"] + interaction_runtime["packaged_inputs"]:
+        unity_project_inputs = read(toolchain_dir / "unity-editor-runtime/build/project-configuration.json")["files"]
+        for item in minimal_runtime["build"]["files"] + minimal_runtime["packaged_inputs"] + [minimal_runtime["build"]["editor"]] + locomotion_runtime["build"]["files"] + locomotion_runtime["packaged_inputs"] + interaction_runtime["build"]["files"] + interaction_runtime["packaged_inputs"] + unity_editor_runtime["build"]["files"] + unity_editor_runtime["packaged_inputs"] + [unity_editor_runtime["editor"]] + unity_editor_runtime["private_logs"] + unity_project_inputs:
             if item["path"].casefold() not in known:
                 checked_inputs.append({"path": item["path"], "sha256": item["sha256"]})
                 known.add(item["path"].casefold())

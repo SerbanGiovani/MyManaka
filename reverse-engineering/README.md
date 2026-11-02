@@ -1,5 +1,7 @@
 # Manaka 资源解密与逆向入口
 
+2026-11-03起独立工程默认使用用户指定的Unity6000.6.7f1，配置与Create／Build／Open入口已单独建立，Unity6对象标识API在新Runtime副本适配；旧Tuanjie结果保持历史范围。当前工程`.cache/unity6-20261103-2`，见[Unity编辑器入口](reconstruction/unity-editor.md)。
+
 2026-10-31独立工程已接回F键、原钥匙PickUpItem10025和原Animator Action层：真实F→原1.983秒动画事件→同帧入库及None→真实CC移动→F5／F6→新进程姿态读回通过。人工锁内没有方向输入，移动锁另由明确的受控进程验证，严格单进程全链仍标为未覆盖；钥匙是原prefab的重建夹具。原Apartment电脑／床／衣柜UI、其余动作和10个辅助层继续待补。见[动作与交互报告](reconstruction/interaction-runtime.md)。
 
 2026-10-31继续接回独立工程的原Player控制器／ManustiaAvatar和Locomotion混合树；用户实际WASD、左Shift、F5／F6经过Unity输入与CharacterController，原clip权重、时间及局部骨骼同步验证。修复F5因符号零校验误判而退出，362组自动写读回归通过；正式新进程恢复同一revision4位置与朝向。动作等其他11层暂置零，原玩法完整等价仍未完成。见[真实键盘与原移动动画报告](reconstruction/locomotion-runtime.md)。
