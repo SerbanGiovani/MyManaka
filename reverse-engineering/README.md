@@ -1,5 +1,7 @@
 # Manaka 资源解密与逆向入口
 
+当前Unity工程已安装官方Pipeline0.9.1-exp.1，并在Codex注册stdio Unity MCP。独立协议探针完成握手、发现169个工具并只读确认工程ready；现有聊天的工具目录仍需重载，未将配置成功当作会话已加载。见[Unity MCP接入](reconstruction/unity-mcp/README.md)。
+
 2026-11-03起独立工程默认使用用户指定的Unity6000.6.7f1，配置与Create／Build／Open入口已单独建立，Unity6对象标识API在新Runtime副本适配；旧Tuanjie结果保持历史范围。当前工程`.cache/unity6-20261103-2`，见[Unity编辑器入口](reconstruction/unity-editor.md)。
 
 2026-10-31独立工程已接回F键、原钥匙PickUpItem10025和原Animator Action层：真实F→原1.983秒动画事件→同帧入库及None→真实CC移动→F5／F6→新进程姿态读回通过。人工锁内没有方向输入，移动锁另由明确的受控进程验证，严格单进程全链仍标为未覆盖；钥匙是原prefab的重建夹具。原Apartment电脑／床／衣柜UI、其余动作和10个辅助层继续待补。见[动作与交互报告](reconstruction/interaction-runtime.md)。

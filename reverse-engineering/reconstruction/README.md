@@ -1,5 +1,7 @@
 # 独立运行工程
 
+当前工程已接通官方Unity MCP：CLI1.0.0-beta.15＋Pipeline0.9.1-exp.1，独立stdio验证169个工具及editor_status读取成功。客户端配置固定当前工程；本安装会话尚未重载工具目录，需重启MCP连接或新会话使用。见[接入与复用方法](unity-mcp/README.md)。
+
 当前默认编辑器为`C:\Program Files\Unity\Hub\Editor\6000.6.7f1\Editor\Unity.exe`。使用`unity-editor.ps1 -Action Open`打开`.cache/unity6-20261103-2`，后续创建和构建也使用该新入口。Unity6专用源码位于`unity-project/Assets`，原Runtime迁移规则和历史Tuanjie记录分别保留；见[Unity工作流](unity-editor.md)。
 
 最新动作阶段已接回真实F键、原钥匙交互和原Animator Action层：原PickUpItem事件同帧完成入库及None，后续真实移动、F5／F6和冷启动姿态恢复通过。人工与受控证据分开，锁内方向输入仅在受控进程覆盖。当前产物为`.cache/interaction-20261031-1-build/ManakaInteraction.exe`，源码`interaction-project/Assets`；见[交互报告](interaction-runtime.md)、[清单](interaction-runtime.json)及[独立分析](interaction-acceptance-tools/README.md)。原Apartment UI、其余动作与10个辅助层继续待补，下方旧locomotion结果保持历史范围。

@@ -621,6 +621,9 @@ def main():
     check(unity_editor_check["status"] == "unity6-original-resource-controlled-action-save-restart-verified" and unity_editor_check["editor_version"] == "6000.6.7f1", "Selected Unity editor was not built and exercised")
     check(unity_editor_check["controlled_original_action"] and not unity_editor_check["actual_keyboard_verified"] and not unity_editor_check["full_chain_accepted"], "Unity6 controlled migration was promoted to physical-keyboard acceptance")
     check(unity_editor_check["cold_readback"]["same_saved_bytes_verified"] and unity_editor_check["cold_readback"]["component_exact_pose_before_physics"] and not unity_editor_check["cold_readback"]["cold_in_memory_inventory_quantity_observed"], "Unity6 cold readback scope differs")
+    unity_mcp_check = runpy.run_path(str(toolchain_dir / "unity-mcp/verify.py"))["build"](inputs=args.inputs)
+    unity_mcp = read(toolchain_dir / "unity-mcp/manifest.json")
+    check(unity_mcp_check["stdio_verified"] and unity_mcp_check["readonly_editor_status_verified"] and unity_mcp_check["tools_count"] == 169 and not unity_mcp_check["client_catalog_loaded_in_installation_chat"], "Unity MCP installation/probe or client-reload scope differs")
     verification = read(ROOT / "salt/evidence/decryption-verification.json")
     summary = read(ROOT / "salt/symbols/index-summary.json")
     object_record = asset["guid_object"]
@@ -1027,7 +1030,7 @@ def main():
         # verify-minimal already hashed these package/editor files and admitted
         # managed inspection subjects; retain their identities in the global index.
         unity_project_inputs = read(toolchain_dir / "unity-editor-runtime/build/project-configuration.json")["files"]
-        for item in minimal_runtime["build"]["files"] + minimal_runtime["packaged_inputs"] + [minimal_runtime["build"]["editor"]] + locomotion_runtime["build"]["files"] + locomotion_runtime["packaged_inputs"] + interaction_runtime["build"]["files"] + interaction_runtime["packaged_inputs"] + unity_editor_runtime["build"]["files"] + unity_editor_runtime["packaged_inputs"] + [unity_editor_runtime["editor"]] + unity_editor_runtime["private_logs"] + unity_project_inputs:
+        for item in minimal_runtime["build"]["files"] + minimal_runtime["packaged_inputs"] + [minimal_runtime["build"]["editor"]] + locomotion_runtime["build"]["files"] + locomotion_runtime["packaged_inputs"] + interaction_runtime["build"]["files"] + interaction_runtime["packaged_inputs"] + unity_editor_runtime["build"]["files"] + unity_editor_runtime["packaged_inputs"] + [unity_editor_runtime["editor"]] + unity_editor_runtime["private_logs"] + unity_project_inputs + unity_mcp["package_inputs"]:
             if item["path"].casefold() not in known:
                 checked_inputs.append({"path": item["path"], "sha256": item["sha256"]})
                 known.add(item["path"].casefold())
