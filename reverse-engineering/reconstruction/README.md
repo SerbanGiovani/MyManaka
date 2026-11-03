@@ -6,7 +6,7 @@
 
 前轮建立的正式工程为[UnityProject](UnityProject/README.md)，当时使用`unity-project.ps1`的Prepare／Validate／Open／Build；当前入口已更新为上方`unity-active.ps1`。源码、场景、Prefab、原生自宅资产及设置受版本管理，构建前后1465维护文件一致；自宅与仓库外受控运行验收通过。见[正式工程报告](formal-project.md)。下方unity6缓存工程、旧模板及对应入口属于历史验收，不再作为日常编辑源。
 
-当前工程已接通官方Unity MCP：CLI1.0.0-beta.15＋Pipeline0.9.1-exp.1，独立stdio验证169个工具及editor_status读取成功。客户端配置固定当前工程；本安装会话尚未重载工具目录，需重启MCP连接或新会话使用。见[接入与复用方法](unity-mcp/README.md)。
+当前CLI与Codex Unity MCP已明确固定正式`UnityProject`，不再使用历史`.cache/unity6-*`目标。CLI1.0.0-beta.15＋已有Pipeline0.9.1-exp.1，独立stdio验证169个工具和ready状态，CLI读取Apartment已保存且为活动场景；配置前后其他客户端设置与Packages一致。当前聊天仍显示历史连接，需重连Unity MCP或开启新会话。见[配置与复用命令](unity-connection/README.md)。
 
 早期Unity6迁移时的编辑器路径为`C:\Program Files\Unity\Hub\Editor\6000.6.7f1\Editor\Unity.exe`，以下是历史入口。使用`unity-editor.ps1 -Action Open`打开`.cache/unity6-20261103-2`，后续创建和构建也使用该新入口。Unity6专用源码位于`unity-project/Assets`，原Runtime迁移规则和历史Tuanjie记录分别保留；见[Unity工作流](unity-editor.md)。
 

@@ -643,9 +643,14 @@ def main():
     check(unity_editor_check["status"] == "unity6-original-resource-controlled-action-save-restart-verified" and unity_editor_check["editor_version"] == "6000.6.7f1", "Selected Unity editor was not built and exercised")
     check(unity_editor_check["controlled_original_action"] and not unity_editor_check["actual_keyboard_verified"] and not unity_editor_check["full_chain_accepted"], "Unity6 controlled migration was promoted to physical-keyboard acceptance")
     check(unity_editor_check["cold_readback"]["same_saved_bytes_verified"] and unity_editor_check["cold_readback"]["component_exact_pose_before_physics"] and not unity_editor_check["cold_readback"]["cold_in_memory_inventory_quantity_observed"], "Unity6 cold readback scope differs")
-    unity_mcp_check = runpy.run_path(str(toolchain_dir / "unity-mcp/verify.py"))["build"](inputs=args.inputs)
+    # Preserve the original installation's cached-project launch target as
+    # history. Its package bytes are still checked in the input loop below.
+    unity_mcp_check = runpy.run_path(str(toolchain_dir / "unity-mcp/verify.py"))["build"](inputs=False)
     unity_mcp = read(toolchain_dir / "unity-mcp/manifest.json")
     check(unity_mcp_check["stdio_verified"] and unity_mcp_check["readonly_editor_status_verified"] and unity_mcp_check["tools_count"] == 169 and not unity_mcp_check["client_catalog_loaded_in_installation_chat"], "Unity MCP installation/probe or client-reload scope differs")
+    unity_connection_check = runpy.run_path(str(toolchain_dir / "verify-unity-connection.py"))["build"](inputs=args.inputs)
+    unity_connection = read(toolchain_dir / "unity-connection/manifest.json")
+    check(unity_connection_check["stdio_verified"] and unity_connection_check["cli_editor_status_verified"] and unity_connection_check["cli_saved_scene_verified"] and not unity_connection_check["current_chat_hot_reload_inferred"], "Maintained Unity project CLI/MCP connection or client-reload scope differs")
     # The maintained project is intentionally editable. Historical authoring/run
     # receipts bind archived source; current source belongs to its latest run.
     formal_check = runpy.run_path(str(toolchain_dir / "verify-formal-runtime.py"))["build"](inputs=False)
@@ -1109,6 +1114,7 @@ def main():
         current_inputs = [dict(item, path=str(toolchain_dir / "UnityProject" / item["path"])) for item in home_editor_runtime["project_inputs"]]
         current_inputs += home_editor_runtime["build"]["files"] + [home_editor_runtime["editor"]] + home_editor_runtime["private_logs"]
         current_inputs += [item for package in home_editor_runtime["runtime"]["packages"] for item in package["files"]]
+        current_inputs += unity_connection["package_inputs"]
         for item in current_inputs:
             if item["path"].casefold() not in known:
                 checked_inputs.append({"path": item["path"], "sha256": item["sha256"]})

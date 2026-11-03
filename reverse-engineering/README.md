@@ -6,7 +6,7 @@
 
 当前正式Unity工程位于`reconstruction/UnityProject`，源码、meta、场景、原生自宅资产、Packages及ProjectSettings受版本管理。新构建入口不复制模板或重建Title；1465维护文件构建前后一致。自宅302Mesh／302Material／90Texture、269绘制／33碰撞已持久化并由新编辑器进程重开验证；仓库外副本完成受控动作、保存及冷启动。见[正式工程报告](reconstruction/formal-project.md)。下方缓存工程与旧入口保留为历史记录。
 
-当前Unity工程已安装官方Pipeline0.9.1-exp.1，并在Codex注册stdio Unity MCP。独立协议探针完成握手、发现169个工具并只读确认工程ready；现有聊天的工具目录仍需重载，未将配置成功当作会话已加载。见[Unity MCP接入](reconstruction/unity-mcp/README.md)。
+当前Codex的Unity MCP已从历史缓存工程切到正式`reconstruction/UnityProject`，使用H盘6000.6.7f1、CLI1.0.0-beta.15及已有Pipeline0.9.1-exp.1。独立stdio连接验证169个工具和ready状态，CLI确认Apartment已保存；其他客户端配置与Packages保持一致。当前聊天仍需重连Unity MCP。见[正式工程CLI／MCP配置](reconstruction/unity-connection/README.md)，旧安装记录保留在原目录。
 
 2026-11-03起独立工程默认使用用户指定的Unity6000.6.7f1，配置与Create／Build／Open入口已单独建立，Unity6对象标识API在新Runtime副本适配；旧Tuanjie结果保持历史范围。当前工程`.cache/unity6-20261103-2`，见[Unity编辑器入口](reconstruction/unity-editor.md)。
 

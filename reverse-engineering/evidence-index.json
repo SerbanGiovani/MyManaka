@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-03T15:04:30.631398+00:00",
+  "generated_at_utc": "2026-11-03T15:18:16.801183+00:00",
   "status": "consistent",
   "canonical_rea_observations": 1175,
   "rea_queries_completed": 1009,
@@ -137,8 +137,8 @@
     },
     {
       "path": "audit.py",
-      "bytes": 108519,
-      "sha256": "cb6062b3e11a06788bcafd91d68cd2b9e7a6c4d376846e52843c333f961d6c42"
+      "bytes": 109236,
+      "sha256": "7572bb11481ab5b6565579c31ec9eab3b11a81c20db8166aed45a3e41a83032e"
     },
     {
       "path": "bareta-chain.md",
@@ -292,8 +292,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 35680,
-      "sha256": "e734b9a49d71d84d17da69093c73027e5cc49e18a69e2d3aee996450dacf33d4"
+      "bytes": 35808,
+      "sha256": "73b0322a3819b4fa9788506e4f88a917c3a071499e4e729d3e82a668c5a29302"
     },
     {
       "path": "reconstruction/.gitattributes",
@@ -3312,8 +3312,8 @@
     },
     {
       "path": "reconstruction/README.md",
-      "bytes": 5662,
-      "sha256": "ba485f2f3e70e9b72d879008f81e0762a6b219e9b2e808e86f98c053064a157d"
+      "bytes": 5790,
+      "sha256": "94c8dcff31b01cf1c980aceb3d62e74455ef4e5bb067f66e0ef8108174de4d35"
     },
     {
       "path": "reconstruction/run-formal-project.ps1",
@@ -3409,6 +3409,46 @@
       "path": "reconstruction/unity-active.ps1",
       "bytes": 477,
       "sha256": "5404b2b03b4dd76a69b8525b189859d3ef3f2db42514d43d78278f77723b83cb"
+    },
+    {
+      "path": "reconstruction/unity-connection/cli-editor-status.json",
+      "bytes": 802,
+      "sha256": "8311f54ca3a366e8ed1f8017754909e515ff1155a3c476697cb3bf92557e46b4"
+    },
+    {
+      "path": "reconstruction/unity-connection/cli-scenes.json",
+      "bytes": 644,
+      "sha256": "8723068d7d9a70c7fb9543801b29fd8ce3d9a7f2bce1509c86229fa5f43e243f"
+    },
+    {
+      "path": "reconstruction/unity-connection/configure.py",
+      "bytes": 8174,
+      "sha256": "4fb25d5037a13c6a724b6a58d6f97ae6a8f1b636460ba63244159a69b59404c0"
+    },
+    {
+      "path": "reconstruction/unity-connection/manifest.json",
+      "bytes": 2279,
+      "sha256": "6ea85e6803f916cf3ba3da03a1414d1bf657068d8fbf2e52578832004a49f633"
+    },
+    {
+      "path": "reconstruction/unity-connection/mcp-proof.json",
+      "bytes": 5873,
+      "sha256": "c80e0c6529f69379bebae4f3be5eb74fdd4bf6b29f4eab0f6b628cd3600fb344"
+    },
+    {
+      "path": "reconstruction/unity-connection/README.md",
+      "bytes": 2557,
+      "sha256": "a0d0109f406f5f54c8e1033118482a5f8eef136d4ee4f050c40aac8adc0b1c3d"
+    },
+    {
+      "path": "reconstruction/unity-connection/registration.json",
+      "bytes": 838,
+      "sha256": "ea9a05324345daacb8a602d9c002e828add129d666c70ea70e7901d0db896099"
+    },
+    {
+      "path": "reconstruction/unity-connection/setup.json",
+      "bytes": 775,
+      "sha256": "52a333be5abc23485d4cc564c2b999ab35a46db71e736df793980ff31e77d0d5"
     },
     {
       "path": "reconstruction/unity-editor-runtime/build/Assets/Editor/BuildMinimal.cs",
@@ -11204,6 +11244,11 @@
       "path": "reconstruction/verify-minimal.py",
       "bytes": 4919,
       "sha256": "fab07df25c5ed7c13dd9fc0eda297c0ac8b0ebc6ea02f4c8f27a74e2716f2198"
+    },
+    {
+      "path": "reconstruction/verify-unity-connection.py",
+      "bytes": 7475,
+      "sha256": "d6cfe05af90cab37c4c9f73726888b14565ac3f196098f91f8997b703c8fe675"
     },
     {
       "path": "reconstruction/verify-unity-editor.py",
@@ -26442,8 +26487,8 @@
     },
     {
       "path": "work-queue.json",
-      "bytes": 12789,
-      "sha256": "5dac614ba7437c5d00ff9d62320d5ed3c9067ec1e60268c8de7691fc24b999dc"
+      "bytes": 13311,
+      "sha256": "ccb178ac991dbd2e0055d2b85dee1e58e53426dbe22dcb2baee57e5176cfa05b"
     }
   ],
   "inputs_checked": [
@@ -49746,16 +49791,5 @@
       "subject_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
     }
   ],
-  "scope": "File integrity, declared evidence and bounded controlled runtime log consistency; not global source equivalence or natural gameplay verification",
-  "post_verification_document_refresh": {
-    "paths": [
-      "README.md",
-      "reconstruction/README.md"
-    ],
-    "refreshed_at_utc": "2026-11-03T15:06:08.008896+00:00",
-    "scope": "Documentation labels only; verified code, records and live input identities unchanged",
-    "git_metadata_added": [
-      "reconstruction/.gitattributes"
-    ]
-  }
+  "scope": "File integrity, declared evidence and bounded controlled runtime log consistency; not global source equivalence or natural gameplay verification"
 }

@@ -153,14 +153,18 @@
     "status": "new-unity-editor-home-build-lifecycle-and-cold-readback-verified",
     "physical_keyboard_under_this_editor_verified": false,
     "mcp_installation": {
-      "status": "unity-mcp-installed-configured-independent-stdio-verified",
-      "report": "reconstruction/unity-mcp/README.md",
+      "status": "unity-formal-project-cli-mcp-connection-verified",
+      "report": "reconstruction/unity-connection/README.md",
       "cli_version_observed": "1.0.0-beta.15",
       "pipeline_version": "0.9.1-exp.1",
       "tools_discovered": 169,
       "installation_chat_catalog_loaded": false,
       "subsequent_chat_catalog_loaded": true,
-      "formal_project_target_configured": false
+      "formal_project_target_configured": true,
+      "manifest": "reconstruction/unity-connection/manifest.json",
+      "client_reconnect_required": true,
+      "current_chat_hot_reload_inferred": false,
+      "current_chat_catalog_scope": "Existing unity_cli_status still describes the historical cached project; independent stdio proof targets the maintained UnityProject."
     },
     "project": "reconstruction/UnityProject",
     "interactive_open_status": "ready-Apartment-open-edit-mode-no-unsaved-changes",
@@ -170,6 +174,8 @@
     "current_blocker": null,
     "current_host_manifest": "reconstruction/home-lifecycle-runtime.json",
     "latest_runtime_manifest": "reconstruction/home-editor-runtime.json",
-    "interactive_open_scope": "historical formal-editor-open.json observation before relocation; H:interactive GUI not retested in this build-validation round"
+    "interactive_open_scope": "historical formal-editor-open.json observation before relocation; H:interactive GUI not retested in this build-validation round",
+    "current_cli_editor_status_receipt": "reconstruction/unity-connection/cli-editor-status.json",
+    "current_cli_saved_scene_receipt": "reconstruction/unity-connection/cli-scenes.json"
   }
 }
