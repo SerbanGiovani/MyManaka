@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "name": "home-ui-tail",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\home-ui-tail.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\home-ui-tail",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 17518,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.SleepBlackPanel.SleepBlackPanelView::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001825",
+      "va": "0x1804c2df0",
+      "file_offset": 4986352,
+      "label": "ExposureUnnoticed2_ObjectUI_SleepBlackPanel_SleepBlackPanelView__Initialize__06001825",
+      "file_stem": "17518-06001825",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17519,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.SleepBlackPanel.SleepBlackPanelView::OnEnterPureBlack",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001826",
+      "va": "0x1804c2f90",
+      "file_offset": 4986768,
+      "label": "ExposureUnnoticed2_ObjectUI_SleepBlackPanel_SleepBlackPanelView__OnEnterPureBlack__06001826",
+      "file_stem": "17519-06001826",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17520,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.SleepBlackPanel.SleepBlackPanelView::OnAnimEnd",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001827",
+      "va": "0x1804c3440",
+      "file_offset": 4987968,
+      "label": "ExposureUnnoticed2_ObjectUI_SleepBlackPanel_SleepBlackPanelView__OnAnimEnd__06001827",
+      "file_stem": "17520-06001827",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17522,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.SleepBlackPanel.SleepBlackPanelView::Open",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001829",
+      "va": "0x1804c3680",
+      "file_offset": 4988544,
+      "label": "ExposureUnnoticed2_ObjectUI_SleepBlackPanel_SleepBlackPanelView__Open__06001829",
+      "file_stem": "17522-06001829",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18641,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.BarberMenu.ClosetMenuView::<OnClickBack>b__24_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001c88",
+      "va": "0x18052cde0",
+      "file_offset": 5420512,
+      "label": "ExposureUnnoticed2_ObjectUI_BarberMenu_ClosetMenuView___OnClickBack_b__24_0__06001c88",
+      "file_stem": "18641-06001c88",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 19038,
+      "qualified_name": "Common.Scripts.UI.BasePanelView::Close",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001e15",
+      "va": "0x18057ecb0",
+      "file_offset": 5756080,
+      "label": "Common_Scripts_UI_BasePanelView__Close__06001e15",
+      "file_stem": "19038-06001e15",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 19043,
+      "qualified_name": "Common.Scripts.UI.BasePanelView::OnAnimCloseEnd",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001e1a",
+      "va": "0x18057f150",
+      "file_offset": 5757264,
+      "label": "Common_Scripts_UI_BasePanelView__OnAnimCloseEnd__06001e1a",
+      "file_stem": "19043-06001e1a",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 19049,
+      "qualified_name": "Common.Scripts.UI.BasePanelView::<Close>b__13_0",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001e20",
+      "va": "0x18057f630",
+      "file_offset": 5758512,
+      "label": "Common_Scripts_UI_BasePanelView___Close_b__13_0__06001e20",
+      "file_stem": "19049-06001e20",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

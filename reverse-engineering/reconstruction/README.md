@@ -1,5 +1,7 @@
 # 独立运行工程
 
+最新[自宅交互](home-runtime.md)已接电脑保存与衣柜选定肤色，原床保持inactive。宿主运行验证包含5帧自动保存、禁用后取消、恢复操作及冷实际材质；新的Unity编辑器构建仍待恢复本机安装／授权。历史正式构建与最新Host证据按各自范围保留。
+
 当前正式编辑入口为[UnityProject](UnityProject/README.md)，使用`unity-project.ps1`的Prepare／Validate／Open／Build。源码、场景、Prefab、原生自宅资产及设置受版本管理，构建前后1465维护文件一致；自宅与仓库外受控运行验收通过。见[正式工程报告](formal-project.md)。下方unity6缓存工程、旧模板及对应入口属于历史验收，不再作为日常编辑源。
 
 当前工程已接通官方Unity MCP：CLI1.0.0-beta.15＋Pipeline0.9.1-exp.1，独立stdio验证169个工具及editor_status读取成功。客户端配置固定当前工程；本安装会话尚未重载工具目录，需重启MCP连接或新会话使用。见[接入与复用方法](unity-mcp/README.md)。

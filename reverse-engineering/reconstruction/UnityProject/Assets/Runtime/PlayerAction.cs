@@ -31,6 +31,8 @@ namespace ReconstructedManaka {
         public int intParameter, deferFrames;
     }
     [Serializable] public sealed class InteractionTargetDefinition {
+        public string menuKind;
+        public bool reconstructNativeTrigger;
         public string id, label, sourcePath, sourceScene, sourceBundleSha256, sourceEvidence, placementProvenance, triggerPath, originalComponent;
         public long sourcePathId;
         public int actionId;

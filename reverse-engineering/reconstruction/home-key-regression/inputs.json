@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "scope": "Controlled pickup regression on the archived player host with own module replacement, not a fresh Unity Editor build or physical keyboard test",
+  "events": "events.jsonl.gz",
+  "identity": "../interaction-evidence/original-interaction.json",
+  "start": "process-start.json",
+  "exit": "process-exit.json",
+  "proof": "proof.json",
+  "runtime_sources": [
+    {
+      "path": "../home-lifecycle-runtime/host/sources/ActionAnimatorBridge.cs",
+      "sha256": "545752cf032953f59442786e21ca01119570375feec54e5fe4da390f44795927"
+    },
+    {
+      "path": "../home-lifecycle-runtime/host/sources/ApartmentSceneRoot.cs",
+      "sha256": "cd9b2e31095e4ea32d1c07ff1532e946a16d064b8e6e3ab8f931467c50b383b5"
+    },
+    {
+      "path": "../home-lifecycle-runtime/host/sources/HomeAppearance.cs",
+      "sha256": "ce1d0ac9f9e8838a3925bf724b3550b1b8ef9a39ff49decd4da9f9d2cf000a5b"
+    },
+    {
+      "path": "../home-lifecycle-runtime/host/sources/HomeMenuController.cs",
+      "sha256": "b85af5cd9831364a1af4cf095624fa1ec72f96ae2b3dc4efcfe4b954fe9d0879"
+    },
+    {
+      "path": "../home-lifecycle-runtime/host/sources/InteractionManager.cs",
+      "sha256": "909b8bb8d709e79df7ad9cadb25100647e6b4626b2b7f97a0cf3961ab42b0122"
+    },
+    {
+      "path": "../home-lifecycle-runtime/host/sources/LocomotionAnimatorBridge.cs",
+      "sha256": "baaa3281105505e2cfbaf0d2f2db25f9f11736b1f7b4882d8083ce973be7856d"
+    },
+    {
+      "path": "../home-lifecycle-runtime/host/sources/MinimalBootstrap.cs",
+      "sha256": "f1ebb659c6c7a86a1e4841aa12eb46bf8def018f95f3b44a0304f2ecb0067351"
+    },
+    {
+      "path": "../home-lifecycle-runtime/host/sources/PlayerAction.cs",
+      "sha256": "4b2dab9f020cc8bb0900674a6e23acbbacd4ee7a2458284c859c432e81c78e89"
+    },
+    {
+      "path": "../home-lifecycle-runtime/host/sources/PlayerMotor.cs",
+      "sha256": "c11431a0be118e6d3e385ca164183f2e014cf242dca3467bc821b526e6c068c5"
+    },
+    {
+      "path": "../home-lifecycle-runtime/host/sources/RunEvidence.cs",
+      "sha256": "f2a584c36ea6ed4767407df7da8dcd5e003dc53e4cac04d4ea87df5f24c3a614"
+    },
+    {
+      "path": "../home-lifecycle-runtime/host/sources/SaveBridge.cs",
+      "sha256": "c5eb0a81187b5dc76efecb86892bc271b8c1e741c7f0de9a44572163fdae924e"
+    },
+    {
+      "path": "../home-lifecycle-runtime/host/sources/SceneAssets.cs",
+      "sha256": "3b26ae8c1cef96c8ed28b71bbbb071d06d4d452b1349d0afd4271ef1611a0478"
+    },
+    {
+      "path": "../home-lifecycle-runtime/host/sources/UnityObjectIdentity.cs",
+      "sha256": "c46f8395d4d57030cee62f928ff83bd11c7274b1a5d47cf23cf17302f3e86524"
+    }
+  ]
+}

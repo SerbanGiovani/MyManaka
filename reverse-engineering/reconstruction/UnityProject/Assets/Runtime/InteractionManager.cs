@@ -21,6 +21,9 @@ namespace ReconstructedManaka {
         public event Action<int, int> ItemCollected;
         public CharacterController PlayerController { get; private set; }
         public PlayerAction Action { get { return action; } }
+        public HomeMenuController Menus { get; set; }
+        public bool IncludeTestFixtures { get; set; } = true;
+        public InteractionTarget FindTarget(string id) { return targets.FirstOrDefault(value => value.Definition.id == id); }
         public InteractionTarget Selected { get { return candidates.Count == 0 ? null : candidates[candidates.Count - 1]; } }
         public Vector3 FixturePosition { get { return targets[0].VisualRoot.transform.position; } }
         public void SetSimulatedF(bool enabled, bool held) { simulatedF = enabled; simulatedHeld = held; }
@@ -39,14 +42,16 @@ namespace ReconstructedManaka {
             } catch (Exception ex) { failed(ex.ToString()); yield break; }
             foreach (InteractionTargetDefinition definition in manifest.targets) {
                 GameObject root = null; string loadError = null;
-                if (definition.visual != null && !string.IsNullOrEmpty(definition.visual.bundle)) {
+                bool isFixture = definition.visual != null && !string.IsNullOrEmpty(definition.visual.bundle);
+                if (isFixture && !IncludeTestFixtures) { evidence.Emit("interaction_fixture_excluded", JsonText.Data("targetId", definition.id, "reason", "original Apartment home interaction excludes the deliberately placed pickup test fixture")); continue; }
+                if (isFixture) {
                     yield return assets.LoadInteractionVisual(definition.visual, room, value => root = value, value => loadError = value);
                     if (loadError != null) { failed(loadError); yield break; }
                 } else if (room.sourceNodes.TryGetValue(definition.sourcePathId, out Transform sourceNode)) root = sourceNode.gameObject;
                 try {
                     if (!root || !definition.originalSource || definition.trigger == null || !definition.trigger.isTrigger || string.IsNullOrEmpty(definition.sourceEvidence)) throw new InvalidDataException("Original interaction target or trigger provenance is incomplete");
-                    if (!manifest.actions.Any(value => value.id == definition.actionId)) throw new InvalidDataException("Target action is outside the bounded original contract");
-                    if (definition.visual != null) { root.transform.position = definition.worldPosition; root.transform.rotation = definition.worldRotation; root.transform.localScale = definition.worldScale; }
+                    if (string.IsNullOrEmpty(definition.menuKind) && !manifest.actions.Any(value => value.id == definition.actionId)) throw new InvalidDataException("Target action is outside the bounded original contract");
+                    if (isFixture) { root.transform.position = definition.worldPosition; root.transform.rotation = definition.worldRotation; root.transform.localScale = definition.worldScale; }
                     Transform triggerOwner = string.IsNullOrEmpty(definition.triggerPath) ? root.transform : root.transform.Find(definition.triggerPath);
                     if (!triggerOwner) throw new InvalidDataException("Exact original trigger child is absent: " + definition.triggerPath);
                     var target = triggerOwner.gameObject.AddComponent<InteractionTarget>(); target.Initialize(this, definition, root); targets.Add(target);
@@ -54,7 +59,7 @@ namespace ReconstructedManaka {
                         "sourceScene", definition.sourceScene, "sourceBundleSha256", definition.sourceBundleSha256, "sourceEvidence", definition.sourceEvidence, "fixturePlacement", definition.placementProvenance,
                         "position", root.transform.position, "rotation", root.transform.rotation, "scale", root.transform.lossyScale, "actionId", definition.actionId, "targetInstanceId", root.EvidenceId(), "triggerId", target.Trigger.EvidenceId(), "triggerInstanceId", target.Trigger.EvidenceId(), "originalComponent", definition.originalComponent,
                         "trigger", definition.trigger, "rejectCrouch", definition.rejectCrouch, "guardEvidence", definition.guardEvidence, "candidateMethod", "OnTriggerEnter/OnTriggerExit; last entered first", "playerColliderInstanceId", PlayerController.EvidenceId(), "gameBehavioursCopied", 0,
-                        "fixtureRecreatedThisProcess", definition.visual != null, "fixturePolicy", "original dropped-key prefab deliberately placed for this independent process; not an original Apartment target or natural respawn"));
+                        "fixtureRecreatedThisProcess", isFixture, "fixturePolicy", isFixture ? "original dropped-key prefab deliberately placed for this independent process; not an original Apartment target or natural respawn" : "original authored Apartment node transform and active state retained; only the source-verified trigger is reconstructed"));
                 } catch (Exception ex) { failed(ex.ToString()); yield break; }
             }
             ready = true;
@@ -85,8 +90,14 @@ namespace ReconstructedManaka {
             attemptAccepted = false; attemptReason = "no-F-edge";
             if (!fDown) return;
             InteractionTarget selected = Selected; int previous = action.Id; bool canMoveBefore = action.CanMove; int beforeSequence = action.Sequence;
-            attemptReason = !Application.isFocused && !simulatedF ? "not-focused" : !motor.InputEnabled ? "input-disabled" : action.Active ? "action-busy" : !selected ? "no-target" : !selected.Overlapping ? "not-overlapping" : selected.Definition.rejectCrouch && motor.IsCrouch ? "crouch-guard" : "accepted";
-            if (attemptReason == "accepted") { attemptAccepted = action.TryStart(selected.Definition.actionId, selected.Definition.id); if (!attemptAccepted) attemptReason = "action-guard-rejected"; }
+            attemptReason = !Application.isFocused && !simulatedF ? "not-focused" : Menus && Menus.IsOpen ? "menu-open" : Menus && Menus.LastClosedFrame == Time.frameCount ? "menu-closed-this-frame" : !motor.InputEnabled ? "input-disabled" : action.Active ? "action-busy" : !selected ? "no-target" : !selected.Overlapping ? "not-overlapping" : selected.Definition.rejectCrouch && motor.IsCrouch ? "crouch-guard" : "accepted";
+            if (attemptReason == "accepted") {
+                if (!string.IsNullOrEmpty(selected.Definition.menuKind)) {
+                    attemptAccepted = Menus && Menus.Open(selected.Definition.menuKind);
+                    evidence.Emit("home_interaction_dispatched", JsonText.Data("targetId", selected.Definition.id, "kind", selected.Definition.menuKind, "sourcePathId", selected.Definition.sourcePathId, "simulated", simulatedF, "menuOpened", attemptAccepted));
+                } else attemptAccepted = action.TryStart(selected.Definition.actionId, selected.Definition.id);
+                if (!attemptAccepted) attemptReason = "action-or-menu-guard-rejected";
+            }
             evidence.Emit("interaction_attempt", JsonText.Data("key", "F", "GetKeyDown", !simulatedF && fDown, "fDown", fDown, "fHeld", fHeld, "fUp", fUp, "focused", Application.isFocused, "inputSource", simulatedF ? "simulated-keys" : "unity-legacy", "inputProvenance", simulatedF ? "internal_controlled_F" : motor.InputProvenance, "simulated", simulatedF,
                 "inputEnabled", motor.InputEnabled, "targetId", selected ? selected.Definition.id : null, "selectedTargetId", selected ? selected.Definition.id : null, "selected", selected != null, "beforeActionId", previous, "canMoveBefore", canMoveBefore, "crouch", motor.IsCrouch,
                 "beforeSequence", beforeSequence, "sequence", action.Sequence, "accepted", attemptAccepted, "reason", attemptReason));
@@ -105,12 +116,12 @@ namespace ReconstructedManaka {
                 "collisionFlags", (int)motor.LastCollisionFlags, "animator", locomotion.CurrentAnimatorSample));
         }
         public void DrawTargetPrompts(Camera camera) {
-            if (!ready || !camera) return;
+            if (!ready || !camera || Menus && Menus.IsOpen) return;
             foreach (InteractionTarget target in targets) {
                 if (!target.VisualRoot.activeInHierarchy) continue;
                 Vector3 screen = camera.WorldToScreenPoint(target.VisualRoot.transform.position + Vector3.up * .25f);
                 if (screen.z > 0 && screen.x > 0 && screen.x < Screen.width && screen.y > 0 && screen.y < Screen.height)
-                    GUI.Label(new Rect(screen.x - 80, Screen.height - screen.y - 20, 220, 40), "钥匙 / Key" + (target == Selected ? "  [F]" : ""));
+                    GUI.Label(new Rect(screen.x - 80, Screen.height - screen.y - 20, 220, 40), target.Definition.label + (target == Selected ? "  [F]" : ""));
             }
         }
     }
@@ -123,6 +134,11 @@ namespace ReconstructedManaka {
         public GameObject VisualRoot { get; private set; }
         public void Initialize(InteractionManager value, InteractionTargetDefinition definition, GameObject root) {
             manager = value; Definition = definition; VisualRoot = root; TriggerDefinition shape = definition.trigger;
+            if (definition.reconstructNativeTrigger) {
+                if (GetComponents<Collider>().Any(c => c.isTrigger)) throw new InvalidDataException("An authored trigger already exists; the original contract will not overwrite it");
+                if (shape.shape != "Sphere") throw new InvalidDataException("Only the verified original home SphereCollider is supported");
+                var createdSphere = gameObject.AddComponent<SphereCollider>(); createdSphere.center = shape.center; createdSphere.radius = shape.radius; createdSphere.isTrigger = shape.isTrigger;
+            }
             Trigger = GetComponents<Collider>().SingleOrDefault(collider => collider.isTrigger);
             bool originalShape = Trigger is SphereCollider sphere && shape.shape == "Sphere" && sphere.center == shape.center && sphere.radius == shape.radius
                 || Trigger is BoxCollider box && shape.shape == "Box" && box.center == shape.center && box.size == shape.size

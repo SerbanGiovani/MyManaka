@@ -68,7 +68,7 @@ namespace ReconstructedManaka {
         }
         void Update() { if (ready) DriveParameters(); }
         void DriveParameters() {
-            animator.SetFloat("Speed", motor.AnimationSpeed); animator.SetFloat("LocomotionMotionSpeed", 1);
+            animator.SetFloat("Speed", motor.InputEnabled ? motor.AnimationSpeed : 0); animator.SetFloat("LocomotionMotionSpeed", 1);
             animator.SetBool("IsCrouch", motor.IsCrouch); animator.SetBool("IsStrafe", false); animator.SetFloat("StrafeX", 0); animator.SetFloat("StrafeY", 0);
         }
         Dictionary<string, object> ParameterValues() {

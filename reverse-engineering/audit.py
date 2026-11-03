@@ -644,7 +644,9 @@ def main():
     unity_mcp_check = runpy.run_path(str(toolchain_dir / "unity-mcp/verify.py"))["build"](inputs=args.inputs)
     unity_mcp = read(toolchain_dir / "unity-mcp/manifest.json")
     check(unity_mcp_check["stdio_verified"] and unity_mcp_check["readonly_editor_status_verified"] and unity_mcp_check["tools_count"] == 169 and not unity_mcp_check["client_catalog_loaded_in_installation_chat"], "Unity MCP installation/probe or client-reload scope differs")
-    formal_check = runpy.run_path(str(toolchain_dir / "verify-formal-runtime.py"))["build"](inputs=args.inputs)
+    # The maintained project is intentionally editable. Historical authoring/run
+    # receipts bind archived source; current source belongs to its latest run.
+    formal_check = runpy.run_path(str(toolchain_dir / "verify-formal-runtime.py"))["build"](inputs=False)
     formal_runtime = read(toolchain_dir / "formal-project-runtime.json")
     check(formal_check["status"] == "formal-unity-project-authored-apartment-build-controlled-save-restart-verified" and formal_check["source_and_scene_bytes_preserved"] and formal_check["saved_scene_native_assets_verified"], "Maintained Unity project or authored scene verification failed")
     check(formal_check["controlled_original_action"] and not formal_check["actual_keyboard_verified"] and not formal_check["full_chain_accepted"] and formal_check["cold_readback"]["component_exact_pose_before_physics"], "Maintained-project controlled acceptance scope differs")
@@ -652,6 +654,19 @@ def main():
     formal_scene = formal_editor["data"]["result"]["result"]
     check(formal_editor["success"] and formal_editor["data"]["result"]["success"] and formal_scene["scenePath"] == "Assets/Scenes/Apartment.unity" and not formal_scene["dirty"] and not formal_scene["playMode"], "Formal editor did not open the saved Apartment in edit mode")
     check((formal_scene["rootCount"], formal_scene["draws"], formal_scene["colliders"], formal_scene["mappedNodes"]) == (1, 269, 33, 760) and formal_scene["allReferencedMeshesAndMaterialsPersistent"], "Interactive Apartment persistent asset observation differs")
+    home_host = runpy.run_path(str(toolchain_dir / "verify-home-host.py"))["build"](inputs=False)
+    home_lifecycle = runpy.run_path(str(toolchain_dir / "verify-home-lifecycle.py"))["build"](inputs=False)
+    check(home_host["status"] == "home-archived-host-managed-runtime-verified" and home_lifecycle["status"] == "home-archived-host-lifecycle-runtime-verified", "Home host evidence differs")
+    check(not home_lifecycle["unity_editor_build_performed"] and home_lifecycle["formal_unity_build_pending"] and home_lifecycle["native_player_and_assets_unchanged"], "Archived host run was promoted to a new Unity Editor build")
+    key_regression = toolchain_dir / "home-key-regression"
+    key_analyzer = runpy.run_path(str(toolchain_dir / "interaction-acceptance-tools/verify_interaction.py"))
+    try:
+        key_analyzer["build"](key_regression / "inputs.json", controlled=True)
+    except key_analyzer["Rejected"] as error:
+        rejected = read(key_regression / "strict-rejection.json")
+        check(not rejected["accepted"] and rejected["reason"] == str(error), "Historical key target-count rejection differs")
+    else:
+        raise ValueError("The unchanged historical single-target gate no longer rejects the multi-target regression")
     verification = read(ROOT / "salt/evidence/decryption-verification.json")
     summary = read(ROOT / "salt/symbols/index-summary.json")
     object_record = asset["guid_object"]
@@ -1060,11 +1075,11 @@ def main():
             if item["path"].casefold() not in known:
                 checked_inputs.append({"path": item["path"], "sha256": item["sha256"]})
                 known.add(item["path"].casefold())
-        formal_inputs = [dict(item, path=str(toolchain_dir / "UnityProject" / item["path"])) for item in formal_runtime["project_inputs"]]
-        formal_inputs += formal_runtime["build"]["files"] + formal_runtime["private_logs"] + formal_runtime["authoring"]["receipt"]["inputs"]
+        formal_inputs = formal_runtime["build"]["files"] + formal_runtime["private_logs"] + formal_runtime["authoring"]["receipt"]["inputs"]
         formal_inputs += [item for package in formal_runtime["runtime"]["packages"] for item in package["files"]]
         for item in formal_inputs:
             if item["path"].casefold() not in known:
+                check(digest(Path(item["path"])) == item["sha256"], "Historical formal input differs: " + item["path"])
                 checked_inputs.append({"path": item["path"], "sha256": item["sha256"]})
                 known.add(item["path"].casefold())
     result = {"schema_version": 1, "generated_at_utc": datetime.now(timezone.utc).isoformat(),

@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "name": "home-ui",
+  "target": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+  "native_sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadata_sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "seed_file": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\home-ui.seeds.tsv",
+  "seed_sha256": "4c3e3d49375e828a7c22c48669ddc73e8f3c7ebcdf1b0010471f8e0966c3c32b",
+  "disabled_analyzers": [
+    "Disassemble Entry Points",
+    "Function Start Search",
+    "Subroutine References",
+    "Reference",
+    "Data Reference",
+    "Create Address Tables",
+    "Non-Returning Functions - Discovered",
+    "Decompiler Switch Analysis"
+  ],
+  "timeout_ms": 600000,
+  "output_directory": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\home-ui",
+  "seed_count": 6246,
+  "additional_seed_assemblies": [
+    "Assembly-CSharp.dll"
+  ],
+  "functions": [
+    {
+      "metadata_id": 15849,
+      "qualified_name": "ExposureUnnoticed2.Object3D.IngameManager.InGameUiManager::Open",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60011a0",
+      "va": "0x180457a40",
+      "file_offset": 4547136,
+      "label": "ExposureUnnoticed2_Object3D_IngameManager_InGameUiManager__Open__060011a0",
+      "file_stem": "15849-060011a0",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15851,
+      "qualified_name": "ExposureUnnoticed2.Object3D.IngameManager.InGameUiManager::PushBasePanel",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60011a2",
+      "va": "0x180457de0",
+      "file_offset": 4548064,
+      "label": "ExposureUnnoticed2_Object3D_IngameManager_InGameUiManager__PushBasePanel__060011a2",
+      "file_stem": "15851-060011a2",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 15852,
+      "qualified_name": "ExposureUnnoticed2.Object3D.IngameManager.InGameUiManager::PopBasePanel",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x60011a3",
+      "va": "0x180457e80",
+      "file_offset": 4548224,
+      "label": "ExposureUnnoticed2_Object3D_IngameManager_InGameUiManager__PopBasePanel__060011a3",
+      "file_stem": "15852-060011a3",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17589,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.PcMenuPanel.PcMenuPanelView::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x600186c",
+      "va": "0x1804ca540",
+      "file_offset": 5016896,
+      "label": "ExposureUnnoticed2_ObjectUI_PcMenuPanel_PcMenuPanelView__Initialize__0600186c",
+      "file_stem": "17589-0600186c",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 17593,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.PcMenuPanel.PcMenuPanelView::OnClickClose",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001870",
+      "va": "0x1804cae00",
+      "file_offset": 5019136,
+      "label": "ExposureUnnoticed2_ObjectUI_PcMenuPanel_PcMenuPanelView__OnClickClose__06001870",
+      "file_stem": "17593-06001870",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18630,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.BarberMenu.ClosetMenuView::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001c7d",
+      "va": "0x18052ae30",
+      "file_offset": 5412400,
+      "label": "ExposureUnnoticed2_ObjectUI_BarberMenu_ClosetMenuView__Initialize__06001c7d",
+      "file_stem": "18630-06001c7d",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18632,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.BarberMenu.ClosetMenuView::OnClickItem",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001c7f",
+      "va": "0x18052bb80",
+      "file_offset": 5415808,
+      "label": "ExposureUnnoticed2_ObjectUI_BarberMenu_ClosetMenuView__OnClickItem__06001c7f",
+      "file_stem": "18632-06001c7f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18638,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.BarberMenu.ClosetMenuView::OnClickBack",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001c85",
+      "va": "0x18052caf0",
+      "file_offset": 5419760,
+      "label": "ExposureUnnoticed2_ObjectUI_BarberMenu_ClosetMenuView__OnClickBack__06001c85",
+      "file_stem": "18638-06001c85",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18834,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.ChooseHandcuffsPanel.SleepSelectPanelView::Initialize",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001d49",
+      "va": "0x18053db80",
+      "file_offset": 5489536,
+      "label": "ExposureUnnoticed2_ObjectUI_ChooseHandcuffsPanel_SleepSelectPanelView__Initialize__06001d49",
+      "file_stem": "18834-06001d49",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18835,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.ChooseHandcuffsPanel.SleepSelectPanelView::RefreshView",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001d4a",
+      "va": "0x18053dc90",
+      "file_offset": 5489808,
+      "label": "ExposureUnnoticed2_ObjectUI_ChooseHandcuffsPanel_SleepSelectPanelView__RefreshView__06001d4a",
+      "file_stem": "18835-06001d4a",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18837,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.ChooseHandcuffsPanel.SleepSelectPanelView::OnClickCancel",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001d4c",
+      "va": "0x18053de30",
+      "file_offset": 5490224,
+      "label": "ExposureUnnoticed2_ObjectUI_ChooseHandcuffsPanel_SleepSelectPanelView__OnClickCancel__06001d4c",
+      "file_stem": "18837-06001d4c",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18838,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.ChooseHandcuffsPanel.SleepSelectPanelView::OnClickMorning",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001d4d",
+      "va": "0x18053deb0",
+      "file_offset": 5490352,
+      "label": "ExposureUnnoticed2_ObjectUI_ChooseHandcuffsPanel_SleepSelectPanelView__OnClickMorning__06001d4d",
+      "file_stem": "18838-06001d4d",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18839,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.ChooseHandcuffsPanel.SleepSelectPanelView::OnClickNight",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001d4e",
+      "va": "0x18053dec0",
+      "file_offset": 5490368,
+      "label": "ExposureUnnoticed2_ObjectUI_ChooseHandcuffsPanel_SleepSelectPanelView__OnClickNight__06001d4e",
+      "file_stem": "18839-06001d4e",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18840,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.ChooseHandcuffsPanel.SleepSelectPanelView::OnClickSleep",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001d4f",
+      "va": "0x18053ded0",
+      "file_offset": 5490384,
+      "label": "ExposureUnnoticed2_ObjectUI_ChooseHandcuffsPanel_SleepSelectPanelView__OnClickSleep__06001d4f",
+      "file_stem": "18840-06001d4f",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    },
+    {
+      "metadata_id": 18841,
+      "qualified_name": "ExposureUnnoticed2.ObjectUI.ChooseHandcuffsPanel.SleepSelectPanelView::Open",
+      "assembly": "Assembly-CSharp.dll",
+      "token": "0x6001d50",
+      "va": "0x18053dfc0",
+      "file_offset": 5490624,
+      "label": "ExposureUnnoticed2_ObjectUI_ChooseHandcuffsPanel_SleepSelectPanelView__Open__06001d50",
+      "file_stem": "18841-06001d50",
+      "operations": [
+        "procedure_pseudo_code"
+      ]
+    }
+  ],
+  "limitations": [
+    "Static observations; no game execution.",
+    "Seeds are metadata assertions, not recovered source.",
+    "Disabled whole-library discovery leaves indirect calls and generic bodies incomplete."
+  ]
+}

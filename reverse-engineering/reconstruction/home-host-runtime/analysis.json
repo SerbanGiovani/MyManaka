@@ -1,0 +1,91 @@
+{
+  "status": "home-archived-host-managed-runtime-verified",
+  "unity_editor_build_performed": false,
+  "formal_unity_build_pending": true,
+  "compiler_exit_code_recorded": 0,
+  "native_player_and_assets_unchanged": true,
+  "host_files": 256,
+  "changed_paths": [
+    "ManakaInteraction_Data/Managed/Assembly-CSharp.dll",
+    "ManakaInteraction_Data/StreamingAssets/Original/interactions.json"
+  ],
+  "controlled_runtime": {
+    "menu_analysis": {
+      "cycles": [
+        {
+          "kind": "pc",
+          "serial": 1,
+          "target_id": "apartment-pc",
+          "source_path_id": 1395,
+          "trigger_frame": 228,
+          "f_frame": 229,
+          "closed_frame": 233,
+          "locked_samples": 3,
+          "resumed_samples": 1,
+          "final_saved_pose_held": false
+        },
+        {
+          "kind": "closet",
+          "serial": 2,
+          "target_id": "apartment-closet",
+          "source_path_id": 1396,
+          "trigger_frame": 240,
+          "f_frame": 241,
+          "closed_frame": 250,
+          "locked_samples": 4,
+          "resumed_samples": 1,
+          "final_saved_pose_held": false
+        },
+        {
+          "kind": "closet",
+          "serial": 3,
+          "target_id": "apartment-closet",
+          "source_path_id": 1396,
+          "trigger_frame": 240,
+          "f_frame": 256,
+          "closed_frame": 265,
+          "locked_samples": 4,
+          "resumed_samples": 1,
+          "final_saved_pose_held": false
+        },
+        {
+          "kind": "pc",
+          "serial": 4,
+          "target_id": "apartment-pc",
+          "source_path_id": 1395,
+          "trigger_frame": 272,
+          "f_frame": 273,
+          "closed_frame": 277,
+          "locked_samples": 3,
+          "resumed_samples": 0,
+          "final_saved_pose_held": true
+        }
+      ],
+      "pc_menu_saves": 2,
+      "controlled_only": true,
+      "physical_keyboard_verified": false
+    },
+    "closet_five_frame_saves": [
+      {
+        "serial": 2,
+        "requested_frame": 245,
+        "actual_frame": 250,
+        "revision": 2
+      },
+      {
+        "serial": 3,
+        "requested_frame": 260,
+        "actual_frame": 265,
+        "revision": 3
+      }
+    ],
+    "saved_revision": 4,
+    "saved_sha256": "9b3753a9b2d3d169d371eb3c35ab021a575fb95b30aaadbd92c3e6563318522e",
+    "exact_float32_cold_pose": true,
+    "cold_primary_materials_match_original_master": true,
+    "inactive_bed_preserved": true,
+    "fixture_excluded": true,
+    "physical_keyboard_verified": false,
+    "original_shader_equivalence": false
+  }
+}

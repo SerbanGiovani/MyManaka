@@ -1,0 +1,1436 @@
+{
+  "schemaVersion": 1,
+  "authority": "shipped-artifact static native serialization plus REA/Ghidra; not natural gameplay execution",
+  "nativeSha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d",
+  "metadataSha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8",
+  "sourceInputs": [
+    {
+      "path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\data.unity3d",
+      "bytes": 2444180156,
+      "sha256": "20781befb4cc42f898b65fe03f3d16c0a77b53aecac6ddc388460cfb710ae93a"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\.cache\\decrypted\\models.unity3d",
+      "bytes": 223101993,
+      "sha256": "98621b2c4fa4f9de80f355fae5776ab17efc016bcc81c581bcd0917af4308367"
+    },
+    {
+      "path": "E:\\SecretFlasherManakaREA\\SecretFlasherManaka_Data\\il2cpp_data\\Metadata\\global-metadata.dat",
+      "bytes": 9890040,
+      "sha256": "457203754abe77b346fd98086a5c787bd41088d808cc81b1d4e2cae5b85c72c8"
+    },
+    {
+      "path": "E:\\SecretFlasherManakaREA\\GameAssembly.dll",
+      "bytes": 51356160,
+      "sha256": "6003033049ac32e8712dc4101382534e21d65b97100c167ebec6bbca1462c18d"
+    }
+  ],
+  "parserInputs": [
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\home-interaction-evidence\\extract_contract.py",
+      "bytes": 12743,
+      "sha256": "cbb35471ab9ae84bd78679486d435541180c85b4a1050c140cf0abb39b4618d4"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\reconstruction\\asset-bridge\\bridge_assets.py",
+      "bytes": 26392,
+      "sha256": "38bd86e868bd50de02e9deed7d78b90a3a85f5f43ae2bf72fc3ffcf3626634fd"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\assets\\animator_tree.py",
+      "bytes": 2824,
+      "sha256": "159b92b3e32bede821d54ec96e0b909e7c910c2737e1d89dc565290e49d3fe10"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\assets\\inspect_scenes.py",
+      "bytes": 43256,
+      "sha256": "16b7a8383f2f6da61abec2ddaab8bda6f0d85adab326b32ccef7f13b4d144475"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\metadata.py",
+      "bytes": 15612,
+      "sha256": "3b31ca7b06cf4fcfca880172df9d8bcc83440ae14d266554735e0950cdba5c29"
+    },
+    {
+      "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\symbols\\field-offsets.json",
+      "bytes": 8554542,
+      "sha256": "79e19efde41f052bb1c80194eca5e62b4d7fadb74243cc18fcc6ea264370f04d"
+    }
+  ],
+  "targets": [
+    {
+      "id": "apartment-pc",
+      "key": "pc",
+      "label": "电脑",
+      "labelAuthority": "reconstruction label; not a recovered localization string",
+      "interactType": 14,
+      "sourcePathId": 1395,
+      "sourceGameObjectId": 391,
+      "sourceInteractAreaId": 3777,
+      "sourceColliderId": 2185,
+      "sourcePath": "Level/InteractArea (2)",
+      "scene": "Apartment",
+      "serializedNode": "level1",
+      "layer": 0,
+      "originalSource": true,
+      "serializedActiveSelf": true,
+      "allAncestorsActiveSelfSerialized": true,
+      "enabled": true,
+      "canInteractWithAction": false,
+      "originalRingEffectGameObjectId": 495,
+      "localPosition": {
+        "x": -3.1326050758361816,
+        "y": 1.3154321908950806,
+        "z": -10.006817817687988
+      },
+      "localRotation": {
+        "x": -0.0,
+        "y": 0.5653495192527771,
+        "z": -0.0,
+        "w": -0.8248515129089355
+      },
+      "localScale": {
+        "x": 0.6299999952316284,
+        "y": 0.6299999952316284,
+        "z": 0.6299999952316284
+      },
+      "parentTransformId": 1086,
+      "trigger": {
+        "shape": "Sphere",
+        "center": {
+          "x": 0.0,
+          "y": 0.44999998807907104,
+          "z": 0.0
+        },
+        "radius": 0.4000000059604645,
+        "isTrigger": true,
+        "enabled": true,
+        "includeLayers": 0,
+        "excludeLayers": 0,
+        "layerOverridePriority": 0
+      },
+      "gameObject": {
+        "source": {
+          "node": "level1",
+          "object": {
+            "path_id": 391,
+            "offset": 743032,
+            "size": 67,
+            "type_index": 1,
+            "class_id": 1
+          },
+          "uncompressed_stream_offset": 97025888,
+          "sha256": "089222e46ed6d1656f3079f3043acba758bdf03c71b4deb7b09a5103fd993c50",
+          "compressed_source_blocks": [
+            {
+              "index": 740,
+              "file_offset": 51304871,
+              "stream_offset": 96993280,
+              "size": 131072,
+              "compressed_size": 48591,
+              "flags": 2
+            }
+          ]
+        },
+        "name": "InteractArea (2)",
+        "layer": 0,
+        "tag": 0,
+        "active_self_serialized": true,
+        "components": [
+          {
+            "file_id": 0,
+            "path_id": 1395
+          },
+          {
+            "file_id": 0,
+            "path_id": 2185
+          },
+          {
+            "file_id": 0,
+            "path_id": 3777
+          }
+        ],
+        "raw_hex": "03 00 00 00 00 00 00 00 73 05 00 00 00 00 00 00 00 00 00 00 89 08 00 00 00 00 00 00 00 00 00 00 c1 0e 00 00 00 00 00 00 00 00 00 00 10 00 00 00 49 6e 74 65 72 61 63 74 41 72 65 61 20 28 32 29 00 00 01",
+        "bytes_consumed": 67
+      },
+      "components": [
+        {
+          "source": {
+            "node": "level1",
+            "object": {
+              "path_id": 1395,
+              "offset": 818424,
+              "size": 80,
+              "type_index": 2,
+              "class_id": 4
+            },
+            "uncompressed_stream_offset": 97101280,
+            "sha256": "0fbc924c04242649da06960807dd79078bc678a5c6f91d825d12e1ad21ad6a31",
+            "compressed_source_blocks": [
+              {
+                "index": 740,
+                "file_offset": 51304871,
+                "stream_offset": 96993280,
+                "size": 131072,
+                "compressed_size": 48591,
+                "flags": 2
+              }
+            ]
+          },
+          "rawHex": "00000000870100000000000000000080bfba103f00000080782953bf9a7c48c01560a83fed1b20c1ae47213fae47213fae47213f01000000000000008105000000000000000000003e04000000000000",
+          "serializedTypeHash": "55ef5908c66860587f939791f59650e6"
+        },
+        {
+          "source": {
+            "node": "level1",
+            "object": {
+              "path_id": 2185,
+              "offset": 895904,
+              "size": 60,
+              "type_index": 15,
+              "class_id": 135
+            },
+            "uncompressed_stream_offset": 97178760,
+            "sha256": "39399a9d575c8550a3406815efe22319bc54e7ef27e7b9827f4324992ff0b00c",
+            "compressed_source_blocks": [
+              {
+                "index": 741,
+                "file_offset": 51353462,
+                "stream_offset": 97124352,
+                "size": 131072,
+                "compressed_size": 13672,
+                "flags": 2
+              }
+            ]
+          },
+          "rawHex": "0000000087010000000000000000000000000000000000000000000000000000000000000100000001000000cdcccc3e000000006666e63e00000000",
+          "serializedTypeHash": "ea534a93f577af78afb6eafc382cfb9e"
+        },
+        {
+          "source": {
+            "node": "level1",
+            "object": {
+              "path_id": 3777,
+              "offset": 2692616,
+              "size": 52,
+              "type_index": 82,
+              "class_id": 114
+            },
+            "uncompressed_stream_offset": 98975472,
+            "sha256": "99202ed1136b662518c05db117b248dd3a89971bcd352075045a9e6609686afb",
+            "compressed_source_blocks": [
+              {
+                "index": 755,
+                "file_offset": 52248146,
+                "stream_offset": 98959360,
+                "size": 131072,
+                "compressed_size": 61023,
+                "flags": 2
+              }
+            ]
+          },
+          "rawHex": "0000000087010000000000000100000001000000310c000000000000000000000e00000000000000ef0100000000000000000000",
+          "serializedTypeHash": "40086f8212f54fec949ab873d2792f08"
+        }
+      ],
+      "nativeColliderTypeHash": "ea534a93f577af78afb6eafc382cfb9e",
+      "interactionTypeHash": "40086f8212f54fec949ab873d2792f08"
+    },
+    {
+      "id": "apartment-closet",
+      "key": "closet",
+      "label": "衣柜",
+      "labelAuthority": "reconstruction label; not a recovered localization string",
+      "interactType": 11,
+      "sourcePathId": 1396,
+      "sourceGameObjectId": 392,
+      "sourceInteractAreaId": 3779,
+      "sourceColliderId": 2187,
+      "sourcePath": "Level/InteractArea",
+      "scene": "Apartment",
+      "serializedNode": "level1",
+      "layer": 0,
+      "originalSource": true,
+      "serializedActiveSelf": true,
+      "allAncestorsActiveSelfSerialized": true,
+      "enabled": true,
+      "canInteractWithAction": false,
+      "originalRingEffectGameObjectId": 493,
+      "localPosition": {
+        "x": -0.0704641342163086,
+        "y": 1.3194323778152466,
+        "z": -9.983915328979492
+      },
+      "localRotation": {
+        "x": -0.0,
+        "y": -0.0,
+        "z": -0.0,
+        "w": 1.0
+      },
+      "localScale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "parentTransformId": 1086,
+      "trigger": {
+        "shape": "Sphere",
+        "center": {
+          "x": 0.0,
+          "y": 0.44999998807907104,
+          "z": 0.0
+        },
+        "radius": 0.4000000059604645,
+        "isTrigger": true,
+        "enabled": true,
+        "includeLayers": 0,
+        "excludeLayers": 0,
+        "layerOverridePriority": 0
+      },
+      "gameObject": {
+        "source": {
+          "node": "level1",
+          "object": {
+            "path_id": 392,
+            "offset": 743104,
+            "size": 63,
+            "type_index": 1,
+            "class_id": 1
+          },
+          "uncompressed_stream_offset": 97025960,
+          "sha256": "07f33788a310fab5df7ad1b376e51f02b87340421503dbcd7f2b48e21f86a7af",
+          "compressed_source_blocks": [
+            {
+              "index": 740,
+              "file_offset": 51304871,
+              "stream_offset": 96993280,
+              "size": 131072,
+              "compressed_size": 48591,
+              "flags": 2
+            }
+          ]
+        },
+        "name": "InteractArea",
+        "layer": 0,
+        "tag": 0,
+        "active_self_serialized": true,
+        "components": [
+          {
+            "file_id": 0,
+            "path_id": 1396
+          },
+          {
+            "file_id": 0,
+            "path_id": 2187
+          },
+          {
+            "file_id": 0,
+            "path_id": 3779
+          }
+        ],
+        "raw_hex": "03 00 00 00 00 00 00 00 74 05 00 00 00 00 00 00 00 00 00 00 8b 08 00 00 00 00 00 00 00 00 00 00 c3 0e 00 00 00 00 00 00 00 00 00 00 0c 00 00 00 49 6e 74 65 72 61 63 74 41 72 65 61 00 00 01",
+        "bytes_consumed": 63
+      },
+      "components": [
+        {
+          "source": {
+            "node": "level1",
+            "object": {
+              "path_id": 1396,
+              "offset": 818504,
+              "size": 80,
+              "type_index": 2,
+              "class_id": 4
+            },
+            "uncompressed_stream_offset": 97101360,
+            "sha256": "e4bc9bd65a9e9d65d8e43d9f81b671def1297ed8cd924ed306b85f5081962429",
+            "compressed_source_blocks": [
+              {
+                "index": 740,
+                "file_offset": 51304871,
+                "stream_offset": 96993280,
+                "size": 131072,
+                "compressed_size": 48591,
+                "flags": 2
+              }
+            ]
+          },
+          "rawHex": "0000000088010000000000000000008000000080000000800000803f804f90bd29e3a83f1ebe1fc10000803f0000803f0000803f01000000000000008305000000000000000000003e04000000000000",
+          "serializedTypeHash": "55ef5908c66860587f939791f59650e6"
+        },
+        {
+          "source": {
+            "node": "level1",
+            "object": {
+              "path_id": 2187,
+              "offset": 896032,
+              "size": 60,
+              "type_index": 15,
+              "class_id": 135
+            },
+            "uncompressed_stream_offset": 97178888,
+            "sha256": "15b1c99fd462cc7409644ef56b4791d35e63340f6a88a62099040af2e05c4fad",
+            "compressed_source_blocks": [
+              {
+                "index": 741,
+                "file_offset": 51353462,
+                "stream_offset": 97124352,
+                "size": 131072,
+                "compressed_size": 13672,
+                "flags": 2
+              }
+            ]
+          },
+          "rawHex": "0000000088010000000000000000000000000000000000000000000000000000000000000100000001000000cdcccc3e000000006666e63e00000000",
+          "serializedTypeHash": "ea534a93f577af78afb6eafc382cfb9e"
+        },
+        {
+          "source": {
+            "node": "level1",
+            "object": {
+              "path_id": 3779,
+              "offset": 2692728,
+              "size": 52,
+              "type_index": 82,
+              "class_id": 114
+            },
+            "uncompressed_stream_offset": 98975584,
+            "sha256": "8ddb2b674ab20e473867cd21692c43b285e9ff8612a25917003d2c271eff6bce",
+            "compressed_source_blocks": [
+              {
+                "index": 755,
+                "file_offset": 52248146,
+                "stream_offset": 98959360,
+                "size": 131072,
+                "compressed_size": 61023,
+                "flags": 2
+              }
+            ]
+          },
+          "rawHex": "0000000088010000000000000100000001000000310c000000000000000000000b00000000000000ed0100000000000000000000",
+          "serializedTypeHash": "40086f8212f54fec949ab873d2792f08"
+        }
+      ],
+      "nativeColliderTypeHash": "ea534a93f577af78afb6eafc382cfb9e",
+      "interactionTypeHash": "40086f8212f54fec949ab873d2792f08"
+    },
+    {
+      "id": "apartment-bed",
+      "key": "bed",
+      "label": "床",
+      "labelAuthority": "reconstruction label; not a recovered localization string",
+      "interactType": 13,
+      "sourcePathId": 1397,
+      "sourceGameObjectId": 393,
+      "sourceInteractAreaId": 3778,
+      "sourceColliderId": 2186,
+      "sourcePath": "Level/InteractArea (1)",
+      "scene": "Apartment",
+      "serializedNode": "level1",
+      "layer": 0,
+      "originalSource": true,
+      "serializedActiveSelf": false,
+      "allAncestorsActiveSelfSerialized": false,
+      "enabled": true,
+      "canInteractWithAction": false,
+      "originalRingEffectGameObjectId": 494,
+      "localPosition": {
+        "x": 0.5774853229522705,
+        "y": 1.3194321393966675,
+        "z": -11.241724014282227
+      },
+      "localRotation": {
+        "x": -0.0,
+        "y": -0.0,
+        "z": -0.0,
+        "w": 1.0
+      },
+      "localScale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "parentTransformId": 1086,
+      "trigger": {
+        "shape": "Sphere",
+        "center": {
+          "x": 0.0,
+          "y": 0.44999998807907104,
+          "z": 0.0
+        },
+        "radius": 0.4000000059604645,
+        "isTrigger": true,
+        "enabled": true,
+        "includeLayers": 0,
+        "excludeLayers": 0,
+        "layerOverridePriority": 0
+      },
+      "gameObject": {
+        "source": {
+          "node": "level1",
+          "object": {
+            "path_id": 393,
+            "offset": 743168,
+            "size": 67,
+            "type_index": 1,
+            "class_id": 1
+          },
+          "uncompressed_stream_offset": 97026024,
+          "sha256": "330482f571813a4d7b0e9e0ed917cdcb66bf9864390b00ee77390125b830eaa4",
+          "compressed_source_blocks": [
+            {
+              "index": 740,
+              "file_offset": 51304871,
+              "stream_offset": 96993280,
+              "size": 131072,
+              "compressed_size": 48591,
+              "flags": 2
+            }
+          ]
+        },
+        "name": "InteractArea (1)",
+        "layer": 0,
+        "tag": 0,
+        "active_self_serialized": false,
+        "components": [
+          {
+            "file_id": 0,
+            "path_id": 1397
+          },
+          {
+            "file_id": 0,
+            "path_id": 2186
+          },
+          {
+            "file_id": 0,
+            "path_id": 3778
+          }
+        ],
+        "raw_hex": "03 00 00 00 00 00 00 00 75 05 00 00 00 00 00 00 00 00 00 00 8a 08 00 00 00 00 00 00 00 00 00 00 c2 0e 00 00 00 00 00 00 00 00 00 00 10 00 00 00 49 6e 74 65 72 61 63 74 41 72 65 61 20 28 31 29 00 00 00",
+        "bytes_consumed": 67
+      },
+      "components": [
+        {
+          "source": {
+            "node": "level1",
+            "object": {
+              "path_id": 1397,
+              "offset": 818584,
+              "size": 80,
+              "type_index": 2,
+              "class_id": 4
+            },
+            "uncompressed_stream_offset": 97101440,
+            "sha256": "26352fabf9cfaf9f4384e4a2d0464c627b78555087d5286ace385bf184a34e0e",
+            "compressed_source_blocks": [
+              {
+                "index": 740,
+                "file_offset": 51304871,
+                "stream_offset": 96993280,
+                "size": 131072,
+                "compressed_size": 48591,
+                "flags": 2
+              }
+            ]
+          },
+          "rawHex": "0000000089010000000000000000008000000080000000800000803f14d6133f27e3a83f1ade33c10000803f0000803f0000803f01000000000000008205000000000000000000003e04000000000000",
+          "serializedTypeHash": "55ef5908c66860587f939791f59650e6"
+        },
+        {
+          "source": {
+            "node": "level1",
+            "object": {
+              "path_id": 2186,
+              "offset": 895968,
+              "size": 60,
+              "type_index": 15,
+              "class_id": 135
+            },
+            "uncompressed_stream_offset": 97178824,
+            "sha256": "de26ddf1022bbf07528fb10dcf85f113bde04593c7d7915c17e8e0ae5a75453c",
+            "compressed_source_blocks": [
+              {
+                "index": 741,
+                "file_offset": 51353462,
+                "stream_offset": 97124352,
+                "size": 131072,
+                "compressed_size": 13672,
+                "flags": 2
+              }
+            ]
+          },
+          "rawHex": "0000000089010000000000000000000000000000000000000000000000000000000000000100000001000000cdcccc3e000000006666e63e00000000",
+          "serializedTypeHash": "ea534a93f577af78afb6eafc382cfb9e"
+        },
+        {
+          "source": {
+            "node": "level1",
+            "object": {
+              "path_id": 3778,
+              "offset": 2692672,
+              "size": 52,
+              "type_index": 82,
+              "class_id": 114
+            },
+            "uncompressed_stream_offset": 98975528,
+            "sha256": "17d9a1c81c57b7d8044a6950ede4ea8548bb4a4d41aaf2c43a29dd1c93bc67ab",
+            "compressed_source_blocks": [
+              {
+                "index": 755,
+                "file_offset": 52248146,
+                "stream_offset": 98959360,
+                "size": 131072,
+                "compressed_size": 61023,
+                "flags": 2
+              }
+            ]
+          },
+          "rawHex": "0000000089010000000000000100000001000000310c000000000000000000000d00000000000000ee0100000000000000000000",
+          "serializedTypeHash": "40086f8212f54fec949ab873d2792f08"
+        }
+      ],
+      "nativeColliderTypeHash": "ea534a93f577af78afb6eafc382cfb9e",
+      "interactionTypeHash": "40086f8212f54fec949ab873d2792f08"
+    }
+  ],
+  "reusedNativeRecords": [
+    {
+      "path": "salt/evidence/player-interaction-loop/14908-06000df3-procedure_pseudo_code.json",
+      "sha256": "32a83b0b407bb44a0311795911be116870058ce5856cd07bc49a10019bb3be90",
+      "evidenceId": "ev_f4ca0655abfdef012f3da572563ea210c8b00ca18a98803ef27c9c9d067ffd9e",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "path": "salt/evidence/player-interaction-loop/15848-0600119f-procedure_pseudo_code.json",
+      "sha256": "5afa72f7d5e053e7e9fc7cb04bf01adcd908bffda321dbcac66e4efa9fe29e23",
+      "evidenceId": "ev_134aba30b9e251964ead8406bec81bc989e90bd1546e85d47828a1ee5c345139",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "path": "salt/evidence/player-interaction-loop/15844-0600119b-procedure_pseudo_code.json",
+      "sha256": "d140f016bb0ae928e967b1971b379e95c7cf72e02eefa0df598c094eda8d2ebd",
+      "evidenceId": "ev_7eea8ab01043ac94b003af7448fba280b7a09a077b1d05c5e50c6f350e54964b",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "path": "salt/evidence/natural-load-saveui/17594-06001871-procedure_pseudo_code.json",
+      "sha256": "db6597d3432a0f8719c168e4a9b0a5e1c06db1a06274224cbcd5ae6051a8f712",
+      "evidenceId": "ev_56afd6f99b1191d00614efeac8e5ddddadf02bfd05aa4c976fa6290d5abdd208",
+      "operation": "procedure_pseudo_code"
+    }
+  ],
+  "newNativeRecords": [
+    {
+      "methodId": 15849,
+      "qualifiedName": "ExposureUnnoticed2.Object3D.IngameManager.InGameUiManager::Open",
+      "va": "0x180457a40",
+      "path": "salt/evidence/home-ui/15849-060011a0-procedure_pseudo_code.json",
+      "sha256": "b21a08d2be5c390e2d08bb19fab2bafe48c86eade43927f2b7afa7a646c3f5a3",
+      "evidenceId": "ev_3af960f1cd9053a3b404fb7c4890cd8a27aebf2116bc7ef71f3b9199d91426c5",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 15851,
+      "qualifiedName": "ExposureUnnoticed2.Object3D.IngameManager.InGameUiManager::PushBasePanel",
+      "va": "0x180457de0",
+      "path": "salt/evidence/home-ui/15851-060011a2-procedure_pseudo_code.json",
+      "sha256": "098d0b1e0c9ca0f0147237cbd1020998ef3b20f06f7708972a0496281138886f",
+      "evidenceId": "ev_df33b71f474ca973037a865a16f37c08f5fe80f9a6f39023a96e4aa08de5aefc",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 15852,
+      "qualifiedName": "ExposureUnnoticed2.Object3D.IngameManager.InGameUiManager::PopBasePanel",
+      "va": "0x180457e80",
+      "path": "salt/evidence/home-ui/15852-060011a3-procedure_pseudo_code.json",
+      "sha256": "873fca22c8127be2c0914ff75a0cbedd6652e5e384134e7d049f0d7349987e32",
+      "evidenceId": "ev_e457d06a74acaf5c74dfcb403efab193831c999e3702868543931d55b045b95e",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 17589,
+      "qualifiedName": "ExposureUnnoticed2.ObjectUI.PcMenuPanel.PcMenuPanelView::Initialize",
+      "va": "0x1804ca540",
+      "path": "salt/evidence/home-ui/17589-0600186c-procedure_pseudo_code.json",
+      "sha256": "7e5a4697571cf575b39b8583e073c829d4278de6bcb5f4269c8104a8b29df9a7",
+      "evidenceId": "ev_9f620779a4cf5a544890264d02baa81b3845db09f3ecddbbf5acbc4c4217ffde",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 17593,
+      "qualifiedName": "ExposureUnnoticed2.ObjectUI.PcMenuPanel.PcMenuPanelView::OnClickClose",
+      "va": "0x1804cae00",
+      "path": "salt/evidence/home-ui/17593-06001870-procedure_pseudo_code.json",
+      "sha256": "a0869f26dc4bcee22f8d5a90a66bfb335586798a9f4116baf5cd2a1b2a15f590",
+      "evidenceId": "ev_41accad3d80b7b45f9720487937d028dbcc87b1b5a791e47de3598a5026b8cb6",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 18630,
+      "qualifiedName": "ExposureUnnoticed2.ObjectUI.BarberMenu.ClosetMenuView::Initialize",
+      "va": "0x18052ae30",
+      "path": "salt/evidence/home-ui/18630-06001c7d-procedure_pseudo_code.json",
+      "sha256": "daae289f77806173d0a787195a4dbc81d177b0c8789625f45f5ecc33d2917e60",
+      "evidenceId": "ev_cf27279657b4aeef25d635433421890fa8a0292072a34de292edc7a71e998b29",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 18632,
+      "qualifiedName": "ExposureUnnoticed2.ObjectUI.BarberMenu.ClosetMenuView::OnClickItem",
+      "va": "0x18052bb80",
+      "path": "salt/evidence/home-ui/18632-06001c7f-procedure_pseudo_code.json",
+      "sha256": "a7216df5557caac66b9134c4b382ae2bf90b74f0b80ef099f95a359e56f5dc46",
+      "evidenceId": "ev_62f856cac0795c80ffab586493d223d058f9c9319985301712eb94ba9e69e879",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 18638,
+      "qualifiedName": "ExposureUnnoticed2.ObjectUI.BarberMenu.ClosetMenuView::OnClickBack",
+      "va": "0x18052caf0",
+      "path": "salt/evidence/home-ui/18638-06001c85-procedure_pseudo_code.json",
+      "sha256": "b2df4d64c96551b23d4ec4aa536d47bb265afef627d537ea80681108d205170d",
+      "evidenceId": "ev_c15d763ca0d434e2a5fc2ce2f54bf0a800fea0f51646a16ffc73004676ebe3a6",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 18834,
+      "qualifiedName": "ExposureUnnoticed2.ObjectUI.ChooseHandcuffsPanel.SleepSelectPanelView::Initialize",
+      "va": "0x18053db80",
+      "path": "salt/evidence/home-ui/18834-06001d49-procedure_pseudo_code.json",
+      "sha256": "f513a11f7c72e83e9e6b77b6c6b40ce84f6dbfa67c295dfbe2bacfd83c0becb3",
+      "evidenceId": "ev_8d5895d7b98770ea3fec28e4bc70783dc4b3ff1c91f5bd00f5ed5b681dd34a00",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 18835,
+      "qualifiedName": "ExposureUnnoticed2.ObjectUI.ChooseHandcuffsPanel.SleepSelectPanelView::RefreshView",
+      "va": "0x18053dc90",
+      "path": "salt/evidence/home-ui/18835-06001d4a-procedure_pseudo_code.json",
+      "sha256": "d26c337bdafb83a4172dfe7821499b738b8bb66ebf07db378dd895adb312d15e",
+      "evidenceId": "ev_fd12debb7b3b25756822059514d9f44cb9aa58167e7b0b0b2647dd348f18e540",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 18837,
+      "qualifiedName": "ExposureUnnoticed2.ObjectUI.ChooseHandcuffsPanel.SleepSelectPanelView::OnClickCancel",
+      "va": "0x18053de30",
+      "path": "salt/evidence/home-ui/18837-06001d4c-procedure_pseudo_code.json",
+      "sha256": "30be5dd18ca1fa294e213a4ddfc6e089c9bc659db8a93706b14fb30081215dbf",
+      "evidenceId": "ev_c98e1fef7cf9b8e44dc8587e358a9d52d4118b964e140c4c88e64d6ab65c3010",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 18838,
+      "qualifiedName": "ExposureUnnoticed2.ObjectUI.ChooseHandcuffsPanel.SleepSelectPanelView::OnClickMorning",
+      "va": "0x18053deb0",
+      "path": "salt/evidence/home-ui/18838-06001d4d-procedure_pseudo_code.json",
+      "sha256": "e75fb6c22b768ff7c1a53e4ae880552805d369a5d8ae31a7996136b842ad8739",
+      "evidenceId": "ev_cdb8825a3f9274b4930bbe28df82548429362d5063debdce40dc4e236fb749af",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 18839,
+      "qualifiedName": "ExposureUnnoticed2.ObjectUI.ChooseHandcuffsPanel.SleepSelectPanelView::OnClickNight",
+      "va": "0x18053dec0",
+      "path": "salt/evidence/home-ui/18839-06001d4e-procedure_pseudo_code.json",
+      "sha256": "77744331848f4d869da4a05f70d2b9be000178214c4473dfd2c48db3cbc6568c",
+      "evidenceId": "ev_866ecae8d519000b35b9c7333ffc6502a9d71eed23218b9b1fad465da02cf7da",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 18840,
+      "qualifiedName": "ExposureUnnoticed2.ObjectUI.ChooseHandcuffsPanel.SleepSelectPanelView::OnClickSleep",
+      "va": "0x18053ded0",
+      "path": "salt/evidence/home-ui/18840-06001d4f-procedure_pseudo_code.json",
+      "sha256": "64e46ba8502b9a491f0db6851d158f519697fc8c0c89c31b156c63ffbf195d47",
+      "evidenceId": "ev_180232646f9504cee89b74c55844f19bc6c2f29627df4874edd3b8210ba63cad",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 18841,
+      "qualifiedName": "ExposureUnnoticed2.ObjectUI.ChooseHandcuffsPanel.SleepSelectPanelView::Open",
+      "va": "0x18053dfc0",
+      "path": "salt/evidence/home-ui/18841-06001d50-procedure_pseudo_code.json",
+      "sha256": "d2a2a92806cf45ffc7fc9214165b9d92c275f773f0e91e60efa36808b076c087",
+      "evidenceId": "ev_89f8b3652c8b3b5ed5b20e58810d829ef3e274a2bc08084a6abfc1744e4a47d4",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 17518,
+      "qualifiedName": "ExposureUnnoticed2.ObjectUI.SleepBlackPanel.SleepBlackPanelView::Initialize",
+      "va": "0x1804c2df0",
+      "path": "salt/evidence/home-ui-tail/17518-06001825-procedure_pseudo_code.json",
+      "sha256": "b84840b790529bea166d30606d4daf8c18021a986072b5dc1a3aedbecba81e87",
+      "evidenceId": "ev_bc87f06f15f8d2372cb3f3c84d66110f9884962686d1564e26b877cf162a2592",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 17519,
+      "qualifiedName": "ExposureUnnoticed2.ObjectUI.SleepBlackPanel.SleepBlackPanelView::OnEnterPureBlack",
+      "va": "0x1804c2f90",
+      "path": "salt/evidence/home-ui-tail/17519-06001826-procedure_pseudo_code.json",
+      "sha256": "79172f9dc2503080ac9d42542e848466c900e121bc78b1b508b8c8f0435a913c",
+      "evidenceId": "ev_1795ad7c4722bdf1b99156796e76eaeee240fc025ef25d0a7128c5a87f103d78",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 17520,
+      "qualifiedName": "ExposureUnnoticed2.ObjectUI.SleepBlackPanel.SleepBlackPanelView::OnAnimEnd",
+      "va": "0x1804c3440",
+      "path": "salt/evidence/home-ui-tail/17520-06001827-procedure_pseudo_code.json",
+      "sha256": "3fed094c69542d6a0c7deaad96e41437952aa01569632240abcc4677bd3ce7a7",
+      "evidenceId": "ev_0a1d126c95d631ee144ca51803b6f2d1f7850497c0f910ffbbd19da9166ff5eb",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 17522,
+      "qualifiedName": "ExposureUnnoticed2.ObjectUI.SleepBlackPanel.SleepBlackPanelView::Open",
+      "va": "0x1804c3680",
+      "path": "salt/evidence/home-ui-tail/17522-06001829-procedure_pseudo_code.json",
+      "sha256": "580cc89a14f3cf005d2403a4fb8c051a10fa36005207616b716194a8850a5375",
+      "evidenceId": "ev_06548e60d9c818cdef6dfa836daf21156ef257d46de73d1d332720fe06ace8ac",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 18641,
+      "qualifiedName": "ExposureUnnoticed2.ObjectUI.BarberMenu.ClosetMenuView::<OnClickBack>b__24_0",
+      "va": "0x18052cde0",
+      "path": "salt/evidence/home-ui-tail/18641-06001c88-procedure_pseudo_code.json",
+      "sha256": "747dfe69c3d595087d29ae3c3d852d7dbf7577c862c20ed8be37953e9dc5eada",
+      "evidenceId": "ev_b422a4808b0592222599695a36d8962fe601877651e87c2fbd7578f51a1de6f5",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 19038,
+      "qualifiedName": "Common.Scripts.UI.BasePanelView::Close",
+      "va": "0x18057ecb0",
+      "path": "salt/evidence/home-ui-tail/19038-06001e15-procedure_pseudo_code.json",
+      "sha256": "5fc5c9e2bf59f3a4f84e9c3d364ed1a8fb9aedbf3fb558350c7d032963cd630c",
+      "evidenceId": "ev_d92549e7ed98c8ce5beda1514e709be5a0f310aab57e10e23ce32fbe2093021c",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 19043,
+      "qualifiedName": "Common.Scripts.UI.BasePanelView::OnAnimCloseEnd",
+      "va": "0x18057f150",
+      "path": "salt/evidence/home-ui-tail/19043-06001e1a-procedure_pseudo_code.json",
+      "sha256": "3c39f4ec486bd1516b9b8c65588a2b940027c22a3ce666e3c830e906898477f9",
+      "evidenceId": "ev_bb6214672b1e8a923a8d529f3e4b445e170eed15cc7a4ce1df565c33f7bd99b8",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "methodId": 19049,
+      "qualifiedName": "Common.Scripts.UI.BasePanelView::<Close>b__13_0",
+      "va": "0x18057f630",
+      "path": "salt/evidence/home-ui-tail/19049-06001e20-procedure_pseudo_code.json",
+      "sha256": "b90a2ba8f918b8bf7bef91787af30404ddd5fc2484544175b081549e63c57f06",
+      "evidenceId": "ev_522fa5e9afae051163118bac18c8707ad257229e09a62f0b081dd3160ae43d1e",
+      "operation": "procedure_pseudo_code"
+    }
+  ],
+  "batches": [
+    {
+      "name": "home-ui",
+      "newThisRound": true,
+      "run": {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\home-ui\\run.json",
+        "bytes": 10087,
+        "sha256": "a1af1197828f04996c5ec2ff844d2f6be9243515357c7abf619aae10241d4b43"
+      },
+      "queries": 15,
+      "sessionClosed": true
+    },
+    {
+      "name": "home-ui-tail",
+      "newThisRound": true,
+      "run": {
+        "path": "E:\\SecretFlasherManaka v1.1.3_Uncensored\\reverse-engineering\\salt\\evidence\\home-ui-tail\\run.json",
+        "bytes": 5442,
+        "sha256": "ca8eebe753a5ca804be26197223b9a307b549d7030330277f8620b45fa806486"
+      },
+      "queries": 8,
+      "sessionClosed": true
+    }
+  ],
+  "selectedFieldLayouts": [
+    {
+      "typeId": 2721,
+      "fullName": "ExposureUnnoticed2.ObjectUI.SleepBlackPanel.SleepBlackPanelView",
+      "fields": [
+        {
+          "name": "is24h",
+          "fieldId": 13367,
+          "nativeOffset": 96,
+          "metadataFileOffset": 6934800,
+          "metadataRawHex": "944805005f350000091a0004",
+          "offsetEntryFileOffset": 37836496
+        },
+        {
+          "name": "isKillTime",
+          "fieldId": 13368,
+          "nativeOffset": 97,
+          "metadataFileOffset": 6934812,
+          "metadataRawHex": "9a4805005f3500000a1a0004",
+          "offsetEntryFileOffset": 37836500
+        }
+      ]
+    },
+    {
+      "typeId": 2928,
+      "fullName": "ExposureUnnoticed2.ObjectUI.ChooseHandcuffsPanel.SleepSelectPanelView",
+      "fields": [
+        {
+          "name": "currentUntil",
+          "fieldId": 15096,
+          "nativeOffset": 112,
+          "metadataFileOffset": 6955548,
+          "metadataRawHex": "6fc90500096e0000ca200004",
+          "offsetEntryFileOffset": 37828948
+        }
+      ]
+    },
+    {
+      "typeId": 2967,
+      "fullName": "Common.Scripts.UI.BasePanelView",
+      "fields": [
+        {
+          "name": "onCloseBase",
+          "fieldId": 15299,
+          "nativeOffset": 40,
+          "metadataFileOffset": 6957984,
+          "metadataRawHex": "36d805001b32000095210004",
+          "offsetEntryFileOffset": 37828044
+        },
+        {
+          "name": "onClose",
+          "fieldId": 15300,
+          "nativeOffset": 48,
+          "metadataFileOffset": 6957996,
+          "metadataRawHex": "5a4b05001d32000096210004",
+          "offsetEntryFileOffset": 37828048
+        },
+        {
+          "name": "animator",
+          "fieldId": 15301,
+          "nativeOffset": 56,
+          "metadataFileOffset": 6958008,
+          "metadataRawHex": "d1af0300e832000097210004",
+          "offsetEntryFileOffset": 37828052
+        },
+        {
+          "name": "isAlreadyClose",
+          "fieldId": 15303,
+          "nativeOffset": 64,
+          "metadataFileOffset": 6958032,
+          "metadataRawHex": "49d805005f35000099210004",
+          "offsetEntryFileOffset": 37828060
+        }
+      ]
+    },
+    {
+      "typeId": 2586,
+      "fullName": "ExposureUnnoticed2.Scripts.InGame.GameStateData",
+      "fields": [
+        {
+          "name": "IsDaytime",
+          "fieldId": 12569,
+          "nativeOffset": 32,
+          "metadataFileOffset": 6925224,
+          "metadataRawHex": "0df8040063350000eb160004",
+          "offsetEntryFileOffset": 37839656
+        }
+      ]
+    }
+  ],
+  "observedDispatch": {
+    "methodId": 15848,
+    "closet": 18630,
+    "bed": 18841,
+    "pc": 17589
+  },
+  "pcSave": {
+    "methodId": 17594,
+    "category": 3,
+    "slot": -1,
+    "isBackup": false,
+    "scope": "Observed original PC callback and natural original-game save; reconstructed application must keep its independent JSON profile boundary."
+  },
+  "sleepSelection": {
+    "morningValue": 0,
+    "nightValue": 1,
+    "stateField": "GameStateData.IsDaytime",
+    "selectedUntilField": "SleepSelectPanelView.currentUntil",
+    "blackPanelFlag": "SleepBlackPanelView.is24h",
+    "mapping": [
+      {
+        "selection": 0,
+        "isDaytime": false,
+        "is24h": false
+      },
+      {
+        "selection": 0,
+        "isDaytime": true,
+        "is24h": true
+      },
+      {
+        "selection": 1,
+        "isDaytime": false,
+        "is24h": true
+      },
+      {
+        "selection": 1,
+        "isDaytime": true,
+        "is24h": false
+      }
+    ],
+    "isKillTime": false,
+    "mutationPoint": "SleepBlackPanel.OnEnterPureBlack; see native body; selection alone is not a time mutation."
+  },
+  "sleepMutation": {
+    "methodId": 17519,
+    "flagFalse": "is24h=false: toggle IsDaytime, ChangeLighting, StageController.UpdateByDaytimeNight",
+    "flagTrue": "is24h=true: retain IsDaytime",
+    "phaseResult": "Equals requested morning/night after pure-black callback",
+    "alwaysCalls": [
+      "DroppedItemManager.Collect(4)",
+      "DroppedItemManager.Collect(3)",
+      "DroppedItemManager.DisposeAllPutDildo",
+      "IsDroneNeedCharge=false",
+      "NpcManager.RepopNpc",
+      "event broadcast through static event offset0x68"
+    ],
+    "ordinarySleepCalls": [
+      "Set active original player attachments at accessor offsets0x268/0x260",
+      "MissionManager.ResetMission",
+      "PlayerLife=PlayerMaxLife"
+    ],
+    "originalDayCounterOrHourFieldObserved": false,
+    "scope": "This is static selected-body evidence, not a complete independent implementation of sleep/world/mission side effects."
+  },
+  "closeLifecycle": {
+    "baseCloseMethodId": 19038,
+    "closeGuard": "BasePanelView.isAlreadyClose@0x40",
+    "baseDelegateDelayFrames": 1,
+    "baseDelegateMethodId": 19049,
+    "baseDelegateInvokes": [
+      "onCloseBase@0x28",
+      "onClose@0x30"
+    ],
+    "destructionMethodId": 19043,
+    "destructionPoint": "OnAnimCloseEnd destroys UI GameObject, separate from one-frame close delegate",
+    "closetBackMethodId": 18638,
+    "closetBackDelayFrames": 5,
+    "closetBackDelegateMethodId": 18641,
+    "closetBackDelegateCalls": [
+      "SetVisibleRightDownInfo(true)",
+      "ClosetLight(false)",
+      "DisableLookAt(6)",
+      "Save(3,-1,false)",
+      "SetInventoryCamera(false,false)",
+      "ReAdjust/appearance callbacks",
+      "BasePanel.Close"
+    ],
+    "scope": "Original UI Animator clip timings and full input-gate restoration are not established merely by these selected bodies."
+  },
+  "clothingSelection": {
+    "methodId": 18632,
+    "observedCalls": [
+      "PlayerFacade.ChangeClothes(selectedRecord)",
+      "ClosetMenu.RefreshClothesView",
+      "possible DroppedItemManager.Collect(type determined from clothes record)"
+    ],
+    "sameCurrentRecordNoop": true,
+    "catalogAndOwnershipScope": "Initialize builds original clothing records and initializes customization view; no complete independent catalog or appearance application is supplied by this evidence contract."
+  },
+  "bedActivation": {
+    "serializedActiveSelf": false,
+    "provenRuntimeEnableProducer": null,
+    "naturalReachability": "unknown",
+    "scanScope": "Every original level1 class114 object was searched for raw file0 PPtr-shaped byte sequences to GO393,Transform1397,InteractArea3778. Hits are raw candidates, not typed references or execution proof.",
+    "rawReferenceCandidates": [
+      {
+        "owner": {
+          "node": "level1",
+          "object": {
+            "path_id": 3443,
+            "offset": 1272608,
+            "size": 1382728,
+            "type_index": 39,
+            "class_id": 114
+          },
+          "uncompressed_stream_offset": 97555464,
+          "sha256": "95c950761b54377c29263e43ab5b5d0b99f77ef4cdc955d70a1215d5a0399524",
+          "compressed_source_blocks": [
+            {
+              "index": 744,
+              "file_offset": 51392703,
+              "stream_offset": 97517568,
+              "size": 131072,
+              "compressed_size": 95656,
+              "flags": 2
+            },
+            {
+              "index": 745,
+              "file_offset": 51488359,
+              "stream_offset": 97648640,
+              "size": 131072,
+              "compressed_size": 131072,
+              "flags": 0
+            },
+            {
+              "index": 746,
+              "file_offset": 51619431,
+              "stream_offset": 97779712,
+              "size": 131072,
+              "compressed_size": 131072,
+              "flags": 0
+            },
+            {
+              "index": 747,
+              "file_offset": 51750503,
+              "stream_offset": 97910784,
+              "size": 131072,
+              "compressed_size": 131072,
+              "flags": 0
+            },
+            {
+              "index": 748,
+              "file_offset": 51881575,
+              "stream_offset": 98041856,
+              "size": 131072,
+              "compressed_size": 92181,
+              "flags": 2
+            },
+            {
+              "index": 749,
+              "file_offset": 51973756,
+              "stream_offset": 98172928,
+              "size": 131072,
+              "compressed_size": 46910,
+              "flags": 2
+            },
+            {
+              "index": 750,
+              "file_offset": 52020666,
+              "stream_offset": 98304000,
+              "size": 131072,
+              "compressed_size": 45828,
+              "flags": 2
+            },
+            {
+              "index": 751,
+              "file_offset": 52066494,
+              "stream_offset": 98435072,
+              "size": 131072,
+              "compressed_size": 45612,
+              "flags": 2
+            },
+            {
+              "index": 752,
+              "file_offset": 52112106,
+              "stream_offset": 98566144,
+              "size": 131072,
+              "compressed_size": 45544,
+              "flags": 2
+            },
+            {
+              "index": 753,
+              "file_offset": 52157650,
+              "stream_offset": 98697216,
+              "size": 131072,
+              "compressed_size": 46743,
+              "flags": 2
+            },
+            {
+              "index": 754,
+              "file_offset": 52204393,
+              "stream_offset": 98828288,
+              "size": 131072,
+              "compressed_size": 43753,
+              "flags": 2
+            }
+          ]
+        },
+        "candidateTargetId": 393,
+        "rawByteOffset": 575788,
+        "script": {
+          "name": "ES3ReferenceMgr",
+          "execution_order": 0,
+          "properties_hash": "4b7ff42d26e4bf667ac74f362d5e665f",
+          "class_name": "ES3ReferenceMgr",
+          "namespace": "",
+          "assembly_name": "Assembly-CSharp"
+        }
+      },
+      {
+        "owner": {
+          "node": "level1",
+          "object": {
+            "path_id": 3443,
+            "offset": 1272608,
+            "size": 1382728,
+            "type_index": 39,
+            "class_id": 114
+          },
+          "uncompressed_stream_offset": 97555464,
+          "sha256": "95c950761b54377c29263e43ab5b5d0b99f77ef4cdc955d70a1215d5a0399524",
+          "compressed_source_blocks": [
+            {
+              "index": 744,
+              "file_offset": 51392703,
+              "stream_offset": 97517568,
+              "size": 131072,
+              "compressed_size": 95656,
+              "flags": 2
+            },
+            {
+              "index": 745,
+              "file_offset": 51488359,
+              "stream_offset": 97648640,
+              "size": 131072,
+              "compressed_size": 131072,
+              "flags": 0
+            },
+            {
+              "index": 746,
+              "file_offset": 51619431,
+              "stream_offset": 97779712,
+              "size": 131072,
+              "compressed_size": 131072,
+              "flags": 0
+            },
+            {
+              "index": 747,
+              "file_offset": 51750503,
+              "stream_offset": 97910784,
+              "size": 131072,
+              "compressed_size": 131072,
+              "flags": 0
+            },
+            {
+              "index": 748,
+              "file_offset": 51881575,
+              "stream_offset": 98041856,
+              "size": 131072,
+              "compressed_size": 92181,
+              "flags": 2
+            },
+            {
+              "index": 749,
+              "file_offset": 51973756,
+              "stream_offset": 98172928,
+              "size": 131072,
+              "compressed_size": 46910,
+              "flags": 2
+            },
+            {
+              "index": 750,
+              "file_offset": 52020666,
+              "stream_offset": 98304000,
+              "size": 131072,
+              "compressed_size": 45828,
+              "flags": 2
+            },
+            {
+              "index": 751,
+              "file_offset": 52066494,
+              "stream_offset": 98435072,
+              "size": 131072,
+              "compressed_size": 45612,
+              "flags": 2
+            },
+            {
+              "index": 752,
+              "file_offset": 52112106,
+              "stream_offset": 98566144,
+              "size": 131072,
+              "compressed_size": 45544,
+              "flags": 2
+            },
+            {
+              "index": 753,
+              "file_offset": 52157650,
+              "stream_offset": 98697216,
+              "size": 131072,
+              "compressed_size": 46743,
+              "flags": 2
+            },
+            {
+              "index": 754,
+              "file_offset": 52204393,
+              "stream_offset": 98828288,
+              "size": 131072,
+              "compressed_size": 43753,
+              "flags": 2
+            }
+          ]
+        },
+        "candidateTargetId": 1397,
+        "rawByteOffset": 575800,
+        "script": {
+          "name": "ES3ReferenceMgr",
+          "execution_order": 0,
+          "properties_hash": "4b7ff42d26e4bf667ac74f362d5e665f",
+          "class_name": "ES3ReferenceMgr",
+          "namespace": "",
+          "assembly_name": "Assembly-CSharp"
+        }
+      },
+      {
+        "owner": {
+          "node": "level1",
+          "object": {
+            "path_id": 3443,
+            "offset": 1272608,
+            "size": 1382728,
+            "type_index": 39,
+            "class_id": 114
+          },
+          "uncompressed_stream_offset": 97555464,
+          "sha256": "95c950761b54377c29263e43ab5b5d0b99f77ef4cdc955d70a1215d5a0399524",
+          "compressed_source_blocks": [
+            {
+              "index": 744,
+              "file_offset": 51392703,
+              "stream_offset": 97517568,
+              "size": 131072,
+              "compressed_size": 95656,
+              "flags": 2
+            },
+            {
+              "index": 745,
+              "file_offset": 51488359,
+              "stream_offset": 97648640,
+              "size": 131072,
+              "compressed_size": 131072,
+              "flags": 0
+            },
+            {
+              "index": 746,
+              "file_offset": 51619431,
+              "stream_offset": 97779712,
+              "size": 131072,
+              "compressed_size": 131072,
+              "flags": 0
+            },
+            {
+              "index": 747,
+              "file_offset": 51750503,
+              "stream_offset": 97910784,
+              "size": 131072,
+              "compressed_size": 131072,
+              "flags": 0
+            },
+            {
+              "index": 748,
+              "file_offset": 51881575,
+              "stream_offset": 98041856,
+              "size": 131072,
+              "compressed_size": 92181,
+              "flags": 2
+            },
+            {
+              "index": 749,
+              "file_offset": 51973756,
+              "stream_offset": 98172928,
+              "size": 131072,
+              "compressed_size": 46910,
+              "flags": 2
+            },
+            {
+              "index": 750,
+              "file_offset": 52020666,
+              "stream_offset": 98304000,
+              "size": 131072,
+              "compressed_size": 45828,
+              "flags": 2
+            },
+            {
+              "index": 751,
+              "file_offset": 52066494,
+              "stream_offset": 98435072,
+              "size": 131072,
+              "compressed_size": 45612,
+              "flags": 2
+            },
+            {
+              "index": 752,
+              "file_offset": 52112106,
+              "stream_offset": 98566144,
+              "size": 131072,
+              "compressed_size": 45544,
+              "flags": 2
+            },
+            {
+              "index": 753,
+              "file_offset": 52157650,
+              "stream_offset": 98697216,
+              "size": 131072,
+              "compressed_size": 46743,
+              "flags": 2
+            },
+            {
+              "index": 754,
+              "file_offset": 52204393,
+              "stream_offset": 98828288,
+              "size": 131072,
+              "compressed_size": 43753,
+              "flags": 2
+            }
+          ]
+        },
+        "candidateTargetId": 3778,
+        "rawByteOffset": 575824,
+        "script": {
+          "name": "ES3ReferenceMgr",
+          "execution_order": 0,
+          "properties_hash": "4b7ff42d26e4bf667ac74f362d5e665f",
+          "class_name": "ES3ReferenceMgr",
+          "namespace": "",
+          "assembly_name": "Assembly-CSharp"
+        }
+      },
+      {
+        "owner": {
+          "node": "level1",
+          "object": {
+            "path_id": 3778,
+            "offset": 2692672,
+            "size": 52,
+            "type_index": 82,
+            "class_id": 114
+          },
+          "uncompressed_stream_offset": 98975528,
+          "sha256": "17d9a1c81c57b7d8044a6950ede4ea8548bb4a4d41aaf2c43a29dd1c93bc67ab",
+          "compressed_source_blocks": [
+            {
+              "index": 755,
+              "file_offset": 52248146,
+              "stream_offset": 98959360,
+              "size": 131072,
+              "compressed_size": 61023,
+              "flags": 2
+            }
+          ]
+        },
+        "candidateTargetId": 393,
+        "rawByteOffset": 0,
+        "script": {
+          "name": "InteractAreaController",
+          "execution_order": 0,
+          "properties_hash": "40086f8212f54fec949ab873d2792f08",
+          "class_name": "InteractAreaController",
+          "namespace": "ExposureUnnoticed2.Object3D.InteractArea",
+          "assembly_name": "Assembly-CSharp"
+        }
+      }
+    ]
+  },
+  "limits": [
+    "The geometry bridge sourcePathId identifies Transform, not GameObject, collider or MonoBehaviour.",
+    "Display labels are authored reconstruction labels.",
+    "A serialized inactive bed and UI dispatch branch do not prove normal play can enable or enter it.",
+    "Caller metadata names and static decompilation are not original C# source or runtime execution.",
+    "No original ES3 save is written by this inspection."
+  ]
+}

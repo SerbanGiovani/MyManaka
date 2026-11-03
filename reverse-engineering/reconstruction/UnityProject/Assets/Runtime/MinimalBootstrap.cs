@@ -19,6 +19,8 @@ namespace ReconstructedManaka {
         PlayerMotor motor;
         LocomotionAnimatorBridge animationBridge;
         InteractionManager interactions;
+        HomeMenuController homeMenus;
+        HomeAppearance homeAppearance;
         FollowCamera follow;
         GameObject actor;
         Camera view;
@@ -45,8 +47,8 @@ namespace ReconstructedManaka {
         IEnumerator Start() {
             evidence.Emit("title_ready", JsonText.Data("hasSave", store.Exists, "phase", phase, "automaticEntryUsesSameOpenMethod", true));
             yield return null; yield return null; yield return null;
-            if (phase == "phase1" || phase == "phase2" || IsKeyboardPhase) { yield return CaptureProofScreenshot("title.png", true); if (ended) yield break; }
-            if (phase == "phase1" || phase == "keyboard" || phase == "interaction" || phase == "interaction-controlled") yield return Open(false); else if (phase == "phase2" || phase == "keyboard-resume" || phase == "interaction-resume") yield return Open(true);
+            if (phase == "phase1" || phase == "phase2" || IsKeyboardPhase || phase.StartsWith("home-", StringComparison.Ordinal)) { yield return CaptureProofScreenshot("title.png", true); if (ended) yield break; }
+            if (phase == "phase1" || phase == "keyboard" || phase == "interaction" || phase == "interaction-controlled" || phase == "home-controlled") yield return Open(false); else if (phase == "phase2" || phase == "keyboard-resume" || phase == "interaction-resume" || phase == "home-resume") yield return Open(true);
         }
         bool IsKeyboardPhase { get { return phase == "keyboard" || phase == "keyboard-resume" || phase == "interaction" || phase == "interaction-resume"; } }
         IEnumerator Open(bool readExisting) {
@@ -64,7 +66,7 @@ namespace ReconstructedManaka {
             yield return assets.Load(state.sceneKey, value => loaded = value, value => assetError = value);
             if (loaded == null || assetError != null) { Fail("Scene assets failed: " + assetError); yield break; }
             room = loaded; SceneManager.SetActiveScene(room.scene);
-            foreach (Camera other in FindObjectsByType<Camera>(FindObjectsSortMode.None)) if (other != view) other.enabled = false;
+            foreach (Camera other in FindObjectsByType<Camera>()) if (other != view) other.enabled = false;
             actor = new GameObject("Player"); SceneManager.MoveGameObjectToScene(actor, room.scene);
             controller = actor.AddComponent<CharacterController>(); controller.enabled = false; controller.height = 1.6f; controller.center = new Vector3(0, .8f, 0); controller.radius = .2f; controller.skinWidth = .0001f; controller.stepOffset = .2f; controller.slopeLimit = 45; controller.minMoveDistance = .001f;
             actor.transform.SetPositionAndRotation(state.position, state.rotation);
@@ -76,6 +78,12 @@ namespace ReconstructedManaka {
             try { animationBridge = actor.AddComponent<LocomotionAnimatorBridge>(); animationBridge.Initialize(room, motor, evidence); }
             catch (Exception ex) { Fail("Original Animator initialization failed: " + ex); yield break; }
             interactions = actor.AddComponent<InteractionManager>(); string interactionError = null;
+            interactions.IncludeTestFixtures = phase.StartsWith("interaction", StringComparison.Ordinal);
+            homeAppearance = new HomeAppearance(room, state, evidence);
+            try { homeAppearance.Apply("loaded-state"); }
+            catch (Exception ex) { Fail("Appearance initialization failed: " + ex); yield break; }
+            homeMenus = actor.AddComponent<HomeMenuController>(); homeMenus.Initialize(motor, evidence, SaveCurrent, state, room.playerVisual);
+            homeMenus.SetHandlers(null, homeAppearance.SelectPreset, new[] { "肤色 1", "肤色 2" }); interactions.Menus = homeMenus;
             yield return interactions.Initialize(Arg("--interaction-manifest", Path.Combine(Application.streamingAssetsPath, "Original", "interactions.json")), room, (ManifestSceneAssets)assets, motor, animationBridge, evidence, value => interactionError = value);
             if (interactionError != null) { Fail("Original interaction initialization failed: " + interactionError); yield break; }
             interactions.ItemCollected += AddCollectedInventory;
@@ -88,6 +96,14 @@ namespace ReconstructedManaka {
             evidence.Proof.positionError = Vector3.Distance(state.position, actor.transform.position); evidence.Proof.rotationErrorDegrees = Quaternion.Angle(state.rotation, actor.transform.rotation);
             evidence.Emit("pose_applied_before_physics", JsonText.Data("sceneKey", state.sceneKey, "position", actor.transform.position, "rotation", actor.transform.rotation, "exactPosition", evidence.Proof.exactAppliedPosition, "exactRotation", evidence.Proof.exactAppliedRotation, "positionError", evidence.Proof.positionError, "rotationErrorDegrees", evidence.Proof.rotationErrorDegrees));
             loading = false; playing = true; message = "";
+            var bed = interactions.FindTarget("apartment-bed");
+            if (bed) evidence.Emit("home_bed_availability", JsonText.Data("targetId", "apartment-bed", "activeInHierarchy", bed.gameObject.activeInHierarchy, "triggerEnabled", bed.Trigger.enabled, "hasSleepConsumer", false));
+            if (phase == "home-resume") {
+                bool readback = RecordReadback();
+                evidence.Emit("home_state_readback", JsonText.Data("skinFree", state.customization.skinFree, "skinPreset", state.customization.skinPreset));
+                yield return CaptureProofScreenshot("home-readback.png", false); if (ended) yield break;
+                CompleteAndQuit(readback, readback ? null : "Home cold pose readback failed"); yield break;
+            }
             if (phase == "phase2") { yield return ReadbackAcceptance(); yield break; }
             if (phase == "keyboard-resume" || phase == "interaction-resume") {
                 if (!RecordReadback()) { Fail("Cross-process scene/pose readback failed"); yield break; }
@@ -95,7 +111,8 @@ namespace ReconstructedManaka {
             }
             controller.enabled = true; motor.InputEnabled = true;
             evidence.Emit("scene_ready", JsonText.Data("sceneKey", state.sceneKey, "position", actor.transform.position, "controller", "CharacterController", "originalGeometry", room.originalGeometry, "originalPlayerVisual", room.originalPlayerVisual));
-            if (phase == "interaction-controlled") yield return InteractionControlledAcceptance();
+            if (phase == "home-controlled") yield return HomeControlledAcceptance();
+            else if (phase == "interaction-controlled") yield return InteractionControlledAcceptance();
             else if (phase == "phase1") yield return MovementAcceptance();
             else if (IsKeyboardPhase) {
                 evidence.Proof.inputDescription = "Unity legacy keyboard axes/buttons; F starts the selected original key pickup through original Action controller parameters and its clip event restores None. Device provenance is declared separately. F5 saves actual pose; F6 saves, captures GPU pixels and exits.";
@@ -153,8 +170,79 @@ namespace ReconstructedManaka {
             yield return CaptureProofScreenshot("interaction-controlled.png", false); if (ended) yield break;
             CompleteAndQuit(room.originalGeometry && room.originalPlayerVisual && evidence.Proof.originalAnimatorController, null);
         }
+        IEnumerator EnterHomeMenu(string targetId, string kind) {
+            motor.SetSimulatedInput(true, Vector2.zero); interactions.SetSimulatedF(true, false);
+            var target = interactions.FindTarget(targetId);
+            if (!target || !target.gameObject.activeInHierarchy) { Fail("Natural home target is absent or inactive: " + targetId); yield break; }
+            Vector3 anchor = target.Trigger.bounds.center; anchor.y = .001f;
+            ControlledPose(new Vector3(2, .001f, 2), "controlled home approach setup outside trigger");
+            for (int i = 0; i < 4; i++) yield return null;
+            ControlledPose(anchor, "controlled home approach at original trigger; no synthetic Register");
+            float deadline = Time.realtimeSinceStartup + 4;
+            while ((!interactions.Selected || interactions.Selected.Definition.id != targetId) && Time.realtimeSinceStartup < deadline) yield return null;
+            if (!interactions.Selected || interactions.Selected.Definition.id != targetId) { Fail("Actual CC did not enter home trigger: " + targetId); yield break; }
+            interactions.SetSimulatedF(true, true); yield return null; yield return null;
+            interactions.SetSimulatedF(true, false);
+            if (!homeMenus.IsOpen || homeMenus.Kind != kind) { Fail("Home F dispatch did not open " + kind); yield break; }
+            int serial = homeMenus.OpenSerial;
+            motor.SetSimulatedInput(true, Vector2.right);
+            for (int i = 0; i < 4; i++) {
+                yield return new WaitForEndOfFrame();
+                evidence.Emit("home_lock_sample", JsonText.Data("kind", kind, "sequence", serial, "axes", motor.CurrentInput.axes, "positionBefore", motor.PositionBeforeStep, "positionAfter", motor.PositionAfterStep, "controllerMoveCalled", motor.ControllerMoveCalled, "inputEnabled", motor.InputEnabled));
+                if (motor.InputEnabled || motor.ControllerMoveCalled || motor.PositionBeforeStep != motor.PositionAfterStep) { Fail("Home menu input lock failed"); yield break; }
+            }
+        }
+        IEnumerator ObserveHomeRecovery(string kind, int serial) {
+            motor.SetSimulatedInput(true, Vector2.left);
+            float deadline = Time.realtimeSinceStartup + 3; bool moved = false;
+            while (Time.realtimeSinceStartup < deadline) {
+                yield return new WaitForEndOfFrame();
+                if (motor.InputEnabled && motor.ControllerMoveCalled && Vector3.ProjectOnPlane(motor.PositionAfterStep - motor.PositionBeforeStep, Vector3.up).magnitude > .00001f) {
+                    evidence.Emit("home_movement_restored", JsonText.Data("kind", kind, "sequence", serial, "axes", motor.CurrentInput.axes, "positionBefore", motor.PositionBeforeStep, "positionAfter", motor.PositionAfterStep, "controllerMoveCalled", motor.ControllerMoveCalled, "inputEnabled", motor.InputEnabled)); moved = true; break;
+                }
+            }
+            motor.SetSimulatedInput(true, Vector2.zero);
+            if (!moved) Fail("Home menu close did not restore CC motion: " + kind);
+        }
+        IEnumerator HomeControlledAcceptance() {
+            evidence.Proof.controlledInput = true; evidence.Proof.inputDescription = "Controlled home setup poses and F edges use actual CC triggers and the same menu methods as normal UI. Not a physical keyboard or original full-UI acceptance.";
+            yield return EnterHomeMenu("apartment-pc", "pc"); if (ended) yield break;
+            int serial = homeMenus.OpenSerial;
+            if (!homeMenus.TrySave()) { Fail("PC menu save failed"); yield break; }
+            if (homeMenus.TrySave()) { Fail("Same-frame duplicate PC save accepted"); yield break; }
+            homeMenus.Close("controlled-cancel");
+            if (homeMenus.Open("pc")) { Fail("Same-frame menu reopen accepted"); yield break; }
+            yield return ObserveHomeRecovery("pc", serial); if (ended) yield break;
+            yield return EnterHomeMenu("apartment-closet", "closet"); if (ended) yield break;
+            serial = homeMenus.OpenSerial; int revisionBeforeCancel = state.revision;
+            homeMenus.Close("controlled-cancel-pending-close");
+            yield return null; yield return null; homeMenus.enabled = false;
+            if (homeMenus.Open("pc")) { Fail("Disabled home menu accepted reopening"); yield break; }
+            for (int i = 0; i < 7; i++) yield return null;
+            if (homeMenus.IsOpen || !motor.InputEnabled || state.revision != revisionBeforeCancel) { Fail("Disabled closet retained a delayed save or input lock"); yield break; }
+            evidence.Emit("home_cancel_verified", JsonText.Data("serial", serial, "revisionBefore", revisionBeforeCancel, "revisionAfter", state.revision, "waitedFrames", 7));
+            homeMenus.enabled = true;
+            yield return ObserveHomeRecovery("closet", serial); if (ended) yield break;
+            for (int preset = 0; preset < 2; preset++) {
+                yield return EnterHomeMenu("apartment-closet", "closet"); if (ended) yield break;
+                serial = homeMenus.OpenSerial;
+                if (!homeMenus.TryApplyCloset(preset)) { Fail("Closet preset application failed"); yield break; }
+                if (homeMenus.TryApplyCloset(preset)) { Fail("Closed closet accepted duplicate application"); yield break; }
+                yield return ObserveHomeRecovery("closet", serial); if (ended) yield break;
+            }
+            yield return EnterHomeMenu("apartment-pc", "pc"); if (ended) yield break;
+            serial = homeMenus.OpenSerial;
+            if (!homeMenus.TrySave()) { Fail("Final PC save failed"); yield break; }
+            homeMenus.Close("controlled-finished");
+            // Do not move after this save; the cold run independently verifies this pose.
+            motor.SetSimulatedInput(true, Vector2.zero); motor.InputEnabled = false;
+            evidence.Emit("home_controlled_verified", JsonText.Data("finalSkinPreset", state.customization.skinPreset, "saveRevision", state.revision, "finalMenuSerial", serial, "bedNaturalEnabled", false));
+            yield return CaptureProofScreenshot("home-controlled.png", false); if (ended) yield break;
+            CompleteAndQuit(true, null);
+        }
         void Update() {
             if (!playing || loading || ended || saveQuitInProgress) return;
+            if (homeMenus && (homeMenus.IsOpen || homeMenus.IsBusy)) return;
             if (Input.GetKeyDown(KeyCode.F5)) {
                 evidence.Proof.keyboardSaveCommands++;
                 evidence.Emit("keyboard_command", JsonText.Data("key", "F5", "action", "save", "GetKeyDown", true, "inputSource", "unity-legacy", "inputProvenance", motor.InputProvenance, "simulated", false, "focused", Application.isFocused, "position", actor.transform.position, "rotation", actor.transform.rotation));
@@ -279,7 +367,7 @@ namespace ReconstructedManaka {
         static bool Exact(Quaternion a, Quaternion b) { return Bits(a.x) == Bits(b.x) && Bits(a.y) == Bits(b.y) && Bits(a.z) == Bits(b.z) && Bits(a.w) == Bits(b.w); }
         void Fail(string detail) {
             failureSerial++; loading = false; message = "操作失败，请检查资源或存档。 / Operation failed; check resources or save.";
-            bool automaticAcceptance = phase == "phase1" || phase == "phase2" || phase == "interaction-controlled";
+            bool automaticAcceptance = phase == "phase1" || phase == "phase2" || phase == "interaction-controlled" || phase == "home-controlled" || phase == "home-resume";
             evidence.Emit("loop_failure", JsonText.Data("detail", detail, "automaticExit", automaticAcceptance, "windowKeptOpen", !automaticAcceptance)); evidence.Proof.failure = detail;
             if (automaticAcceptance) CompleteAndQuit(false, detail); else evidence.WriteProof();
         }
@@ -287,6 +375,7 @@ namespace ReconstructedManaka {
             if (ended) return; ended = true; if (motor) motor.InputEnabled = false; UpdateMotorProof(); evidence.Complete(success, error); Application.Quit(evidence.Proof.passed ? 0 : 20);
         }
         void OnGUI() {
+            if (homeMenus && homeMenus.IsOpen) return;
             if (font) GUI.skin.font = font;
             GUI.skin.label.fontSize = 18; GUI.skin.button.fontSize = 18;
             if (!playing) {

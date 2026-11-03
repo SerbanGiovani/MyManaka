@@ -26,6 +26,7 @@ namespace ReconstructedManaka {
         public Scene scene;
         public GameObject environmentRoot, playerVisual;
         public Animator playerAnimator;
+        public SkinnedMeshRenderer bodyRenderer, faceRenderer;
         public string animatorPath, animatorControllerName, animatorAvatarName;
         public int sourceAnimators;
         public ulong animatorControllerInstanceId, animatorAvatarInstanceId;
@@ -246,7 +247,7 @@ namespace ReconstructedManaka {
                 foreach (SkinnedMeshRenderer skin in original.GetComponents<SkinnedMeshRenderer>()) {
                     if (!skin.sharedMesh || !selected.Contains(skin)) continue; var copy = target.AddComponent<SkinnedMeshRenderer>(); copy.sharedMesh = skin.sharedMesh; copy.sharedMaterials = CompatibleMaterials(skin.sharedMaterials, result);
                     copy.bones = skin.bones.Select(bone => bone && map.ContainsKey(bone) ? map[bone] : null).ToArray(); copy.rootBone = skin.rootBone && map.ContainsKey(skin.rootBone) ? map[skin.rootBone] : null;
-                    copy.localBounds = skin.localBounds; copy.updateWhenOffscreen = true; copy.enabled = true; if (skin == primary) bodyCopy = copy;
+                    copy.localBounds = skin.localBounds; copy.updateWhenOffscreen = true; copy.enabled = true; if (skin == primary) { bodyCopy = copy; result.bodyRenderer = copy; } if (skin == face) result.faceRenderer = copy;
                     for (int i = 0; i < skin.sharedMesh.blendShapeCount; i++) copy.SetBlendShapeWeight(i, skin.GetBlendShapeWeight(i)); result.visualRenderers++;
                 }
                 var filter = original.GetComponent<MeshFilter>(); var renderer = original.GetComponent<MeshRenderer>();
