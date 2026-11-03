@@ -1,12 +1,14 @@
 # 独立运行工程
 
-最新[自宅交互](home-runtime.md)已接电脑保存与衣柜选定肤色，原床保持inactive。宿主运行验证包含5帧自动保存、禁用后取消、恢复操作及冷实际材质；新的Unity编辑器构建仍待恢复本机安装／授权。历史正式构建与最新Host证据按各自范围保留。
+当前[H盘正式构建](home-editor-runtime.md)已完成，使用`unity-active.ps1`／`unity-active-settings.json`，0错误、0警告；5轮自宅菜单、保存取消、精确5帧自动保存及冷姿态／材质均由新构建验证。前轮宿主记录保持历史范围。
 
-当前正式编辑入口为[UnityProject](UnityProject/README.md)，使用`unity-project.ps1`的Prepare／Validate／Open／Build。源码、场景、Prefab、原生自宅资产及设置受版本管理，构建前后1465维护文件一致；自宅与仓库外受控运行验收通过。见[正式工程报告](formal-project.md)。下方unity6缓存工程、旧模板及对应入口属于历史验收，不再作为日常编辑源。
+前轮[自宅交互](home-runtime.md)接入电脑保存与衣柜选定肤色，原床保持inactive。宿主运行验证包含5帧自动保存、禁用后取消、恢复操作及冷实际材质；当时新的Unity编辑器构建仍待恢复安装／授权，该待办已由上方H盘正式验证关闭。历史正式构建与Host证据按各自范围保留。
+
+前轮建立的正式工程为[UnityProject](UnityProject/README.md)，当时使用`unity-project.ps1`的Prepare／Validate／Open／Build；当前入口已更新为上方`unity-active.ps1`。源码、场景、Prefab、原生自宅资产及设置受版本管理，构建前后1465维护文件一致；自宅与仓库外受控运行验收通过。见[正式工程报告](formal-project.md)。下方unity6缓存工程、旧模板及对应入口属于历史验收，不再作为日常编辑源。
 
 当前工程已接通官方Unity MCP：CLI1.0.0-beta.15＋Pipeline0.9.1-exp.1，独立stdio验证169个工具及editor_status读取成功。客户端配置固定当前工程；本安装会话尚未重载工具目录，需重启MCP连接或新会话使用。见[接入与复用方法](unity-mcp/README.md)。
 
-当前默认编辑器为`C:\Program Files\Unity\Hub\Editor\6000.6.7f1\Editor\Unity.exe`。使用`unity-editor.ps1 -Action Open`打开`.cache/unity6-20261103-2`，后续创建和构建也使用该新入口。Unity6专用源码位于`unity-project/Assets`，原Runtime迁移规则和历史Tuanjie记录分别保留；见[Unity工作流](unity-editor.md)。
+早期Unity6迁移时的编辑器路径为`C:\Program Files\Unity\Hub\Editor\6000.6.7f1\Editor\Unity.exe`，以下是历史入口。使用`unity-editor.ps1 -Action Open`打开`.cache/unity6-20261103-2`，后续创建和构建也使用该新入口。Unity6专用源码位于`unity-project/Assets`，原Runtime迁移规则和历史Tuanjie记录分别保留；见[Unity工作流](unity-editor.md)。
 
 最新动作阶段已接回真实F键、原钥匙交互和原Animator Action层：原PickUpItem事件同帧完成入库及None，后续真实移动、F5／F6和冷启动姿态恢复通过。人工与受控证据分开，锁内方向输入仅在受控进程覆盖。当前产物为`.cache/interaction-20261031-1-build/ManakaInteraction.exe`，源码`interaction-project/Assets`；见[交互报告](interaction-runtime.md)、[清单](interaction-runtime.json)及[独立分析](interaction-acceptance-tools/README.md)。原Apartment UI、其余动作与10个辅助层继续待补，下方旧locomotion结果保持历史范围。
 

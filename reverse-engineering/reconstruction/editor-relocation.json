@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "status": "unity-editor-executable-relocation-verified",
+  "observed_utc": "2026-11-03T14:55:50.342199+00:00",
+  "editor_version": "6000.6.7f1",
+  "original_path": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.7f1\\Editor\\Unity.exe",
+  "actual_path": "H:\\Unity Editor\\6000.6.7f1\\Editor\\Unity.exe",
+  "bytes": 279976,
+  "sha256": "13c0162a848689b760be7cb4aaa9391d085d56e3f6e20a12f8736f63b3bd0540",
+  "original_absent_when_recorded": true,
+  "new_editor_build_inferred": false,
+  "verifier": {
+    "path": "verify-editor-relocation.py",
+    "bytes": 4671,
+    "sha256": "25b06a2084d36ac4c4c3425f003f12ecf31b692791eef9e00e536842bb183797"
+  },
+  "historical_references": [
+    {
+      "path": "unity-editor-runtime.json",
+      "bytes": 176534,
+      "sha256": "3d9c35aba6395fd37b80c7f3d213ffbe4b98bf55267c7d557b3bf34139c5f34d"
+    },
+    {
+      "path": "formal-project-runtime.json",
+      "bytes": 1219660,
+      "sha256": "1b5d09a3e63ae34fb9f6f0ff36cafcdc08ae4e10fcebde249e50830665242f70"
+    }
+  ],
+  "scope": "User explicitly selected H: editor path. The actual H: executable has the exact same size and SHA as both historical C: editor identities. No license, module installation or new build is inferred."
+}

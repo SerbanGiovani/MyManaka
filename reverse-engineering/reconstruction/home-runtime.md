@@ -1,5 +1,7 @@
 # 自宅菜单、自动保存与实际外观恢复
 
+本页为前轮宿主验证记录。用户恢复H盘编辑器后，已完成独立的新Unity正式构建与相同运行矩阵，当前构建待办已关闭，见[正式补验](home-editor-runtime.md)；下方当时的授权失败与pending描述保持历史事实。
+
 2026-11-03继续正式UnityProject，接入原电脑与衣柜交互、选定肤色消费者、关闭恢复及延迟保存取消。新增[原生合同](home-interaction-evidence/README.md)包含23条完整REA查询，两会话均正常关闭；原场景三处SphereCollider的对象范围、原始字节、类型哈希、Transform来源ID及启用状态独立解码。
 
 ## 已接入

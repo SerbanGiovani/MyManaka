@@ -2,16 +2,16 @@
 
 此目录是后续编辑的唯一源码与场景入口，使用 Unity **6000.6.7f1**、Built-in、Legacy Input Manager、Windows64 Mono。`Assets`、`.meta`、`Packages` 和 `ProjectSettings`受版本管理；Library、Temp、Logs、UserSettings和构建产物不入库。
 
-最新已接入原电脑保存及衣柜选定肤色菜单，衣柜5帧自动保存、取消关闭队列及冷材质恢复已在归档播放器宿主验证。本机指定Unity安装／授权当前不可用，新编辑器构建待完成，见[本轮范围与验证](../home-runtime.md)。原床保持序列化禁用状态；原UI素材、完整衣装及睡眠副作用仍待补齐。
+当前编辑器为`H:\Unity Editor\6000.6.7f1\Editor\Unity.exe`，入口为`unity-active.ps1`。新正式构建0错误、0警告，电脑保存、衣柜5帧自动保存、队列取消和冷姿态／实际肤色恢复通过，见[本轮正式验证](../home-editor-runtime.md)。原床保持序列化禁用状态；原UI素材、完整衣装及睡眠副作用仍待补齐。
 
 在 Unity 中打开本目录，双击 `Assets/Scenes/Apartment.unity` 即可在编辑状态查看、选择和修改自宅。房间引用 `Assets/Apartment/Environment.prefab`，网格、材质与纹理均是持久化原生资产。Title仍使用现有运行时标题UI；玩家与原Animator继续从准备好的模型包加载。
 
 从仓库根目录准备、验证和打开：
 
 ```powershell
-pwsh -NoProfile -File reverse-engineering/reconstruction/unity-project.ps1 -Action Prepare
+pwsh -NoProfile -File reverse-engineering/reconstruction/unity-active.ps1 -Action Prepare
 python -B -X utf8 reverse-engineering/reconstruction/verify-formal-project.py --inputs
-pwsh -NoProfile -File reverse-engineering/reconstruction/unity-project.ps1 -Action Open
+pwsh -NoProfile -File reverse-engineering/reconstruction/unity-active.ps1 -Action Open
 ```
 
 新机器需提供原模型资源，`Prepare -Models <已解密models.unity3d的路径>`只复制通过223101993字节及SHA256校验的资源。它不复制源码、场景或设置；已有不同内容拒绝覆盖。模型本体忽略，稳定的`.meta`入库。常规打开和构建无需旧几何JSON、raw纹理缓存或重新Import。
@@ -19,7 +19,7 @@ pwsh -NoProfile -File reverse-engineering/reconstruction/unity-project.ps1 -Acti
 关闭本工程的编辑器后构建，使用全新运行名称：
 
 ```powershell
-pwsh -NoProfile -File reverse-engineering/reconstruction/unity-project.ps1 -Action Build -RunName formal-new
+pwsh -NoProfile -File reverse-engineering/reconstruction/unity-active.ps1 -Action Build -RunName formal-new
 ```
 
 构建只使用已保存且已启用的场景，要求Title在首位、Apartment启用。不会执行模板同步、创建或保存场景，也不重写设置；构建前后对维护文件的字节哈希做对照，变化即拒绝通过。结果输出到工程外的 `../.cache/formal-new-build`，旧输出不会覆盖。

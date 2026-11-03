@@ -1,6 +1,8 @@
 # Manaka 资源解密与逆向入口
 
-最新正式工程已接原电脑保存、衣柜选定肤色及5帧自动保存／取消，新增23条REA原生证据；归档播放器宿主中的菜单锁、恢复、保存和冷实际材质对照通过。新的Unity编辑器构建因本机安装／授权不可用仍待完成，两者明确分开。见[自宅交互进展](reconstruction/home-runtime.md)。
+当前正式编辑器已切到用户指定的H盘Unity6000.6.7f1，入口`reconstruction/unity-active.ps1`。新正式构建0错误／0警告、1469维护输入不变；独立目录5轮菜单、5帧自动保存、取消及冷实际材质／姿态恢复已通过。见[正式补验报告](reconstruction/home-editor-runtime.md)。下方缺安装／授权及宿主pending均为前轮历史状态。
+
+前轮正式工程接入原电脑保存、衣柜选定肤色及5帧自动保存／取消，新增23条REA原生证据；当时使用归档播放器宿主验证，新的Unity构建待恢复安装／授权，现已由上方H盘正式验证完成。见[自宅交互进展](reconstruction/home-runtime.md)。
 
 当前正式Unity工程位于`reconstruction/UnityProject`，源码、meta、场景、原生自宅资产、Packages及ProjectSettings受版本管理。新构建入口不复制模板或重建Title；1465维护文件构建前后一致。自宅302Mesh／302Material／90Texture、269绘制／33碰撞已持久化并由新编辑器进程重开验证；仓库外副本完成受控动作、保存及冷启动。见[正式工程报告](reconstruction/formal-project.md)。下方缓存工程与旧入口保留为历史记录。
 

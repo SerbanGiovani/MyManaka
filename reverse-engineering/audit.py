@@ -636,7 +636,9 @@ def main():
     check(interaction_save["saved_revision"] == 2 and interaction_save["persisted_item_id"] == 10000 and interaction_save["persisted_item_quantity"] == 2 and interaction_cold["same_saved_bytes_verified"] and interaction_cold["component_exact_pose_before_physics"] and interaction_cold["save_sha256"] == interaction_save["saved_sha256"] and interaction_cold["pid"] == interaction_runtime["runtime"]["phase2"]["processId"] and not interaction_cold["cold_in_memory_inventory_quantity_observed"], "Cold pose/retained inventory file scope differs")
     interaction_composite = interaction_acceptance["scoped_composite_acceptance"]
     check(interaction_composite["accepted"] and not interaction_composite["single_process_full_chain_accepted"] and interaction_composite["natural_pid"] == interaction_runtime["runtime"]["interaction"]["processId"] and interaction_composite["controlled_pid"] == interaction_runtime["runtime"]["controlled"]["processId"] and interaction_composite["natural_guid"] != interaction_composite["controlled_guid"], "Distinct interaction input origins were merged")
-    unity_editor_check = runpy.run_path(str(toolchain_dir / "verify-unity-editor.py"))["build"](inputs=args.inputs)
+    # Historical Editor input bytes are checked below through the one explicit,
+    # content-verified C: -> H: relocation, without rewriting old evidence.
+    unity_editor_check = runpy.run_path(str(toolchain_dir / "verify-unity-editor.py"))["build"](inputs=False)
     unity_editor_runtime = read(toolchain_dir / "unity-editor-runtime.json")
     check(unity_editor_check["status"] == "unity6-original-resource-controlled-action-save-restart-verified" and unity_editor_check["editor_version"] == "6000.6.7f1", "Selected Unity editor was not built and exercised")
     check(unity_editor_check["controlled_original_action"] and not unity_editor_check["actual_keyboard_verified"] and not unity_editor_check["full_chain_accepted"], "Unity6 controlled migration was promoted to physical-keyboard acceptance")
@@ -658,6 +660,11 @@ def main():
     home_lifecycle = runpy.run_path(str(toolchain_dir / "verify-home-lifecycle.py"))["build"](inputs=False)
     check(home_host["status"] == "home-archived-host-managed-runtime-verified" and home_lifecycle["status"] == "home-archived-host-lifecycle-runtime-verified", "Home host evidence differs")
     check(not home_lifecycle["unity_editor_build_performed"] and home_lifecycle["formal_unity_build_pending"] and home_lifecycle["native_player_and_assets_unchanged"], "Archived host run was promoted to a new Unity Editor build")
+    home_editor_check = runpy.run_path(str(toolchain_dir / "verify-home-editor.py"))["build"](inputs=args.inputs)
+    home_editor_runtime = read(toolchain_dir / "home-editor-runtime.json")
+    check(home_editor_check["unity_editor_build_performed"] and not home_editor_check["formal_unity_build_pending"] and not home_editor_check["managed_replacement_used"] and home_editor_check["sources_and_scenes_preserved"], "New home Editor build provenance differs")
+    relocation = runpy.run_path(str(toolchain_dir / "verify-editor-relocation.py"))
+    relocation_check = relocation["build"](inputs=args.inputs)
     key_regression = toolchain_dir / "home-key-regression"
     key_analyzer = runpy.run_path(str(toolchain_dir / "interaction-acceptance-tools/verify_interaction.py"))
     try:
@@ -1065,21 +1072,45 @@ def main():
                 paths.append((Path(source["path"]), source["sha256"]))
                 known.add(source["path"].casefold())
         for path, expected in paths:
-            actual = digest(path)
+            resolved = relocation["resolve_input"](path, expected)
+            actual = digest(resolved)
             check(actual == expected, f"Input fingerprint differs: {path}")
-            checked_inputs.append({"path": str(path), "sha256": actual})
+            row = {"path": str(resolved), "sha256": actual}
+            if resolved != path:
+                row["original_path"] = str(path)
+            checked_inputs.append(row)
+            known.add(str(resolved).casefold())
         # verify-minimal already hashed these package/editor files and admitted
         # managed inspection subjects; retain their identities in the global index.
         unity_project_inputs = read(toolchain_dir / "unity-editor-runtime/build/project-configuration.json")["files"]
-        for item in minimal_runtime["build"]["files"] + minimal_runtime["packaged_inputs"] + [minimal_runtime["build"]["editor"]] + locomotion_runtime["build"]["files"] + locomotion_runtime["packaged_inputs"] + interaction_runtime["build"]["files"] + interaction_runtime["packaged_inputs"] + unity_editor_runtime["build"]["files"] + unity_editor_runtime["packaged_inputs"] + [unity_editor_runtime["editor"]] + unity_editor_runtime["private_logs"] + unity_project_inputs + unity_mcp["package_inputs"]:
+        legacy_start = read(toolchain_dir / "unity-editor-runtime/build/start.json")
+        imported_sources = []
+        for source in legacy_start["sources"]:
+            parts = Path(source["path"]).parts
+            relative = Path(*parts[parts.index("Assets"):])
+            imported_sources.append({"path": str(Path(legacy_start["project"]) / relative), "sha256": source["sha256"]})
+        for item in minimal_runtime["build"]["files"] + minimal_runtime["packaged_inputs"] + [minimal_runtime["build"]["editor"]] + locomotion_runtime["build"]["files"] + locomotion_runtime["packaged_inputs"] + interaction_runtime["build"]["files"] + interaction_runtime["packaged_inputs"] + unity_editor_runtime["build"]["files"] + unity_editor_runtime["packaged_inputs"] + [unity_editor_runtime["editor"]] + unity_editor_runtime["private_logs"] + unity_project_inputs + unity_mcp["package_inputs"] + imported_sources:
             if item["path"].casefold() not in known:
-                checked_inputs.append({"path": item["path"], "sha256": item["sha256"]})
+                resolved = relocation["resolve_input"](item["path"], item["sha256"])
+                check(digest(resolved) == item["sha256"], "Historical package/editor input differs: " + item["path"])
+                row = {"path": str(resolved), "sha256": item["sha256"]}
+                if resolved != Path(item["path"]):
+                    row["original_path"] = item["path"]
+                checked_inputs.append(row)
                 known.add(item["path"].casefold())
+                known.add(str(resolved).casefold())
         formal_inputs = formal_runtime["build"]["files"] + formal_runtime["private_logs"] + formal_runtime["authoring"]["receipt"]["inputs"]
         formal_inputs += [item for package in formal_runtime["runtime"]["packages"] for item in package["files"]]
         for item in formal_inputs:
             if item["path"].casefold() not in known:
                 check(digest(Path(item["path"])) == item["sha256"], "Historical formal input differs: " + item["path"])
+                checked_inputs.append({"path": item["path"], "sha256": item["sha256"]})
+                known.add(item["path"].casefold())
+        current_inputs = [dict(item, path=str(toolchain_dir / "UnityProject" / item["path"])) for item in home_editor_runtime["project_inputs"]]
+        current_inputs += home_editor_runtime["build"]["files"] + [home_editor_runtime["editor"]] + home_editor_runtime["private_logs"]
+        current_inputs += [item for package in home_editor_runtime["runtime"]["packages"] for item in package["files"]]
+        for item in current_inputs:
+            if item["path"].casefold() not in known:
                 checked_inputs.append({"path": item["path"], "sha256": item["sha256"]})
                 known.add(item["path"].casefold())
     result = {"schema_version": 1, "generated_at_utc": datetime.now(timezone.utc).isoformat(),
